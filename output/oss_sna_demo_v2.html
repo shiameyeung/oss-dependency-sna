@@ -44,7 +44,13 @@
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
   .badge { display:inline-block; font-size:11px; font-weight:700; color:#fff; border-radius:4px;
-           padding:2px 8px; margin:0 4px 6px 0; cursor:help; }
+           padding:2px 8px; margin:0 4px 6px 0; cursor:help; position:relative; }
+  /* 即時表示のツールチップ（ネイティブ title の遅延を避ける） */
+  .badge[data-tip]:hover::after {
+    content: attr(data-tip); position:absolute; left:0; top:calc(100% + 4px);
+    background:#1F2D40; color:#fff; font-size:11px; font-weight:400; line-height:1.45;
+    padding:6px 9px; border-radius:6px; width:max-content; max-width:230px; white-space:normal;
+    z-index:30; box-shadow:0 3px 12px rgba(31,45,64,.25); pointer-events:none; }
   .nodelink { color:var(--acc); cursor:pointer; border-bottom:1px dotted var(--acc2); word-break:break-all; }
   .nodelink:hover { color:var(--acc2); background:var(--panel2); }
   .diag-name { font-size:14px; font-weight:700; color:var(--txt); margin-bottom:4px; word-break:break-all; }
@@ -439,9 +445,9 @@ function diagnoseNode(n, g){
   const S = T(), N = g.nodes.length, CUT = g.cut_impact || {};
   const sep = lang==="ja" ? "、" : ", ";
   const types = nodeTypes(n);
-  let badges = types.map(t=>`<span class="badge" title="${esc(S.badgeTip[t]||"")}" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
-  if (n.seed) badges += `<span class="badge" title="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
-  if (n.cat) badges += `<span class="badge" title="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
+  let badges = types.map(t=>`<span class="badge" data-tip="${esc(S.badgeTip[t]||"")}" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
+  if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
+  if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
   const d = descOf(n);
   const descHtml = d ? `<div class="diag-desc">${esc(d)}</div>` : "";
   const table = `<table class="diag-table">
@@ -481,8 +487,9 @@ function diagnoseCom(cid, g){
   const member = g.nodes.filter(n=>n.com===cid);
   const avgIn = member.length ? (member.reduce((a,n)=>a+n.indeg,0)/member.length).toFixed(1) : 0;
   const sep = lang==="ja" ? "、" : ", ";
-  return `<div class="diag-name">${S.comTitle(cid)}</div>
-    <span class="badge" title="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
+  const rep = esc((st.top[0]||"?").split("/").pop()), sfx = lang==="en" ? "" : "系";
+  return `<div class="diag-name">${rep}${sfx} <span style="font-weight:400;color:#5C6B7A;font-size:12px">${S.comTitle(cid)}</span></div>
+    <span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
     <table class="diag-table">
       <tr><td>${S.comNodes}</td><td>${st.n}</td></tr>
       <tr><td>${S.comInEdges}</td><td>${st.m_in}</td></tr>
@@ -853,12 +860,14 @@ function renderSide(g, byId){
   if (comActive){
     $("#rankTitle").textContent = S.rankComTitle;
     const cs = g.communities || [];
-    $("#rankList").innerHTML = cs.slice(0,10).map(c =>
-      `<div class="rank-row${selectedCom===c.id?' sel':''}" data-com="${c.id}">
+    const sfx = lang==="en" ? "" : "系";   // 代表ノードの短縮名＋「〜系」を主表示、番号は補助
+    $("#rankList").innerHTML = cs.slice(0,10).map(c => {
+      const rep = esc((c.top[0]||"?").split("/").pop());
+      return `<div class="rank-row${selectedCom===c.id?' sel':''}" data-com="${c.id}">
         <span class="dot" style="background:${COLORS[c.id%COLORS.length]}"></span>
-        <span class="nm">${S.comTitle(c.id)} <span class="muted">${S.comRowNote(esc(c.top[0]||""))}</span></span>
+        <span class="nm"><b>${rep}${sfx}</b> <span class="muted">#${c.id}</span></span>
         <span class="bar-bg"><span class="bar-fg" style="width:${100*c.n/g.nodes.length}%"></span></span>
-        <span class="val">${c.n}</span></div>`).join("");
+        <span class="val">${c.n}</span></div>`; }).join("");
     document.querySelectorAll(".rank-row[data-com]").forEach(r => r.onclick = () => {
       const cid = +r.dataset.com;
       selectedCom = (selectedCom===cid) ? null : cid; selected=null; render(); });
