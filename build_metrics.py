@@ -176,12 +176,12 @@ CATEGORY_RULES = {
 def load_descriptions(cache_dir, system):
     """collect_desc.py の出力（cache/<system>/_descriptions.json）を読み込む。
 
-    日本語簡易説明（ja・原文 summary に基づき一括作成した固定データ）があれば優先し、
-    なければレジストリ原文（desc・英語）を用いる。"""
+    各ノードについて日本語簡易説明（ja・原文 summary を基に一括作成した固定データ）と
+    レジストリ原文（desc・英語）の両方を返す。デモの言語切替（日/英）で使い分ける。"""
     p = pathlib.Path(cache_dir) / system / "_descriptions.json"
     if not p.exists():
         return {}
-    return {k: (v.get("ja") or v.get("desc", "")) for k, v in
+    return {k: {"ja": v.get("ja", ""), "en": v.get("desc", "")} for k, v in
             json.loads(p.read_text(encoding="utf-8")).get("entries", {}).items()}
 
 
@@ -311,7 +311,8 @@ def analyze(g, label, domain, collect_meta, system="pypi", descs=None):
     node_rows = []
     cat_count = {}
     for v in nodes:
-        cat = categorize(system, v, descs.get(v, ""))
+        dv = descs.get(v, {})
+        cat = categorize(system, v, dv.get("en", ""))   # 分類規則のキーワードは英語原文で照合
         cat_count[cat] = cat_count.get(cat, 0) + 1
         node_rows.append({
             "id": v, "label": v,
@@ -321,7 +322,7 @@ def analyze(g, label, domain, collect_meta, system="pypi", descs=None):
             "r_in": r_indeg[v], "r_bt": r_btw[v],
             "com": part[v], "art": 1 if v in meaningful_aps else 0,
             "seed": 1 if v in set(collect_meta.get("seeds_ok", [])) else 0,
-            "cat": cat, "desc": descs.get(v, ""),
+            "cat": cat, "desc_ja": dv.get("ja", ""), "desc_en": dv.get("en", ""),
         })
     categories = sorted(cat_count.items(), key=lambda kv: (-kv[1], kv[0]))
 

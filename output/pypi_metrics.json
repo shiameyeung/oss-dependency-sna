@@ -1,7 +1,7 @@
 {
  "domain": "ds",
  "label": "データサイエンス系 (PyPI)",
- "generated_at": "2026-06-12T23:36:39Z",
+ "generated_at": "2026-06-13T04:45:05Z",
  "collect": {
   "seeds_ok": [
    "altair",
@@ -1341,7 +1341,7 @@
  "categories": [
   {
    "name": "基盤・ユーティリティ",
-   "n": 118
+   "n": 112
   },
   {
    "name": "Jupyter・開発環境",
@@ -1349,27 +1349,27 @@
   },
   {
    "name": "機械学習",
-   "n": 24
+   "n": 28
   },
   {
    "name": "データ処理・数値計算",
-   "n": 22
-  },
-  {
-   "name": "自然言語処理",
-   "n": 19
+   "n": 23
   },
   {
    "name": "Web・通信",
+   "n": 19
+  },
+  {
+   "name": "統計・時系列",
+   "n": 18
+  },
+  {
+   "name": "自然言語処理",
    "n": 18
   },
   {
    "name": "可視化",
-   "n": 15
-  },
-  {
-   "name": "統計・時系列",
-   "n": 15
+   "n": 13
   }
  ],
  "nodes": [
@@ -1389,8 +1389,9 @@
    "com": 8,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "Abseil の Python 共通ライブラリ"
+   "cat": "Web・通信",
+   "desc_ja": "Abseil の Python 共通ライブラリ",
+   "desc_en": "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
   },
   {
    "id": "aiohttp",
@@ -1409,7 +1410,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "asyncio ベースの非同期 HTTP クライアント・サーバーフレームワーク"
+   "desc_ja": "asyncio ベースの非同期 HTTP クライアント・サーバーフレームワーク",
+   "desc_en": "Async http client/server framework (asyncio)"
   },
   {
    "id": "alembic",
@@ -1428,7 +1430,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "SQLAlchemy 用のデータベースマイグレーションツール"
+   "desc_ja": "SQLAlchemy 用のデータベースマイグレーションツール",
+   "desc_en": "A database migration tool for SQLAlchemy."
   },
   {
    "id": "altair",
@@ -1446,8 +1449,9 @@
    "com": 4,
    "art": 0,
    "seed": 1,
-   "cat": "可視化",
-   "desc": "Python 向けの宣言的な統計可視化ライブラリ"
+   "cat": "統計・時系列",
+   "desc_ja": "Python 向けの宣言的な統計可視化ライブラリ",
+   "desc_en": "Vega-Altair: A declarative statistical visualization library for Python."
   },
   {
    "id": "annotated-doc",
@@ -1466,7 +1470,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Annotated で引数・属性・戻り値・変数をインラインで文書化するライブラリ"
+   "desc_ja": "Annotated で引数・属性・戻り値・変数をインラインで文書化するライブラリ",
+   "desc_en": "Document parameters, class attributes, return types, and variables inline, with Annotated."
   },
   {
    "id": "annotated-types",
@@ -1485,7 +1490,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "typing.Annotated で使える再利用可能な制約型"
+   "desc_ja": "typing.Annotated で使える再利用可能な制約型",
+   "desc_en": "Reusable constraint types to use with typing.Annotated"
   },
   {
    "id": "anyio",
@@ -1504,7 +1510,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "asyncio または Trio 上で動く高水準の並行処理・ネットワークフレームワーク"
+   "desc_ja": "asyncio または Trio 上で動く高水準の並行処理・ネットワークフレームワーク",
+   "desc_en": "High-level concurrency and networking framework on top of asyncio or Trio"
   },
   {
    "id": "argon2-cffi",
@@ -1523,7 +1530,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 向けの Argon2"
+   "desc_ja": "Python 向けの Argon2",
+   "desc_en": "Argon2 for Python"
   },
   {
    "id": "argon2-cffi-bindings",
@@ -1542,7 +1550,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Argon2 の低レベル CFFI バインディング"
+   "desc_ja": "Argon2 の低レベル CFFI バインディング",
+   "desc_en": "Low-level CFFI bindings for Argon2"
   },
   {
    "id": "arrow",
@@ -1561,7 +1570,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python の日付・時刻をより扱いやすくするライブラリ"
+   "desc_ja": "Python の日付・時刻をより扱いやすくするライブラリ",
+   "desc_en": "Better dates & times for Python"
   },
   {
    "id": "arviz",
@@ -1580,7 +1590,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "ArviZverse 各パッケージの機能を arviz 名前空間でまとめて提供するパッケージ"
+   "desc_ja": "ArviZverse 各パッケージの機能を arviz 名前空間でまとめて提供するパッケージ",
+   "desc_en": "Expose features from _ArviZverse_ refactored packages together in the ``arviz`` namespace."
   },
   {
    "id": "arviz-base",
@@ -1599,7 +1610,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ArviZ の基本機能とコンバータ"
+   "desc_ja": "ArviZ の基本機能とコンバータ",
+   "desc_en": "Base ArviZ features and converters."
   },
   {
    "id": "arviz-plots",
@@ -1617,8 +1629,9 @@
    "com": 9,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "ベイズワークフロー向けのすぐ使える組み合わせ可能なプロット集"
+   "cat": "統計・時系列",
+   "desc_ja": "ベイズワークフロー向けのすぐ使える組み合わせ可能なプロット集",
+   "desc_en": "ArviZ-plots provides ready to use and composable plots for Bayesian Workflow."
   },
   {
    "id": "arviz-stats",
@@ -1636,8 +1649,9 @@
    "com": 9,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "ArviZ 向けの統計計算・診断機能"
+   "cat": "統計・時系列",
+   "desc_ja": "ArviZ 向けの統計計算・診断機能",
+   "desc_en": "Statistical computation and diagnostics for ArviZ."
   },
   {
    "id": "asttokens",
@@ -1656,7 +1670,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "AST ツリーにソースコードの位置情報を付与するライブラリ"
+   "desc_ja": "AST ツリーにソースコードの位置情報を付与するライブラリ",
+   "desc_en": "Annotate AST trees with source code positions"
   },
   {
    "id": "async-lru",
@@ -1675,7 +1690,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "asyncio 向けのシンプルな LRU キャッシュ"
+   "desc_ja": "asyncio 向けのシンプルな LRU キャッシュ",
+   "desc_en": "Simple LRU cache for asyncio"
   },
   {
    "id": "attrs",
@@ -1694,7 +1710,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ボイラープレートなしでクラスを定義できるライブラリ"
+   "desc_ja": "ボイラープレートなしでクラスを定義できるライブラリ",
+   "desc_en": "Classes Without Boilerplate"
   },
   {
    "id": "autograd",
@@ -1713,7 +1730,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "NumPy コードの微分を効率的に計算するライブラリ"
+   "desc_ja": "NumPy コードの微分を効率的に計算するライブラリ",
+   "desc_en": "Efficiently computes derivatives of NumPy code."
   },
   {
    "id": "autograd-gamma",
@@ -1732,7 +1750,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "ガンマ関数族の Autograd 対応近似"
+   "desc_ja": "ガンマ関数族の Autograd 対応近似",
+   "desc_en": "Autograd compatible approximations to the gamma family of functions"
   },
   {
    "id": "babel",
@@ -1751,7 +1770,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "国際化ユーティリティ"
+   "desc_ja": "国際化ユーティリティ",
+   "desc_en": "Internationalization utilities"
   },
   {
    "id": "beautifulsoup4",
@@ -1770,7 +1790,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "スクリーンスクレイピング用ライブラリ"
+   "desc_ja": "スクリーンスクレイピング用ライブラリ",
+   "desc_en": "Screen-scraping library"
   },
   {
    "id": "bleach",
@@ -1789,7 +1810,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "セーフリスト方式の手軽な HTML サニタイズツール"
+   "desc_ja": "セーフリスト方式の手軽な HTML サニタイズツール",
+   "desc_en": "An easy safelist-based HTML-sanitizing tool."
   },
   {
    "id": "blinker",
@@ -1808,7 +1830,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "高速でシンプルなオブジェクト間・ブロードキャストのシグナル送信"
+   "desc_ja": "高速でシンプルなオブジェクト間・ブロードキャストのシグナル送信",
+   "desc_en": "Fast, simple object-to-object and broadcast signaling"
   },
   {
    "id": "blis",
@@ -1827,7 +1850,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "BLAS 風線形代数ライブラリ Blis の自己完結型 C 拡張"
+   "desc_ja": "BLAS 風線形代数ライブラリ Blis の自己完結型 C 拡張",
+   "desc_en": "The Blis BLAS-like linear algebra library, as a self-contained C-extension."
   },
   {
    "id": "bokeh",
@@ -1846,7 +1870,8 @@
    "art": 0,
    "seed": 1,
    "cat": "可視化",
-   "desc": "Python からブラウザ上の対話的なプロットやアプリを作成するライブラリ"
+   "desc_ja": "Python からブラウザ上の対話的なプロットやアプリを作成するライブラリ",
+   "desc_en": "Interactive plots and applications in the browser from Python"
   },
   {
    "id": "cachetools",
@@ -1865,7 +1890,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "拡張可能なメモ化コレクションとデコレータ"
+   "desc_ja": "拡張可能なメモ化コレクションとデコレータ",
+   "desc_en": "Extensible memoizing collections and decorators"
   },
   {
    "id": "catalogue",
@@ -1884,7 +1910,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "ライブラリ向けの超軽量な関数レジストリ"
+   "desc_ja": "ライブラリ向けの超軽量な関数レジストリ",
+   "desc_en": "Super lightweight function registries for your library"
   },
   {
    "id": "catboost",
@@ -1903,7 +1930,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "CatBoost の Python パッケージ"
+   "desc_ja": "CatBoost の Python パッケージ",
+   "desc_en": "CatBoost Python Package"
   },
   {
    "id": "category-encoders",
@@ -1922,7 +1950,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "機械学習向けにカテゴリ変数をエンコードするパッケージ"
+   "desc_ja": "機械学習向けにカテゴリ変数をエンコードするパッケージ",
+   "desc_en": "A package for encoding categorical variables for machine learning"
   },
   {
    "id": "certifi",
@@ -1941,7 +1970,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "Mozilla の CA 証明書バンドルを提供する Python パッケージ"
+   "desc_ja": "Mozilla の CA 証明書バンドルを提供する Python パッケージ",
+   "desc_en": "Python package for providing Mozilla's CA Bundle."
   },
   {
    "id": "cffi",
@@ -1960,7 +1990,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python から C コードを呼び出す外部関数インターフェース（FFI）"
+   "desc_ja": "Python から C コードを呼び出す外部関数インターフェース（FFI）",
+   "desc_en": "Foreign Function Interface for Python calling C code."
   },
   {
    "id": "charset-normalizer",
@@ -1979,7 +2010,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "Chardet の代替となる文字コード検出ライブラリ"
+   "desc_ja": "Chardet の代替となる文字コード検出ライブラリ",
+   "desc_en": "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
   },
   {
    "id": "click",
@@ -1998,7 +2030,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "組み合わせ可能なコマンドラインインターフェースツールキット"
+   "desc_ja": "組み合わせ可能なコマンドラインインターフェースツールキット",
+   "desc_en": "Composable command line interface toolkit"
   },
   {
    "id": "cloudpathlib",
@@ -2017,7 +2050,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "クラウドストレージ向けの pathlib 風クラス"
+   "desc_ja": "クラウドストレージ向けの pathlib 風クラス",
+   "desc_en": "pathlib-style classes for cloud storage services."
   },
   {
    "id": "cloudpickle",
@@ -2036,7 +2070,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "標準の pickle.Pickler の機能を拡張する Pickler クラス"
+   "desc_ja": "標準の pickle.Pickler の機能を拡張する Pickler クラス",
+   "desc_en": "Pickler class to extend the standard pickle.Pickler functionality"
   },
   {
    "id": "cmdstanpy",
@@ -2055,7 +2090,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "CmdStan への Python インターフェース"
+   "desc_ja": "CmdStan への Python インターフェース",
+   "desc_en": "Python interface to CmdStan"
   },
   {
    "id": "colorlog",
@@ -2074,7 +2110,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python の logging モジュールの出力に色を付けるライブラリ"
+   "desc_ja": "Python の logging モジュールの出力に色を付けるライブラリ",
+   "desc_en": "Add colours to the output of Python's logging module."
   },
   {
    "id": "comm",
@@ -2093,7 +2130,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "ipykernel や xeus-python などで使う Jupyter Comm の Python 実装"
+   "desc_ja": "ipykernel や xeus-python などで使う Jupyter Comm の Python 実装",
+   "desc_en": "Jupyter Python Comm implementation, for usage in ipykernel, xeus-python etc."
   },
   {
    "id": "confection",
@@ -2112,7 +2150,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "Python 向けの設定管理システム"
+   "desc_ja": "Python 向けの設定管理システム",
+   "desc_en": "The sweetest config system for Python"
   },
   {
    "id": "cons",
@@ -2131,7 +2170,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Lisp/Scheme 風の cons の Python 実装"
+   "desc_ja": "Lisp/Scheme 風の cons の Python 実装",
+   "desc_en": "An implementation of Lisp/Scheme-like cons in Python."
   },
   {
    "id": "contourpy",
@@ -2150,7 +2190,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "2 次元四辺形グリッドの等高線を計算する Python ライブラリ"
+   "desc_ja": "2 次元四辺形グリッドの等高線を計算する Python ライブラリ",
+   "desc_en": "Python library for calculating contours of 2D quadrilateral grids"
   },
   {
    "id": "cryptography",
@@ -2169,7 +2210,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 開発者向けに暗号のレシピとプリミティブを提供するパッケージ"
+   "desc_ja": "Python 開発者向けに暗号のレシピとプリミティブを提供するパッケージ",
+   "desc_en": "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
   },
   {
    "id": "cycler",
@@ -2188,7 +2230,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "組み合わせ可能なスタイルサイクル"
+   "desc_ja": "組み合わせ可能なスタイルサイクル",
+   "desc_en": "Composable style cycles"
   },
   {
    "id": "cymem",
@@ -2207,7 +2250,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "Cython 経由で calloc/free の呼び出しを管理するライブラリ"
+   "desc_ja": "Cython 経由で calloc/free の呼び出しを管理するライブラリ",
+   "desc_en": "Manage calls to calloc/free through Cython"
   },
   {
    "id": "cython",
@@ -2226,7 +2270,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 言語で C 拡張を書くための Cython コンパイラ"
+   "desc_ja": "Python 言語で C 拡張を書くための Cython コンパイラ",
+   "desc_en": "The Cython compiler for writing C extensions in the Python language."
   },
   {
    "id": "databricks-sdk",
@@ -2245,7 +2290,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 向け Databricks SDK（ベータ版）"
+   "desc_ja": "Python 向け Databricks SDK（ベータ版）",
+   "desc_en": "Databricks SDK for Python (Beta)"
   },
   {
    "id": "debugpy",
@@ -2264,7 +2310,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Debug Adapter Protocol の Python 実装"
+   "desc_ja": "Debug Adapter Protocol の Python 実装",
+   "desc_en": "An implementation of the Debug Adapter Protocol for Python"
   },
   {
    "id": "decorator",
@@ -2283,7 +2330,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "人にやさしいデコレータライブラリ"
+   "desc_ja": "人にやさしいデコレータライブラリ",
+   "desc_en": "Decorators for Humans"
   },
   {
    "id": "defusedxml",
@@ -2302,7 +2350,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 標準ライブラリ向けの XML 爆弾攻撃対策"
+   "desc_ja": "Python 標準ライブラリ向けの XML 爆弾攻撃対策",
+   "desc_en": "XML bomb protection for Python stdlib modules"
   },
   {
    "id": "docker",
@@ -2321,7 +2370,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Docker Engine API 用の Python ライブラリ"
+   "desc_ja": "Docker Engine API 用の Python ライブラリ",
+   "desc_en": "A Python library for the Docker Engine API."
   },
   {
    "id": "duckdb",
@@ -2340,7 +2390,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "インプロセスデータベース DuckDB"
+   "desc_ja": "インプロセスデータベース DuckDB",
+   "desc_en": "DuckDB in-process database"
   },
   {
    "id": "etuples",
@@ -2359,7 +2410,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "タプル風オブジェクトによる S 式エミュレーション"
+   "desc_ja": "タプル風オブジェクトによる S 式エミュレーション",
+   "desc_en": "Python S-expression emulation using tuple-like objects."
   },
   {
    "id": "exceptiongroup",
@@ -2378,7 +2430,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "PEP 654（例外グループ）のバックポート"
+   "desc_ja": "PEP 654（例外グループ）のバックポート",
+   "desc_en": "Backport of PEP 654 (exception groups)"
   },
   {
    "id": "executing",
@@ -2397,7 +2450,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "実行中のフレームの AST ノードなどの情報を取得するライブラリ"
+   "desc_ja": "実行中のフレームの AST ノードなどの情報を取得するライブラリ",
+   "desc_en": "Get the currently executing AST node of a frame, and other information"
   },
   {
    "id": "fastapi",
@@ -2416,7 +2470,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "高性能で習得しやすい FastAPI フレームワーク"
+   "desc_ja": "高性能で習得しやすい FastAPI フレームワーク",
+   "desc_en": "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
   },
   {
    "id": "fastjsonschema",
@@ -2435,7 +2490,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "JSON Schema の高速な Python 実装"
+   "desc_ja": "JSON Schema の高速な Python 実装",
+   "desc_en": "Fastest Python implementation of JSON schema"
   },
   {
    "id": "filelock",
@@ -2454,7 +2510,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "プラットフォーム非依存のファイルロック"
+   "desc_ja": "プラットフォーム非依存のファイルロック",
+   "desc_en": "A platform independent file lock."
   },
   {
    "id": "flask",
@@ -2473,7 +2530,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "複雑な Web アプリケーションを構築するためのシンプルなフレームワーク"
+   "desc_ja": "複雑な Web アプリケーションを構築するためのシンプルなフレームワーク",
+   "desc_en": "A simple framework for building complex web applications."
   },
   {
    "id": "flask-cors",
@@ -2492,7 +2550,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "CORS 対応を簡単にする Flask 拡張"
+   "desc_ja": "CORS 対応を簡単にする Flask 拡張",
+   "desc_en": "A Flask extension simplifying CORS support"
   },
   {
    "id": "fonttools",
@@ -2511,7 +2570,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "フォントファイルを操作するためのツール"
+   "desc_ja": "フォントファイルを操作するためのツール",
+   "desc_en": "Tools to manipulate font files"
   },
   {
    "id": "formulaic",
@@ -2530,7 +2590,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "Wilkinson 式の実装"
+   "desc_ja": "Wilkinson 式の実装",
+   "desc_en": "An implementation of Wilkinson formulas."
   },
   {
    "id": "fqdn",
@@ -2549,7 +2610,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "完全修飾ドメイン名を RFC 1123 に基づいて検証するライブラリ"
+   "desc_ja": "完全修飾ドメイン名を RFC 1123 に基づいて検証するライブラリ",
+   "desc_en": "Validates fully-qualified domain names against RFC 1123, so that they are acceptable to modern bowsers"
   },
   {
    "id": "fsspec",
@@ -2568,7 +2630,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "ファイルシステム仕様"
+   "desc_ja": "ファイルシステム仕様",
+   "desc_en": "File-system specification"
   },
   {
    "id": "gensim",
@@ -2587,7 +2650,8 @@
    "art": 0,
    "seed": 1,
    "cat": "自然言語処理",
-   "desc": "高速なベクトル空間モデリングのための Python フレームワーク"
+   "desc_ja": "高速なベクトル空間モデリングのための Python フレームワーク",
+   "desc_en": "Python framework for fast Vector Space Modelling"
   },
   {
    "id": "gitdb",
@@ -2606,7 +2670,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Git オブジェクトデータベース"
+   "desc_ja": "Git オブジェクトデータベース",
+   "desc_en": "Git Object Database"
   },
   {
    "id": "gitpython",
@@ -2625,7 +2690,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Git リポジトリを操作するための Python ライブラリ"
+   "desc_ja": "Git リポジトリを操作するための Python ライブラリ",
+   "desc_en": "GitPython is a Python library used to interact with Git repositories"
   },
   {
    "id": "google-auth",
@@ -2644,7 +2710,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Google 認証ライブラリ"
+   "desc_ja": "Google 認証ライブラリ",
+   "desc_en": "Google Authentication Library"
   },
   {
    "id": "graphene",
@@ -2663,7 +2730,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 向け GraphQL フレームワーク"
+   "desc_ja": "Python 向け GraphQL フレームワーク",
+   "desc_en": "GraphQL Framework for Python"
   },
   {
    "id": "graphql-core",
@@ -2682,7 +2750,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "リファレンス実装 GraphQL.js を移植した Python 向け GraphQL 実装"
+   "desc_ja": "リファレンス実装 GraphQL.js を移植した Python 向け GraphQL 実装",
+   "desc_en": "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
   },
   {
    "id": "graphql-relay",
@@ -2701,7 +2770,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "graphql-core 向けの Relay ライブラリ"
+   "desc_ja": "graphql-core 向けの Relay ライブラリ",
+   "desc_en": "Relay library for graphql-core"
   },
   {
    "id": "graphviz",
@@ -2720,7 +2790,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "Graphviz のシンプルな Python インターフェース"
+   "desc_ja": "Graphviz のシンプルな Python インターフェース",
+   "desc_en": "Simple Python interface for Graphviz"
   },
   {
    "id": "greenlet",
@@ -2739,7 +2810,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "軽量なインプロセス並行プログラミング"
+   "desc_ja": "軽量なインプロセス並行プログラミング",
+   "desc_en": "Lightweight in-process concurrent programming"
   },
   {
    "id": "gunicorn",
@@ -2758,7 +2830,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "UNIX 向けの WSGI HTTP サーバー"
+   "desc_ja": "UNIX 向けの WSGI HTTP サーバー",
+   "desc_en": "WSGI HTTP Server for UNIX"
   },
   {
    "id": "h11",
@@ -2777,7 +2850,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "I/O 非依存の純 Python 製 HTTP/1.1 実装"
+   "desc_ja": "I/O 非依存の純 Python 製 HTTP/1.1 実装",
+   "desc_en": "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
   },
   {
    "id": "h5py",
@@ -2796,7 +2870,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "Python から HDF5 ファイルを読み書きするライブラリ"
+   "desc_ja": "Python から HDF5 ファイルを読み書きするライブラリ",
+   "desc_en": "Read and write HDF5 files from Python"
   },
   {
    "id": "hdbscan",
@@ -2815,7 +2890,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "可変密度クラスタに対応した密度ベースのクラスタリング"
+   "desc_ja": "可変密度クラスタに対応した密度ベースのクラスタリング",
+   "desc_en": "Clustering based on density with variable density clusters"
   },
   {
    "id": "hf-xet",
@@ -2834,7 +2910,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Hugging Face Hub での大容量ファイルの高速転送"
+   "desc_ja": "Hugging Face Hub での大容量ファイルの高速転送",
+   "desc_en": "Fast transfer of large files with the Hugging Face Hub."
   },
   {
    "id": "holidays",
@@ -2853,7 +2930,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "世界の祝日を扱うオープンなフレームワーク"
+   "desc_ja": "世界の祝日を扱うオープンなフレームワーク",
+   "desc_en": "Open World Holidays Framework"
   },
   {
    "id": "httpcore",
@@ -2872,7 +2950,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "最小限の低レベル HTTP クライアント"
+   "desc_ja": "最小限の低レベル HTTP クライアント",
+   "desc_en": "A minimal low-level HTTP client."
   },
   {
    "id": "httpx",
@@ -2891,7 +2970,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "次世代の HTTP クライアント"
+   "desc_ja": "次世代の HTTP クライアント",
+   "desc_en": "The next generation HTTP client."
   },
   {
    "id": "huey",
@@ -2910,7 +2990,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "小さなタスクキュー"
+   "desc_ja": "小さなタスクキュー",
+   "desc_en": "a little task queue"
   },
   {
    "id": "huggingface-hub",
@@ -2929,7 +3010,8 @@
    "art": 1,
    "seed": 0,
    "cat": "機械学習",
-   "desc": "huggingface.co のモデルやデータセット等を取得・公開するクライアント"
+   "desc_ja": "huggingface.co のモデルやデータセット等を取得・公開するクライアント",
+   "desc_en": "Client library to download and publish models, datasets and other repos on the huggingface.co hub"
   },
   {
    "id": "idna",
@@ -2948,7 +3030,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "アプリケーションにおける国際化ドメイン名（IDNA）"
+   "desc_ja": "アプリケーションにおける国際化ドメイン名（IDNA）",
+   "desc_en": "Internationalized Domain Names in Applications (IDNA)"
   },
   {
    "id": "imageio",
@@ -2967,7 +3050,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "主要形式の画像・動画を読み書きするライブラリ。科学・立体データにも対応"
+   "desc_ja": "主要形式の画像・動画を読み書きするライブラリ。科学・立体データにも対応",
+   "desc_en": "Read and write images and video across all major formats. Supports scientific and volumetric data."
   },
   {
    "id": "imbalanced-learn",
@@ -2986,7 +3070,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "機械学習における不均衡データセット向けのツールボックス"
+   "desc_ja": "機械学習における不均衡データセット向けのツールボックス",
+   "desc_en": "Toolbox for imbalanced dataset in machine learning"
   },
   {
    "id": "importlib-metadata",
@@ -3005,7 +3090,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python パッケージのメタデータを読み取るライブラリ"
+   "desc_ja": "Python パッケージのメタデータを読み取るライブラリ",
+   "desc_en": "Read metadata from Python packages"
   },
   {
    "id": "importlib-resources",
@@ -3024,7 +3110,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python パッケージのリソースを読み取るライブラリ"
+   "desc_ja": "Python パッケージのリソースを読み取るライブラリ",
+   "desc_en": "Read resources from Python packages"
   },
   {
    "id": "interface-meta",
@@ -3043,7 +3130,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "メソッドシグネチャの強制と一貫した文書化を備えた拡張可能な API を提供"
+   "desc_ja": "メソッドシグネチャの強制と一貫した文書化を備えた拡張可能な API を提供",
+   "desc_en": "`interface_meta` provides a convenient way to expose an extensible API with enforced method signatures and consistent documentation."
   },
   {
    "id": "ipykernel",
@@ -3062,7 +3150,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter 向けの IPython カーネル"
+   "desc_ja": "Jupyter 向けの IPython カーネル",
+   "desc_en": "IPython Kernel for Jupyter"
   },
   {
    "id": "ipython",
@@ -3081,7 +3170,8 @@
    "art": 1,
    "seed": 1,
    "cat": "Jupyter・開発環境",
-   "desc": "生産的な対話型コンピューティング環境 IPython"
+   "desc_ja": "生産的な対話型コンピューティング環境 IPython",
+   "desc_en": "IPython: Productive Interactive Computing"
   },
   {
    "id": "ipython-pygments-lexers",
@@ -3100,7 +3190,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "IPython コードをハイライトする各種 Pygments レクサーの定義"
+   "desc_ja": "IPython コードをハイライトする各種 Pygments レクサーの定義",
+   "desc_en": "Defines a variety of Pygments lexers for highlighting IPython code."
   },
   {
    "id": "ipywidgets",
@@ -3119,7 +3210,8 @@
    "art": 0,
    "seed": 1,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter のインタラクティブウィジェット"
+   "desc_ja": "Jupyter のインタラクティブウィジェット",
+   "desc_en": "Jupyter interactive widgets"
   },
   {
    "id": "isoduration",
@@ -3138,7 +3230,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ISO 8601 の期間（duration）を操作するライブラリ"
+   "desc_ja": "ISO 8601 の期間（duration）を操作するライブラリ",
+   "desc_en": "Operations with ISO 8601 durations"
   },
   {
    "id": "itsdangerous",
@@ -3157,7 +3250,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "信頼できない環境とのデータの安全な受け渡しを行うライブラリ"
+   "desc_ja": "信頼できない環境とのデータの安全な受け渡しを行うライブラリ",
+   "desc_en": "Safely pass data to untrusted environments and back."
   },
   {
    "id": "jax",
@@ -3176,7 +3270,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "NumPy コードの微分・コンパイル・変換を行うライブラリ"
+   "desc_ja": "NumPy コードの微分・コンパイル・変換を行うライブラリ",
+   "desc_en": "Differentiate, compile, and transform Numpy code."
   },
   {
    "id": "jaxlib",
@@ -3195,7 +3290,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": "JAX 用の XLA ライブラリ"
+   "desc_ja": "JAX 用の XLA ライブラリ",
+   "desc_en": "XLA library for JAX"
   },
   {
    "id": "jedi",
@@ -3214,7 +3310,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "テキストエディタで使える Python の自動補完ツール"
+   "desc_ja": "テキストエディタで使える Python の自動補完ツール",
+   "desc_en": "An autocompletion tool for Python that can be used for text editors."
   },
   {
    "id": "jinja2",
@@ -3233,7 +3330,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "高速で表現力のあるテンプレートエンジン"
+   "desc_ja": "高速で表現力のあるテンプレートエンジン",
+   "desc_en": "A very fast and expressive template engine."
   },
   {
    "id": "joblib",
@@ -3252,7 +3350,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "Python 関数による軽量なパイプライン処理"
+   "desc_ja": "Python 関数による軽量なパイプライン処理",
+   "desc_en": "Lightweight pipelining with Python functions"
   },
   {
    "id": "json5",
@@ -3271,7 +3370,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "JSON5 データ形式の Python 実装"
+   "desc_ja": "JSON5 データ形式の Python 実装",
+   "desc_en": "A Python implementation of the JSON5 data format."
   },
   {
    "id": "jsonpointer",
@@ -3290,7 +3390,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "JSON 文書内の特定ノードを指定するライブラリ（RFC 6901）"
+   "desc_ja": "JSON 文書内の特定ノードを指定するライブラリ（RFC 6901）",
+   "desc_en": "Identify specific nodes in a JSON document (RFC 6901)"
   },
   {
    "id": "jsonschema",
@@ -3309,7 +3410,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 向け JSON Schema バリデーションの実装"
+   "desc_ja": "Python 向け JSON Schema バリデーションの実装",
+   "desc_en": "An implementation of JSON Schema validation for Python"
   },
   {
    "id": "jsonschema-specifications",
@@ -3328,7 +3430,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "JSON Schema のメタスキーマと語彙をレジストリとして提供"
+   "desc_ja": "JSON Schema のメタスキーマと語彙をレジストリとして提供",
+   "desc_en": "The JSON Schema meta-schemas and vocabularies, exposed as a Registry"
   },
   {
    "id": "jupyter",
@@ -3347,7 +3450,8 @@
    "art": 0,
    "seed": 1,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter の全コンポーネントを一括インストールするメタパッケージ"
+   "desc_ja": "Jupyter の全コンポーネントを一括インストールするメタパッケージ",
+   "desc_en": "Jupyter metapackage. Install all the Jupyter components in one go."
   },
   {
    "id": "jupyter-client",
@@ -3366,7 +3470,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter プロトコルの実装とクライアントライブラリ"
+   "desc_ja": "Jupyter プロトコルの実装とクライアントライブラリ",
+   "desc_en": "Jupyter protocol implementation and client libraries"
   },
   {
    "id": "jupyter-console",
@@ -3385,7 +3490,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter のターミナルコンソール"
+   "desc_ja": "Jupyter のターミナルコンソール",
+   "desc_en": "Jupyter terminal console"
   },
   {
    "id": "jupyter-core",
@@ -3404,7 +3510,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter 各プロジェクトが依存する基盤パッケージ"
+   "desc_ja": "Jupyter 各プロジェクトが依存する基盤パッケージ",
+   "desc_en": "Jupyter core package. A base package on which Jupyter projects rely."
   },
   {
    "id": "jupyter-events",
@@ -3423,7 +3530,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter のイベントシステムライブラリ"
+   "desc_ja": "Jupyter のイベントシステムライブラリ",
+   "desc_en": "Jupyter Event System library"
   },
   {
    "id": "jupyter-lsp",
@@ -3442,7 +3550,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter サーバー向け多言語サーバー WebSocket プロキシ"
+   "desc_ja": "Jupyter サーバー向け多言語サーバー WebSocket プロキシ",
+   "desc_en": "Multi-Language Server WebSocket proxy for Jupyter Notebook/Lab server"
   },
   {
    "id": "jupyter-server",
@@ -3461,7 +3570,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter Web アプリのバックエンド（コアサービス・API・REST）"
+   "desc_ja": "Jupyter Web アプリのバックエンド（コアサービス・API・REST）",
+   "desc_en": "The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web applications."
   },
   {
    "id": "jupyter-server-terminals",
@@ -3480,7 +3590,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "ターミナル機能を提供する Jupyter Server 拡張"
+   "desc_ja": "ターミナル機能を提供する Jupyter Server 拡張",
+   "desc_en": "A Jupyter Server Extension Providing Terminals."
   },
   {
    "id": "jupyterlab",
@@ -3499,7 +3610,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "JupyterLab の計算環境"
+   "desc_ja": "JupyterLab の計算環境",
+   "desc_en": "JupyterLab computational environment"
   },
   {
    "id": "jupyterlab-pygments",
@@ -3518,7 +3630,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "JupyterLab の CSS 変数を使った Pygments テーマ"
+   "desc_ja": "JupyterLab の CSS 変数を使った Pygments テーマ",
+   "desc_en": "Pygments theme using JupyterLab CSS variables"
   },
   {
    "id": "jupyterlab-server",
@@ -3537,7 +3650,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "JupyterLab 系アプリ向けのサーバーコンポーネント群"
+   "desc_ja": "JupyterLab 系アプリ向けのサーバーコンポーネント群",
+   "desc_en": "A set of server components for JupyterLab and JupyterLab like applications."
   },
   {
    "id": "jupyterlab-widgets",
@@ -3556,7 +3670,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "JupyterLab 向けの Jupyter インタラクティブウィジェット"
+   "desc_ja": "JupyterLab 向けの Jupyter インタラクティブウィジェット",
+   "desc_en": "Jupyter interactive widgets for JupyterLab"
   },
   {
    "id": "keras",
@@ -3575,7 +3690,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "マルチバックエンド対応の Keras"
+   "desc_ja": "マルチバックエンド対応の Keras",
+   "desc_en": "Multi-backend Keras"
   },
   {
    "id": "kiwisolver",
@@ -3594,7 +3710,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "制約ソルバー Cassowary の高速実装"
+   "desc_ja": "制約ソルバー Cassowary の高速実装",
+   "desc_en": "A fast implementation of the Cassowary constraint solver"
   },
   {
    "id": "langcodes",
@@ -3613,7 +3730,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "IETF 言語タグで言語をラベル付けするツール"
+   "desc_ja": "IETF 言語タグで言語をラベル付けするツール",
+   "desc_en": "Tools for labeling human languages with IETF language tags"
   },
   {
    "id": "lark",
@@ -3632,7 +3750,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "モダンな構文解析ライブラリ"
+   "desc_ja": "モダンな構文解析ライブラリ",
+   "desc_en": "a modern parsing library"
   },
   {
    "id": "lazy-loader",
@@ -3651,7 +3770,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "サブパッケージや関数のオンデマンド読み込みを容易にするライブラリ"
+   "desc_ja": "サブパッケージや関数のオンデマンド読み込みを容易にするライブラリ",
+   "desc_en": "Makes it easy to load subpackages and functions on demand."
   },
   {
    "id": "lifelines",
@@ -3670,7 +3790,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "Kaplan-Meier・Nelson-Aalen・回帰を含む生存分析ライブラリ"
+   "desc_ja": "Kaplan-Meier・Nelson-Aalen・回帰を含む生存分析ライブラリ",
+   "desc_en": "Survival analysis in Python, including Kaplan Meier, Nelson Aalen and regression"
   },
   {
    "id": "lightgbm",
@@ -3689,7 +3810,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "LightGBM の Python パッケージ"
+   "desc_ja": "LightGBM の Python パッケージ",
+   "desc_en": "LightGBM Python-package"
   },
   {
    "id": "llvmlite",
@@ -3708,7 +3830,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "LLVM の基本機能の軽量ラッパー"
+   "desc_ja": "LLVM の基本機能の軽量ラッパー",
+   "desc_en": "lightweight wrapper around basic LLVM functionality"
   },
   {
    "id": "logical-unification",
@@ -3727,7 +3850,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python における論理ユニフィケーション（単一化）"
+   "desc_ja": "Python における論理ユニフィケーション（単一化）",
+   "desc_en": "Logical unification in Python"
   },
   {
    "id": "mako",
@@ -3746,7 +3870,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "既存テンプレート言語の長所を取り入れた高速テンプレート言語"
+   "desc_ja": "既存テンプレート言語の長所を取り入れた高速テンプレート言語",
+   "desc_en": "A super-fast templating language that borrows the best ideas from the existing templating languages."
   },
   {
    "id": "markdown-it-py",
@@ -3765,7 +3890,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "markdown-it の Python 移植版（Markdown 解析）"
+   "desc_ja": "markdown-it の Python 移植版（Markdown 解析）",
+   "desc_en": "Python port of markdown-it. Markdown parsing, done right!"
   },
   {
    "id": "markupsafe",
@@ -3784,7 +3910,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "信頼できない文字列を HTML/XML に安全に埋め込むライブラリ"
+   "desc_ja": "信頼できない文字列を HTML/XML に安全に埋め込むライブラリ",
+   "desc_en": "Safely add untrusted strings to HTML/XML markup."
   },
   {
    "id": "matplotlib",
@@ -3803,7 +3930,8 @@
    "art": 1,
    "seed": 0,
    "cat": "可視化",
-   "desc": "Python のグラフ描画パッケージ"
+   "desc_ja": "Python のグラフ描画パッケージ",
+   "desc_en": "Python plotting package"
   },
   {
    "id": "matplotlib-inline",
@@ -3822,7 +3950,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter 向けのインライン Matplotlib バックエンド"
+   "desc_ja": "Jupyter 向けのインライン Matplotlib バックエンド",
+   "desc_en": "Inline Matplotlib backend for Jupyter"
   },
   {
    "id": "mdurl",
@@ -3841,7 +3970,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Markdown の URL ユーティリティ"
+   "desc_ja": "Markdown の URL ユーティリティ",
+   "desc_en": "Markdown URL utilities"
   },
   {
    "id": "minikanren",
@@ -3860,7 +3990,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python における関係プログラミング"
+   "desc_ja": "Python における関係プログラミング",
+   "desc_en": "Relational programming in Python"
   },
   {
    "id": "mistune",
@@ -3879,7 +4010,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "プラグインとレンダラーを備えた高速な Markdown パーサー"
+   "desc_ja": "プラグインとレンダラーを備えた高速な Markdown パーサー",
+   "desc_en": "A sane and fast Markdown parser with useful plugins and renderers"
   },
   {
    "id": "ml-dtypes",
@@ -3897,8 +4029,9 @@
    "com": 8,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "機械学習で使う NumPy dtype 拡張の単体実装"
+   "cat": "機械学習",
+   "desc_ja": "機械学習で使う NumPy dtype 拡張の単体実装",
+   "desc_en": "ml_dtypes is a stand-alone implementation of several NumPy dtype extensions used in machine learning."
   },
   {
    "id": "mlflow",
@@ -3917,7 +4050,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+   "desc_ja": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム",
+   "desc_en": "MLflow is an open source platform for the complete machine learning lifecycle"
   },
   {
    "id": "mlflow-skinny",
@@ -3936,7 +4070,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+   "desc_ja": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム",
+   "desc_en": "MLflow is an open source platform for the complete machine learning lifecycle"
   },
   {
    "id": "mlflow-tracing",
@@ -3955,7 +4090,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "最小限の依存で MLflow Tracing の計装機能を提供する軽量パッケージ"
+   "desc_ja": "最小限の依存で MLflow Tracing の計装機能を提供する軽量パッケージ",
+   "desc_en": "MLflow Tracing SDK is an open-source, lightweight Python package that only includes the minimum set of dependencies and functionality to instrument your code/models/agents with MLflow Tracing."
   },
   {
    "id": "mpmath",
@@ -3974,7 +4110,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "任意精度浮動小数点演算のための Python ライブラリ"
+   "desc_ja": "任意精度浮動小数点演算のための Python ライブラリ",
+   "desc_en": "Python library for arbitrary-precision floating-point arithmetic"
   },
   {
    "id": "multipledispatch",
@@ -3993,7 +4130,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "多重ディスパッチ"
+   "desc_ja": "多重ディスパッチ",
+   "desc_en": "Multiple dispatch"
   },
   {
    "id": "murmurhash",
@@ -4012,7 +4150,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "MurmurHash の Cython バインディング"
+   "desc_ja": "MurmurHash の Cython バインディング",
+   "desc_en": "Cython bindings for MurmurHash"
   },
   {
    "id": "namex",
@@ -4031,7 +4170,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "パッケージの実装と公開 API を分離するシンプルなユーティリティ"
+   "desc_ja": "パッケージの実装と公開 API を分離するシンプルなユーティリティ",
+   "desc_en": "A simple utility to separate the implementation of your Python package and its public API surface."
   },
   {
    "id": "narwhals",
@@ -4050,7 +4190,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "データフレームライブラリ間の超軽量互換レイヤー"
+   "desc_ja": "データフレームライブラリ間の超軽量互換レイヤー",
+   "desc_en": "Extremely lightweight compatibility layer between dataframe libraries"
   },
   {
    "id": "nbclient",
@@ -4069,7 +4210,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "ノートブックを実行するためのクライアントライブラリ"
+   "desc_ja": "ノートブックを実行するためのクライアントライブラリ",
+   "desc_en": "A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor."
   },
   {
    "id": "nbconvert",
@@ -4088,7 +4230,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter Notebook（.ipynb）を他形式へ変換するツール"
+   "desc_ja": "Jupyter Notebook（.ipynb）を他形式へ変換するツール",
+   "desc_en": "Convert Jupyter Notebooks (.ipynb files) to other formats."
   },
   {
    "id": "nbformat",
@@ -4107,7 +4250,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter Notebook のフォーマット"
+   "desc_ja": "Jupyter Notebook のフォーマット",
+   "desc_en": "The Jupyter Notebook format"
   },
   {
    "id": "nest-asyncio2",
@@ -4126,7 +4270,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "asyncio にネストしたイベントループを許可するパッチ"
+   "desc_ja": "asyncio にネストしたイベントループを許可するパッチ",
+   "desc_en": "Patch asyncio to allow nested event loops"
   },
   {
    "id": "networkx",
@@ -4145,7 +4290,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "グラフ・ネットワークの作成と操作のための Python パッケージ"
+   "desc_ja": "グラフ・ネットワークの作成と操作のための Python パッケージ",
+   "desc_en": "Python package for creating and manipulating graphs and networks"
   },
   {
    "id": "nltk",
@@ -4164,7 +4310,8 @@
    "art": 0,
    "seed": 1,
    "cat": "自然言語処理",
-   "desc": "自然言語処理ツールキット"
+   "desc_ja": "自然言語処理ツールキット",
+   "desc_en": "Natural Language Toolkit"
   },
   {
    "id": "notebook",
@@ -4183,7 +4330,8 @@
    "art": 0,
    "seed": 1,
    "cat": "Jupyter・開発環境",
-   "desc": "対話的な計算のための Web ベースノートブック環境（Jupyter Notebook）"
+   "desc_ja": "対話的な計算のための Web ベースノートブック環境（Jupyter Notebook）",
+   "desc_en": "Jupyter Notebook - A web-based notebook environment for interactive computing"
   },
   {
    "id": "notebook-shim",
@@ -4202,7 +4350,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ノートブックの trait と設定のためのシム層"
+   "desc_ja": "ノートブックの trait と設定のためのシム層",
+   "desc_en": "A shim layer for notebook traits and config"
   },
   {
    "id": "numba",
@@ -4221,7 +4370,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "LLVM を用いた Python コードのコンパイル"
+   "desc_ja": "LLVM を用いた Python コードのコンパイル",
+   "desc_en": "compiling Python code using LLVM"
   },
   {
    "id": "numpy",
@@ -4240,7 +4390,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "Python の配列計算のための基盤パッケージ"
+   "desc_ja": "Python の配列計算のための基盤パッケージ",
+   "desc_en": "Fundamental package for array computing in Python"
   },
   {
    "id": "nvidia-nccl-cu12",
@@ -4259,7 +4410,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "NVIDIA 集合通信ライブラリ（NCCL）ランタイム"
+   "desc_ja": "NVIDIA 集合通信ライブラリ（NCCL）ランタイム",
+   "desc_en": "NVIDIA Collective Communication Library (NCCL) Runtime"
   },
   {
    "id": "opentelemetry-api",
@@ -4278,7 +4430,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "OpenTelemetry の Python API"
+   "desc_ja": "OpenTelemetry の Python API",
+   "desc_en": "OpenTelemetry Python API"
   },
   {
    "id": "opentelemetry-proto",
@@ -4297,7 +4450,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "OpenTelemetry の Python 用 Proto"
+   "desc_ja": "OpenTelemetry の Python 用 Proto",
+   "desc_en": "OpenTelemetry Python Proto"
   },
   {
    "id": "opentelemetry-sdk",
@@ -4316,7 +4470,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "OpenTelemetry の Python SDK"
+   "desc_ja": "OpenTelemetry の Python SDK",
+   "desc_en": "OpenTelemetry Python SDK"
   },
   {
    "id": "opentelemetry-semantic-conventions",
@@ -4335,7 +4490,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "OpenTelemetry のセマンティック規約"
+   "desc_ja": "OpenTelemetry のセマンティック規約",
+   "desc_en": "OpenTelemetry Semantic Conventions"
   },
   {
    "id": "opt-einsum",
@@ -4354,7 +4510,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "einsum 関数の計算経路最適化"
+   "desc_ja": "einsum 関数の計算経路最適化",
+   "desc_en": "Path optimization of einsum functions."
   },
   {
    "id": "optree",
@@ -4373,7 +4530,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "最適化された PyTree ユーティリティ"
+   "desc_ja": "最適化された PyTree ユーティリティ",
+   "desc_en": "Optimized PyTree Utilities."
   },
   {
    "id": "optuna",
@@ -4392,7 +4550,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "ハイパーパラメータ最適化フレームワーク"
+   "desc_ja": "ハイパーパラメータ最適化フレームワーク",
+   "desc_en": "A hyperparameter optimization framework"
   },
   {
    "id": "overrides",
@@ -4411,7 +4570,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "メソッドオーバーライド時の不一致を自動検出するデコレータ"
+   "desc_ja": "メソッドオーバーライド時の不一致を自動検出するデコレータ",
+   "desc_en": "A decorator to automatically detect mismatch when overriding a method."
   },
   {
    "id": "packaging",
@@ -4430,7 +4590,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python パッケージのためのコアユーティリティ"
+   "desc_ja": "Python パッケージのためのコアユーティリティ",
+   "desc_en": "Core utilities for Python packages"
   },
   {
    "id": "pandas",
@@ -4449,7 +4610,8 @@
    "art": 1,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "データ分析・時系列・統計のための強力なデータ構造"
+   "desc_ja": "データ分析・時系列・統計のための強力なデータ構造",
+   "desc_en": "Powerful data structures for data analysis, time series, and statistics"
   },
   {
    "id": "pandas-flavor",
@@ -4468,7 +4630,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "独自の Pandas フレーバーを簡単に書くためのツール"
+   "desc_ja": "独自の Pandas フレーバーを簡単に書くためのツール",
+   "desc_en": "The easy way to write your own Pandas flavor"
   },
   {
    "id": "pandocfilters",
@@ -4487,7 +4650,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python で pandoc フィルタを書くためのユーティリティ"
+   "desc_ja": "Python で pandoc フィルタを書くためのユーティリティ",
+   "desc_en": "Utilities for writing pandoc filters in python"
   },
   {
    "id": "parso",
@@ -4506,7 +4670,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Python パーサー"
+   "desc_ja": "Python パーサー",
+   "desc_en": "A Python Parser"
   },
   {
    "id": "patsy",
@@ -4525,7 +4690,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "統計モデルの記述と計画行列の構築のための Python パッケージ"
+   "desc_ja": "統計モデルの記述と計画行列の構築のための Python パッケージ",
+   "desc_en": "A Python package for describing statistical models and for building design matrices."
   },
   {
    "id": "pexpect",
@@ -4544,7 +4710,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "対話型コンソールアプリを簡単に制御するライブラリ"
+   "desc_ja": "対話型コンソールアプリを簡単に制御するライブラリ",
+   "desc_en": "Pexpect allows easy control of interactive console applications."
   },
   {
    "id": "pillow",
@@ -4563,7 +4730,8 @@
    "art": 0,
    "seed": 1,
    "cat": "可視化",
-   "desc": "Python Imaging Library のフォーク"
+   "desc_ja": "Python Imaging Library のフォーク",
+   "desc_en": "Python Imaging Library (fork)"
   },
   {
    "id": "pingouin",
@@ -4582,7 +4750,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "Python 向け統計パッケージ"
+   "desc_ja": "Python 向け統計パッケージ",
+   "desc_en": "Pingouin: statistical package for Python"
   },
   {
    "id": "platformdirs",
@@ -4601,7 +4770,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "プラットフォーム固有のディレクトリを判定する小型パッケージ"
+   "desc_ja": "プラットフォーム固有のディレクトリを判定する小型パッケージ",
+   "desc_en": "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
   },
   {
    "id": "plotly",
@@ -4620,7 +4790,8 @@
    "art": 0,
    "seed": 1,
    "cat": "可視化",
-   "desc": "Python のオープンソース対話型データ可視化ライブラリ"
+   "desc_ja": "Python のオープンソース対話型データ可視化ライブラリ",
+   "desc_en": "An open-source interactive data visualization library for Python"
   },
   {
    "id": "pmdarima",
@@ -4639,7 +4810,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "forecast::auto.arima に相当する Python パッケージ"
+   "desc_ja": "forecast::auto.arima に相当する Python パッケージ",
+   "desc_en": "Python's forecast::auto.arima equivalent"
   },
   {
    "id": "polars",
@@ -4658,7 +4830,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "高速な DataFrame ライブラリ"
+   "desc_ja": "高速な DataFrame ライブラリ",
+   "desc_en": "Blazingly fast DataFrame library"
   },
   {
    "id": "polars-runtime-32",
@@ -4677,7 +4850,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "高速な DataFrame ライブラリ"
+   "desc_ja": "高速な DataFrame ライブラリ",
+   "desc_en": "Blazingly fast DataFrame library"
   },
   {
    "id": "preshed",
@@ -4696,7 +4870,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "キーが事前ハッシュ済みである前提の Cython ハッシュテーブル"
+   "desc_ja": "キーが事前ハッシュ済みである前提の Cython ハッシュテーブル",
+   "desc_en": "Cython hash table that trusts the keys are pre-hashed"
   },
   {
    "id": "prettytable",
@@ -4715,7 +4890,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "表データを ASCII テーブル形式で見やすく表示するライブラリ"
+   "desc_ja": "表データを ASCII テーブル形式で見やすく表示するライブラリ",
+   "desc_en": "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
   },
   {
    "id": "prometheus-client",
@@ -4734,7 +4910,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "監視システム Prometheus の Python クライアント"
+   "desc_ja": "監視システム Prometheus の Python クライアント",
+   "desc_en": "Python client for the Prometheus monitoring system."
   },
   {
    "id": "prompt-toolkit",
@@ -4753,7 +4930,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "対話型コマンドラインを構築するためのライブラリ"
+   "desc_ja": "対話型コマンドラインを構築するためのライブラリ",
+   "desc_en": "Library for building powerful interactive command lines in Python"
   },
   {
    "id": "prophet",
@@ -4772,7 +4950,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "自動予測プロシージャ"
+   "desc_ja": "自動予測プロシージャ",
+   "desc_en": "Automatic Forecasting Procedure"
   },
   {
    "id": "protobuf",
@@ -4791,7 +4970,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": ""
+   "desc_ja": "",
+   "desc_en": ""
   },
   {
    "id": "psutil",
@@ -4810,7 +4990,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "プロセスとシステム監視のためのクロスプラットフォームライブラリ"
+   "desc_ja": "プロセスとシステム監視のためのクロスプラットフォームライブラリ",
+   "desc_en": "Cross-platform lib for process and system monitoring."
   },
   {
    "id": "ptyprocess",
@@ -4829,7 +5010,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "疑似端末でサブプロセスを実行するライブラリ"
+   "desc_ja": "疑似端末でサブプロセスを実行するライブラリ",
+   "desc_en": "Run a subprocess in a pseudo terminal"
   },
   {
    "id": "pure-eval",
@@ -4848,7 +5030,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "副作用なしで AST ノードを安全に評価するライブラリ"
+   "desc_ja": "副作用なしで AST ノードを安全に評価するライブラリ",
+   "desc_en": "Safely evaluate AST nodes without side effects"
   },
   {
    "id": "pyarrow",
@@ -4867,7 +5050,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "Apache Arrow の Python ライブラリ"
+   "desc_ja": "Apache Arrow の Python ライブラリ",
+   "desc_en": "Python library for Apache Arrow"
   },
   {
    "id": "pyasn1",
@@ -4886,7 +5070,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ASN.1 型と DER/BER/CER コーデックの純 Python 実装"
+   "desc_ja": "ASN.1 型と DER/BER/CER コーデックの純 Python 実装",
+   "desc_en": "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)"
   },
   {
    "id": "pyasn1-modules",
@@ -4905,7 +5090,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "ASN.1 ベースのプロトコルモジュール集"
+   "desc_ja": "ASN.1 ベースのプロトコルモジュール集",
+   "desc_en": "A collection of ASN.1-based protocols modules"
   },
   {
    "id": "pycparser",
@@ -4924,7 +5110,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 製の C 言語パーサー"
+   "desc_ja": "Python 製の C 言語パーサー",
+   "desc_en": "C parser in Python"
   },
   {
    "id": "pydantic",
@@ -4943,7 +5130,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python の型ヒントを用いたデータ検証ライブラリ"
+   "desc_ja": "Python の型ヒントを用いたデータ検証ライブラリ",
+   "desc_en": "Data validation using Python type hints"
   },
   {
    "id": "pydantic-core",
@@ -4962,7 +5150,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Pydantic の検証・シリアライズの中核機能"
+   "desc_ja": "Pydantic の検証・シリアライズの中核機能",
+   "desc_en": "Core functionality for Pydantic validation and serialization"
   },
   {
    "id": "pygments",
@@ -4981,7 +5170,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Python 製のシンタックスハイライトパッケージ"
+   "desc_ja": "Python 製のシンタックスハイライトパッケージ",
+   "desc_en": "Pygments is a syntax highlighting package written in Python."
   },
   {
    "id": "pymc",
@@ -4999,8 +5189,9 @@
    "com": 1,
    "art": 0,
    "seed": 1,
-   "cat": "統計・時系列",
-   "desc": "PyTensor によるベイズモデリングと確率的機械学習のための確率的プログラミングライブラリ"
+   "cat": "機械学習",
+   "desc_ja": "PyTensor によるベイズモデリングと確率的機械学習のための確率的プログラミングライブラリ",
+   "desc_en": "Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with PyTensor"
   },
   {
    "id": "pynndescent",
@@ -5019,7 +5210,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "最近傍降下法（Nearest Neighbor Descent）"
+   "desc_ja": "最近傍降下法（Nearest Neighbor Descent）",
+   "desc_en": "Nearest Neighbor Descent"
   },
   {
    "id": "pyparsing",
@@ -5038,7 +5230,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "構文解析文法を定義・実行するためのクラスとメソッド"
+   "desc_ja": "構文解析文法を定義・実行するためのクラスとメソッド",
+   "desc_en": "pyparsing - Classes and methods to define and execute parsing grammars"
   },
   {
    "id": "pytensor",
@@ -5057,7 +5250,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "CPU・GPU 上で数式を評価する最適化コンパイラ"
+   "desc_ja": "CPU・GPU 上で数式を評価する最適化コンパイラ",
+   "desc_en": "Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs."
   },
   {
    "id": "python-dateutil",
@@ -5076,7 +5270,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "Python 標準 datetime モジュールの拡張"
+   "desc_ja": "Python 標準 datetime モジュールの拡張",
+   "desc_en": "Extensions to the standard Python datetime module"
   },
   {
    "id": "python-dotenv",
@@ -5095,7 +5290,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": ".env ファイルからキーと値を読み込み環境変数に設定するライブラリ"
+   "desc_ja": ".env ファイルからキーと値を読み込み環境変数に設定するライブラリ",
+   "desc_en": "Read key-value pairs from a .env file and set them as environment variables"
   },
   {
    "id": "python-json-logger",
@@ -5114,7 +5310,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python logging 用の JSON ログフォーマッタ"
+   "desc_ja": "Python logging 用の JSON ログフォーマッタ",
+   "desc_en": "JSON Log Formatter for the Python Logging Package"
   },
   {
    "id": "pytz",
@@ -5133,7 +5330,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "現代および過去の世界タイムゾーン定義"
+   "desc_ja": "現代および過去の世界タイムゾーン定義",
+   "desc_en": "World timezone definitions, modern and historical"
   },
   {
    "id": "pyyaml",
@@ -5152,7 +5350,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 用の YAML パーサー・エミッター"
+   "desc_ja": "Python 用の YAML パーサー・エミッター",
+   "desc_en": "YAML parser and emitter for Python"
   },
   {
    "id": "pyzmq",
@@ -5171,7 +5370,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "0MQ の Python バインディング"
+   "desc_ja": "0MQ の Python バインディング",
+   "desc_en": "Python bindings for 0MQ"
   },
   {
    "id": "referencing",
@@ -5190,7 +5390,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 向けの JSON Referencing"
+   "desc_ja": "Python 向けの JSON Referencing",
+   "desc_en": "JSON Referencing + Python"
   },
   {
    "id": "regex",
@@ -5209,7 +5410,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "re を置き換える代替正規表現モジュール"
+   "desc_ja": "re を置き換える代替正規表現モジュール",
+   "desc_en": "Alternative regular expression module, to replace re."
   },
   {
    "id": "requests",
@@ -5228,7 +5430,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "人にやさしい Python の HTTP ライブラリ"
+   "desc_ja": "人にやさしい Python の HTTP ライブラリ",
+   "desc_en": "Python HTTP for Humans."
   },
   {
    "id": "rfc3339-validator",
@@ -5247,7 +5450,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "純 Python 製の RFC3339 バリデータ"
+   "desc_ja": "純 Python 製の RFC3339 バリデータ",
+   "desc_en": "A pure python RFC3339 validator"
   },
   {
    "id": "rfc3986-validator",
@@ -5266,7 +5470,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "純 Python 製の RFC3986 バリデータ"
+   "desc_ja": "純 Python 製の RFC3986 バリデータ",
+   "desc_en": "Pure python rfc3986 validator"
   },
   {
    "id": "rfc3987-syntax",
@@ -5285,7 +5490,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "RFC 3987 に従い文字列を構文検証するヘルパー関数群"
+   "desc_ja": "RFC 3987 に従い文字列を構文検証するヘルパー関数群",
+   "desc_en": "Helper functions to syntactically validate strings according to RFC 3987."
   },
   {
    "id": "rich",
@@ -5304,7 +5510,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "リッチテキスト・表・進捗バー・Markdown などをターミナルに描画するライブラリ"
+   "desc_ja": "リッチテキスト・表・進捗バー・Markdown などをターミナルに描画するライブラリ",
+   "desc_en": "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
   },
   {
    "id": "rpds-py",
@@ -5323,7 +5530,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Rust の永続データ構造（rpds）の Python バインディング"
+   "desc_ja": "Rust の永続データ構造（rpds）の Python バインディング",
+   "desc_en": "Python bindings to Rust's persistent data structures (rpds)"
   },
   {
    "id": "safetensors",
@@ -5342,7 +5550,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": ""
+   "desc_ja": "",
+   "desc_en": ""
   },
   {
    "id": "scikit-image",
@@ -5361,7 +5570,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "Python の画像処理ライブラリ"
+   "desc_ja": "Python の画像処理ライブラリ",
+   "desc_en": "Image processing in Python"
   },
   {
    "id": "scikit-learn",
@@ -5380,7 +5590,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "機械学習とデータマイニングのための Python モジュール群"
+   "desc_ja": "機械学習とデータマイニングのための Python モジュール群",
+   "desc_en": "A set of python modules for machine learning and data mining"
   },
   {
    "id": "scipy",
@@ -5399,7 +5610,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "Python の科学技術計算のための基礎アルゴリズム群"
+   "desc_ja": "Python の科学技術計算のための基礎アルゴリズム群",
+   "desc_en": "Fundamental algorithms for scientific computing in Python"
   },
   {
    "id": "seaborn",
@@ -5417,8 +5629,9 @@
    "com": 1,
    "art": 0,
    "seed": 1,
-   "cat": "可視化",
-   "desc": "統計データの可視化ライブラリ"
+   "cat": "統計・時系列",
+   "desc_ja": "統計データの可視化ライブラリ",
+   "desc_en": "Statistical data visualization"
   },
   {
    "id": "send2trash",
@@ -5437,7 +5650,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Mac・Windows・Linux でファイルをネイティブにゴミ箱へ送るツール"
+   "desc_ja": "Mac・Windows・Linux でファイルをネイティブにゴミ箱へ送るツール",
+   "desc_en": "Send file to trash natively under Mac OS X, Windows and Linux"
   },
   {
    "id": "setuptools",
@@ -5456,7 +5670,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "C/C++ 拡張モジュールに対応した拡張性の高い Python ビルドバックエンド"
+   "desc_ja": "C/C++ 拡張モジュールに対応した拡張性の高い Python ビルドバックエンド",
+   "desc_en": "Most extensible Python build backend with support for C/C++ extension modules"
   },
   {
    "id": "shap",
@@ -5475,7 +5690,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "機械学習モデルの出力を説明する統一的手法"
+   "desc_ja": "機械学習モデルの出力を説明する統一的手法",
+   "desc_en": "A unified approach to explain the output of any machine learning model."
   },
   {
    "id": "shellingham",
@@ -5494,7 +5710,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "実行中のシェルを検出するツール"
+   "desc_ja": "実行中のシェルを検出するツール",
+   "desc_en": "Tool to Detect Surrounding Shell"
   },
   {
    "id": "six",
@@ -5513,7 +5730,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 2 と 3 の互換性ユーティリティ"
+   "desc_ja": "Python 2 と 3 の互換性ユーティリティ",
+   "desc_en": "Python 2 and 3 compatibility utilities"
   },
   {
    "id": "sklearn-compat",
@@ -5532,7 +5750,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ"
+   "desc_ja": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ",
+   "desc_en": "Ease support for compatible scikit-learn estimators across versions"
   },
   {
    "id": "skops",
@@ -5550,8 +5769,9 @@
    "com": 1,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "本番環境での機械学習に関するツール群"
+   "cat": "機械学習",
+   "desc_ja": "本番環境での機械学習に関するツール群",
+   "desc_en": "A set of tools, related to machine learning in production."
   },
   {
    "id": "slicer",
@@ -5570,7 +5790,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": "大規模なスライス処理のための小さなパッケージ"
+   "desc_ja": "大規模なスライス処理のための小さなパッケージ",
+   "desc_en": "A small package for big slicing."
   },
   {
    "id": "smart-open",
@@ -5589,7 +5810,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "S3・HDFS・GCS などの大容量ファイルをストリーミングするユーティリティ"
+   "desc_ja": "S3・HDFS・GCS などの大容量ファイルをストリーミングするユーティリティ",
+   "desc_en": "Utils for streaming large files (S3, HDFS, GCS, SFTP, Azure Blob Storage, gzip, bz2, zst...)"
   },
   {
    "id": "smmap",
@@ -5608,7 +5830,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "スライディングウィンドウ式メモリマップ管理の純 Python 実装"
+   "desc_ja": "スライディングウィンドウ式メモリマップ管理の純 Python 実装",
+   "desc_en": "A pure Python implementation of a sliding window memory map manager"
   },
   {
    "id": "soupsieve",
@@ -5627,7 +5850,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Beautiful Soup 向けのモダンな CSS セレクタ実装"
+   "desc_ja": "Beautiful Soup 向けのモダンな CSS セレクタ実装",
+   "desc_en": "A modern CSS selector implementation for Beautiful Soup."
   },
   {
    "id": "spacy",
@@ -5646,7 +5870,8 @@
    "art": 0,
    "seed": 1,
    "cat": "自然言語処理",
-   "desc": "産業利用に耐える Python の自然言語処理（NLP）ライブラリ"
+   "desc_ja": "産業利用に耐える Python の自然言語処理（NLP）ライブラリ",
+   "desc_en": "Industrial-strength Natural Language Processing (NLP) in Python"
   },
   {
    "id": "spacy-legacy",
@@ -5665,7 +5890,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "spaCy の後方互換性のためのレガシー登録関数群"
+   "desc_ja": "spaCy の後方互換性のためのレガシー登録関数群",
+   "desc_en": "Legacy registered functions for spaCy backwards compatibility"
   },
   {
    "id": "spacy-loggers",
@@ -5684,7 +5910,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "spaCy 用のロギングユーティリティ"
+   "desc_ja": "spaCy 用のロギングユーティリティ",
+   "desc_en": "Logging utilities for SpaCy"
   },
   {
    "id": "sqlalchemy",
@@ -5703,7 +5930,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "データベース抽象化ライブラリ"
+   "desc_ja": "データベース抽象化ライブラリ",
+   "desc_en": "Database Abstraction Library"
   },
   {
    "id": "sqlparse",
@@ -5722,7 +5950,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "検証を行わない SQL パーサー"
+   "desc_ja": "検証を行わない SQL パーサー",
+   "desc_en": "A non-validating SQL parser."
   },
   {
    "id": "srsly",
@@ -5741,7 +5970,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "Python 向けの高性能なシリアライズユーティリティ"
+   "desc_ja": "Python 向けの高性能なシリアライズユーティリティ",
+   "desc_en": "Modern high-performance serialization utilities for Python"
   },
   {
    "id": "stack-data",
@@ -5760,7 +5990,8 @@
    "art": 1,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "スタックフレームとトレースバックから表示用データを抽出するライブラリ"
+   "desc_ja": "スタックフレームとトレースバックから表示用データを抽出するライブラリ",
+   "desc_en": "Extract data from python stack frames and tracebacks for informative displays"
   },
   {
    "id": "stanio",
@@ -5779,7 +6010,8 @@
    "art": 0,
    "seed": 0,
    "cat": "統計・時系列",
-   "desc": "Stan の入力作成と出力処理のためのユーティリティ"
+   "desc_ja": "Stan の入力作成と出力処理のためのユーティリティ",
+   "desc_en": "Utilities for preparing Stan inputs and processing Stan outputs"
   },
   {
    "id": "starlette",
@@ -5798,7 +6030,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "小さな ASGI ライブラリ"
+   "desc_ja": "小さな ASGI ライブラリ",
+   "desc_en": "The little ASGI library that shines."
   },
   {
    "id": "statsmodels",
@@ -5817,7 +6050,8 @@
    "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
-   "desc": "Python のための統計計算・統計モデル"
+   "desc_ja": "Python のための統計計算・統計モデル",
+   "desc_en": "Statistical computations and models for Python"
   },
   {
    "id": "sympy",
@@ -5836,7 +6070,8 @@
    "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
-   "desc": "Python 製の数式処理システム（CAS）"
+   "desc_ja": "Python 製の数式処理システム（CAS）",
+   "desc_en": "Computer algebra system (CAS) in Python"
   },
   {
    "id": "tabulate",
@@ -5855,7 +6090,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "表形式データをきれいに表示するツール"
+   "desc_ja": "表形式データをきれいに表示するツール",
+   "desc_en": "Pretty-print tabular data"
   },
   {
    "id": "tensorflow",
@@ -5874,7 +6110,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "オープンソースの機械学習フレームワーク"
+   "desc_ja": "オープンソースの機械学習フレームワーク",
+   "desc_en": "TensorFlow is an open source machine learning framework for everyone."
   },
   {
    "id": "terminado",
@@ -5893,7 +6130,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Xterm.js 端末エミュレータ向けの Tornado WebSocket バックエンド"
+   "desc_ja": "Xterm.js 端末エミュレータ向けの Tornado WebSocket バックエンド",
+   "desc_en": "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
   },
   {
    "id": "thinc",
@@ -5911,8 +6149,9 @@
    "com": 3,
    "art": 0,
    "seed": 0,
-   "cat": "自然言語処理",
-   "desc": "主要ライブラリと互換な関数型スタイルの深層学習ライブラリ"
+   "cat": "機械学習",
+   "desc_ja": "主要ライブラリと互換な関数型スタイルの深層学習ライブラリ",
+   "desc_en": "A refreshing functional take on deep learning, compatible with your favorite libraries"
   },
   {
    "id": "threadpoolctl",
@@ -5931,7 +6170,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": "threadpoolctl"
+   "desc_ja": "threadpoolctl",
+   "desc_en": "threadpoolctl"
   },
   {
    "id": "tifffile",
@@ -5950,7 +6190,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "TIFF ファイルの読み書きを行うライブラリ"
+   "desc_ja": "TIFF ファイルの読み書きを行うライブラリ",
+   "desc_en": "Read and write TIFF files"
   },
   {
    "id": "tinycss2",
@@ -5969,7 +6210,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "小さな CSS パーサー"
+   "desc_ja": "小さな CSS パーサー",
+   "desc_en": "A tiny CSS parser"
   },
   {
    "id": "tokenizers",
@@ -5988,7 +6230,8 @@
    "art": 0,
    "seed": 0,
    "cat": "機械学習",
-   "desc": ""
+   "desc_ja": "",
+   "desc_en": ""
   },
   {
    "id": "tomli",
@@ -6007,7 +6250,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "小さな TOML パーサー"
+   "desc_ja": "小さな TOML パーサー",
+   "desc_en": "A lil' TOML parser"
   },
   {
    "id": "toolz",
@@ -6026,7 +6270,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "リスト処理ツールと関数型ユーティリティ"
+   "desc_ja": "リスト処理ツールと関数型ユーティリティ",
+   "desc_en": "List processing tools and functional utilities"
   },
   {
    "id": "torch",
@@ -6045,7 +6290,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "GPU 加速対応のテンソルと動的ニューラルネットワークのライブラリ"
+   "desc_ja": "GPU 加速対応のテンソルと動的ニューラルネットワークのライブラリ",
+   "desc_en": "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
   },
   {
    "id": "tornado",
@@ -6064,7 +6310,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Python の Web フレームワーク兼非同期ネットワークライブラリ"
+   "desc_ja": "Python の Web フレームワーク兼非同期ネットワークライブラリ",
+   "desc_en": "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
   },
   {
    "id": "tqdm",
@@ -6083,7 +6330,8 @@
    "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
-   "desc": "高速で拡張可能な進捗表示ライブラリ"
+   "desc_ja": "高速で拡張可能な進捗表示ライブラリ",
+   "desc_en": "Fast, Extensible Progress Meter"
   },
   {
    "id": "traitlets",
@@ -6102,7 +6350,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Python 向け設定システム Traitlets"
+   "desc_ja": "Python 向け設定システム Traitlets",
+   "desc_en": "Traitlets Python configuration system"
   },
   {
    "id": "transformers",
@@ -6121,7 +6370,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "テキスト・画像・音声・マルチモーダルの機械学習モデル定義フレームワーク"
+   "desc_ja": "テキスト・画像・音声・マルチモーダルの機械学習モデル定義フレームワーク",
+   "desc_en": "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
   },
   {
    "id": "typer",
@@ -6140,7 +6390,8 @@
    "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python の型ヒントに基づく CLI 構築ライブラリ"
+   "desc_ja": "Python の型ヒントに基づく CLI 構築ライブラリ",
+   "desc_en": "Typer, build great CLIs. Easy to code. Based on Python type hints."
   },
   {
    "id": "typing-extensions",
@@ -6159,7 +6410,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "Python 3.9+ 向けのバックポート・実験的型ヒント"
+   "desc_ja": "Python 3.9+ 向けのバックポート・実験的型ヒント",
+   "desc_en": "Backported and Experimental Type Hints for Python 3.9+"
   },
   {
    "id": "typing-inspection",
@@ -6178,7 +6430,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "実行時の型イントロスペクションツール"
+   "desc_ja": "実行時の型イントロスペクションツール",
+   "desc_en": "Runtime typing introspection tools"
   },
   {
    "id": "tzdata",
@@ -6197,7 +6450,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "IANA タイムゾーンデータの提供パッケージ"
+   "desc_ja": "IANA タイムゾーンデータの提供パッケージ",
+   "desc_en": "Provider of IANA time zone data"
   },
   {
    "id": "umap-learn",
@@ -6216,7 +6470,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "Uniform Manifold Approximation and Projection（UMAP）"
+   "desc_ja": "Uniform Manifold Approximation and Projection（UMAP）",
+   "desc_en": "Uniform Manifold Approximation and Projection"
   },
   {
    "id": "uri-template",
@@ -6235,7 +6490,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "RFC 6570 URI テンプレートプロセッサ"
+   "desc_ja": "RFC 6570 URI テンプレートプロセッサ",
+   "desc_en": "RFC 6570 URI Template Processor"
   },
   {
    "id": "urllib3",
@@ -6254,7 +6510,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "スレッドセーフな接続プールなどを備えた HTTP ライブラリ"
+   "desc_ja": "スレッドセーフな接続プールなどを備えた HTTP ライブラリ",
+   "desc_en": "HTTP library with thread-safe connection pooling, file post, and more."
   },
   {
    "id": "uvicorn",
@@ -6273,7 +6530,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "高速な ASGI サーバー"
+   "desc_ja": "高速な ASGI サーバー",
+   "desc_en": "The lightning-fast ASGI server."
   },
   {
    "id": "wasabi",
@@ -6292,7 +6550,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "軽量なコンソール出力・整形ツールキット"
+   "desc_ja": "軽量なコンソール出力・整形ツールキット",
+   "desc_en": "A lightweight console printing and formatting toolkit"
   },
   {
    "id": "wcwidth",
@@ -6311,7 +6570,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "ターミナルでの Unicode 文字列の表示幅を測定するライブラリ"
+   "desc_ja": "ターミナルでの Unicode 文字列の表示幅を測定するライブラリ",
+   "desc_en": "Measures the displayed width of unicode strings in a terminal"
   },
   {
    "id": "weasel",
@@ -6330,7 +6590,8 @@
    "art": 0,
    "seed": 0,
    "cat": "自然言語処理",
-   "desc": "小さくて簡単なワークフローシステム"
+   "desc_ja": "小さくて簡単なワークフローシステム",
+   "desc_en": "Weasel: A small and easy workflow system"
   },
   {
    "id": "webcolors",
@@ -6349,7 +6610,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "HTML・CSS で定義された色形式を扱うライブラリ"
+   "desc_ja": "HTML・CSS で定義された色形式を扱うライブラリ",
+   "desc_en": "A library for working with the color formats defined by HTML and CSS."
   },
   {
    "id": "webencodings",
@@ -6368,7 +6630,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "レガシー Web コンテンツ用の文字エンコーディング別名"
+   "desc_ja": "レガシー Web コンテンツ用の文字エンコーディング別名",
+   "desc_en": "Character encoding aliases for legacy web content"
   },
   {
    "id": "websocket-client",
@@ -6387,7 +6650,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "低レベル API も備えた Python 用 WebSocket クライアント"
+   "desc_ja": "低レベル API も備えた Python 用 WebSocket クライアント",
+   "desc_en": "WebSocket client for Python with low level API options"
   },
   {
    "id": "werkzeug",
@@ -6406,7 +6670,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Web・通信",
-   "desc": "包括的な WSGI Web アプリケーションライブラリ"
+   "desc_ja": "包括的な WSGI Web アプリケーションライブラリ",
+   "desc_en": "The comprehensive WSGI web application library."
   },
   {
    "id": "widgetsnbextension",
@@ -6425,7 +6690,8 @@
    "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
-   "desc": "Jupyter Notebook 用のインタラクティブウィジェット"
+   "desc_ja": "Jupyter Notebook 用のインタラクティブウィジェット",
+   "desc_en": "Jupyter interactive widgets for Jupyter Notebook"
   },
   {
    "id": "wrapt",
@@ -6444,7 +6710,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "デコレータ・ラッパー・モンキーパッチのためのモジュール"
+   "desc_ja": "デコレータ・ラッパー・モンキーパッチのためのモジュール",
+   "desc_en": "Module for decorators, wrappers and monkey patching."
   },
   {
    "id": "xarray",
@@ -6462,8 +6729,9 @@
    "com": 9,
    "art": 0,
    "seed": 0,
-   "cat": "基盤・ユーティリティ",
-   "desc": "Python のラベル付き N 次元配列・データセット"
+   "cat": "データ処理・数値計算",
+   "desc_ja": "Python のラベル付き N 次元配列・データセット",
+   "desc_en": "N-D labeled arrays and datasets in Python"
   },
   {
    "id": "xarray-einstats",
@@ -6482,7 +6750,8 @@
    "art": 0,
    "seed": 0,
    "cat": "データ処理・数値計算",
-   "desc": "xarray 向けの統計・線形代数・einops 機能"
+   "desc_ja": "xarray 向けの統計・線形代数・einops 機能",
+   "desc_en": "Stats, linear algebra and einops for xarray"
   },
   {
    "id": "xgboost",
@@ -6501,7 +6770,8 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc": "XGBoost の Python パッケージ"
+   "desc_ja": "XGBoost の Python パッケージ",
+   "desc_en": "XGBoost Python Package"
   },
   {
    "id": "xyzservices",
@@ -6520,7 +6790,8 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc": "XYZ タイルプロバイダの情報源"
+   "desc_ja": "XYZ タイルプロバイダの情報源",
+   "desc_en": "Source of XYZ tiles providers"
   },
   {
    "id": "zipp",
@@ -6539,7 +6810,8 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc": "zip ファイル用 pathlib 互換ラッパーのバックポート"
+   "desc_ja": "zip ファイル用 pathlib 互換ラッパーのバックポート",
+   "desc_en": "Backport of pathlib-compatible object wrapper for zip files"
   }
  ],
  "edges": [
@@ -9042,8 +9314,8 @@
    "betweenness": 0.01,
    "pagerank_eigen": 0.0,
    "community_aps": 0.0,
-   "layout": 0.27,
-   "total": 0.28
+   "layout": 0.11,
+   "total": 0.12
   }
  }
 }

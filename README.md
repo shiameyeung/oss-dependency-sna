@@ -4,8 +4,8 @@
 >
 > A research prototype (master's thesis) that builds **OSS dependency networks** from public data
 > (deps.dev / PyPI), computes social-network-analysis metrics, and provides a self-contained,
-> reproducible **DSS-style diagnosis demo**. Runtime text is in Japanese; the analysis pipeline is
-> deterministic (no LLM at runtime). See the live demo above.
+> reproducible **DSS-style diagnosis demo** with a **Japanese / English language switch** (top-right
+> of the toolbar). The analysis pipeline is deterministic (no LLM at runtime). See the live demo above.
 
 修士研究「社会ネットワーク分析を用いた OSS エコシステム分析支援システムの開発と評価」の
 最小パイプライン実装。**収集 → ネットワーク生成 → 指標計算 → 可視化** を一括実行する。
@@ -76,7 +76,8 @@ python3 run_all.py --offline
 | パターン | 内容 | 設計判断の理由 |
 | --- | --- | --- |
 | 診断カード | クリック対象の「説明文＋指標データ＋意味＋推奨＋根拠」を右上に集約 | 意思決定に必要な情報を 1 箇所に（DSS の中核） |
-| ノード説明文 | 全ノードに日本語の 1 行説明を付与（公式レジストリの原文 summary を基に一括作成した固定データ。取得率 PyPI 98.9%・Go 95.4%、`collect_desc.py` で原文を収集・キャッシュ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
+| ノード説明文 | 全ノードに 1 行説明を付与（`collect_desc.py` でレジストリ原文〔英語〕を収集、取得率 PyPI 98.9%・Go 95.4%。日本語版は原文を基に一括作成した固定データ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
+| 言語切替（日/英） | ツールバーの「言語」で全 UI・診断テンプレート・分類名・説明文を日英切替（説明文は日=固定翻訳／英=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（淡江大学等）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
 | 機能分類と検索 | 名前のインクリメンタル検索＋機能分類フィルタ（各領域 8 分類）。分類は名前接頭辞・名称集合・説明文キーワードによる決定論的規則（`build_metrics.py` の `CATEGORY_RULES`） | 構造指標と直交する「機能」の軸で探索できるように |
 | フォーカス表示 | 選択ノード＋直接の依存関係のみ残し、他を淡化（エゴネットワーク）。切断点選択時は孤立範囲を黄色表示 | **完全非表示ではなく淡化（opacity 0.07）**: 全体地図内の位置という文脈を保ちつつ無関係なノードを視覚的に排除 |
 | 固定情報の分離 | 操作に依存しない RQ3 パネル（順位の乖離）は下部の全幅バンドに常設 | 対話的情報（右側）と静的情報（下部）の住み分け |

@@ -107,21 +107,23 @@ TEMPLATE = r"""<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <h1>OSS 依存ネットワーク分析デモ v2 <span class="sub">— DSS 型分析支援システム（研究用プロトタイプ）</span></h1>
-  <div class="sub">エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。</div>
+  <h1><span id="h1main"></span> <span class="sub" id="h1sub"></span></h1>
+  <div class="sub" id="headerHint"></div>
 </header>
 <div class="bar">
-  <div class="grp"><span class="lbl">領域</span><span id="domains"></span></div>
-  <div class="grp"><span class="lbl">ビュー</span><span id="views"></span></div>
-  <div class="grp"><span class="lbl">指標</span><span id="metrics"></span>
-    <button id="comBtn" title="Louvain 法で検出したコミュニティごとに着色">コミュニティ着色</button></div>
-  <div class="grp"><span class="lbl">検索・分類</span>
-    <input type="text" id="q" list="qlist" placeholder="名前で検索…">
+  <div class="grp"><span class="lbl" id="lblDomain"></span><span id="domains"></span></div>
+  <div class="grp"><span class="lbl" id="lblView"></span><span id="views"></span></div>
+  <div class="grp"><span class="lbl" id="lblMetric"></span><span id="metrics"></span>
+    <button id="comBtn"></button></div>
+  <div class="grp"><span class="lbl" id="lblSearch"></span>
+    <input type="text" id="q" list="qlist">
     <datalist id="qlist"></datalist>
     <select id="catSel"></select></div>
-  <div class="grp"><span class="lbl">表示数</span>
+  <div class="grp"><span class="lbl" id="lblTopn"></span>
     <span class="sliderbox"><input type="range" id="topn" min="10" max="300" step="10">
     <span class="val" id="topnVal"></span></span></div>
+  <div class="grp"><span class="lbl" id="lblLang"></span>
+    <button data-lang="ja">日本語</button><button data-lang="en">EN</button></div>
 </div>
 <main>
   <div class="stage">
@@ -132,10 +134,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   </div>
   <div class="side">
     <div class="card">
-      <h2>診断 — これは何を意味するか</h2>
-      <div id="diag"><div class="hint">ノード（またはコミュニティ着色時のコミュニティ行）をクリックすると、
-        指標データと「意思決定上何を意味するか」の診断を表示します。<br>
-        診断はノード型 × 意思決定場面の対応表に基づく決定論的なルール＋テンプレートで生成（AI 不使用・再現可能）。</div></div>
+      <h2 id="diagTitle"></h2>
+      <div id="diag"></div>
     </div>
     <div class="card">
       <h2 id="rankTitle">Top 10</h2>
@@ -144,30 +144,148 @@ TEMPLATE = r"""<!DOCTYPE html>
   </div>
 </main>
 <div class="divband">
-  <h2>順位の乖離 — 単純統計では見えない「要衝」（RQ3）</h2>
+  <h2 id="divTitle"></h2>
   <div id="divList"></div>
   <div class="muted" id="spearman" style="margin-top:8px"></div>
 </div>
 <div class="legend">
-  <span><span class="dot" style="background:#5DA8E8"></span>通常ノード</span>
-  <span><span class="dot" style="background:#5DA8E8; outline:2px solid #1F2D40"></span>シード（分析起点）</span>
-  <span><span class="dot" style="background:transparent; border:2.5px solid var(--warn)"></span>切断点 ⚠（クリックで孤立する範囲を表示）</span>
-  <span><span class="dot" style="background:#F2C84B"></span>切断時に孤立する範囲</span>
+  <span><span class="dot" style="background:#5DA8E8"></span><span id="legNormal"></span></span>
+  <span><span class="dot" style="background:#5DA8E8; outline:2px solid #1F2D40"></span><span id="legSeed"></span></span>
+  <span><span class="dot" style="background:transparent; border:2.5px solid var(--warn)"></span><span id="legCut"></span></span>
+  <span><span class="dot" style="background:#F2C84B"></span><span id="legIso"></span></span>
 </div>
 <footer id="meta"></footer>
 <script>
 const DATA = __DATA_JSON__;
-const MLAB = { indeg:"被依存数（直接依存元の数・単純統計）", impact:"影響範囲（推移的に波及する依存元数）",
-               btw:"媒介中心性（橋渡し・経路上の要）", pr:"PageRank（構造的重要度）",
-               eig:"固有ベクトル中心性（重要ノードから依存される度合い）" };
+let lang = "ja";   // 表示言語（ja / en）。データ・指標値は不変、表示文字列のみ切替。
 const COLORS = ["#5DA8E8","#F2C84B","#81c784","#ba68c8","#ff8a65","#4dd0e1","#f06292","#a1887f","#90a4ae","#dce775"];
-const TYPE_INFO = {
-  cutpoint:   {label:"切断点",   color:"#E2A82E"},
-  bridge:     {label:"橋渡し型", color:"#A8761A"},
-  foundation: {label:"土台型",   color:"#2C5F94"},
-  isolated:   {label:"孤立",     color:"#5C6B7A"},
-  normal:     {label:"標準",     color:"#5C6B7A"},
+const MLAB = {
+  indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)"},
+  impact:{ja:"影響範囲（推移的に波及する依存元数）", en:"Reach (transitively affected dependents)"},
+  btw:{ja:"媒介中心性（橋渡し・経路上の要）", en:"Betweenness (bridge · path bottleneck)"},
+  pr:{ja:"PageRank（構造的重要度）", en:"PageRank (structural importance)"},
+  eig:{ja:"固有ベクトル中心性（重要ノードから依存される度合い）", en:"Eigenvector centrality (importance from important nodes)"},
 };
+function mlab(m){ return MLAB[m][lang]; }
+function mshort(m){ return mlab(m).split(lang==="ja" ? "（" : " (")[0]; }
+const TYPE_INFO = {
+  cutpoint:   {color:"#E2A82E", ja:"切断点",   en:"Cut point"},
+  bridge:     {color:"#A8761A", ja:"橋渡し型", en:"Bridge"},
+  foundation: {color:"#2C5F94", ja:"土台型",   en:"Foundation"},
+  isolated:   {color:"#5C6B7A", ja:"孤立",     en:"Isolated"},
+  normal:     {color:"#5C6B7A", ja:"標準",     en:"Standard"},
+};
+const DOMAIN_EN = { ds:"Data science (PyPI)", cn:"Cloud native (Go)" };
+function domLabel(g){ return lang==="ja" ? g.label : (DOMAIN_EN[g.domain] || g.label); }
+// 機能分類名の日→英対応（分類キーは日本語のまま・表示のみ翻訳）
+const CAT_I18N = {
+  "Jupyter・開発環境":"Jupyter & dev tools","機械学習":"Machine learning","統計・時系列":"Statistics & time series",
+  "可視化":"Visualization","自然言語処理":"NLP","データ処理・数値計算":"Data & numerics","Web・通信":"Web & networking",
+  "基盤・ユーティリティ":"Core & utilities",
+  "Kubernetes 関連":"Kubernetes","可観測性・監視":"Observability","ネットワーク・メッシュ":"Networking & mesh",
+  "ストレージ・データベース":"Storage & database","コンテナ・デプロイ":"Container & deploy","クラウド SDK":"Cloud SDK",
+  "開発・テスト":"Dev & testing","基盤ライブラリ":"Core libraries",
+};
+function catLabel(name){ return lang==="ja" ? name : (CAT_I18N[name] || name); }
+function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.desc_en || n.desc_ja || ""); }
+
+// UI 文字列・診断テンプレート（日/英）。データ準備段階で固定（実行時 LLM 不使用）。
+const STR = {
+ ja: {
+  h1main:"OSS 依存ネットワーク分析デモ v2",
+  h1sub:"— DSS 型分析支援システム（研究用プロトタイプ）",
+  headerHint:'エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。',
+  gDomain:"領域", gView:"ビュー", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
+  comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色",
+  vNet:"ネットワーク図", vScatter:"散布図（被依存×媒介）",
+  qPlaceholder:"名前で検索…", catAll:"分類: すべて",
+  diagTitle:"診断 — これは何を意味するか",
+  diagHint:'ノード（またはコミュニティ着色時のコミュニティ行）をクリックすると、指標データと「意思決定上何を意味するか」の診断を表示します。<br>診断はノード型 × 意思決定場面の対応表に基づく決定論的なルール＋テンプレートで生成（AI 不使用・再現可能）。',
+  divTitle:'順位の乖離 — 単純統計では見えない「要衝」（RQ3）',
+  legNormal:"通常ノード", legSeed:"シード（分析起点）", legCut:"切断点 ⚠（クリックで孤立する範囲を表示）", legIso:"切断時に孤立する範囲",
+  rankComTitle:"コミュニティ（クリックでフォーカス）",
+  rankTopSuffix:" — Top 10",
+  topnAll:n=>`全 ${n} ノード`, topnTop:(k,n)=>`上位 ${k}/${n}`, catCount:n=>`${n} ノード表示中`,
+  seedBadge:"シード", funcGroup:"機能群", systemSuffix:"系",
+  tIndeg:"被依存数（単純統計）", tIndegVal:(v,N,r)=>`${v}（全 ${N} 中 ${r}位）`,
+  tReach:"影響範囲（推移的）", tReachVal:v=>`${v} パッケージ`,
+  tBtw:"媒介中心性", tBtwVal:(v,r)=>`${v}（${r}位）`, tPr:"PageRank", tCom:"コミュニティ",
+  cutMain:cl=>{const p=cl>=10?`<b>${cl} 個</b>のパッケージが一斉に主要ネットワークから孤立し、影響が特に広範に及ぶ`:cl>=3?`<b>${cl} 個</b>のパッケージが主要ネットワークから孤立する`:`孤立する範囲は <b>${cl} パッケージ</b>と局所的にとどまるが、構造上の急所であることに変わりはない`;return `ネットワークの<b>切断点</b>にあたる。仮にこのパッケージが利用不能になると、${p}（図中に黄色でハイライト表示）。`;},
+  cutList:(head,more)=>`<div class="diag-cut"><b>孤立する範囲:</b> ${head}${more?` 他 ${more} 件`:""}</div>`,
+  cutReco:"<b>集中リスク把握:</b> 最優先での監視を推奨。<b>利用・支援判断:</b> 代替経路の有無の事前確認を推奨。",
+  bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`両指標の順位差は ${gap} に達し、順位の乖離が際立って大きい。`:gap>=30?`両指標の順位差は ${gap} と大きい。`:"";return `被依存数（${rin}位）に比べ、媒介中心性は <b>${rbt}位</b>と明確に高い。${g}依存経路の要衝（<b>橋渡し</b>）に位置し、障害時には複数のパッケージ群の間の依存経路が分断されるおそれがある。単純統計では検出しにくい型。`;},
+  bridgeReco:"<b>利用判断:</b> 保守体制・更新頻度の確認を推奨。<b>支援判断:</b> 見落とされやすい支援先候補。",
+  foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`分析対象ネットワーク全体の約 ${Math.round(sh*100)}%（${impact} パッケージ）へ波及する`:`推移的に ${impact} パッケージへ波及する`;return `被依存数 ${indeg}（全体 ${rin}位）の<b>基盤（土台型）</b>パッケージ。停止・脆弱性の影響は${reach}。単純統計でも検出できる型。`;},
+  foundReco:"<b>利用判断:</b> 広く利用されている標準的な選択肢。<b>集中リスク把握:</b> 依存が一点に集中する典型例。保守の継続性に注意。",
+  isoMain:"このデータ範囲では他のパッケージとの依存関係が観測されない（依存先が収集範囲外、または独立したパッケージ）。",
+  normMain:(rin,rbt)=>`構造上の特異性は検出されない（被依存 ${rin}位・媒介 ${rbt}位）。依存構造上は標準的な位置にあり、個別指標の確認で十分と考えられる。`,
+  evidence:'解釈規則は、SNA 指標の標準的解釈（Chen et al. 2022 のレビューに整理されている）および依存ネットワーク研究の知見（Decan et al. 2019）に基づく（規則表は README を参照）。',
+  comTitle:cid=>`コミュニティ ${cid}`, comNodes:"ノード数", comInEdges:"内部エッジ数", comDensity:"内部密度", comAvgIn:"平均被依存数",
+  comTop:"<b>代表ノード（PageRank 上位）:</b> ",
+  comDesc:"コミュニティは依存が相対的に密な<b>機能群</b>に対応する。",
+  comReco:"<b>利用判断:</b> 代替候補はまず同一コミュニティ内から探索するのが有効。<b>集中リスク把握:</b> 障害が伝播しうる範囲の目安。",
+  comEvidence:"解釈規則の根拠と規則表は README を参照。", comNone:"コミュニティ情報なし",
+  eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（DAG）であり、固有ベクトル中心性の反復計算は依存の終端（sink）に値が集中して退化しやすい（順位が大きく断絶するのはこのため）。診断には次数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体が RQ2 の知見</b>。',
+  spearman:sp=>`Spearman ρ: 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1.0 から離れるほど SNA 独自の情報が多い）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(indeg=${indeg}, btw=${btw}) 橋渡し型</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
+  divNone:"この領域では顕著な乖離ノードなし", comRowNote:top=>top?`(${top}系)`:"",
+  scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝・RQ3）",
+  tipClick:" — クリックで診断とフォーカス表示", tipCat:"分類", tipCom:"コミュニティ", tipIndeg:"被依存", tipOut:"依存先", tipReach:"影響範囲", tipBtw:"媒介",
+  metaTitle:l=>`再現性情報（${l}）`, metaFetch:"取得日", metaSrc:"データソース", metaRate:"シード成功率", metaScale:"規模",
+  metaNode:"ノード", metaEdge:"エッジ", metaDensity:"密度", metaComp:"弱連結成分", metaMod:"モジュラリティ", metaCom:"コミュニティ",
+  metaSeed:"乱数 seed", metaSeedUse:"（レイアウト・コミュニティ検出に使用）", metaTime:"指標処理時間", metaBtw:"媒介", metaTotal:"全体", metaGen:"生成日時",
+  metaDet:"診断は決定論的ルールにより生成（AI 不使用） ／ 表示レイアウトは表示集合に応じて決定論的に再計算（初期値＝事前計算座標・反復固定・乱数不使用）",
+ },
+ en: {
+  h1main:"OSS Dependency Network Analysis Demo v2",
+  h1sub:"— DSS-style analysis-support prototype (research use)",
+  headerHint:'Edge direction: dependent → dependency. Node size/color = selected metric. ⚠ = cut point (its removal isolates other nodes). Click a node for a diagnosis on the right.',
+  gDomain:"Domain", gView:"View", gMetric:"Metric", gSearch:"Search / category", gTopn:"Shown", gLang:"Language",
+  comBtn:"Community color", comBtnTitle:"Color by community detected with the Louvain method",
+  vNet:"Network", vScatter:"Scatter (in-degree × betweenness)",
+  qPlaceholder:"search by name…", catAll:"Category: all",
+  diagTitle:"Diagnosis — what this means",
+  diagHint:'Click a node (or a community row in community-color mode) to see its metrics and what they mean for decision-making.<br>Diagnoses are generated by a deterministic rule + template table (node type × decision context). No LLM at runtime; fully reproducible.',
+  divTitle:'Rank divergence — bottlenecks invisible to simple stats (RQ3)',
+  legNormal:"node", legSeed:"seed (analysis root)", legCut:"cut point ⚠ (click to show what it isolates)", legIso:"isolated if removed",
+  rankComTitle:"Communities (click to focus)",
+  rankTopSuffix:" — Top 10",
+  topnAll:n=>`all ${n} nodes`, topnTop:(k,n)=>`top ${k}/${n}`, catCount:n=>`${n} nodes shown`,
+  seedBadge:"seed", funcGroup:"functional group", systemSuffix:"",
+  tIndeg:"In-degree (simple stat)", tIndegVal:(v,N,r)=>`${v} (rank ${r} of ${N})`,
+  tReach:"Reach (transitive)", tReachVal:v=>`${v} packages`,
+  tBtw:"Betweenness", tBtwVal:(v,r)=>`${v} (rank ${r})`, tPr:"PageRank", tCom:"Community",
+  cutMain:cl=>{const p=cl>=10?`<b>${cl} packages</b> would be cut off from the main network at once — an especially wide-reaching impact`:cl>=3?`<b>${cl} packages</b> would be cut off from the main network`:`only <b>${cl} package(s)</b> would be isolated — a local effect, but still a structural choke point`;return `This is a <b>cut point</b>. If this package became unavailable, ${p} (highlighted in yellow on the graph).`;},
+  cutList:(head,more)=>`<div class="diag-cut"><b>Isolated set:</b> ${head}${more?` +${more} more`:""}</div>`,
+  cutReco:"<b>Concentration risk:</b> a top priority to monitor. <b>Adoption / support:</b> check for alternative paths in advance.",
+  bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`The rank gap reaches ${gap} — an exceptionally large divergence. `:gap>=30?`The rank gap of ${gap} is large. `:"";return `Compared with its in-degree (rank ${rin}), its betweenness is clearly higher (<b>rank ${rbt}</b>). ${g}It sits at a path bottleneck (<b>bridge</b>); a failure could sever dependency paths between groups of packages. This type is hard to detect with simple stats.`;},
+  bridgeReco:"<b>Adoption:</b> check maintenance and update cadence. <b>Support:</b> an easily overlooked candidate for support work.",
+  foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`about ${Math.round(sh*100)}% of the analyzed network (${impact} packages)`:`${impact} packages transitively`;return `A <b>foundation</b> package with in-degree ${indeg} (rank ${rin} overall). An outage or vulnerability would propagate to ${reach}. This type is visible even with simple stats.`;},
+  foundReco:"<b>Adoption:</b> a widely-used, standard choice. <b>Concentration risk:</b> a textbook single point of failure for the ecosystem — watch maintenance continuity.",
+  isoMain:"No dependency relations are observed within this data range (its dependencies are outside the collected scope, or it is an independent package).",
+  normMain:(rin,rbt)=>`No structural peculiarity detected (in-degree rank ${rin}, betweenness rank ${rbt}). It sits in a standard structural position, so reviewing individual metrics should be sufficient.`,
+  evidence:'Interpretation rules follow standard readings of SNA metrics (organized in the review by Chen et al. 2022) and findings on dependency networks (Decan et al. 2019). See the README for the full rule table.',
+  comTitle:cid=>`Community ${cid}`, comNodes:"Nodes", comInEdges:"Internal edges", comDensity:"Internal density", comAvgIn:"Mean in-degree",
+  comTop:"<b>Representative nodes (top PageRank):</b> ",
+  comDesc:"A community corresponds to a relatively dense <b>functional group</b>.",
+  comReco:"<b>Adoption:</b> look for alternatives within the same community first. <b>Concentration risk:</b> a rough scope of how failures could propagate.",
+  comEvidence:"See the README for the basis of the interpretation rules and the rule table.", comNone:"No community data",
+  eigNote:'<b>※ Reference only</b>: dependency networks are nearly acyclic (DAG), so eigenvector centrality’s power iteration tends to degenerate by concentrating mass at dependency sinks (hence the large rank gap). Use in-degree, betweenness, and PageRank for diagnosis. <b>That this metric does not suit dependency networks is itself an RQ2 finding.</b>',
+  spearman:sp=>`Spearman ρ: in-degree×betweenness=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×eigenvector=${sp.indeg_vs_eigenvector} (the farther from 1.0, the more SNA-specific information)`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — in-deg ${rin} → betw <b>${rbt}</b> <span class="muted">(indeg=${indeg}, btw=${btw}) bridge</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — in-deg ${rin} · reach ${impact} <span class="muted">foundation (visible to simple stats)</span>`,
+  divNone:"No prominent divergence nodes in this domain", comRowNote:top=>top?`(${top})`:"",
+  scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← top-left = low in-degree but high betweenness (bottlenecks invisible to simple stats · RQ3)",
+  tipClick:" — click for diagnosis & focus", tipCat:"Category", tipCom:"Community", tipIndeg:"In-deg", tipOut:"Out-deg", tipReach:"Reach", tipBtw:"Betw",
+  metaTitle:l=>`Reproducibility (${l})`, metaFetch:"Fetched", metaSrc:"Source", metaRate:"Seed success", metaScale:"Scale",
+  metaNode:"nodes", metaEdge:"edges", metaDensity:"density", metaComp:"weak components", metaMod:"modularity", metaCom:"communities",
+  metaSeed:"random seed", metaSeedUse:"(layout & community detection)", metaTime:"metric time", metaBtw:"betweenness", metaTotal:"total", metaGen:"generated",
+  metaDet:"Diagnoses are generated by deterministic rules (no LLM); layout is recomputed deterministically per visible set (seeded from precomputed coordinates, fixed iterations, no randomness)",
+ },
+};
+function T(){ return STR[lang]; }
+
 let curD = Object.keys(DATA)[0], curM = "indeg", view = "net",
     comMode = false, selected = null, selectedCom = null, topN = 0, catFilter = "";
 
@@ -218,74 +336,62 @@ function nodeTypes(n){
   return t;
 }
 function diagnoseNode(n, g){
-  const N = g.nodes.length, CUT = g.cut_impact || {};
+  const S = T(), N = g.nodes.length, CUT = g.cut_impact || {};
+  const sep = lang==="ja" ? "、" : ", ";
   const types = nodeTypes(n);
-  let badges = types.map(t=>`<span class="badge" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t].label}</span>`).join("");
-  if (n.seed) badges += `<span class="badge" style="background:#5DA8E8">シード</span>`;
-  if (n.cat) badges += `<span class="badge" style="background:#8FA8C0">${esc(n.cat)}</span>`;
-  const descHtml = n.desc ? `<div class="diag-desc">${esc(n.desc)}</div>` : "";
+  let badges = types.map(t=>`<span class="badge" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
+  if (n.seed) badges += `<span class="badge" style="background:#5DA8E8">${S.seedBadge}</span>`;
+  if (n.cat) badges += `<span class="badge" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
+  const d = descOf(n);
+  const descHtml = d ? `<div class="diag-desc">${esc(d)}</div>` : "";
   const table = `<table class="diag-table">
-    <tr><td>被依存数（単純統計）</td><td>${n.indeg}（全 ${N} 中 ${n.r_in}位）</td></tr>
-    <tr><td>影響範囲（推移的）</td><td>${n.impact} パッケージ</td></tr>
-    <tr><td>媒介中心性</td><td>${n.btw}（${n.r_bt}位）</td></tr>
-    <tr><td>PageRank</td><td>${n.pr}</td></tr>
-    <tr><td>コミュニティ</td><td>${n.com}</td></tr></table>`;
+    <tr><td>${S.tIndeg}</td><td>${S.tIndegVal(n.indeg, N, n.r_in)}</td></tr>
+    <tr><td>${S.tReach}</td><td>${S.tReachVal(n.impact)}</td></tr>
+    <tr><td>${S.tBtw}</td><td>${S.tBtwVal(n.btw, n.r_bt)}</td></tr>
+    <tr><td>${S.tPr}</td><td>${n.pr}</td></tr>
+    <tr><td>${S.tCom}</td><td>${n.com}</td></tr></table>`;
   const texts = [], recos = [];
   for (const t of types){
     if (t === "cutpoint"){
       const cut = CUT[n.id] || [];
-      // 規模に応じた決定論的な言い分け（テンプレートの段階化）
-      const phrase = cut.length >= 10
-        ? `<b>${cut.length} 個</b>のパッケージが一斉に主要ネットワークから孤立し、影響が特に広範に及ぶ`
-        : cut.length >= 3
-        ? `<b>${cut.length} 個</b>のパッケージが主要ネットワークから孤立する`
-        : `孤立する範囲は <b>${cut.length} パッケージ</b>と局所的にとどまるが、構造上の急所であることに変わりはない`;
-      texts.push(`ネットワークの<b>切断点</b>にあたる。仮にこのパッケージが利用不能になると、${phrase}（図中に黄色でハイライト表示）。`);
-      recos.push(`<b>集中リスク把握:</b> 最優先での監視を推奨。<b>利用・支援判断:</b> 代替経路の有無の事前確認を推奨。`);
-      if (cut.length){
-        const head = cut.slice(0,8).map(esc).join("、");
-        texts.push(`<div class="diag-cut"><b>孤立する範囲:</b> ${head}${cut.length>8?` 他 ${cut.length-8} 件`:""}</div>`);
-      }
+      texts.push(S.cutMain(cut.length));
+      recos.push(S.cutReco);
+      if (cut.length) texts.push(S.cutList(cut.slice(0,8).map(esc).join(sep), cut.length>8 ? cut.length-8 : 0));
     } else if (t === "bridge"){
-      const gap = n.r_in - n.r_bt;
-      const gapNote = gap >= 100 ? `両指標の順位差は ${gap} に達し、順位の乖離が際立って大きい。`
-                    : gap >= 30  ? `両指標の順位差は ${gap} と大きい。` : "";
-      texts.push(`被依存数（${n.r_in}位）に比べ、媒介中心性は <b>${n.r_bt}位</b>と明確に高い。${gapNote}依存経路の要衝（<b>橋渡し</b>）に位置し、障害時には複数のパッケージ群の間の依存経路が分断されるおそれがある。単純統計では検出しにくい型。`);
-      recos.push(`<b>利用判断:</b> 保守体制・更新頻度の確認を推奨。<b>支援判断:</b> 見落とされやすい支援先候補。`);
+      texts.push(S.bridgeMain(n.r_in, n.r_bt, n.r_in - n.r_bt));
+      recos.push(S.bridgeReco);
     } else if (t === "foundation"){
-      const share = n.impact / N;
-      const reach = share >= 0.25 ? `分析対象ネットワーク全体の約 ${Math.round(share*100)}%（${n.impact} パッケージ）へ波及する`
-                                  : `推移的に ${n.impact} パッケージへ波及する`;
-      texts.push(`被依存数 ${n.indeg}（全体 ${n.r_in}位）の<b>基盤（土台型）</b>パッケージ。停止・脆弱性の影響は${reach}。単純統計でも検出できる型。`);
-      recos.push(`<b>利用判断:</b> 広く利用されている標準的な選択肢。<b>集中リスク把握:</b> 依存が一点に集中する典型例。保守の継続性に注意。`);
+      texts.push(S.foundMain(n.indeg, n.r_in, n.impact, N));
+      recos.push(S.foundReco);
     } else if (t === "isolated"){
-      texts.push(`このデータ範囲では他のパッケージとの依存関係が観測されない（依存先が収集範囲外、または独立したパッケージ）。`);
+      texts.push(S.isoMain);
     } else {
-      texts.push(`構造上の特異性は検出されない（被依存 ${n.r_in}位・媒介 ${n.r_bt}位）。依存構造上は標準的な位置にあり、個別指標の確認で十分と考えられる。`);
+      texts.push(S.normMain(n.r_in, n.r_bt));
     }
   }
   return `<div class="diag-name">${esc(n.label)}</div>${badges}${descHtml}${table}
     ${texts.map(t=>`<div class="diag-text">${t}</div>`).join("")}
     ${recos.length?`<div class="diag-reco">${recos.join("<br>")}</div>`:""}
-    <div class="muted" style="margin-top:7px">解釈規則は、SNA 指標の標準的解釈（Chen et al. 2022 のレビューに整理されている）および
-    依存ネットワーク研究の知見（Decan et al. 2019）に基づく（規則表は README を参照）。</div>`;
+    <div class="muted" style="margin-top:7px">${S.evidence}</div>`;
 }
 function diagnoseCom(cid, g){
+  const S = T();
   const st = (g.communities||[]).find(c=>c.id===cid);
-  if (!st) return `<div class="hint">コミュニティ情報なし</div>`;
+  if (!st) return `<div class="hint">${S.comNone}</div>`;
   const member = g.nodes.filter(n=>n.com===cid);
   const avgIn = member.length ? (member.reduce((a,n)=>a+n.indeg,0)/member.length).toFixed(1) : 0;
-  return `<div class="diag-name">コミュニティ ${cid}</div>
-    <span class="badge" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">機能群</span>
+  const sep = lang==="ja" ? "、" : ", ";
+  return `<div class="diag-name">${S.comTitle(cid)}</div>
+    <span class="badge" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
     <table class="diag-table">
-      <tr><td>ノード数</td><td>${st.n}</td></tr>
-      <tr><td>内部エッジ数</td><td>${st.m_in}</td></tr>
-      <tr><td>内部密度</td><td>${st.density}</td></tr>
-      <tr><td>平均被依存数</td><td>${avgIn}</td></tr></table>
-    <div class="diag-text"><b>代表ノード（PageRank 上位）:</b> ${st.top.map(esc).join("、")}</div>
-    <div class="diag-text">コミュニティは依存が相対的に密な<b>機能群</b>に対応する。</div>
-    <div class="diag-reco"><b>利用判断:</b> 代替候補はまず同一コミュニティ内から探索するのが有効。<b>集中リスク把握:</b> 障害が伝播しうる範囲の目安。</div>
-    <div class="muted" style="margin-top:7px">解釈規則の根拠と規則表は README を参照。</div>`;
+      <tr><td>${S.comNodes}</td><td>${st.n}</td></tr>
+      <tr><td>${S.comInEdges}</td><td>${st.m_in}</td></tr>
+      <tr><td>${S.comDensity}</td><td>${st.density}</td></tr>
+      <tr><td>${S.comAvgIn}</td><td>${avgIn}</td></tr></table>
+    <div class="diag-text">${S.comTop}${st.top.map(esc).join(sep)}</div>
+    <div class="diag-text">${S.comDesc}</div>
+    <div class="diag-reco">${S.comReco}</div>
+    <div class="muted" style="margin-top:7px">${S.comEvidence}</div>`;
 }
 
 /* ---------- 適応レイアウト（決定論的・乱数不使用） ----------
@@ -423,15 +529,32 @@ function placedFor(g){
 }
 
 /* ---------- 描画 ---------- */
+function applyStaticText(){
+  const S = T();
+  $("#h1main").textContent = S.h1main;
+  $("#h1sub").textContent = S.h1sub;
+  $("#headerHint").textContent = S.headerHint;
+  $("#lblDomain").textContent = S.gDomain; $("#lblView").textContent = S.gView;
+  $("#lblMetric").textContent = S.gMetric; $("#lblSearch").textContent = S.gSearch;
+  $("#lblTopn").textContent = S.gTopn; $("#lblLang").textContent = S.gLang;
+  $("#comBtn").textContent = S.comBtn; $("#comBtn").title = S.comBtnTitle;
+  $("#q").placeholder = S.qPlaceholder;
+  $("#diagTitle").textContent = S.diagTitle;
+  $("#divTitle").textContent = S.divTitle;
+  $("#legNormal").textContent = S.legNormal; $("#legSeed").textContent = S.legSeed;
+  $("#legCut").textContent = S.legCut; $("#legIso").textContent = S.legIso;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-lang]").forEach(b => b.className = b.dataset.lang===lang ? "on" : "");
+}
 function drawButtons(){
   $("#domains").innerHTML = Object.entries(DATA).map(([k,g]) =>
-    `<button data-d="${k}" class="${k===curD?'on':''}">${g.label}</button>`).join(" ");
+    `<button data-d="${k}" class="${k===curD?'on':''}">${esc(domLabel(g))}</button>`).join(" ");
   $("#views").innerHTML =
-    `<button data-v="net" class="${view==='net'?'on':''}">ネットワーク図</button> ` +
-    `<button data-v="scatter" class="${view==='scatter'?'on':''}">散布図（被依存×媒介）</button>`;
+    `<button data-v="net" class="${view==='net'?'on':''}">${T().vNet}</button> ` +
+    `<button data-v="scatter" class="${view==='scatter'?'on':''}">${T().vScatter}</button>`;
   const dis = view==="scatter" ? " dis" : "";
   $("#metrics").innerHTML = Object.keys(MLAB).map(m =>
-    `<button data-m="${m}" class="${m===curM&&!comMode?'on':''}${dis}">${MLAB[m].split("（")[0]}</button>`).join(" ");
+    `<button data-m="${m}" class="${m===curM&&!comMode?'on':''}${dis}">${esc(mshort(m))}</button>`).join(" ");
   $("#comBtn").className = (comMode ? "on" : "") + dis;
   document.querySelectorAll("[data-d]").forEach(b => b.onclick = () => {
     curD=b.dataset.d; selected=null; selectedCom=null; topN=0; catFilter="";
@@ -439,6 +562,11 @@ function drawButtons(){
   document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view=b.dataset.v; render(); });
   document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { curM=b.dataset.m; comMode=false; selectedCom=null; render(); });
   $("#comBtn").onclick = () => { comMode=!comMode; if(!comMode) selectedCom=null; render(); };
+}
+function setLang(l){
+  if (l===lang) return;
+  lang = l;
+  applyStaticText(); initSearch(); render();
 }
 function initSlider(){
   const g = DATA[curD], el = $("#topn");
@@ -448,15 +576,16 @@ function initSlider(){
   el.oninput = () => { topN = (+el.value >= g.nodes.length) ? 0 : +el.value; render(); };
 }
 function sliderLabel(g){
-  const vis = visibleIds(g);
-  if (catFilter) $("#topnVal").textContent = `${vis ? vis.size : 0} ノード表示中`;
-  else $("#topnVal").textContent = topN ? `上位 ${topN}/${g.nodes.length}` : `全 ${g.nodes.length} ノード`;
+  const S = T(), vis = visibleIds(g);
+  if (catFilter) $("#topnVal").textContent = S.catCount(vis ? vis.size : 0);
+  else $("#topnVal").textContent = topN ? S.topnTop(topN, g.nodes.length) : S.topnAll(g.nodes.length);
 }
 function initSearch(){
   const g = DATA[curD];
   $("#qlist").innerHTML = g.nodes.map(n=>`<option value="${esc(n.id)}">`).join("");
-  $("#catSel").innerHTML = `<option value="">分類: すべて</option>` +
-    (g.categories||[]).map(c=>`<option value="${esc(c.name)}"${c.name===catFilter?" selected":""}>${esc(c.name)}（${c.n}）</option>`).join("");
+  const open = lang==="ja" ? "（" : " (", close = lang==="ja" ? "）" : ")";
+  $("#catSel").innerHTML = `<option value="">${T().catAll}</option>` +
+    (g.categories||[]).map(c=>`<option value="${esc(c.name)}"${c.name===catFilter?" selected":""}>${esc(catLabel(c.name))}${open}${c.n}${close}</option>`).join("");
   $("#q").value = "";
 }
 $("#catSel").addEventListener("change", () => {
@@ -540,27 +669,28 @@ function renderNet(g, byId){
 function renderScatter(g, byId){
   const vis = visibleIds(g);
   const shown = n => !vis || vis.has(n.id);
-  const W=1000,H=660,L=80,R=40,T=40,B=70;
+  const W=1000,H=660,L=80,R=40,TM=40,B=70;   // TM = top margin（全局 T() と衝突しないよう改名）
   const pts = g.nodes.filter(shown);
   const xmax = Math.max(...pts.map(n=>n.indeg), 1);
   const ymax = Math.max(...pts.map(n=>n.btw), 1e-6);
   const xs = v => L + (W-L-R) * Math.sqrt(v/xmax);
-  const ys = v => H-B - (H-T-B) * Math.sqrt(v/ymax);
+  const ys = v => H-B - (H-TM-B) * Math.sqrt(v/ymax);
   const divIds = new Set((g.divergence||[]).map(d=>d.id));
   const fndIds = new Set((g.foundation||[]).map(d=>d.id));
   // 軸とグリッド（sqrt 標度。値は i/4 の二乗で決定的）
   let ax = `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#9FB2C6" stroke-width="1"/>
-            <line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}" stroke="#9FB2C6" stroke-width="1"/>`;
+            <line x1="${L}" y1="${TM}" x2="${L}" y2="${H-B}" stroke="#9FB2C6" stroke-width="1"/>`;
   for (let i=1;i<=4;i++){
     const fx = xmax*(i/4)**2, fy = ymax*(i/4)**2;
-    ax += `<line x1="${xs(fx)}" y1="${T}" x2="${xs(fx)}" y2="${H-B}" stroke="#E4ECF4" stroke-width="1"/>
+    ax += `<line x1="${xs(fx)}" y1="${TM}" x2="${xs(fx)}" y2="${H-B}" stroke="#E4ECF4" stroke-width="1"/>
            <text x="${xs(fx)}" y="${H-B+18}" font-size="10" fill="#5C6B7A" text-anchor="middle">${Math.round(fx)}</text>
            <line x1="${L}" y1="${ys(fy)}" x2="${W-R}" y2="${ys(fy)}" stroke="#E4ECF4" stroke-width="1"/>
            <text x="${L-8}" y="${ys(fy)+3}" font-size="10" fill="#5C6B7A" text-anchor="end">${fy.toFixed(4)}</text>`;
   }
-  ax += `<text x="${(L+W-R)/2}" y="${H-B+40}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold">被依存数（単純統計）→</text>
-         <text x="22" y="${(T+H-B)/2}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold" transform="rotate(-90 22 ${(T+H-B)/2})">媒介中心性（SNA）→</text>
-         <text x="${L+14}" y="${T+18}" font-size="11.5" fill="#A8761A" font-weight="bold">← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝・RQ3）</text>`;
+  const S = T();
+  ax += `<text x="${(L+W-R)/2}" y="${H-B+40}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold">${esc(S.scX)}</text>
+         <text x="22" y="${(TM+H-B)/2}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold" transform="rotate(-90 22 ${(TM+H-B)/2})">${esc(S.scY)}</text>
+         <text x="${L+14}" y="${TM+18}" font-size="11.5" fill="#A8761A" font-weight="bold">${esc(S.scHint)}</text>`;
   $("#edges").innerHTML = ax;
   const drawOrder = [...pts].sort((a,b)=> a.btw-b.btw || (a.id<b.id?-1:1));   // 高媒介が最前面
   $("#nodes").innerHTML = drawOrder.map(n => {
@@ -577,6 +707,7 @@ function renderScatter(g, byId){
 }
 
 function renderSide(g, byId){
+  const S = T();
   const comActive = comMode && view==="net";   // 散布図ではコミュニティフォーカスを適用しない
   // 診断カード
   if (comActive && selectedCom!=null){
@@ -584,32 +715,27 @@ function renderSide(g, byId){
   } else if (selected && byId[selected]){
     $("#diag").innerHTML = diagnoseNode(byId[selected], g);
   } else {
-    $("#diag").innerHTML = `<div class="hint">ノード（またはコミュニティ着色時のコミュニティ行）をクリックすると、
-      指標データと「意思決定上何を意味するか」の診断を表示します。<br>
-      診断はノード型 × 意思決定場面の対応表に基づく決定論的なルール＋テンプレートで生成（AI 不使用・再現可能）。</div>`;
+    $("#diag").innerHTML = `<div class="hint">${S.diagHint}</div>`;
   }
   // ランキング / コミュニティ一覧
   if (comActive){
-    $("#rankTitle").textContent = "コミュニティ（クリックでフォーカス）";
+    $("#rankTitle").textContent = S.rankComTitle;
     const cs = g.communities || [];
     $("#rankList").innerHTML = cs.slice(0,10).map(c =>
       `<div class="rank-row${selectedCom===c.id?' sel':''}" data-com="${c.id}">
         <span class="dot" style="background:${COLORS[c.id%COLORS.length]}"></span>
-        <span class="nm">コミュニティ ${c.id} <span class="muted">(${esc(c.top[0]||"")}系)</span></span>
+        <span class="nm">${S.comTitle(c.id)} <span class="muted">${S.comRowNote(esc(c.top[0]||""))}</span></span>
         <span class="bar-bg"><span class="bar-fg" style="width:${100*c.n/g.nodes.length}%"></span></span>
         <span class="val">${c.n}</span></div>`).join("");
     document.querySelectorAll(".rank-row[data-com]").forEach(r => r.onclick = () => {
       const cid = +r.dataset.com;
       selectedCom = (selectedCom===cid) ? null : cid; selected=null; render(); });
   } else {
-    $("#rankTitle").textContent = (MLAB[curM]) + " — Top 10";
+    $("#rankTitle").textContent = mlab(curM) + S.rankTopSuffix;
     const mx2 = Math.max(...g.nodes.map(n=>n[curM])) || 1;
     const rows = [...g.nodes].sort((a,b)=>b[curM]-a[curM]).slice(0,10);
     const eigNote = curM==="eig"
-      ? `<div class="diag-cut" style="background:var(--warnbg);border-left:3px solid #F2C84B;margin:0 0 8px">
-         <b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（DAG）であり、固有ベクトル中心性の反復計算は
-         依存の終端（sink）に値が集中して退化しやすい（順位が大きく断絶するのはこのため）。
-         診断には次数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体が RQ2 の知見</b>。</div>`
+      ? `<div class="diag-cut" style="background:var(--warnbg);border-left:3px solid #F2C84B;margin:0 0 8px">${S.eigNote}</div>`
       : "";
     $("#rankList").innerHTML = eigNote + rows.map(n =>
       `<div class="rank-row${n.id===selected?' sel':''}" data-id="${n.id}">
@@ -623,17 +749,12 @@ function renderSide(g, byId){
   const fd = (g.foundation||[]).slice(0,3);
   $("#divList").innerHTML =
     (dv.length ? dv.map(d =>
-      `<div class="div-row" data-id="${d.id}"><b>${esc(d.id)}</b> — 被依存 ${d.rank_indeg}位 → 媒介 <b>${d.rank_btw}位</b>
-       <span class="muted">(indeg=${d.indeg}, btw=${d.btw}) 橋渡し型</span></div>`).join("") :
-      `<div class="muted">この領域では顕著な乖離ノードなし</div>`) +
+      `<div class="div-row" data-id="${d.id}">${S.divBridge(esc(d.id), d.rank_indeg, d.rank_btw, d.indeg, d.btw)}</div>`).join("") :
+      `<div class="muted">${S.divNone}</div>`) +
     fd.map(d =>
-      `<div class="div-row" data-id="${d.id}" style="border-left-color:#2C5F94; background:#EAF4FF"><b style="color:#2C5F94">${esc(d.id)}</b>
-       — 被依存 ${d.rank_indeg}位・影響範囲 ${d.impact}
-       <span class="muted">土台型（単純統計でも見える）</span></div>`).join("");
+      `<div class="div-row" data-id="${d.id}" style="border-left-color:#2C5F94; background:#EAF4FF">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
   document.querySelectorAll(".div-row[data-id]").forEach(r => r.onclick = () => { selected=r.dataset.id; comMode=false; selectedCom=null; render(); });
-  const sp = g.spearman||{};
-  $("#spearman").textContent =
-    `Spearman ρ: 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1.0 から離れるほど SNA 独自の情報が多い）`;
+  $("#spearman").textContent = S.spearman(g.spearman||{});
 }
 
 function render(){
@@ -643,25 +764,25 @@ function render(){
   if (view === "scatter") renderScatter(g, byId); else renderNet(g, byId);
   renderSide(g, byId);
   // メタ情報
-  const c=g.collect||{}, rp=g.repro||{};
+  const S = T(), c=g.collect||{}, rp=g.repro||{}, sl=lang==="ja"?" ／ ":" / ";
   $("#meta").innerHTML =
-    `<b>再現性情報（${g.label}）</b> — 取得日: ${(c.fetched_dates||[]).join(", ")||"—"} ／ データソース: deps.dev API v3 ／ ` +
-    `シード成功率: ${c.n_seeds_ok??"—"}/${(c.n_seeds_ok??0)+(c.n_seeds_failed??0)} (${((c.success_rate??0)*100).toFixed(1)}%) ／ ` +
-    `規模: ${g.n} ノード・${g.m} エッジ ／ 密度 ${g.density} ／ 弱連結成分 ${g.n_components} ／ ` +
-    `モジュラリティ ${g.modularity}（コミュニティ ${g.n_communities}）<br>` +
-    `乱数 seed=${rp.random_seed}（レイアウト・コミュニティ検出に使用） ／ 指標処理時間: ` +
-    `媒介 ${rp.durations_sec?.betweenness}s・全体 ${rp.durations_sec?.total}s ／ 生成日時: ${g.generated_at}<br>` +
-    `診断は決定論的ルールにより生成（AI 不使用） ／ 表示レイアウトは表示集合に応じて決定論的に再計算（初期値＝事前計算座標・反復固定・乱数不使用）`;
+    `<b>${S.metaTitle(domLabel(g))}</b> — ${S.metaFetch}: ${(c.fetched_dates||[]).join(", ")||"—"}${sl}${S.metaSrc}: deps.dev API v3${sl}` +
+    `${S.metaRate}: ${c.n_seeds_ok??"—"}/${(c.n_seeds_ok??0)+(c.n_seeds_failed??0)} (${((c.success_rate??0)*100).toFixed(1)}%)${sl}` +
+    `${S.metaScale}: ${g.n} ${S.metaNode} · ${g.m} ${S.metaEdge}${sl}${S.metaDensity} ${g.density}${sl}${S.metaComp} ${g.n_components}${sl}` +
+    `${S.metaMod} ${g.modularity} (${S.metaCom} ${g.n_communities})<br>` +
+    `${S.metaSeed}=${rp.random_seed} ${S.metaSeedUse}${sl}${S.metaTime}: ` +
+    `${S.metaBtw} ${rp.durations_sec?.betweenness}s · ${S.metaTotal} ${rp.durations_sec?.total}s${sl}${S.metaGen}: ${g.generated_at}<br>` +
+    `${S.metaDet}`;
   // ツールチップ + クリック
   const tip = $("#tip");
   document.querySelectorAll("circle[data-id]").forEach(cc => {
     cc.onmousemove = ev => {
-      const n = byId[cc.dataset.id];
-      tip.innerHTML = `<b>${esc(n.label)}</b>${n.seed?" 🌱シード":""}${n.art?" ⚠切断点":""}<br>` +
-        (n.desc?`<span style="color:#5C6B7A;font-style:italic">${esc(n.desc.slice(0,70))}${n.desc.length>70?"…":""}</span><br>`:"") +
-        `分類: ${esc(n.cat||"—")} ／ コミュニティ ${n.com}<br>` +
-        `被依存 ${n.indeg}（${n.r_in}位） ／ 依存先 ${n.outdeg} ／ 影響範囲 ${n.impact}<br>` +
-        `媒介 ${n.btw}（${n.r_bt}位） — クリックで診断とフォーカス表示`;
+      const n = byId[cc.dataset.id], d = descOf(n), sl=lang==="ja"?" ／ ":" / ";
+      tip.innerHTML = `<b>${esc(n.label)}</b>${n.seed?" 🌱"+S.seedBadge:""}${n.art?" ⚠"+TYPE_INFO.cutpoint[lang]:""}<br>` +
+        (d?`<span style="color:#5C6B7A;font-style:italic">${esc(d.slice(0,70))}${d.length>70?"…":""}</span><br>`:"") +
+        `${S.tipCat}: ${esc(catLabel(n.cat)||"—")}${sl}${S.tipCom} ${n.com}<br>` +
+        `${S.tipIndeg} ${n.indeg}（${n.r_in}）${sl}${S.tipOut} ${n.outdeg}${sl}${S.tipReach} ${n.impact}<br>` +
+        `${S.tipBtw} ${n.btw}（${n.r_bt}）${S.tipClick}`;
       tip.style.display="block";
       // 内容を設定してから寸法を測り、ステージ端で反転させる（右端・下端での潰れ防止）
       const cw = tip.parentElement.clientWidth, ch = tip.parentElement.clientHeight;
@@ -681,6 +802,8 @@ function render(){
     };
   });
 }
+document.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+applyStaticText();
 initSlider();
 initSearch();
 render();
