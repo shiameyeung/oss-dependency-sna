@@ -784,18 +784,42 @@ function renderScatter(g, byId){
          <text x="22" y="${(TM+H-B)/2}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold" transform="rotate(-90 22 ${(TM+H-B)/2})">${esc(S.scY)}</text>
          <text x="${L+14}" y="${TM+18}" font-size="11.5" fill="#A8761A" font-weight="bold">${esc(S.scHint)}</text>`;
   $("#edges").innerHTML = ax;
+  // 重なり回避の決定論的ジッタ: 同一座標（btw≈0 のノードが大半）に重なる点を黄金角スパイラルで
+  // 散らし、全ノードを可視化する。中心は真の (indeg, btw) 位置のまま＝構造（左上＝乖離）は保つ。
+  const JX = id => jit.get(id)[0], JY = id => jit.get(id)[1];
+  const jit = new Map();
+  const groups = {};
+  for (const n of pts){
+    const k = Math.round(xs(n.indeg)) + "," + Math.round(ys(n.btw));
+    (groups[k] = groups[k] || []).push(n.id);
+  }
+  for (const k in groups){
+    const ids = groups[k].sort();   // 決定論的順序
+    const cnt = ids.length;
+    ids.forEach((id, j) => {
+      if (cnt === 1){ jit.set(id, [xs(byId[id].indeg), ys(byId[id].btw)]); return; }
+      const r = 2.1 * Math.sqrt(j), a = j * 2.399963229;   // ひまわり配置（均等分散）
+      jit.set(id, [xs(byId[id].indeg) + r*Math.cos(a), ys(byId[id].btw) + r*Math.sin(a)]);
+    });
+  }
   const drawOrder = [...pts].sort((a,b)=> a.btw-b.btw || (a.id<b.id?-1:1));   // 高媒介が最前面
   $("#nodes").innerHTML = drawOrder.map(n => {
-    let fill="#A9C9E8", stroke="#ffffff", sw=0.8, r=5;
-    if (divIds.has(n.id)){ fill="#F2C84B"; stroke="#A8761A"; sw=1.4; r=6.5; }
-    else if (fndIds.has(n.id)){ fill="#2C5F94"; r=6.5; }
-    const sel = n.id===selected ? `<circle cx="${xs(n.indeg)}" cy="${ys(n.btw)}" r="${r+6}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
-    return `${sel}<circle data-id="${n.id}" cx="${xs(n.indeg)}" cy="${ys(n.btw)}" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" style="cursor:pointer"/>`;
+    let fill="#A9C9E8", stroke="#ffffff", sw=0.6, r=3.6, op=0.62;   // 通常点は小さめ半透明＝密度が見える
+    if (divIds.has(n.id)){ fill="#F2C84B"; stroke="#A8761A"; sw=1.4; r=6; op=1; }
+    else if (fndIds.has(n.id)){ fill="#2C5F94"; r=6; op=1; }
+    const sel = n.id===selected ? `<circle cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r+6}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
+    return `${sel}<circle data-id="${n.id}" cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r}" fill="${fill}" fill-opacity="${op}" stroke="${stroke}" stroke-width="${sw}" style="cursor:pointer"/>`;
   }).join("");
   const lab = pts.filter(n=>divIds.has(n.id)).sort((a,b)=>a.r_bt-b.r_bt).slice(0,6)
     .concat(pts.sort((a,b)=>b.indeg-a.indeg).slice(0,3));
   $("#labels").innerHTML = lab.map(n =>
-    `<text x="${xs(n.indeg)+8}" y="${ys(n.btw)-7}" font-size="10.5" fill="#1F2D40" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
+    `<text x="${JX(n.id)+8}" y="${JY(n.id)-7}" font-size="10.5" fill="#1F2D40" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
+  // 全ノード数の注記（底辺集中の説明）
+  const note = lang==="ja" ? `全 ${pts.length} ノードを描画（媒介中心性は大半が 0 のため底辺付近に密集。重なりは微小に分散）`
+    : lang==="en" ? `${pts.length} nodes shown (most have betweenness ≈ 0, so they cluster near the bottom; overlaps are slightly spread)`
+    : lang==="zhHant" ? `共繪製 ${pts.length} 個節點（多數中介中心性≈0，集中於底部；重疊處微幅分散）`
+    : `共绘制 ${pts.length} 个节点（多数中介中心性≈0，集中于底部；重叠处微幅分散）`;
+  $("#labels").innerHTML += `<text x="${40}" y="650" font-size="11" fill="#5C6B7A">${note}</text>`;
 }
 
 function renderSide(g, byId){
