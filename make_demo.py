@@ -72,6 +72,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
   .badge { display:inline-block; font-size:11px; font-weight:700; color:#fff; border-radius:4px;
            padding:2px 8px; margin:0 4px 6px 0; cursor:help; }
+  .nodelink { color:var(--acc); cursor:pointer; border-bottom:1px dotted var(--acc2); word-break:break-all; }
+  .nodelink:hover { color:var(--acc2); background:var(--panel2); }
   .diag-name { font-size:14px; font-weight:700; color:var(--txt); margin-bottom:4px; word-break:break-all; }
   .diag-table { width:100%; border-collapse:collapse; font-size:11.5px; margin:6px 0 8px; }
   .diag-table td { padding:2.5px 4px; border-bottom:1px solid var(--line); }
@@ -446,6 +448,11 @@ function neighborsOf(g, id){
 }
 
 /* ---------- 診断（決定的ルール + テンプレート。AI 不使用） ---------- */
+// ノード名を、そのノードを焦点（エゴネットワーク）にするリンクとして描画する。
+// クリックは renderSide で #diag 内の .nodelink に束縛する。
+function nodeLinks(ids, sep){
+  return ids.map(id=>`<a class="nodelink" data-goto="${esc(id)}">${esc(id)}</a>`).join(sep);
+}
 function nodeTypes(n){
   const t = [];
   if (n.art) t.push("cutpoint");
@@ -476,7 +483,7 @@ function diagnoseNode(n, g){
       const cut = CUT[n.id] || [];
       texts.push(S.cutMain(cut.length));
       recos.push(S.cutReco);
-      if (cut.length) texts.push(S.cutList(cut.slice(0,8).map(esc).join(sep), cut.length>8 ? cut.length-8 : 0));
+      if (cut.length) texts.push(S.cutList(nodeLinks(cut.slice(0,8), sep), cut.length>8 ? cut.length-8 : 0));
     } else if (t === "bridge"){
       texts.push(S.bridgeMain(n.r_in, n.r_bt, n.r_in - n.r_bt));
       recos.push(S.bridgeReco);
@@ -508,7 +515,7 @@ function diagnoseCom(cid, g){
       <tr><td>${S.comInEdges}</td><td>${st.m_in}</td></tr>
       <tr><td>${S.comDensity}</td><td>${st.density}</td></tr>
       <tr><td>${S.comAvgIn}</td><td>${avgIn}</td></tr></table>
-    <div class="diag-text">${S.comTop}${st.top.map(esc).join(sep)}</div>
+    <div class="diag-text">${S.comTop}${nodeLinks(st.top, sep)}</div>
     <div class="diag-text">${S.comDesc}</div>
     <div class="diag-reco">${S.comReco}</div>
     <div class="muted" style="margin-top:7px">${S.comEvidence}</div>`;
@@ -864,6 +871,11 @@ function renderSide(g, byId){
   } else {
     $("#diag").innerHTML = `<div class="hint">${S.diagHint}</div>`;
   }
+  // 診断カード内のノードリンク → そのノードを焦点（エゴネットワーク）にして表示
+  document.querySelectorAll("#diag .nodelink").forEach(a => a.onclick = () => {
+    catFilter=""; topN=0; comMode=false; selectedCom=null; view="net"; selected=a.dataset.goto;
+    initSlider(); initSearch(); render();
+  });
   // ランキング / コミュニティ一覧
   if (comActive){
     $("#rankTitle").textContent = S.rankComTitle;
