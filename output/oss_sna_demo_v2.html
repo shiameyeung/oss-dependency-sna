@@ -918,6 +918,13 @@ function render(){
     };
   });
 }
+// 空白クリックでフォーカス解除（ノード自身のクリックは各ノードのハンドラに任せる）。
+// #svg 要素は render で置換されないため一度だけ束縛すれば持続する。
+$("#svg").addEventListener("click", e => {
+  const t = e.target;
+  if (t && t.tagName === "circle" && t.getAttribute("data-id")) return;  // ノードクリックは無視
+  if (selected !== null || selectedCom !== null){ selected = null; selectedCom = null; render(); }
+});
 applyStaticText();
 initSlider();
 initSearch();
