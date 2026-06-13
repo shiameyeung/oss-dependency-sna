@@ -1,0 +1,12 @@
+{
+ "package": "jieba",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:08Z",
+ "status": "ok",
+ "version": "0.42.1",
+ "nodes": [
+  "jieba"
+ ],
+ "edges": []
+}

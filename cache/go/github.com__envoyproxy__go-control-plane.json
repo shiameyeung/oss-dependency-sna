@@ -2,7 +2,7 @@
  "package": "github.com/envoyproxy/go-control-plane",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.14.0",
  "nodes": [

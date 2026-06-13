@@ -2,15 +2,18 @@
  "package": "knative.dev/eventing",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.49.1",
  "nodes": [
+  "github.com/ahmetb/gen-crd-api-reference-docs",
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/service/dynamodb",
   "github.com/aws/aws-sdk-go-v2/service/s3",
+  "github.com/aws/aws-sdk-go-v2/service/sqs",
+  "github.com/cert-manager/cert-manager",
   "github.com/cloudevents/sdk-go/v2",
   "github.com/coreos/go-oidc/v3",
   "github.com/fsnotify/fsnotify",
@@ -20,6 +23,9 @@
   "github.com/gorilla/websocket",
   "github.com/hashicorp/go-retryablehttp",
   "github.com/kelseyhightower/envconfig",
+  "github.com/mitchellh/go-homedir",
+  "github.com/openzipkin/zipkin-go",
+  "github.com/pelletier/go-toml/v2",
   "github.com/phayes/freeport",
   "github.com/pkg/errors",
   "github.com/robfig/cron/v3",
@@ -32,6 +38,7 @@
   "go.opentelemetry.io/otel/sdk/metric",
   "go.opentelemetry.io/otel/trace",
   "go.uber.org/atomic",
+  "go.uber.org/multierr",
   "go.uber.org/zap",
   "golang.org/x/net",
   "golang.org/x/sync",
@@ -43,10 +50,16 @@
   "k8s.io/code-generator",
   "k8s.io/utils",
   "knative.dev/eventing",
+  "knative.dev/hack",
+  "knative.dev/pkg",
   "sigs.k8s.io/randfill",
   "sigs.k8s.io/yaml"
  ],
  "edges": [
+  [
+   "knative.dev/eventing",
+   "github.com/ahmetb/gen-crd-api-reference-docs"
+  ],
   [
    "knative.dev/eventing",
    "github.com/aws/aws-sdk-go-v2"
@@ -66,6 +79,14 @@
   [
    "knative.dev/eventing",
    "github.com/aws/aws-sdk-go-v2/service/s3"
+  ],
+  [
+   "knative.dev/eventing",
+   "github.com/aws/aws-sdk-go-v2/service/sqs"
+  ],
+  [
+   "knative.dev/eventing",
+   "github.com/cert-manager/cert-manager"
   ],
   [
    "knative.dev/eventing",
@@ -102,6 +123,18 @@
   [
    "knative.dev/eventing",
    "github.com/kelseyhightower/envconfig"
+  ],
+  [
+   "knative.dev/eventing",
+   "github.com/mitchellh/go-homedir"
+  ],
+  [
+   "knative.dev/eventing",
+   "github.com/openzipkin/zipkin-go"
+  ],
+  [
+   "knative.dev/eventing",
+   "github.com/pelletier/go-toml/v2"
   ],
   [
    "knative.dev/eventing",
@@ -153,6 +186,10 @@
   ],
   [
    "knative.dev/eventing",
+   "go.uber.org/multierr"
+  ],
+  [
+   "knative.dev/eventing",
    "go.uber.org/zap"
   ],
   [
@@ -193,11 +230,23 @@
   ],
   [
    "knative.dev/eventing",
+   "knative.dev/hack"
+  ],
+  [
+   "knative.dev/eventing",
+   "knative.dev/pkg"
+  ],
+  [
+   "knative.dev/eventing",
    "sigs.k8s.io/randfill"
   ],
   [
    "knative.dev/eventing",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/ahmetb/gen-crd-api-reference-docs",
+   "github.com/pkg/errors"
   ],
   [
    "github.com/aws/aws-sdk-go-v2/config",
@@ -218,6 +267,62 @@
   [
    "github.com/aws/aws-sdk-go-v2/service/s3",
    "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/sqs",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/aws/aws-sdk-go-v2/config"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/aws/aws-sdk-go-v2/credentials"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/apiserver"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "sigs.k8s.io/randfill"
   ],
   [
    "github.com/cloudevents/sdk-go/v2",
@@ -384,8 +489,16 @@
    "github.com/stretchr/testify"
   ],
   [
+   "go.uber.org/multierr",
+   "github.com/stretchr/testify"
+  ],
+  [
    "go.uber.org/zap",
    "github.com/stretchr/testify"
+  ],
+  [
+   "go.uber.org/zap",
+   "go.uber.org/multierr"
   ],
   [
    "k8s.io/api",
@@ -606,6 +719,98 @@
   [
    "k8s.io/code-generator",
    "sigs.k8s.io/randfill"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/google/uuid"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/gorilla/websocket"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/kelseyhightower/envconfig"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/contrib/instrumentation/runtime"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/metric"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/sdk/metric"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.uber.org/zap"
+  ],
+  [
+   "knative.dev/pkg",
+   "golang.org/x/net"
+  ],
+  [
+   "knative.dev/pkg",
+   "golang.org/x/sync"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/api"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/client-go"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/code-generator"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/utils"
+  ],
+  [
+   "knative.dev/pkg",
+   "knative.dev/hack"
+  ],
+  [
+   "knative.dev/pkg",
+   "sigs.k8s.io/randfill"
+  ],
+  [
+   "knative.dev/pkg",
+   "sigs.k8s.io/yaml"
   ],
   [
    "sigs.k8s.io/yaml",

@@ -1,0 +1,56 @@
+{
+ "package": "zarr",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:51Z",
+ "status": "ok",
+ "version": "3.2.1",
+ "nodes": [
+  "donfig",
+  "google-crc32c",
+  "numcodecs",
+  "numpy",
+  "packaging",
+  "pyyaml",
+  "typing-extensions",
+  "zarr"
+ ],
+ "edges": [
+  [
+   "zarr",
+   "donfig"
+  ],
+  [
+   "zarr",
+   "google-crc32c"
+  ],
+  [
+   "zarr",
+   "numcodecs"
+  ],
+  [
+   "zarr",
+   "numpy"
+  ],
+  [
+   "zarr",
+   "packaging"
+  ],
+  [
+   "zarr",
+   "typing-extensions"
+  ],
+  [
+   "donfig",
+   "pyyaml"
+  ],
+  [
+   "numcodecs",
+   "numpy"
+  ],
+  [
+   "numcodecs",
+   "typing-extensions"
+  ]
+ ]
+}

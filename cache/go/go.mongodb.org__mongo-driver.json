@@ -1,0 +1,48 @@
+{
+ "package": "go.mongodb.org/mongo-driver",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.17.9",
+ "nodes": [
+  "github.com/davecgh/go-spew",
+  "github.com/golang/snappy",
+  "github.com/google/go-cmp",
+  "github.com/klauspost/compress",
+  "github.com/xdg-go/scram",
+  "go.mongodb.org/mongo-driver",
+  "golang.org/x/crypto",
+  "golang.org/x/sync"
+ ],
+ "edges": [
+  [
+   "go.mongodb.org/mongo-driver",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "github.com/golang/snappy"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "github.com/xdg-go/scram"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "golang.org/x/crypto"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "golang.org/x/sync"
+  ]
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "package": "github.com/cloudflare/cloudflare-go",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.117.0",
+ "nodes": [
+  "github.com/cloudflare/cloudflare-go",
+  "github.com/google/go-querystring",
+  "github.com/olekukonko/tablewriter",
+  "github.com/stretchr/testify",
+  "github.com/urfave/cli/v2",
+  "golang.org/x/net",
+  "golang.org/x/time"
+ ],
+ "edges": [
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "github.com/google/go-querystring"
+  ],
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "github.com/olekukonko/tablewriter"
+  ],
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "github.com/urfave/cli/v2"
+  ],
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/cloudflare/cloudflare-go",
+   "golang.org/x/time"
+  ]
+ ]
+}

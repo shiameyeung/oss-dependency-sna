@@ -1,0 +1,79 @@
+{
+ "package": "github.com/IBM/sarama",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.50.2",
+ "nodes": [
+  "github.com/davecgh/go-spew",
+  "github.com/ibm/sarama",
+  "github.com/jcmturner/gokrb5/v8",
+  "github.com/klauspost/compress",
+  "github.com/pierrec/lz4/v4",
+  "github.com/rcrowley/go-metrics",
+  "github.com/stretchr/testify",
+  "go.uber.org/goleak",
+  "golang.org/x/net",
+  "golang.org/x/sync",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/ibm/sarama",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/jcmturner/gokrb5/v8"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/rcrowley/go-metrics"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/jcmturner/gokrb5/v8",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/stretchr/testify",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "go.uber.org/goleak",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/sys"
+  ]
+ ]
+}

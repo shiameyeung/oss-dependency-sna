@@ -1,0 +1,18 @@
+{
+ "package": "openpyxl",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:59Z",
+ "status": "ok",
+ "version": "3.1.5",
+ "nodes": [
+  "et-xmlfile",
+  "openpyxl"
+ ],
+ "edges": [
+  [
+   "openpyxl",
+   "et-xmlfile"
+  ]
+ ]
+}

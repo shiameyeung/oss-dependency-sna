@@ -1,0 +1,28 @@
+{
+ "package": "github.com/casbin/casbin/v2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v2.135.0",
+ "nodes": [
+  "github.com/bmatcuk/doublestar/v4",
+  "github.com/casbin/casbin/v2",
+  "github.com/golang/mock",
+  "github.com/google/uuid"
+ ],
+ "edges": [
+  [
+   "github.com/casbin/casbin/v2",
+   "github.com/bmatcuk/doublestar/v4"
+  ],
+  [
+   "github.com/casbin/casbin/v2",
+   "github.com/golang/mock"
+  ],
+  [
+   "github.com/casbin/casbin/v2",
+   "github.com/google/uuid"
+  ]
+ ]
+}

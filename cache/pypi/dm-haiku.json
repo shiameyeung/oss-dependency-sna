@@ -1,0 +1,37 @@
+{
+ "package": "dm-haiku",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:17Z",
+ "status": "ok",
+ "version": "0.0.16",
+ "nodes": [
+  "absl-py",
+  "dm-haiku",
+  "jmp",
+  "numpy",
+  "tabulate"
+ ],
+ "edges": [
+  [
+   "dm-haiku",
+   "absl-py"
+  ],
+  [
+   "dm-haiku",
+   "jmp"
+  ],
+  [
+   "dm-haiku",
+   "numpy"
+  ],
+  [
+   "dm-haiku",
+   "tabulate"
+  ],
+  [
+   "jmp",
+   "numpy"
+  ]
+ ]
+}

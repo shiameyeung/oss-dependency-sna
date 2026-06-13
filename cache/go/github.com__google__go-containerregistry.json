@@ -1,0 +1,117 @@
+{
+ "package": "github.com/google/go-containerregistry",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.21.6",
+ "nodes": [
+  "github.com/docker/cli",
+  "github.com/google/go-cmp",
+  "github.com/google/go-containerregistry",
+  "github.com/klauspost/compress",
+  "github.com/moby/docker-image-spec",
+  "github.com/moby/moby/api",
+  "github.com/moby/moby/client",
+  "github.com/opencontainers/go-digest",
+  "github.com/opencontainers/image-spec",
+  "github.com/spf13/cobra",
+  "golang.org/x/oauth2",
+  "golang.org/x/sync",
+  "golang.org/x/tools"
+ ],
+ "edges": [
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/docker/cli"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/moby/docker-image-spec"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/moby/moby/api"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/moby/moby/client"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/opencontainers/go-digest"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/opencontainers/image-spec"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/google/go-containerregistry",
+   "golang.org/x/tools"
+  ],
+  [
+   "github.com/moby/docker-image-spec",
+   "github.com/opencontainers/image-spec"
+  ],
+  [
+   "github.com/moby/moby/api",
+   "github.com/moby/docker-image-spec"
+  ],
+  [
+   "github.com/moby/moby/api",
+   "github.com/opencontainers/go-digest"
+  ],
+  [
+   "github.com/moby/moby/api",
+   "github.com/opencontainers/image-spec"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/moby/moby/api"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/opencontainers/go-digest"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/opencontainers/image-spec"
+  ],
+  [
+   "github.com/opencontainers/image-spec",
+   "github.com/opencontainers/go-digest"
+  ],
+  [
+   "golang.org/x/tools",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "golang.org/x/tools",
+   "golang.org/x/sync"
+  ]
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "package": "netcdf4",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:51Z",
+ "status": "ok",
+ "version": "1.7.4",
+ "nodes": [
+  "certifi",
+  "cftime",
+  "netcdf4",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "netcdf4",
+   "certifi"
+  ],
+  [
+   "netcdf4",
+   "cftime"
+  ],
+  [
+   "netcdf4",
+   "numpy"
+  ],
+  [
+   "cftime",
+   "numpy"
+  ]
+ ]
+}

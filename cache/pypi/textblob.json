@@ -1,0 +1,38 @@
+{
+ "package": "textblob",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:04Z",
+ "status": "ok",
+ "version": "0.20.0",
+ "nodes": [
+  "click",
+  "joblib",
+  "nltk",
+  "regex",
+  "textblob",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "textblob",
+   "nltk"
+  ],
+  [
+   "nltk",
+   "click"
+  ],
+  [
+   "nltk",
+   "joblib"
+  ],
+  [
+   "nltk",
+   "regex"
+  ],
+  [
+   "nltk",
+   "tqdm"
+  ]
+ ]
+}

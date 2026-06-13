@@ -1,0 +1,28 @@
+{
+ "package": "github.com/stretchr/testify",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.11.1",
+ "nodes": [
+  "github.com/davecgh/go-spew",
+  "github.com/pmezard/go-difflib",
+  "github.com/stretchr/testify",
+  "gopkg.in/yaml.v3"
+ ],
+ "edges": [
+  [
+   "github.com/stretchr/testify",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "github.com/stretchr/testify",
+   "github.com/pmezard/go-difflib"
+  ],
+  [
+   "github.com/stretchr/testify",
+   "gopkg.in/yaml.v3"
+  ]
+ ]
+}

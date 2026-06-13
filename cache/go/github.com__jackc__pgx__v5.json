@@ -1,0 +1,28 @@
+{
+ "package": "github.com/jackc/pgx/v5",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v5.10.0",
+ "nodes": [
+  "github.com/jackc/pgx/v5",
+  "github.com/stretchr/testify",
+  "golang.org/x/sync",
+  "golang.org/x/text"
+ ],
+ "edges": [
+  [
+   "github.com/jackc/pgx/v5",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/jackc/pgx/v5",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/jackc/pgx/v5",
+   "golang.org/x/text"
+  ]
+ ]
+}

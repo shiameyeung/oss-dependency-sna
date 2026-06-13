@@ -1,0 +1,55 @@
+{
+ "package": "github.com/openzipkin/zipkin-go",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.4.3",
+ "nodes": [
+  "github.com/ibm/sarama",
+  "github.com/onsi/ginkgo/v2",
+  "github.com/onsi/gomega",
+  "github.com/openzipkin/zipkin-go",
+  "github.com/rabbitmq/amqp091-go",
+  "google.golang.org/grpc",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/openzipkin/zipkin-go",
+   "github.com/ibm/sarama"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "github.com/onsi/ginkgo/v2"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "github.com/onsi/gomega"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "github.com/rabbitmq/amqp091-go"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/onsi/ginkgo/v2",
+   "github.com/onsi/gomega"
+  ],
+  [
+   "github.com/onsi/gomega",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/protobuf"
+  ]
+ ]
+}

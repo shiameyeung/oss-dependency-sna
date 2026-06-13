@@ -1,0 +1,115 @@
+{
+ "package": "nevergrad",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:56Z",
+ "status": "ok",
+ "version": "1.0.12",
+ "nodes": [
+  "bayesian-optimization",
+  "cma",
+  "directsearch",
+  "joblib",
+  "narwhals",
+  "nevergrad",
+  "numpy",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "setuptools",
+  "six",
+  "threadpoolctl",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "nevergrad",
+   "bayesian-optimization"
+  ],
+  [
+   "nevergrad",
+   "cma"
+  ],
+  [
+   "nevergrad",
+   "directsearch"
+  ],
+  [
+   "nevergrad",
+   "numpy"
+  ],
+  [
+   "nevergrad",
+   "pandas"
+  ],
+  [
+   "nevergrad",
+   "typing-extensions"
+  ],
+  [
+   "bayesian-optimization",
+   "numpy"
+  ],
+  [
+   "bayesian-optimization",
+   "scikit-learn"
+  ],
+  [
+   "bayesian-optimization",
+   "scipy"
+  ],
+  [
+   "cma",
+   "numpy"
+  ],
+  [
+   "directsearch",
+   "numpy"
+  ],
+  [
+   "directsearch",
+   "scipy"
+  ],
+  [
+   "directsearch",
+   "setuptools"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

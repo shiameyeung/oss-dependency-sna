@@ -2,16 +2,20 @@
  "package": "github.com/dapr/dapr",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.18.0",
  "nodes": [
+  "github.com/argoproj/argo-rollouts",
   "github.com/cenkalti/backoff/v4",
   "github.com/cloudevents/sdk-go/v2",
   "github.com/coreos/go-oidc/v3",
+  "github.com/dapr/components-contrib",
   "github.com/dapr/dapr",
   "github.com/evanphx/json-patch/v5",
+  "github.com/go-chi/chi/v5",
   "github.com/go-logr/logr",
+  "github.com/golang/mock",
   "github.com/golang/protobuf",
   "github.com/google/cel-go",
   "github.com/google/gofuzz",
@@ -21,8 +25,10 @@
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/hashicorp/go-hclog",
   "github.com/hashicorp/golang-lru/v2",
+  "github.com/hashicorp/raft",
   "github.com/jackc/pgx/v5",
   "github.com/kelseyhightower/envconfig",
+  "github.com/lestrrat-go/jwx/v2",
   "github.com/mitchellh/mapstructure",
   "github.com/phayes/freeport",
   "github.com/prometheus/client_golang",
@@ -30,12 +36,16 @@
   "github.com/prometheus/common",
   "github.com/redis/go-redis/v9",
   "github.com/sony/gobreaker",
+  "github.com/spf13/cast",
   "github.com/spf13/pflag",
+  "github.com/spiffe/go-spiffe/v2",
   "github.com/stretchr/testify",
   "go.etcd.io/etcd/api/v3",
   "go.etcd.io/etcd/client/pkg/v3",
   "go.etcd.io/etcd/client/v3",
   "go.etcd.io/etcd/server/v3",
+  "go.mongodb.org/mongo-driver",
+  "go.opencensus.io",
   "go.opentelemetry.io/otel",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
@@ -44,6 +54,7 @@
   "go.opentelemetry.io/otel/trace",
   "go.opentelemetry.io/proto/otlp",
   "go.uber.org/automaxprocs",
+  "go.uber.org/ratelimit",
   "golang.org/x/crypto",
   "golang.org/x/net",
   "golang.org/x/oauth2",
@@ -61,12 +72,18 @@
   "k8s.io/cli-runtime",
   "k8s.io/client-go",
   "k8s.io/code-generator",
+  "k8s.io/klog",
   "k8s.io/metrics",
   "k8s.io/utils",
+  "modernc.org/sqlite",
   "sigs.k8s.io/controller-runtime",
   "sigs.k8s.io/yaml"
  ],
  "edges": [
+  [
+   "github.com/dapr/dapr",
+   "github.com/argoproj/argo-rollouts"
+  ],
   [
    "github.com/dapr/dapr",
    "github.com/cenkalti/backoff/v4"
@@ -81,11 +98,23 @@
   ],
   [
    "github.com/dapr/dapr",
+   "github.com/dapr/components-contrib"
+  ],
+  [
+   "github.com/dapr/dapr",
    "github.com/evanphx/json-patch/v5"
   ],
   [
    "github.com/dapr/dapr",
+   "github.com/go-chi/chi/v5"
+  ],
+  [
+   "github.com/dapr/dapr",
    "github.com/go-logr/logr"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "github.com/golang/mock"
   ],
   [
    "github.com/dapr/dapr",
@@ -125,11 +154,19 @@
   ],
   [
    "github.com/dapr/dapr",
+   "github.com/hashicorp/raft"
+  ],
+  [
+   "github.com/dapr/dapr",
    "github.com/jackc/pgx/v5"
   ],
   [
    "github.com/dapr/dapr",
    "github.com/kelseyhightower/envconfig"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "github.com/lestrrat-go/jwx/v2"
   ],
   [
    "github.com/dapr/dapr",
@@ -161,7 +198,15 @@
   ],
   [
    "github.com/dapr/dapr",
+   "github.com/spf13/cast"
+  ],
+  [
+   "github.com/dapr/dapr",
    "github.com/spf13/pflag"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "github.com/spiffe/go-spiffe/v2"
   ],
   [
    "github.com/dapr/dapr",
@@ -182,6 +227,14 @@
   [
    "github.com/dapr/dapr",
    "go.etcd.io/etcd/server/v3"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "go.mongodb.org/mongo-driver"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "go.opencensus.io"
   ],
   [
    "github.com/dapr/dapr",
@@ -214,6 +267,10 @@
   [
    "github.com/dapr/dapr",
    "go.uber.org/automaxprocs"
+  ],
+  [
+   "github.com/dapr/dapr",
+   "go.uber.org/ratelimit"
   ],
   [
    "github.com/dapr/dapr",
@@ -285,6 +342,10 @@
   ],
   [
    "github.com/dapr/dapr",
+   "k8s.io/klog"
+  ],
+  [
+   "github.com/dapr/dapr",
    "k8s.io/metrics"
   ],
   [
@@ -293,10 +354,106 @@
   ],
   [
    "github.com/dapr/dapr",
+   "modernc.org/sqlite"
+  ],
+  [
+   "github.com/dapr/dapr",
    "sigs.k8s.io/controller-runtime"
   ],
   [
    "github.com/dapr/dapr",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/evanphx/json-patch/v5"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/golang/mock"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/mitchellh/mapstructure"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "google.golang.org/genproto/googleapis/api"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/apiserver"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/cli-runtime"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/code-generator"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/argoproj/argo-rollouts",
    "sigs.k8s.io/yaml"
   ],
   [
@@ -314,6 +471,126 @@
   [
    "github.com/coreos/go-oidc/v3",
    "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/cenkalti/backoff/v4"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/cloudevents/sdk-go/v2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/golang/mock"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/gorilla/mux"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/hashicorp/golang-lru/v2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/jackc/pgx/v5"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/lestrrat-go/jwx/v2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/mitchellh/mapstructure"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/redis/go-redis/v9"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/spf13/cast"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/spiffe/go-spiffe/v2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "go.etcd.io/etcd/client/v3"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "go.mongodb.org/mongo-driver"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "go.uber.org/ratelimit"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "gopkg.in/yaml.v3"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "modernc.org/sqlite"
+  ],
+  [
+   "github.com/dapr/components-contrib",
+   "sigs.k8s.io/yaml"
   ],
   [
    "github.com/golang/protobuf",
@@ -352,12 +629,28 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/hashicorp/raft",
+   "github.com/hashicorp/go-hclog"
+  ],
+  [
+   "github.com/hashicorp/raft",
+   "github.com/stretchr/testify"
+  ],
+  [
    "github.com/jackc/pgx/v5",
    "github.com/stretchr/testify"
   ],
   [
    "github.com/jackc/pgx/v5",
    "golang.org/x/sync"
+  ],
+  [
+   "github.com/lestrrat-go/jwx/v2",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/lestrrat-go/jwx/v2",
+   "golang.org/x/crypto"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -406,6 +699,18 @@
   [
    "github.com/sony/gobreaker",
    "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/spiffe/go-spiffe/v2",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/spiffe/go-spiffe/v2",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/spiffe/go-spiffe/v2",
+   "google.golang.org/protobuf"
   ],
   [
    "github.com/stretchr/testify",
@@ -530,6 +835,30 @@
   [
    "go.etcd.io/etcd/server/v3",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "golang.org/x/crypto"
+  ],
+  [
+   "go.mongodb.org/mongo-driver",
+   "golang.org/x/sync"
+  ],
+  [
+   "go.opencensus.io",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "go.opencensus.io",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opencensus.io",
+   "golang.org/x/net"
+  ],
+  [
+   "go.opencensus.io",
+   "google.golang.org/grpc"
   ],
   [
    "go.opentelemetry.io/otel",
@@ -684,6 +1013,10 @@
    "github.com/stretchr/testify"
   ],
   [
+   "go.uber.org/ratelimit",
+   "github.com/stretchr/testify"
+  ],
+  [
    "golang.org/x/crypto",
    "golang.org/x/net"
   ],
@@ -722,6 +1055,10 @@
   [
    "google.golang.org/grpc",
    "github.com/google/uuid"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/spiffe/go-spiffe/v2"
   ],
   [
    "google.golang.org/grpc",
@@ -1064,6 +1401,10 @@
    "k8s.io/utils"
   ],
   [
+   "k8s.io/klog",
+   "github.com/go-logr/logr"
+  ],
+  [
    "k8s.io/metrics",
    "github.com/stretchr/testify"
   ],
@@ -1082,6 +1423,10 @@
   [
    "k8s.io/metrics",
    "k8s.io/code-generator"
+  ],
+  [
+   "modernc.org/sqlite",
+   "golang.org/x/sys"
   ],
   [
    "sigs.k8s.io/controller-runtime",

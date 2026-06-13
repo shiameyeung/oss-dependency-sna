@@ -1,0 +1,98 @@
+{
+ "package": "river",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:37Z",
+ "status": "ok",
+ "version": "0.25.0",
+ "nodes": [
+  "altair",
+  "attrs",
+  "jinja2",
+  "jsonschema",
+  "jsonschema-specifications",
+  "markupsafe",
+  "narwhals",
+  "numpy",
+  "packaging",
+  "referencing",
+  "river",
+  "rpds-py",
+  "scipy",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "river",
+   "altair"
+  ],
+  [
+   "river",
+   "numpy"
+  ],
+  [
+   "river",
+   "scipy"
+  ],
+  [
+   "altair",
+   "jinja2"
+  ],
+  [
+   "altair",
+   "jsonschema"
+  ],
+  [
+   "altair",
+   "narwhals"
+  ],
+  [
+   "altair",
+   "packaging"
+  ],
+  [
+   "altair",
+   "typing-extensions"
+  ],
+  [
+   "jinja2",
+   "markupsafe"
+  ],
+  [
+   "jsonschema",
+   "attrs"
+  ],
+  [
+   "jsonschema",
+   "jsonschema-specifications"
+  ],
+  [
+   "jsonschema",
+   "referencing"
+  ],
+  [
+   "jsonschema",
+   "rpds-py"
+  ],
+  [
+   "jsonschema-specifications",
+   "referencing"
+  ],
+  [
+   "referencing",
+   "attrs"
+  ],
+  [
+   "referencing",
+   "rpds-py"
+  ],
+  [
+   "referencing",
+   "typing-extensions"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "package": "github.com/VictoriaMetrics/VictoriaLogs",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.43.1",
+ "nodes": [
+  "github.com/cespare/xxhash/v2",
+  "github.com/golang/snappy",
+  "github.com/google/go-cmp",
+  "github.com/klauspost/compress",
+  "github.com/mattn/go-isatty",
+  "github.com/valyala/fastjson",
+  "github.com/victoriametrics/easyproto",
+  "github.com/victoriametrics/victorialogs",
+  "github.com/victoriametrics/victoriametrics",
+  "gopkg.in/yaml.v2"
+ ],
+ "edges": [
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/victoriametrics/victoriametrics"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/victoriametrics/easyproto"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/mattn/go-isatty"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/valyala/fastjson"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "gopkg.in/yaml.v2"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/victoriametrics/victorialogs"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/victoriametrics/easyproto"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/valyala/fastjson"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "gopkg.in/yaml.v2"
+  ]
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "package": "pyproj",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:53Z",
+ "status": "ok",
+ "version": "3.7.2",
+ "nodes": [
+  "certifi",
+  "pyproj"
+ ],
+ "edges": [
+  [
+   "pyproj",
+   "certifi"
+  ]
+ ]
+}

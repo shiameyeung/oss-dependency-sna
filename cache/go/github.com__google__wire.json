@@ -1,0 +1,32 @@
+{
+ "package": "github.com/google/wire",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.7.0",
+ "nodes": [
+  "github.com/google/go-cmp",
+  "github.com/google/wire",
+  "github.com/pmezard/go-difflib",
+  "golang.org/x/tools"
+ ],
+ "edges": [
+  [
+   "github.com/google/wire",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/google/wire",
+   "github.com/pmezard/go-difflib"
+  ],
+  [
+   "github.com/google/wire",
+   "golang.org/x/tools"
+  ],
+  [
+   "golang.org/x/tools",
+   "github.com/google/go-cmp"
+  ]
+ ]
+}

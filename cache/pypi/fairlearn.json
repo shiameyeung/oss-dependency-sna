@@ -1,0 +1,78 @@
+{
+ "package": "fairlearn",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:02Z",
+ "status": "ok",
+ "version": "0.14.0",
+ "nodes": [
+  "fairlearn",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "fairlearn",
+   "narwhals"
+  ],
+  [
+   "fairlearn",
+   "numpy"
+  ],
+  [
+   "fairlearn",
+   "pandas"
+  ],
+  [
+   "fairlearn",
+   "scikit-learn"
+  ],
+  [
+   "fairlearn",
+   "scipy"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

@@ -2,16 +2,19 @@
  "package": "knative.dev/serving",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.49.1",
  "nodes": [
+  "github.com/ahmetb/gen-crd-api-reference-docs",
+  "github.com/cert-manager/cert-manager",
   "github.com/davecgh/go-spew",
   "github.com/gogo/protobuf",
   "github.com/google/go-cmp",
   "github.com/google/go-containerregistry",
   "github.com/google/go-containerregistry/pkg/authn/k8schain",
   "github.com/gorilla/websocket",
+  "github.com/influxdata/influxdb-client-go/v2",
   "github.com/kelseyhightower/envconfig",
   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
   "go.opentelemetry.io/contrib/instrumentation/runtime",
@@ -35,11 +38,21 @@
   "k8s.io/code-generator",
   "k8s.io/kube-openapi",
   "k8s.io/utils",
+  "knative.dev/hack",
+  "knative.dev/pkg",
   "knative.dev/serving",
   "sigs.k8s.io/randfill",
   "sigs.k8s.io/yaml"
  ],
  "edges": [
+  [
+   "knative.dev/serving",
+   "github.com/ahmetb/gen-crd-api-reference-docs"
+  ],
+  [
+   "knative.dev/serving",
+   "github.com/cert-manager/cert-manager"
+  ],
   [
    "knative.dev/serving",
    "github.com/davecgh/go-spew"
@@ -63,6 +76,10 @@
   [
    "knative.dev/serving",
    "github.com/gorilla/websocket"
+  ],
+  [
+   "knative.dev/serving",
+   "github.com/influxdata/influxdb-client-go/v2"
   ],
   [
    "knative.dev/serving",
@@ -158,11 +175,59 @@
   ],
   [
    "knative.dev/serving",
+   "knative.dev/hack"
+  ],
+  [
+   "knative.dev/serving",
+   "knative.dev/pkg"
+  ],
+  [
+   "knative.dev/serving",
    "sigs.k8s.io/randfill"
   ],
   [
    "knative.dev/serving",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "google.golang.org/api"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/cert-manager/cert-manager",
+   "sigs.k8s.io/randfill"
   ],
   [
    "github.com/google/go-containerregistry",
@@ -507,6 +572,102 @@
   [
    "k8s.io/utils",
    "github.com/davecgh/go-spew"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/gorilla/websocket"
+  ],
+  [
+   "knative.dev/pkg",
+   "github.com/kelseyhightower/envconfig"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/contrib/instrumentation/runtime"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/metric"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/sdk/metric"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.uber.org/automaxprocs"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.uber.org/zap"
+  ],
+  [
+   "knative.dev/pkg",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "knative.dev/pkg",
+   "golang.org/x/sync"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/api"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/apiextensions-apiserver"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/client-go"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/code-generator"
+  ],
+  [
+   "knative.dev/pkg",
+   "k8s.io/utils"
+  ],
+  [
+   "knative.dev/pkg",
+   "knative.dev/hack"
+  ],
+  [
+   "knative.dev/pkg",
+   "sigs.k8s.io/randfill"
+  ],
+  [
+   "knative.dev/pkg",
+   "sigs.k8s.io/yaml"
   ],
   [
    "sigs.k8s.io/yaml",

@@ -1,0 +1,73 @@
+{
+ "package": "tensorboard",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:32Z",
+ "status": "ok",
+ "version": "2.20.0",
+ "nodes": [
+  "absl-py",
+  "grpcio",
+  "markdown",
+  "markupsafe",
+  "numpy",
+  "packaging",
+  "pillow",
+  "protobuf",
+  "setuptools",
+  "tensorboard",
+  "tensorboard-data-server",
+  "typing-extensions",
+  "werkzeug"
+ ],
+ "edges": [
+  [
+   "tensorboard",
+   "absl-py"
+  ],
+  [
+   "tensorboard",
+   "grpcio"
+  ],
+  [
+   "tensorboard",
+   "markdown"
+  ],
+  [
+   "tensorboard",
+   "numpy"
+  ],
+  [
+   "tensorboard",
+   "packaging"
+  ],
+  [
+   "tensorboard",
+   "pillow"
+  ],
+  [
+   "tensorboard",
+   "protobuf"
+  ],
+  [
+   "tensorboard",
+   "setuptools"
+  ],
+  [
+   "tensorboard",
+   "tensorboard-data-server"
+  ],
+  [
+   "tensorboard",
+   "werkzeug"
+  ],
+  [
+   "grpcio",
+   "typing-extensions"
+  ],
+  [
+   "werkzeug",
+   "markupsafe"
+  ]
+ ]
+}

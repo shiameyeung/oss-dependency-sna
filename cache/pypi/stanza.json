@@ -1,0 +1,103 @@
+{
+ "package": "stanza",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:05Z",
+ "status": "ok",
+ "version": "1.12.2",
+ "nodes": [
+  "certifi",
+  "charset-normalizer",
+  "colorama",
+  "emoji",
+  "idna",
+  "networkx",
+  "numpy",
+  "platformdirs",
+  "protobuf",
+  "regex",
+  "requests",
+  "stanza",
+  "termcolor",
+  "tomli",
+  "torch",
+  "tqdm",
+  "udapi",
+  "udtools",
+  "urllib3"
+ ],
+ "edges": [
+  [
+   "stanza",
+   "emoji"
+  ],
+  [
+   "stanza",
+   "networkx"
+  ],
+  [
+   "stanza",
+   "numpy"
+  ],
+  [
+   "stanza",
+   "platformdirs"
+  ],
+  [
+   "stanza",
+   "protobuf"
+  ],
+  [
+   "stanza",
+   "requests"
+  ],
+  [
+   "stanza",
+   "tomli"
+  ],
+  [
+   "stanza",
+   "torch"
+  ],
+  [
+   "stanza",
+   "tqdm"
+  ],
+  [
+   "stanza",
+   "udtools"
+  ],
+  [
+   "requests",
+   "certifi"
+  ],
+  [
+   "requests",
+   "charset-normalizer"
+  ],
+  [
+   "requests",
+   "idna"
+  ],
+  [
+   "requests",
+   "urllib3"
+  ],
+  [
+   "udapi",
+   "colorama"
+  ],
+  [
+   "udapi",
+   "termcolor"
+  ],
+  [
+   "udtools",
+   "regex"
+  ],
+  [
+   "udtools",
+   "udapi"
+  ]
+ ]
+}

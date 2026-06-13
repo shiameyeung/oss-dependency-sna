@@ -66,6 +66,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   .stage { background:var(--panel); border:1px solid var(--line); border-radius:10px; position:relative; }
   svg { width:100%; height:660px; display:block; }
   svg text { pointer-events:none; }  /* ラベルがノードのクリックを遮らないように */
+  svg circle[fill="none"] { pointer-events:none; }  /* 装飾リング（切断点/選択）がクリックを奪わないように */
   .side { display:flex; flex-direction:column; gap:12px; max-height:660px; overflow-y:auto; }
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }

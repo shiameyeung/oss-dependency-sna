@@ -1,0 +1,42 @@
+{
+ "package": "xarray",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:51Z",
+ "status": "ok",
+ "version": "2026.4.0",
+ "nodes": [
+  "numpy",
+  "packaging",
+  "pandas",
+  "python-dateutil",
+  "six",
+  "xarray"
+ ],
+ "edges": [
+  [
+   "xarray",
+   "numpy"
+  ],
+  [
+   "xarray",
+   "packaging"
+  ],
+  [
+   "xarray",
+   "pandas"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ]
+ ]
+}

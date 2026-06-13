@@ -1,0 +1,70 @@
+{
+ "package": "sigs.k8s.io/kind",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.32.0",
+ "nodes": [
+  "github.com/burntsushi/toml",
+  "github.com/evanphx/json-patch/v5",
+  "github.com/mattn/go-isatty",
+  "github.com/pelletier/go-toml",
+  "github.com/pkg/errors",
+  "github.com/spf13/cobra",
+  "github.com/spf13/pflag",
+  "go.yaml.in/yaml/v3",
+  "sigs.k8s.io/kind",
+  "sigs.k8s.io/yaml"
+ ],
+ "edges": [
+  [
+   "sigs.k8s.io/kind",
+   "github.com/burntsushi/toml"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/evanphx/json-patch/v5"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/mattn/go-isatty"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/pelletier/go-toml"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/pkg/errors"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "sigs.k8s.io/kind",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/spf13/cobra",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "github.com/spf13/cobra",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "sigs.k8s.io/yaml",
+   "go.yaml.in/yaml/v3"
+  ]
+ ]
+}

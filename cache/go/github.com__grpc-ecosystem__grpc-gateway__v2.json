@@ -1,0 +1,89 @@
+{
+ "package": "github.com/grpc-ecosystem/grpc-gateway/v2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v2.29.0",
+ "nodes": [
+  "github.com/google/go-cmp",
+  "github.com/grpc-ecosystem/grpc-gateway/v2",
+  "go.yaml.in/yaml/v3",
+  "golang.org/x/oauth2",
+  "golang.org/x/text",
+  "google.golang.org/genproto/googleapis/api",
+  "google.golang.org/genproto/googleapis/rpc",
+  "google.golang.org/grpc",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "golang.org/x/text"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/genproto/googleapis/api"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/api",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/api",
+   "google.golang.org/grpc"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/api",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/rpc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "google.golang.org/grpc",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/protobuf",
+   "github.com/google/go-cmp"
+  ]
+ ]
+}

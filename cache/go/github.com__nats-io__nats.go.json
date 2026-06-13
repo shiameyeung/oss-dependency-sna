@@ -1,0 +1,23 @@
+{
+ "package": "github.com/nats-io/nats.go",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.52.0",
+ "nodes": [
+  "github.com/klauspost/compress",
+  "github.com/nats-io/nats.go",
+  "github.com/nats-io/nkeys"
+ ],
+ "edges": [
+  [
+   "github.com/nats-io/nats.go",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/nats-io/nats.go",
+   "github.com/nats-io/nkeys"
+  ]
+ ]
+}

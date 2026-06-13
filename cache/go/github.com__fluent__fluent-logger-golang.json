@@ -1,0 +1,18 @@
+{
+ "package": "github.com/fluent/fluent-logger-golang",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.10.1",
+ "nodes": [
+  "github.com/fluent/fluent-logger-golang",
+  "github.com/tinylib/msgp"
+ ],
+ "edges": [
+  [
+   "github.com/fluent/fluent-logger-golang",
+   "github.com/tinylib/msgp"
+  ]
+ ]
+}

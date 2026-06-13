@@ -1,0 +1,56 @@
+{
+ "package": "fiona",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:52Z",
+ "status": "ok",
+ "version": "1.10.1",
+ "nodes": [
+  "attrs",
+  "certifi",
+  "click",
+  "click-plugins",
+  "cligj",
+  "fiona",
+  "importlib-metadata",
+  "zipp"
+ ],
+ "edges": [
+  [
+   "fiona",
+   "attrs"
+  ],
+  [
+   "fiona",
+   "certifi"
+  ],
+  [
+   "fiona",
+   "click"
+  ],
+  [
+   "fiona",
+   "click-plugins"
+  ],
+  [
+   "fiona",
+   "cligj"
+  ],
+  [
+   "fiona",
+   "importlib-metadata"
+  ],
+  [
+   "click-plugins",
+   "click"
+  ],
+  [
+   "cligj",
+   "click"
+  ],
+  [
+   "importlib-metadata",
+   "zipp"
+  ]
+ ]
+}

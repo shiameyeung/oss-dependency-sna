@@ -1,0 +1,18 @@
+{
+ "package": "cma",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:21Z",
+ "status": "ok",
+ "version": "4.4.4",
+ "nodes": [
+  "cma",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "cma",
+   "numpy"
+  ]
+ ]
+}

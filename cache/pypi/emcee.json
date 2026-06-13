@@ -1,0 +1,18 @@
+{
+ "package": "emcee",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:58Z",
+ "status": "ok",
+ "version": "3.1.6",
+ "nodes": [
+  "emcee",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "emcee",
+   "numpy"
+  ]
+ ]
+}

@@ -2,7 +2,7 @@
  "package": "github.com/prometheus/prometheus",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.312.0",
  "nodes": [
@@ -12,26 +12,36 @@
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+  "github.com/aws/aws-sdk-go-v2/service/ec2",
   "github.com/aws/aws-sdk-go-v2/service/sts",
   "github.com/aws/smithy-go",
   "github.com/azure/azure-sdk-for-go/sdk/azcore",
   "github.com/azure/azure-sdk-for-go/sdk/azidentity",
+  "github.com/cenkalti/backoff/v5",
   "github.com/cespare/xxhash/v2",
+  "github.com/dennwc/varint",
+  "github.com/digitalocean/godo",
+  "github.com/edsrzf/mmap-go",
   "github.com/envoyproxy/go-control-plane/envoy",
   "github.com/facette/natsort",
   "github.com/felixge/fgprof",
   "github.com/fsnotify/fsnotify",
   "github.com/go-openapi/strfmt",
+  "github.com/go-zookeeper/zk",
   "github.com/gogo/protobuf",
   "github.com/golang/snappy",
   "github.com/google/go-cmp",
   "github.com/google/uuid",
   "github.com/grafana/regexp",
   "github.com/hashicorp/consul/api",
+  "github.com/hashicorp/nomad/api",
   "github.com/json-iterator/go",
   "github.com/kimmachinegun/automemlimit",
   "github.com/klauspost/compress",
+  "github.com/linode/linodego",
   "github.com/miekg/dns",
+  "github.com/moby/moby/api",
+  "github.com/moby/moby/client",
   "github.com/munnerz/goautoneg",
   "github.com/mwitkow/go-conntrack",
   "github.com/oklog/run",
@@ -71,6 +81,7 @@
   "k8s.io/api",
   "k8s.io/apimachinery",
   "k8s.io/client-go",
+  "k8s.io/klog",
   "k8s.io/klog/v2"
  ],
  "edges": [
@@ -112,6 +123,10 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "github.com/aws/aws-sdk-go-v2/service/ec2"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "github.com/aws/aws-sdk-go-v2/service/sts"
   ],
   [
@@ -120,7 +135,23 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "github.com/cenkalti/backoff/v5"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/dennwc/varint"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/digitalocean/godo"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/edsrzf/mmap-go"
   ],
   [
    "github.com/prometheus/prometheus",
@@ -141,6 +172,10 @@
   [
    "github.com/prometheus/prometheus",
    "github.com/go-openapi/strfmt"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/go-zookeeper/zk"
   ],
   [
    "github.com/prometheus/prometheus",
@@ -168,6 +203,10 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "github.com/hashicorp/nomad/api"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "github.com/json-iterator/go"
   ],
   [
@@ -176,7 +215,19 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "github.com/linode/linodego"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "github.com/miekg/dns"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/moby/moby/api"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/moby/moby/client"
   ],
   [
    "github.com/prometheus/prometheus",
@@ -332,6 +383,10 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "k8s.io/klog"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "k8s.io/klog/v2"
   ],
   [
@@ -395,12 +450,32 @@
    "github.com/aws/smithy-go"
   ],
   [
+   "github.com/aws/aws-sdk-go-v2/service/ec2",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/ec2",
+   "github.com/aws/smithy-go"
+  ],
+  [
    "github.com/aws/aws-sdk-go-v2/service/sts",
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
    "github.com/aws/aws-sdk-go-v2/service/sts",
    "github.com/aws/smithy-go"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/edsrzf/mmap-go",
+   "golang.org/x/sys"
   ],
   [
    "github.com/envoyproxy/go-control-plane/envoy",
@@ -447,12 +522,44 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/linode/linodego",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/linode/linodego",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/linode/linodego",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/linode/linodego",
+   "golang.org/x/text"
+  ],
+  [
    "github.com/miekg/dns",
    "golang.org/x/sync"
   ],
   [
    "github.com/miekg/dns",
    "golang.org/x/sys"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "github.com/moby/moby/api"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+  ],
+  [
+   "github.com/moby/moby/client",
+   "go.opentelemetry.io/otel/trace"
   ],
   [
    "github.com/prometheus/alertmanager",
@@ -812,6 +919,10 @@
   ],
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+   "github.com/cenkalti/backoff/v5"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
    "github.com/stretchr/testify"
   ],
   [
@@ -845,6 +956,10 @@
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
    "google.golang.org/protobuf"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+   "github.com/cenkalti/backoff/v5"
   ],
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",

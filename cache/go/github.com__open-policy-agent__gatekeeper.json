@@ -1,0 +1,9 @@
+{
+ "package": "github.com/open-policy-agent/gatekeeper",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "error",
+ "version": "v3.0.3+incompatible",
+ "error": "empty requirements (+incompatible/main module; deps.dev に go.mod 依存データなし)"
+}

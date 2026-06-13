@@ -2,7 +2,7 @@
  "package": "k8s.io/kubectl",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.36.1",
  "nodes": [
@@ -10,9 +10,13 @@
   "github.com/go-openapi/jsonreference",
   "github.com/google/gnostic-models",
   "github.com/google/go-cmp",
+  "github.com/jonboulle/clockwork",
+  "github.com/makenowjust/heredoc",
   "github.com/mitchellh/go-wordwrap",
+  "github.com/moby/term",
   "github.com/onsi/ginkgo/v2",
   "github.com/onsi/gomega",
+  "github.com/russross/blackfriday/v2",
   "github.com/spf13/cobra",
   "github.com/spf13/pflag",
   "github.com/stretchr/testify",
@@ -42,6 +46,10 @@
  "edges": [
   [
    "k8s.io/kubectl",
+   "github.com/makenowjust/heredoc"
+  ],
+  [
+   "k8s.io/kubectl",
    "github.com/distribution/reference"
   ],
   [
@@ -58,7 +66,15 @@
   ],
   [
    "k8s.io/kubectl",
+   "github.com/jonboulle/clockwork"
+  ],
+  [
+   "k8s.io/kubectl",
    "github.com/mitchellh/go-wordwrap"
+  ],
+  [
+   "k8s.io/kubectl",
+   "github.com/moby/term"
   ],
   [
    "k8s.io/kubectl",
@@ -67,6 +83,10 @@
   [
    "k8s.io/kubectl",
    "github.com/onsi/gomega"
+  ],
+  [
+   "k8s.io/kubectl",
+   "github.com/russross/blackfriday/v2"
   ],
   [
    "k8s.io/kubectl",
@@ -165,6 +185,10 @@
    "sigs.k8s.io/yaml"
   ],
   [
+   "github.com/moby/term",
+   "golang.org/x/sys"
+  ],
+  [
    "github.com/onsi/ginkgo/v2",
    "github.com/onsi/gomega"
   ],
@@ -247,6 +271,10 @@
   [
    "k8s.io/cli-runtime",
    "github.com/google/go-cmp"
+  ],
+  [
+   "k8s.io/cli-runtime",
+   "github.com/moby/term"
   ],
   [
    "k8s.io/cli-runtime",
@@ -367,6 +395,10 @@
   [
    "k8s.io/component-base",
    "github.com/google/go-cmp"
+  ],
+  [
+   "k8s.io/component-base",
+   "github.com/moby/term"
   ],
   [
    "k8s.io/component-base",

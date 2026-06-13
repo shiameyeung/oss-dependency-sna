@@ -2,13 +2,14 @@
  "package": "sigs.k8s.io/controller-runtime",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.24.1",
  "nodes": [
   "github.com/evanphx/json-patch/v5",
   "github.com/fsnotify/fsnotify",
   "github.com/go-logr/logr",
+  "github.com/go-logr/zapr",
   "github.com/google/go-cmp",
   "github.com/google/gofuzz",
   "github.com/onsi/ginkgo/v2",
@@ -45,6 +46,10 @@
   [
    "sigs.k8s.io/controller-runtime",
    "github.com/go-logr/logr"
+  ],
+  [
+   "sigs.k8s.io/controller-runtime",
+   "github.com/go-logr/zapr"
   ],
   [
    "sigs.k8s.io/controller-runtime",
@@ -137,6 +142,14 @@
   [
    "github.com/fsnotify/fsnotify",
    "golang.org/x/sys"
+  ],
+  [
+   "github.com/go-logr/zapr",
+   "github.com/go-logr/logr"
+  ],
+  [
+   "github.com/go-logr/zapr",
+   "go.uber.org/zap"
   ],
   [
    "github.com/onsi/ginkgo/v2",

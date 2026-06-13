@@ -1,0 +1,12 @@
+{
+ "package": "github.com/tidwall/gjson",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.19.0",
+ "nodes": [
+  "github.com/tidwall/gjson"
+ ],
+ "edges": []
+}

@@ -1,0 +1,31 @@
+{
+ "package": "go.opentelemetry.io/otel/metric",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.44.0",
+ "nodes": [
+  "github.com/stretchr/testify",
+  "go.opentelemetry.io/otel",
+  "go.opentelemetry.io/otel/metric"
+ ],
+ "edges": [
+  [
+   "go.opentelemetry.io/otel/metric",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/metric",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel",
+   "go.opentelemetry.io/otel/metric"
+  ]
+ ]
+}

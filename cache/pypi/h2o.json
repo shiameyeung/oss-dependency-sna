@@ -1,0 +1,43 @@
+{
+ "package": "h2o",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:14Z",
+ "status": "ok",
+ "version": "3.46.0.11",
+ "nodes": [
+  "certifi",
+  "charset-normalizer",
+  "h2o",
+  "idna",
+  "requests",
+  "tabulate",
+  "urllib3"
+ ],
+ "edges": [
+  [
+   "h2o",
+   "requests"
+  ],
+  [
+   "h2o",
+   "tabulate"
+  ],
+  [
+   "requests",
+   "certifi"
+  ],
+  [
+   "requests",
+   "charset-normalizer"
+  ],
+  [
+   "requests",
+   "idna"
+  ],
+  [
+   "requests",
+   "urllib3"
+  ]
+ ]
+}

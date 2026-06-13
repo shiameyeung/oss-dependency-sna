@@ -1,0 +1,31 @@
+{
+ "package": "github.com/golang/protobuf",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.5.4",
+ "nodes": [
+  "github.com/golang/protobuf",
+  "github.com/google/go-cmp",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/golang/protobuf",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/golang/protobuf",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/protobuf",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "google.golang.org/protobuf",
+   "github.com/google/go-cmp"
+  ]
+ ]
+}

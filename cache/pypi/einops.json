@@ -1,0 +1,12 @@
+{
+ "package": "einops",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:45Z",
+ "status": "ok",
+ "version": "0.8.2",
+ "nodes": [
+  "einops"
+ ],
+ "edges": []
+}

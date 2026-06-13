@@ -1,0 +1,67 @@
+{
+ "package": "modin",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:34Z",
+ "status": "ok",
+ "version": "0.37.1",
+ "nodes": [
+  "fsspec",
+  "modin",
+  "numpy",
+  "packaging",
+  "pandas",
+  "psutil",
+  "python-dateutil",
+  "pytz",
+  "six",
+  "typing-extensions",
+  "tzdata"
+ ],
+ "edges": [
+  [
+   "modin",
+   "fsspec"
+  ],
+  [
+   "modin",
+   "numpy"
+  ],
+  [
+   "modin",
+   "packaging"
+  ],
+  [
+   "modin",
+   "pandas"
+  ],
+  [
+   "modin",
+   "psutil"
+  ],
+  [
+   "modin",
+   "typing-extensions"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "pandas",
+   "pytz"
+  ],
+  [
+   "pandas",
+   "tzdata"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ]
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "package": "github.com/grpc-ecosystem/go-grpc-middleware",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.4.0",
+ "nodes": [
+  "github.com/go-kit/log",
+  "github.com/gogo/protobuf",
+  "github.com/golang/protobuf",
+  "github.com/grpc-ecosystem/go-grpc-middleware",
+  "github.com/opentracing/opentracing-go",
+  "github.com/sirupsen/logrus",
+  "github.com/stretchr/testify",
+  "go.uber.org/zap",
+  "golang.org/x/net",
+  "golang.org/x/oauth2",
+  "google.golang.org/grpc"
+ ],
+ "edges": [
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/go-kit/log"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/gogo/protobuf"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "go.uber.org/zap"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/opentracing/opentracing-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/sirupsen/logrus",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.uber.org/zap",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "google.golang.org/grpc",
+   "golang.org/x/net"
+  ],
+  [
+   "google.golang.org/grpc",
+   "golang.org/x/oauth2"
+  ]
+ ]
+}

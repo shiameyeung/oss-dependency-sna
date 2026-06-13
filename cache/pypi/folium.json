@@ -1,0 +1,67 @@
+{
+ "package": "folium",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:53Z",
+ "status": "ok",
+ "version": "0.20.0",
+ "nodes": [
+  "branca",
+  "certifi",
+  "charset-normalizer",
+  "folium",
+  "idna",
+  "jinja2",
+  "markupsafe",
+  "numpy",
+  "requests",
+  "urllib3",
+  "xyzservices"
+ ],
+ "edges": [
+  [
+   "folium",
+   "branca"
+  ],
+  [
+   "folium",
+   "jinja2"
+  ],
+  [
+   "folium",
+   "numpy"
+  ],
+  [
+   "folium",
+   "requests"
+  ],
+  [
+   "folium",
+   "xyzservices"
+  ],
+  [
+   "branca",
+   "jinja2"
+  ],
+  [
+   "jinja2",
+   "markupsafe"
+  ],
+  [
+   "requests",
+   "certifi"
+  ],
+  [
+   "requests",
+   "charset-normalizer"
+  ],
+  [
+   "requests",
+   "idna"
+  ],
+  [
+   "requests",
+   "urllib3"
+  ]
+ ]
+}

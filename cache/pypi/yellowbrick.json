@@ -1,0 +1,117 @@
+{
+ "package": "yellowbrick",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:36Z",
+ "status": "ok",
+ "version": "1.5.0",
+ "nodes": [
+  "contourpy",
+  "cycler",
+  "fonttools",
+  "joblib",
+  "kiwisolver",
+  "matplotlib",
+  "narwhals",
+  "numpy",
+  "packaging",
+  "pillow",
+  "pyparsing",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "threadpoolctl",
+  "yellowbrick"
+ ],
+ "edges": [
+  [
+   "yellowbrick",
+   "cycler"
+  ],
+  [
+   "yellowbrick",
+   "matplotlib"
+  ],
+  [
+   "yellowbrick",
+   "numpy"
+  ],
+  [
+   "yellowbrick",
+   "scikit-learn"
+  ],
+  [
+   "yellowbrick",
+   "scipy"
+  ],
+  [
+   "contourpy",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "contourpy"
+  ],
+  [
+   "matplotlib",
+   "cycler"
+  ],
+  [
+   "matplotlib",
+   "fonttools"
+  ],
+  [
+   "matplotlib",
+   "kiwisolver"
+  ],
+  [
+   "matplotlib",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "packaging"
+  ],
+  [
+   "matplotlib",
+   "pillow"
+  ],
+  [
+   "matplotlib",
+   "pyparsing"
+  ],
+  [
+   "matplotlib",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

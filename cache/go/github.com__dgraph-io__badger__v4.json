@@ -1,0 +1,61 @@
+{
+ "package": "github.com/dgraph-io/badger/v4",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v4.9.2",
+ "nodes": [
+  "github.com/cespare/xxhash/v2",
+  "github.com/dgraph-io/badger/v4",
+  "github.com/dustin/go-humanize",
+  "github.com/klauspost/compress",
+  "github.com/spf13/cobra",
+  "github.com/stretchr/testify",
+  "go.opentelemetry.io/otel",
+  "golang.org/x/sys",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/dustin/go-humanize"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "go.opentelemetry.io/otel",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "go.opentelemetry.io/otel",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

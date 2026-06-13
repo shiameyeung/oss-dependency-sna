@@ -1,0 +1,43 @@
+{
+ "package": "tiktoken",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:43Z",
+ "status": "ok",
+ "version": "0.13.0",
+ "nodes": [
+  "certifi",
+  "charset-normalizer",
+  "idna",
+  "regex",
+  "requests",
+  "tiktoken",
+  "urllib3"
+ ],
+ "edges": [
+  [
+   "tiktoken",
+   "regex"
+  ],
+  [
+   "tiktoken",
+   "requests"
+  ],
+  [
+   "requests",
+   "certifi"
+  ],
+  [
+   "requests",
+   "charset-normalizer"
+  ],
+  [
+   "requests",
+   "idna"
+  ],
+  [
+   "requests",
+   "urllib3"
+  ]
+ ]
+}

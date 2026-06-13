@@ -1,0 +1,53 @@
+{
+ "package": "github.com/spf13/viper",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.21.0",
+ "nodes": [
+  "github.com/fsnotify/fsnotify",
+  "github.com/go-viper/mapstructure/v2",
+  "github.com/pelletier/go-toml/v2",
+  "github.com/spf13/afero",
+  "github.com/spf13/cast",
+  "github.com/spf13/pflag",
+  "github.com/spf13/viper",
+  "github.com/stretchr/testify",
+  "go.yaml.in/yaml/v3"
+ ],
+ "edges": [
+  [
+   "github.com/spf13/viper",
+   "github.com/fsnotify/fsnotify"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/go-viper/mapstructure/v2"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/pelletier/go-toml/v2"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/spf13/afero"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/spf13/cast"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/spf13/viper",
+   "go.yaml.in/yaml/v3"
+  ]
+ ]
+}

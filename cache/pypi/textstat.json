@@ -1,0 +1,48 @@
+{
+ "package": "textstat",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:08Z",
+ "status": "ok",
+ "version": "0.7.13",
+ "nodes": [
+  "click",
+  "joblib",
+  "nltk",
+  "pyphen",
+  "regex",
+  "setuptools",
+  "textstat",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "textstat",
+   "nltk"
+  ],
+  [
+   "textstat",
+   "pyphen"
+  ],
+  [
+   "textstat",
+   "setuptools"
+  ],
+  [
+   "nltk",
+   "click"
+  ],
+  [
+   "nltk",
+   "joblib"
+  ],
+  [
+   "nltk",
+   "regex"
+  ],
+  [
+   "nltk",
+   "tqdm"
+  ]
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "package": "eli5",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:01Z",
+ "status": "ok",
+ "version": "0.16.0",
+ "nodes": [
+  "attrs",
+  "eli5",
+  "graphviz",
+  "jinja2",
+  "joblib",
+  "markupsafe",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "tabulate",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "eli5",
+   "attrs"
+  ],
+  [
+   "eli5",
+   "graphviz"
+  ],
+  [
+   "eli5",
+   "jinja2"
+  ],
+  [
+   "eli5",
+   "numpy"
+  ],
+  [
+   "eli5",
+   "scikit-learn"
+  ],
+  [
+   "eli5",
+   "scipy"
+  ],
+  [
+   "eli5",
+   "tabulate"
+  ],
+  [
+   "jinja2",
+   "markupsafe"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

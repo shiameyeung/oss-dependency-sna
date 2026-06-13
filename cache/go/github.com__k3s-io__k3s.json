@@ -1,0 +1,9 @@
+{
+ "package": "github.com/k3s-io/k3s",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "error",
+ "version": "v0.8.1",
+ "error": "empty requirements (+incompatible/main module; deps.dev に go.mod 依存データなし)"
+}

@@ -2,7 +2,7 @@
  "package": "github.com/rook/rook",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.20.0",
  "nodes": [
@@ -10,6 +10,7 @@
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/service/s3",
+  "github.com/aws/aws-sdk-go-v2/service/sns",
   "github.com/aws/smithy-go",
   "github.com/go-logr/logr",
   "github.com/google/go-cmp",
@@ -22,6 +23,7 @@
   "github.com/stretchr/testify",
   "go.uber.org/zap",
   "golang.org/x/sync",
+  "gopkg.in/ini.v1",
   "gopkg.in/yaml.v2",
   "k8s.io/api",
   "k8s.io/apiextensions-apiserver",
@@ -49,6 +51,10 @@
   [
    "github.com/rook/rook",
    "github.com/aws/aws-sdk-go-v2/service/s3"
+  ],
+  [
+   "github.com/rook/rook",
+   "github.com/aws/aws-sdk-go-v2/service/sns"
   ],
   [
    "github.com/rook/rook",
@@ -93,6 +99,10 @@
   [
    "github.com/rook/rook",
    "golang.org/x/sync"
+  ],
+  [
+   "github.com/rook/rook",
+   "gopkg.in/ini.v1"
   ],
   [
    "github.com/rook/rook",
@@ -167,6 +177,14 @@
    "github.com/aws/smithy-go"
   ],
   [
+   "github.com/aws/aws-sdk-go-v2/service/sns",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/sns",
+   "github.com/aws/smithy-go"
+  ],
+  [
    "github.com/hashicorp/vault/api",
    "github.com/stretchr/testify"
   ],
@@ -176,6 +194,10 @@
   ],
   [
    "go.uber.org/zap",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "gopkg.in/ini.v1",
    "github.com/stretchr/testify"
   ],
   [

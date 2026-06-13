@@ -1,0 +1,57 @@
+{
+ "package": "hyperopt",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:55Z",
+ "status": "ok",
+ "version": "0.2.7",
+ "nodes": [
+  "cloudpickle",
+  "future",
+  "hyperopt",
+  "networkx",
+  "numpy",
+  "py4j",
+  "scipy",
+  "six",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "hyperopt",
+   "cloudpickle"
+  ],
+  [
+   "hyperopt",
+   "future"
+  ],
+  [
+   "hyperopt",
+   "networkx"
+  ],
+  [
+   "hyperopt",
+   "numpy"
+  ],
+  [
+   "hyperopt",
+   "py4j"
+  ],
+  [
+   "hyperopt",
+   "scipy"
+  ],
+  [
+   "hyperopt",
+   "six"
+  ],
+  [
+   "hyperopt",
+   "tqdm"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

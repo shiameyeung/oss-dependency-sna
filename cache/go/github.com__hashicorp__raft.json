@@ -1,0 +1,37 @@
+{
+ "package": "github.com/hashicorp/raft",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.7.3",
+ "nodes": [
+  "github.com/hashicorp/go-hclog",
+  "github.com/hashicorp/go-metrics",
+  "github.com/hashicorp/go-msgpack/v2",
+  "github.com/hashicorp/raft",
+  "github.com/stretchr/testify"
+ ],
+ "edges": [
+  [
+   "github.com/hashicorp/raft",
+   "github.com/hashicorp/go-hclog"
+  ],
+  [
+   "github.com/hashicorp/raft",
+   "github.com/hashicorp/go-metrics"
+  ],
+  [
+   "github.com/hashicorp/raft",
+   "github.com/hashicorp/go-msgpack/v2"
+  ],
+  [
+   "github.com/hashicorp/raft",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/hashicorp/go-hclog",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

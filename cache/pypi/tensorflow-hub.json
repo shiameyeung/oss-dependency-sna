@@ -1,0 +1,33 @@
+{
+ "package": "tensorflow-hub",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:17Z",
+ "status": "ok",
+ "version": "0.16.1",
+ "nodes": [
+  "numpy",
+  "protobuf",
+  "tensorflow",
+  "tensorflow-hub",
+  "tf-keras"
+ ],
+ "edges": [
+  [
+   "tensorflow-hub",
+   "numpy"
+  ],
+  [
+   "tensorflow-hub",
+   "protobuf"
+  ],
+  [
+   "tensorflow-hub",
+   "tf-keras"
+  ],
+  [
+   "tf-keras",
+   "tensorflow"
+  ]
+ ]
+}

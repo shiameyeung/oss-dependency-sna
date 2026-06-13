@@ -1,0 +1,53 @@
+{
+ "package": "mujoco",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:19Z",
+ "status": "ok",
+ "version": "3.9.0",
+ "nodes": [
+  "absl-py",
+  "etils",
+  "fsspec",
+  "glfw",
+  "mujoco",
+  "numpy",
+  "pyopengl",
+  "typing-extensions",
+  "zipp"
+ ],
+ "edges": [
+  [
+   "mujoco",
+   "absl-py"
+  ],
+  [
+   "mujoco",
+   "etils"
+  ],
+  [
+   "mujoco",
+   "glfw"
+  ],
+  [
+   "mujoco",
+   "numpy"
+  ],
+  [
+   "mujoco",
+   "pyopengl"
+  ],
+  [
+   "etils",
+   "fsspec"
+  ],
+  [
+   "etils",
+   "typing-extensions"
+  ],
+  [
+   "etils",
+   "zipp"
+  ]
+ ]
+}

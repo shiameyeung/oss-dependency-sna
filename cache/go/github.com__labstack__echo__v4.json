@@ -1,0 +1,46 @@
+{
+ "package": "github.com/labstack/echo/v4",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v4.15.2",
+ "nodes": [
+  "github.com/labstack/echo/v4",
+  "github.com/stretchr/testify",
+  "github.com/valyala/fasttemplate",
+  "golang.org/x/crypto",
+  "golang.org/x/net",
+  "golang.org/x/time"
+ ],
+ "edges": [
+  [
+   "github.com/labstack/echo/v4",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/labstack/echo/v4",
+   "github.com/valyala/fasttemplate"
+  ],
+  [
+   "github.com/labstack/echo/v4",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/labstack/echo/v4",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/labstack/echo/v4",
+   "golang.org/x/time"
+  ],
+  [
+   "golang.org/x/crypto",
+   "golang.org/x/net"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/crypto"
+  ]
+ ]
+}

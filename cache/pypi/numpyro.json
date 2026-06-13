@@ -1,0 +1,69 @@
+{
+ "package": "numpyro",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:57Z",
+ "status": "ok",
+ "version": "0.21.0",
+ "nodes": [
+  "jax",
+  "jaxlib",
+  "ml-dtypes",
+  "multipledispatch",
+  "numpy",
+  "numpyro",
+  "opt-einsum",
+  "scipy",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "numpyro",
+   "jax"
+  ],
+  [
+   "numpyro",
+   "jaxlib"
+  ],
+  [
+   "numpyro",
+   "multipledispatch"
+  ],
+  [
+   "numpyro",
+   "numpy"
+  ],
+  [
+   "numpyro",
+   "tqdm"
+  ],
+  [
+   "jax",
+   "jaxlib"
+  ],
+  [
+   "jax",
+   "ml-dtypes"
+  ],
+  [
+   "jax",
+   "numpy"
+  ],
+  [
+   "jax",
+   "opt-einsum"
+  ],
+  [
+   "jax",
+   "scipy"
+  ],
+  [
+   "ml-dtypes",
+   "numpy"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

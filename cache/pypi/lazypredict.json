@@ -1,0 +1,84 @@
+{
+ "package": "lazypredict",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:16Z",
+ "status": "ok",
+ "version": "0.3.0",
+ "nodes": [
+  "click",
+  "joblib",
+  "lazypredict",
+  "narwhals",
+  "numpy",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "threadpoolctl",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "lazypredict",
+   "click"
+  ],
+  [
+   "lazypredict",
+   "joblib"
+  ],
+  [
+   "lazypredict",
+   "numpy"
+  ],
+  [
+   "lazypredict",
+   "pandas"
+  ],
+  [
+   "lazypredict",
+   "scikit-learn"
+  ],
+  [
+   "lazypredict",
+   "tqdm"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

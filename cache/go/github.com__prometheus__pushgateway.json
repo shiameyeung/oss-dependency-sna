@@ -1,0 +1,117 @@
+{
+ "package": "github.com/prometheus/pushgateway",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.11.3",
+ "nodes": [
+  "github.com/alecthomas/kingpin/v2",
+  "github.com/golang/snappy",
+  "github.com/prometheus/client_golang",
+  "github.com/prometheus/client_model",
+  "github.com/prometheus/common",
+  "github.com/prometheus/exporter-toolkit",
+  "github.com/prometheus/prometheus",
+  "github.com/prometheus/pushgateway",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/alecthomas/kingpin/v2"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/prometheus/exporter-toolkit"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/prometheus/pushgateway",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/client_model",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/common",
+   "github.com/alecthomas/kingpin/v2"
+  ],
+  [
+   "github.com/prometheus/common",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/common",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/exporter-toolkit",
+   "github.com/alecthomas/kingpin/v2"
+  ],
+  [
+   "github.com/prometheus/exporter-toolkit",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/alecthomas/kingpin/v2"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/prometheus/exporter-toolkit"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "google.golang.org/protobuf"
+  ]
+ ]
+}

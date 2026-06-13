@@ -2,7 +2,7 @@
  "package": "vitess.io/vitess",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.24.1",
  "nodes": [
@@ -12,11 +12,16 @@
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/service/s3",
   "github.com/aws/smithy-go",
+  "github.com/azure/azure-pipeline-go",
+  "github.com/azure/azure-storage-blob-go",
   "github.com/buger/jsonparser",
   "github.com/cespare/xxhash/v2",
+  "github.com/containerd/cgroups/v3",
   "github.com/dustin/go-humanize",
   "github.com/fsnotify/fsnotify",
   "github.com/go-sql-driver/mysql",
+  "github.com/go-viper/mapstructure/v2",
+  "github.com/golang/glog",
   "github.com/golang/snappy",
   "github.com/google/go-cmp",
   "github.com/google/go-containerregistry",
@@ -31,13 +36,17 @@
   "github.com/klauspost/compress",
   "github.com/klauspost/pgzip",
   "github.com/kr/pretty",
+  "github.com/kr/text",
   "github.com/mattn/go-isatty",
   "github.com/olekukonko/tablewriter",
+  "github.com/opentracing-contrib/go-grpc",
   "github.com/opentracing/opentracing-go",
   "github.com/patrickmn/go-cache",
   "github.com/pires/go-proxyproto",
+  "github.com/planetscale/vtprotobuf",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/common",
+  "github.com/shirou/gopsutil/v4",
   "github.com/soheilhy/cmux",
   "github.com/spf13/afero",
   "github.com/spf13/cobra",
@@ -46,6 +55,7 @@
   "github.com/stretchr/testify",
   "github.com/tidwall/gjson",
   "github.com/uber/jaeger-client-go",
+  "github.com/xlab/treeprint",
   "go.etcd.io/etcd/api/v3",
   "go.etcd.io/etcd/client/pkg/v3",
   "go.etcd.io/etcd/client/v3",
@@ -64,10 +74,12 @@
   "golang.org/x/term",
   "golang.org/x/time",
   "golang.org/x/tools",
+  "gonum.org/v1/gonum",
   "google.golang.org/api",
   "google.golang.org/grpc",
   "google.golang.org/grpc/cmd/protoc-gen-go-grpc",
   "google.golang.org/protobuf",
+  "modernc.org/sqlite",
   "sigs.k8s.io/yaml",
   "vitess.io/vitess"
  ],
@@ -79,6 +91,14 @@
   [
    "vitess.io/vitess",
    "github.com/adalogics/go-fuzz-headers"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/azure/azure-pipeline-go"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/azure/azure-storage-blob-go"
   ],
   [
    "vitess.io/vitess",
@@ -106,6 +126,10 @@
   ],
   [
    "vitess.io/vitess",
+   "github.com/containerd/cgroups/v3"
+  ],
+  [
+   "vitess.io/vitess",
    "github.com/dustin/go-humanize"
   ],
   [
@@ -115,6 +139,14 @@
   [
    "vitess.io/vitess",
    "github.com/go-sql-driver/mysql"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/go-viper/mapstructure/v2"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/golang/glog"
   ],
   [
    "vitess.io/vitess",
@@ -174,11 +206,19 @@
   ],
   [
    "vitess.io/vitess",
+   "github.com/kr/text"
+  ],
+  [
+   "vitess.io/vitess",
    "github.com/mattn/go-isatty"
   ],
   [
    "vitess.io/vitess",
    "github.com/olekukonko/tablewriter"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/opentracing-contrib/go-grpc"
   ],
   [
    "vitess.io/vitess",
@@ -194,11 +234,19 @@
   ],
   [
    "vitess.io/vitess",
+   "github.com/planetscale/vtprotobuf"
+  ],
+  [
+   "vitess.io/vitess",
    "github.com/prometheus/client_golang"
   ],
   [
    "vitess.io/vitess",
    "github.com/prometheus/common"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/shirou/gopsutil/v4"
   ],
   [
    "vitess.io/vitess",
@@ -231,6 +279,10 @@
   [
    "vitess.io/vitess",
    "github.com/uber/jaeger-client-go"
+  ],
+  [
+   "vitess.io/vitess",
+   "github.com/xlab/treeprint"
   ],
   [
    "vitess.io/vitess",
@@ -306,6 +358,10 @@
   ],
   [
    "vitess.io/vitess",
+   "gonum.org/v1/gonum"
+  ],
+  [
+   "vitess.io/vitess",
    "google.golang.org/api"
   ],
   [
@@ -319,6 +375,10 @@
   [
    "vitess.io/vitess",
    "google.golang.org/protobuf"
+  ],
+  [
+   "vitess.io/vitess",
+   "modernc.org/sqlite"
   ],
   [
    "vitess.io/vitess",
@@ -385,6 +445,22 @@
    "github.com/aws/smithy-go"
   ],
   [
+   "github.com/containerd/cgroups/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "google.golang.org/protobuf"
+  ],
+  [
    "github.com/fsnotify/fsnotify",
    "golang.org/x/sys"
   ],
@@ -434,6 +510,10 @@
   ],
   [
    "github.com/hashicorp/consul/api",
+   "github.com/go-viper/mapstructure/v2"
+  ],
+  [
+   "github.com/hashicorp/consul/api",
    "github.com/google/go-cmp"
   ],
   [
@@ -445,8 +525,24 @@
    "golang.org/x/exp"
   ],
   [
+   "github.com/kr/pretty",
+   "github.com/kr/text"
+  ],
+  [
    "github.com/mattn/go-isatty",
    "golang.org/x/sys"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "google.golang.org/grpc"
   ],
   [
    "github.com/opentracing/opentracing-go",
@@ -455,6 +551,18 @@
   [
    "github.com/pires/go-proxyproto",
    "golang.org/x/net"
+  ],
+  [
+   "github.com/planetscale/vtprotobuf",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/planetscale/vtprotobuf",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/planetscale/vtprotobuf",
+   "google.golang.org/protobuf"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -509,6 +617,18 @@
    "google.golang.org/protobuf"
   ],
   [
+   "github.com/shirou/gopsutil/v4",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/shirou/gopsutil/v4",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/shirou/gopsutil/v4",
+   "golang.org/x/sys"
+  ],
+  [
    "github.com/soheilhy/cmux",
    "golang.org/x/net"
   ],
@@ -522,6 +642,10 @@
   ],
   [
    "github.com/spf13/viper",
+   "github.com/go-viper/mapstructure/v2"
+  ],
+  [
+   "github.com/spf13/viper",
    "github.com/spf13/afero"
   ],
   [
@@ -530,6 +654,10 @@
   ],
   [
    "github.com/spf13/viper",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/xlab/treeprint",
    "github.com/stretchr/testify"
   ],
   [
@@ -737,6 +865,14 @@
    "golang.org/x/sync"
   ],
   [
+   "gonum.org/v1/gonum",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "gonum.org/v1/gonum",
+   "golang.org/x/tools"
+  ],
+  [
    "google.golang.org/api",
    "github.com/google/go-cmp"
   ],
@@ -771,6 +907,10 @@
   [
    "google.golang.org/grpc",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/golang/glog"
   ],
   [
    "google.golang.org/grpc",
@@ -810,6 +950,10 @@
   ],
   [
    "google.golang.org/grpc",
+   "gonum.org/v1/gonum"
+  ],
+  [
+   "google.golang.org/grpc",
    "google.golang.org/protobuf"
   ],
   [
@@ -823,6 +967,10 @@
   [
    "google.golang.org/protobuf",
    "github.com/google/go-cmp"
+  ],
+  [
+   "modernc.org/sqlite",
+   "golang.org/x/sys"
   ],
   [
    "sigs.k8s.io/yaml",

@@ -2,28 +2,47 @@
  "package": "github.com/containerd/containerd",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.7.32",
  "nodes": [
   "dario.cat/mergo",
   "github.com/adalogics/go-fuzz-headers",
+  "github.com/containerd/cgroups/v3",
+  "github.com/containerd/console",
   "github.com/containerd/containerd",
+  "github.com/containerd/containerd/api",
+  "github.com/containerd/continuity",
+  "github.com/containerd/errdefs",
+  "github.com/containerd/fifo",
+  "github.com/containerd/go-cni",
+  "github.com/containerd/log",
+  "github.com/containerd/platforms",
+  "github.com/containerd/typeurl/v2",
   "github.com/containernetworking/cni",
+  "github.com/containernetworking/plugins",
   "github.com/coreos/go-systemd/v22",
   "github.com/davecgh/go-spew",
   "github.com/distribution/reference",
   "github.com/docker/go-units",
+  "github.com/emicklei/go-restful/v3",
   "github.com/fsnotify/fsnotify",
   "github.com/google/go-cmp",
   "github.com/google/uuid",
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/grpc-ecosystem/go-grpc-prometheus",
   "github.com/klauspost/compress",
+  "github.com/microsoft/go-winio",
+  "github.com/microsoft/hcsshim",
+  "github.com/moby/sys/mountinfo",
+  "github.com/moby/sys/signal",
+  "github.com/moby/sys/user",
   "github.com/moby/sys/userns",
   "github.com/opencontainers/go-digest",
   "github.com/opencontainers/image-spec",
+  "github.com/opencontainers/runtime-spec",
   "github.com/opencontainers/selinux",
+  "github.com/pelletier/go-toml",
   "github.com/prometheus/client_golang",
   "github.com/sirupsen/logrus",
   "github.com/stretchr/testify",
@@ -49,6 +68,7 @@
   "k8s.io/apiserver",
   "k8s.io/client-go",
   "k8s.io/component-base",
+  "k8s.io/cri-api",
   "k8s.io/klog/v2",
   "k8s.io/utils"
  ],
@@ -63,7 +83,59 @@
   ],
   [
    "github.com/containerd/containerd",
+   "github.com/microsoft/go-winio"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/microsoft/hcsshim"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/cgroups/v3"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/console"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/containerd/api"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/continuity"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/errdefs"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/fifo"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/go-cni"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/log"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/platforms"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containerd/typeurl/v2"
+  ],
+  [
+   "github.com/containerd/containerd",
    "github.com/containernetworking/cni"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/containernetworking/plugins"
   ],
   [
    "github.com/containerd/containerd",
@@ -80,6 +152,10 @@
   [
    "github.com/containerd/containerd",
    "github.com/docker/go-units"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/emicklei/go-restful/v3"
   ],
   [
    "github.com/containerd/containerd",
@@ -107,6 +183,18 @@
   ],
   [
    "github.com/containerd/containerd",
+   "github.com/moby/sys/mountinfo"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/moby/sys/signal"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/moby/sys/user"
+  ],
+  [
+   "github.com/containerd/containerd",
    "github.com/moby/sys/userns"
   ],
   [
@@ -119,7 +207,15 @@
   ],
   [
    "github.com/containerd/containerd",
+   "github.com/opencontainers/runtime-spec"
+  ],
+  [
+   "github.com/containerd/containerd",
    "github.com/opencontainers/selinux"
+  ],
+  [
+   "github.com/containerd/containerd",
+   "github.com/pelletier/go-toml"
   ],
   [
    "github.com/containerd/containerd",
@@ -223,11 +319,139 @@
   ],
   [
    "github.com/containerd/containerd",
+   "k8s.io/cri-api"
+  ],
+  [
+   "github.com/containerd/containerd",
    "k8s.io/klog/v2"
   ],
   [
    "github.com/containerd/containerd",
    "k8s.io/utils"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/containerd/log"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/coreos/go-systemd/v22"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/docker/go-units"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/moby/sys/userns"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/opencontainers/runtime-spec"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/containerd/cgroups/v3",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/containerd/console",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/containerd/containerd/api",
+   "github.com/containerd/typeurl/v2"
+  ],
+  [
+   "github.com/containerd/containerd/api",
+   "github.com/opencontainers/image-spec"
+  ],
+  [
+   "github.com/containerd/containerd/api",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "github.com/containerd/containerd/api",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/containerd/containerd/api",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "github.com/microsoft/go-winio"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "github.com/containerd/log"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "github.com/opencontainers/go-digest"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/containerd/continuity",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/containerd/fifo",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/containerd/fifo",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/containerd/go-cni",
+   "github.com/containernetworking/cni"
+  ],
+  [
+   "github.com/containerd/go-cni",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/containerd/typeurl/v2",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "github.com/microsoft/hcsshim"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "github.com/containernetworking/cni"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "github.com/coreos/go-systemd/v22"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "github.com/opencontainers/selinux"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "github.com/vishvananda/netlink"
+  ],
+  [
+   "github.com/containernetworking/plugins",
+   "golang.org/x/sys"
   ],
   [
    "github.com/coreos/go-systemd/v22",
@@ -256,6 +480,18 @@
   [
    "github.com/grpc-ecosystem/go-grpc-middleware",
    "google.golang.org/grpc"
+  ],
+  [
+   "github.com/moby/sys/mountinfo",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/moby/sys/signal",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/moby/sys/user",
+   "golang.org/x/sys"
   ],
   [
    "github.com/opencontainers/image-spec",
@@ -575,6 +811,10 @@
   ],
   [
    "k8s.io/apiserver",
+   "github.com/emicklei/go-restful/v3"
+  ],
+  [
+   "k8s.io/apiserver",
    "github.com/fsnotify/fsnotify"
   ],
   [
@@ -744,6 +984,18 @@
   [
    "k8s.io/component-base",
    "k8s.io/utils"
+  ],
+  [
+   "k8s.io/cri-api",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/cri-api",
+   "google.golang.org/grpc"
+  ],
+  [
+   "k8s.io/cri-api",
+   "google.golang.org/protobuf"
   ],
   [
    "k8s.io/utils",

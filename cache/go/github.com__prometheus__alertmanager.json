@@ -2,7 +2,7 @@
  "package": "github.com/prometheus/alertmanager",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.33.0",
  "nodes": [
@@ -11,6 +11,7 @@
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
+  "github.com/aws/aws-sdk-go-v2/service/sns",
   "github.com/aws/aws-sdk-go-v2/service/sts",
   "github.com/aws/smithy-go",
   "github.com/cenkalti/backoff/v4",
@@ -36,7 +37,11 @@
   "github.com/prometheus/common",
   "github.com/prometheus/exporter-toolkit",
   "github.com/prometheus/sigv4",
+  "github.com/rs/cors",
   "github.com/stretchr/testify",
+  "github.com/twmb/franz-go",
+  "github.com/twmb/franz-go/pkg/kfake",
+  "github.com/xlab/treeprint",
   "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace",
   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
   "go.opentelemetry.io/otel",
@@ -76,6 +81,10 @@
   [
    "github.com/prometheus/alertmanager",
    "github.com/aws/aws-sdk-go-v2/credentials"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/aws/aws-sdk-go-v2/service/sns"
   ],
   [
    "github.com/prometheus/alertmanager",
@@ -171,7 +180,23 @@
   ],
   [
    "github.com/prometheus/alertmanager",
+   "github.com/rs/cors"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
    "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/twmb/franz-go"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/twmb/franz-go/pkg/kfake"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/xlab/treeprint"
   ],
   [
    "github.com/prometheus/alertmanager",
@@ -271,6 +296,14 @@
   ],
   [
    "github.com/aws/aws-sdk-go-v2/credentials",
+   "github.com/aws/smithy-go"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/sns",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/sns",
    "github.com/aws/smithy-go"
   ],
   [
@@ -436,6 +469,14 @@
   [
    "github.com/prometheus/sigv4",
    "gopkg.in/yaml.v2"
+  ],
+  [
+   "github.com/twmb/franz-go/pkg/kfake",
+   "github.com/twmb/franz-go"
+  ],
+  [
+   "github.com/xlab/treeprint",
+   "github.com/stretchr/testify"
   ],
   [
    "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace",

@@ -1,0 +1,74 @@
+{
+ "package": "sigs.k8s.io/gateway-api",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.5.1",
+ "nodes": [
+  "github.com/stretchr/testify",
+  "k8s.io/apimachinery",
+  "k8s.io/client-go",
+  "k8s.io/kube-openapi",
+  "sigs.k8s.io/gateway-api",
+  "sigs.k8s.io/structured-merge-diff/v6"
+ ],
+ "edges": [
+  [
+   "sigs.k8s.io/gateway-api",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "k8s.io/client-go"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "sigs.k8s.io/structured-merge-diff/v6"
+  ],
+  [
+   "k8s.io/apimachinery",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/apimachinery",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "k8s.io/apimachinery",
+   "sigs.k8s.io/structured-merge-diff/v6"
+  ],
+  [
+   "k8s.io/client-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/client-go",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "k8s.io/client-go",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "k8s.io/client-go",
+   "sigs.k8s.io/structured-merge-diff/v6"
+  ],
+  [
+   "k8s.io/kube-openapi",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/kube-openapi",
+   "sigs.k8s.io/structured-merge-diff/v6"
+  ]
+ ]
+}

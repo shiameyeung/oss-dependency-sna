@@ -1,0 +1,108 @@
+{
+ "package": "github.com/aquasecurity/kube-bench",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.15.6",
+ "nodes": [
+  "github.com/aquasecurity/kube-bench",
+  "github.com/aws/aws-sdk-go-v2",
+  "github.com/aws/aws-sdk-go-v2/config",
+  "github.com/fatih/color",
+  "github.com/golang/glog",
+  "github.com/magiconair/properties",
+  "github.com/onsi/ginkgo",
+  "github.com/pkg/errors",
+  "github.com/spf13/cobra",
+  "github.com/spf13/viper",
+  "github.com/stretchr/testify",
+  "golang.org/x/exp",
+  "gopkg.in/yaml.v2",
+  "gorm.io/gorm",
+  "k8s.io/apimachinery",
+  "k8s.io/client-go"
+ ],
+ "edges": [
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/aws/aws-sdk-go-v2/config"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/fatih/color"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/golang/glog"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/magiconair/properties"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/onsi/ginkgo"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/pkg/errors"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/spf13/viper"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "golang.org/x/exp"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "gopkg.in/yaml.v2"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "gorm.io/gorm"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/aquasecurity/kube-bench",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/config",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/spf13/viper",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/apimachinery",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/client-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/client-go",
+   "k8s.io/apimachinery"
+  ]
+ ]
+}

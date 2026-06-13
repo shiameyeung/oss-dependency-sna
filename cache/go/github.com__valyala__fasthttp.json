@@ -1,0 +1,54 @@
+{
+ "package": "github.com/valyala/fasthttp",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.71.0",
+ "nodes": [
+  "github.com/klauspost/compress",
+  "github.com/valyala/bytebufferpool",
+  "github.com/valyala/fasthttp",
+  "golang.org/x/crypto",
+  "golang.org/x/net",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/valyala/fasthttp",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/valyala/fasthttp",
+   "github.com/valyala/bytebufferpool"
+  ],
+  [
+   "github.com/valyala/fasthttp",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/valyala/fasthttp",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/valyala/fasthttp",
+   "golang.org/x/sys"
+  ],
+  [
+   "golang.org/x/crypto",
+   "golang.org/x/net"
+  ],
+  [
+   "golang.org/x/crypto",
+   "golang.org/x/sys"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/crypto"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/sys"
+  ]
+ ]
+}

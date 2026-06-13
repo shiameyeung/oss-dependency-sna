@@ -1,0 +1,37 @@
+{
+ "package": "onnx",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:33Z",
+ "status": "ok",
+ "version": "1.21.0",
+ "nodes": [
+  "ml-dtypes",
+  "numpy",
+  "onnx",
+  "protobuf",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "onnx",
+   "ml-dtypes"
+  ],
+  [
+   "onnx",
+   "numpy"
+  ],
+  [
+   "onnx",
+   "protobuf"
+  ],
+  [
+   "onnx",
+   "typing-extensions"
+  ],
+  [
+   "ml-dtypes",
+   "numpy"
+  ]
+ ]
+}

@@ -2,7 +2,7 @@
  "package": "github.com/thanos-io/thanos",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.41.0",
  "nodes": [
@@ -10,16 +10,21 @@
   "github.com/alecthomas/units",
   "github.com/alicebob/miniredis/v2",
   "github.com/blang/semver/v4",
+  "github.com/bradfitz/gomemcache",
   "github.com/cespare/xxhash/v2",
+  "github.com/cortexproject/promqlsmith",
+  "github.com/cristalhq/hedgedhttp",
   "github.com/dustin/go-humanize",
   "github.com/efficientgo/core",
   "github.com/facette/natsort",
   "github.com/felixge/fgprof",
+  "github.com/fortytw2/leaktest",
   "github.com/fsnotify/fsnotify",
   "github.com/go-kit/log",
   "github.com/go-openapi/strfmt",
   "github.com/gogo/protobuf",
   "github.com/gogo/status",
+  "github.com/golang/groupcache",
   "github.com/golang/protobuf",
   "github.com/golang/snappy",
   "github.com/google/go-cmp",
@@ -31,6 +36,7 @@
   "github.com/kimmachinegun/automemlimit",
   "github.com/klauspost/compress",
   "github.com/miekg/dns",
+  "github.com/mitchellh/go-ps",
   "github.com/mwitkow/go-conntrack",
   "github.com/oklog/run",
   "github.com/oklog/ulid/v2",
@@ -51,8 +57,12 @@
   "github.com/thanos-io/thanos",
   "github.com/tjhop/slog-gokit",
   "github.com/uber/jaeger-client-go",
+  "github.com/victoriametrics/easyproto",
+  "github.com/weaveworks/common",
   "go.opentelemetry.io/collector/pdata",
   "go.opentelemetry.io/otel",
+  "go.opentelemetry.io/otel/bridge/opentracing",
+  "go.opentelemetry.io/otel/exporters/jaeger",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
@@ -78,6 +88,10 @@
   ],
   [
    "github.com/thanos-io/thanos",
+   "github.com/victoriametrics/easyproto"
+  ],
+  [
+   "github.com/thanos-io/thanos",
    "github.com/alecthomas/kingpin/v2"
   ],
   [
@@ -94,7 +108,19 @@
   ],
   [
    "github.com/thanos-io/thanos",
+   "github.com/bradfitz/gomemcache"
+  ],
+  [
+   "github.com/thanos-io/thanos",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/cortexproject/promqlsmith"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/cristalhq/hedgedhttp"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -111,6 +137,10 @@
   [
    "github.com/thanos-io/thanos",
    "github.com/felixge/fgprof"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/fortytw2/leaktest"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -131,6 +161,10 @@
   [
    "github.com/thanos-io/thanos",
    "github.com/gogo/status"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/golang/groupcache"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -171,6 +205,10 @@
   [
    "github.com/thanos-io/thanos",
    "github.com/miekg/dns"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/mitchellh/go-ps"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -250,11 +288,23 @@
   ],
   [
    "github.com/thanos-io/thanos",
+   "github.com/weaveworks/common"
+  ],
+  [
+   "github.com/thanos-io/thanos",
    "go.opentelemetry.io/collector/pdata"
   ],
   [
    "github.com/thanos-io/thanos",
    "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "go.opentelemetry.io/otel/bridge/opentracing"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "go.opentelemetry.io/otel/exporters/jaeger"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -337,6 +387,14 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/cortexproject/promqlsmith",
+   "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/cortexproject/promqlsmith",
+   "github.com/stretchr/testify"
+  ],
+  [
    "github.com/efficientgo/core",
    "github.com/google/go-cmp"
   ],
@@ -367,6 +425,10 @@
   [
    "github.com/gogo/status",
    "google.golang.org/grpc"
+  ],
+  [
+   "github.com/golang/groupcache",
+   "github.com/golang/protobuf"
   ],
   [
    "github.com/golang/protobuf",
@@ -886,6 +948,46 @@
   ],
   [
    "go.opentelemetry.io/otel",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "google.golang.org/grpc"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
    "go.opentelemetry.io/otel/trace"
   ],
   [

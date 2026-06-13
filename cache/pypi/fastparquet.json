@@ -1,0 +1,52 @@
+{
+ "package": "fastparquet",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:50Z",
+ "status": "ok",
+ "version": "2026.5.0",
+ "nodes": [
+  "cramjam",
+  "fastparquet",
+  "fsspec",
+  "numpy",
+  "packaging",
+  "pandas",
+  "python-dateutil",
+  "six"
+ ],
+ "edges": [
+  [
+   "fastparquet",
+   "cramjam"
+  ],
+  [
+   "fastparquet",
+   "fsspec"
+  ],
+  [
+   "fastparquet",
+   "numpy"
+  ],
+  [
+   "fastparquet",
+   "packaging"
+  ],
+  [
+   "fastparquet",
+   "pandas"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ]
+ ]
+}

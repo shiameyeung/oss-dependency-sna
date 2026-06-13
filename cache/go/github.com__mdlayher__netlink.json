@@ -1,0 +1,32 @@
+{
+ "package": "github.com/mdlayher/netlink",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.11.2",
+ "nodes": [
+  "github.com/google/go-cmp",
+  "github.com/mdlayher/netlink",
+  "golang.org/x/net",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/mdlayher/netlink",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/mdlayher/netlink",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/mdlayher/netlink",
+   "golang.org/x/sys"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/sys"
+  ]
+ ]
+}

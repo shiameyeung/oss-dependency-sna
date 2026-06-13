@@ -1,0 +1,105 @@
+{
+ "package": "nlpaug",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:04Z",
+ "status": "ok",
+ "version": "1.1.11",
+ "nodes": [
+  "beautifulsoup4",
+  "certifi",
+  "charset-normalizer",
+  "filelock",
+  "gdown",
+  "idna",
+  "nlpaug",
+  "numpy",
+  "pandas",
+  "pysocks",
+  "python-dateutil",
+  "requests",
+  "six",
+  "soupsieve",
+  "tqdm",
+  "typing-extensions",
+  "urllib3"
+ ],
+ "edges": [
+  [
+   "nlpaug",
+   "gdown"
+  ],
+  [
+   "nlpaug",
+   "numpy"
+  ],
+  [
+   "nlpaug",
+   "pandas"
+  ],
+  [
+   "nlpaug",
+   "requests"
+  ],
+  [
+   "beautifulsoup4",
+   "soupsieve"
+  ],
+  [
+   "beautifulsoup4",
+   "typing-extensions"
+  ],
+  [
+   "gdown",
+   "beautifulsoup4"
+  ],
+  [
+   "gdown",
+   "filelock"
+  ],
+  [
+   "gdown",
+   "requests"
+  ],
+  [
+   "gdown",
+   "tqdm"
+  ],
+  [
+   "gdown",
+   "typing-extensions"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "requests",
+   "certifi"
+  ],
+  [
+   "requests",
+   "charset-normalizer"
+  ],
+  [
+   "requests",
+   "idna"
+  ],
+  [
+   "requests",
+   "pysocks"
+  ],
+  [
+   "requests",
+   "urllib3"
+  ]
+ ]
+}

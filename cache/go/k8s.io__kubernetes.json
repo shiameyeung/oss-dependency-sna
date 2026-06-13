@@ -2,27 +2,32 @@
  "package": "k8s.io/kubernetes",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
- "version": "v1.36.1",
+ "version": "v1.36.2",
  "nodes": [
   "github.com/blang/semver/v4",
+  "github.com/container-storage-interface/spec",
   "github.com/coreos/go-systemd/v22",
   "github.com/cyphar/filepath-securejoin",
   "github.com/distribution/reference",
   "github.com/docker/go-units",
+  "github.com/emicklei/go-restful/v3",
   "github.com/fsnotify/fsnotify",
   "github.com/go-logr/logr",
   "github.com/go-openapi/jsonreference",
+  "github.com/godbus/dbus/v5",
   "github.com/google/cel-go",
   "github.com/google/gnostic-models",
   "github.com/google/go-cmp",
   "github.com/google/uuid",
   "github.com/gorilla/websocket",
+  "github.com/microsoft/go-winio",
   "github.com/moby/sys/userns",
   "github.com/munnerz/goautoneg",
   "github.com/onsi/ginkgo/v2",
   "github.com/onsi/gomega",
+  "github.com/opencontainers/cgroups",
   "github.com/opencontainers/selinux",
   "github.com/pmezard/go-difflib",
   "github.com/prometheus/client_model",
@@ -65,17 +70,23 @@
   "k8s.io/apiserver",
   "k8s.io/cli-runtime",
   "k8s.io/client-go",
+  "k8s.io/cluster-bootstrap",
   "k8s.io/code-generator",
   "k8s.io/component-base",
   "k8s.io/component-helpers",
+  "k8s.io/controller-manager",
+  "k8s.io/cri-api",
   "k8s.io/klog/v2",
+  "k8s.io/kube-aggregator",
   "k8s.io/kube-openapi",
   "k8s.io/kubectl",
   "k8s.io/kubernetes",
   "k8s.io/metrics",
+  "k8s.io/mount-utils",
   "k8s.io/streaming",
   "k8s.io/utils",
   "sigs.k8s.io/json",
+  "sigs.k8s.io/knftables",
   "sigs.k8s.io/randfill",
   "sigs.k8s.io/structured-merge-diff/v6",
   "sigs.k8s.io/yaml"
@@ -83,7 +94,15 @@
  "edges": [
   [
    "k8s.io/kubernetes",
+   "github.com/microsoft/go-winio"
+  ],
+  [
+   "k8s.io/kubernetes",
    "github.com/blang/semver/v4"
+  ],
+  [
+   "k8s.io/kubernetes",
+   "github.com/container-storage-interface/spec"
   ],
   [
    "k8s.io/kubernetes",
@@ -103,6 +122,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "github.com/emicklei/go-restful/v3"
+  ],
+  [
+   "k8s.io/kubernetes",
    "github.com/fsnotify/fsnotify"
   ],
   [
@@ -112,6 +135,10 @@
   [
    "k8s.io/kubernetes",
    "github.com/go-openapi/jsonreference"
+  ],
+  [
+   "k8s.io/kubernetes",
+   "github.com/godbus/dbus/v5"
   ],
   [
    "k8s.io/kubernetes",
@@ -148,6 +175,10 @@
   [
    "k8s.io/kubernetes",
    "github.com/onsi/gomega"
+  ],
+  [
+   "k8s.io/kubernetes",
+   "github.com/opencontainers/cgroups"
   ],
   [
    "k8s.io/kubernetes",
@@ -319,6 +350,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "k8s.io/cluster-bootstrap"
+  ],
+  [
+   "k8s.io/kubernetes",
    "k8s.io/code-generator"
   ],
   [
@@ -331,7 +366,19 @@
   ],
   [
    "k8s.io/kubernetes",
+   "k8s.io/controller-manager"
+  ],
+  [
+   "k8s.io/kubernetes",
+   "k8s.io/cri-api"
+  ],
+  [
+   "k8s.io/kubernetes",
    "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/kubernetes",
+   "k8s.io/kube-aggregator"
   ],
   [
    "k8s.io/kubernetes",
@@ -347,6 +394,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "k8s.io/mount-utils"
+  ],
+  [
+   "k8s.io/kubernetes",
    "k8s.io/streaming"
   ],
   [
@@ -359,6 +410,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "sigs.k8s.io/knftables"
+  ],
+  [
+   "k8s.io/kubernetes",
    "sigs.k8s.io/randfill"
   ],
   [
@@ -368,6 +423,18 @@
   [
    "k8s.io/kubernetes",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/container-storage-interface/spec",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/container-storage-interface/spec",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/coreos/go-systemd/v22",
+   "github.com/godbus/dbus/v5"
   ],
   [
    "github.com/coreos/go-systemd/v22",
@@ -383,6 +450,10 @@
   ],
   [
    "github.com/fsnotify/fsnotify",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/godbus/dbus/v5",
    "golang.org/x/sys"
   ],
   [
@@ -428,6 +499,26 @@
   [
    "github.com/onsi/gomega",
    "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/opencontainers/cgroups",
+   "github.com/coreos/go-systemd/v22"
+  ],
+  [
+   "github.com/opencontainers/cgroups",
+   "github.com/cyphar/filepath-securejoin"
+  ],
+  [
+   "github.com/opencontainers/cgroups",
+   "github.com/godbus/dbus/v5"
+  ],
+  [
+   "github.com/opencontainers/cgroups",
+   "github.com/moby/sys/userns"
+  ],
+  [
+   "github.com/opencontainers/cgroups",
+   "golang.org/x/sys"
   ],
   [
    "github.com/opencontainers/selinux",
@@ -819,6 +910,10 @@
   ],
   [
    "k8s.io/apiextensions-apiserver",
+   "github.com/emicklei/go-restful/v3"
+  ],
+  [
+   "k8s.io/apiextensions-apiserver",
    "github.com/google/cel-go"
   ],
   [
@@ -1012,6 +1107,10 @@
   [
    "k8s.io/apiserver",
    "github.com/coreos/go-systemd/v22"
+  ],
+  [
+   "k8s.io/apiserver",
+   "github.com/emicklei/go-restful/v3"
   ],
   [
    "k8s.io/apiserver",
@@ -1350,6 +1449,22 @@
    "sigs.k8s.io/yaml"
   ],
   [
+   "k8s.io/cluster-bootstrap",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/cluster-bootstrap",
+   "k8s.io/api"
+  ],
+  [
+   "k8s.io/cluster-bootstrap",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "k8s.io/cluster-bootstrap",
+   "k8s.io/klog/v2"
+  ],
+  [
    "k8s.io/code-generator",
    "github.com/google/gnostic-models"
   ],
@@ -1498,8 +1613,148 @@
    "k8s.io/utils"
   ],
   [
+   "k8s.io/controller-manager",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/api"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/apiserver"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/client-go"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/component-base"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/controller-manager",
+   "k8s.io/utils"
+  ],
+  [
+   "k8s.io/cri-api",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/cri-api",
+   "google.golang.org/grpc"
+  ],
+  [
+   "k8s.io/cri-api",
+   "google.golang.org/protobuf"
+  ],
+  [
    "k8s.io/klog/v2",
    "github.com/go-logr/logr"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "github.com/emicklei/go-restful/v3"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "golang.org/x/net"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/api"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/apiserver"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/client-go"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/code-generator"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/component-base"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/streaming"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "k8s.io/utils"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "sigs.k8s.io/randfill"
+  ],
+  [
+   "k8s.io/kube-aggregator",
+   "sigs.k8s.io/structured-merge-diff/v6"
+  ],
+  [
+   "k8s.io/kube-openapi",
+   "github.com/emicklei/go-restful/v3"
   ],
   [
    "k8s.io/kube-openapi",
@@ -1698,6 +1953,22 @@
    "k8s.io/code-generator"
   ],
   [
+   "k8s.io/mount-utils",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "golang.org/x/sys"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "k8s.io/utils"
+  ],
+  [
    "k8s.io/streaming",
    "golang.org/x/net"
   ],
@@ -1712,6 +1983,10 @@
   [
    "k8s.io/utils",
    "k8s.io/klog/v2"
+  ],
+  [
+   "sigs.k8s.io/knftables",
+   "github.com/google/go-cmp"
   ],
   [
    "sigs.k8s.io/structured-merge-diff/v6",

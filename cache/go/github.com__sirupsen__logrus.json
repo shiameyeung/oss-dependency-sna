@@ -1,0 +1,23 @@
+{
+ "package": "github.com/sirupsen/logrus",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.9.4",
+ "nodes": [
+  "github.com/sirupsen/logrus",
+  "github.com/stretchr/testify",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/sirupsen/logrus",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/sirupsen/logrus",
+   "golang.org/x/sys"
+  ]
+ ]
+}

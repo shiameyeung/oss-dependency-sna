@@ -1,0 +1,18 @@
+{
+ "package": "github.com/elastic/go-elasticsearch/v8",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v8.19.6",
+ "nodes": [
+  "github.com/elastic/go-elasticsearch/v8",
+  "go.opentelemetry.io/otel/trace"
+ ],
+ "edges": [
+  [
+   "github.com/elastic/go-elasticsearch/v8",
+   "go.opentelemetry.io/otel/trace"
+  ]
+ ]
+}

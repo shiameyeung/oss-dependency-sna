@@ -1,0 +1,96 @@
+{
+ "package": "deepspeed",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:10Z",
+ "status": "ok",
+ "version": "0.19.1",
+ "nodes": [
+  "annotated-types",
+  "deepspeed",
+  "einops",
+  "hjson",
+  "msgpack",
+  "ninja",
+  "numpy",
+  "packaging",
+  "psutil",
+  "py-cpuinfo",
+  "pydantic",
+  "pydantic-core",
+  "torch",
+  "tqdm",
+  "typing-extensions",
+  "typing-inspection"
+ ],
+ "edges": [
+  [
+   "deepspeed",
+   "einops"
+  ],
+  [
+   "deepspeed",
+   "hjson"
+  ],
+  [
+   "deepspeed",
+   "msgpack"
+  ],
+  [
+   "deepspeed",
+   "ninja"
+  ],
+  [
+   "deepspeed",
+   "numpy"
+  ],
+  [
+   "deepspeed",
+   "packaging"
+  ],
+  [
+   "deepspeed",
+   "psutil"
+  ],
+  [
+   "deepspeed",
+   "py-cpuinfo"
+  ],
+  [
+   "deepspeed",
+   "pydantic"
+  ],
+  [
+   "deepspeed",
+   "torch"
+  ],
+  [
+   "deepspeed",
+   "tqdm"
+  ],
+  [
+   "pydantic",
+   "annotated-types"
+  ],
+  [
+   "pydantic",
+   "pydantic-core"
+  ],
+  [
+   "pydantic",
+   "typing-extensions"
+  ],
+  [
+   "pydantic",
+   "typing-inspection"
+  ],
+  [
+   "pydantic-core",
+   "typing-extensions"
+  ],
+  [
+   "typing-inspection",
+   "typing-extensions"
+  ]
+ ]
+}

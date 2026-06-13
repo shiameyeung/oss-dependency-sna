@@ -1,0 +1,9 @@
+{
+ "package": "github.com/rook/operator-kit",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "error",
+ "version": "v0.0.0-20211005215326-6f60d9fbb711",
+ "error": "empty requirements (+incompatible/main module; deps.dev に go.mod 依存データなし)"
+}

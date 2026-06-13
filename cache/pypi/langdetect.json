@@ -1,0 +1,12 @@
+{
+ "package": "langdetect",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:08Z",
+ "status": "ok",
+ "version": "1.0.9",
+ "nodes": [
+  "langdetect"
+ ],
+ "edges": []
+}

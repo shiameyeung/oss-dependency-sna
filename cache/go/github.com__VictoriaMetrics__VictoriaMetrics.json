@@ -2,26 +2,34 @@
  "package": "github.com/VictoriaMetrics/VictoriaMetrics",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.145.0",
  "nodes": [
   "cloud.google.com/go/storage",
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
+  "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
   "github.com/aws/aws-sdk-go-v2/service/s3",
   "github.com/azure/azure-sdk-for-go/sdk/azcore",
   "github.com/azure/azure-sdk-for-go/sdk/azidentity",
   "github.com/azure/azure-sdk-for-go/sdk/storage/azblob",
   "github.com/bmatcuk/doublestar/v4",
   "github.com/cespare/xxhash/v2",
+  "github.com/cheggaaa/pb/v3",
   "github.com/gogo/protobuf",
   "github.com/golang/snappy",
   "github.com/google/go-cmp",
+  "github.com/googleapis/gax-go/v2",
+  "github.com/influxdata/influxdb",
   "github.com/klauspost/compress",
   "github.com/oklog/ulid/v2",
   "github.com/prometheus/prometheus",
+  "github.com/urfave/cli/v2",
+  "github.com/valyala/fastjson",
   "github.com/valyala/fasttemplate",
+  "github.com/victoriametrics/easyproto",
+  "github.com/victoriametrics/victorialogs",
   "github.com/victoriametrics/victoriametrics",
   "golang.org/x/net",
   "golang.org/x/oauth2",
@@ -48,11 +56,23 @@
   ],
   [
    "github.com/victoriametrics/victoriametrics",
+   "github.com/victoriametrics/victorialogs"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/victoriametrics/easyproto"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
    "github.com/victoriametrics/victoriametrics",
    "github.com/aws/aws-sdk-go-v2/config"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/aws/aws-sdk-go-v2/feature/s3/manager"
   ],
   [
    "github.com/victoriametrics/victoriametrics",
@@ -68,6 +88,10 @@
   ],
   [
    "github.com/victoriametrics/victoriametrics",
+   "github.com/cheggaaa/pb/v3"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
    "github.com/gogo/protobuf"
   ],
   [
@@ -80,6 +104,14 @@
   ],
   [
    "github.com/victoriametrics/victoriametrics",
+   "github.com/googleapis/gax-go/v2"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/influxdata/influxdb"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
    "github.com/klauspost/compress"
   ],
   [
@@ -89,6 +121,14 @@
   [
    "github.com/victoriametrics/victoriametrics",
    "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/urfave/cli/v2"
+  ],
+  [
+   "github.com/victoriametrics/victoriametrics",
+   "github.com/valyala/fastjson"
   ],
   [
    "github.com/victoriametrics/victoriametrics",
@@ -120,6 +160,10 @@
   ],
   [
    "cloud.google.com/go/storage",
+   "github.com/googleapis/gax-go/v2"
+  ],
+  [
+   "cloud.google.com/go/storage",
    "golang.org/x/oauth2"
   ],
   [
@@ -127,12 +171,88 @@
    "google.golang.org/api"
   ],
   [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/victoriametrics/victoriametrics"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/victoriametrics/easyproto"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "github.com/valyala/fastjson"
+  ],
+  [
+   "github.com/victoriametrics/victorialogs",
+   "gopkg.in/yaml.v2"
+  ],
+  [
    "github.com/aws/aws-sdk-go-v2/config",
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
+   "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
+   "github.com/aws/aws-sdk-go-v2/config"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
+   "github.com/aws/aws-sdk-go-v2/service/s3"
+  ],
+  [
    "github.com/aws/aws-sdk-go-v2/service/s3",
    "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/cheggaaa/pb/v3",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/googleapis/gax-go/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/googleapis/gax-go/v2",
+   "google.golang.org/api"
+  ],
+  [
+   "github.com/influxdata/influxdb",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/influxdata/influxdb",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/influxdata/influxdb",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/influxdata/influxdb",
+   "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/influxdata/influxdb",
+   "golang.org/x/sys"
   ],
   [
    "github.com/prometheus/prometheus",
@@ -193,6 +313,10 @@
   [
    "google.golang.org/api",
    "github.com/google/go-cmp"
+  ],
+  [
+   "google.golang.org/api",
+   "github.com/googleapis/gax-go/v2"
   ],
   [
    "google.golang.org/api",

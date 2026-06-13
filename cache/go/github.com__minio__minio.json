@@ -2,7 +2,7 @@
  "package": "github.com/minio/minio",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v0.0.0-20260212201848-7aac2a2c5b7c",
  "nodes": [
@@ -15,25 +15,40 @@
   "github.com/coreos/go-oidc/v3",
   "github.com/coreos/go-systemd/v22",
   "github.com/dustin/go-humanize",
+  "github.com/eclipse/paho.mqtt.golang",
   "github.com/fatih/color",
   "github.com/felixge/fgprof",
+  "github.com/go-ldap/ldap/v3",
   "github.com/go-openapi/loads",
   "github.com/go-sql-driver/mysql",
+  "github.com/golang-jwt/jwt/v4",
   "github.com/google/uuid",
   "github.com/ibm/sarama",
   "github.com/json-iterator/go",
   "github.com/klauspost/compress",
   "github.com/klauspost/pgzip",
+  "github.com/lib/pq",
   "github.com/miekg/dns",
+  "github.com/minio/highwayhash",
   "github.com/minio/minio",
   "github.com/minio/minio-go/v7",
+  "github.com/mitchellh/go-homedir",
   "github.com/nats-io/nats-server/v2",
+  "github.com/nats-io/nats.go",
+  "github.com/nsqio/go-nsq",
+  "github.com/pierrec/lz4/v4",
   "github.com/pkg/errors",
+  "github.com/pkg/sftp",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/prometheus/common",
   "github.com/prometheus/procfs",
+  "github.com/rabbitmq/amqp091-go",
   "github.com/rcrowley/go-metrics",
+  "github.com/rs/cors",
+  "github.com/shirou/gopsutil/v3",
+  "github.com/tinylib/msgp",
+  "github.com/valyala/bytebufferpool",
   "go.etcd.io/etcd/api/v3",
   "go.etcd.io/etcd/client/v3",
   "go.uber.org/atomic",
@@ -91,6 +106,10 @@
   ],
   [
    "github.com/minio/minio",
+   "github.com/eclipse/paho.mqtt.golang"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/fatih/color"
   ],
   [
@@ -99,11 +118,19 @@
   ],
   [
    "github.com/minio/minio",
+   "github.com/go-ldap/ldap/v3"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/go-openapi/loads"
   ],
   [
    "github.com/minio/minio",
    "github.com/go-sql-driver/mysql"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/golang-jwt/jwt/v4"
   ],
   [
    "github.com/minio/minio",
@@ -123,7 +150,15 @@
   ],
   [
    "github.com/minio/minio",
+   "github.com/lib/pq"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/miekg/dns"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/minio/highwayhash"
   ],
   [
    "github.com/minio/minio",
@@ -131,11 +166,31 @@
   ],
   [
    "github.com/minio/minio",
+   "github.com/mitchellh/go-homedir"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/nats-io/nats-server/v2"
   ],
   [
    "github.com/minio/minio",
+   "github.com/nats-io/nats.go"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/nsqio/go-nsq"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/pkg/errors"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/pkg/sftp"
   ],
   [
    "github.com/minio/minio",
@@ -155,7 +210,27 @@
   ],
   [
    "github.com/minio/minio",
+   "github.com/rabbitmq/amqp091-go"
+  ],
+  [
+   "github.com/minio/minio",
    "github.com/rcrowley/go-metrics"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/rs/cors"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/shirou/gopsutil/v3"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/tinylib/msgp"
+  ],
+  [
+   "github.com/minio/minio",
+   "github.com/valyala/bytebufferpool"
   ],
   [
    "github.com/minio/minio",
@@ -226,6 +301,26 @@
    "google.golang.org/api"
   ],
   [
+   "github.com/ibm/sarama",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/rcrowley/go-metrics"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sys"
+  ],
+  [
    "github.com/coreos/go-oidc/v3",
    "golang.org/x/oauth2"
   ],
@@ -234,8 +329,20 @@
    "golang.org/x/sys"
   ],
   [
+   "github.com/eclipse/paho.mqtt.golang",
+   "golang.org/x/sync"
+  ],
+  [
    "github.com/fatih/color",
    "golang.org/x/sys"
+  ],
+  [
+   "github.com/go-ldap/ldap/v3",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/go-ldap/ldap/v3",
+   "golang.org/x/crypto"
   ],
   [
    "github.com/miekg/dns",
@@ -243,6 +350,10 @@
   ],
   [
    "github.com/miekg/dns",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/minio/highwayhash",
    "golang.org/x/sys"
   ],
   [
@@ -263,11 +374,23 @@
   ],
   [
    "github.com/minio/minio-go/v7",
+   "github.com/tinylib/msgp"
+  ],
+  [
+   "github.com/minio/minio-go/v7",
    "golang.org/x/crypto"
   ],
   [
    "github.com/nats-io/nats-server/v2",
    "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/nats-io/nats-server/v2",
+   "github.com/minio/highwayhash"
+  ],
+  [
+   "github.com/nats-io/nats-server/v2",
+   "github.com/nats-io/nats.go"
   ],
   [
    "github.com/nats-io/nats-server/v2",
@@ -280,6 +403,18 @@
   [
    "github.com/nats-io/nats-server/v2",
    "golang.org/x/time"
+  ],
+  [
+   "github.com/nats-io/nats.go",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/pkg/sftp",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/pkg/sftp",
+   "golang.org/x/sys"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -327,6 +462,10 @@
   ],
   [
    "github.com/prometheus/procfs",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/shirou/gopsutil/v3",
    "golang.org/x/sys"
   ],
   [

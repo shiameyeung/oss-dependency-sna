@@ -1,0 +1,60 @@
+{
+ "package": "github.com/linode/linodego",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.69.1",
+ "nodes": [
+  "github.com/google/go-cmp",
+  "github.com/google/go-querystring",
+  "github.com/linode/linodego",
+  "github.com/stretchr/testify",
+  "golang.org/x/net",
+  "golang.org/x/oauth2",
+  "golang.org/x/text",
+  "gopkg.in/ini.v1"
+ ],
+ "edges": [
+  [
+   "github.com/linode/linodego",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/linode/linodego",
+   "github.com/google/go-querystring"
+  ],
+  [
+   "github.com/linode/linodego",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/linode/linodego",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/linode/linodego",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/linode/linodego",
+   "golang.org/x/text"
+  ],
+  [
+   "github.com/linode/linodego",
+   "gopkg.in/ini.v1"
+  ],
+  [
+   "github.com/google/go-querystring",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/text"
+  ],
+  [
+   "gopkg.in/ini.v1",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

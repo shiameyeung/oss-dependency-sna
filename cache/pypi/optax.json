@@ -1,0 +1,64 @@
+{
+ "package": "optax",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:18Z",
+ "status": "ok",
+ "version": "0.2.8",
+ "nodes": [
+  "absl-py",
+  "jax",
+  "jaxlib",
+  "ml-dtypes",
+  "numpy",
+  "opt-einsum",
+  "optax",
+  "scipy"
+ ],
+ "edges": [
+  [
+   "optax",
+   "absl-py"
+  ],
+  [
+   "optax",
+   "jax"
+  ],
+  [
+   "optax",
+   "jaxlib"
+  ],
+  [
+   "optax",
+   "numpy"
+  ],
+  [
+   "jax",
+   "jaxlib"
+  ],
+  [
+   "jax",
+   "ml-dtypes"
+  ],
+  [
+   "jax",
+   "numpy"
+  ],
+  [
+   "jax",
+   "opt-einsum"
+  ],
+  [
+   "jax",
+   "scipy"
+  ],
+  [
+   "ml-dtypes",
+   "numpy"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

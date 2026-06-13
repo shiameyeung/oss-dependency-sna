@@ -1,0 +1,38 @@
+{
+ "package": "github.com/segmentio/kafka-go",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.4.51",
+ "nodes": [
+  "github.com/klauspost/compress",
+  "github.com/pierrec/lz4/v4",
+  "github.com/segmentio/kafka-go",
+  "github.com/stretchr/testify",
+  "github.com/xdg-go/scram",
+  "golang.org/x/net"
+ ],
+ "edges": [
+  [
+   "github.com/segmentio/kafka-go",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/segmentio/kafka-go",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/segmentio/kafka-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/segmentio/kafka-go",
+   "github.com/xdg-go/scram"
+  ],
+  [
+   "github.com/segmentio/kafka-go",
+   "golang.org/x/net"
+  ]
+ ]
+}

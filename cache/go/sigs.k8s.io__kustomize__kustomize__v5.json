@@ -2,7 +2,7 @@
  "package": "sigs.k8s.io/kustomize/kustomize/v5",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v5.8.1",
  "nodes": [
@@ -11,6 +11,7 @@
   "github.com/spf13/pflag",
   "github.com/stretchr/testify",
   "golang.org/x/text",
+  "sigs.k8s.io/kustomize/api",
   "sigs.k8s.io/kustomize/kustomize/v5",
   "sigs.k8s.io/kustomize/kyaml",
   "sigs.k8s.io/yaml"
@@ -38,6 +39,10 @@
   ],
   [
    "sigs.k8s.io/kustomize/kustomize/v5",
+   "sigs.k8s.io/kustomize/api"
+  ],
+  [
+   "sigs.k8s.io/kustomize/kustomize/v5",
    "sigs.k8s.io/kustomize/kyaml"
   ],
   [
@@ -47,6 +52,18 @@
   [
    "github.com/spf13/cobra",
    "github.com/spf13/pflag"
+  ],
+  [
+   "sigs.k8s.io/kustomize/api",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "sigs.k8s.io/kustomize/api",
+   "sigs.k8s.io/kustomize/kyaml"
+  ],
+  [
+   "sigs.k8s.io/kustomize/api",
+   "sigs.k8s.io/yaml"
   ],
   [
    "sigs.k8s.io/kustomize/kyaml",

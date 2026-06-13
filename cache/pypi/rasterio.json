@@ -1,0 +1,52 @@
+{
+ "package": "rasterio",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:53Z",
+ "status": "ok",
+ "version": "1.5.0",
+ "nodes": [
+  "affine",
+  "attrs",
+  "certifi",
+  "click",
+  "cligj",
+  "numpy",
+  "pyparsing",
+  "rasterio"
+ ],
+ "edges": [
+  [
+   "rasterio",
+   "affine"
+  ],
+  [
+   "rasterio",
+   "attrs"
+  ],
+  [
+   "rasterio",
+   "certifi"
+  ],
+  [
+   "rasterio",
+   "click"
+  ],
+  [
+   "rasterio",
+   "cligj"
+  ],
+  [
+   "rasterio",
+   "numpy"
+  ],
+  [
+   "rasterio",
+   "pyparsing"
+  ],
+  [
+   "cligj",
+   "click"
+  ]
+ ]
+}

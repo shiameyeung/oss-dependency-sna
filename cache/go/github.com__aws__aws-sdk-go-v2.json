@@ -1,0 +1,18 @@
+{
+ "package": "github.com/aws/aws-sdk-go-v2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.42.0",
+ "nodes": [
+  "github.com/aws/aws-sdk-go-v2",
+  "github.com/aws/smithy-go"
+ ],
+ "edges": [
+  [
+   "github.com/aws/aws-sdk-go-v2",
+   "github.com/aws/smithy-go"
+  ]
+ ]
+}

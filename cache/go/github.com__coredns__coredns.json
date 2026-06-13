@@ -2,25 +2,34 @@
  "package": "github.com/coredns/coredns",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.14.4",
  "nodes": [
+  "github.com/apparentlymart/go-cidr",
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+  "github.com/aws/aws-sdk-go-v2/service/route53",
+  "github.com/aws/aws-sdk-go-v2/service/secretsmanager",
+  "github.com/azure/azure-sdk-for-go",
+  "github.com/azure/go-autorest/autorest",
+  "github.com/azure/go-autorest/autorest/azure/auth",
   "github.com/coredns/coredns",
   "github.com/expr-lang/expr",
   "github.com/go-logr/logr",
   "github.com/hashicorp/golang-lru/v2",
+  "github.com/hashicorp/nomad/api",
   "github.com/miekg/dns",
   "github.com/opentracing/opentracing-go",
+  "github.com/openzipkin/zipkin-go",
   "github.com/pires/go-proxyproto",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/prometheus/common",
   "github.com/prometheus/exporter-toolkit",
+  "github.com/quic-go/quic-go",
   "github.com/stretchr/testify",
   "go.etcd.io/etcd/api/v3",
   "go.etcd.io/etcd/client/v3",
@@ -40,6 +49,22 @@
  "edges": [
   [
    "github.com/coredns/coredns",
+   "github.com/azure/azure-sdk-for-go"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/azure/go-autorest/autorest"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/azure/go-autorest/autorest/azure/auth"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/apparentlymart/go-cidr"
+  ],
+  [
+   "github.com/coredns/coredns",
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
@@ -56,6 +81,14 @@
   ],
   [
    "github.com/coredns/coredns",
+   "github.com/aws/aws-sdk-go-v2/service/route53"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/aws/aws-sdk-go-v2/service/secretsmanager"
+  ],
+  [
+   "github.com/coredns/coredns",
    "github.com/expr-lang/expr"
   ],
   [
@@ -68,11 +101,19 @@
   ],
   [
    "github.com/coredns/coredns",
+   "github.com/hashicorp/nomad/api"
+  ],
+  [
+   "github.com/coredns/coredns",
    "github.com/miekg/dns"
   ],
   [
    "github.com/coredns/coredns",
    "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/openzipkin/zipkin-go"
   ],
   [
    "github.com/coredns/coredns",
@@ -93,6 +134,10 @@
   [
    "github.com/coredns/coredns",
    "github.com/prometheus/exporter-toolkit"
+  ],
+  [
+   "github.com/coredns/coredns",
+   "github.com/quic-go/quic-go"
   ],
   [
    "github.com/coredns/coredns",
@@ -179,6 +224,14 @@
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
+   "github.com/aws/aws-sdk-go-v2/service/route53",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/secretsmanager",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
    "github.com/miekg/dns",
    "golang.org/x/net"
   ],
@@ -189,6 +242,14 @@
   [
    "github.com/opentracing/opentracing-go",
    "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/openzipkin/zipkin-go",
+   "google.golang.org/protobuf"
   ],
   [
    "github.com/pires/go-proxyproto",
@@ -237,6 +298,22 @@
   [
    "github.com/prometheus/exporter-toolkit",
    "golang.org/x/crypto"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "golang.org/x/sys"
   ],
   [
    "go.etcd.io/etcd/api/v3",

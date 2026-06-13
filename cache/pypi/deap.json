@@ -1,0 +1,42 @@
+{
+ "package": "deap",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:20Z",
+ "status": "ok",
+ "version": "1.4.4",
+ "nodes": [
+  "cffi",
+  "deap",
+  "moocore",
+  "numpy",
+  "platformdirs",
+  "pycparser"
+ ],
+ "edges": [
+  [
+   "deap",
+   "moocore"
+  ],
+  [
+   "deap",
+   "numpy"
+  ],
+  [
+   "cffi",
+   "pycparser"
+  ],
+  [
+   "moocore",
+   "cffi"
+  ],
+  [
+   "moocore",
+   "numpy"
+  ],
+  [
+   "moocore",
+   "platformdirs"
+  ]
+ ]
+}

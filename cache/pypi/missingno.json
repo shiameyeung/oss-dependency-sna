@@ -1,0 +1,111 @@
+{
+ "package": "missingno",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:36Z",
+ "status": "ok",
+ "version": "0.5.2",
+ "nodes": [
+  "contourpy",
+  "cycler",
+  "fonttools",
+  "kiwisolver",
+  "matplotlib",
+  "missingno",
+  "numpy",
+  "packaging",
+  "pandas",
+  "pillow",
+  "pyparsing",
+  "python-dateutil",
+  "scipy",
+  "seaborn",
+  "six"
+ ],
+ "edges": [
+  [
+   "missingno",
+   "matplotlib"
+  ],
+  [
+   "missingno",
+   "numpy"
+  ],
+  [
+   "missingno",
+   "scipy"
+  ],
+  [
+   "missingno",
+   "seaborn"
+  ],
+  [
+   "contourpy",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "contourpy"
+  ],
+  [
+   "matplotlib",
+   "cycler"
+  ],
+  [
+   "matplotlib",
+   "fonttools"
+  ],
+  [
+   "matplotlib",
+   "kiwisolver"
+  ],
+  [
+   "matplotlib",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "packaging"
+  ],
+  [
+   "matplotlib",
+   "pillow"
+  ],
+  [
+   "matplotlib",
+   "pyparsing"
+  ],
+  [
+   "matplotlib",
+   "python-dateutil"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "seaborn",
+   "matplotlib"
+  ],
+  [
+   "seaborn",
+   "numpy"
+  ],
+  [
+   "seaborn",
+   "pandas"
+  ]
+ ]
+}

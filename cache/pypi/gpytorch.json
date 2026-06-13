@@ -1,0 +1,70 @@
+{
+ "package": "gpytorch",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:57Z",
+ "status": "ok",
+ "version": "1.15.2",
+ "nodes": [
+  "gpytorch",
+  "joblib",
+  "linear-operator",
+  "mpmath",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "threadpoolctl",
+  "torch"
+ ],
+ "edges": [
+  [
+   "gpytorch",
+   "linear-operator"
+  ],
+  [
+   "gpytorch",
+   "mpmath"
+  ],
+  [
+   "gpytorch",
+   "scikit-learn"
+  ],
+  [
+   "gpytorch",
+   "scipy"
+  ],
+  [
+   "linear-operator",
+   "scipy"
+  ],
+  [
+   "linear-operator",
+   "torch"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

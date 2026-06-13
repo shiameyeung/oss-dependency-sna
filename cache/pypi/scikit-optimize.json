@@ -1,0 +1,74 @@
+{
+ "package": "scikit-optimize",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:55Z",
+ "status": "ok",
+ "version": "0.10.2",
+ "nodes": [
+  "joblib",
+  "narwhals",
+  "numpy",
+  "packaging",
+  "pyaml",
+  "pyyaml",
+  "scikit-learn",
+  "scikit-optimize",
+  "scipy",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "scikit-optimize",
+   "joblib"
+  ],
+  [
+   "scikit-optimize",
+   "numpy"
+  ],
+  [
+   "scikit-optimize",
+   "packaging"
+  ],
+  [
+   "scikit-optimize",
+   "pyaml"
+  ],
+  [
+   "scikit-optimize",
+   "scikit-learn"
+  ],
+  [
+   "scikit-optimize",
+   "scipy"
+  ],
+  [
+   "pyaml",
+   "pyyaml"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

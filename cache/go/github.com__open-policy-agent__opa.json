@@ -2,11 +2,13 @@
  "package": "github.com/open-policy-agent/opa",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.17.1",
  "nodes": [
   "github.com/cespare/xxhash/v2",
+  "github.com/dgraph-io/badger/v4",
+  "github.com/fortytw2/leaktest",
   "github.com/fsnotify/fsnotify",
   "github.com/go-logr/logr",
   "github.com/gobwas/glob",
@@ -20,6 +22,7 @@
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/rcrowley/go-metrics",
+  "github.com/sergi/go-diff",
   "github.com/sirupsen/logrus",
   "github.com/spf13/cobra",
   "github.com/spf13/pflag",
@@ -41,6 +44,7 @@
   "golang.org/x/time",
   "google.golang.org/grpc",
   "google.golang.org/protobuf",
+  "gopkg.in/ini.v1",
   "gopkg.in/natefinch/lumberjack.v2",
   "oras.land/oras-go/v2",
   "sigs.k8s.io/yaml"
@@ -49,6 +53,14 @@
   [
    "github.com/open-policy-agent/opa",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/open-policy-agent/opa",
+   "github.com/dgraph-io/badger/v4"
+  ],
+  [
+   "github.com/open-policy-agent/opa",
+   "github.com/fortytw2/leaktest"
   ],
   [
    "github.com/open-policy-agent/opa",
@@ -97,6 +109,10 @@
   [
    "github.com/open-policy-agent/opa",
    "github.com/rcrowley/go-metrics"
+  ],
+  [
+   "github.com/open-policy-agent/opa",
+   "github.com/sergi/go-diff"
   ],
   [
    "github.com/open-policy-agent/opa",
@@ -184,6 +200,10 @@
   ],
   [
    "github.com/open-policy-agent/opa",
+   "gopkg.in/ini.v1"
+  ],
+  [
+   "github.com/open-policy-agent/opa",
    "gopkg.in/natefinch/lumberjack.v2"
   ],
   [
@@ -193,6 +213,22 @@
   [
    "github.com/open-policy-agent/opa",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "google.golang.org/protobuf"
   ],
   [
    "github.com/opencontainers/image-spec",

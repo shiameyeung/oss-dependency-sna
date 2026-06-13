@@ -1,0 +1,38 @@
+{
+ "package": "pyro-ppl",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:57Z",
+ "status": "ok",
+ "version": "1.9.1",
+ "nodes": [
+  "numpy",
+  "opt-einsum",
+  "pyro-api",
+  "pyro-ppl",
+  "torch",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "pyro-ppl",
+   "numpy"
+  ],
+  [
+   "pyro-ppl",
+   "opt-einsum"
+  ],
+  [
+   "pyro-ppl",
+   "pyro-api"
+  ],
+  [
+   "pyro-ppl",
+   "torch"
+  ],
+  [
+   "pyro-ppl",
+   "tqdm"
+  ]
+ ]
+}

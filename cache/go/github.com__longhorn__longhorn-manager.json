@@ -2,10 +2,12 @@
  "package": "github.com/longhorn/longhorn-manager",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.12.0",
  "nodes": [
+  "github.com/avast/retry-go",
+  "github.com/container-storage-interface/spec",
   "github.com/docker/go-connections",
   "github.com/google/uuid",
   "github.com/gorilla/handlers",
@@ -13,9 +15,11 @@
   "github.com/gorilla/websocket",
   "github.com/longhorn/longhorn-manager",
   "github.com/prometheus/client_golang",
+  "github.com/robfig/cron",
   "github.com/sirupsen/logrus",
   "github.com/stretchr/testify",
   "github.com/urfave/cli",
+  "go.uber.org/multierr",
   "golang.org/x/mod",
   "golang.org/x/sync",
   "golang.org/x/sys",
@@ -31,11 +35,20 @@
   "k8s.io/client-go",
   "k8s.io/kubernetes",
   "k8s.io/metrics",
+  "k8s.io/mount-utils",
   "k8s.io/utils",
   "sigs.k8s.io/controller-runtime",
   "sigs.k8s.io/structured-merge-diff/v6"
  ],
  "edges": [
+  [
+   "github.com/longhorn/longhorn-manager",
+   "github.com/avast/retry-go"
+  ],
+  [
+   "github.com/longhorn/longhorn-manager",
+   "github.com/container-storage-interface/spec"
+  ],
   [
    "github.com/longhorn/longhorn-manager",
    "github.com/docker/go-connections"
@@ -62,6 +75,10 @@
   ],
   [
    "github.com/longhorn/longhorn-manager",
+   "github.com/robfig/cron"
+  ],
+  [
+   "github.com/longhorn/longhorn-manager",
    "github.com/sirupsen/logrus"
   ],
   [
@@ -71,6 +88,10 @@
   [
    "github.com/longhorn/longhorn-manager",
    "github.com/urfave/cli"
+  ],
+  [
+   "github.com/longhorn/longhorn-manager",
+   "go.uber.org/multierr"
   ],
   [
    "github.com/longhorn/longhorn-manager",
@@ -134,6 +155,10 @@
   ],
   [
    "github.com/longhorn/longhorn-manager",
+   "k8s.io/mount-utils"
+  ],
+  [
+   "github.com/longhorn/longhorn-manager",
    "k8s.io/utils"
   ],
   [
@@ -143,6 +168,14 @@
   [
    "github.com/longhorn/longhorn-manager",
    "sigs.k8s.io/structured-merge-diff/v6"
+  ],
+  [
+   "github.com/container-storage-interface/spec",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/container-storage-interface/spec",
+   "google.golang.org/protobuf"
   ],
   [
    "github.com/docker/go-connections",
@@ -171,6 +204,10 @@
   [
    "github.com/urfave/cli",
    "gopkg.in/yaml.v2"
+  ],
+  [
+   "go.uber.org/multierr",
+   "github.com/stretchr/testify"
   ],
   [
    "google.golang.org/grpc",
@@ -326,6 +363,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "github.com/container-storage-interface/spec"
+  ],
+  [
+   "k8s.io/kubernetes",
    "github.com/google/uuid"
   ],
   [
@@ -386,6 +427,10 @@
   ],
   [
    "k8s.io/kubernetes",
+   "k8s.io/mount-utils"
+  ],
+  [
+   "k8s.io/kubernetes",
    "k8s.io/utils"
   ],
   [
@@ -407,6 +452,18 @@
   [
    "k8s.io/metrics",
    "k8s.io/client-go"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "golang.org/x/sys"
+  ],
+  [
+   "k8s.io/mount-utils",
+   "k8s.io/utils"
   ],
   [
    "sigs.k8s.io/controller-runtime",

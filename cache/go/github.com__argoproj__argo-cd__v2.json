@@ -2,13 +2,20 @@
  "package": "github.com/argoproj/argo-cd/v2",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v2.14.21",
  "nodes": [
+  "code.gitea.io/sdk/gitea",
   "github.com/alicebob/miniredis/v2",
+  "github.com/antonmedv/expr",
   "github.com/argoproj/argo-cd/v2",
+  "github.com/argoproj/notifications-engine",
+  "github.com/argoproj/pkg",
+  "github.com/aws/aws-sdk-go",
   "github.com/bmatcuk/doublestar/v4",
+  "github.com/bradleyfalzon/ghinstallation/v2",
+  "github.com/casbin/casbin/v2",
   "github.com/cespare/xxhash/v2",
   "github.com/coreos/go-oidc/v3",
   "github.com/cyphar/filepath-securejoin",
@@ -16,6 +23,7 @@
   "github.com/evanphx/json-patch",
   "github.com/expr-lang/expr",
   "github.com/fsnotify/fsnotify",
+  "github.com/gfleury/go-bitbucket-v1",
   "github.com/go-git/go-git/v5",
   "github.com/go-jose/go-jose/v3",
   "github.com/go-logr/logr",
@@ -23,15 +31,22 @@
   "github.com/go-openapi/runtime",
   "github.com/gobwas/glob",
   "github.com/gogo/protobuf",
+  "github.com/golang-jwt/jwt/v4",
   "github.com/golang/protobuf",
+  "github.com/google/btree",
   "github.com/google/go-cmp",
+  "github.com/google/go-jsonnet",
   "github.com/google/shlex",
   "github.com/google/uuid",
   "github.com/gorilla/handlers",
   "github.com/gorilla/websocket",
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/grpc-ecosystem/go-grpc-prometheus",
+  "github.com/grpc-ecosystem/grpc-gateway",
   "github.com/hashicorp/go-retryablehttp",
+  "github.com/imdario/mergo",
+  "github.com/itchyny/gojq",
+  "github.com/kballard/go-shellquote",
   "github.com/masterminds/semver/v3",
   "github.com/masterminds/sprig/v3",
   "github.com/mattn/go-isatty",
@@ -48,6 +63,8 @@
   "github.com/spf13/pflag",
   "github.com/stretchr/testify",
   "github.com/valyala/fasttemplate",
+  "github.com/xanzy/go-gitlab",
+  "github.com/yuin/gopher-lua",
   "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
   "go.opentelemetry.io/otel",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
@@ -77,9 +94,14 @@
   "k8s.io/utils",
   "oras.land/oras-go/v2",
   "sigs.k8s.io/controller-runtime",
+  "sigs.k8s.io/structured-merge-diff/v4",
   "sigs.k8s.io/yaml"
  ],
  "edges": [
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "code.gitea.io/sdk/gitea"
+  ],
   [
    "github.com/argoproj/argo-cd/v2",
    "github.com/masterminds/semver/v3"
@@ -94,7 +116,31 @@
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "github.com/antonmedv/expr"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/argoproj/notifications-engine"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/argoproj/pkg"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/aws/aws-sdk-go"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "github.com/bmatcuk/doublestar/v4"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/bradleyfalzon/ghinstallation/v2"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/casbin/casbin/v2"
   ],
   [
    "github.com/argoproj/argo-cd/v2",
@@ -126,6 +172,10 @@
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "github.com/gfleury/go-bitbucket-v1"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "github.com/go-git/go-git/v5"
   ],
   [
@@ -154,11 +204,23 @@
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "github.com/golang-jwt/jwt/v4"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "github.com/golang/protobuf"
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "github.com/google/btree"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/google/go-jsonnet"
   ],
   [
    "github.com/argoproj/argo-cd/v2",
@@ -186,7 +248,23 @@
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "github.com/grpc-ecosystem/grpc-gateway"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "github.com/hashicorp/go-retryablehttp"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/imdario/mergo"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/itchyny/gojq"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/kballard/go-shellquote"
   ],
   [
    "github.com/argoproj/argo-cd/v2",
@@ -243,6 +321,14 @@
   [
    "github.com/argoproj/argo-cd/v2",
    "github.com/valyala/fasttemplate"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/xanzy/go-gitlab"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
+   "github.com/yuin/gopher-lua"
   ],
   [
    "github.com/argoproj/argo-cd/v2",
@@ -362,7 +448,163 @@
   ],
   [
    "github.com/argoproj/argo-cd/v2",
+   "sigs.k8s.io/structured-merge-diff/v4"
+  ],
+  [
+   "github.com/argoproj/argo-cd/v2",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "code.gitea.io/sdk/gitea",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "code.gitea.io/sdk/gitea",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/alicebob/miniredis/v2",
+   "github.com/yuin/gopher-lua"
+  ],
+  [
+   "github.com/antonmedv/expr",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/masterminds/sprig/v3"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/bradleyfalzon/ghinstallation/v2"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/expr-lang/expr"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/hashicorp/go-retryablehttp"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "golang.org/x/time"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "gopkg.in/yaml.v3"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/argoproj/notifications-engine",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/aws/aws-sdk-go"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/dustin/go-humanize"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/grpc-ecosystem/grpc-gateway"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/pkg/errors"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "github.com/bradleyfalzon/ghinstallation/v2",
+   "github.com/golang-jwt/jwt/v4"
+  ],
+  [
+   "github.com/bradleyfalzon/ghinstallation/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/casbin/casbin/v2",
+   "github.com/bmatcuk/doublestar/v4"
+  ],
+  [
+   "github.com/casbin/casbin/v2",
+   "github.com/google/uuid"
   ],
   [
    "github.com/coreos/go-oidc/v3",
@@ -375,6 +617,14 @@
   [
    "github.com/evanphx/json-patch",
    "github.com/pkg/errors"
+  ],
+  [
+   "github.com/gfleury/go-bitbucket-v1",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/gfleury/go-bitbucket-v1",
+   "golang.org/x/oauth2"
   ],
   [
    "github.com/go-git/go-git/v5",
@@ -429,6 +679,14 @@
    "google.golang.org/protobuf"
   ],
   [
+   "github.com/google/go-jsonnet",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/google/go-jsonnet",
+   "sigs.k8s.io/yaml"
+  ],
+  [
    "github.com/grpc-ecosystem/go-grpc-middleware",
    "github.com/gogo/protobuf"
   ],
@@ -455,6 +713,30 @@
   [
    "github.com/grpc-ecosystem/go-grpc-middleware",
    "google.golang.org/grpc"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/imdario/mergo",
+   "gopkg.in/yaml.v3"
+  ],
+  [
+   "github.com/itchyny/gojq",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/itchyny/gojq",
+   "github.com/mattn/go-isatty"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -495,6 +777,22 @@
   [
    "github.com/stretchr/testify",
    "gopkg.in/yaml.v3"
+  ],
+  [
+   "github.com/xanzy/go-gitlab",
+   "github.com/hashicorp/go-retryablehttp"
+  ],
+  [
+   "github.com/xanzy/go-gitlab",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/xanzy/go-gitlab",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/xanzy/go-gitlab",
+   "golang.org/x/time"
   ],
   [
    "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
@@ -1110,6 +1408,14 @@
   ],
   [
    "sigs.k8s.io/controller-runtime",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "sigs.k8s.io/structured-merge-diff/v4",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "sigs.k8s.io/structured-merge-diff/v4",
    "sigs.k8s.io/yaml"
   ],
   [

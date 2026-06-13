@@ -1,0 +1,48 @@
+{
+ "package": "github.com/hashicorp/memberlist",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.5.4",
+ "nodes": [
+  "github.com/google/btree",
+  "github.com/hashicorp/go-metrics",
+  "github.com/hashicorp/go-msgpack/v2",
+  "github.com/hashicorp/go-multierror",
+  "github.com/hashicorp/go-sockaddr",
+  "github.com/hashicorp/memberlist",
+  "github.com/miekg/dns",
+  "github.com/stretchr/testify"
+ ],
+ "edges": [
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/google/btree"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-metrics"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-msgpack/v2"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-multierror"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-sockaddr"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/miekg/dns"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

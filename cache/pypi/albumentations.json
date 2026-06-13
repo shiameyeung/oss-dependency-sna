@@ -1,0 +1,110 @@
+{
+ "package": "albumentations",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:44Z",
+ "status": "ok",
+ "version": "2.0.8",
+ "nodes": [
+  "albucore",
+  "albumentations",
+  "annotated-types",
+  "eval-type-backport",
+  "numpy",
+  "opencv-python-headless",
+  "pydantic",
+  "pydantic-core",
+  "pyyaml",
+  "scipy",
+  "simsimd",
+  "stringzilla",
+  "typing-extensions",
+  "typing-inspection"
+ ],
+ "edges": [
+  [
+   "albumentations",
+   "albucore"
+  ],
+  [
+   "albumentations",
+   "eval-type-backport"
+  ],
+  [
+   "albumentations",
+   "numpy"
+  ],
+  [
+   "albumentations",
+   "opencv-python-headless"
+  ],
+  [
+   "albumentations",
+   "pydantic"
+  ],
+  [
+   "albumentations",
+   "pyyaml"
+  ],
+  [
+   "albumentations",
+   "scipy"
+  ],
+  [
+   "albumentations",
+   "typing-extensions"
+  ],
+  [
+   "albucore",
+   "numpy"
+  ],
+  [
+   "albucore",
+   "opencv-python-headless"
+  ],
+  [
+   "albucore",
+   "simsimd"
+  ],
+  [
+   "albucore",
+   "stringzilla"
+  ],
+  [
+   "albucore",
+   "typing-extensions"
+  ],
+  [
+   "opencv-python-headless",
+   "numpy"
+  ],
+  [
+   "pydantic",
+   "annotated-types"
+  ],
+  [
+   "pydantic",
+   "pydantic-core"
+  ],
+  [
+   "pydantic",
+   "typing-extensions"
+  ],
+  [
+   "pydantic",
+   "typing-inspection"
+  ],
+  [
+   "pydantic-core",
+   "typing-extensions"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "typing-inspection",
+   "typing-extensions"
+  ]
+ ]
+}

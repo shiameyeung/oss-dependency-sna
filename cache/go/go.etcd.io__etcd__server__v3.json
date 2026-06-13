@@ -2,18 +2,23 @@
  "package": "go.etcd.io/etcd/server/v3",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v3.6.12",
  "nodes": [
+  "github.com/coreos/go-semver",
   "github.com/coreos/go-systemd/v22",
   "github.com/dustin/go-humanize",
   "github.com/gogo/protobuf",
   "github.com/golang-jwt/jwt/v5",
+  "github.com/golang/groupcache",
   "github.com/golang/protobuf",
+  "github.com/google/btree",
   "github.com/google/go-cmp",
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+  "github.com/grpc-ecosystem/grpc-gateway/v2",
+  "github.com/jonboulle/clockwork",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/soheilhy/cmux",
@@ -42,6 +47,10 @@
  "edges": [
   [
    "go.etcd.io/etcd/server/v3",
+   "github.com/coreos/go-semver"
+  ],
+  [
+   "go.etcd.io/etcd/server/v3",
    "github.com/coreos/go-systemd/v22"
   ],
   [
@@ -58,7 +67,15 @@
   ],
   [
    "go.etcd.io/etcd/server/v3",
+   "github.com/golang/groupcache"
+  ],
+  [
+   "go.etcd.io/etcd/server/v3",
    "github.com/golang/protobuf"
+  ],
+  [
+   "go.etcd.io/etcd/server/v3",
+   "github.com/google/btree"
   ],
   [
    "go.etcd.io/etcd/server/v3",
@@ -71,6 +88,14 @@
   [
    "go.etcd.io/etcd/server/v3",
    "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"
+  ],
+  [
+   "go.etcd.io/etcd/server/v3",
+   "github.com/grpc-ecosystem/grpc-gateway/v2"
+  ],
+  [
+   "go.etcd.io/etcd/server/v3",
+   "github.com/jonboulle/clockwork"
   ],
   [
    "go.etcd.io/etcd/server/v3",
@@ -165,6 +190,10 @@
    "sigs.k8s.io/yaml"
   ],
   [
+   "github.com/golang/groupcache",
+   "github.com/golang/protobuf"
+  ],
+  [
    "github.com/golang/protobuf",
    "github.com/google/go-cmp"
   ],
@@ -213,6 +242,22 @@
    "google.golang.org/grpc"
   ],
   [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/genproto/googleapis/api"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway/v2",
+   "google.golang.org/protobuf"
+  ],
+  [
    "github.com/prometheus/client_golang",
    "github.com/google/go-cmp"
   ],
@@ -242,11 +287,19 @@
   ],
   [
    "go.etcd.io/etcd/api/v3",
+   "github.com/coreos/go-semver"
+  ],
+  [
+   "go.etcd.io/etcd/api/v3",
    "github.com/gogo/protobuf"
   ],
   [
    "go.etcd.io/etcd/api/v3",
    "github.com/golang/protobuf"
+  ],
+  [
+   "go.etcd.io/etcd/api/v3",
+   "github.com/grpc-ecosystem/grpc-gateway/v2"
   ],
   [
    "go.etcd.io/etcd/api/v3",
@@ -275,6 +328,10 @@
   [
    "go.etcd.io/etcd/client/pkg/v3",
    "go.uber.org/zap"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "github.com/coreos/go-semver"
   ],
   [
    "go.etcd.io/etcd/client/v3",

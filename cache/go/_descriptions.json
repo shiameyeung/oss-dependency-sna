@@ -1299,13 +1299,1650 @@
    "desc": "Vitess is a database clustering system for horizontal scaling of MySQL.",
    "fetched_at": "2026-06-12T18:05:26Z",
    "ja": "MySQLの水平スケーリングのためのDBクラスタリングシステム"
+  },
+  "cloud.google.com/go": {
+   "desc": "Google Cloud Client Libraries for Go.",
+   "fetched_at": "2026-06-13T05:36:14Z",
+   "ja": "Go 向けの Google Cloud クライアントライブラリ"
+  },
+  "cloud.google.com/go/compute/metadata": {
+   "desc": "Google Cloud Client Libraries for Go.",
+   "fetched_at": "2026-06-13T05:36:14Z",
+   "ja": "Go 向けの Google Cloud クライアントライブラリ"
+  },
+  "cloud.google.com/go/monitoring": {
+   "desc": "Google Cloud Client Libraries for Go.",
+   "fetched_at": "2026-06-13T05:36:14Z",
+   "ja": "Go 向けの Google Cloud クライアントライブラリ"
+  },
+  "cloud.google.com/go/pubsub": {
+   "desc": "Google Cloud Client Libraries for Go.",
+   "fetched_at": "2026-06-13T05:36:14Z",
+   "ja": "Go 向けの Google Cloud クライアントライブラリ"
+  },
+  "cloud.google.com/go/pubsub/v2": {
+   "desc": "Google Cloud Client Libraries for Go.",
+   "fetched_at": "2026-06-13T05:36:15Z",
+   "ja": "Go 向けの Google Cloud クライアントライブラリ"
+  },
+  "code.gitea.io/sdk/gitea": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:15Z"
+  },
+  "entgo.io/ent": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:15Z"
+  },
+  "github.com/ahmetb/gen-crd-api-reference-docs": {
+   "desc": "API Reference Docs generator for Kubernetes CRDs (used by Knative, Kubeflow and others)",
+   "fetched_at": "2026-06-13T05:36:15Z",
+   "ja": "Kubernetes CRD 向けの API リファレンス文書生成ツール"
+  },
+  "github.com/aliyun/aliyun-oss-go-sdk": {
+   "desc": "Aliyun OSS SDK for Go",
+   "fetched_at": "2026-06-13T05:36:15Z",
+   "ja": "Go 向けの Aliyun OSS SDK"
+  },
+  "github.com/antonmedv/expr": {
+   "desc": "Expression language and expression evaluation for Go",
+   "fetched_at": "2026-06-13T05:36:15Z",
+   "ja": "Go 向けの式言語と式評価ライブラリ"
+  },
+  "github.com/apache/thrift": {
+   "desc": "Apache Thrift",
+   "fetched_at": "2026-06-13T05:36:16Z",
+   "ja": "Apache Thrift"
+  },
+  "github.com/apparentlymart/go-cidr": {
+   "desc": "Go library for various manipulations of CIDR netmasks and their associated addresses",
+   "fetched_at": "2026-06-13T05:36:16Z",
+   "ja": "CIDR ネットマスクとアドレスを操作する Go ライブラリ"
+  },
+  "github.com/aquasecurity/kube-bench": {
+   "desc": "Checks whether Kubernetes is deployed according to security best practices as defined in the CIS Kubernetes Benchmark",
+   "fetched_at": "2026-06-13T05:36:16Z",
+   "ja": "CIS Kubernetes ベンチマークに沿った構成かを確認するツール"
+  },
+  "github.com/aquasecurity/trivy": {
+   "desc": "Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more",
+   "fetched_at": "2026-06-13T05:36:16Z",
+   "ja": "コンテナや Kubernetes 等の脆弱性・設定ミス・秘密情報・SBOM を検出"
+  },
+  "github.com/argoproj/argo-events": {
+   "desc": "Event-driven Automation Framework for Kubernetes",
+   "fetched_at": "2026-06-13T05:36:16Z",
+   "ja": "Kubernetes 向けのイベント駆動自動化フレームワーク"
+  },
+  "github.com/argoproj/argo-rollouts": {
+   "desc": "Progressive Delivery for Kubernetes",
+   "fetched_at": "2026-06-13T05:36:17Z",
+   "ja": "Kubernetes向けプログレッシブデリバリー"
+  },
+  "github.com/argoproj/notifications-engine": {
+   "desc": "Affordable notifications for Kubernetes",
+   "fetched_at": "2026-06-13T05:36:17Z",
+   "ja": "Kubernetes向けの低コストな通知エンジン"
+  },
+  "github.com/argoproj/pkg": {
+   "desc": "Argo shared libraries between Argo projects",
+   "fetched_at": "2026-06-13T05:36:17Z",
+   "ja": "Argoプロジェクト間で共有されるライブラリ"
+  },
+  "github.com/armon/circbuf": {
+   "desc": "Golang circular (ring) buffer",
+   "fetched_at": "2026-06-13T05:36:17Z",
+   "ja": "Go言語の循環（リング）バッファ"
+  },
+  "github.com/avast/retry-go": {
+   "desc": "Simple golang library for retry mechanism",
+   "fetched_at": "2026-06-13T05:36:17Z",
+   "ja": "リトライ機構を提供するシンプルなGoライブラリ"
+  },
+  "github.com/aws/aws-msk-iam-sasl-signer-go": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:18Z"
+  },
+  "github.com/aws/aws-sdk-go": {
+   "desc": "This SDK has reached end-of-support. The AWS SDK for Go v2 is available here: https://github.com/aws/aws-sdk-go-v2",
+   "fetched_at": "2026-06-13T05:36:18Z",
+   "ja": "サポート終了済み。後継はAWS SDK for Go v2"
+  },
+  "github.com/aws/aws-sdk-go-v2/feature/s3/manager": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:18Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/cloudwatch": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:18Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/ec2": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:18Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/kinesis": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:18Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/route53": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:19Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/secretsmanager": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:19Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/sns": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:19Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/aws/aws-sdk-go-v2/service/sqs": {
+   "desc": "AWS SDK for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:19Z",
+   "ja": "Go言語向けAWS SDK"
+  },
+  "github.com/awslabs/amazon-ecr-credential-helper/ecr-login": {
+   "desc": "Automatically gets credentials for Amazon ECR on docker push/docker pull",
+   "fetched_at": "2026-06-13T05:36:19Z",
+   "ja": "docker push/pull時にAmazon ECRの認証情報を自動取得"
+  },
+  "github.com/azure/azure-pipeline-go": {
+   "desc": "Package pipeline implements an HTTP request/response middleware pipeline whose policy objects mutate an HTTP request's URL, query parameters, and/or headers before the request is sent over the wire. T",
+   "fetched_at": "2026-06-13T05:36:20Z",
+   "ja": "送信前にHTTPリクエストのURL・クエリ・ヘッダを加工するミドルウェアパイプライン"
+  },
+  "github.com/azure/azure-sdk-for-go": {
+   "desc": "This repository is for active development of the Azure SDK for Go. For consumers of the SDK we recommend visiting our public developer docs at:",
+   "fetched_at": "2026-06-13T05:36:20Z",
+   "ja": "Azure SDK for Goの開発用リポジトリ"
+  },
+  "github.com/azure/azure-sdk-for-go/sdk/messaging/azservicebus": {
+   "desc": "This repository is for active development of the Azure SDK for Go. For consumers of the SDK we recommend visiting our public developer docs at:",
+   "fetched_at": "2026-06-13T05:36:20Z",
+   "ja": "Azure SDK for Goの開発用リポジトリ"
+  },
+  "github.com/azure/azure-sdk-for-go/sdk/storage/azqueue": {
+   "desc": "This repository is for active development of the Azure SDK for Go. For consumers of the SDK we recommend visiting our public developer docs at:",
+   "fetched_at": "2026-06-13T05:36:20Z",
+   "ja": "Azure SDK for Goの開発用リポジトリ"
+  },
+  "github.com/azure/azure-storage-blob-go": {
+   "desc": "Microsoft Azure Blob Storage Library for Go",
+   "fetched_at": "2026-06-13T05:36:20Z",
+   "ja": "Go向けMicrosoft Azure Blob Storageライブラリ"
+  },
+  "github.com/azure/go-autorest/autorest": {
+   "desc": "This package implements an HTTP request pipeline suitable for use across multiple go-routines and provides the shared routines relied on by AutoRest generated Go code.",
+   "fetched_at": "2026-06-13T05:36:21Z",
+   "ja": "複数goroutineで使えるHTTPリクエストパイプラインを実装。AutoRest生成コードが利用"
+  },
+  "github.com/azure/go-autorest/autorest/adal": {
+   "desc": "This package implements an HTTP request pipeline suitable for use across multiple go-routines and provides the shared routines relied on by AutoRest generated Go code.",
+   "fetched_at": "2026-06-13T05:36:21Z",
+   "ja": "複数goroutineで使えるHTTPリクエストパイプラインを実装。AutoRest生成コードが利用"
+  },
+  "github.com/azure/go-autorest/autorest/azure/auth": {
+   "desc": "This package implements an HTTP request pipeline suitable for use across multiple go-routines and provides the shared routines relied on by AutoRest generated Go code.",
+   "fetched_at": "2026-06-13T05:36:21Z",
+   "ja": "複数goroutineで使えるHTTPリクエストパイプラインを実装。AutoRest生成コードが利用"
+  },
+  "github.com/blang/semver": {
+   "desc": "Semantic Versioning (semver) library written in golang",
+   "fetched_at": "2026-06-13T05:36:21Z",
+   "ja": "Goで書かれたセマンティックバージョニングライブラリ"
+  },
+  "github.com/bmatcuk/doublestar": {
+   "desc": "Implements support for double star (**) matches in golang's path.Match and filepath.Glob.",
+   "fetched_at": "2026-06-13T05:36:21Z",
+   "ja": "path.Matchとfilepath.Globでダブルスター(**)対応を実現"
+  },
+  "github.com/bradfitz/gomemcache": {
+   "desc": "Go Memcached client library #golang",
+   "fetched_at": "2026-06-13T05:36:22Z",
+   "ja": "Go向けMemcachedクライアントライブラリ"
+  },
+  "github.com/bradleyfalzon/ghinstallation/v2": {
+   "desc": "HTTP Round Tripper for GitHub Apps - Authenticate as an Installation Workflow",
+   "fetched_at": "2026-06-13T05:36:22Z",
+   "ja": "GitHub App向けHTTP Round Tripper。Installationとして認証"
+  },
+  "github.com/bufbuild/buf": {
+   "desc": "The best way of working with Protocol Buffers.",
+   "fetched_at": "2026-06-13T05:36:22Z",
+   "ja": "Protocol Buffersを扱うためのツール"
+  },
+  "github.com/buildpacks/pack": {
+   "desc": "CLI for building apps using Cloud Native Buildpacks",
+   "fetched_at": "2026-06-13T05:36:22Z",
+   "ja": "Cloud Native BuildpacksでアプリをビルドするCLI"
+  },
+  "github.com/burntsushi/toml": {
+   "desc": "TOML parser for Golang with reflection.",
+   "fetched_at": "2026-06-13T05:36:22Z",
+   "ja": "リフレクション対応のGo向けTOMLパーサ"
+  },
+  "github.com/casbin/casbin/v2": {
+   "desc": "Apache Casbin: an authorization library that supports access control models like ACL, RBAC, ABAC.",
+   "fetched_at": "2026-06-13T05:36:23Z",
+   "ja": "ACL・RBAC・ABACなどのアクセス制御モデルに対応する認可ライブラリ"
+  },
+  "github.com/cenkalti/backoff": {
+   "desc": "⏱ The exponential backoff algorithm in Go",
+   "fetched_at": "2026-06-13T05:36:23Z",
+   "ja": "Goによる指数バックオフアルゴリズム"
+  },
+  "github.com/cenkalti/backoff/v5": {
+   "desc": "⏱ The exponential backoff algorithm in Go",
+   "fetched_at": "2026-06-13T05:36:23Z",
+   "ja": "Goによる指数バックオフアルゴリズム"
+  },
+  "github.com/cert-manager/cert-manager": {
+   "desc": "Automatically provision and manage TLS certificates in Kubernetes",
+   "fetched_at": "2026-06-13T05:36:23Z",
+   "ja": "KubernetesでTLS証明書を自動発行・管理"
+  },
+  "github.com/cheggaaa/pb/v3": {
+   "desc": "Console progress bar for Golang",
+   "fetched_at": "2026-06-13T05:36:23Z",
+   "ja": "Go向けコンソール用プログレスバー"
+  },
+  "github.com/cilium/ebpf": {
+   "desc": "ebpf-go is a pure-Go library to read, modify and load eBPF programs and attach them to various hooks in the Linux kernel.",
+   "fetched_at": "2026-06-13T05:36:24Z",
+   "ja": "eBPFプログラムの読込・改変・ロードとカーネルへのアタッチを行う純粋Goライブラリ"
+  },
+  "github.com/cloudflare/cfssl": {
+   "desc": "CFSSL: Cloudflare's PKI and TLS toolkit",
+   "fetched_at": "2026-06-13T05:36:24Z",
+   "ja": "CloudflareのPKI・TLSツールキット"
+  },
+  "github.com/cloudflare/cloudflare-go": {
+   "desc": "The official Go library for the Cloudflare API",
+   "fetched_at": "2026-06-13T05:36:24Z",
+   "ja": "Cloudflare API向け公式Goライブラリ"
+  },
+  "github.com/clusternet/clusternet": {
+   "desc": "[CNCF Sandbox Project] Managing your Kubernetes clusters (including public, private, edge, etc.) as easily as visiting the Internet",
+   "fetched_at": "2026-06-13T05:36:24Z",
+   "ja": "公開・プライベート・エッジなどKubernetesクラスタを手軽に管理（CNCF Sandbox）"
+  },
+  "github.com/container-storage-interface/spec": {
+   "desc": "Container Storage Interface (CSI) Specification.",
+   "fetched_at": "2026-06-13T05:36:24Z",
+   "ja": "Container Storage Interface(CSI)仕様"
+  },
+  "github.com/containerd/cgroups/v3": {
+   "desc": "cgroups package for Go",
+   "fetched_at": "2026-06-13T05:36:25Z",
+   "ja": "Go向けcgroupsパッケージ"
+  },
+  "github.com/containerd/console": {
+   "desc": "console package for Go",
+   "fetched_at": "2026-06-13T05:36:25Z",
+   "ja": "Go向けconsoleパッケージ"
+  },
+  "github.com/containerd/containerd/api": {
+   "desc": "An open and reliable container runtime",
+   "fetched_at": "2026-06-13T05:36:25Z",
+   "ja": "オープンで信頼性の高いコンテナランタイム"
+  },
+  "github.com/containerd/continuity": {
+   "desc": "A transport-agnostic, filesystem metadata manifest system",
+   "fetched_at": "2026-06-13T05:36:25Z",
+   "ja": "トランスポート非依存のファイルシステムメタデータマニフェスト"
+  },
+  "github.com/containerd/errdefs": {
+   "desc": "Common definition and library of errors used by containerd",
+   "fetched_at": "2026-06-13T05:36:25Z",
+   "ja": "containerdで使う共通エラー定義とライブラリ"
+  },
+  "github.com/containerd/fifo": {
+   "desc": "fifo pkg for Go",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "Go向けfifoパッケージ"
+  },
+  "github.com/containerd/go-cni": {
+   "desc": "A generic CNI library to provide APIs for CNI plugin interactions",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "CNIプラグイン連携用APIを提供する汎用CNIライブラリ"
+  },
+  "github.com/containerd/log": {
+   "desc": "Common log interface for containerd repositories and clients",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "containerdのリポジトリとクライアント向け共通ログインタフェース"
+  },
+  "github.com/containerd/nerdctl": {
+   "desc": "contaiNERD CTL - Docker-compatible CLI for containerd, with support for Compose, Rootless, eStargz, OCIcrypt, IPFS, ...",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "containerd向けDocker互換CLI。Compose・Rootless等に対応"
+  },
+  "github.com/containerd/platforms": {
+   "desc": "Go package for handling platform type",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "プラットフォーム型を扱うGoパッケージ"
+  },
+  "github.com/containerd/typeurl/v2": {
+   "desc": "Go package for managing marshaled types to protobuf.Any",
+   "fetched_at": "2026-06-13T05:36:26Z",
+   "ja": "マーシャル済み型をprotobuf.Anyに管理するGoパッケージ"
+  },
+  "github.com/containernetworking/plugins": {
+   "desc": "Some reference and example networking plugins, maintained by the CNI team.",
+   "fetched_at": "2026-06-13T05:36:27Z",
+   "ja": "CNIチームが保守するネットワークプラグインの参照・例"
+  },
+  "github.com/coreos/go-iptables": {
+   "desc": "Go wrapper around iptables utility",
+   "fetched_at": "2026-06-13T05:36:27Z",
+   "ja": "iptablesユーティリティのGoラッパー"
+  },
+  "github.com/coreos/go-semver": {
+   "desc": "semver library in Go",
+   "fetched_at": "2026-06-13T05:36:27Z",
+   "ja": "Goによるsemverライブラリ"
+  },
+  "github.com/cortexproject/promqlsmith": {
+   "desc": "A random PromQL query generator",
+   "fetched_at": "2026-06-13T05:36:27Z",
+   "ja": "ランダムなPromQLクエリ生成ツール"
+  },
+  "github.com/cristalhq/hedgedhttp": {
+   "desc": "Hedged HTTP client which helps to reduce tail latency at scale.",
+   "fetched_at": "2026-06-13T05:36:27Z",
+   "ja": "テールレイテンシ削減に役立つhedged HTTPクライアント"
+  },
+  "github.com/dapr/components-contrib": {
+   "desc": "Community driven, reusable components for distributed apps",
+   "fetched_at": "2026-06-13T05:36:28Z",
+   "ja": "分散アプリ向けの再利用可能なコミュニティ製コンポーネント"
+  },
+  "github.com/data-dog/go-sqlmock": {
+   "desc": "Sql mock driver for golang to test database interactions",
+   "fetched_at": "2026-06-13T05:36:28Z",
+   "ja": "データベース操作をテストするためのGo向けSQLモックドライバ"
+  },
+  "github.com/dennwc/varint": {
+   "desc": "Fast varint library for Go",
+   "fetched_at": "2026-06-13T05:36:28Z",
+   "ja": "Go向け高速varintライブラリ"
+  },
+  "github.com/derailed/k9s": {
+   "desc": "🐶 Kubernetes CLI To Manage Your Clusters In Style!",
+   "fetched_at": "2026-06-13T05:36:28Z",
+   "ja": "クラスタをスタイリッシュに管理するKubernetes CLI"
+  },
+  "github.com/dgraph-io/badger/v4": {
+   "desc": "Fast key-value DB in Go.",
+   "fetched_at": "2026-06-13T05:36:28Z",
+   "ja": "Goによる高速キーバリューDB"
+  },
+  "github.com/dgrijalva/jwt-go": {
+   "desc": "ARCHIVE - Golang implementation of JSON Web Tokens (JWT). This project is now maintained at:",
+   "fetched_at": "2026-06-13T05:36:29Z",
+   "ja": "アーカイブ済み。JSON Web Tokens(JWT)のGo実装"
+  },
+  "github.com/digitalocean/godo": {
+   "desc": "DigitalOcean Go API client",
+   "fetched_at": "2026-06-13T05:36:29Z",
+   "ja": "DigitalOcean Go APIクライアント"
+  },
+  "github.com/distribution/distribution/v3": {
+   "desc": "The toolkit to pack, ship, store, and deliver container content",
+   "fetched_at": "2026-06-13T05:36:29Z",
+   "ja": "コンテナコンテンツの梱包・配送・保存・配信を行うツールキット"
+  },
+  "github.com/docker/cli": {
+   "desc": "The Docker CLI",
+   "fetched_at": "2026-06-13T05:36:29Z",
+   "ja": "Docker CLI"
+  },
+  "github.com/docker/distribution": {
+   "desc": "The toolkit to pack, ship, store, and deliver container content",
+   "fetched_at": "2026-06-13T05:36:29Z",
+   "ja": "コンテナコンテンツの梱包・配送・保存・配信を行うツールキット"
+  },
+  "github.com/drone/drone": {
+   "desc": "Harness Open Source is an end-to-end developer platform with Source Control Management, CI/CD Pipelines, Hosted Developer Environments, and Artifact Registries.",
+   "fetched_at": "2026-06-13T05:36:30Z",
+   "ja": "SCM・CI/CD・開発環境・成果物レジストリを備えた開発者プラットフォーム"
+  },
+  "github.com/drone/envsubst": {
+   "desc": "Go package emulates bash environment variable substitution",
+   "fetched_at": "2026-06-13T05:36:30Z",
+   "ja": "bashの環境変数置換を再現するGoパッケージ"
+  },
+  "github.com/eclipse/paho.mqtt.golang": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:30Z"
+  },
+  "github.com/edsrzf/mmap-go": {
+   "desc": "A portable mmap package for Go",
+   "fetched_at": "2026-06-13T05:36:30Z",
+   "ja": "Go向けの移植性あるmmapパッケージ"
+  },
+  "github.com/elastic/go-elasticsearch/v8": {
+   "desc": "The official Go client for Elasticsearch",
+   "fetched_at": "2026-06-13T05:36:30Z",
+   "ja": "Elasticsearch向け公式Goクライアント"
+  },
+  "github.com/emicklei/go-restful/v3": {
+   "desc": "package for building REST-style Web Services using Go",
+   "fetched_at": "2026-06-13T05:36:31Z",
+   "ja": "GoでRESTスタイルWebサービスを構築するためのパッケージ"
+  },
+  "github.com/fluent/fluent-logger-golang": {
+   "desc": "A structured logger for Fluentd (Golang)",
+   "fetched_at": "2026-06-13T05:36:31Z",
+   "ja": "Fluentd向けの構造化ロガー(Golang)"
+  },
+  "github.com/fluxcd/cli-utils": {
+   "desc": "This repo contains binaries that built from libraries in cli-runtime.",
+   "fetched_at": "2026-06-13T05:36:31Z",
+   "ja": "cli-runtimeのライブラリからビルドしたバイナリ群"
+  },
+  "github.com/fluxcd/helm-controller": {
+   "desc": "The GitOps Toolkit Helm reconciler, for declarative Helming",
+   "fetched_at": "2026-06-13T05:36:31Z",
+   "ja": "宣言的にHelmを扱うGitOps Toolkitのリコンサイラ"
+  },
+  "github.com/fluxcd/kustomize-controller": {
+   "desc": "The GitOps Toolkit Kustomize reconciler",
+   "fetched_at": "2026-06-13T05:36:31Z",
+   "ja": "GitOps ToolkitのKustomizeリコンサイラ"
+  },
+  "github.com/fluxcd/pkg/apis/event": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:32Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/apis/meta": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:32Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/auth": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:32Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/cache": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:32Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/runtime": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:32Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/ssa": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:33Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/tar": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:33Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/pkg/testserver": {
+   "desc": "GitOps Toolkit Go SDK",
+   "fetched_at": "2026-06-13T05:36:33Z",
+   "ja": "GitOps Toolkit の Go SDK"
+  },
+  "github.com/fluxcd/source-controller": {
+   "desc": "The GitOps Toolkit source management component",
+   "fetched_at": "2026-06-13T05:36:33Z",
+   "ja": "GitOps Toolkit のソース管理コンポーネント"
+  },
+  "github.com/fluxcd/source-controller/api": {
+   "desc": "The GitOps Toolkit source management component",
+   "fetched_at": "2026-06-13T05:36:33Z",
+   "ja": "GitOps Toolkit のソース管理コンポーネント"
+  },
+  "github.com/fortytw2/leaktest": {
+   "desc": "Goroutine Leak Detector",
+   "fetched_at": "2026-06-13T05:36:34Z",
+   "ja": "goroutine のリーク検出ツール"
+  },
+  "github.com/gfleury/go-bitbucket-v1": {
+   "desc": "Bitbucket-server API (v1.0) library for Golang.",
+   "fetched_at": "2026-06-13T05:36:34Z",
+   "ja": "Bitbucket Server API（v1.0）の Go 向けライブラリ"
+  },
+  "github.com/ghodss/yaml": {
+   "desc": "A better way to marshal and unmarshal YAML in Golang",
+   "fetched_at": "2026-06-13T05:36:34Z",
+   "ja": "Go で YAML をより扱いやすく変換するライブラリ"
+  },
+  "github.com/gin-gonic/gin": {
+   "desc": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for bui",
+   "fetched_at": "2026-06-13T05:36:34Z",
+   "ja": "Go 製の高性能 HTTP Web フレームワーク。httprouter により高速"
+  },
+  "github.com/go-chi/chi/v5": {
+   "desc": "lightweight, idiomatic and composable router for building Go HTTP services",
+   "fetched_at": "2026-06-13T05:36:34Z",
+   "ja": "Go の HTTP サービス構築向け軽量ルーター"
+  },
+  "github.com/go-git/go-billy/v5": {
+   "desc": "The missing interface filesystem abstraction for Go",
+   "fetched_at": "2026-06-13T05:36:35Z",
+   "ja": "Go 向けのファイルシステム抽象化インターフェース"
+  },
+  "github.com/go-jose/go-jose/v4": {
+   "desc": "An implementation of JOSE standards (JWE, JWS, JWT) in Go",
+   "fetched_at": "2026-06-13T05:36:35Z",
+   "ja": "JOSE 標準（JWE・JWS・JWT）の Go 実装"
+  },
+  "github.com/go-ldap/ldap/v3": {
+   "desc": "Basic LDAP v3 functionality for the GO programming language.",
+   "fetched_at": "2026-06-13T05:36:35Z",
+   "ja": "Go 向けの基本的な LDAP v3 機能"
+  },
+  "github.com/go-logfmt/logfmt": {
+   "desc": "Package logfmt marshals and unmarshals logfmt messages.",
+   "fetched_at": "2026-06-13T05:36:35Z",
+   "ja": "logfmt 形式メッセージのマーシャル・アンマーシャルを行うパッケージ"
+  },
+  "github.com/go-playground/validator/v10": {
+   "desc": ":100:Go Struct and Field validation, including Cross Field, Cross Struct, Map, Slice and Array diving",
+   "fetched_at": "2026-06-13T05:36:35Z",
+   "ja": "Go の構造体・フィールド検証ライブラリ。フィールド間や構造体間の検証にも対応"
+  },
+  "github.com/go-redis/redis/v8": {
+   "desc": "Redis Go client",
+   "fetched_at": "2026-06-13T05:36:36Z",
+   "ja": "Redis の Go クライアント"
+  },
+  "github.com/go-swagger/go-swagger": {
+   "desc": "Swagger 2.0 implementation for go",
+   "fetched_at": "2026-06-13T05:36:36Z",
+   "ja": "Go 向けの Swagger 2.0 実装"
+  },
+  "github.com/go-test/deep": {
+   "desc": "Golang deep variable equality test that returns human-readable differences",
+   "fetched_at": "2026-06-13T05:36:36Z",
+   "ja": "変数の深い等価比較を行い差分を読みやすく返す Go ライブラリ"
+  },
+  "github.com/go-viper/mapstructure/v2": {
+   "desc": "Go library for decoding generic map values into native Go structures and vice versa.",
+   "fetched_at": "2026-06-13T05:36:36Z",
+   "ja": "汎用の map 値を Go の構造体に相互変換する Go ライブラリ"
+  },
+  "github.com/go-zookeeper/zk": {
+   "desc": "Native ZooKeeper client for Go",
+   "fetched_at": "2026-06-13T05:36:36Z",
+   "ja": "Go 向けのネイティブ ZooKeeper クライアント"
+  },
+  "github.com/goccy/go-yaml": {
+   "desc": "YAML support for the Go language",
+   "fetched_at": "2026-06-13T05:36:37Z",
+   "ja": "Go 言語向けの YAML サポート"
+  },
+  "github.com/gocql/gocql": {
+   "desc": "GoCQL Driver for Apache Cassandra®",
+   "fetched_at": "2026-06-13T05:36:37Z",
+   "ja": "Apache Cassandra 向けの GoCQL ドライバ"
+  },
+  "github.com/godbus/dbus/v5": {
+   "desc": "Native Go bindings for D-Bus",
+   "fetched_at": "2026-06-13T05:36:37Z",
+   "ja": "D-Bus のネイティブ Go バインディング"
+  },
+  "github.com/gofiber/fiber/v2": {
+   "desc": "⚡️ Express inspired web framework written in Go",
+   "fetched_at": "2026-06-13T05:36:37Z",
+   "ja": "Go 製の Express 風 Web フレームワーク"
+  },
+  "github.com/gofrs/flock": {
+   "desc": "Thread-safe file locking library in Go",
+   "fetched_at": "2026-06-13T05:36:37Z",
+   "ja": "Go 製のスレッドセーフなファイルロックライブラリ"
+  },
+  "github.com/golang-jwt/jwt/v4": {
+   "desc": "Go implementation of JSON Web Tokens (JWT).",
+   "fetched_at": "2026-06-13T05:36:38Z",
+   "ja": "JSON Web Token（JWT）の Go 実装"
+  },
+  "github.com/golang/glog": {
+   "desc": "Leveled execution logs for Go",
+   "fetched_at": "2026-06-13T05:36:38Z",
+   "ja": "Go 向けのレベル付き実行ログ"
+  },
+  "github.com/golang/groupcache": {
+   "desc": "groupcache is a caching and cache-filling library, intended as a replacement for memcached in many cases.",
+   "fetched_at": "2026-06-13T05:36:38Z",
+   "ja": "memcached の代替を意図したキャッシュ・キャッシュ補充ライブラリ"
+  },
+  "github.com/golang/mock": {
+   "desc": "GoMock is a mocking framework for the Go programming language.",
+   "fetched_at": "2026-06-13T05:36:38Z",
+   "ja": "Go 言語向けのモックフレームワーク GoMock"
+  },
+  "github.com/google/btree": {
+   "desc": "BTree provides a simple, ordered, in-memory data structure for Go programs.",
+   "fetched_at": "2026-06-13T05:36:38Z",
+   "ja": "Go 向けの順序付きインメモリ B木データ構造"
+  },
+  "github.com/google/go-github": {
+   "desc": "Go library for accessing the GitHub v3 API",
+   "fetched_at": "2026-06-13T05:36:39Z",
+   "ja": "GitHub v3 API にアクセスする Go ライブラリ"
+  },
+  "github.com/google/go-jsonnet": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:39Z"
+  },
+  "github.com/google/go-querystring": {
+   "desc": "go-querystring is Go library for encoding structs into URL query strings.",
+   "fetched_at": "2026-06-13T05:36:39Z",
+   "ja": "構造体を URL クエリ文字列にエンコードする Go ライブラリ"
+  },
+  "github.com/google/ko": {
+   "desc": "Build and deploy Go applications",
+   "fetched_at": "2026-06-13T05:36:39Z",
+   "ja": "Go アプリのビルドとデプロイを行うツール"
+  },
+  "github.com/google/wire": {
+   "desc": "Compile-time Dependency Injection for Go",
+   "fetched_at": "2026-06-13T05:36:39Z",
+   "ja": "Go 向けのコンパイル時依存性注入"
+  },
+  "github.com/googleapis/gax-go/v2": {
+   "desc": "Google API Extensions for Go.",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "Go 向けの Google API 拡張"
+  },
+  "github.com/googlecontainertools/kaniko": {
+   "desc": "Build Container Images In Kubernetes",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "Kubernetes 内でコンテナイメージをビルドするツール"
+  },
+  "github.com/googlecontainertools/skaffold": {
+   "desc": "Easy and Repeatable Kubernetes Development",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "簡単で再現性のある Kubernetes 開発ツール"
+  },
+  "github.com/grafana/dskit": {
+   "desc": "Distributed systems kit",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "分散システム構築用のキット"
+  },
+  "github.com/grafana/mimir": {
+   "desc": "Grafana Mimir provides horizontally scalable, highly available, multi-tenant, long-term storage for Prometheus.",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "Prometheus 向けの水平スケール可能で高可用な長期ストレージ"
+  },
+  "github.com/grafana/tempo": {
+   "desc": "Grafana Tempo is a high volume, minimal dependency distributed tracing backend.",
+   "fetched_at": "2026-06-13T05:36:40Z",
+   "ja": "依存の少ない大容量の分散トレーシングバックエンド"
+  },
+  "github.com/grpc-ecosystem/grpc-gateway": {
+   "desc": "gRPC to JSON proxy generator following the gRPC HTTP spec",
+   "fetched_at": "2026-06-13T05:36:41Z",
+   "ja": "gRPC HTTP 仕様に従う gRPC から JSON へのプロキシジェネレータ"
+  },
+  "github.com/grpc-ecosystem/grpc-gateway/v2": {
+   "desc": "gRPC to JSON proxy generator following the gRPC HTTP spec",
+   "fetched_at": "2026-06-13T05:36:41Z",
+   "ja": "gRPC HTTP 仕様に従う gRPC から JSON へのプロキシジェネレータ"
+  },
+  "github.com/hashicorp/cap": {
+   "desc": "A collection of authentication Go packages related to OIDC, JWKs, Distributed Claims, LDAP",
+   "fetched_at": "2026-06-13T05:36:41Z",
+   "ja": "OIDC・JWK・LDAP 等に関する認証用 Go パッケージ集"
+  },
+  "github.com/hashicorp/cli": {
+   "desc": "A Go library for implementing command-line interfaces.",
+   "fetched_at": "2026-06-13T05:36:41Z",
+   "ja": "コマンドラインインターフェース実装用の Go ライブラリ"
+  },
+  "github.com/hashicorp/go-bexpr": {
+   "desc": "Generic boolean expression evaluation in Go",
+   "fetched_at": "2026-06-13T05:36:41Z",
+   "ja": "Go での汎用的なブール式評価"
+  },
+  "github.com/hashicorp/go-checkpoint": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:42Z"
+  },
+  "github.com/hashicorp/go-discover": {
+   "desc": "Discover nodes in cloud environments",
+   "fetched_at": "2026-06-13T05:36:42Z",
+   "ja": "クラウド環境内のノードを検出するライブラリ"
+  },
+  "github.com/hashicorp/go-getter": {
+   "desc": "Package for downloading things from a string URL using a variety of protocols.",
+   "fetched_at": "2026-06-13T05:36:42Z",
+   "ja": "URL 文字列から多様なプロトコルでダウンロードするパッケージ"
+  },
+  "github.com/hashicorp/go-immutable-radix/v2": {
+   "desc": "An immutable radix tree implementation in Golang",
+   "fetched_at": "2026-06-13T05:36:42Z",
+   "ja": "Go 製の不変な基数木（radix tree）実装"
+  },
+  "github.com/hashicorp/go-memdb": {
+   "desc": "Golang in-memory database built on immutable radix trees",
+   "fetched_at": "2026-06-13T05:36:42Z",
+   "ja": "不変な基数木を用いた Go 製インメモリデータベース"
+  },
+  "github.com/hashicorp/go-metrics": {
+   "desc": "A Golang library for exporting performance and runtime metrics to external metrics systems (i.e. statsite, statsd)",
+   "fetched_at": "2026-06-13T05:36:43Z",
+   "ja": "性能・実行時メトリクスを外部メトリクスシステムへ出力する Go ライブラリ"
+  },
+  "github.com/hashicorp/go-msgpack/v2": {
+   "desc": "Open-Source Go Code. msgpack.org[Go]",
+   "fetched_at": "2026-06-13T05:36:43Z",
+   "ja": "msgpack の Go 実装"
+  },
+  "github.com/hashicorp/go-plugin": {
+   "desc": "Golang plugin system over RPC.",
+   "fetched_at": "2026-06-13T05:36:43Z",
+   "ja": "RPC を介した Go のプラグインシステム"
+  },
+  "github.com/hashicorp/go-syslog": {
+   "desc": "Golang syslog wrapper, cross-compile friendly",
+   "fetched_at": "2026-06-13T05:36:43Z",
+   "ja": "クロスコンパイルしやすい Go の syslog ラッパー"
+  },
+  "github.com/hashicorp/go-uuid": {
+   "desc": "Generates UUID-format strings using purely high quality random bytes",
+   "fetched_at": "2026-06-13T05:36:43Z",
+   "ja": "高品質な乱数バイトで UUID 形式の文字列を生成するライブラリ"
+  },
+  "github.com/hashicorp/golang-lru": {
+   "desc": "Golang LRU cache",
+   "fetched_at": "2026-06-13T05:36:44Z",
+   "ja": "Go 製の LRU キャッシュ"
+  },
+  "github.com/hashicorp/hcl": {
+   "desc": "HCL is the HashiCorp configuration language.",
+   "fetched_at": "2026-06-13T05:36:44Z",
+   "ja": "HashiCorp の設定記述言語 HCL"
+  },
+  "github.com/hashicorp/hcl/v2": {
+   "desc": "HCL is the HashiCorp configuration language.",
+   "fetched_at": "2026-06-13T05:36:44Z",
+   "ja": "HashiCorp の設定記述言語 HCL"
+  },
+  "github.com/hashicorp/nomad": {
+   "desc": "Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and sc",
+   "fetched_at": "2026-06-13T05:36:44Z",
+   "ja": "マイクロサービスやバッチ、コンテナ等の混在ワークロードをデプロイできる柔軟なオーケストレータ"
+  },
+  "github.com/hashicorp/nomad/api": {
+   "desc": "Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and sc",
+   "fetched_at": "2026-06-13T05:36:44Z",
+   "ja": "マイクロサービスやバッチ、コンテナ等の混在ワークロードをデプロイできる柔軟なオーケストレータ"
+  },
+  "github.com/hashicorp/raft": {
+   "desc": "Golang implementation of the Raft consensus protocol",
+   "fetched_at": "2026-06-13T05:36:45Z",
+   "ja": "Raft 合意プロトコルの Go 実装"
+  },
+  "github.com/hashicorp/raft-autopilot": {
+   "desc": "Raft Autopilot",
+   "fetched_at": "2026-06-13T05:36:45Z",
+   "ja": "Raft Autopilot"
+  },
+  "github.com/hashicorp/raft-boltdb/v2": {
+   "desc": "Raft backend implementation using BoltDB",
+   "fetched_at": "2026-06-13T05:36:45Z",
+   "ja": "BoltDB を用いた Raft バックエンド実装"
+  },
+  "github.com/hashicorp/serf": {
+   "desc": "Service orchestration and management tool.",
+   "fetched_at": "2026-06-13T05:36:45Z",
+   "ja": "サービスのオーケストレーション・管理ツール"
+  },
+  "github.com/hashicorp/terraform": {
+   "desc": "Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amo",
+   "fetched_at": "2026-06-13T05:36:45Z",
+   "ja": "API を宣言的な設定ファイルに記述し、インフラを安全かつ予測可能に構築・変更するツール"
+  },
+  "github.com/hashicorp/vault": {
+   "desc": "A tool for secrets management, encryption as a service, and privileged access management",
+   "fetched_at": "2026-06-13T05:36:46Z",
+   "ja": "シークレット管理・暗号化サービス・特権アクセス管理のためのツール"
+  },
+  "github.com/hashicorp/vault/api/auth/approle": {
+   "desc": "A tool for secrets management, encryption as a service, and privileged access management",
+   "fetched_at": "2026-06-13T05:36:46Z",
+   "ja": "シークレット管理・暗号化サービス・特権アクセス管理のためのツール"
+  },
+  "github.com/hashicorp/vault/sdk": {
+   "desc": "A tool for secrets management, encryption as a service, and privileged access management",
+   "fetched_at": "2026-06-13T05:36:46Z",
+   "ja": "シークレット管理・暗号化サービス・特権アクセス管理のためのツール"
+  },
+  "github.com/hetznercloud/hcloud-go": {
+   "desc": "A Go library for the Hetzner Cloud API",
+   "fetched_at": "2026-06-13T05:36:46Z",
+   "ja": "Hetzner Cloud API 向けの Go ライブラリ"
+  },
+  "github.com/imdario/mergo": {
+   "desc": "Mergo: merging Go structs and maps since 2013",
+   "fetched_at": "2026-06-13T05:36:46Z",
+   "ja": "Goの構造体やマップをマージするライブラリ"
+  },
+  "github.com/in-toto/in-toto-golang": {
+   "desc": "A Go implementation of in-toto. in-toto is a framework to protect software supply chain integrity.",
+   "fetched_at": "2026-06-13T05:36:47Z",
+   "ja": "ソフトウェアサプライチェーンの完全性を保護するフレームワークin-totoのGo実装"
+  },
+  "github.com/influxdata/influxdb": {
+   "desc": "Scalable datastore for metrics, events, and real-time analytics",
+   "fetched_at": "2026-06-13T05:36:47Z",
+   "ja": "メトリクス・イベント・リアルタイム分析向けのスケーラブルなデータストア"
+  },
+  "github.com/influxdata/influxdb-client-go/v2": {
+   "desc": "InfluxDB 2 Go Client",
+   "fetched_at": "2026-06-13T05:36:47Z",
+   "ja": "InfluxDB 2 用のGoクライアント"
+  },
+  "github.com/influxdata/telegraf": {
+   "desc": "Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.",
+   "fetched_at": "2026-06-13T05:36:47Z",
+   "ja": "メトリクスやログなどのデータを収集・処理・集約・書き込みするエージェント"
+  },
+  "github.com/itchyny/gojq": {
+   "desc": "Pure Go implementation of jq",
+   "fetched_at": "2026-06-13T05:36:47Z",
+   "ja": "jqのピュアGo実装"
+  },
+  "github.com/jcmturner/gokrb5/v8": {
+   "desc": "Pure Go Kerberos library for clients and services",
+   "fetched_at": "2026-06-13T05:36:48Z",
+   "ja": "クライアントとサービス向けのピュアGo製Kerberosライブラリ"
+  },
+  "github.com/jenkins-x/jx": {
+   "desc": "Jenkins X provides automated CI+CD for Kubernetes with Preview Environments on Pull Requests using Cloud Native pipelines from Tekton",
+   "fetched_at": "2026-06-13T05:36:48Z",
+   "ja": "Tektonを用いてKubernetes向けにCI/CDを自動化するツールJenkins X"
+  },
+  "github.com/jmoiron/sqlx": {
+   "desc": "general purpose extensions to golang's database/sql",
+   "fetched_at": "2026-06-13T05:36:48Z",
+   "ja": "Goのdatabase/sqlを拡張する汎用ライブラリ"
+  },
+  "github.com/joho/godotenv": {
+   "desc": "A Go port of Ruby's dotenv library (Loads environment variables from .env files)",
+   "fetched_at": "2026-06-13T05:36:48Z",
+   "ja": "Ruby製dotenvのGo移植版。.envから環境変数を読み込むライブラリ"
+  },
+  "github.com/jonboulle/clockwork": {
+   "desc": "a fake clock for golang",
+   "fetched_at": "2026-06-13T05:36:48Z",
+   "ja": "Go向けの偽クロック（fake clock）ライブラリ"
+  },
+  "github.com/julienschmidt/httprouter": {
+   "desc": "A high performance HTTP request router that scales well",
+   "fetched_at": "2026-06-13T05:36:49Z",
+   "ja": "スケーラブルで高性能なHTTPリクエストルーター"
+  },
+  "github.com/k0sproject/k0s": {
+   "desc": "k0s - The Zero Friction Kubernetes",
+   "fetched_at": "2026-06-13T05:36:49Z",
+   "ja": "手間のかからないKubernetesディストリビューションk0s"
+  },
+  "github.com/karrick/godirwalk": {
+   "desc": "Fast directory traversal for Golang",
+   "fetched_at": "2026-06-13T05:36:49Z",
+   "ja": "Go向けの高速なディレクトリ走査ライブラリ"
+  },
+  "github.com/kballard/go-shellquote": {
+   "desc": "Go utilities for performing shell-like word splitting/joining",
+   "fetched_at": "2026-06-13T05:36:49Z",
+   "ja": "シェル風の単語分割・結合を行うGoユーティリティ"
+  },
+  "github.com/knative/pkg": {
+   "desc": "Knative common packages",
+   "fetched_at": "2026-06-13T05:36:49Z",
+   "ja": "Knative共通パッケージ集"
+  },
+  "github.com/kr/text": {
+   "desc": "Miscellaneous functions for formatting text",
+   "fetched_at": "2026-06-13T05:36:50Z",
+   "ja": "テキスト整形のための雑多な関数群"
+  },
+  "github.com/kubeedge/kubeedge": {
+   "desc": "Kubernetes Native Edge Computing Framework (project under CNCF)",
+   "fetched_at": "2026-06-13T05:36:50Z",
+   "ja": "Kubernetesネイティブのエッジコンピューティングフレームワーク（CNCF）"
+  },
+  "github.com/kyverno/kyverno": {
+   "desc": "Unified Policy as Code",
+   "fetched_at": "2026-06-13T05:36:50Z",
+   "ja": "ポリシー・アズ・コードを統一的に扱うツール"
+  },
+  "github.com/labstack/echo/v4": {
+   "desc": "High performance, minimalist Go web framework",
+   "fetched_at": "2026-06-13T05:36:50Z",
+   "ja": "高性能でミニマルなGo製Webフレームワーク"
+  },
+  "github.com/lestrrat-go/jwx/v2": {
+   "desc": "Complete implementation of JWx (Javascript Object Signing and Encryption/JOSE) technologies for Go. #golang #jwt #jws #jwk #jwe",
+   "fetched_at": "2026-06-13T05:36:50Z",
+   "ja": "JOSE（JWT/JWS/JWK/JWE）技術を完全実装したGoライブラリ"
+  },
+  "github.com/lib/pq": {
+   "desc": "Go PostgreSQL driver for database/sql",
+   "fetched_at": "2026-06-13T05:36:51Z",
+   "ja": "database/sql向けのGo製PostgreSQLドライバ"
+  },
+  "github.com/linode/linodego": {
+   "desc": "Go client for Linode REST v4 API",
+   "fetched_at": "2026-06-13T05:36:51Z",
+   "ja": "Linode REST v4 API向けのGoクライアント"
+  },
+  "github.com/m3db/m3": {
+   "desc": "M3 monorepo - Distributed TSDB, Aggregator and Query Engine, Prometheus Sidecar, Graphite Compatible, Metrics Platform",
+   "fetched_at": "2026-06-13T05:36:51Z",
+   "ja": "分散型TSDB・集約・クエリエンジンを備えたメトリクス基盤M3"
+  },
+  "github.com/magiconair/properties": {
+   "desc": "Java properties scanner for Go",
+   "fetched_at": "2026-06-13T05:36:51Z",
+   "ja": "Go向けのJavaプロパティファイル読み取りライブラリ"
+  },
+  "github.com/makenowjust/heredoc": {
+   "desc": "Package heredoc provides the here-document with keeping indent.",
+   "fetched_at": "2026-06-13T05:36:51Z",
+   "ja": "インデントを保ったままヒアドキュメントを扱うパッケージ"
+  },
+  "github.com/mattn/go-colorable": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:51Z"
+  },
+  "github.com/mattn/go-sqlite3": {
+   "desc": "sqlite3 driver for go using database/sql",
+   "fetched_at": "2026-06-13T05:36:52Z",
+   "ja": "database/sqlを用いるGo向けsqlite3ドライバ"
+  },
+  "github.com/mdlayher/netlink": {
+   "desc": "Package netlink provides low-level access to Linux netlink sockets (AF_NETLINK). MIT Licensed.",
+   "fetched_at": "2026-06-13T05:36:52Z",
+   "ja": "Linuxのnetlinkソケットに低レベルでアクセスするパッケージ"
+  },
+  "github.com/microsoft/go-mssqldb": {
+   "desc": "Microsoft SQL server driver written in go language",
+   "fetched_at": "2026-06-13T05:36:52Z",
+   "ja": "Goで書かれたMicrosoft SQL Serverドライバ"
+  },
+  "github.com/microsoft/go-winio": {
+   "desc": "Win32 IO-related utilities for Go",
+   "fetched_at": "2026-06-13T05:36:52Z",
+   "ja": "Go向けのWin32 IO関連ユーティリティ"
+  },
+  "github.com/microsoft/hcsshim": {
+   "desc": "Windows - Host Compute Service Shim",
+   "fetched_at": "2026-06-13T05:36:52Z",
+   "ja": "WindowsのHost Compute Serviceシム"
+  },
+  "github.com/minio/highwayhash": {
+   "desc": "Native Go version of HighwayHash with optimized assembly implementations on Intel and ARM. Able to process over 10 GB/sec on a single core on Intel CPUs - https://en.wikipedia.org/wiki/HighwayHash",
+   "fetched_at": "2026-06-13T05:36:53Z",
+   "ja": "アセンブリ最適化を備えたHighwayHashのGo実装"
+  },
+  "github.com/mitchellh/colorstring": {
+   "desc": "Go (golang) library for colorizing strings for terminal output.",
+   "fetched_at": "2026-06-13T05:36:53Z",
+   "ja": "ターミナル出力用に文字列を色付けするGoライブラリ"
+  },
+  "github.com/mitchellh/go-homedir": {
+   "desc": "Go library for detecting and expanding the user's home directory without cgo.",
+   "fetched_at": "2026-06-13T05:36:53Z",
+   "ja": "cgoなしでユーザーのホームディレクトリを検出・展開するGoライブラリ"
+  },
+  "github.com/mitchellh/go-ps": {
+   "desc": "Find, list, and inspect processes from Go (golang).",
+   "fetched_at": "2026-06-13T05:36:53Z",
+   "ja": "Goでプロセスを検索・一覧・検査するライブラリ"
+  },
+  "github.com/mitchellh/hashstructure": {
+   "desc": "Get hash values for arbitrary values in Go (golang).",
+   "fetched_at": "2026-06-13T05:36:53Z",
+   "ja": "任意の値のハッシュ値を取得するGoライブラリ"
+  },
+  "github.com/mitchellh/hashstructure/v2": {
+   "desc": "Get hash values for arbitrary values in Go (golang).",
+   "fetched_at": "2026-06-13T05:36:54Z",
+   "ja": "任意の値のハッシュ値を取得するGoライブラリ"
+  },
+  "github.com/mitchellh/reflectwalk": {
+   "desc": "reflectwalk is a Go library for \"walking\" complex structures, similar to walking a filesystem.",
+   "fetched_at": "2026-06-13T05:36:54Z",
+   "ja": "複雑な構造体を走査するためのGoライブラリ"
+  },
+  "github.com/moby/buildkit": {
+   "desc": "concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit",
+   "fetched_at": "2026-06-13T05:36:54Z",
+   "ja": "並行処理とキャッシュに優れたDockerfile非依存のビルダーツールキット"
+  },
+  "github.com/moby/docker-image-spec": {
+   "desc": "Docker Image Specification v1",
+   "fetched_at": "2026-06-13T05:36:54Z",
+   "ja": "Dockerイメージ仕様v1"
+  },
+  "github.com/moby/moby/api": {
+   "desc": "The Moby Project - a collaborative project for the container ecosystem to assemble container-based systems",
+   "fetched_at": "2026-06-13T05:36:54Z",
+   "ja": "コンテナエコシステム向けの協働プロジェクトThe Moby Project"
+  },
+  "github.com/moby/moby/client": {
+   "desc": "The Moby Project - a collaborative project for the container ecosystem to assemble container-based systems",
+   "fetched_at": "2026-06-13T05:36:55Z",
+   "ja": "コンテナエコシステム向けの協働プロジェクトThe Moby Project"
+  },
+  "github.com/moby/sys/mountinfo": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:55Z"
+  },
+  "github.com/moby/sys/signal": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:55Z"
+  },
+  "github.com/moby/sys/user": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:55Z"
+  },
+  "github.com/moby/term": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:55Z"
+  },
+  "github.com/modern-go/reflect2": {
+   "desc": "reflect api without runtime reflect.Value cost",
+   "fetched_at": "2026-06-13T05:36:56Z",
+   "ja": "実行時のreflect.Valueコストを伴わないreflect API"
+  },
+  "github.com/nats-io/nats.go": {
+   "desc": "Golang client for NATS, the cloud native messaging system.",
+   "fetched_at": "2026-06-13T05:36:56Z",
+   "ja": "クラウドネイティブなメッセージングシステムNATSのGoクライアント"
+  },
+  "github.com/nats-io/nkeys": {
+   "desc": "NATS Keys",
+   "fetched_at": "2026-06-13T05:36:56Z",
+   "ja": "NATS向けの鍵（NATS Keys）"
+  },
+  "github.com/notaryproject/notation-go": {
+   "desc": "A collection of libraries for supporting sign and verify OCI artifacts. Based on Notary Project specifications.",
+   "fetched_at": "2026-06-13T05:36:56Z",
+   "ja": "OCIアーティファクトの署名と検証を支援するライブラリ集"
+  },
+  "github.com/nsqio/go-nsq": {
+   "desc": "The official Go package for NSQ",
+   "fetched_at": "2026-06-13T05:36:56Z",
+   "ja": "NSQ向けの公式Goパッケージ"
+  },
+  "github.com/nytimes/gziphandler": {
+   "desc": "Go middleware to gzip HTTP responses",
+   "fetched_at": "2026-06-13T05:36:57Z",
+   "ja": "HTTPレスポンスをgzip圧縮するGoミドルウェア"
+  },
+  "github.com/olivere/elastic/v7": {
+   "desc": "Deprecated: Use the official Elasticsearch client for Go at https://github.com/elastic/go-elasticsearch",
+   "fetched_at": "2026-06-13T05:36:57Z",
+   "ja": "非推奨。公式のGo向けElasticsearchクライアントを利用"
+  },
+  "github.com/onsi/ginkgo": {
+   "desc": "A Modern Testing Framework for Go",
+   "fetched_at": "2026-06-13T05:36:57Z",
+   "ja": "Go向けのモダンなテストフレームワーク"
+  },
+  "github.com/opencontainers/cgroups": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:36:57Z"
+  },
+  "github.com/opencontainers/runtime-spec": {
+   "desc": "OCI Runtime Specification",
+   "fetched_at": "2026-06-13T05:36:57Z",
+   "ja": "OCIランタイム仕様"
+  },
+  "github.com/openshift/api": {
+   "desc": "Canonical location of the OpenShift API definition.",
+   "fetched_at": "2026-06-13T05:36:58Z",
+   "ja": "OpenShift API定義の正式な配置場所"
+  },
+  "github.com/opentracing-contrib/go-grpc": {
+   "desc": "Package otgrpc provides OpenTracing support for any gRPC client or server.",
+   "fetched_at": "2026-06-13T05:36:58Z",
+   "ja": "gRPCクライアントやサーバーにOpenTracing対応を加えるパッケージ"
+  },
+  "github.com/openzipkin/zipkin-go": {
+   "desc": "Zipkin distributed tracing library for go.",
+   "fetched_at": "2026-06-13T05:36:58Z",
+   "ja": "Go向けのZipkin分散トレーシングライブラリ"
+  },
+  "github.com/ory/dockertest/v3": {
+   "desc": "Write better integration tests! Dockertest helps you boot up ephermal docker images for your Go tests with minimal work.",
+   "fetched_at": "2026-06-13T05:36:58Z",
+   "ja": "Goテスト用に一時的なDockerイメージを起動する統合テスト支援ツール"
+  },
+  "github.com/ory/hydra": {
+   "desc": "Internet-scale OpenID Certified™ OpenID Connect and OAuth2.1 provider that integrates with your user management through headless APIs. Solve OIDC/OAuth2 user cases over night. Consume as a service on ",
+   "fetched_at": "2026-06-13T05:36:58Z",
+   "ja": "OpenID Connect・OAuth2.1プロバイダ。ヘッドレスAPIでユーザー管理と連携"
+  },
+  "github.com/ory/kratos": {
+   "desc": "Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, ",
+   "fetched_at": "2026-06-13T05:36:59Z",
+   "ja": "Goで書かれたヘッドレスでクラウドネイティブな認証・ID管理システム"
+  },
+  "github.com/otiai10/copy": {
+   "desc": "Go copy directory recursively",
+   "fetched_at": "2026-06-13T05:36:59Z",
+   "ja": "ディレクトリを再帰的にコピーするGoライブラリ"
+  },
+  "github.com/pborman/uuid": {
+   "desc": "Automatically exported from code.google.com/p/go-uuid",
+   "fetched_at": "2026-06-13T05:36:59Z",
+   "ja": "code.google.com/p/go-uuidから自動エクスポートされたパッケージ"
+  },
+  "github.com/pelletier/go-toml": {
+   "desc": "Go library for the TOML file format",
+   "fetched_at": "2026-06-13T05:36:59Z",
+   "ja": "TOMLファイル形式を扱うGoライブラリ"
+  },
+  "github.com/pelletier/go-toml/v2": {
+   "desc": "Go library for the TOML file format",
+   "fetched_at": "2026-06-13T05:36:59Z",
+   "ja": "TOMLファイル形式を扱うGoライブラリ"
+  },
+  "github.com/pierrec/lz4/v4": {
+   "desc": "LZ4 compression and decompression in pure Go",
+   "fetched_at": "2026-06-13T05:37:00Z",
+   "ja": "ピュアGoによるLZ4圧縮・伸長ライブラリ"
+  },
+  "github.com/pkg/browser": {
+   "desc": "Package browser provides helpers to open files, readers, and urls in a browser window.",
+   "fetched_at": "2026-06-13T05:37:00Z",
+   "ja": "ファイルやURLをブラウザで開くためのヘルパーを提供するパッケージ"
+  },
+  "github.com/pkg/sftp": {
+   "desc": "SFTP support for the go.crypto/ssh package",
+   "fetched_at": "2026-06-13T05:37:00Z",
+   "ja": "go.crypto/sshパッケージ向けのSFTP対応"
+  },
+  "github.com/planetscale/vtprotobuf": {
+   "desc": "A Protocol Buffers compiler that generates optimized marshaling & unmarshaling Go code for ProtoBuf APIv2",
+   "fetched_at": "2026-06-13T05:37:00Z",
+   "ja": "最適化されたProtoBuf APIv2用Goコードを生成するコンパイラ"
+  },
+  "github.com/posener/complete": {
+   "desc": "bash completion written in go + bash completion for go command",
+   "fetched_at": "2026-06-13T05:37:00Z",
+   "ja": "Goで書かれたbash補完と、goコマンド向けのbash補完"
+  },
+  "github.com/projectcontour/contour": {
+   "desc": "Contour is a Kubernetes ingress controller using Envoy proxy.",
+   "fetched_at": "2026-06-13T05:37:01Z",
+   "ja": "Envoyプロキシを用いたKubernetes IngressコントローラーContour"
+  },
+  "github.com/prometheus-community/pro-bing": {
+   "desc": "A library for creating continuous probers",
+   "fetched_at": "2026-06-13T05:37:01Z",
+   "ja": "継続的なプローバーを作成するためのライブラリ"
+  },
+  "github.com/prometheus/blackbox_exporter": {
+   "desc": "Blackbox prober exporter",
+   "fetched_at": "2026-06-13T05:37:01Z",
+   "ja": "Blackboxプローバー用エクスポーター"
+  },
+  "github.com/prometheus/node_exporter": {
+   "desc": "Exporter for machine metrics",
+   "fetched_at": "2026-06-13T05:37:01Z",
+   "ja": "マシンのメトリクス向けエクスポーター"
+  },
+  "github.com/prometheus/pushgateway": {
+   "desc": "Push acceptor for ephemeral and batch jobs.",
+   "fetched_at": "2026-06-13T05:37:01Z",
+   "ja": "一時的なジョブやバッチジョブ向けのプッシュ受信機"
+  },
+  "github.com/protonmail/go-crypto": {
+   "desc": "Fork of go/x/crypto, providing an up-to-date OpenPGP implementation",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "最新のOpenPGP実装を提供するgo/x/cryptoのフォーク"
+  },
+  "github.com/quic-go/quic-go": {
+   "desc": "A production-ready QUIC implementation in pure Go",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "ピュアGoによる本番対応のQUIC実装"
+  },
+  "github.com/rabbitmq/amqp091-go": {
+   "desc": "An AMQP 0-9-1 Go client maintained by the RabbitMQ team. Originally by @streadway: `streadway/amqp`",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "RabbitMQチームが保守するAMQP 0-9-1 Goクライアント"
+  },
+  "github.com/robfig/cron": {
+   "desc": "a cron library for go",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "Go向けのcronライブラリ"
+  },
+  "github.com/rs/cors": {
+   "desc": "Go net/http configurable handler to handle CORS requests",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "CORSリクエストを処理する設定可能なGo net/httpハンドラ"
+  },
+  "github.com/rs/zerolog": {
+   "desc": "Zero Allocation JSON Logger",
+   "fetched_at": "2026-06-13T05:37:02Z",
+   "ja": "メモリ割り当てゼロのJSONロガー"
+  },
+  "github.com/russross/blackfriday/v2": {
+   "desc": "Blackfriday: a markdown processor for Go",
+   "fetched_at": "2026-06-13T05:37:03Z",
+   "ja": "Go向けMarkdownプロセッサBlackfriday"
+  },
+  "github.com/ryanuber/columnize": {
+   "desc": "Easy column formatted output for golang",
+   "fetched_at": "2026-06-13T05:37:03Z",
+   "ja": "Go向けの簡単な列整形出力ライブラリ"
+  },
+  "github.com/ryanuber/go-glob": {
+   "desc": "Basic string globs in golang",
+   "fetched_at": "2026-06-13T05:37:03Z",
+   "ja": "Goによる基本的な文字列globマッチング"
+  },
+  "github.com/safchain/ethtool": {
+   "desc": "A simple ethtool \"like\" library for Go",
+   "fetched_at": "2026-06-13T05:37:03Z",
+   "ja": "ethtool風のシンプルなGoライブラリ"
+  },
+  "github.com/segmentio/fasthash": {
+   "desc": "Go package porting the standard hashing algorithms to a more efficient implementation.",
+   "fetched_at": "2026-06-13T05:37:03Z",
+   "ja": "標準ハッシュ算法を高効率に再実装したGoパッケージ"
+  },
+  "github.com/segmentio/kafka-go": {
+   "desc": "Kafka library in Go",
+   "fetched_at": "2026-06-13T05:37:04Z",
+   "ja": "Go向けのKafkaライブラリ"
+  },
+  "github.com/sergi/go-diff": {
+   "desc": "Diff, match and patch text in Go",
+   "fetched_at": "2026-06-13T05:37:04Z",
+   "ja": "Goでテキストのdiff・マッチ・パッチを行うライブラリ"
+  },
+  "github.com/shirou/gopsutil/v3": {
+   "desc": "psutil for golang",
+   "fetched_at": "2026-06-13T05:37:04Z",
+   "ja": "Go向けのpsutil（システム情報取得）"
+  },
+  "github.com/shirou/gopsutil/v4": {
+   "desc": "psutil for golang",
+   "fetched_at": "2026-06-13T05:37:04Z",
+   "ja": "Go向けのpsutil（システム情報取得）"
+  },
+  "github.com/sigstore/fulcio": {
+   "desc": "Sigstore OIDC PKI",
+   "fetched_at": "2026-06-13T05:37:04Z",
+   "ja": "Sigstore OIDC PKI"
+  },
+  "github.com/sigstore/rekor": {
+   "desc": "Software Supply Chain Transparency Log",
+   "fetched_at": "2026-06-13T05:37:05Z",
+   "ja": "ソフトウェアサプライチェーンの透明性ログ"
+  },
+  "github.com/sigstore/sigstore": {
+   "desc": "Common go library shared across sigstore services and clients",
+   "fetched_at": "2026-06-13T05:37:05Z",
+   "ja": "Sigstoreの各種サービス・クライアント共通Goライブラリ"
+  },
+  "github.com/sigstore/sigstore-go": {
+   "desc": "Go library for Sigstore signing and verification",
+   "fetched_at": "2026-06-13T05:37:05Z",
+   "ja": "Sigstoreの署名・検証用Goライブラリ"
+  },
+  "github.com/sigstore/sigstore/pkg/signature/kms/aws": {
+   "desc": "Common go library shared across sigstore services and clients",
+   "fetched_at": "2026-06-13T05:37:05Z",
+   "ja": "Sigstoreの各種サービス・クライアント共通Goライブラリ"
+  },
+  "github.com/sigstore/sigstore/pkg/signature/kms/azure": {
+   "desc": "Common go library shared across sigstore services and clients",
+   "fetched_at": "2026-06-13T05:37:05Z",
+   "ja": "Sigstoreの各種サービス・クライアント共通Goライブラリ"
+  },
+  "github.com/sigstore/sigstore/pkg/signature/kms/gcp": {
+   "desc": "Common go library shared across sigstore services and clients",
+   "fetched_at": "2026-06-13T05:37:06Z",
+   "ja": "Sigstoreの各種サービス・クライアント共通Goライブラリ"
+  },
+  "github.com/sigstore/sigstore/pkg/signature/kms/hashivault": {
+   "desc": "Common go library shared across sigstore services and clients",
+   "fetched_at": "2026-06-13T05:37:06Z",
+   "ja": "Sigstoreの各種サービス・クライアント共通Goライブラリ"
+  },
+  "github.com/spf13/cast": {
+   "desc": "safe and easy casting from one type to another in Go",
+   "fetched_at": "2026-06-13T05:37:06Z",
+   "ja": "Goで型を安全かつ簡単に変換するライブラリ"
+  },
+  "github.com/spiffe/go-spiffe/v2": {
+   "desc": "Golang library for SPIFFE support",
+   "fetched_at": "2026-06-13T05:37:06Z",
+   "ja": "SPIFFEに対応するGoライブラリ"
+  },
+  "github.com/stern/stern": {
+   "desc": "⎈ Multi pod and container log tailing for Kubernetes -- Friendly fork of https://github.com/wercker/stern",
+   "fetched_at": "2026-06-13T05:37:06Z",
+   "ja": "Kubernetes向けの複数Pod・コンテナ横断ログ追跡ツール"
+  },
+  "github.com/submariner-io/submariner": {
+   "desc": "Networking component for interconnecting Pods and Services across Kubernetes clusters.",
+   "fetched_at": "2026-06-13T05:37:07Z",
+   "ja": "複数Kubernetesクラスタ間でPodとServiceを相互接続するネットワークコンポーネント"
+  },
+  "github.com/tektoncd/pipeline": {
+   "desc": "A cloud-native Pipeline resource.",
+   "fetched_at": "2026-06-13T05:37:07Z",
+   "ja": "クラウドネイティブなPipelineリソース"
+  },
+  "github.com/tektoncd/triggers": {
+   "desc": "Event triggering with Tekton!",
+   "fetched_at": "2026-06-13T05:37:07Z",
+   "ja": "Tektonによるイベントトリガー機能"
+  },
+  "github.com/testcontainers/testcontainers-go": {
+   "desc": "Testcontainers for Go is a Go package that makes it simple to create and clean up container-based dependencies for automated integration/smoke tests. The clean, easy-to-use API enables developers to p",
+   "fetched_at": "2026-06-13T05:37:07Z",
+   "ja": "自動統合テスト用のコンテナ依存を簡単に作成・後始末できるGoパッケージ"
+  },
+  "github.com/tetratelabs/wazero": {
+   "desc": "wazero: the zero dependency WebAssembly runtime for Go developers",
+   "fetched_at": "2026-06-13T05:37:07Z",
+   "ja": "Go開発者向けの依存ゼロのWebAssemblyランタイムwazero"
+  },
+  "github.com/tidwall/sjson": {
+   "desc": "Set JSON values very quickly in Go",
+   "fetched_at": "2026-06-13T05:37:08Z",
+   "ja": "GoでJSON値を高速に設定するライブラリ"
+  },
+  "github.com/tink-crypto/tink-go/v2": {
+   "desc": "Go implementation of Tink",
+   "fetched_at": "2026-06-13T05:37:08Z",
+   "ja": "TinkのGo実装"
+  },
+  "github.com/tinylib/msgp": {
+   "desc": "A Go code generator for MessagePack / msgpack.org[Go]",
+   "fetched_at": "2026-06-13T05:37:08Z",
+   "ja": "MessagePack向けのGoコード生成ツール"
+  },
+  "github.com/twmb/franz-go": {
+   "desc": "franz-go is a feature complete, pure Go library for Kafka from 0.8.0 through 4.2+. Producing, consuming, transacting, administrating, etc.",
+   "fetched_at": "2026-06-13T05:37:08Z",
+   "ja": "Kafka 0.8.0〜4.2+対応の純Go製ライブラリ。生成・消費・トランザクション・管理に対応"
+  },
+  "github.com/twmb/franz-go/pkg/kfake": {
+   "desc": "franz-go is a feature complete, pure Go library for Kafka from 0.8.0 through 4.2+. Producing, consuming, transacting, administrating, etc.",
+   "fetched_at": "2026-06-13T05:37:08Z",
+   "ja": "Kafka 0.8.0〜4.2+対応の純Go製ライブラリ。生成・消費・トランザクション・管理に対応"
+  },
+  "github.com/urfave/cli/v2": {
+   "desc": "A declarative, simple, fast, and fun package for building command line tools in Go",
+   "fetched_at": "2026-06-13T05:37:09Z",
+   "ja": "Goでコマンドラインツールを構築する宣言的でシンプルなパッケージ"
+  },
+  "github.com/valyala/bytebufferpool": {
+   "desc": "Anti-memory-waste byte buffer pool",
+   "fetched_at": "2026-06-13T05:37:09Z",
+   "ja": "メモリ浪費を抑えるバイトバッファプール"
+  },
+  "github.com/valyala/fasthttp": {
+   "desc": "Fast HTTP package for Go. Tuned for high performance. Zero memory allocations in hot paths. Up to 10x faster than net/http",
+   "fetched_at": "2026-06-13T05:37:09Z",
+   "ja": "高性能向けに調整されたGo用の高速HTTPパッケージ。net/httpより最大10倍高速"
+  },
+  "github.com/valyala/fastjson": {
+   "desc": "Fast JSON parser and validator for Go. No custom structs, no code generation, no reflection",
+   "fetched_at": "2026-06-13T05:37:09Z",
+   "ja": "Go向けの高速JSONパーサ・バリデータ。構造体・コード生成・リフレクション不要"
+  },
+  "github.com/victoriametrics/easyproto": {
+   "desc": "Simple building blocks for protobuf marshaling and unmarshaling",
+   "fetched_at": "2026-06-13T05:37:09Z",
+   "ja": "protobufのマーシャル・アンマーシャル用のシンプルな部品"
+  },
+  "github.com/victoriametrics/victorialogs": {
+   "desc": "Fast and easy to use database for logs, which can efficiently handle terabytes of logs",
+   "fetched_at": "2026-06-13T05:37:10Z",
+   "ja": "テラバイト級のログを効率的に扱える高速で使いやすいログ用データベース"
+  },
+  "github.com/vmware-tanzu/velero": {
+   "desc": "Backup and migrate Kubernetes applications and their persistent volumes",
+   "fetched_at": "2026-06-13T05:37:10Z",
+   "ja": "Kubernetesアプリとその永続ボリュームのバックアップ・移行ツール"
+  },
+  "github.com/weaveworks/common": {
+   "desc": "Libraries used in multiple Weave projects",
+   "fetched_at": "2026-06-13T05:37:10Z",
+   "ja": "複数のWeaveプロジェクトで使われる共通ライブラリ"
+  },
+  "github.com/woodpecker-ci/woodpecker": {
+   "desc": "Woodpecker is a simple, yet powerful CI/CD engine with great extensibility.",
+   "fetched_at": "2026-06-13T05:37:10Z",
+   "ja": "シンプルかつ拡張性の高いCI/CDエンジンWoodpecker"
+  },
+  "github.com/xanzy/go-gitlab": {
+   "desc": "GitLab Go SDK",
+   "fetched_at": "2026-06-13T05:37:10Z",
+   "ja": "GitLab用のGo SDK"
+  },
+  "github.com/xeipuuv/gojsonschema": {
+   "desc": "An implementation of JSON Schema, draft v4 v6 & v7 - Go language",
+   "fetched_at": "2026-06-13T05:37:11Z",
+   "ja": "JSON Schema draft v4・v6・v7のGo実装"
+  },
+  "github.com/xlab/treeprint": {
+   "desc": "Package treeprint provides a simple ASCII tree composing tool.",
+   "fetched_at": "2026-06-13T05:37:11Z",
+   "ja": "ASCIIツリーを組み立てるシンプルなツール"
+  },
+  "github.com/yuin/gopher-lua": {
+   "desc": "GopherLua: VM and compiler for Lua in Go",
+   "fetched_at": "2026-06-13T05:37:11Z",
+   "ja": "Goで実装したLua用のVMとコンパイラGopherLua"
+  },
+  "github.com/zclconf/go-cty": {
+   "desc": "A type system for dynamic values in Go applications",
+   "fetched_at": "2026-06-13T05:37:11Z",
+   "ja": "Goアプリ向けの動的な値のための型システム"
+  },
+  "github.com/zclconf/go-cty-yaml": {
+   "desc": "YAML marshalling and unmarshalling for go-cty",
+   "fetched_at": "2026-06-13T05:37:11Z",
+   "ja": "go-cty用のYAMLマーシャル・アンマーシャル"
+  },
+  "go.mongodb.org/mongo-driver": {
+   "desc": "The Official Golang driver for MongoDB",
+   "fetched_at": "2026-06-13T05:37:12Z",
+   "ja": "MongoDB公式のGoドライバ"
+  },
+  "go.opencensus.io": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:12Z"
+  },
+  "go.opentelemetry.io/otel/bridge/opentracing": {
+   "desc": "OpenTelemetry Go API and SDK",
+   "fetched_at": "2026-06-13T05:37:12Z",
+   "ja": "OpenTelemetryのGo APIおよびSDK"
+  },
+  "go.opentelemetry.io/otel/exporters/jaeger": {
+   "desc": "OpenTelemetry Go API and SDK",
+   "fetched_at": "2026-06-13T05:37:12Z",
+   "ja": "OpenTelemetryのGo APIおよびSDK"
+  },
+  "go.step.sm/crypto": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:12Z"
+  },
+  "go.temporal.io/server": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:12Z"
+  },
+  "go.uber.org/multierr": {
+   "desc": "Combine one or more Go errors together",
+   "fetched_at": "2026-06-13T05:37:12Z",
+   "ja": "複数のGoエラーを1つにまとめるライブラリ"
+  },
+  "go.uber.org/ratelimit": {
+   "desc": "A Go blocking leaky-bucket rate limit implementation",
+   "fetched_at": "2026-06-13T05:37:13Z",
+   "ja": "Go向けのブロッキング型リーキーバケットのレート制限実装"
+  },
+  "golang.zx2c4.com/wireguard/wgctrl": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:13Z"
+  },
+  "gonum.org/v1/gonum": {
+   "desc": "Gonum is a set of numeric libraries for the Go programming language. It contains libraries for matrices, statistics, optimization, and more",
+   "fetched_at": "2026-06-13T05:37:13Z",
+   "ja": "Go向けの数値計算ライブラリ群。行列・統計・最適化などを含むGonum"
+  },
+  "gopkg.in/ini.v1": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:13Z"
+  },
+  "gorm.io/gorm": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:13Z"
+  },
+  "helm.sh/helm/v4": {
+   "desc": "The Kubernetes Package Manager",
+   "fetched_at": "2026-06-13T05:37:13Z",
+   "ja": "Kubernetesのパッケージマネージャ"
+  },
+  "k8s.io/cluster-bootstrap": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:13Z"
+  },
+  "k8s.io/controller-manager": {
+   "desc": "This repo is intended to contain common public library code for kube-controller-manager, cloud-controller-manager as well as any other controller managers which people build.",
+   "fetched_at": "2026-06-13T05:37:14Z",
+   "ja": "各種コントローラマネージャ向けの共通公開ライブラリコード"
+  },
+  "k8s.io/cri-api": {
+   "desc": "Container Runtime Interface (CRI) – a plugin interface which enables kubelet to use a wide variety of container runtimes.",
+   "fetched_at": "2026-06-13T05:37:14Z",
+   "ja": "kubeletが多様なコンテナランタイムを利用可能にするプラグインインターフェースCRI"
+  },
+  "k8s.io/gengo": {
+   "desc": "gengo library for code generation.",
+   "fetched_at": "2026-06-13T05:37:14Z",
+   "ja": "コード生成用のgengoライブラリ"
+  },
+  "k8s.io/klog": {
+   "desc": "Leveled execution logs for Go (fork of https://github.com/golang/glog)",
+   "fetched_at": "2026-06-13T05:37:14Z",
+   "ja": "Go向けのレベル付き実行ログ（glogのフォーク）"
+  },
+  "k8s.io/kube-aggregator": {
+   "desc": "Aggregator for Kubernetes-style API servers: dynamic registration, discovery summarization, secure proxy",
+   "fetched_at": "2026-06-13T05:37:14Z",
+   "ja": "Kubernetes風APIサーバ向けの動的登録・検出集約・安全なプロキシ機能"
+  },
+  "k8s.io/mount-utils": {
+   "desc": "Package mount defines an interface to mounting filesystems.",
+   "fetched_at": "2026-06-13T05:37:15Z",
+   "ja": "ファイルシステムのマウント用インターフェースを定義するパッケージ"
+  },
+  "knative.dev/pkg": {
+   "desc": "Knative common packages",
+   "fetched_at": "2026-06-13T05:37:15Z",
+   "ja": "Knativeの共通パッケージ"
+  },
+  "kubevirt.io/kubevirt": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:15Z"
+  },
+  "modernc.org/sqlite": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:15Z"
+  },
+  "sigs.k8s.io/cluster-api": {
+   "desc": "Home for Cluster API, a subproject of sig-cluster-lifecycle",
+   "fetched_at": "2026-06-13T05:37:15Z",
+   "ja": "sig-cluster-lifecycleのサブプロジェクトCluster API"
+  },
+  "sigs.k8s.io/controller-tools": {
+   "desc": "Tools to use with the controller-runtime libraries",
+   "fetched_at": "2026-06-13T05:37:15Z",
+   "ja": "controller-runtimeライブラリと併用するツール群"
+  },
+  "sigs.k8s.io/external-dns": {
+   "desc": "Configure external DNS servers dynamically from Kubernetes resources",
+   "fetched_at": "2026-06-13T05:37:16Z",
+   "ja": "Kubernetesリソースから外部DNSサーバを動的に設定するツール"
+  },
+  "sigs.k8s.io/gateway-api": {
+   "desc": "Repository for the next iteration of composite service (e.g. Ingress) and load balancing APIs.",
+   "fetched_at": "2026-06-13T05:37:16Z",
+   "ja": "複合サービスとロードバランシングAPIの次世代版リポジトリ"
+  },
+  "sigs.k8s.io/kind": {
+   "desc": "Kubernetes IN Docker - local clusters for testing Kubernetes",
+   "fetched_at": "2026-06-13T05:37:16Z",
+   "ja": "テスト用にDocker内でKubernetesを動かすローカルクラスタKind"
+  },
+  "sigs.k8s.io/knftables": {
+   "desc": "golang nftables library",
+   "fetched_at": "2026-06-13T05:37:16Z",
+   "ja": "Go向けのnftablesライブラリ"
+  },
+  "sigs.k8s.io/kustomize/api": {
+   "desc": "Customization of kubernetes YAML configurations",
+   "fetched_at": "2026-06-13T05:37:16Z",
+   "ja": "Kubernetes YAML設定のカスタマイズ用ライブラリ"
+  },
+  "sigs.k8s.io/release-utils": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:37:17Z"
+  },
+  "sigs.k8s.io/structured-merge-diff/v4": {
+   "desc": "Test cases and implementation for \"server-side apply\"",
+   "fetched_at": "2026-06-13T05:37:17Z",
+   "ja": "サーバーサイドapply向けのテストケースと実装"
+  },
+  "github.com/go-logr/zapr": {
+   "desc": "A logr implementation using Zap",
+   "fetched_at": "2026-06-13T05:43:37Z",
+   "ja": "Zap を用いた logr 実装"
+  },
+  "github.com/gobuffalo/flect": {
+   "desc": "An inflection engine for golang",
+   "fetched_at": "2026-06-13T05:43:37Z",
+   "ja": "Go 向けの語形変化エンジン"
+  },
+  "go.opentelemetry.io/otel/exporters/stdout/stdouttrace": {
+   "desc": "OpenTelemetry Go API and SDK",
+   "fetched_at": "2026-06-13T05:43:37Z",
+   "ja": "OpenTelemetryのGo APIおよびSDK"
+  },
+  "knative.dev/hack": {
+   "desc": "Knative common scripts.",
+   "fetched_at": "2026-06-13T05:43:38Z",
+   "ja": "Knativeの共通スクリプト"
+  },
+  "open-cluster-management.io/api": {
+   "desc": "",
+   "fetched_at": "2026-06-13T05:43:38Z"
   }
  },
  "summary": {
-  "total": 260,
-  "with_desc": 248,
-  "coverage": 0.954,
-  "updated_at": "2026-06-12T18:05:26Z"
+  "total": 591,
+  "with_desc": 556,
+  "coverage": 0.941,
+  "updated_at": "2026-06-13T05:43:38Z"
  },
  "ja_note": "日本語簡易説明は原文 summary を基に一括作成した固定データ（2026-06-13）"
 }

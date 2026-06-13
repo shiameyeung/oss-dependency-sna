@@ -1,0 +1,18 @@
+{
+ "package": "github.com/godbus/dbus/v5",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v5.2.2",
+ "nodes": [
+  "github.com/godbus/dbus/v5",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/godbus/dbus/v5",
+   "golang.org/x/sys"
+  ]
+ ]
+}

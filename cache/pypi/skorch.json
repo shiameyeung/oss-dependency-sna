@@ -1,0 +1,65 @@
+{
+ "package": "skorch",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:38Z",
+ "status": "ok",
+ "version": "1.4.0",
+ "nodes": [
+  "joblib",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "skorch",
+  "tabulate",
+  "threadpoolctl",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "skorch",
+   "numpy"
+  ],
+  [
+   "skorch",
+   "scikit-learn"
+  ],
+  [
+   "skorch",
+   "scipy"
+  ],
+  [
+   "skorch",
+   "tabulate"
+  ],
+  [
+   "skorch",
+   "tqdm"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

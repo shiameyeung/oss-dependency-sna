@@ -1,0 +1,61 @@
+{
+ "package": "github.com/cloudevents/sdk-go/v2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v2.16.2",
+ "nodes": [
+  "github.com/cloudevents/sdk-go/v2",
+  "github.com/google/go-cmp",
+  "github.com/google/uuid",
+  "github.com/json-iterator/go",
+  "github.com/stretchr/testify",
+  "github.com/valyala/bytebufferpool",
+  "go.uber.org/zap",
+  "golang.org/x/sync",
+  "golang.org/x/time"
+ ],
+ "edges": [
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "github.com/json-iterator/go"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "github.com/valyala/bytebufferpool"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "go.uber.org/zap"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/cloudevents/sdk-go/v2",
+   "golang.org/x/time"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.uber.org/zap",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

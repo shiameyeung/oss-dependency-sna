@@ -1,0 +1,79 @@
+{
+ "package": "github.com/gin-gonic/gin",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.12.0",
+ "nodes": [
+  "github.com/gin-gonic/gin",
+  "github.com/go-playground/validator/v10",
+  "github.com/goccy/go-yaml",
+  "github.com/json-iterator/go",
+  "github.com/mattn/go-isatty",
+  "github.com/modern-go/reflect2",
+  "github.com/pelletier/go-toml/v2",
+  "github.com/quic-go/quic-go",
+  "github.com/stretchr/testify",
+  "golang.org/x/net",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/go-playground/validator/v10"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/goccy/go-yaml"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/json-iterator/go"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/mattn/go-isatty"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/modern-go/reflect2"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/pelletier/go-toml/v2"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/quic-go/quic-go"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/gin-gonic/gin",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/modern-go/reflect2"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/quic-go/quic-go",
+   "golang.org/x/net"
+  ]
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "package": "gradio",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:48Z",
+ "status": "error",
+ "version": "6.18.0",
+ "error": "GetDependencies HTTP 404"
+}

@@ -1,0 +1,56 @@
+{
+ "package": "github.com/hashicorp/serf",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.10.2",
+ "nodes": [
+  "github.com/armon/circbuf",
+  "github.com/hashicorp/go-metrics",
+  "github.com/hashicorp/go-msgpack/v2",
+  "github.com/hashicorp/go-syslog",
+  "github.com/hashicorp/memberlist",
+  "github.com/hashicorp/serf",
+  "github.com/mitchellh/mapstructure",
+  "github.com/ryanuber/columnize"
+ ],
+ "edges": [
+  [
+   "github.com/hashicorp/serf",
+   "github.com/armon/circbuf"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/hashicorp/go-metrics"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/hashicorp/go-msgpack/v2"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/hashicorp/go-syslog"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/hashicorp/memberlist"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/mitchellh/mapstructure"
+  ],
+  [
+   "github.com/hashicorp/serf",
+   "github.com/ryanuber/columnize"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-metrics"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-msgpack/v2"
+  ]
+ ]
+}

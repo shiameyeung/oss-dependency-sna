@@ -2,7 +2,7 @@
  "package": "github.com/cortexproject/cortex",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.21.1",
  "nodes": [
@@ -11,14 +11,18 @@
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/service/dynamodb",
+  "github.com/bradfitz/gomemcache",
   "github.com/cespare/xxhash/v2",
   "github.com/cortexproject/cortex",
+  "github.com/cortexproject/promqlsmith",
   "github.com/dustin/go-humanize",
+  "github.com/edsrzf/mmap-go",
   "github.com/efficientgo/core",
   "github.com/facette/natsort",
   "github.com/felixge/fgprof",
   "github.com/go-kit/log",
   "github.com/go-openapi/strfmt",
+  "github.com/go-redis/redis/v8",
   "github.com/gogo/protobuf",
   "github.com/gogo/status",
   "github.com/golang/snappy",
@@ -29,6 +33,7 @@
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/hashicorp/consul/api",
   "github.com/hashicorp/go-cleanhttp",
+  "github.com/hashicorp/go-metrics",
   "github.com/hashicorp/go-sockaddr",
   "github.com/hashicorp/golang-lru/v2",
   "github.com/hashicorp/memberlist",
@@ -38,6 +43,7 @@
   "github.com/mitchellh/go-wordwrap",
   "github.com/munnerz/goautoneg",
   "github.com/oklog/ulid/v2",
+  "github.com/opentracing-contrib/go-grpc",
   "github.com/opentracing/opentracing-go",
   "github.com/pkg/errors",
   "github.com/prometheus/alertmanager",
@@ -46,6 +52,7 @@
   "github.com/prometheus/common",
   "github.com/prometheus/procfs",
   "github.com/prometheus/prometheus",
+  "github.com/segmentio/fasthash",
   "github.com/sony/gobreaker",
   "github.com/spf13/afero",
   "github.com/stretchr/testify",
@@ -53,11 +60,13 @@
   "github.com/thanos-io/thanos",
   "github.com/tjhop/slog-gokit",
   "github.com/uber/jaeger-client-go",
+  "github.com/weaveworks/common",
   "go.etcd.io/etcd/api/v3",
   "go.etcd.io/etcd/client/pkg/v3",
   "go.etcd.io/etcd/client/v3",
   "go.opentelemetry.io/collector/pdata",
   "go.opentelemetry.io/otel",
+  "go.opentelemetry.io/otel/bridge/opentracing",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
   "go.opentelemetry.io/otel/sdk",
@@ -95,11 +104,23 @@
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/bradfitz/gomemcache"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "github.com/cespare/xxhash/v2"
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/cortexproject/promqlsmith"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "github.com/dustin/go-humanize"
+  ],
+  [
+   "github.com/cortexproject/cortex",
+   "github.com/edsrzf/mmap-go"
   ],
   [
    "github.com/cortexproject/cortex",
@@ -120,6 +141,10 @@
   [
    "github.com/cortexproject/cortex",
    "github.com/go-openapi/strfmt"
+  ],
+  [
+   "github.com/cortexproject/cortex",
+   "github.com/go-redis/redis/v8"
   ],
   [
    "github.com/cortexproject/cortex",
@@ -163,6 +188,10 @@
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/hashicorp/go-metrics"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "github.com/hashicorp/go-sockaddr"
   ],
   [
@@ -199,6 +228,10 @@
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/opentracing-contrib/go-grpc"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "github.com/opentracing/opentracing-go"
   ],
   [
@@ -231,6 +264,10 @@
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/segmentio/fasthash"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "github.com/sony/gobreaker"
   ],
   [
@@ -259,6 +296,10 @@
   ],
   [
    "github.com/cortexproject/cortex",
+   "github.com/weaveworks/common"
+  ],
+  [
+   "github.com/cortexproject/cortex",
    "go.etcd.io/etcd/api/v3"
   ],
   [
@@ -276,6 +317,10 @@
   [
    "github.com/cortexproject/cortex",
    "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/cortexproject/cortex",
+   "go.opentelemetry.io/otel/bridge/opentracing"
   ],
   [
    "github.com/cortexproject/cortex",
@@ -342,6 +387,14 @@
    "github.com/aws/aws-sdk-go-v2"
   ],
   [
+   "github.com/cortexproject/promqlsmith",
+   "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/cortexproject/promqlsmith",
+   "github.com/stretchr/testify"
+  ],
+  [
    "github.com/efficientgo/core",
    "github.com/google/go-cmp"
   ],
@@ -360,6 +413,10 @@
   [
    "github.com/go-openapi/strfmt",
    "golang.org/x/net"
+  ],
+  [
+   "github.com/go-redis/redis/v8",
+   "github.com/cespare/xxhash/v2"
   ],
   [
    "github.com/gogo/status",
@@ -406,8 +463,24 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/hashicorp/go-metrics",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/hashicorp/go-metrics",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/hashicorp/go-metrics",
+   "github.com/prometheus/common"
+  ],
+  [
    "github.com/hashicorp/go-sockaddr",
    "github.com/mitchellh/go-wordwrap"
+  ],
+  [
+   "github.com/hashicorp/memberlist",
+   "github.com/hashicorp/go-metrics"
   ],
   [
    "github.com/hashicorp/memberlist",
@@ -440,6 +513,18 @@
   [
    "github.com/minio/minio-go/v7",
    "golang.org/x/net"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/opentracing-contrib/go-grpc",
+   "google.golang.org/grpc"
   ],
   [
    "github.com/opentracing/opentracing-go",
@@ -624,6 +709,10 @@
   [
    "github.com/prometheus/prometheus",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/prometheus/prometheus",
+   "github.com/edsrzf/mmap-go"
   ],
   [
    "github.com/prometheus/prometheus",
@@ -819,7 +908,15 @@
   ],
   [
    "github.com/thanos-io/thanos",
+   "github.com/bradfitz/gomemcache"
+  ],
+  [
+   "github.com/thanos-io/thanos",
    "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "github.com/cortexproject/promqlsmith"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -931,11 +1028,19 @@
   ],
   [
    "github.com/thanos-io/thanos",
+   "github.com/weaveworks/common"
+  ],
+  [
+   "github.com/thanos-io/thanos",
    "go.opentelemetry.io/collector/pdata"
   ],
   [
    "github.com/thanos-io/thanos",
    "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/thanos-io/thanos",
+   "go.opentelemetry.io/otel/bridge/opentracing"
   ],
   [
    "github.com/thanos-io/thanos",
@@ -1072,6 +1177,30 @@
   [
    "go.opentelemetry.io/otel",
    "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "github.com/opentracing-contrib/go-grpc"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "go.opentelemetry.io/otel/bridge/opentracing",
+   "google.golang.org/grpc"
   ],
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace",

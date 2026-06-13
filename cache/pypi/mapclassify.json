@@ -1,0 +1,79 @@
+{
+ "package": "mapclassify",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:54Z",
+ "status": "ok",
+ "version": "2.10.0",
+ "nodes": [
+  "joblib",
+  "mapclassify",
+  "narwhals",
+  "networkx",
+  "numpy",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "mapclassify",
+   "networkx"
+  ],
+  [
+   "mapclassify",
+   "numpy"
+  ],
+  [
+   "mapclassify",
+   "pandas"
+  ],
+  [
+   "mapclassify",
+   "scikit-learn"
+  ],
+  [
+   "mapclassify",
+   "scipy"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

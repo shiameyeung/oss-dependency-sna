@@ -2,17 +2,23 @@
  "package": "github.com/jaegertracing/jaeger",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.76.0",
  "nodes": [
+  "github.com/apache/thrift",
   "github.com/asaskevich/govalidator",
+  "github.com/cenkalti/backoff/v5",
+  "github.com/dgraph-io/badger/v4",
   "github.com/fsnotify/fsnotify",
+  "github.com/go-logr/zapr",
+  "github.com/gocql/gocql",
   "github.com/gogo/protobuf",
   "github.com/gorilla/handlers",
   "github.com/gorilla/mux",
   "github.com/jaegertracing/jaeger",
   "github.com/kr/pretty",
+  "github.com/olivere/elastic/v7",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/prometheus/common",
@@ -30,6 +36,7 @@
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
   "go.opentelemetry.io/otel/exporters/prometheus",
+  "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
   "go.opentelemetry.io/otel/metric",
   "go.opentelemetry.io/otel/sdk",
   "go.opentelemetry.io/otel/sdk/metric",
@@ -48,11 +55,31 @@
  "edges": [
   [
    "github.com/jaegertracing/jaeger",
+   "github.com/apache/thrift"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
    "github.com/asaskevich/govalidator"
   ],
   [
    "github.com/jaegertracing/jaeger",
+   "github.com/cenkalti/backoff/v5"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
+   "github.com/dgraph-io/badger/v4"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
    "github.com/fsnotify/fsnotify"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
+   "github.com/go-logr/zapr"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
+   "github.com/gocql/gocql"
   ],
   [
    "github.com/jaegertracing/jaeger",
@@ -69,6 +96,10 @@
   [
    "github.com/jaegertracing/jaeger",
    "github.com/kr/pretty"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
+   "github.com/olivere/elastic/v7"
   ],
   [
    "github.com/jaegertracing/jaeger",
@@ -140,6 +171,10 @@
   ],
   [
    "github.com/jaegertracing/jaeger",
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+  ],
+  [
+   "github.com/jaegertracing/jaeger",
    "go.opentelemetry.io/otel/metric"
   ],
   [
@@ -195,8 +230,40 @@
    "gopkg.in/yaml.v3"
   ],
   [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/dgraph-io/badger/v4",
+   "google.golang.org/protobuf"
+  ],
+  [
    "github.com/fsnotify/fsnotify",
    "golang.org/x/sys"
+  ],
+  [
+   "github.com/go-logr/zapr",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/go-logr/zapr",
+   "go.uber.org/zap"
+  ],
+  [
+   "github.com/olivere/elastic/v7",
+   "go.opentelemetry.io/otel"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -368,6 +435,10 @@
   ],
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+   "github.com/cenkalti/backoff/v5"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
    "github.com/stretchr/testify"
   ],
   [
@@ -409,6 +480,10 @@
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
    "google.golang.org/protobuf"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+   "github.com/cenkalti/backoff/v5"
   ],
   [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
@@ -489,6 +564,30 @@
   [
    "go.opentelemetry.io/otel/exporters/prometheus",
    "google.golang.org/protobuf"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "go.opentelemetry.io/otel/metric"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "go.opentelemetry.io/otel/sdk/metric"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+   "go.opentelemetry.io/otel/trace"
   ],
   [
    "go.opentelemetry.io/otel/metric",

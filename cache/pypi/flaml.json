@@ -1,0 +1,18 @@
+{
+ "package": "flaml",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:15Z",
+ "status": "ok",
+ "version": "2.6.0",
+ "nodes": [
+  "flaml",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "flaml",
+   "numpy"
+  ]
+ ]
+}

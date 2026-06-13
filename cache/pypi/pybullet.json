@@ -1,0 +1,12 @@
+{
+ "package": "pybullet",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:20Z",
+ "status": "ok",
+ "version": "3.2.7",
+ "nodes": [
+  "pybullet"
+ ],
+ "edges": []
+}

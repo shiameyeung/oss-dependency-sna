@@ -1,0 +1,27 @@
+{
+ "package": "github.com/vishvananda/netlink",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.3.1",
+ "nodes": [
+  "github.com/vishvananda/netlink",
+  "github.com/vishvananda/netns",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/vishvananda/netlink",
+   "github.com/vishvananda/netns"
+  ],
+  [
+   "github.com/vishvananda/netlink",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/vishvananda/netns",
+   "golang.org/x/sys"
+  ]
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "package": "bitsandbytes",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:10Z",
+ "status": "ok",
+ "version": "0.49.2",
+ "nodes": [
+  "bitsandbytes",
+  "numpy",
+  "packaging",
+  "torch"
+ ],
+ "edges": [
+  [
+   "bitsandbytes",
+   "numpy"
+  ],
+  [
+   "bitsandbytes",
+   "packaging"
+  ],
+  [
+   "bitsandbytes",
+   "torch"
+  ]
+ ]
+}

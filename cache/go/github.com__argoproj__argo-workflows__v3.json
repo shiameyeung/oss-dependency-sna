@@ -2,12 +2,15 @@
  "package": "github.com/argoproj/argo-workflows/v3",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v3.7.15",
  "nodes": [
   "cloud.google.com/go/storage",
+  "github.com/aliyun/aliyun-oss-go-sdk",
+  "github.com/argoproj/argo-events",
   "github.com/argoproj/argo-workflows/v3",
+  "github.com/argoproj/pkg",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/service/sts",
@@ -23,14 +26,19 @@
   "github.com/go-openapi/jsonreference",
   "github.com/go-sql-driver/mysql",
   "github.com/gogo/protobuf",
+  "github.com/golang/mock",
   "github.com/golang/protobuf",
   "github.com/google/go-containerregistry",
   "github.com/google/go-containerregistry/pkg/authn/k8schain",
   "github.com/gorilla/handlers",
   "github.com/grpc-ecosystem/go-grpc-middleware",
   "github.com/grpc-ecosystem/go-grpc-prometheus",
+  "github.com/grpc-ecosystem/grpc-gateway",
+  "github.com/itchyny/gojq",
+  "github.com/jcmturner/gokrb5/v8",
   "github.com/klauspost/pgzip",
   "github.com/masterminds/sprig/v3",
+  "github.com/mattn/go-sqlite3",
   "github.com/minio/minio-go/v7",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/common",
@@ -40,8 +48,10 @@
   "github.com/spf13/pflag",
   "github.com/spf13/viper",
   "github.com/stretchr/testify",
+  "github.com/testcontainers/testcontainers-go",
   "github.com/tidwall/gjson",
   "github.com/valyala/fasttemplate",
+  "github.com/xeipuuv/gojsonschema",
   "go.opentelemetry.io/contrib/instrumentation/runtime",
   "go.opentelemetry.io/otel",
   "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc",
@@ -65,6 +75,7 @@
   "k8s.io/apimachinery",
   "k8s.io/cli-runtime",
   "k8s.io/client-go",
+  "k8s.io/gengo",
   "k8s.io/klog/v2",
   "k8s.io/kube-openapi",
   "k8s.io/kubectl",
@@ -92,6 +103,18 @@
   [
    "github.com/argoproj/argo-workflows/v3",
    "github.com/masterminds/sprig/v3"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/aliyun/aliyun-oss-go-sdk"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/argoproj/argo-events"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/argoproj/pkg"
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
@@ -143,6 +166,10 @@
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
+   "github.com/golang/mock"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
    "github.com/golang/protobuf"
   ],
   [
@@ -167,7 +194,23 @@
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
+   "github.com/grpc-ecosystem/grpc-gateway"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/itchyny/gojq"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/jcmturner/gokrb5/v8"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
    "github.com/klauspost/pgzip"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/mattn/go-sqlite3"
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
@@ -207,11 +250,19 @@
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
+   "github.com/testcontainers/testcontainers-go"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
    "github.com/tidwall/gjson"
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
    "github.com/valyala/fasttemplate"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
+   "github.com/xeipuuv/gojsonschema"
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
@@ -307,6 +358,10 @@
   ],
   [
    "github.com/argoproj/argo-workflows/v3",
+   "k8s.io/gengo"
+  ],
+  [
+   "github.com/argoproj/argo-workflows/v3",
    "k8s.io/klog/v2"
   ],
   [
@@ -360,6 +415,154 @@
   [
    "cloud.google.com/go/storage",
    "google.golang.org/grpc"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/azure/azure-sdk-for-go/sdk/azidentity"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/masterminds/sprig/v3"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/go-git/go-git/v5"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/gogo/protobuf"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/grpc-ecosystem/grpc-gateway"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/itchyny/gojq"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/minio/minio-go/v7"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/robfig/cron/v3"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/spf13/viper"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "github.com/tidwall/gjson"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "google.golang.org/api"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/gengo"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/kube-openapi"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "k8s.io/utils"
+  ],
+  [
+   "github.com/argoproj/argo-events",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/dustin/go-humanize"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/grpc-ecosystem/grpc-gateway"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/minio/minio-go/v7"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/api"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/client-go"
+  ],
+  [
+   "github.com/argoproj/pkg",
+   "k8s.io/klog/v2"
   ],
   [
    "github.com/aws/aws-sdk-go-v2/config",
@@ -454,6 +657,26 @@
    "google.golang.org/grpc"
   ],
   [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "github.com/golang/protobuf"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/grpc-ecosystem/grpc-gateway",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/jcmturner/gokrb5/v8",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/jcmturner/gokrb5/v8",
+   "golang.org/x/crypto"
+  ],
+  [
    "github.com/minio/minio-go/v7",
    "github.com/dustin/go-humanize"
   ],
@@ -503,6 +726,22 @@
   ],
   [
    "github.com/spf13/viper",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/testcontainers/testcontainers-go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/testcontainers/testcontainers-go",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/testcontainers/testcontainers-go",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/xeipuuv/gojsonschema",
    "github.com/stretchr/testify"
   ],
   [
@@ -879,6 +1118,18 @@
   ],
   [
    "k8s.io/client-go",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "k8s.io/gengo",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "k8s.io/gengo",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/gengo",
    "sigs.k8s.io/yaml"
   ],
   [

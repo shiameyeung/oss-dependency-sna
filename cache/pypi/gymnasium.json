@@ -1,0 +1,33 @@
+{
+ "package": "gymnasium",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:41Z",
+ "status": "ok",
+ "version": "1.3.0",
+ "nodes": [
+  "cloudpickle",
+  "farama-notifications",
+  "gymnasium",
+  "numpy",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "gymnasium",
+   "cloudpickle"
+  ],
+  [
+   "gymnasium",
+   "farama-notifications"
+  ],
+  [
+   "gymnasium",
+   "numpy"
+  ],
+  [
+   "gymnasium",
+   "typing-extensions"
+  ]
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "package": "entgo.io/ent",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.14.6",
+ "nodes": [
+  "entgo.io/ent",
+  "github.com/data-dog/go-sqlmock",
+  "github.com/google/uuid",
+  "github.com/gorilla/websocket",
+  "github.com/json-iterator/go",
+  "github.com/mattn/go-sqlite3",
+  "github.com/mitchellh/mapstructure",
+  "github.com/modern-go/reflect2",
+  "github.com/olekukonko/tablewriter",
+  "github.com/spf13/cobra",
+  "github.com/stretchr/testify",
+  "go.opencensus.io",
+  "golang.org/x/sync",
+  "golang.org/x/tools"
+ ],
+ "edges": [
+  [
+   "entgo.io/ent",
+   "github.com/data-dog/go-sqlmock"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/google/uuid"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/gorilla/websocket"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/json-iterator/go"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/mattn/go-sqlite3"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/mitchellh/mapstructure"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/modern-go/reflect2"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/olekukonko/tablewriter"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "entgo.io/ent",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "entgo.io/ent",
+   "go.opencensus.io"
+  ],
+  [
+   "entgo.io/ent",
+   "golang.org/x/sync"
+  ],
+  [
+   "entgo.io/ent",
+   "golang.org/x/tools"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/modern-go/reflect2"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opencensus.io",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "golang.org/x/tools",
+   "golang.org/x/sync"
+  ]
+ ]
+}

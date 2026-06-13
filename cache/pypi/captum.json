@@ -1,0 +1,90 @@
+{
+ "package": "captum",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:02Z",
+ "status": "ok",
+ "version": "0.9.0",
+ "nodes": [
+  "captum",
+  "contourpy",
+  "cycler",
+  "fonttools",
+  "kiwisolver",
+  "matplotlib",
+  "numpy",
+  "packaging",
+  "pillow",
+  "pyparsing",
+  "python-dateutil",
+  "six",
+  "torch",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "captum",
+   "matplotlib"
+  ],
+  [
+   "captum",
+   "numpy"
+  ],
+  [
+   "captum",
+   "packaging"
+  ],
+  [
+   "captum",
+   "torch"
+  ],
+  [
+   "captum",
+   "tqdm"
+  ],
+  [
+   "contourpy",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "contourpy"
+  ],
+  [
+   "matplotlib",
+   "cycler"
+  ],
+  [
+   "matplotlib",
+   "fonttools"
+  ],
+  [
+   "matplotlib",
+   "kiwisolver"
+  ],
+  [
+   "matplotlib",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "packaging"
+  ],
+  [
+   "matplotlib",
+   "pillow"
+  ],
+  [
+   "matplotlib",
+   "pyparsing"
+  ],
+  [
+   "matplotlib",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ]
+ ]
+}

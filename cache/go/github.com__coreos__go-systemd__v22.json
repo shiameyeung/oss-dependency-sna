@@ -1,0 +1,27 @@
+{
+ "package": "github.com/coreos/go-systemd/v22",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v22.7.0",
+ "nodes": [
+  "github.com/coreos/go-systemd/v22",
+  "github.com/godbus/dbus/v5",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/coreos/go-systemd/v22",
+   "github.com/godbus/dbus/v5"
+  ],
+  [
+   "github.com/coreos/go-systemd/v22",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/godbus/dbus/v5",
+   "golang.org/x/sys"
+  ]
+ ]
+}

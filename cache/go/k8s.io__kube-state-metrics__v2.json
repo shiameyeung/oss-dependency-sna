@@ -2,12 +2,13 @@
  "package": "k8s.io/kube-state-metrics/v2",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v2.19.0",
  "nodes": [
   "github.com/fsnotify/fsnotify",
   "github.com/go-logr/logr",
+  "github.com/gobuffalo/flect",
   "github.com/google/go-cmp",
   "github.com/kimmachinegun/automemlimit",
   "github.com/oklog/run",
@@ -40,6 +41,10 @@
   [
    "k8s.io/kube-state-metrics/v2",
    "github.com/go-logr/logr"
+  ],
+  [
+   "k8s.io/kube-state-metrics/v2",
+   "github.com/gobuffalo/flect"
   ],
   [
    "k8s.io/kube-state-metrics/v2",
@@ -108,6 +113,10 @@
   [
    "k8s.io/kube-state-metrics/v2",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/gobuffalo/flect",
+   "github.com/stretchr/testify"
   ],
   [
    "github.com/prometheus/client_golang",

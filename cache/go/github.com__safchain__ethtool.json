@@ -1,0 +1,18 @@
+{
+ "package": "github.com/safchain/ethtool",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v0.7.0",
+ "nodes": [
+  "github.com/safchain/ethtool",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "github.com/safchain/ethtool",
+   "golang.org/x/sys"
+  ]
+ ]
+}

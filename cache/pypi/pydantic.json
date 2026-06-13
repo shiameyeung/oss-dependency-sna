@@ -1,0 +1,41 @@
+{
+ "package": "pydantic",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:49Z",
+ "status": "ok",
+ "version": "2.13.4",
+ "nodes": [
+  "annotated-types",
+  "pydantic",
+  "pydantic-core",
+  "typing-extensions",
+  "typing-inspection"
+ ],
+ "edges": [
+  [
+   "pydantic",
+   "annotated-types"
+  ],
+  [
+   "pydantic",
+   "pydantic-core"
+  ],
+  [
+   "pydantic",
+   "typing-extensions"
+  ],
+  [
+   "pydantic",
+   "typing-inspection"
+  ],
+  [
+   "pydantic-core",
+   "typing-extensions"
+  ],
+  [
+   "typing-inspection",
+   "typing-extensions"
+  ]
+ ]
+}

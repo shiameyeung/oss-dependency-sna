@@ -2,7 +2,7 @@
  "package": "github.com/cilium/cilium",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v1.19.4",
  "nodes": [
@@ -11,13 +11,17 @@
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+  "github.com/aws/aws-sdk-go-v2/service/ec2",
   "github.com/aws/smithy-go",
   "github.com/azure/azure-sdk-for-go/sdk/azcore",
   "github.com/azure/azure-sdk-for-go/sdk/azidentity",
   "github.com/blang/semver/v4",
   "github.com/cespare/xxhash/v2",
   "github.com/cilium/cilium",
+  "github.com/cilium/ebpf",
+  "github.com/cloudflare/cfssl",
   "github.com/containernetworking/cni",
+  "github.com/coreos/go-iptables",
   "github.com/coreos/go-systemd/v22",
   "github.com/davecgh/go-spew",
   "github.com/docker/docker",
@@ -41,23 +45,30 @@
   "github.com/grpc-ecosystem/go-grpc-middleware/v2",
   "github.com/grpc-ecosystem/go-grpc-prometheus",
   "github.com/hashicorp/go-hclog",
+  "github.com/hashicorp/go-immutable-radix/v2",
   "github.com/hashicorp/golang-lru/v2",
   "github.com/json-iterator/go",
   "github.com/mattn/go-shellwords",
   "github.com/mitchellh/go-wordwrap",
+  "github.com/onsi/ginkgo",
   "github.com/onsi/gomega",
   "github.com/pmezard/go-difflib",
+  "github.com/prometheus-community/pro-bing",
   "github.com/prometheus/client_golang",
   "github.com/prometheus/client_model",
   "github.com/prometheus/common",
   "github.com/prometheus/procfs",
+  "github.com/russross/blackfriday/v2",
   "github.com/sirupsen/logrus",
   "github.com/spf13/afero",
+  "github.com/spf13/cast",
   "github.com/spf13/cobra",
   "github.com/spf13/pflag",
   "github.com/spf13/viper",
+  "github.com/spiffe/go-spiffe/v2",
   "github.com/stretchr/testify",
   "github.com/tidwall/gjson",
+  "github.com/tidwall/sjson",
   "github.com/vishvananda/netlink",
   "github.com/vishvananda/netns",
   "go.etcd.io/etcd/api/v3",
@@ -77,6 +88,7 @@
   "golang.org/x/text",
   "golang.org/x/time",
   "golang.org/x/tools",
+  "golang.zx2c4.com/wireguard/wgctrl",
   "google.golang.org/genproto/googleapis/rpc",
   "google.golang.org/grpc",
   "google.golang.org/protobuf",
@@ -90,6 +102,7 @@
   "k8s.io/kubectl",
   "k8s.io/utils",
   "sigs.k8s.io/controller-runtime",
+  "sigs.k8s.io/gateway-api",
   "sigs.k8s.io/mcs-api",
   "sigs.k8s.io/yaml"
  ],
@@ -124,6 +137,10 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/aws/aws-sdk-go-v2/service/ec2"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/aws/smithy-go"
   ],
   [
@@ -136,7 +153,19 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/cilium/ebpf"
+  ],
+  [
+   "github.com/cilium/cilium",
+   "github.com/cloudflare/cfssl"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/containernetworking/cni"
+  ],
+  [
+   "github.com/cilium/cilium",
+   "github.com/coreos/go-iptables"
   ],
   [
    "github.com/cilium/cilium",
@@ -232,6 +261,10 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/hashicorp/go-immutable-radix/v2"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/hashicorp/golang-lru/v2"
   ],
   [
@@ -248,11 +281,19 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/onsi/ginkgo"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/onsi/gomega"
   ],
   [
    "github.com/cilium/cilium",
    "github.com/pmezard/go-difflib"
+  ],
+  [
+   "github.com/cilium/cilium",
+   "github.com/prometheus-community/pro-bing"
   ],
   [
    "github.com/cilium/cilium",
@@ -272,11 +313,19 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/russross/blackfriday/v2"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/sirupsen/logrus"
   ],
   [
    "github.com/cilium/cilium",
    "github.com/spf13/afero"
+  ],
+  [
+   "github.com/cilium/cilium",
+   "github.com/spf13/cast"
   ],
   [
    "github.com/cilium/cilium",
@@ -292,11 +341,19 @@
   ],
   [
    "github.com/cilium/cilium",
+   "github.com/spiffe/go-spiffe/v2"
+  ],
+  [
+   "github.com/cilium/cilium",
    "github.com/stretchr/testify"
   ],
   [
    "github.com/cilium/cilium",
    "github.com/tidwall/gjson"
+  ],
+  [
+   "github.com/cilium/cilium",
+   "github.com/tidwall/sjson"
   ],
   [
    "github.com/cilium/cilium",
@@ -376,6 +433,10 @@
   ],
   [
    "github.com/cilium/cilium",
+   "golang.zx2c4.com/wireguard/wgctrl"
+  ],
+  [
+   "github.com/cilium/cilium",
    "google.golang.org/genproto/googleapis/rpc"
   ],
   [
@@ -428,6 +489,10 @@
   ],
   [
    "github.com/cilium/cilium",
+   "sigs.k8s.io/gateway-api"
+  ],
+  [
+   "github.com/cilium/cilium",
    "sigs.k8s.io/mcs-api"
   ],
   [
@@ -465,6 +530,34 @@
   [
    "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
    "github.com/aws/smithy-go"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/ec2",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/aws/aws-sdk-go-v2/service/ec2",
+   "github.com/aws/smithy-go"
+  ],
+  [
+   "github.com/cilium/ebpf",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/cilium/ebpf",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/cilium/ebpf",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/cloudflare/cfssl",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/cloudflare/cfssl",
+   "golang.org/x/crypto"
   ],
   [
    "github.com/containernetworking/cni",
@@ -631,6 +724,14 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/hashicorp/go-immutable-radix/v2",
+   "github.com/hashicorp/golang-lru/v2"
+  ],
+  [
+   "github.com/hashicorp/go-immutable-radix/v2",
+   "golang.org/x/exp"
+  ],
+  [
    "github.com/json-iterator/go",
    "github.com/davecgh/go-spew"
   ],
@@ -653,6 +754,18 @@
   [
    "github.com/onsi/gomega",
    "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus-community/pro-bing",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/prometheus-community/pro-bing",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/prometheus-community/pro-bing",
+   "golang.org/x/sync"
   ],
   [
    "github.com/prometheus/client_golang",
@@ -760,6 +873,10 @@
   ],
   [
    "github.com/spf13/viper",
+   "github.com/spf13/cast"
+  ],
+  [
+   "github.com/spf13/viper",
    "github.com/spf13/pflag"
   ],
   [
@@ -771,12 +888,28 @@
    "go.yaml.in/yaml/v3"
   ],
   [
+   "github.com/spiffe/go-spiffe/v2",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/spiffe/go-spiffe/v2",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/spiffe/go-spiffe/v2",
+   "google.golang.org/protobuf"
+  ],
+  [
    "github.com/stretchr/testify",
    "github.com/davecgh/go-spew"
   ],
   [
    "github.com/stretchr/testify",
    "github.com/pmezard/go-difflib"
+  ],
+  [
+   "github.com/tidwall/sjson",
+   "github.com/tidwall/gjson"
   ],
   [
    "github.com/vishvananda/netlink",
@@ -951,6 +1084,18 @@
    "golang.org/x/sync"
   ],
   [
+   "golang.zx2c4.com/wireguard/wgctrl",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "golang.zx2c4.com/wireguard/wgctrl",
+   "golang.org/x/crypto"
+  ],
+  [
+   "golang.zx2c4.com/wireguard/wgctrl",
+   "golang.org/x/sys"
+  ],
+  [
    "google.golang.org/genproto/googleapis/rpc",
    "google.golang.org/protobuf"
   ],
@@ -969,6 +1114,10 @@
   [
    "google.golang.org/grpc",
    "github.com/google/uuid"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/spiffe/go-spiffe/v2"
   ],
   [
    "google.golang.org/grpc",
@@ -1336,6 +1485,10 @@
   ],
   [
    "k8s.io/kubectl",
+   "github.com/russross/blackfriday/v2"
+  ],
+  [
+   "k8s.io/kubectl",
    "github.com/spf13/cobra"
   ],
   [
@@ -1465,6 +1618,18 @@
   [
    "sigs.k8s.io/controller-runtime",
    "sigs.k8s.io/yaml"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "sigs.k8s.io/gateway-api",
+   "k8s.io/client-go"
   ],
   [
    "sigs.k8s.io/mcs-api",

@@ -1,0 +1,104 @@
+{
+ "package": "cartopy",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:54Z",
+ "status": "ok",
+ "version": "0.25.0",
+ "nodes": [
+  "cartopy",
+  "certifi",
+  "contourpy",
+  "cycler",
+  "fonttools",
+  "kiwisolver",
+  "matplotlib",
+  "numpy",
+  "packaging",
+  "pillow",
+  "pyparsing",
+  "pyproj",
+  "pyshp",
+  "python-dateutil",
+  "shapely",
+  "six"
+ ],
+ "edges": [
+  [
+   "cartopy",
+   "matplotlib"
+  ],
+  [
+   "cartopy",
+   "numpy"
+  ],
+  [
+   "cartopy",
+   "packaging"
+  ],
+  [
+   "cartopy",
+   "pyproj"
+  ],
+  [
+   "cartopy",
+   "pyshp"
+  ],
+  [
+   "cartopy",
+   "shapely"
+  ],
+  [
+   "contourpy",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "contourpy"
+  ],
+  [
+   "matplotlib",
+   "cycler"
+  ],
+  [
+   "matplotlib",
+   "fonttools"
+  ],
+  [
+   "matplotlib",
+   "kiwisolver"
+  ],
+  [
+   "matplotlib",
+   "numpy"
+  ],
+  [
+   "matplotlib",
+   "packaging"
+  ],
+  [
+   "matplotlib",
+   "pillow"
+  ],
+  [
+   "matplotlib",
+   "pyparsing"
+  ],
+  [
+   "matplotlib",
+   "python-dateutil"
+  ],
+  [
+   "pyproj",
+   "certifi"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "shapely",
+   "numpy"
+  ]
+ ]
+}

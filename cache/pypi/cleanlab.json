@@ -1,0 +1,80 @@
+{
+ "package": "cleanlab",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:30:03Z",
+ "status": "ok",
+ "version": "2.9.0",
+ "nodes": [
+  "cleanlab",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "termcolor",
+  "threadpoolctl",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "cleanlab",
+   "numpy"
+  ],
+  [
+   "cleanlab",
+   "pandas"
+  ],
+  [
+   "cleanlab",
+   "scikit-learn"
+  ],
+  [
+   "cleanlab",
+   "termcolor"
+  ],
+  [
+   "cleanlab",
+   "tqdm"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

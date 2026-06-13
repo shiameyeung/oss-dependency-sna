@@ -1,0 +1,18 @@
+{
+ "package": "biopython",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:58Z",
+ "status": "ok",
+ "version": "1.87.0",
+ "nodes": [
+  "biopython",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "biopython",
+   "numpy"
+  ]
+ ]
+}

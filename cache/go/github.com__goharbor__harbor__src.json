@@ -2,9 +2,9 @@
  "package": "github.com/goharbor/harbor/src",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
- "version": "v0.0.0-20260612020924-c8ed06b1df6a",
+ "version": "v0.0.0-20260612110023-a3815710ae16",
  "nodes": [
   "github.com/aliyun/alibaba-cloud-sdk-go",
   "github.com/asaskevich/govalidator",
@@ -12,9 +12,12 @@
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/smithy-go",
+  "github.com/bmatcuk/doublestar",
   "github.com/cenkalti/backoff/v4",
   "github.com/cloudevents/sdk-go/v2",
   "github.com/coreos/go-oidc/v3",
+  "github.com/docker/distribution",
+  "github.com/go-ldap/ldap/v3",
   "github.com/go-openapi/errors",
   "github.com/go-openapi/loads",
   "github.com/go-openapi/runtime",
@@ -22,6 +25,7 @@
   "github.com/go-openapi/strfmt",
   "github.com/go-openapi/swag",
   "github.com/go-openapi/validate",
+  "github.com/goccy/go-yaml",
   "github.com/goharbor/harbor/src",
   "github.com/golang-jwt/jwt/v5",
   "github.com/google/go-containerregistry",
@@ -41,16 +45,17 @@
   "github.com/stretchr/testify",
   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
   "go.opentelemetry.io/otel",
+  "go.opentelemetry.io/otel/exporters/jaeger",
   "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
   "go.opentelemetry.io/otel/sdk",
   "go.opentelemetry.io/otel/trace",
+  "go.uber.org/ratelimit",
   "golang.org/x/crypto",
   "golang.org/x/net",
   "golang.org/x/oauth2",
   "golang.org/x/sync",
   "golang.org/x/text",
   "golang.org/x/time",
-  "gopkg.in/yaml.v2",
   "helm.sh/helm/v3",
   "k8s.io/api",
   "k8s.io/apimachinery",
@@ -88,6 +93,10 @@
   ],
   [
    "github.com/goharbor/harbor/src",
+   "github.com/bmatcuk/doublestar"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
    "github.com/cenkalti/backoff/v4"
   ],
   [
@@ -97,6 +106,14 @@
   [
    "github.com/goharbor/harbor/src",
    "github.com/coreos/go-oidc/v3"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
+   "github.com/docker/distribution"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
+   "github.com/go-ldap/ldap/v3"
   ],
   [
    "github.com/goharbor/harbor/src",
@@ -125,6 +142,10 @@
   [
    "github.com/goharbor/harbor/src",
    "github.com/go-openapi/validate"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
+   "github.com/goccy/go-yaml"
   ],
   [
    "github.com/goharbor/harbor/src",
@@ -196,6 +217,10 @@
   ],
   [
    "github.com/goharbor/harbor/src",
+   "go.opentelemetry.io/otel/exporters/jaeger"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
   ],
   [
@@ -205,6 +230,10 @@
   [
    "github.com/goharbor/harbor/src",
    "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "github.com/goharbor/harbor/src",
+   "go.uber.org/ratelimit"
   ],
   [
    "github.com/goharbor/harbor/src",
@@ -229,10 +258,6 @@
   [
    "github.com/goharbor/harbor/src",
    "golang.org/x/time"
-  ],
-  [
-   "github.com/goharbor/harbor/src",
-   "gopkg.in/yaml.v2"
   ],
   [
    "github.com/goharbor/harbor/src",
@@ -301,6 +326,18 @@
   [
    "github.com/coreos/go-oidc/v3",
    "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/go-ldap/ldap/v3",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/go-ldap/ldap/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/go-ldap/ldap/v3",
+   "golang.org/x/crypto"
   ],
   [
    "github.com/go-openapi/loads",
@@ -435,6 +472,22 @@
    "go.opentelemetry.io/otel/trace"
   ],
   [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "go.opentelemetry.io/otel/exporters/jaeger",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
    "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
    "github.com/stretchr/testify"
   ],
@@ -473,6 +526,10 @@
   [
    "go.opentelemetry.io/otel/trace",
    "go.opentelemetry.io/otel"
+  ],
+  [
+   "go.uber.org/ratelimit",
+   "github.com/stretchr/testify"
   ],
   [
    "golang.org/x/crypto",

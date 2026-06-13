@@ -1,0 +1,65 @@
+{
+ "package": "bayesian-optimization",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:29:55Z",
+ "status": "ok",
+ "version": "3.3.0",
+ "nodes": [
+  "bayesian-optimization",
+  "colorama",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "packaging",
+  "scikit-learn",
+  "scipy",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "bayesian-optimization",
+   "colorama"
+  ],
+  [
+   "bayesian-optimization",
+   "numpy"
+  ],
+  [
+   "bayesian-optimization",
+   "packaging"
+  ],
+  [
+   "bayesian-optimization",
+   "scikit-learn"
+  ],
+  [
+   "bayesian-optimization",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

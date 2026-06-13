@@ -1,0 +1,38 @@
+{
+ "package": "github.com/digitalocean/godo",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.195.0",
+ "nodes": [
+  "github.com/digitalocean/godo",
+  "github.com/google/go-querystring",
+  "github.com/hashicorp/go-retryablehttp",
+  "github.com/stretchr/testify",
+  "golang.org/x/oauth2",
+  "golang.org/x/time"
+ ],
+ "edges": [
+  [
+   "github.com/digitalocean/godo",
+   "github.com/google/go-querystring"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "github.com/hashicorp/go-retryablehttp"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/digitalocean/godo",
+   "golang.org/x/time"
+  ]
+ ]
+}

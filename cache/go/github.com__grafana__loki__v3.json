@@ -2,26 +2,37 @@
  "package": "github.com/grafana/loki/v3",
  "system": "go",
  "api": "https://api.deps.dev/v3",
- "fetched_at": "2026-06-12T08:25:15Z",
+ "fetched_at": "2026-06-13T05:43:36Z",
  "status": "ok",
  "version": "v3.7.2",
  "nodes": [
+  "cloud.google.com/go/pubsub/v2",
   "cloud.google.com/go/storage",
   "dario.cat/mergo",
   "github.com/alecthomas/kingpin/v2",
   "github.com/alecthomas/units",
   "github.com/alicebob/miniredis/v2",
+  "github.com/aliyun/aliyun-oss-go-sdk",
   "github.com/aws/aws-sdk-go-v2",
   "github.com/aws/aws-sdk-go-v2/config",
   "github.com/aws/aws-sdk-go-v2/credentials",
   "github.com/aws/aws-sdk-go-v2/service/dynamodb",
   "github.com/aws/aws-sdk-go-v2/service/s3",
   "github.com/aws/smithy-go",
+  "github.com/azure/azure-pipeline-go",
+  "github.com/azure/azure-storage-blob-go",
+  "github.com/azure/go-autorest/autorest",
+  "github.com/azure/go-autorest/autorest/adal",
+  "github.com/azure/go-autorest/autorest/azure/auth",
   "github.com/bmatcuk/doublestar/v4",
   "github.com/buger/jsonparser",
   "github.com/cespare/xxhash/v2",
+  "github.com/containerd/fifo",
+  "github.com/cristalhq/hedgedhttp",
   "github.com/davecgh/go-spew",
+  "github.com/dennwc/varint",
   "github.com/docker/docker",
+  "github.com/drone/envsubst",
   "github.com/dustin/go-humanize",
   "github.com/efficientgo/core",
   "github.com/facette/natsort",
@@ -29,6 +40,7 @@
   "github.com/felixge/fgprof",
   "github.com/fsnotify/fsnotify",
   "github.com/go-kit/log",
+  "github.com/go-logfmt/logfmt",
   "github.com/go-sql-driver/mysql",
   "github.com/gogo/protobuf",
   "github.com/gogo/status",
@@ -38,23 +50,29 @@
   "github.com/google/uuid",
   "github.com/gorilla/mux",
   "github.com/gorilla/websocket",
+  "github.com/grafana/dskit",
   "github.com/grafana/loki/v3",
   "github.com/grafana/regexp",
   "github.com/grpc-ecosystem/go-grpc-middleware/v2",
   "github.com/hashicorp/consul/api",
   "github.com/hashicorp/golang-lru/v2",
   "github.com/ibm/sarama",
+  "github.com/influxdata/telegraf",
   "github.com/json-iterator/go",
   "github.com/klauspost/compress",
   "github.com/klauspost/pgzip",
   "github.com/masterminds/sprig/v3",
   "github.com/minio/minio-go/v7",
+  "github.com/mitchellh/colorstring",
   "github.com/mitchellh/go-wordwrap",
   "github.com/mitchellh/mapstructure",
+  "github.com/modern-go/reflect2",
   "github.com/mwitkow/go-conntrack",
+  "github.com/nytimes/gziphandler",
   "github.com/oklog/run",
   "github.com/oklog/ulid/v2",
   "github.com/opentracing/opentracing-go",
+  "github.com/pierrec/lz4/v4",
   "github.com/pkg/errors",
   "github.com/prometheus/alertmanager",
   "github.com/prometheus/client_golang",
@@ -64,11 +82,15 @@
   "github.com/prometheus/prometheus",
   "github.com/prometheus/sigv4",
   "github.com/redis/go-redis/v9",
+  "github.com/segmentio/fasthash",
+  "github.com/shirou/gopsutil/v4",
   "github.com/sirupsen/logrus",
   "github.com/spf13/afero",
   "github.com/stretchr/testify",
   "github.com/thanos-io/objstore",
   "github.com/tjhop/slog-gokit",
+  "github.com/twmb/franz-go",
+  "github.com/twmb/franz-go/pkg/kfake",
   "github.com/uber/jaeger-client-go",
   "github.com/xdg-go/scram",
   "go.etcd.io/bbolt",
@@ -102,6 +124,10 @@
  "edges": [
   [
    "github.com/grafana/loki/v3",
+   "cloud.google.com/go/pubsub/v2"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "cloud.google.com/go/storage"
   ],
   [
@@ -110,11 +136,35 @@
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/azure/azure-pipeline-go"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/azure/azure-storage-blob-go"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/azure/go-autorest/autorest"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/azure/go-autorest/autorest/adal"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/azure/go-autorest/autorest/azure/auth"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/ibm/sarama"
   ],
   [
    "github.com/grafana/loki/v3",
    "github.com/masterminds/sprig/v3"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/nytimes/gziphandler"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -127,6 +177,10 @@
   [
    "github.com/grafana/loki/v3",
    "github.com/alicebob/miniredis/v2"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/aliyun/aliyun-oss-go-sdk"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -166,11 +220,27 @@
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/containerd/fifo"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/cristalhq/hedgedhttp"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/davecgh/go-spew"
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/dennwc/varint"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/docker/docker"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/drone/envsubst"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -199,6 +269,10 @@
   [
    "github.com/grafana/loki/v3",
    "github.com/go-kit/log"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/go-logfmt/logfmt"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -238,6 +312,10 @@
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/grafana/dskit"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/grafana/regexp"
   ],
   [
@@ -251,6 +329,10 @@
   [
    "github.com/grafana/loki/v3",
    "github.com/hashicorp/golang-lru/v2"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/influxdata/telegraf"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -270,11 +352,19 @@
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/mitchellh/colorstring"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/mitchellh/go-wordwrap"
   ],
   [
    "github.com/grafana/loki/v3",
    "github.com/mitchellh/mapstructure"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/modern-go/reflect2"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -291,6 +381,10 @@
   [
    "github.com/grafana/loki/v3",
    "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/pierrec/lz4/v4"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -330,6 +424,14 @@
   ],
   [
    "github.com/grafana/loki/v3",
+   "github.com/segmentio/fasthash"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/shirou/gopsutil/v4"
+  ],
+  [
+   "github.com/grafana/loki/v3",
    "github.com/sirupsen/logrus"
   ],
   [
@@ -347,6 +449,14 @@
   [
    "github.com/grafana/loki/v3",
    "github.com/tjhop/slog-gokit"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/twmb/franz-go"
+  ],
+  [
+   "github.com/grafana/loki/v3",
+   "github.com/twmb/franz-go/pkg/kfake"
   ],
   [
    "github.com/grafana/loki/v3",
@@ -465,6 +575,42 @@
    "k8s.io/utils"
   ],
   [
+   "cloud.google.com/go/pubsub/v2",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "github.com/google/uuid"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "golang.org/x/sync"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "google.golang.org/api"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "google.golang.org/grpc"
+  ],
+  [
+   "cloud.google.com/go/pubsub/v2",
+   "google.golang.org/protobuf"
+  ],
+  [
    "cloud.google.com/go/storage",
    "github.com/google/go-cmp"
   ],
@@ -507,6 +653,38 @@
   [
    "cloud.google.com/go/storage",
    "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/ibm/sarama",
+   "golang.org/x/sys"
   ],
   [
    "github.com/alecthomas/kingpin/v2",
@@ -561,6 +739,18 @@
    "github.com/aws/smithy-go"
   ],
   [
+   "github.com/containerd/fifo",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/containerd/fifo",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/drone/envsubst",
+   "github.com/google/go-cmp"
+  ],
+  [
    "github.com/efficientgo/core",
    "github.com/davecgh/go-spew"
   ],
@@ -581,6 +771,14 @@
    "golang.org/x/sys"
   ],
   [
+   "github.com/go-kit/log",
+   "github.com/go-logfmt/logfmt"
+  ],
+  [
+   "github.com/go-logfmt/logfmt",
+   "github.com/google/go-cmp"
+  ],
+  [
    "github.com/gogo/status",
    "github.com/gogo/protobuf"
   ],
@@ -598,6 +796,142 @@
   ],
   [
    "github.com/golang/protobuf",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/alecthomas/units"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/cristalhq/hedgedhttp"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/davecgh/go-spew"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/facette/natsort"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/go-kit/log"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/gogo/protobuf"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/gogo/status"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/gorilla/mux"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/hashicorp/consul/api"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/hashicorp/golang-lru/v2"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/pkg/errors"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "github.com/uber/jaeger-client-go"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/otel"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/otel/sdk"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.opentelemetry.io/otel/trace"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.uber.org/atomic"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "golang.org/x/time"
+  ],
+  [
+   "github.com/grafana/dskit",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/grafana/dskit",
    "google.golang.org/protobuf"
   ],
   [
@@ -629,8 +963,208 @@
    "github.com/stretchr/testify"
   ],
   [
+   "github.com/influxdata/telegraf",
+   "cloud.google.com/go/pubsub/v2"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "cloud.google.com/go/storage"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/azure/go-autorest/autorest"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/azure/go-autorest/autorest/adal"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/azure/go-autorest/autorest/azure/auth"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/ibm/sarama"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/masterminds/sprig/v3"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/alecthomas/units"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/aws/aws-sdk-go-v2"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/aws/aws-sdk-go-v2/config"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/aws/aws-sdk-go-v2/credentials"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/aws/aws-sdk-go-v2/service/dynamodb"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/aws/smithy-go"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/dustin/go-humanize"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/fatih/color"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/go-logfmt/logfmt"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/go-sql-driver/mysql"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/gogo/protobuf"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/golang/snappy"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/google/uuid"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/gorilla/mux"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/gorilla/websocket"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/hashicorp/consul/api"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/hashicorp/golang-lru/v2"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/klauspost/pgzip"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/opentracing/opentracing-go"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/prometheus/prometheus"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/redis/go-redis/v9"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/shirou/gopsutil/v4"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "go.opentelemetry.io/collector/pdata"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "go.yaml.in/yaml/v3"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/oauth2"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/sync"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/text"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "golang.org/x/tools"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "google.golang.org/api"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/influxdata/telegraf",
+   "k8s.io/apimachinery"
+  ],
+  [
    "github.com/json-iterator/go",
    "github.com/davecgh/go-spew"
+  ],
+  [
+   "github.com/json-iterator/go",
+   "github.com/modern-go/reflect2"
   ],
   [
    "github.com/json-iterator/go",
@@ -735,6 +1269,14 @@
   [
    "github.com/prometheus/alertmanager",
    "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/twmb/franz-go"
+  ],
+  [
+   "github.com/prometheus/alertmanager",
+   "github.com/twmb/franz-go/pkg/kfake"
   ],
   [
    "github.com/prometheus/alertmanager",
@@ -882,6 +1424,10 @@
   ],
   [
    "github.com/prometheus/prometheus",
+   "github.com/dennwc/varint"
+  ],
+  [
+   "github.com/prometheus/prometheus",
    "github.com/facette/natsort"
   ],
   [
@@ -1065,6 +1611,18 @@
    "go.uber.org/atomic"
   ],
   [
+   "github.com/shirou/gopsutil/v4",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/shirou/gopsutil/v4",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/shirou/gopsutil/v4",
+   "golang.org/x/sys"
+  ],
+  [
    "github.com/sirupsen/logrus",
    "github.com/stretchr/testify"
   ],
@@ -1087,6 +1645,10 @@
   [
    "github.com/thanos-io/objstore",
    "cloud.google.com/go/storage"
+  ],
+  [
+   "github.com/thanos-io/objstore",
+   "github.com/aliyun/aliyun-oss-go-sdk"
   ],
   [
    "github.com/thanos-io/objstore",
@@ -1162,7 +1724,31 @@
   ],
   [
    "github.com/tjhop/slog-gokit",
+   "github.com/go-logfmt/logfmt"
+  ],
+  [
+   "github.com/tjhop/slog-gokit",
    "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/twmb/franz-go",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/twmb/franz-go",
+   "github.com/pierrec/lz4/v4"
+  ],
+  [
+   "github.com/twmb/franz-go",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/twmb/franz-go/pkg/kfake",
+   "github.com/twmb/franz-go"
+  ],
+  [
+   "github.com/twmb/franz-go/pkg/kfake",
+   "golang.org/x/crypto"
   ],
   [
    "go.etcd.io/bbolt",

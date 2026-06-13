@@ -1,0 +1,28 @@
+{
+ "package": "github.com/eclipse/paho.mqtt.golang",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.5.1",
+ "nodes": [
+  "github.com/eclipse/paho.mqtt.golang",
+  "github.com/gorilla/websocket",
+  "golang.org/x/net",
+  "golang.org/x/sync"
+ ],
+ "edges": [
+  [
+   "github.com/eclipse/paho.mqtt.golang",
+   "github.com/gorilla/websocket"
+  ],
+  [
+   "github.com/eclipse/paho.mqtt.golang",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/eclipse/paho.mqtt.golang",
+   "golang.org/x/sync"
+  ]
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "package": "go.etcd.io/bbolt",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-13T05:43:36Z",
+ "status": "ok",
+ "version": "v1.4.3",
+ "nodes": [
+  "github.com/spf13/cobra",
+  "github.com/spf13/pflag",
+  "github.com/stretchr/testify",
+  "go.etcd.io/bbolt",
+  "golang.org/x/sync",
+  "golang.org/x/sys"
+ ],
+ "edges": [
+  [
+   "go.etcd.io/bbolt",
+   "github.com/spf13/cobra"
+  ],
+  [
+   "go.etcd.io/bbolt",
+   "github.com/spf13/pflag"
+  ],
+  [
+   "go.etcd.io/bbolt",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.etcd.io/bbolt",
+   "golang.org/x/sync"
+  ],
+  [
+   "go.etcd.io/bbolt",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/spf13/cobra",
+   "github.com/spf13/pflag"
+  ]
+ ]
+}
