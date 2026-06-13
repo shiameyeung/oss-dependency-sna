@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>OSS 依存ネットワーク分析デモ v2 — DSS 型分析支援システム</title>
+<title>OSS 依存ネットワーク分析デモ — 意思決定支援（DSS）型の分析支援システム</title>
 <style>
   /* 配色: 2026-06-03 発表スライドのパレットに統一（クリーム地・青・キャンディイエロー） */
   :root { --bg:#FFFDF5; --panel:#ffffff; --panel2:#EAF4FF; --txt:#1F2D40; --sub:#5C6B7A;
@@ -51,7 +51,8 @@
   .badge { display:inline-block; font-size:11px; font-weight:700; color:#fff; border-radius:4px;
            padding:2px 8px; margin:0 4px 6px 0; cursor:help; position:relative; }
   /* 即時表示のツールチップ（ネイティブ title の遅延を避ける） */
-  .badge[data-tip]:hover::after {
+  button[data-tip] { position:relative; }
+  [data-tip]:hover::after {
     content: attr(data-tip); position:absolute; left:0; top:calc(100% + 4px);
     background:#1F2D40; color:#fff; font-size:11px; font-weight:400; line-height:1.45;
     padding:6px 9px; border-radius:6px; width:max-content; max-width:230px; white-space:normal;
@@ -121,7 +122,7 @@
         <g id="edges"></g><g id="nodes"></g><g id="labels"></g>
       </g>
     </svg>
-    <button id="zoomReset" title="表示をリセット">⟲</button>
+    <button id="zoomReset">⟲</button>
     <div id="tip"></div>
   </div>
   <div class="side">
@@ -205,16 +206,16 @@ function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.des
 // UI 文字列・診断テンプレート（日/英）。データ準備段階で固定（実行時 LLM 不使用）。
 const STR = {
  ja: {
-  h1main:"OSS 依存ネットワーク分析デモ v2",
-  h1sub:"— DSS 型分析支援システム",
-  headerHint:'エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。',
+  h1main:"OSS 依存ネットワーク分析デモ",
+  h1sub:"— 意思決定支援（DSS）型の分析支援システム",
+  headerHint:'エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。図はホイールで拡大・ドラッグで移動できる（⟲ で初期表示に戻す）。',
   gDomain:"領域", gView:"ビュー", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
-  comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色",
+  comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色", zoomResetTitle:"表示をリセット",
   vNet:"ネットワーク図", vScatter:"散布図（被依存×媒介）",
   qPlaceholder:"名前で検索…", catAll:"分類: すべて",
   diagTitle:"診断 — これは何を意味するか",
   diagHint:'ノード（またはコミュニティ着色時のコミュニティ行）をクリックすると、指標データと「意思決定上何を意味するか」の診断を表示します。<br>診断はノード型 × 意思決定場面の対応表に基づく決定論的なルール＋テンプレートで生成（AI 不使用・再現可能）。',
-  divTitle:'順位の乖離 — 単純統計では見えない「要衝」（RQ3）',
+  divTitle:'順位の乖離 — 単純統計では見えない「要衝」',
   legNormal:"通常ノード", legSeed:"シード（分析起点）", legCut:"切断点 ⚠（クリックで孤立する範囲を表示）", legIso:"切断時に孤立する範囲",
   rankComTitle:"コミュニティ（クリックでフォーカス）",
   rankTopSuffix:" — Top 10",
@@ -239,12 +240,12 @@ const STR = {
   comDesc:"コミュニティは依存が相対的に密な<b>機能群</b>に対応する。",
   comReco:"<b>利用判断:</b> 代替候補はまず同一コミュニティ内から探索するのが有効。<b>集中リスク把握:</b> 障害が伝播しうる範囲の目安。",
   comEvidence:"解釈規則の根拠と規則表は README を参照。", comNone:"コミュニティ情報なし",
-  eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（DAG）であり、固有ベクトル中心性の反復計算は依存の終端（sink）に値が集中して退化しやすい（順位が大きく断絶するのはこのため）。診断には次数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体が RQ2 の知見</b>。',
-  spearman:sp=>`Spearman ρ: 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1.0 から離れるほど SNA 独自の情報が多い）`,
-  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(indeg=${indeg}, btw=${btw}) 橋渡し型</span>`,
+  eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（ループのない一方向の構造・DAG）であり、固有ベクトル中心性の反復計算は依存の終端（外向きの依存を持たない「行き止まり」のノード）に値が集中し、うまく順位が付かなくなりやすい（順位が大きく断絶するのはこのため）。診断には被依存数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体も、本分析で得られた知見の一つである</b>。',
+  spearman:sp=>`順位の一致度（Spearman 順位相関 ρ）— 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1.0 から離れるほど SNA 独自の情報が多い）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(被依存 ${indeg}・媒介 ${btw}) 橋渡し型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
   divNone:"この領域では顕著な乖離ノードなし", comRowNote:top=>top?`(${top}系)`:"",
-  scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝・RQ3）",
+  scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝）",
   tipClick:" — クリックで診断とフォーカス表示", tipCat:"分類", tipCom:"コミュニティ", tipIndeg:"被依存", tipOut:"依存先", tipReach:"影響範囲", tipBtw:"媒介",
   metaTitle:l=>`再現性情報（${l}）`, metaFetch:"取得日", metaSrc:"データソース", metaRate:"シード成功率", metaScale:"規模",
   metaNode:"ノード", metaEdge:"エッジ", metaDensity:"密度", metaComp:"弱連結成分", metaMod:"モジュラリティ", metaCom:"コミュニティ",
@@ -252,16 +253,16 @@ const STR = {
   metaDet:"診断は決定論的ルールにより生成（AI 不使用） ／ 表示レイアウトは表示集合に応じて決定論的に再計算（初期値＝事前計算座標・反復固定・乱数不使用）",
  },
  en: {
-  h1main:"OSS Dependency Network Analysis Demo v2",
-  h1sub:"— DSS-style analysis-support system",
-  headerHint:'Edge direction: dependent → dependency. Node size/color = selected metric. ⚠ = cut point (its removal isolates other nodes). Click a node for a diagnosis on the right.',
+  h1main:"OSS Dependency Network Analysis Demo",
+  h1sub:"— A decision-support (DSS) style analysis-support system",
+  headerHint:'Edge direction: dependent → dependency. Node size/color = selected metric. ⚠ = cut point (its removal isolates other nodes). Click a node for a diagnosis on the right. Scroll to zoom, drag to pan (⟲ resets the view).',
   gDomain:"Domain", gView:"View", gMetric:"Metric", gSearch:"Search / category", gTopn:"Shown", gLang:"Language",
-  comBtn:"Community color", comBtnTitle:"Color by community detected with the Louvain method",
+  comBtn:"Community color", comBtnTitle:"Color by community detected with the Louvain method", zoomResetTitle:"Reset view",
   vNet:"Network", vScatter:"Scatter (in-degree × betweenness)",
   qPlaceholder:"search by name…", catAll:"Category: all",
   diagTitle:"Diagnosis — what this means",
   diagHint:'Click a node (or a community row in community-color mode) to see its metrics and what they mean for decision-making.<br>Diagnoses are generated by a deterministic rule + template table (node type × decision context). No LLM at runtime; fully reproducible.',
-  divTitle:'Rank divergence — bottlenecks invisible to simple stats (RQ3)',
+  divTitle:'Rank divergence — bottlenecks invisible to simple stats',
   legNormal:"node", legSeed:"seed (analysis root)", legCut:"cut point ⚠ (click to show what it isolates)", legIso:"isolated if removed",
   rankComTitle:"Communities (click to focus)",
   rankTopSuffix:" — Top 10",
@@ -286,12 +287,12 @@ const STR = {
   comDesc:"A community corresponds to a relatively dense <b>functional group</b>.",
   comReco:"<b>Adoption:</b> look for alternatives within the same community first. <b>Concentration risk:</b> a rough scope of how failures could propagate.",
   comEvidence:"See the README for the basis of the interpretation rules and the rule table.", comNone:"No community data",
-  eigNote:'<b>※ Reference only</b>: dependency networks are nearly acyclic (DAG), so eigenvector centrality’s power iteration tends to degenerate by concentrating mass at dependency sinks (hence the large rank gap). Use in-degree, betweenness, and PageRank for diagnosis. <b>That this metric does not suit dependency networks is itself an RQ2 finding.</b>',
-  spearman:sp=>`Spearman ρ: in-degree×betweenness=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×eigenvector=${sp.indeg_vs_eigenvector} (the farther from 1.0, the more SNA-specific information)`,
-  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — in-deg ${rin} → betw <b>${rbt}</b> <span class="muted">(indeg=${indeg}, btw=${btw}) bridge</span>`,
+  eigNote:'<b>※ Reference only</b>: dependency networks are nearly acyclic (DAG — one-directional, no loops), so eigenvector centrality’s power iteration tends to break down by concentrating its value at dependency sinks (nodes with no outgoing dependency) — hence the large rank gap. Use in-degree, betweenness, and PageRank for diagnosis. <b>That this metric does not suit dependency networks is itself one of the findings of this analysis.</b>',
+  spearman:sp=>`Rank agreement (Spearman ρ) — in-degree×betweenness=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×eigenvector=${sp.indeg_vs_eigenvector} (the farther from 1.0, the more SNA-specific information)`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — in-deg ${rin} → betw <b>${rbt}</b> <span class="muted">(in-deg ${indeg}, betw ${btw}) bridge</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — in-deg ${rin} · reach ${impact} <span class="muted">foundation (visible to simple stats)</span>`,
   divNone:"No prominent divergence nodes in this domain", comRowNote:top=>top?`(${top})`:"",
-  scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← top-left = low in-degree but high betweenness (bottlenecks invisible to simple stats · RQ3)",
+  scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← top-left = low in-degree but high betweenness (bottlenecks invisible to simple stats)",
   tipClick:" — click for diagnosis & focus", tipCat:"Category", tipCom:"Community", tipIndeg:"In-deg", tipOut:"Out-deg", tipReach:"Reach", tipBtw:"Betw",
   metaTitle:l=>`Reproducibility (${l})`, metaFetch:"Fetched", metaSrc:"Source", metaRate:"Seed success", metaScale:"Scale",
   metaNode:"nodes", metaEdge:"edges", metaDensity:"density", metaComp:"weak components", metaMod:"modularity", metaCom:"communities",
@@ -299,16 +300,16 @@ const STR = {
   metaDet:"Diagnoses are generated by deterministic rules (no LLM); layout is recomputed deterministically per visible set (seeded from precomputed coordinates, fixed iterations, no randomness)",
  },
  zhHant: {
-  h1main:"OSS 依賴網路分析展示 v2",
-  h1sub:"— DSS 型分析支援系統",
-  headerHint:'邊的方向：依賴方 → 被依賴方。節點大小·顏色 = 所選指標。⚠ = 切斷點（移除會導致其他節點孤立）。點擊節點即在右上顯示診斷。',
+  h1main:"OSS 依賴網路分析展示",
+  h1sub:"— 決策支援（DSS）型分析支援系統",
+  headerHint:'邊的方向：依賴方 → 被依賴方。節點大小·顏色 = 所選指標。⚠ = 切斷點（移除會導致其他節點孤立）。點擊節點即在右上顯示診斷。圖可用滾輪縮放、拖曳平移（⟲ 還原初始檢視）。',
   gDomain:"領域", gView:"檢視", gMetric:"指標", gSearch:"搜尋·分類", gTopn:"顯示數", gLang:"語言",
-  comBtn:"社群著色", comBtnTitle:"依 Louvain 法偵測的社群著色",
+  comBtn:"社群著色", comBtnTitle:"依 Louvain 法偵測的社群著色", zoomResetTitle:"重設檢視",
   vNet:"網路圖", vScatter:"散佈圖（被依賴×中介）",
   qPlaceholder:"以名稱搜尋…", catAll:"分類：全部",
   diagTitle:"診斷 — 這代表什麼",
   diagHint:'點擊節點（或社群著色時的社群列），顯示指標數據與「在決策上代表什麼」的診斷。<br>診斷由節點類型 × 決策情境的對應表確定性生成（不使用 AI·可重現）。',
-  divTitle:'排名乖離 — 簡單統計看不見的「要衝」（RQ3）',
+  divTitle:'排名乖離 — 簡單統計看不見的「要衝」',
   legNormal:"一般節點", legSeed:"種子（分析起點）", legCut:"切斷點 ⚠（點擊顯示其孤立範圍）", legIso:"移除時孤立的範圍",
   rankComTitle:"社群（點擊聚焦）",
   rankTopSuffix:" — Top 10",
@@ -333,12 +334,12 @@ const STR = {
   comDesc:"社群對應依賴相對密集的<b>功能群</b>。",
   comReco:"<b>採用決策：</b> 替代候選優先在同一社群內尋找。<b>集中風險評估：</b> 故障可能波及範圍的參考。",
   comEvidence:"解釋規則的依據與規則表見 README。", comNone:"無社群資訊",
-  eigNote:'<b>※ 參考值</b>：依賴網路近乎無環（DAG），特徵向量中心性的迭代計算容易退化（值集中至依賴終端 sink），排名大幅斷裂即因此。診斷請使用被依賴數·中介·PageRank。<b>「此指標不適合依賴網路」本身就是 RQ2 的發現</b>。',
-  spearman:sp=>`Spearman ρ: 被依賴×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特徵向量=${sp.indeg_vs_eigenvector}（越遠離 1.0，SNA 獨有的資訊越多）`,
-  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依賴第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(indeg=${indeg}, btw=${btw}) 橋接型</span>`,
+  eigNote:'<b>※ 參考值</b>：依賴網路近乎無環（沒有迴圈的單向結構・DAG），特徵向量中心性的迭代計算容易失準（數值集中到「沒有對外依賴的終端」節點），排名大幅斷裂即因此。診斷請使用被依賴數·中介·PageRank。<b>「此指標不適合依賴網路」本身也是本分析所得的發現之一</b>。',
+  spearman:sp=>`順位一致度（Spearman 等級相關 ρ）— 被依賴×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特徵向量=${sp.indeg_vs_eigenvector}（越遠離 1.0，SNA 獨有的資訊越多）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依賴第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依賴 ${indeg}・中介 ${btw}) 橋接型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依賴第 ${rin} 位·影響範圍 ${impact} <span class="muted">基礎型（簡單統計也可見）</span>`,
   divNone:"此領域無顯著的乖離節點", comRowNote:top=>top?`(${top})`:"",
-  scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴少但中介高（簡單統計看不見的要衝·RQ3）",
+  scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴少但中介高（簡單統計看不見的要衝）",
   tipClick:" — 點擊顯示診斷與聚焦", tipCat:"分類", tipCom:"社群", tipIndeg:"被依賴", tipOut:"依賴", tipReach:"影響範圍", tipBtw:"中介",
   metaTitle:l=>`可重現資訊（${l}）`, metaFetch:"取得日", metaSrc:"資料來源", metaRate:"種子成功率", metaScale:"規模",
   metaNode:"節點", metaEdge:"邊", metaDensity:"密度", metaComp:"弱連通分量", metaMod:"模組度", metaCom:"社群",
@@ -346,16 +347,16 @@ const STR = {
   metaDet:"診斷由確定性規則生成（不使用 AI） / 顯示佈局依顯示集合確定性重算（初值＝預計算座標·迭代固定·無隨機）",
  },
  zhHans: {
-  h1main:"OSS 依赖网络分析演示 v2",
-  h1sub:"— DSS 型分析支持系统",
-  headerHint:'边的方向：依赖方 → 被依赖方。节点大小·颜色 = 所选指标。⚠ = 切断点（移除会导致其他节点孤立）。点击节点即在右上显示诊断。',
+  h1main:"OSS 依赖网络分析演示",
+  h1sub:"— 决策支持（DSS）型分析支持系统",
+  headerHint:'边的方向：依赖方 → 被依赖方。节点大小·颜色 = 所选指标。⚠ = 切断点（移除会导致其他节点孤立）。点击节点即在右上显示诊断。图可用滚轮缩放、拖动平移（⟲ 还原初始视图）。',
   gDomain:"领域", gView:"视图", gMetric:"指标", gSearch:"搜索·分类", gTopn:"显示数", gLang:"语言",
-  comBtn:"社群着色", comBtnTitle:"按 Louvain 法检测的社群着色",
+  comBtn:"社群着色", comBtnTitle:"按 Louvain 法检测的社群着色", zoomResetTitle:"重置视图",
   vNet:"网络图", vScatter:"散点图（被依赖×中介）",
   qPlaceholder:"按名称搜索…", catAll:"分类：全部",
   diagTitle:"诊断 — 这意味着什么",
   diagHint:'点击节点（或社群着色时的社群行），显示指标数据与「在决策上意味着什么」的诊断。<br>诊断由节点类型 × 决策场景的对应表确定性生成（不使用 AI·可复现）。',
-  divTitle:'排名乖离 — 简单统计看不见的「要冲」（RQ3）',
+  divTitle:'排名乖离 — 简单统计看不见的「要冲」',
   legNormal:"普通节点", legSeed:"种子（分析起点）", legCut:"切断点 ⚠（点击显示其孤立范围）", legIso:"移除时孤立的范围",
   rankComTitle:"社群（点击聚焦）",
   rankTopSuffix:" — Top 10",
@@ -380,12 +381,12 @@ const STR = {
   comDesc:"社群对应依赖相对密集的<b>功能群</b>。",
   comReco:"<b>采用决策：</b> 替代候选优先在同一社群内寻找。<b>集中风险评估：</b> 故障可能波及范围的参考。",
   comEvidence:"解释规则的依据与规则表见 README。", comNone:"无社群信息",
-  eigNote:'<b>※ 参考值</b>：依赖网络近乎无环（DAG），特征向量中心性的迭代计算容易退化（值集中到依赖终端 sink），排名大幅断裂即因此。诊断请使用被依赖数·中介·PageRank。<b>「该指标不适合依赖网络」本身就是 RQ2 的发现</b>。',
-  spearman:sp=>`Spearman ρ: 被依赖×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特征向量=${sp.indeg_vs_eigenvector}（越远离 1.0，SNA 独有的信息越多）`,
-  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依赖第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(indeg=${indeg}, btw=${btw}) 桥接型</span>`,
+  eigNote:'<b>※ 参考值</b>：依赖网络近乎无环（没有回环的单向结构・DAG），特征向量中心性的迭代计算容易失准（数值集中到「没有对外依赖的终端」节点），排名大幅断裂即因此。诊断请使用被依赖数·中介·PageRank。<b>「该指标不适合依赖网络」本身也是本分析得到的发现之一</b>。',
+  spearman:sp=>`顺位一致度（Spearman 等级相关 ρ）— 被依赖×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特征向量=${sp.indeg_vs_eigenvector}（越远离 1.0，SNA 独有的信息越多）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依赖第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依赖 ${indeg}・中介 ${btw}) 桥接型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依赖第 ${rin} 位·影响范围 ${impact} <span class="muted">基础型（简单统计也可见）</span>`,
   divNone:"该领域无显著的乖离节点", comRowNote:top=>top?`(${top})`:"",
-  scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖少但中介高（简单统计看不见的要冲·RQ3）",
+  scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖少但中介高（简单统计看不见的要冲）",
   tipClick:" — 点击显示诊断与聚焦", tipCat:"分类", tipCom:"社群", tipIndeg:"被依赖", tipOut:"依赖", tipReach:"影响范围", tipBtw:"中介",
   metaTitle:l=>`可复现信息（${l}）`, metaFetch:"取得日", metaSrc:"数据来源", metaRate:"种子成功率", metaScale:"规模",
   metaNode:"节点", metaEdge:"边", metaDensity:"密度", metaComp:"弱连通分量", metaMod:"模块度", metaCom:"社群",
@@ -503,7 +504,7 @@ function diagnoseCom(cid, g){
   const member = g.nodes.filter(n=>n.com===cid);
   const avgIn = member.length ? (member.reduce((a,n)=>a+n.indeg,0)/member.length).toFixed(1) : 0;
   const sep = lang==="ja" ? "、" : ", ";
-  const rep = esc((st.top[0]||"?").split("/").pop()), sfx = lang==="en" ? "" : "系";
+  const rep = esc((st.top[0]||"?").split("/").pop()), sfx = S.systemSuffix;
   return `<div class="diag-name">${rep}${sfx} <span style="font-weight:400;color:#5C6B7A;font-size:12px">${S.comTitle(cid)}</span></div>
     <span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
     <table class="diag-table">
@@ -661,6 +662,7 @@ function applyStaticText(){
   $("#lblMetric").textContent = S.gMetric; $("#lblSearch").textContent = S.gSearch;
   $("#lblTopn").textContent = S.gTopn;
   $("#comBtn").textContent = S.comBtn; $("#comBtn").title = S.comBtnTitle;
+  $("#zoomReset").title = S.zoomResetTitle;
   $("#q").placeholder = S.qPlaceholder;
   $("#diagTitle").textContent = S.diagTitle;
   $("#divTitle").textContent = S.divTitle;
@@ -680,7 +682,7 @@ function drawButtons(){
     `<button data-v="scatter" class="${view==='scatter'?'on':''}">${T().vScatter}</button>`;
   const dis = view==="scatter" ? " dis" : "";
   $("#metrics").innerHTML = Object.keys(MLAB).map(m =>
-    `<button data-m="${m}" class="${m===curM&&!comMode?'on':''}${dis}">${esc(mshort(m))}</button>`).join(" ");
+    `<button data-m="${m}" data-tip="${esc(mlab(m))}" class="${m===curM&&!comMode?'on':''}${dis}">${esc(mshort(m))}</button>`).join(" ");
   $("#comBtn").className = (comMode ? "on" : "") + dis;
   document.querySelectorAll("[data-d]").forEach(b => b.onclick = () => {
     curD=b.dataset.d; selected=null; selectedCom=null; topN=0; catFilter="";
@@ -876,7 +878,7 @@ function renderSide(g, byId){
   if (comActive){
     $("#rankTitle").textContent = S.rankComTitle;
     const cs = g.communities || [];
-    const sfx = lang==="en" ? "" : "系";   // 代表ノードの短縮名＋「〜系」を主表示、番号は補助
+    const sfx = S.systemSuffix;   // 代表ノードの短縮名＋言語別の接尾辞を主表示、番号は補助
     $("#rankList").innerHTML = cs.slice(0,10).map(c => {
       const rep = esc((c.top[0]||"?").split("/").pop());
       return `<div class="rank-row${selectedCom===c.id?' sel':''}" data-com="${c.id}">
