@@ -1,0 +1,109 @@
+{
+ "package": "github.com/opencontainers/runc",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v1.4.2",
+ "nodes": [
+  "github.com/coreos/go-systemd/v22",
+  "github.com/cyphar/filepath-securejoin",
+  "github.com/docker/go-units",
+  "github.com/moby/sys/userns",
+  "github.com/opencontainers/runc",
+  "github.com/opencontainers/selinux",
+  "github.com/sirupsen/logrus",
+  "github.com/urfave/cli",
+  "github.com/vishvananda/netlink",
+  "github.com/vishvananda/netns",
+  "golang.org/x/net",
+  "golang.org/x/sys",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/opencontainers/runc",
+   "github.com/coreos/go-systemd/v22"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/cyphar/filepath-securejoin"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/docker/go-units"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/moby/sys/userns"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/opencontainers/selinux"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/sirupsen/logrus"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/urfave/cli"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/vishvananda/netlink"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "github.com/vishvananda/netns"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "golang.org/x/net"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/opencontainers/runc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/coreos/go-systemd/v22",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/cyphar/filepath-securejoin",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/opencontainers/selinux",
+   "github.com/cyphar/filepath-securejoin"
+  ],
+  [
+   "github.com/opencontainers/selinux",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/sirupsen/logrus",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/vishvananda/netlink",
+   "github.com/vishvananda/netns"
+  ],
+  [
+   "github.com/vishvananda/netlink",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/vishvananda/netns",
+   "golang.org/x/sys"
+  ],
+  [
+   "golang.org/x/net",
+   "golang.org/x/sys"
+  ]
+ ]
+}

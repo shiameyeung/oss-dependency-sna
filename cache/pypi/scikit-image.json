@@ -1,0 +1,73 @@
+{
+ "package": "scikit-image",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:08Z",
+ "status": "ok",
+ "version": "0.26.0",
+ "nodes": [
+  "imageio",
+  "lazy-loader",
+  "networkx",
+  "numpy",
+  "packaging",
+  "pillow",
+  "scikit-image",
+  "scipy",
+  "tifffile"
+ ],
+ "edges": [
+  [
+   "scikit-image",
+   "imageio"
+  ],
+  [
+   "scikit-image",
+   "lazy-loader"
+  ],
+  [
+   "scikit-image",
+   "networkx"
+  ],
+  [
+   "scikit-image",
+   "numpy"
+  ],
+  [
+   "scikit-image",
+   "packaging"
+  ],
+  [
+   "scikit-image",
+   "pillow"
+  ],
+  [
+   "scikit-image",
+   "scipy"
+  ],
+  [
+   "scikit-image",
+   "tifffile"
+  ],
+  [
+   "imageio",
+   "numpy"
+  ],
+  [
+   "imageio",
+   "pillow"
+  ],
+  [
+   "lazy-loader",
+   "packaging"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "tifffile",
+   "numpy"
+  ]
+ ]
+}

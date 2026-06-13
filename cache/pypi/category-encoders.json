@@ -1,0 +1,109 @@
+{
+ "package": "category-encoders",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:13Z",
+ "status": "ok",
+ "version": "2.9.0",
+ "nodes": [
+  "category-encoders",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "packaging",
+  "pandas",
+  "patsy",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "six",
+  "statsmodels",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "category-encoders",
+   "numpy"
+  ],
+  [
+   "category-encoders",
+   "pandas"
+  ],
+  [
+   "category-encoders",
+   "patsy"
+  ],
+  [
+   "category-encoders",
+   "scikit-learn"
+  ],
+  [
+   "category-encoders",
+   "scipy"
+  ],
+  [
+   "category-encoders",
+   "statsmodels"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "patsy",
+   "numpy"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "statsmodels",
+   "numpy"
+  ],
+  [
+   "statsmodels",
+   "packaging"
+  ],
+  [
+   "statsmodels",
+   "pandas"
+  ],
+  [
+   "statsmodels",
+   "patsy"
+  ],
+  [
+   "statsmodels",
+   "scipy"
+  ]
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "package": "networkx",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:07Z",
+ "status": "ok",
+ "version": "3.6.1",
+ "nodes": [
+  "networkx"
+ ],
+ "edges": []
+}

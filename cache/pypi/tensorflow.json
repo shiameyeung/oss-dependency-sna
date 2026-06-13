@@ -1,0 +1,12 @@
+{
+ "package": "tensorflow",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:10Z",
+ "status": "ok",
+ "version": "2.21.0",
+ "nodes": [
+  "tensorflow"
+ ],
+ "edges": []
+}

@@ -1,0 +1,32 @@
+{
+ "package": "github.com/containernetworking/cni",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v1.3.0",
+ "nodes": [
+  "github.com/containernetworking/cni",
+  "github.com/onsi/ginkgo/v2",
+  "github.com/onsi/gomega",
+  "github.com/vishvananda/netns"
+ ],
+ "edges": [
+  [
+   "github.com/containernetworking/cni",
+   "github.com/onsi/ginkgo/v2"
+  ],
+  [
+   "github.com/containernetworking/cni",
+   "github.com/onsi/gomega"
+  ],
+  [
+   "github.com/containernetworking/cni",
+   "github.com/vishvananda/netns"
+  ],
+  [
+   "github.com/onsi/ginkgo/v2",
+   "github.com/onsi/gomega"
+  ]
+ ]
+}

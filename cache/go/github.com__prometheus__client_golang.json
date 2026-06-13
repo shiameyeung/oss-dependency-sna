@@ -1,0 +1,91 @@
+{
+ "package": "github.com/prometheus/client_golang",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v1.23.2",
+ "nodes": [
+  "github.com/cespare/xxhash/v2",
+  "github.com/google/go-cmp",
+  "github.com/json-iterator/go",
+  "github.com/klauspost/compress",
+  "github.com/prometheus/client_golang",
+  "github.com/prometheus/client_model",
+  "github.com/prometheus/common",
+  "github.com/prometheus/procfs",
+  "go.uber.org/goleak",
+  "golang.org/x/sys",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/cespare/xxhash/v2"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/json-iterator/go"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/prometheus/common"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "github.com/prometheus/procfs"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/prometheus/client_golang",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/client_model",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/common",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/prometheus/common",
+   "github.com/prometheus/client_model"
+  ],
+  [
+   "github.com/prometheus/common",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/prometheus/procfs",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/prometheus/procfs",
+   "golang.org/x/sys"
+  ],
+  [
+   "google.golang.org/protobuf",
+   "github.com/google/go-cmp"
+  ]
+ ]
+}

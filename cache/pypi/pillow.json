@@ -1,0 +1,12 @@
+{
+ "package": "pillow",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:08Z",
+ "status": "ok",
+ "version": "12.2.0",
+ "nodes": [
+  "pillow"
+ ],
+ "edges": []
+}

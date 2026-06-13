@@ -1,0 +1,32 @@
+{
+ "package": "xgboost",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:03Z",
+ "status": "ok",
+ "version": "3.2.0",
+ "nodes": [
+  "numpy",
+  "nvidia-nccl-cu12",
+  "scipy",
+  "xgboost"
+ ],
+ "edges": [
+  [
+   "xgboost",
+   "numpy"
+  ],
+  [
+   "xgboost",
+   "nvidia-nccl-cu12"
+  ],
+  [
+   "xgboost",
+   "scipy"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

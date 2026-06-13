@@ -1,0 +1,1371 @@
+{
+ "entries": {
+  "absl-py": {
+   "desc": "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.",
+   "fetched_at": "2026-06-12T18:03:15Z",
+   "ja": "Abseil の Python 共通ライブラリ"
+  },
+  "aiohttp": {
+   "desc": "Async http client/server framework (asyncio)",
+   "fetched_at": "2026-06-12T18:03:15Z",
+   "ja": "asyncio ベースの非同期 HTTP クライアント・サーバーフレームワーク"
+  },
+  "alembic": {
+   "desc": "A database migration tool for SQLAlchemy.",
+   "fetched_at": "2026-06-12T18:03:15Z",
+   "ja": "SQLAlchemy 用のデータベースマイグレーションツール"
+  },
+  "altair": {
+   "desc": "Vega-Altair: A declarative statistical visualization library for Python.",
+   "fetched_at": "2026-06-12T18:03:16Z",
+   "ja": "Python 向けの宣言的な統計可視化ライブラリ"
+  },
+  "annotated-doc": {
+   "desc": "Document parameters, class attributes, return types, and variables inline, with Annotated.",
+   "fetched_at": "2026-06-12T18:03:16Z",
+   "ja": "Annotated で引数・属性・戻り値・変数をインラインで文書化するライブラリ"
+  },
+  "annotated-types": {
+   "desc": "Reusable constraint types to use with typing.Annotated",
+   "fetched_at": "2026-06-12T18:03:16Z",
+   "ja": "typing.Annotated で使える再利用可能な制約型"
+  },
+  "anyio": {
+   "desc": "High-level concurrency and networking framework on top of asyncio or Trio",
+   "fetched_at": "2026-06-12T18:03:16Z",
+   "ja": "asyncio または Trio 上で動く高水準の並行処理・ネットワークフレームワーク"
+  },
+  "argon2-cffi": {
+   "desc": "Argon2 for Python",
+   "fetched_at": "2026-06-12T18:03:16Z",
+   "ja": "Python 向けの Argon2"
+  },
+  "argon2-cffi-bindings": {
+   "desc": "Low-level CFFI bindings for Argon2",
+   "fetched_at": "2026-06-12T18:03:17Z",
+   "ja": "Argon2 の低レベル CFFI バインディング"
+  },
+  "arrow": {
+   "desc": "Better dates & times for Python",
+   "fetched_at": "2026-06-12T18:03:17Z",
+   "ja": "Python の日付・時刻をより扱いやすくするライブラリ"
+  },
+  "arviz": {
+   "desc": "Expose features from _ArviZverse_ refactored packages together in the ``arviz`` namespace.",
+   "fetched_at": "2026-06-12T18:03:17Z",
+   "ja": "ArviZverse 各パッケージの機能を arviz 名前空間でまとめて提供するパッケージ"
+  },
+  "arviz-base": {
+   "desc": "Base ArviZ features and converters.",
+   "fetched_at": "2026-06-12T18:03:18Z",
+   "ja": "ArviZ の基本機能とコンバータ"
+  },
+  "arviz-plots": {
+   "desc": "ArviZ-plots provides ready to use and composable plots for Bayesian Workflow.",
+   "fetched_at": "2026-06-12T18:03:18Z",
+   "ja": "ベイズワークフロー向けのすぐ使える組み合わせ可能なプロット集"
+  },
+  "arviz-stats": {
+   "desc": "Statistical computation and diagnostics for ArviZ.",
+   "fetched_at": "2026-06-12T18:03:18Z",
+   "ja": "ArviZ 向けの統計計算・診断機能"
+  },
+  "asttokens": {
+   "desc": "Annotate AST trees with source code positions",
+   "fetched_at": "2026-06-12T18:03:18Z",
+   "ja": "AST ツリーにソースコードの位置情報を付与するライブラリ"
+  },
+  "async-lru": {
+   "desc": "Simple LRU cache for asyncio",
+   "fetched_at": "2026-06-12T18:03:19Z",
+   "ja": "asyncio 向けのシンプルな LRU キャッシュ"
+  },
+  "attrs": {
+   "desc": "Classes Without Boilerplate",
+   "fetched_at": "2026-06-12T18:03:19Z",
+   "ja": "ボイラープレートなしでクラスを定義できるライブラリ"
+  },
+  "autograd": {
+   "desc": "Efficiently computes derivatives of NumPy code.",
+   "fetched_at": "2026-06-12T18:03:19Z",
+   "ja": "NumPy コードの微分を効率的に計算するライブラリ"
+  },
+  "autograd-gamma": {
+   "desc": "Autograd compatible approximations to the gamma family of functions",
+   "fetched_at": "2026-06-12T18:03:19Z",
+   "ja": "ガンマ関数族の Autograd 対応近似"
+  },
+  "babel": {
+   "desc": "Internationalization utilities",
+   "fetched_at": "2026-06-12T18:03:20Z",
+   "ja": "国際化ユーティリティ"
+  },
+  "beautifulsoup4": {
+   "desc": "Screen-scraping library",
+   "fetched_at": "2026-06-12T18:03:20Z",
+   "ja": "スクリーンスクレイピング用ライブラリ"
+  },
+  "bleach": {
+   "desc": "An easy safelist-based HTML-sanitizing tool.",
+   "fetched_at": "2026-06-12T18:03:20Z",
+   "ja": "セーフリスト方式の手軽な HTML サニタイズツール"
+  },
+  "blinker": {
+   "desc": "Fast, simple object-to-object and broadcast signaling",
+   "fetched_at": "2026-06-12T18:03:20Z",
+   "ja": "高速でシンプルなオブジェクト間・ブロードキャストのシグナル送信"
+  },
+  "blis": {
+   "desc": "The Blis BLAS-like linear algebra library, as a self-contained C-extension.",
+   "fetched_at": "2026-06-12T18:03:21Z",
+   "ja": "BLAS 風線形代数ライブラリ Blis の自己完結型 C 拡張"
+  },
+  "bokeh": {
+   "desc": "Interactive plots and applications in the browser from Python",
+   "fetched_at": "2026-06-12T18:03:21Z",
+   "ja": "Python からブラウザ上の対話的なプロットやアプリを作成するライブラリ"
+  },
+  "cachetools": {
+   "desc": "Extensible memoizing collections and decorators",
+   "fetched_at": "2026-06-12T18:03:21Z",
+   "ja": "拡張可能なメモ化コレクションとデコレータ"
+  },
+  "catalogue": {
+   "desc": "Super lightweight function registries for your library",
+   "fetched_at": "2026-06-12T18:03:22Z",
+   "ja": "ライブラリ向けの超軽量な関数レジストリ"
+  },
+  "catboost": {
+   "desc": "CatBoost Python Package",
+   "fetched_at": "2026-06-12T18:03:22Z",
+   "ja": "CatBoost の Python パッケージ"
+  },
+  "category-encoders": {
+   "desc": "A package for encoding categorical variables for machine learning",
+   "fetched_at": "2026-06-12T18:03:22Z",
+   "ja": "機械学習向けにカテゴリ変数をエンコードするパッケージ"
+  },
+  "certifi": {
+   "desc": "Python package for providing Mozilla's CA Bundle.",
+   "fetched_at": "2026-06-12T18:03:22Z",
+   "ja": "Mozilla の CA 証明書バンドルを提供する Python パッケージ"
+  },
+  "cffi": {
+   "desc": "Foreign Function Interface for Python calling C code.",
+   "fetched_at": "2026-06-12T18:03:22Z",
+   "ja": "Python から C コードを呼び出す外部関数インターフェース（FFI）"
+  },
+  "charset-normalizer": {
+   "desc": "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.",
+   "fetched_at": "2026-06-12T18:03:23Z",
+   "ja": "Chardet の代替となる文字コード検出ライブラリ"
+  },
+  "click": {
+   "desc": "Composable command line interface toolkit",
+   "fetched_at": "2026-06-12T18:03:23Z",
+   "ja": "組み合わせ可能なコマンドラインインターフェースツールキット"
+  },
+  "cloudpathlib": {
+   "desc": "pathlib-style classes for cloud storage services.",
+   "fetched_at": "2026-06-12T18:03:23Z",
+   "ja": "クラウドストレージ向けの pathlib 風クラス"
+  },
+  "cloudpickle": {
+   "desc": "Pickler class to extend the standard pickle.Pickler functionality",
+   "fetched_at": "2026-06-12T18:03:24Z",
+   "ja": "標準の pickle.Pickler の機能を拡張する Pickler クラス"
+  },
+  "cmdstanpy": {
+   "desc": "Python interface to CmdStan",
+   "fetched_at": "2026-06-12T18:03:24Z",
+   "ja": "CmdStan への Python インターフェース"
+  },
+  "colorlog": {
+   "desc": "Add colours to the output of Python's logging module.",
+   "fetched_at": "2026-06-12T18:03:24Z",
+   "ja": "Python の logging モジュールの出力に色を付けるライブラリ"
+  },
+  "comm": {
+   "desc": "Jupyter Python Comm implementation, for usage in ipykernel, xeus-python etc.",
+   "fetched_at": "2026-06-12T18:03:24Z",
+   "ja": "ipykernel や xeus-python などで使う Jupyter Comm の Python 実装"
+  },
+  "confection": {
+   "desc": "The sweetest config system for Python",
+   "fetched_at": "2026-06-12T18:03:25Z",
+   "ja": "Python 向けの設定管理システム"
+  },
+  "cons": {
+   "desc": "An implementation of Lisp/Scheme-like cons in Python.",
+   "fetched_at": "2026-06-12T18:03:25Z",
+   "ja": "Lisp/Scheme 風の cons の Python 実装"
+  },
+  "contourpy": {
+   "desc": "Python library for calculating contours of 2D quadrilateral grids",
+   "fetched_at": "2026-06-12T18:03:25Z",
+   "ja": "2 次元四辺形グリッドの等高線を計算する Python ライブラリ"
+  },
+  "cryptography": {
+   "desc": "cryptography is a package which provides cryptographic recipes and primitives to Python developers.",
+   "fetched_at": "2026-06-12T18:03:25Z",
+   "ja": "Python 開発者向けに暗号のレシピとプリミティブを提供するパッケージ"
+  },
+  "cycler": {
+   "desc": "Composable style cycles",
+   "fetched_at": "2026-06-12T18:03:26Z",
+   "ja": "組み合わせ可能なスタイルサイクル"
+  },
+  "cymem": {
+   "desc": "Manage calls to calloc/free through Cython",
+   "fetched_at": "2026-06-12T18:03:26Z",
+   "ja": "Cython 経由で calloc/free の呼び出しを管理するライブラリ"
+  },
+  "cython": {
+   "desc": "The Cython compiler for writing C extensions in the Python language.",
+   "fetched_at": "2026-06-12T18:03:26Z",
+   "ja": "Python 言語で C 拡張を書くための Cython コンパイラ"
+  },
+  "databricks-sdk": {
+   "desc": "Databricks SDK for Python (Beta)",
+   "fetched_at": "2026-06-12T18:03:27Z",
+   "ja": "Python 向け Databricks SDK（ベータ版）"
+  },
+  "debugpy": {
+   "desc": "An implementation of the Debug Adapter Protocol for Python",
+   "fetched_at": "2026-06-12T18:03:27Z",
+   "ja": "Debug Adapter Protocol の Python 実装"
+  },
+  "decorator": {
+   "desc": "Decorators for Humans",
+   "fetched_at": "2026-06-12T18:03:27Z",
+   "ja": "人にやさしいデコレータライブラリ"
+  },
+  "defusedxml": {
+   "desc": "XML bomb protection for Python stdlib modules",
+   "fetched_at": "2026-06-12T18:03:27Z",
+   "ja": "Python 標準ライブラリ向けの XML 爆弾攻撃対策"
+  },
+  "docker": {
+   "desc": "A Python library for the Docker Engine API.",
+   "fetched_at": "2026-06-12T18:03:28Z",
+   "ja": "Docker Engine API 用の Python ライブラリ"
+  },
+  "duckdb": {
+   "desc": "DuckDB in-process database",
+   "fetched_at": "2026-06-12T18:03:28Z",
+   "ja": "インプロセスデータベース DuckDB"
+  },
+  "etuples": {
+   "desc": "Python S-expression emulation using tuple-like objects.",
+   "fetched_at": "2026-06-12T18:03:28Z",
+   "ja": "タプル風オブジェクトによる S 式エミュレーション"
+  },
+  "exceptiongroup": {
+   "desc": "Backport of PEP 654 (exception groups)",
+   "fetched_at": "2026-06-12T18:03:29Z",
+   "ja": "PEP 654（例外グループ）のバックポート"
+  },
+  "executing": {
+   "desc": "Get the currently executing AST node of a frame, and other information",
+   "fetched_at": "2026-06-12T18:03:29Z",
+   "ja": "実行中のフレームの AST ノードなどの情報を取得するライブラリ"
+  },
+  "fastapi": {
+   "desc": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+   "fetched_at": "2026-06-12T18:03:29Z",
+   "ja": "高性能で習得しやすい FastAPI フレームワーク"
+  },
+  "fastjsonschema": {
+   "desc": "Fastest Python implementation of JSON schema",
+   "fetched_at": "2026-06-12T18:03:29Z",
+   "ja": "JSON Schema の高速な Python 実装"
+  },
+  "filelock": {
+   "desc": "A platform independent file lock.",
+   "fetched_at": "2026-06-12T18:03:30Z",
+   "ja": "プラットフォーム非依存のファイルロック"
+  },
+  "flask": {
+   "desc": "A simple framework for building complex web applications.",
+   "fetched_at": "2026-06-12T18:03:30Z",
+   "ja": "複雑な Web アプリケーションを構築するためのシンプルなフレームワーク"
+  },
+  "flask-cors": {
+   "desc": "A Flask extension simplifying CORS support",
+   "fetched_at": "2026-06-12T18:03:30Z",
+   "ja": "CORS 対応を簡単にする Flask 拡張"
+  },
+  "fonttools": {
+   "desc": "Tools to manipulate font files",
+   "fetched_at": "2026-06-12T18:03:31Z",
+   "ja": "フォントファイルを操作するためのツール"
+  },
+  "formulaic": {
+   "desc": "An implementation of Wilkinson formulas.",
+   "fetched_at": "2026-06-12T18:03:31Z",
+   "ja": "Wilkinson 式の実装"
+  },
+  "fqdn": {
+   "desc": "Validates fully-qualified domain names against RFC 1123, so that they are acceptable to modern bowsers",
+   "fetched_at": "2026-06-12T18:03:31Z",
+   "ja": "完全修飾ドメイン名を RFC 1123 に基づいて検証するライブラリ"
+  },
+  "fsspec": {
+   "desc": "File-system specification",
+   "fetched_at": "2026-06-12T18:03:31Z",
+   "ja": "ファイルシステム仕様"
+  },
+  "gensim": {
+   "desc": "Python framework for fast Vector Space Modelling",
+   "fetched_at": "2026-06-12T18:03:32Z",
+   "ja": "高速なベクトル空間モデリングのための Python フレームワーク"
+  },
+  "gitdb": {
+   "desc": "Git Object Database",
+   "fetched_at": "2026-06-12T18:03:32Z",
+   "ja": "Git オブジェクトデータベース"
+  },
+  "gitpython": {
+   "desc": "GitPython is a Python library used to interact with Git repositories",
+   "fetched_at": "2026-06-12T18:03:32Z",
+   "ja": "Git リポジトリを操作するための Python ライブラリ"
+  },
+  "google-auth": {
+   "desc": "Google Authentication Library",
+   "fetched_at": "2026-06-12T18:03:32Z",
+   "ja": "Google 認証ライブラリ"
+  },
+  "graphene": {
+   "desc": "GraphQL Framework for Python",
+   "fetched_at": "2026-06-12T18:03:33Z",
+   "ja": "Python 向け GraphQL フレームワーク"
+  },
+  "graphql-core": {
+   "desc": "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL.",
+   "fetched_at": "2026-06-12T18:03:33Z",
+   "ja": "リファレンス実装 GraphQL.js を移植した Python 向け GraphQL 実装"
+  },
+  "graphql-relay": {
+   "desc": "Relay library for graphql-core",
+   "fetched_at": "2026-06-12T18:03:33Z",
+   "ja": "graphql-core 向けの Relay ライブラリ"
+  },
+  "graphviz": {
+   "desc": "Simple Python interface for Graphviz",
+   "fetched_at": "2026-06-12T18:03:33Z",
+   "ja": "Graphviz のシンプルな Python インターフェース"
+  },
+  "greenlet": {
+   "desc": "Lightweight in-process concurrent programming",
+   "fetched_at": "2026-06-12T18:03:34Z",
+   "ja": "軽量なインプロセス並行プログラミング"
+  },
+  "gunicorn": {
+   "desc": "WSGI HTTP Server for UNIX",
+   "fetched_at": "2026-06-12T18:03:34Z",
+   "ja": "UNIX 向けの WSGI HTTP サーバー"
+  },
+  "h11": {
+   "desc": "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1",
+   "fetched_at": "2026-06-12T18:03:34Z",
+   "ja": "I/O 非依存の純 Python 製 HTTP/1.1 実装"
+  },
+  "h5py": {
+   "desc": "Read and write HDF5 files from Python",
+   "fetched_at": "2026-06-12T18:03:34Z",
+   "ja": "Python から HDF5 ファイルを読み書きするライブラリ"
+  },
+  "hdbscan": {
+   "desc": "Clustering based on density with variable density clusters",
+   "fetched_at": "2026-06-12T18:03:35Z",
+   "ja": "可変密度クラスタに対応した密度ベースのクラスタリング"
+  },
+  "hf-xet": {
+   "desc": "Fast transfer of large files with the Hugging Face Hub.",
+   "fetched_at": "2026-06-12T18:03:35Z",
+   "ja": "Hugging Face Hub での大容量ファイルの高速転送"
+  },
+  "holidays": {
+   "desc": "Open World Holidays Framework",
+   "fetched_at": "2026-06-12T18:03:35Z",
+   "ja": "世界の祝日を扱うオープンなフレームワーク"
+  },
+  "httpcore": {
+   "desc": "A minimal low-level HTTP client.",
+   "fetched_at": "2026-06-12T18:03:35Z",
+   "ja": "最小限の低レベル HTTP クライアント"
+  },
+  "httpx": {
+   "desc": "The next generation HTTP client.",
+   "fetched_at": "2026-06-12T18:03:36Z",
+   "ja": "次世代の HTTP クライアント"
+  },
+  "huey": {
+   "desc": "a little task queue",
+   "fetched_at": "2026-06-12T18:03:36Z",
+   "ja": "小さなタスクキュー"
+  },
+  "huggingface-hub": {
+   "desc": "Client library to download and publish models, datasets and other repos on the huggingface.co hub",
+   "fetched_at": "2026-06-12T18:03:36Z",
+   "ja": "huggingface.co のモデルやデータセット等を取得・公開するクライアント"
+  },
+  "idna": {
+   "desc": "Internationalized Domain Names in Applications (IDNA)",
+   "fetched_at": "2026-06-12T18:03:37Z",
+   "ja": "アプリケーションにおける国際化ドメイン名（IDNA）"
+  },
+  "imageio": {
+   "desc": "Read and write images and video across all major formats. Supports scientific and volumetric data.",
+   "fetched_at": "2026-06-12T18:03:37Z",
+   "ja": "主要形式の画像・動画を読み書きするライブラリ。科学・立体データにも対応"
+  },
+  "imbalanced-learn": {
+   "desc": "Toolbox for imbalanced dataset in machine learning",
+   "fetched_at": "2026-06-12T18:03:37Z",
+   "ja": "機械学習における不均衡データセット向けのツールボックス"
+  },
+  "importlib-metadata": {
+   "desc": "Read metadata from Python packages",
+   "fetched_at": "2026-06-12T18:03:37Z",
+   "ja": "Python パッケージのメタデータを読み取るライブラリ"
+  },
+  "importlib-resources": {
+   "desc": "Read resources from Python packages",
+   "fetched_at": "2026-06-12T18:03:38Z",
+   "ja": "Python パッケージのリソースを読み取るライブラリ"
+  },
+  "interface-meta": {
+   "desc": "`interface_meta` provides a convenient way to expose an extensible API with enforced method signatures and consistent documentation.",
+   "fetched_at": "2026-06-12T18:03:38Z",
+   "ja": "メソッドシグネチャの強制と一貫した文書化を備えた拡張可能な API を提供"
+  },
+  "ipykernel": {
+   "desc": "IPython Kernel for Jupyter",
+   "fetched_at": "2026-06-12T18:03:38Z",
+   "ja": "Jupyter 向けの IPython カーネル"
+  },
+  "ipython": {
+   "desc": "IPython: Productive Interactive Computing",
+   "fetched_at": "2026-06-12T18:03:38Z",
+   "ja": "生産的な対話型コンピューティング環境 IPython"
+  },
+  "ipython-pygments-lexers": {
+   "desc": "Defines a variety of Pygments lexers for highlighting IPython code.",
+   "fetched_at": "2026-06-12T18:03:39Z",
+   "ja": "IPython コードをハイライトする各種 Pygments レクサーの定義"
+  },
+  "ipywidgets": {
+   "desc": "Jupyter interactive widgets",
+   "fetched_at": "2026-06-12T18:03:39Z",
+   "ja": "Jupyter のインタラクティブウィジェット"
+  },
+  "isoduration": {
+   "desc": "Operations with ISO 8601 durations",
+   "fetched_at": "2026-06-12T18:03:39Z",
+   "ja": "ISO 8601 の期間（duration）を操作するライブラリ"
+  },
+  "itsdangerous": {
+   "desc": "Safely pass data to untrusted environments and back.",
+   "fetched_at": "2026-06-12T18:03:40Z",
+   "ja": "信頼できない環境とのデータの安全な受け渡しを行うライブラリ"
+  },
+  "jax": {
+   "desc": "Differentiate, compile, and transform Numpy code.",
+   "fetched_at": "2026-06-12T18:03:40Z",
+   "ja": "NumPy コードの微分・コンパイル・変換を行うライブラリ"
+  },
+  "jaxlib": {
+   "desc": "XLA library for JAX",
+   "fetched_at": "2026-06-12T18:03:40Z",
+   "ja": "JAX 用の XLA ライブラリ"
+  },
+  "jedi": {
+   "desc": "An autocompletion tool for Python that can be used for text editors.",
+   "fetched_at": "2026-06-12T18:03:40Z",
+   "ja": "テキストエディタで使える Python の自動補完ツール"
+  },
+  "jinja2": {
+   "desc": "A very fast and expressive template engine.",
+   "fetched_at": "2026-06-12T18:03:41Z",
+   "ja": "高速で表現力のあるテンプレートエンジン"
+  },
+  "joblib": {
+   "desc": "Lightweight pipelining with Python functions",
+   "fetched_at": "2026-06-12T18:03:41Z",
+   "ja": "Python 関数による軽量なパイプライン処理"
+  },
+  "json5": {
+   "desc": "A Python implementation of the JSON5 data format.",
+   "fetched_at": "2026-06-12T18:03:41Z",
+   "ja": "JSON5 データ形式の Python 実装"
+  },
+  "jsonpointer": {
+   "desc": "Identify specific nodes in a JSON document (RFC 6901)",
+   "fetched_at": "2026-06-12T18:03:41Z",
+   "ja": "JSON 文書内の特定ノードを指定するライブラリ（RFC 6901）"
+  },
+  "jsonschema": {
+   "desc": "An implementation of JSON Schema validation for Python",
+   "fetched_at": "2026-06-12T18:03:42Z",
+   "ja": "Python 向け JSON Schema バリデーションの実装"
+  },
+  "jsonschema-specifications": {
+   "desc": "The JSON Schema meta-schemas and vocabularies, exposed as a Registry",
+   "fetched_at": "2026-06-12T18:03:42Z",
+   "ja": "JSON Schema のメタスキーマと語彙をレジストリとして提供"
+  },
+  "jupyter": {
+   "desc": "Jupyter metapackage. Install all the Jupyter components in one go.",
+   "fetched_at": "2026-06-12T18:03:42Z",
+   "ja": "Jupyter の全コンポーネントを一括インストールするメタパッケージ"
+  },
+  "jupyter-client": {
+   "desc": "Jupyter protocol implementation and client libraries",
+   "fetched_at": "2026-06-12T18:03:42Z",
+   "ja": "Jupyter プロトコルの実装とクライアントライブラリ"
+  },
+  "jupyter-console": {
+   "desc": "Jupyter terminal console",
+   "fetched_at": "2026-06-12T18:03:43Z",
+   "ja": "Jupyter のターミナルコンソール"
+  },
+  "jupyter-core": {
+   "desc": "Jupyter core package. A base package on which Jupyter projects rely.",
+   "fetched_at": "2026-06-12T18:03:43Z",
+   "ja": "Jupyter 各プロジェクトが依存する基盤パッケージ"
+  },
+  "jupyter-events": {
+   "desc": "Jupyter Event System library",
+   "fetched_at": "2026-06-12T18:03:43Z",
+   "ja": "Jupyter のイベントシステムライブラリ"
+  },
+  "jupyter-lsp": {
+   "desc": "Multi-Language Server WebSocket proxy for Jupyter Notebook/Lab server",
+   "fetched_at": "2026-06-12T18:03:43Z",
+   "ja": "Jupyter サーバー向け多言語サーバー WebSocket プロキシ"
+  },
+  "jupyter-server": {
+   "desc": "The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web applications.",
+   "fetched_at": "2026-06-12T18:03:44Z",
+   "ja": "Jupyter Web アプリのバックエンド（コアサービス・API・REST）"
+  },
+  "jupyter-server-terminals": {
+   "desc": "A Jupyter Server Extension Providing Terminals.",
+   "fetched_at": "2026-06-12T18:03:44Z",
+   "ja": "ターミナル機能を提供する Jupyter Server 拡張"
+  },
+  "jupyterlab": {
+   "desc": "JupyterLab computational environment",
+   "fetched_at": "2026-06-12T18:03:44Z",
+   "ja": "JupyterLab の計算環境"
+  },
+  "jupyterlab-pygments": {
+   "desc": "Pygments theme using JupyterLab CSS variables",
+   "fetched_at": "2026-06-12T18:03:44Z",
+   "ja": "JupyterLab の CSS 変数を使った Pygments テーマ"
+  },
+  "jupyterlab-server": {
+   "desc": "A set of server components for JupyterLab and JupyterLab like applications.",
+   "fetched_at": "2026-06-12T18:03:45Z",
+   "ja": "JupyterLab 系アプリ向けのサーバーコンポーネント群"
+  },
+  "jupyterlab-widgets": {
+   "desc": "Jupyter interactive widgets for JupyterLab",
+   "fetched_at": "2026-06-12T18:03:45Z",
+   "ja": "JupyterLab 向けの Jupyter インタラクティブウィジェット"
+  },
+  "keras": {
+   "desc": "Multi-backend Keras",
+   "fetched_at": "2026-06-12T18:03:45Z",
+   "ja": "マルチバックエンド対応の Keras"
+  },
+  "kiwisolver": {
+   "desc": "A fast implementation of the Cassowary constraint solver",
+   "fetched_at": "2026-06-12T18:03:46Z",
+   "ja": "制約ソルバー Cassowary の高速実装"
+  },
+  "langcodes": {
+   "desc": "Tools for labeling human languages with IETF language tags",
+   "fetched_at": "2026-06-12T18:03:46Z",
+   "ja": "IETF 言語タグで言語をラベル付けするツール"
+  },
+  "lark": {
+   "desc": "a modern parsing library",
+   "fetched_at": "2026-06-12T18:03:46Z",
+   "ja": "モダンな構文解析ライブラリ"
+  },
+  "lazy-loader": {
+   "desc": "Makes it easy to load subpackages and functions on demand.",
+   "fetched_at": "2026-06-12T18:03:46Z",
+   "ja": "サブパッケージや関数のオンデマンド読み込みを容易にするライブラリ"
+  },
+  "lifelines": {
+   "desc": "Survival analysis in Python, including Kaplan Meier, Nelson Aalen and regression",
+   "fetched_at": "2026-06-12T18:03:47Z",
+   "ja": "Kaplan-Meier・Nelson-Aalen・回帰を含む生存分析ライブラリ"
+  },
+  "lightgbm": {
+   "desc": "LightGBM Python-package",
+   "fetched_at": "2026-06-12T18:03:47Z",
+   "ja": "LightGBM の Python パッケージ"
+  },
+  "llvmlite": {
+   "desc": "lightweight wrapper around basic LLVM functionality",
+   "fetched_at": "2026-06-12T18:03:47Z",
+   "ja": "LLVM の基本機能の軽量ラッパー"
+  },
+  "logical-unification": {
+   "desc": "Logical unification in Python",
+   "fetched_at": "2026-06-12T18:03:48Z",
+   "ja": "Python における論理ユニフィケーション（単一化）"
+  },
+  "mako": {
+   "desc": "A super-fast templating language that borrows the best ideas from the existing templating languages.",
+   "fetched_at": "2026-06-12T18:03:48Z",
+   "ja": "既存テンプレート言語の長所を取り入れた高速テンプレート言語"
+  },
+  "markdown-it-py": {
+   "desc": "Python port of markdown-it. Markdown parsing, done right!",
+   "fetched_at": "2026-06-12T18:03:48Z",
+   "ja": "markdown-it の Python 移植版（Markdown 解析）"
+  },
+  "markupsafe": {
+   "desc": "Safely add untrusted strings to HTML/XML markup.",
+   "fetched_at": "2026-06-12T18:03:49Z",
+   "ja": "信頼できない文字列を HTML/XML に安全に埋め込むライブラリ"
+  },
+  "matplotlib": {
+   "desc": "Python plotting package",
+   "fetched_at": "2026-06-12T18:03:49Z",
+   "ja": "Python のグラフ描画パッケージ"
+  },
+  "matplotlib-inline": {
+   "desc": "Inline Matplotlib backend for Jupyter",
+   "fetched_at": "2026-06-12T18:03:49Z",
+   "ja": "Jupyter 向けのインライン Matplotlib バックエンド"
+  },
+  "mdurl": {
+   "desc": "Markdown URL utilities",
+   "fetched_at": "2026-06-12T18:03:49Z",
+   "ja": "Markdown の URL ユーティリティ"
+  },
+  "minikanren": {
+   "desc": "Relational programming in Python",
+   "fetched_at": "2026-06-12T18:03:50Z",
+   "ja": "Python における関係プログラミング"
+  },
+  "mistune": {
+   "desc": "A sane and fast Markdown parser with useful plugins and renderers",
+   "fetched_at": "2026-06-12T18:03:50Z",
+   "ja": "プラグインとレンダラーを備えた高速な Markdown パーサー"
+  },
+  "ml-dtypes": {
+   "desc": "ml_dtypes is a stand-alone implementation of several NumPy dtype extensions used in machine learning.",
+   "fetched_at": "2026-06-12T18:03:50Z",
+   "ja": "機械学習で使う NumPy dtype 拡張の単体実装"
+  },
+  "mlflow": {
+   "desc": "MLflow is an open source platform for the complete machine learning lifecycle",
+   "fetched_at": "2026-06-12T18:03:50Z",
+   "ja": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+  },
+  "mlflow-skinny": {
+   "desc": "MLflow is an open source platform for the complete machine learning lifecycle",
+   "fetched_at": "2026-06-12T18:03:51Z",
+   "ja": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+  },
+  "mlflow-tracing": {
+   "desc": "MLflow Tracing SDK is an open-source, lightweight Python package that only includes the minimum set of dependencies and functionality to instrument your code/models/agents with MLflow Tracing.",
+   "fetched_at": "2026-06-12T18:03:51Z",
+   "ja": "最小限の依存で MLflow Tracing の計装機能を提供する軽量パッケージ"
+  },
+  "mpmath": {
+   "desc": "Python library for arbitrary-precision floating-point arithmetic",
+   "fetched_at": "2026-06-12T18:03:51Z",
+   "ja": "任意精度浮動小数点演算のための Python ライブラリ"
+  },
+  "multipledispatch": {
+   "desc": "Multiple dispatch",
+   "fetched_at": "2026-06-12T18:03:51Z",
+   "ja": "多重ディスパッチ"
+  },
+  "murmurhash": {
+   "desc": "Cython bindings for MurmurHash",
+   "fetched_at": "2026-06-12T18:03:52Z",
+   "ja": "MurmurHash の Cython バインディング"
+  },
+  "namex": {
+   "desc": "A simple utility to separate the implementation of your Python package and its public API surface.",
+   "fetched_at": "2026-06-12T18:03:52Z",
+   "ja": "パッケージの実装と公開 API を分離するシンプルなユーティリティ"
+  },
+  "narwhals": {
+   "desc": "Extremely lightweight compatibility layer between dataframe libraries",
+   "fetched_at": "2026-06-12T18:03:52Z",
+   "ja": "データフレームライブラリ間の超軽量互換レイヤー"
+  },
+  "nbclient": {
+   "desc": "A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor.",
+   "fetched_at": "2026-06-12T18:03:52Z",
+   "ja": "ノートブックを実行するためのクライアントライブラリ"
+  },
+  "nbconvert": {
+   "desc": "Convert Jupyter Notebooks (.ipynb files) to other formats.",
+   "fetched_at": "2026-06-12T18:03:53Z",
+   "ja": "Jupyter Notebook（.ipynb）を他形式へ変換するツール"
+  },
+  "nbformat": {
+   "desc": "The Jupyter Notebook format",
+   "fetched_at": "2026-06-12T18:03:53Z",
+   "ja": "Jupyter Notebook のフォーマット"
+  },
+  "nest-asyncio2": {
+   "desc": "Patch asyncio to allow nested event loops",
+   "fetched_at": "2026-06-12T18:03:53Z",
+   "ja": "asyncio にネストしたイベントループを許可するパッチ"
+  },
+  "networkx": {
+   "desc": "Python package for creating and manipulating graphs and networks",
+   "fetched_at": "2026-06-12T18:03:54Z",
+   "ja": "グラフ・ネットワークの作成と操作のための Python パッケージ"
+  },
+  "nltk": {
+   "desc": "Natural Language Toolkit",
+   "fetched_at": "2026-06-12T18:03:54Z",
+   "ja": "自然言語処理ツールキット"
+  },
+  "notebook": {
+   "desc": "Jupyter Notebook - A web-based notebook environment for interactive computing",
+   "fetched_at": "2026-06-12T18:03:54Z",
+   "ja": "対話的な計算のための Web ベースノートブック環境（Jupyter Notebook）"
+  },
+  "notebook-shim": {
+   "desc": "A shim layer for notebook traits and config",
+   "fetched_at": "2026-06-12T18:03:54Z",
+   "ja": "ノートブックの trait と設定のためのシム層"
+  },
+  "numba": {
+   "desc": "compiling Python code using LLVM",
+   "fetched_at": "2026-06-12T18:03:55Z",
+   "ja": "LLVM を用いた Python コードのコンパイル"
+  },
+  "numpy": {
+   "desc": "Fundamental package for array computing in Python",
+   "fetched_at": "2026-06-12T18:03:55Z",
+   "ja": "Python の配列計算のための基盤パッケージ"
+  },
+  "nvidia-nccl-cu12": {
+   "desc": "NVIDIA Collective Communication Library (NCCL) Runtime",
+   "fetched_at": "2026-06-12T18:03:55Z",
+   "ja": "NVIDIA 集合通信ライブラリ（NCCL）ランタイム"
+  },
+  "opentelemetry-api": {
+   "desc": "OpenTelemetry Python API",
+   "fetched_at": "2026-06-12T18:03:55Z",
+   "ja": "OpenTelemetry の Python API"
+  },
+  "opentelemetry-proto": {
+   "desc": "OpenTelemetry Python Proto",
+   "fetched_at": "2026-06-12T18:03:56Z",
+   "ja": "OpenTelemetry の Python 用 Proto"
+  },
+  "opentelemetry-sdk": {
+   "desc": "OpenTelemetry Python SDK",
+   "fetched_at": "2026-06-12T18:03:56Z",
+   "ja": "OpenTelemetry の Python SDK"
+  },
+  "opentelemetry-semantic-conventions": {
+   "desc": "OpenTelemetry Semantic Conventions",
+   "fetched_at": "2026-06-12T18:03:56Z",
+   "ja": "OpenTelemetry のセマンティック規約"
+  },
+  "opt-einsum": {
+   "desc": "Path optimization of einsum functions.",
+   "fetched_at": "2026-06-12T18:03:57Z",
+   "ja": "einsum 関数の計算経路最適化"
+  },
+  "optree": {
+   "desc": "Optimized PyTree Utilities.",
+   "fetched_at": "2026-06-12T18:03:57Z",
+   "ja": "最適化された PyTree ユーティリティ"
+  },
+  "optuna": {
+   "desc": "A hyperparameter optimization framework",
+   "fetched_at": "2026-06-12T18:03:57Z",
+   "ja": "ハイパーパラメータ最適化フレームワーク"
+  },
+  "overrides": {
+   "desc": "A decorator to automatically detect mismatch when overriding a method.",
+   "fetched_at": "2026-06-12T18:03:57Z",
+   "ja": "メソッドオーバーライド時の不一致を自動検出するデコレータ"
+  },
+  "packaging": {
+   "desc": "Core utilities for Python packages",
+   "fetched_at": "2026-06-12T18:03:57Z",
+   "ja": "Python パッケージのためのコアユーティリティ"
+  },
+  "pandas": {
+   "desc": "Powerful data structures for data analysis, time series, and statistics",
+   "fetched_at": "2026-06-12T18:03:58Z",
+   "ja": "データ分析・時系列・統計のための強力なデータ構造"
+  },
+  "pandas-flavor": {
+   "desc": "The easy way to write your own Pandas flavor",
+   "fetched_at": "2026-06-12T18:03:58Z",
+   "ja": "独自の Pandas フレーバーを簡単に書くためのツール"
+  },
+  "pandocfilters": {
+   "desc": "Utilities for writing pandoc filters in python",
+   "fetched_at": "2026-06-12T18:03:58Z",
+   "ja": "Python で pandoc フィルタを書くためのユーティリティ"
+  },
+  "parso": {
+   "desc": "A Python Parser",
+   "fetched_at": "2026-06-12T18:03:59Z",
+   "ja": "Python パーサー"
+  },
+  "patsy": {
+   "desc": "A Python package for describing statistical models and for building design matrices.",
+   "fetched_at": "2026-06-12T18:03:59Z",
+   "ja": "統計モデルの記述と計画行列の構築のための Python パッケージ"
+  },
+  "pexpect": {
+   "desc": "Pexpect allows easy control of interactive console applications.",
+   "fetched_at": "2026-06-12T18:03:59Z",
+   "ja": "対話型コンソールアプリを簡単に制御するライブラリ"
+  },
+  "pillow": {
+   "desc": "Python Imaging Library (fork)",
+   "fetched_at": "2026-06-12T18:03:59Z",
+   "ja": "Python Imaging Library のフォーク"
+  },
+  "pingouin": {
+   "desc": "Pingouin: statistical package for Python",
+   "fetched_at": "2026-06-12T18:04:00Z",
+   "ja": "Python 向け統計パッケージ"
+  },
+  "platformdirs": {
+   "desc": "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`.",
+   "fetched_at": "2026-06-12T18:04:00Z",
+   "ja": "プラットフォーム固有のディレクトリを判定する小型パッケージ"
+  },
+  "plotly": {
+   "desc": "An open-source interactive data visualization library for Python",
+   "fetched_at": "2026-06-12T18:04:00Z",
+   "ja": "Python のオープンソース対話型データ可視化ライブラリ"
+  },
+  "pmdarima": {
+   "desc": "Python's forecast::auto.arima equivalent",
+   "fetched_at": "2026-06-12T18:04:00Z",
+   "ja": "forecast::auto.arima に相当する Python パッケージ"
+  },
+  "polars": {
+   "desc": "Blazingly fast DataFrame library",
+   "fetched_at": "2026-06-12T18:04:01Z",
+   "ja": "高速な DataFrame ライブラリ"
+  },
+  "polars-runtime-32": {
+   "desc": "Blazingly fast DataFrame library",
+   "fetched_at": "2026-06-12T18:04:01Z",
+   "ja": "高速な DataFrame ライブラリ"
+  },
+  "preshed": {
+   "desc": "Cython hash table that trusts the keys are pre-hashed",
+   "fetched_at": "2026-06-12T18:04:01Z",
+   "ja": "キーが事前ハッシュ済みである前提の Cython ハッシュテーブル"
+  },
+  "prettytable": {
+   "desc": "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format",
+   "fetched_at": "2026-06-12T18:04:02Z",
+   "ja": "表データを ASCII テーブル形式で見やすく表示するライブラリ"
+  },
+  "prometheus-client": {
+   "desc": "Python client for the Prometheus monitoring system.",
+   "fetched_at": "2026-06-12T18:04:02Z",
+   "ja": "監視システム Prometheus の Python クライアント"
+  },
+  "prompt-toolkit": {
+   "desc": "Library for building powerful interactive command lines in Python",
+   "fetched_at": "2026-06-12T18:04:02Z",
+   "ja": "対話型コマンドラインを構築するためのライブラリ"
+  },
+  "prophet": {
+   "desc": "Automatic Forecasting Procedure",
+   "fetched_at": "2026-06-12T18:04:02Z",
+   "ja": "自動予測プロシージャ"
+  },
+  "protobuf": {
+   "desc": "",
+   "fetched_at": "2026-06-12T18:04:03Z",
+   "ja": ""
+  },
+  "psutil": {
+   "desc": "Cross-platform lib for process and system monitoring.",
+   "fetched_at": "2026-06-12T18:04:03Z",
+   "ja": "プロセスとシステム監視のためのクロスプラットフォームライブラリ"
+  },
+  "ptyprocess": {
+   "desc": "Run a subprocess in a pseudo terminal",
+   "fetched_at": "2026-06-12T18:04:03Z",
+   "ja": "疑似端末でサブプロセスを実行するライブラリ"
+  },
+  "pure-eval": {
+   "desc": "Safely evaluate AST nodes without side effects",
+   "fetched_at": "2026-06-12T18:04:03Z",
+   "ja": "副作用なしで AST ノードを安全に評価するライブラリ"
+  },
+  "pyarrow": {
+   "desc": "Python library for Apache Arrow",
+   "fetched_at": "2026-06-12T18:04:04Z",
+   "ja": "Apache Arrow の Python ライブラリ"
+  },
+  "pyasn1": {
+   "desc": "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)",
+   "fetched_at": "2026-06-12T18:04:04Z",
+   "ja": "ASN.1 型と DER/BER/CER コーデックの純 Python 実装"
+  },
+  "pyasn1-modules": {
+   "desc": "A collection of ASN.1-based protocols modules",
+   "fetched_at": "2026-06-12T18:04:04Z",
+   "ja": "ASN.1 ベースのプロトコルモジュール集"
+  },
+  "pycparser": {
+   "desc": "C parser in Python",
+   "fetched_at": "2026-06-12T18:04:04Z",
+   "ja": "Python 製の C 言語パーサー"
+  },
+  "pydantic": {
+   "desc": "Data validation using Python type hints",
+   "fetched_at": "2026-06-12T18:04:05Z",
+   "ja": "Python の型ヒントを用いたデータ検証ライブラリ"
+  },
+  "pydantic-core": {
+   "desc": "Core functionality for Pydantic validation and serialization",
+   "fetched_at": "2026-06-12T18:04:05Z",
+   "ja": "Pydantic の検証・シリアライズの中核機能"
+  },
+  "pygments": {
+   "desc": "Pygments is a syntax highlighting package written in Python.",
+   "fetched_at": "2026-06-12T18:04:05Z",
+   "ja": "Python 製のシンタックスハイライトパッケージ"
+  },
+  "pymc": {
+   "desc": "Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with PyTensor",
+   "fetched_at": "2026-06-12T18:04:05Z",
+   "ja": "PyTensor によるベイズモデリングと確率的機械学習のための確率的プログラミングライブラリ"
+  },
+  "pynndescent": {
+   "desc": "Nearest Neighbor Descent",
+   "fetched_at": "2026-06-12T18:04:06Z",
+   "ja": "最近傍降下法（Nearest Neighbor Descent）"
+  },
+  "pyparsing": {
+   "desc": "pyparsing - Classes and methods to define and execute parsing grammars",
+   "fetched_at": "2026-06-12T18:04:06Z",
+   "ja": "構文解析文法を定義・実行するためのクラスとメソッド"
+  },
+  "pytensor": {
+   "desc": "Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs.",
+   "fetched_at": "2026-06-12T18:04:06Z",
+   "ja": "CPU・GPU 上で数式を評価する最適化コンパイラ"
+  },
+  "python-dateutil": {
+   "desc": "Extensions to the standard Python datetime module",
+   "fetched_at": "2026-06-12T18:04:06Z",
+   "ja": "Python 標準 datetime モジュールの拡張"
+  },
+  "python-dotenv": {
+   "desc": "Read key-value pairs from a .env file and set them as environment variables",
+   "fetched_at": "2026-06-12T18:04:07Z",
+   "ja": ".env ファイルからキーと値を読み込み環境変数に設定するライブラリ"
+  },
+  "python-json-logger": {
+   "desc": "JSON Log Formatter for the Python Logging Package",
+   "fetched_at": "2026-06-12T18:04:07Z",
+   "ja": "Python logging 用の JSON ログフォーマッタ"
+  },
+  "pytz": {
+   "desc": "World timezone definitions, modern and historical",
+   "fetched_at": "2026-06-12T18:04:07Z",
+   "ja": "現代および過去の世界タイムゾーン定義"
+  },
+  "pyyaml": {
+   "desc": "YAML parser and emitter for Python",
+   "fetched_at": "2026-06-12T18:04:07Z",
+   "ja": "Python 用の YAML パーサー・エミッター"
+  },
+  "pyzmq": {
+   "desc": "Python bindings for 0MQ",
+   "fetched_at": "2026-06-12T18:04:08Z",
+   "ja": "0MQ の Python バインディング"
+  },
+  "referencing": {
+   "desc": "JSON Referencing + Python",
+   "fetched_at": "2026-06-12T18:04:08Z",
+   "ja": "Python 向けの JSON Referencing"
+  },
+  "regex": {
+   "desc": "Alternative regular expression module, to replace re.",
+   "fetched_at": "2026-06-12T18:04:08Z",
+   "ja": "re を置き換える代替正規表現モジュール"
+  },
+  "requests": {
+   "desc": "Python HTTP for Humans.",
+   "fetched_at": "2026-06-12T18:04:09Z",
+   "ja": "人にやさしい Python の HTTP ライブラリ"
+  },
+  "rfc3339-validator": {
+   "desc": "A pure python RFC3339 validator",
+   "fetched_at": "2026-06-12T18:04:09Z",
+   "ja": "純 Python 製の RFC3339 バリデータ"
+  },
+  "rfc3986-validator": {
+   "desc": "Pure python rfc3986 validator",
+   "fetched_at": "2026-06-12T18:04:09Z",
+   "ja": "純 Python 製の RFC3986 バリデータ"
+  },
+  "rfc3987-syntax": {
+   "desc": "Helper functions to syntactically validate strings according to RFC 3987.",
+   "fetched_at": "2026-06-12T18:04:09Z",
+   "ja": "RFC 3987 に従い文字列を構文検証するヘルパー関数群"
+  },
+  "rich": {
+   "desc": "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal",
+   "fetched_at": "2026-06-12T18:04:10Z",
+   "ja": "リッチテキスト・表・進捗バー・Markdown などをターミナルに描画するライブラリ"
+  },
+  "rpds-py": {
+   "desc": "Python bindings to Rust's persistent data structures (rpds)",
+   "fetched_at": "2026-06-12T18:04:10Z",
+   "ja": "Rust の永続データ構造（rpds）の Python バインディング"
+  },
+  "safetensors": {
+   "desc": "",
+   "fetched_at": "2026-06-12T18:04:10Z",
+   "ja": ""
+  },
+  "scikit-image": {
+   "desc": "Image processing in Python",
+   "fetched_at": "2026-06-12T18:04:10Z",
+   "ja": "Python の画像処理ライブラリ"
+  },
+  "scikit-learn": {
+   "desc": "A set of python modules for machine learning and data mining",
+   "fetched_at": "2026-06-12T18:04:11Z",
+   "ja": "機械学習とデータマイニングのための Python モジュール群"
+  },
+  "scipy": {
+   "desc": "Fundamental algorithms for scientific computing in Python",
+   "fetched_at": "2026-06-12T18:04:11Z",
+   "ja": "Python の科学技術計算のための基礎アルゴリズム群"
+  },
+  "seaborn": {
+   "desc": "Statistical data visualization",
+   "fetched_at": "2026-06-12T18:04:11Z",
+   "ja": "統計データの可視化ライブラリ"
+  },
+  "send2trash": {
+   "desc": "Send file to trash natively under Mac OS X, Windows and Linux",
+   "fetched_at": "2026-06-12T18:04:12Z",
+   "ja": "Mac・Windows・Linux でファイルをネイティブにゴミ箱へ送るツール"
+  },
+  "setuptools": {
+   "desc": "Most extensible Python build backend with support for C/C++ extension modules",
+   "fetched_at": "2026-06-12T18:04:12Z",
+   "ja": "C/C++ 拡張モジュールに対応した拡張性の高い Python ビルドバックエンド"
+  },
+  "shap": {
+   "desc": "A unified approach to explain the output of any machine learning model.",
+   "fetched_at": "2026-06-12T18:04:12Z",
+   "ja": "機械学習モデルの出力を説明する統一的手法"
+  },
+  "shellingham": {
+   "desc": "Tool to Detect Surrounding Shell",
+   "fetched_at": "2026-06-12T18:04:12Z",
+   "ja": "実行中のシェルを検出するツール"
+  },
+  "six": {
+   "desc": "Python 2 and 3 compatibility utilities",
+   "fetched_at": "2026-06-12T18:04:13Z",
+   "ja": "Python 2 と 3 の互換性ユーティリティ"
+  },
+  "sklearn-compat": {
+   "desc": "Ease support for compatible scikit-learn estimators across versions",
+   "fetched_at": "2026-06-12T18:04:13Z",
+   "ja": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ"
+  },
+  "skops": {
+   "desc": "A set of tools, related to machine learning in production.",
+   "fetched_at": "2026-06-12T18:04:13Z",
+   "ja": "本番環境での機械学習に関するツール群"
+  },
+  "slicer": {
+   "desc": "A small package for big slicing.",
+   "fetched_at": "2026-06-12T18:04:13Z",
+   "ja": "大規模なスライス処理のための小さなパッケージ"
+  },
+  "smart-open": {
+   "desc": "Utils for streaming large files (S3, HDFS, GCS, SFTP, Azure Blob Storage, gzip, bz2, zst...)",
+   "fetched_at": "2026-06-12T18:04:14Z",
+   "ja": "S3・HDFS・GCS などの大容量ファイルをストリーミングするユーティリティ"
+  },
+  "smmap": {
+   "desc": "A pure Python implementation of a sliding window memory map manager",
+   "fetched_at": "2026-06-12T18:04:14Z",
+   "ja": "スライディングウィンドウ式メモリマップ管理の純 Python 実装"
+  },
+  "soupsieve": {
+   "desc": "A modern CSS selector implementation for Beautiful Soup.",
+   "fetched_at": "2026-06-12T18:04:14Z",
+   "ja": "Beautiful Soup 向けのモダンな CSS セレクタ実装"
+  },
+  "spacy": {
+   "desc": "Industrial-strength Natural Language Processing (NLP) in Python",
+   "fetched_at": "2026-06-12T18:04:14Z",
+   "ja": "産業利用に耐える Python の自然言語処理（NLP）ライブラリ"
+  },
+  "spacy-legacy": {
+   "desc": "Legacy registered functions for spaCy backwards compatibility",
+   "fetched_at": "2026-06-12T18:04:15Z",
+   "ja": "spaCy の後方互換性のためのレガシー登録関数群"
+  },
+  "spacy-loggers": {
+   "desc": "Logging utilities for SpaCy",
+   "fetched_at": "2026-06-12T18:04:15Z",
+   "ja": "spaCy 用のロギングユーティリティ"
+  },
+  "sqlalchemy": {
+   "desc": "Database Abstraction Library",
+   "fetched_at": "2026-06-12T18:04:15Z",
+   "ja": "データベース抽象化ライブラリ"
+  },
+  "sqlparse": {
+   "desc": "A non-validating SQL parser.",
+   "fetched_at": "2026-06-12T18:04:16Z",
+   "ja": "検証を行わない SQL パーサー"
+  },
+  "srsly": {
+   "desc": "Modern high-performance serialization utilities for Python",
+   "fetched_at": "2026-06-12T18:04:16Z",
+   "ja": "Python 向けの高性能なシリアライズユーティリティ"
+  },
+  "stack-data": {
+   "desc": "Extract data from python stack frames and tracebacks for informative displays",
+   "fetched_at": "2026-06-12T18:04:16Z",
+   "ja": "スタックフレームとトレースバックから表示用データを抽出するライブラリ"
+  },
+  "stanio": {
+   "desc": "Utilities for preparing Stan inputs and processing Stan outputs",
+   "fetched_at": "2026-06-12T18:04:16Z",
+   "ja": "Stan の入力作成と出力処理のためのユーティリティ"
+  },
+  "starlette": {
+   "desc": "The little ASGI library that shines.",
+   "fetched_at": "2026-06-12T18:04:17Z",
+   "ja": "小さな ASGI ライブラリ"
+  },
+  "statsmodels": {
+   "desc": "Statistical computations and models for Python",
+   "fetched_at": "2026-06-12T18:04:17Z",
+   "ja": "Python のための統計計算・統計モデル"
+  },
+  "sympy": {
+   "desc": "Computer algebra system (CAS) in Python",
+   "fetched_at": "2026-06-12T18:04:17Z",
+   "ja": "Python 製の数式処理システム（CAS）"
+  },
+  "tabulate": {
+   "desc": "Pretty-print tabular data",
+   "fetched_at": "2026-06-12T18:04:17Z",
+   "ja": "表形式データをきれいに表示するツール"
+  },
+  "tensorflow": {
+   "desc": "TensorFlow is an open source machine learning framework for everyone.",
+   "fetched_at": "2026-06-12T18:04:18Z",
+   "ja": "オープンソースの機械学習フレームワーク"
+  },
+  "terminado": {
+   "desc": "Tornado websocket backend for the Xterm.js Javascript terminal emulator library.",
+   "fetched_at": "2026-06-12T18:04:18Z",
+   "ja": "Xterm.js 端末エミュレータ向けの Tornado WebSocket バックエンド"
+  },
+  "thinc": {
+   "desc": "A refreshing functional take on deep learning, compatible with your favorite libraries",
+   "fetched_at": "2026-06-12T18:04:18Z",
+   "ja": "主要ライブラリと互換な関数型スタイルの深層学習ライブラリ"
+  },
+  "threadpoolctl": {
+   "desc": "threadpoolctl",
+   "fetched_at": "2026-06-12T18:04:18Z",
+   "ja": "threadpoolctl"
+  },
+  "tifffile": {
+   "desc": "Read and write TIFF files",
+   "fetched_at": "2026-06-12T18:04:19Z",
+   "ja": "TIFF ファイルの読み書きを行うライブラリ"
+  },
+  "tinycss2": {
+   "desc": "A tiny CSS parser",
+   "fetched_at": "2026-06-12T18:04:19Z",
+   "ja": "小さな CSS パーサー"
+  },
+  "tokenizers": {
+   "desc": "",
+   "fetched_at": "2026-06-12T18:04:19Z",
+   "ja": ""
+  },
+  "tomli": {
+   "desc": "A lil' TOML parser",
+   "fetched_at": "2026-06-12T18:04:20Z",
+   "ja": "小さな TOML パーサー"
+  },
+  "toolz": {
+   "desc": "List processing tools and functional utilities",
+   "fetched_at": "2026-06-12T18:04:20Z",
+   "ja": "リスト処理ツールと関数型ユーティリティ"
+  },
+  "torch": {
+   "desc": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+   "fetched_at": "2026-06-12T18:04:20Z",
+   "ja": "GPU 加速対応のテンソルと動的ニューラルネットワークのライブラリ"
+  },
+  "tornado": {
+   "desc": "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.",
+   "fetched_at": "2026-06-12T18:04:20Z",
+   "ja": "Python の Web フレームワーク兼非同期ネットワークライブラリ"
+  },
+  "tqdm": {
+   "desc": "Fast, Extensible Progress Meter",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "高速で拡張可能な進捗表示ライブラリ"
+  },
+  "traitlets": {
+   "desc": "Traitlets Python configuration system",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "Python 向け設定システム Traitlets"
+  },
+  "transformers": {
+   "desc": "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "テキスト・画像・音声・マルチモーダルの機械学習モデル定義フレームワーク"
+  },
+  "typer": {
+   "desc": "Typer, build great CLIs. Easy to code. Based on Python type hints.",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "Python の型ヒントに基づく CLI 構築ライブラリ"
+  },
+  "typing-extensions": {
+   "desc": "Backported and Experimental Type Hints for Python 3.9+",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "Python 3.9+ 向けのバックポート・実験的型ヒント"
+  },
+  "typing-inspection": {
+   "desc": "Runtime typing introspection tools",
+   "fetched_at": "2026-06-12T18:04:21Z",
+   "ja": "実行時の型イントロスペクションツール"
+  },
+  "tzdata": {
+   "desc": "Provider of IANA time zone data",
+   "fetched_at": "2026-06-12T18:04:22Z",
+   "ja": "IANA タイムゾーンデータの提供パッケージ"
+  },
+  "umap-learn": {
+   "desc": "Uniform Manifold Approximation and Projection",
+   "fetched_at": "2026-06-12T18:04:22Z",
+   "ja": "Uniform Manifold Approximation and Projection（UMAP）"
+  },
+  "uri-template": {
+   "desc": "RFC 6570 URI Template Processor",
+   "fetched_at": "2026-06-12T18:04:22Z",
+   "ja": "RFC 6570 URI テンプレートプロセッサ"
+  },
+  "urllib3": {
+   "desc": "HTTP library with thread-safe connection pooling, file post, and more.",
+   "fetched_at": "2026-06-12T18:04:22Z",
+   "ja": "スレッドセーフな接続プールなどを備えた HTTP ライブラリ"
+  },
+  "uvicorn": {
+   "desc": "The lightning-fast ASGI server.",
+   "fetched_at": "2026-06-12T18:04:22Z",
+   "ja": "高速な ASGI サーバー"
+  },
+  "wasabi": {
+   "desc": "A lightweight console printing and formatting toolkit",
+   "fetched_at": "2026-06-12T18:04:23Z",
+   "ja": "軽量なコンソール出力・整形ツールキット"
+  },
+  "wcwidth": {
+   "desc": "Measures the displayed width of unicode strings in a terminal",
+   "fetched_at": "2026-06-12T18:04:23Z",
+   "ja": "ターミナルでの Unicode 文字列の表示幅を測定するライブラリ"
+  },
+  "weasel": {
+   "desc": "Weasel: A small and easy workflow system",
+   "fetched_at": "2026-06-12T18:04:23Z",
+   "ja": "小さくて簡単なワークフローシステム"
+  },
+  "webcolors": {
+   "desc": "A library for working with the color formats defined by HTML and CSS.",
+   "fetched_at": "2026-06-12T18:04:24Z",
+   "ja": "HTML・CSS で定義された色形式を扱うライブラリ"
+  },
+  "webencodings": {
+   "desc": "Character encoding aliases for legacy web content",
+   "fetched_at": "2026-06-12T18:04:24Z",
+   "ja": "レガシー Web コンテンツ用の文字エンコーディング別名"
+  },
+  "websocket-client": {
+   "desc": "WebSocket client for Python with low level API options",
+   "fetched_at": "2026-06-12T18:04:24Z",
+   "ja": "低レベル API も備えた Python 用 WebSocket クライアント"
+  },
+  "werkzeug": {
+   "desc": "The comprehensive WSGI web application library.",
+   "fetched_at": "2026-06-12T18:04:24Z",
+   "ja": "包括的な WSGI Web アプリケーションライブラリ"
+  },
+  "widgetsnbextension": {
+   "desc": "Jupyter interactive widgets for Jupyter Notebook",
+   "fetched_at": "2026-06-12T18:04:25Z",
+   "ja": "Jupyter Notebook 用のインタラクティブウィジェット"
+  },
+  "wrapt": {
+   "desc": "Module for decorators, wrappers and monkey patching.",
+   "fetched_at": "2026-06-12T18:04:25Z",
+   "ja": "デコレータ・ラッパー・モンキーパッチのためのモジュール"
+  },
+  "xarray": {
+   "desc": "N-D labeled arrays and datasets in Python",
+   "fetched_at": "2026-06-12T18:04:25Z",
+   "ja": "Python のラベル付き N 次元配列・データセット"
+  },
+  "xarray-einstats": {
+   "desc": "Stats, linear algebra and einops for xarray",
+   "fetched_at": "2026-06-12T18:04:25Z",
+   "ja": "xarray 向けの統計・線形代数・einops 機能"
+  },
+  "xgboost": {
+   "desc": "XGBoost Python Package",
+   "fetched_at": "2026-06-12T18:04:26Z",
+   "ja": "XGBoost の Python パッケージ"
+  },
+  "xyzservices": {
+   "desc": "Source of XYZ tiles providers",
+   "fetched_at": "2026-06-12T18:04:26Z",
+   "ja": "XYZ タイルプロバイダの情報源"
+  },
+  "zipp": {
+   "desc": "Backport of pathlib-compatible object wrapper for zip files",
+   "fetched_at": "2026-06-12T18:04:26Z",
+   "ja": "zip ファイル用 pathlib 互換ラッパーのバックポート"
+  }
+ },
+ "summary": {
+  "total": 272,
+  "with_desc": 269,
+  "coverage": 0.989,
+  "updated_at": "2026-06-12T18:04:26Z"
+ },
+ "ja_note": "日本語簡易説明は原文 summary を基に一括作成した固定データ（2026-06-13）"
+}

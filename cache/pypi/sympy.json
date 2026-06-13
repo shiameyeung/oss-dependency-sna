@@ -1,0 +1,18 @@
+{
+ "package": "sympy",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:07Z",
+ "status": "ok",
+ "version": "1.14.0",
+ "nodes": [
+  "mpmath",
+  "sympy"
+ ],
+ "edges": [
+  [
+   "sympy",
+   "mpmath"
+  ]
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "package": "k8s.io/api",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v0.36.1",
+ "nodes": [
+  "k8s.io/api",
+  "k8s.io/apimachinery",
+  "k8s.io/klog/v2"
+ ],
+ "edges": [
+  [
+   "k8s.io/api",
+   "k8s.io/apimachinery"
+  ],
+  [
+   "k8s.io/api",
+   "k8s.io/klog/v2"
+  ],
+  [
+   "k8s.io/apimachinery",
+   "k8s.io/klog/v2"
+  ]
+ ]
+}

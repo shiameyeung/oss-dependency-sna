@@ -1,0 +1,90 @@
+{
+ "package": "go.etcd.io/etcd/client/v3",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v3.6.12",
+ "nodes": [
+  "github.com/dustin/go-humanize",
+  "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+  "github.com/prometheus/client_golang",
+  "github.com/stretchr/testify",
+  "go.etcd.io/etcd/api/v3",
+  "go.etcd.io/etcd/client/pkg/v3",
+  "go.etcd.io/etcd/client/v3",
+  "go.uber.org/zap",
+  "google.golang.org/grpc",
+  "sigs.k8s.io/yaml"
+ ],
+ "edges": [
+  [
+   "go.etcd.io/etcd/client/v3",
+   "github.com/dustin/go-humanize"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "go.etcd.io/etcd/api/v3"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "go.etcd.io/etcd/client/pkg/v3"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "go.uber.org/zap"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "google.golang.org/grpc"
+  ],
+  [
+   "go.etcd.io/etcd/client/v3",
+   "sigs.k8s.io/yaml"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+   "github.com/prometheus/client_golang"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+   "google.golang.org/grpc"
+  ],
+  [
+   "go.etcd.io/etcd/api/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.etcd.io/etcd/api/v3",
+   "google.golang.org/grpc"
+  ],
+  [
+   "go.etcd.io/etcd/client/pkg/v3",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.etcd.io/etcd/client/pkg/v3",
+   "go.uber.org/zap"
+  ],
+  [
+   "go.uber.org/zap",
+   "github.com/stretchr/testify"
+  ]
+ ]
+}

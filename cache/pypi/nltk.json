@@ -1,0 +1,33 @@
+{
+ "package": "nltk",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:09Z",
+ "status": "ok",
+ "version": "3.9.4",
+ "nodes": [
+  "click",
+  "joblib",
+  "nltk",
+  "regex",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "nltk",
+   "click"
+  ],
+  [
+   "nltk",
+   "joblib"
+  ],
+  [
+   "nltk",
+   "regex"
+  ],
+  [
+   "nltk",
+   "tqdm"
+  ]
+ ]
+}

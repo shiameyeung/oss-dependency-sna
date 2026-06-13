@@ -1,0 +1,99 @@
+{
+ "package": "umap-learn",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:16Z",
+ "status": "ok",
+ "version": "0.5.12",
+ "nodes": [
+  "joblib",
+  "llvmlite",
+  "narwhals",
+  "numba",
+  "numpy",
+  "pynndescent",
+  "scikit-learn",
+  "scipy",
+  "threadpoolctl",
+  "tqdm",
+  "umap-learn"
+ ],
+ "edges": [
+  [
+   "umap-learn",
+   "numba"
+  ],
+  [
+   "umap-learn",
+   "numpy"
+  ],
+  [
+   "umap-learn",
+   "pynndescent"
+  ],
+  [
+   "umap-learn",
+   "scikit-learn"
+  ],
+  [
+   "umap-learn",
+   "scipy"
+  ],
+  [
+   "umap-learn",
+   "tqdm"
+  ],
+  [
+   "numba",
+   "llvmlite"
+  ],
+  [
+   "numba",
+   "numpy"
+  ],
+  [
+   "pynndescent",
+   "joblib"
+  ],
+  [
+   "pynndescent",
+   "llvmlite"
+  ],
+  [
+   "pynndescent",
+   "numba"
+  ],
+  [
+   "pynndescent",
+   "scikit-learn"
+  ],
+  [
+   "pynndescent",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

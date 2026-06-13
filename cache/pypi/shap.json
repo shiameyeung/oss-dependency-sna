@@ -1,0 +1,112 @@
+{
+ "package": "shap",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:12Z",
+ "status": "ok",
+ "version": "0.52.0",
+ "nodes": [
+  "cloudpickle",
+  "joblib",
+  "llvmlite",
+  "narwhals",
+  "numba",
+  "numpy",
+  "packaging",
+  "pandas",
+  "python-dateutil",
+  "scikit-learn",
+  "scipy",
+  "shap",
+  "six",
+  "slicer",
+  "threadpoolctl",
+  "tqdm"
+ ],
+ "edges": [
+  [
+   "shap",
+   "cloudpickle"
+  ],
+  [
+   "shap",
+   "llvmlite"
+  ],
+  [
+   "shap",
+   "numba"
+  ],
+  [
+   "shap",
+   "numpy"
+  ],
+  [
+   "shap",
+   "packaging"
+  ],
+  [
+   "shap",
+   "pandas"
+  ],
+  [
+   "shap",
+   "scikit-learn"
+  ],
+  [
+   "shap",
+   "scipy"
+  ],
+  [
+   "shap",
+   "slicer"
+  ],
+  [
+   "shap",
+   "tqdm"
+  ],
+  [
+   "numba",
+   "llvmlite"
+  ],
+  [
+   "numba",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "numpy"
+  ],
+  [
+   "pandas",
+   "python-dateutil"
+  ],
+  [
+   "python-dateutil",
+   "six"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

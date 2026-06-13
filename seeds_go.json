@@ -1,0 +1,29 @@
+{
+  "domain": "cn",
+  "label": "クラウドネイティブ系 (Go)",
+  "note": "財団（CNCF 中心）ガバナンス下の代表的クラウドネイティブ系 Go モジュール。選定基準: CNCF の graduated / incubating プロジェクトと、その中核クライアント・基盤ライブラリ。モジュールパスは Go module path 表記。取得失敗はデータ取得成功率の記録対象とする。",
+  "seeds": [
+    "k8s.io/kubernetes", "k8s.io/client-go", "k8s.io/api", "k8s.io/apimachinery",
+    "k8s.io/kubectl", "k8s.io/kube-state-metrics/v2", "sigs.k8s.io/controller-runtime",
+    "sigs.k8s.io/kustomize/kustomize/v5", "helm.sh/helm/v3",
+    "go.etcd.io/etcd/client/v3", "go.etcd.io/etcd/server/v3",
+    "github.com/containerd/containerd", "github.com/opencontainers/runc",
+    "github.com/prometheus/prometheus", "github.com/prometheus/client_golang",
+    "github.com/prometheus/alertmanager", "istio.io/istio",
+    "github.com/envoyproxy/go-control-plane", "github.com/coredns/coredns",
+    "github.com/containernetworking/cni", "github.com/jaegertracing/jaeger",
+    "go.opentelemetry.io/otel", "go.opentelemetry.io/collector",
+    "github.com/open-policy-agent/opa", "github.com/argoproj/argo-cd/v2",
+    "github.com/argoproj/argo-workflows/v3", "github.com/fluxcd/flux2/v2",
+    "github.com/cilium/cilium", "github.com/linkerd/linkerd2",
+    "github.com/rook/rook", "vitess.io/vitess", "github.com/nats-io/nats-server/v2",
+    "github.com/dapr/dapr", "knative.dev/serving", "knative.dev/eventing",
+    "github.com/kedacore/keda/v2", "github.com/crossplane/crossplane",
+    "github.com/goharbor/harbor/src", "github.com/karmada-io/karmada",
+    "github.com/volcano-sh/volcano", "github.com/longhorn/longhorn-manager",
+    "github.com/grafana/loki/v3", "github.com/thanos-io/thanos",
+    "github.com/cortexproject/cortex", "github.com/VictoriaMetrics/VictoriaMetrics",
+    "github.com/minio/minio", "github.com/tikv/pd", "github.com/pingcap/tidb",
+    "github.com/cockroachdb/cockroach", "github.com/hashicorp/consul"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+ "package": "hdbscan",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:16Z",
+ "status": "ok",
+ "version": "0.8.44",
+ "nodes": [
+  "hdbscan",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "hdbscan",
+   "joblib"
+  ],
+  [
+   "hdbscan",
+   "numpy"
+  ],
+  [
+   "hdbscan",
+   "scikit-learn"
+  ],
+  [
+   "hdbscan",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

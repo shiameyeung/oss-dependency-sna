@@ -1,0 +1,27 @@
+{
+ "package": "numba",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:07Z",
+ "status": "ok",
+ "version": "0.65.1",
+ "nodes": [
+  "llvmlite",
+  "numba",
+  "numpy"
+ ],
+ "edges": [
+  [
+   "numba",
+   "llvmlite"
+  ],
+  [
+   "numba",
+   "numpy"
+  ],
+  [
+   "numba",
+   "numpy"
+  ]
+ ]
+}

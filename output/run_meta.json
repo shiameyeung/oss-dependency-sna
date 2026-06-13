@@ -1,0 +1,18 @@
+{
+ "finished_at": "2026-06-12T23:36:39Z",
+ "python": "3.13.13",
+ "python_hash_seed": "0",
+ "offline": true,
+ "stages": {
+  "collect_sec": "skipped (--offline)",
+  "metrics_sec": 0.9,
+  "visualize_sec": 0.1
+ },
+ "total_sec": 1.0,
+ "outputs": [
+  "/Users/yotenra/Desktop/修論/项目制作/pipeline/output/go_metrics.json",
+  "/Users/yotenra/Desktop/修論/项目制作/pipeline/output/oss_sna_demo_v2.html",
+  "/Users/yotenra/Desktop/修論/项目制作/pipeline/output/pypi_metrics.json",
+  "/Users/yotenra/Desktop/修論/项目制作/pipeline/output/run_meta.json"
+ ]
+}

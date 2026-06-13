@@ -1,0 +1,106 @@
+{
+ "package": "ipython",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:17Z",
+ "status": "ok",
+ "version": "9.14.1",
+ "nodes": [
+  "asttokens",
+  "decorator",
+  "executing",
+  "ipython",
+  "ipython-pygments-lexers",
+  "jedi",
+  "matplotlib-inline",
+  "parso",
+  "pexpect",
+  "prompt-toolkit",
+  "psutil",
+  "ptyprocess",
+  "pure-eval",
+  "pygments",
+  "stack-data",
+  "traitlets",
+  "typing-extensions",
+  "wcwidth"
+ ],
+ "edges": [
+  [
+   "ipython",
+   "decorator"
+  ],
+  [
+   "ipython",
+   "ipython-pygments-lexers"
+  ],
+  [
+   "ipython",
+   "jedi"
+  ],
+  [
+   "ipython",
+   "matplotlib-inline"
+  ],
+  [
+   "ipython",
+   "pexpect"
+  ],
+  [
+   "ipython",
+   "prompt-toolkit"
+  ],
+  [
+   "ipython",
+   "psutil"
+  ],
+  [
+   "ipython",
+   "pygments"
+  ],
+  [
+   "ipython",
+   "stack-data"
+  ],
+  [
+   "ipython",
+   "traitlets"
+  ],
+  [
+   "ipython",
+   "typing-extensions"
+  ],
+  [
+   "ipython-pygments-lexers",
+   "pygments"
+  ],
+  [
+   "jedi",
+   "parso"
+  ],
+  [
+   "matplotlib-inline",
+   "traitlets"
+  ],
+  [
+   "pexpect",
+   "ptyprocess"
+  ],
+  [
+   "prompt-toolkit",
+   "wcwidth"
+  ],
+  [
+   "stack-data",
+   "asttokens"
+  ],
+  [
+   "stack-data",
+   "executing"
+  ],
+  [
+   "stack-data",
+   "pure-eval"
+  ]
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "package": "scikit-learn",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:01Z",
+ "status": "ok",
+ "version": "1.9.0",
+ "nodes": [
+  "joblib",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

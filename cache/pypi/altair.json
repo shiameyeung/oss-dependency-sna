@@ -1,0 +1,79 @@
+{
+ "package": "altair",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:05Z",
+ "status": "ok",
+ "version": "6.2.1",
+ "nodes": [
+  "altair",
+  "attrs",
+  "jinja2",
+  "jsonschema",
+  "jsonschema-specifications",
+  "markupsafe",
+  "narwhals",
+  "packaging",
+  "referencing",
+  "rpds-py",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "altair",
+   "jinja2"
+  ],
+  [
+   "altair",
+   "jsonschema"
+  ],
+  [
+   "altair",
+   "narwhals"
+  ],
+  [
+   "altair",
+   "packaging"
+  ],
+  [
+   "altair",
+   "typing-extensions"
+  ],
+  [
+   "jinja2",
+   "markupsafe"
+  ],
+  [
+   "jsonschema",
+   "attrs"
+  ],
+  [
+   "jsonschema",
+   "jsonschema-specifications"
+  ],
+  [
+   "jsonschema",
+   "referencing"
+  ],
+  [
+   "jsonschema",
+   "rpds-py"
+  ],
+  [
+   "jsonschema-specifications",
+   "referencing"
+  ],
+  [
+   "referencing",
+   "attrs"
+  ],
+  [
+   "referencing",
+   "rpds-py"
+  ],
+  [
+   "referencing",
+   "typing-extensions"
+  ]
+ ]
+}

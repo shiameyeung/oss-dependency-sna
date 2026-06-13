@@ -1,0 +1,23 @@
+{
+ "package": "plotly",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:04Z",
+ "status": "ok",
+ "version": "6.8.0",
+ "nodes": [
+  "narwhals",
+  "packaging",
+  "plotly"
+ ],
+ "edges": [
+  [
+   "plotly",
+   "narwhals"
+  ],
+  [
+   "plotly",
+   "packaging"
+  ]
+ ]
+}

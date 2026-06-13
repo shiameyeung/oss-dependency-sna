@@ -1,0 +1,9 @@
+{
+ "package": "github.com/linkerd/linkerd2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "error",
+ "version": "v18.9.1+incompatible",
+ "error": "empty requirements (+incompatible/main module; deps.dev に go.mod 依存データなし)"
+}

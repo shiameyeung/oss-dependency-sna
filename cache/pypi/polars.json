@@ -1,0 +1,18 @@
+{
+ "package": "polars",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:06Z",
+ "status": "ok",
+ "version": "1.41.2",
+ "nodes": [
+  "polars",
+  "polars-runtime-32"
+ ],
+ "edges": [
+  [
+   "polars",
+   "polars-runtime-32"
+  ]
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "package": "gensim",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:09Z",
+ "status": "ok",
+ "version": "4.4.0",
+ "nodes": [
+  "gensim",
+  "numpy",
+  "scipy",
+  "smart-open",
+  "wrapt"
+ ],
+ "edges": [
+  [
+   "gensim",
+   "numpy"
+  ],
+  [
+   "gensim",
+   "scipy"
+  ],
+  [
+   "gensim",
+   "smart-open"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "smart-open",
+   "wrapt"
+  ]
+ ]
+}

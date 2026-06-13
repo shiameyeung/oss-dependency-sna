@@ -1,0 +1,96 @@
+{
+ "package": "github.com/envoyproxy/go-control-plane",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v0.14.0",
+ "nodes": [
+  "github.com/envoyproxy/go-control-plane",
+  "github.com/envoyproxy/go-control-plane/envoy",
+  "github.com/google/go-cmp",
+  "github.com/stretchr/testify",
+  "go.uber.org/goleak",
+  "google.golang.org/genproto/googleapis/rpc",
+  "google.golang.org/grpc",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "github.com/envoyproxy/go-control-plane/envoy"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "go.uber.org/goleak"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane/envoy",
+   "github.com/envoyproxy/go-control-plane"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane/envoy",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane/envoy",
+   "google.golang.org/grpc"
+  ],
+  [
+   "github.com/envoyproxy/go-control-plane/envoy",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "go.uber.org/goleak",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/rpc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/envoyproxy/go-control-plane"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/envoyproxy/go-control-plane/envoy"
+  ],
+  [
+   "google.golang.org/grpc",
+   "github.com/google/go-cmp"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/protobuf",
+   "github.com/google/go-cmp"
+  ]
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "package": "imbalanced-learn",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:12Z",
+ "status": "ok",
+ "version": "0.14.2",
+ "nodes": [
+  "imbalanced-learn",
+  "joblib",
+  "narwhals",
+  "numpy",
+  "scikit-learn",
+  "scipy",
+  "sklearn-compat",
+  "threadpoolctl"
+ ],
+ "edges": [
+  [
+   "imbalanced-learn",
+   "joblib"
+  ],
+  [
+   "imbalanced-learn",
+   "numpy"
+  ],
+  [
+   "imbalanced-learn",
+   "scikit-learn"
+  ],
+  [
+   "imbalanced-learn",
+   "scipy"
+  ],
+  [
+   "imbalanced-learn",
+   "sklearn-compat"
+  ],
+  [
+   "imbalanced-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scikit-learn",
+   "joblib"
+  ],
+  [
+   "scikit-learn",
+   "narwhals"
+  ],
+  [
+   "scikit-learn",
+   "numpy"
+  ],
+  [
+   "scikit-learn",
+   "scipy"
+  ],
+  [
+   "scikit-learn",
+   "threadpoolctl"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ],
+  [
+   "sklearn-compat",
+   "scikit-learn"
+  ]
+ ]
+}

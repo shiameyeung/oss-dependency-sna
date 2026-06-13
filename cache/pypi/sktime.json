@@ -1,0 +1,9 @@
+{
+ "package": "sktime",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:14Z",
+ "status": "error",
+ "version": "1.0.1",
+ "error": "GetDependencies HTTP 404"
+}

@@ -1,0 +1,81 @@
+{
+ "package": "optuna",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:11Z",
+ "status": "ok",
+ "version": "4.9.0",
+ "nodes": [
+  "alembic",
+  "colorlog",
+  "greenlet",
+  "mako",
+  "markupsafe",
+  "numpy",
+  "optuna",
+  "packaging",
+  "pyyaml",
+  "sqlalchemy",
+  "tomli",
+  "tqdm",
+  "typing-extensions"
+ ],
+ "edges": [
+  [
+   "optuna",
+   "alembic"
+  ],
+  [
+   "optuna",
+   "colorlog"
+  ],
+  [
+   "optuna",
+   "numpy"
+  ],
+  [
+   "optuna",
+   "packaging"
+  ],
+  [
+   "optuna",
+   "pyyaml"
+  ],
+  [
+   "optuna",
+   "sqlalchemy"
+  ],
+  [
+   "optuna",
+   "tqdm"
+  ],
+  [
+   "alembic",
+   "mako"
+  ],
+  [
+   "alembic",
+   "sqlalchemy"
+  ],
+  [
+   "alembic",
+   "tomli"
+  ],
+  [
+   "alembic",
+   "typing-extensions"
+  ],
+  [
+   "mako",
+   "markupsafe"
+  ],
+  [
+   "sqlalchemy",
+   "greenlet"
+  ],
+  [
+   "sqlalchemy",
+   "typing-extensions"
+  ]
+ ]
+}

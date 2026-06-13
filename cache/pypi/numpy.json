@@ -1,0 +1,12 @@
+{
+ "package": "numpy",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:00Z",
+ "status": "ok",
+ "version": "2.4.6",
+ "nodes": [
+  "numpy"
+ ],
+ "edges": []
+}

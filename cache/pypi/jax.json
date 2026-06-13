@@ -1,0 +1,46 @@
+{
+ "package": "jax",
+ "system": "pypi",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T07:53:11Z",
+ "status": "ok",
+ "version": "0.10.1",
+ "nodes": [
+  "jax",
+  "jaxlib",
+  "ml-dtypes",
+  "numpy",
+  "opt-einsum",
+  "scipy"
+ ],
+ "edges": [
+  [
+   "jax",
+   "jaxlib"
+  ],
+  [
+   "jax",
+   "ml-dtypes"
+  ],
+  [
+   "jax",
+   "numpy"
+  ],
+  [
+   "jax",
+   "opt-einsum"
+  ],
+  [
+   "jax",
+   "scipy"
+  ],
+  [
+   "ml-dtypes",
+   "numpy"
+  ],
+  [
+   "scipy",
+   "numpy"
+  ]
+ ]
+}

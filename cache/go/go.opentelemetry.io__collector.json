@@ -1,0 +1,55 @@
+{
+ "package": "go.opentelemetry.io/collector",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v0.154.0",
+ "nodes": [
+  "github.com/golang/snappy",
+  "github.com/klauspost/compress",
+  "github.com/stretchr/testify",
+  "go.opentelemetry.io/collector",
+  "google.golang.org/genproto/googleapis/rpc",
+  "google.golang.org/grpc",
+  "google.golang.org/protobuf"
+ ],
+ "edges": [
+  [
+   "go.opentelemetry.io/collector",
+   "github.com/golang/snappy"
+  ],
+  [
+   "go.opentelemetry.io/collector",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "go.opentelemetry.io/collector",
+   "github.com/stretchr/testify"
+  ],
+  [
+   "go.opentelemetry.io/collector",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "go.opentelemetry.io/collector",
+   "google.golang.org/grpc"
+  ],
+  [
+   "go.opentelemetry.io/collector",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/genproto/googleapis/rpc",
+   "google.golang.org/protobuf"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/genproto/googleapis/rpc"
+  ],
+  [
+   "google.golang.org/grpc",
+   "google.golang.org/protobuf"
+  ]
+ ]
+}

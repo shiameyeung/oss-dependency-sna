@@ -1,0 +1,9049 @@
+{
+ "domain": "ds",
+ "label": "データサイエンス系 (PyPI)",
+ "generated_at": "2026-06-12T23:36:39Z",
+ "collect": {
+  "seeds_ok": [
+   "altair",
+   "arviz",
+   "bokeh",
+   "catboost",
+   "category-encoders",
+   "duckdb",
+   "gensim",
+   "hdbscan",
+   "imbalanced-learn",
+   "ipython",
+   "ipywidgets",
+   "jax",
+   "joblib",
+   "jupyter",
+   "keras",
+   "lifelines",
+   "lightgbm",
+   "mlflow",
+   "networkx",
+   "nltk",
+   "notebook",
+   "numba",
+   "numpy",
+   "optuna",
+   "pandas",
+   "pillow",
+   "pingouin",
+   "plotly",
+   "pmdarima",
+   "polars",
+   "prophet",
+   "pyarrow",
+   "pymc",
+   "scikit-image",
+   "scikit-learn",
+   "scipy",
+   "seaborn",
+   "shap",
+   "spacy",
+   "statsmodels",
+   "sympy",
+   "tensorflow",
+   "torch",
+   "tqdm",
+   "transformers",
+   "umap-learn",
+   "xgboost"
+  ],
+  "seeds_failed": [
+   {
+    "package": "dask",
+    "error": "GetDependencies HTTP 404"
+   },
+   {
+    "package": "matplotlib",
+    "error": "GetDependencies HTTP 404"
+   },
+   {
+    "package": "sktime",
+    "error": "GetDependencies HTTP 404"
+   }
+  ],
+  "n_seeds_ok": 47,
+  "n_seeds_failed": 3,
+  "success_rate": 0.94,
+  "fetched_dates": [
+   "2026-06-12"
+  ],
+  "seed_versions": {
+   "altair": "6.2.1",
+   "arviz": "1.1.0",
+   "bokeh": "3.10.0.dev5",
+   "catboost": "1.2.10",
+   "category-encoders": "2.9.0",
+   "duckdb": "1.6.0.dev12",
+   "gensim": "4.4.0",
+   "hdbscan": "0.8.44",
+   "imbalanced-learn": "0.14.2",
+   "ipython": "9.14.1",
+   "ipywidgets": "8.1.8",
+   "jax": "0.10.1",
+   "joblib": "1.5.3",
+   "jupyter": "1.1.1",
+   "keras": "3.14.1",
+   "lifelines": "0.30.3",
+   "lightgbm": "4.6.0",
+   "mlflow": "3.13.0",
+   "networkx": "3.6.1",
+   "nltk": "3.9.4",
+   "notebook": "7.5.7",
+   "numba": "0.65.1",
+   "numpy": "2.4.6",
+   "optuna": "4.9.0",
+   "pandas": "3.0.3",
+   "pillow": "12.2.0",
+   "pingouin": "0.6.1",
+   "plotly": "6.8.0",
+   "pmdarima": "2.1.1",
+   "polars": "1.41.2",
+   "prophet": "1.3.0",
+   "pyarrow": "24.0.0",
+   "pymc": "6.0.1",
+   "scikit-image": "0.26.0",
+   "scikit-learn": "1.9.0",
+   "scipy": "1.17.1",
+   "seaborn": "0.13.2",
+   "shap": "0.52.0",
+   "spacy": "4.0.0.dev3",
+   "statsmodels": "0.14.6",
+   "sympy": "1.14.0",
+   "tensorflow": "2.21.0",
+   "torch": "2.12.0",
+   "tqdm": "4.68.2",
+   "transformers": "5.11.0",
+   "umap-learn": "0.5.12",
+   "xgboost": "3.2.0"
+  }
+ },
+ "n": 272,
+ "m": 622,
+ "density": 0.00844,
+ "n_components": 6,
+ "largest_component": 265,
+ "modularity": 0.5988,
+ "n_communities": 23,
+ "spearman": {
+  "indeg_vs_btw": 0.306,
+  "indeg_vs_pagerank": 0.799,
+  "indeg_vs_eigenvector": 0.554
+ },
+ "rankings": {
+  "indeg": [
+   "numpy",
+   "typing-extensions",
+   "packaging",
+   "scipy",
+   "pandas",
+   "traitlets",
+   "scikit-learn",
+   "tqdm",
+   "jinja2",
+   "jupyter-core"
+  ],
+  "impact": [
+   "typing-extensions",
+   "numpy",
+   "packaging",
+   "six",
+   "python-dateutil",
+   "tzdata",
+   "idna",
+   "scipy",
+   "pygments",
+   "pytz"
+  ],
+  "btw": [
+   "jupyter-server",
+   "jsonschema",
+   "nbconvert",
+   "ipython",
+   "pandas",
+   "nbformat",
+   "jupyterlab",
+   "jupyterlab-server",
+   "ipykernel",
+   "jupyter-events"
+  ],
+  "pr": [
+   "numpy",
+   "typing-extensions",
+   "packaging",
+   "six",
+   "scipy",
+   "markupsafe",
+   "traitlets",
+   "python-dateutil",
+   "pandas",
+   "pycparser"
+  ],
+  "eig": [
+   "six",
+   "attrs",
+   "rpds-py",
+   "typing-extensions",
+   "python-dateutil",
+   "tzdata",
+   "referencing",
+   "arrow",
+   "lark",
+   "traitlets"
+  ]
+ },
+ "divergence": [
+  {
+   "id": "stack-data",
+   "type": "bridge",
+   "rank_indeg": 228,
+   "rank_btw": 26,
+   "indeg": 1,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "rfc3987-syntax",
+   "type": "bridge",
+   "rank_indeg": 215,
+   "rank_btw": 37,
+   "indeg": 1,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "pytensor",
+   "type": "bridge",
+   "rank_indeg": 211,
+   "rank_btw": 41,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "mlflow-skinny",
+   "type": "bridge",
+   "rank_indeg": 181,
+   "rank_btw": 22,
+   "indeg": 1,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyter-events",
+   "type": "bridge",
+   "rank_indeg": 168,
+   "rank_btw": 10,
+   "indeg": 1,
+   "btw": 0.0007,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "notebook",
+   "type": "bridge",
+   "rank_indeg": 188,
+   "rank_btw": 30,
+   "indeg": 1,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "uvicorn",
+   "type": "bridge",
+   "rank_indeg": 236,
+   "rank_btw": 78,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "weasel",
+   "type": "bridge",
+   "rank_indeg": 237,
+   "rank_btw": 81,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "thinc",
+   "type": "bridge",
+   "rank_indeg": 231,
+   "rank_btw": 80,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "pyasn1-modules",
+   "type": "bridge",
+   "rank_indeg": 206,
+   "rank_btw": 57,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "skops",
+   "type": "bridge",
+   "rank_indeg": 221,
+   "rank_btw": 73,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "isoduration",
+   "type": "bridge",
+   "rank_indeg": 160,
+   "rank_btw": 18,
+   "indeg": 1,
+   "btw": 0.0004,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "pexpect",
+   "type": "bridge",
+   "rank_indeg": 197,
+   "rank_btw": 59,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "markdown-it-py",
+   "type": "bridge",
+   "rank_indeg": 177,
+   "rank_btw": 43,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "mlflow-tracing",
+   "type": "bridge",
+   "rank_indeg": 182,
+   "rank_btw": 49,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "nbclient",
+   "type": "bridge",
+   "rank_indeg": 185,
+   "rank_btw": 60,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "prettytable",
+   "type": "bridge",
+   "rank_indeg": 201,
+   "rank_btw": 76,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyter-console",
+   "type": "bridge",
+   "rank_indeg": 167,
+   "rank_btw": 44,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "plotly",
+   "type": "bridge",
+   "rank_indeg": 199,
+   "rank_btw": 79,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "pynndescent",
+   "type": "bridge",
+   "rank_indeg": 209,
+   "rank_btw": 89,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "google-auth",
+   "type": "bridge",
+   "rank_indeg": 144,
+   "rank_btw": 29,
+   "indeg": 1,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jedi",
+   "type": "bridge",
+   "rank_indeg": 163,
+   "rank_btw": 52,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "minikanren",
+   "type": "bridge",
+   "rank_indeg": 179,
+   "rank_btw": 72,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "pandas-flavor",
+   "type": "bridge",
+   "rank_indeg": 194,
+   "rank_btw": 88,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "optree",
+   "type": "bridge",
+   "rank_indeg": 192,
+   "rank_btw": 87,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "ipywidgets",
+   "type": "bridge",
+   "rank_indeg": 159,
+   "rank_btw": 55,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "httpcore",
+   "type": "bridge",
+   "rank_indeg": 153,
+   "rank_btw": 51,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "mako",
+   "type": "bridge",
+   "rank_indeg": 176,
+   "rank_btw": 75,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "mistune",
+   "type": "bridge",
+   "rank_indeg": 180,
+   "rank_btw": 93,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "bleach",
+   "type": "bridge",
+   "rank_indeg": 119,
+   "rank_btw": 33,
+   "indeg": 1,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "argon2-cffi",
+   "type": "bridge",
+   "rank_indeg": 108,
+   "rank_btw": 25,
+   "indeg": 1,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "arrow",
+   "type": "bridge",
+   "rank_indeg": 110,
+   "rank_btw": 27,
+   "indeg": 1,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "gitpython",
+   "type": "bridge",
+   "rank_indeg": 143,
+   "rank_btw": 62,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "formulaic",
+   "type": "bridge",
+   "rank_indeg": 139,
+   "rank_btw": 61,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "nbconvert",
+   "type": "bridge",
+   "rank_indeg": 81,
+   "rank_btw": 3,
+   "indeg": 2,
+   "btw": 0.0013,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "argon2-cffi-bindings",
+   "type": "bridge",
+   "rank_indeg": 109,
+   "rank_btw": 32,
+   "indeg": 1,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "gitdb",
+   "type": "bridge",
+   "rank_indeg": 142,
+   "rank_btw": 67,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "graphene",
+   "type": "bridge",
+   "rank_indeg": 145,
+   "rank_btw": 70,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "beautifulsoup4",
+   "type": "bridge",
+   "rank_indeg": 118,
+   "rank_btw": 45,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "importlib-resources",
+   "type": "bridge",
+   "rank_indeg": 156,
+   "rank_btw": 86,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyterlab",
+   "type": "bridge",
+   "rank_indeg": 76,
+   "rank_btw": 7,
+   "indeg": 2,
+   "btw": 0.0008,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyterlab-server",
+   "type": "bridge",
+   "rank_indeg": 77,
+   "rank_btw": 8,
+   "indeg": 2,
+   "btw": 0.0008,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "docker",
+   "type": "bridge",
+   "rank_indeg": 132,
+   "rank_btw": 66,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "fastapi",
+   "type": "bridge",
+   "rank_indeg": 135,
+   "rank_btw": 69,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "arviz",
+   "type": "bridge",
+   "rank_indeg": 111,
+   "rank_btw": 50,
+   "indeg": 1,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "huggingface-hub",
+   "type": "bridge",
+   "rank_indeg": 75,
+   "rank_btw": 14,
+   "indeg": 2,
+   "btw": 0.0005,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "holidays",
+   "type": "bridge",
+   "rank_indeg": 152,
+   "rank_btw": 92,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "httpx",
+   "type": "bridge",
+   "rank_indeg": 74,
+   "rank_btw": 17,
+   "indeg": 2,
+   "btw": 0.0004,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "gunicorn",
+   "type": "bridge",
+   "rank_indeg": 149,
+   "rank_btw": 98,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "terminado",
+   "type": "bridge",
+   "rank_indeg": 95,
+   "rank_btw": 46,
+   "indeg": 2,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "flask-cors",
+   "type": "bridge",
+   "rank_indeg": 137,
+   "rank_btw": 91,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "nbformat",
+   "type": "bridge",
+   "rank_indeg": 50,
+   "rank_btw": 6,
+   "indeg": 3,
+   "btw": 0.0009,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "rfc3339-validator",
+   "type": "bridge",
+   "rank_indeg": 91,
+   "rank_btw": 47,
+   "indeg": 2,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "ipython",
+   "type": "bridge",
+   "rank_indeg": 45,
+   "rank_btw": 4,
+   "indeg": 3,
+   "btw": 0.001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "cmdstanpy",
+   "type": "bridge",
+   "rank_indeg": 124,
+   "rank_btw": 84,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "databricks-sdk",
+   "type": "bridge",
+   "rank_indeg": 68,
+   "rank_btw": 28,
+   "indeg": 2,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "starlette",
+   "type": "bridge",
+   "rank_indeg": 94,
+   "rank_btw": 54,
+   "indeg": 2,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "ipykernel",
+   "type": "bridge",
+   "rank_indeg": 44,
+   "rank_btw": 9,
+   "indeg": 3,
+   "btw": 0.0007,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "prompt-toolkit",
+   "type": "bridge",
+   "rank_indeg": 87,
+   "rank_btw": 53,
+   "indeg": 2,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "flask",
+   "type": "bridge",
+   "rank_indeg": 71,
+   "rank_btw": 38,
+   "indeg": 2,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "async-lru",
+   "type": "bridge",
+   "rank_indeg": 114,
+   "rank_btw": 83,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "cffi",
+   "type": "bridge",
+   "rank_indeg": 64,
+   "rank_btw": 34,
+   "indeg": 2,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "rich",
+   "type": "bridge",
+   "rank_indeg": 52,
+   "rank_btw": 23,
+   "indeg": 3,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "cloudpathlib",
+   "type": "bridge",
+   "rank_indeg": 123,
+   "rank_btw": 95,
+   "indeg": 1,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "cryptography",
+   "type": "bridge",
+   "rank_indeg": 67,
+   "rank_btw": 39,
+   "indeg": 2,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "arviz-stats",
+   "type": "bridge",
+   "rank_indeg": 62,
+   "rank_btw": 35,
+   "indeg": 2,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jsonschema",
+   "type": "bridge",
+   "rank_indeg": 26,
+   "rank_btw": 2,
+   "indeg": 4,
+   "btw": 0.0024,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "typer",
+   "type": "bridge",
+   "rank_indeg": 34,
+   "rank_btw": 13,
+   "indeg": 4,
+   "btw": 0.0005,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyter-server",
+   "type": "bridge",
+   "rank_indeg": 20,
+   "rank_btw": 1,
+   "indeg": 5,
+   "btw": 0.0033,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "opentelemetry-sdk",
+   "type": "bridge",
+   "rank_indeg": 84,
+   "rank_btw": 65,
+   "indeg": 2,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "xarray",
+   "type": "bridge",
+   "rank_indeg": 35,
+   "rank_btw": 16,
+   "indeg": 4,
+   "btw": 0.0004,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "anyio",
+   "type": "bridge",
+   "rank_indeg": 36,
+   "rank_btw": 24,
+   "indeg": 3,
+   "btw": 0.0003,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "referencing",
+   "type": "bridge",
+   "rank_indeg": 51,
+   "rank_btw": 42,
+   "indeg": 3,
+   "btw": 0.0001,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "werkzeug",
+   "type": "bridge",
+   "rank_indeg": 102,
+   "rank_btw": 94,
+   "indeg": 2,
+   "btw": 0.0,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "jupyter-client",
+   "type": "bridge",
+   "rank_indeg": 27,
+   "rank_btw": 20,
+   "indeg": 4,
+   "btw": 0.0004,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "requests",
+   "type": "bridge",
+   "rank_indeg": 19,
+   "rank_btw": 12,
+   "indeg": 6,
+   "btw": 0.0005,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "arviz-base",
+   "type": "bridge",
+   "rank_indeg": 37,
+   "rank_btw": 31,
+   "indeg": 3,
+   "btw": 0.0002,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  },
+  {
+   "id": "matplotlib",
+   "type": "bridge",
+   "rank_indeg": 16,
+   "rank_btw": 11,
+   "indeg": 6,
+   "btw": 0.0006,
+   "note": "被依存数では目立たないが、媒介中心性が高い（橋渡し・経路上の要）"
+  }
+ ],
+ "foundation": [
+  {
+   "id": "numpy",
+   "type": "foundation",
+   "rank_indeg": 1,
+   "indeg": 47,
+   "impact": 52,
+   "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
+  },
+  {
+   "id": "typing-extensions",
+   "type": "foundation",
+   "rank_indeg": 2,
+   "indeg": 34,
+   "impact": 69,
+   "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
+  },
+  {
+   "id": "packaging",
+   "type": "foundation",
+   "rank_indeg": 3,
+   "indeg": 27,
+   "impact": 47,
+   "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
+  },
+  {
+   "id": "traitlets",
+   "type": "foundation",
+   "rank_indeg": 6,
+   "indeg": 13,
+   "impact": 18,
+   "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
+  },
+  {
+   "id": "tqdm",
+   "type": "foundation",
+   "rank_indeg": 8,
+   "indeg": 10,
+   "impact": 11,
+   "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
+  }
+ ],
+ "articulation_points": [
+  "beautifulsoup4",
+  "bleach",
+  "cffi",
+  "flask",
+  "gitdb",
+  "gitpython",
+  "google-auth",
+  "huggingface-hub",
+  "ipykernel",
+  "ipython",
+  "jedi",
+  "jsonschema",
+  "jupyter-core",
+  "jupyter-events",
+  "jupyter-server",
+  "jupyterlab-server",
+  "markdown-it-py",
+  "matplotlib",
+  "nbconvert",
+  "nbformat",
+  "pandas",
+  "pyasn1-modules",
+  "pydantic",
+  "requests",
+  "rfc3987-syntax",
+  "rich",
+  "sqlalchemy",
+  "stack-data",
+  "typer"
+ ],
+ "cut_impact": {
+  "beautifulsoup4": [
+   "soupsieve"
+  ],
+  "bleach": [
+   "tinycss2",
+   "webencodings"
+  ],
+  "cffi": [
+   "pycparser"
+  ],
+  "flask": [
+   "blinker",
+   "itsdangerous"
+  ],
+  "gitdb": [
+   "smmap"
+  ],
+  "gitpython": [
+   "gitdb",
+   "smmap"
+  ],
+  "google-auth": [
+   "pyasn1",
+   "pyasn1-modules"
+  ],
+  "huggingface-hub": [
+   "fsspec",
+   "hf-xet"
+  ],
+  "ipykernel": [
+   "debugpy",
+   "nest-asyncio2"
+  ],
+  "ipython": [
+   "asttokens",
+   "decorator",
+   "executing",
+   "jedi",
+   "parso",
+   "pure-eval",
+   "stack-data"
+  ],
+  "jedi": [
+   "parso"
+  ],
+  "jsonschema": [
+   "fqdn",
+   "jsonpointer",
+   "lark",
+   "rfc3987-syntax",
+   "uri-template",
+   "webcolors"
+  ],
+  "jupyter-core": [
+   "platformdirs"
+  ],
+  "jupyter-events": [
+   "python-json-logger"
+  ],
+  "jupyter-server": [
+   "overrides",
+   "prometheus-client",
+   "send2trash",
+   "websocket-client"
+  ],
+  "jupyterlab-server": [
+   "babel",
+   "json5"
+  ],
+  "markdown-it-py": [
+   "mdurl"
+  ],
+  "matplotlib": [
+   "cycler",
+   "fonttools",
+   "kiwisolver",
+   "pyparsing"
+  ],
+  "nbconvert": [
+   "bleach",
+   "defusedxml",
+   "jupyterlab-pygments",
+   "pandocfilters",
+   "tinycss2",
+   "webencodings"
+  ],
+  "nbformat": [
+   "fastjsonschema"
+  ],
+  "pandas": [
+   "pytz"
+  ],
+  "pyasn1-modules": [
+   "pyasn1"
+  ],
+  "pydantic": [
+   "annotated-types"
+  ],
+  "requests": [
+   "charset-normalizer"
+  ],
+  "rfc3987-syntax": [
+   "lark"
+  ],
+  "rich": [
+   "markdown-it-py",
+   "mdurl"
+  ],
+  "sqlalchemy": [
+   "greenlet"
+  ],
+  "stack-data": [
+   "asttokens",
+   "executing",
+   "pure-eval"
+  ],
+  "typer": [
+   "shellingham"
+  ]
+ },
+ "communities": [
+  {
+   "id": 0,
+   "n": 47,
+   "m_in": 104,
+   "density": 0.0481,
+   "top": [
+    "traitlets",
+    "jupyter-server",
+    "pygments"
+   ]
+  },
+  {
+   "id": 1,
+   "n": 44,
+   "m_in": 110,
+   "density": 0.0581,
+   "top": [
+    "numpy",
+    "scipy",
+    "pandas"
+   ]
+  },
+  {
+   "id": 2,
+   "n": 30,
+   "m_in": 55,
+   "density": 0.0632,
+   "top": [
+    "typing-extensions",
+    "protobuf",
+    "smmap"
+   ]
+  },
+  {
+   "id": 3,
+   "n": 18,
+   "m_in": 32,
+   "density": 0.1046,
+   "top": [
+    "catalogue",
+    "wrapt",
+    "srsly"
+   ]
+  },
+  {
+   "id": 4,
+   "n": 17,
+   "m_in": 23,
+   "density": 0.0846,
+   "top": [
+    "packaging",
+    "narwhals",
+    "huggingface-hub"
+   ]
+  },
+  {
+   "id": 5,
+   "n": 16,
+   "m_in": 20,
+   "density": 0.0833,
+   "top": [
+    "markupsafe",
+    "greenlet",
+    "werkzeug"
+   ]
+  },
+  {
+   "id": 6,
+   "n": 15,
+   "m_in": 15,
+   "density": 0.0714,
+   "top": [
+    "six",
+    "python-dateutil",
+    "tzdata"
+   ]
+  },
+  {
+   "id": 7,
+   "n": 15,
+   "m_in": 20,
+   "density": 0.0952,
+   "top": [
+    "referencing",
+    "lark",
+    "jsonschema"
+   ]
+  },
+  {
+   "id": 8,
+   "n": 12,
+   "m_in": 11,
+   "density": 0.0833,
+   "top": [
+    "mdurl",
+    "markdown-it-py",
+    "rich"
+   ]
+  },
+  {
+   "id": 9,
+   "n": 12,
+   "m_in": 17,
+   "density": 0.1288,
+   "top": [
+    "xarray",
+    "arviz-base",
+    "arviz-stats"
+   ]
+  },
+  {
+   "id": 10,
+   "n": 11,
+   "m_in": 14,
+   "density": 0.1273,
+   "top": [
+    "idna",
+    "certifi",
+    "requests"
+   ]
+  },
+  {
+   "id": 11,
+   "n": 8,
+   "m_in": 7,
+   "density": 0.125,
+   "top": [
+    "pycparser",
+    "cffi",
+    "pyasn1"
+   ]
+  },
+  {
+   "id": 12,
+   "n": 7,
+   "m_in": 14,
+   "density": 0.3333,
+   "top": [
+    "multipledispatch",
+    "logical-unification",
+    "toolz"
+   ]
+  },
+  {
+   "id": 13,
+   "n": 4,
+   "m_in": 3,
+   "density": 0.25,
+   "top": [
+    "asttokens",
+    "executing",
+    "pure-eval"
+   ]
+  },
+  {
+   "id": 14,
+   "n": 3,
+   "m_in": 3,
+   "density": 0.5,
+   "top": [
+    "webencodings",
+    "tinycss2",
+    "bleach"
+   ]
+  },
+  {
+   "id": 15,
+   "n": 2,
+   "m_in": 1,
+   "density": 0.5,
+   "top": [
+    "parso",
+    "jedi"
+   ]
+  },
+  {
+   "id": 16,
+   "n": 2,
+   "m_in": 1,
+   "density": 0.5,
+   "top": [
+    "polars-runtime-32",
+    "polars"
+   ]
+  },
+  {
+   "id": 17,
+   "n": 2,
+   "m_in": 1,
+   "density": 0.5,
+   "top": [
+    "zipp",
+    "importlib-resources"
+   ]
+  },
+  {
+   "id": 18,
+   "n": 2,
+   "m_in": 1,
+   "density": 0.5,
+   "top": [
+    "mpmath",
+    "sympy"
+   ]
+  },
+  {
+   "id": 19,
+   "n": 2,
+   "m_in": 1,
+   "density": 0.5,
+   "top": [
+    "wcwidth",
+    "prettytable"
+   ]
+  },
+  {
+   "id": 20,
+   "n": 1,
+   "m_in": 0,
+   "density": 0.0,
+   "top": [
+    "duckdb"
+   ]
+  },
+  {
+   "id": 21,
+   "n": 1,
+   "m_in": 0,
+   "density": 0.0,
+   "top": [
+    "tensorflow"
+   ]
+  },
+  {
+   "id": 22,
+   "n": 1,
+   "m_in": 0,
+   "density": 0.0,
+   "top": [
+    "torch"
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "name": "基盤・ユーティリティ",
+   "n": 118
+  },
+  {
+   "name": "Jupyter・開発環境",
+   "n": 41
+  },
+  {
+   "name": "機械学習",
+   "n": 24
+  },
+  {
+   "name": "データ処理・数値計算",
+   "n": 22
+  },
+  {
+   "name": "自然言語処理",
+   "n": 19
+  },
+  {
+   "name": "Web・通信",
+   "n": 18
+  },
+  {
+   "name": "可視化",
+   "n": 15
+  },
+  {
+   "name": "統計・時系列",
+   "n": 15
+  }
+ ],
+ "nodes": [
+  {
+   "id": "absl-py",
+   "label": "absl-py",
+   "x": 0.8185,
+   "y": 0.3572,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 105,
+   "r_bt": 99,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Abseil の Python 共通ライブラリ"
+  },
+  {
+   "id": "aiohttp",
+   "label": "aiohttp",
+   "x": 0.5382,
+   "y": 0.4688,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 106,
+   "r_bt": 100,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "asyncio ベースの非同期 HTTP クライアント・サーバーフレームワーク"
+  },
+  {
+   "id": "alembic",
+   "label": "alembic",
+   "x": 0.417,
+   "y": 0.4376,
+   "indeg": 2,
+   "outdeg": 4,
+   "impact": 2,
+   "btw": 0.0001,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 60,
+   "r_bt": 56,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "SQLAlchemy 用のデータベースマイグレーションツール"
+  },
+  {
+   "id": "altair",
+   "label": "altair",
+   "x": 0.5701,
+   "y": 0.4005,
+   "indeg": 0,
+   "outdeg": 5,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 243,
+   "r_bt": 101,
+   "com": 4,
+   "art": 0,
+   "seed": 1,
+   "cat": "可視化",
+   "desc": "Python 向けの宣言的な統計可視化ライブラリ"
+  },
+  {
+   "id": "annotated-doc",
+   "label": "annotated-doc",
+   "x": 0.4965,
+   "y": 0.6026,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 61,
+   "r_bt": 102,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Annotated で引数・属性・戻り値・変数をインラインで文書化するライブラリ"
+  },
+  {
+   "id": "annotated-types",
+   "label": "annotated-types",
+   "x": 0.5665,
+   "y": 0.6421,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 107,
+   "r_bt": 103,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "typing.Annotated で使える再利用可能な制約型"
+  },
+  {
+   "id": "anyio",
+   "label": "anyio",
+   "x": 0.4648,
+   "y": 0.4551,
+   "indeg": 3,
+   "outdeg": 3,
+   "impact": 15,
+   "btw": 0.0003,
+   "pr": 0.0042,
+   "eig": 0.0,
+   "r_in": 36,
+   "r_bt": 24,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "asyncio または Trio 上で動く高水準の並行処理・ネットワークフレームワーク"
+  },
+  {
+   "id": "argon2-cffi",
+   "label": "argon2-cffi",
+   "x": 0.2249,
+   "y": 0.3389,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0003,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 108,
+   "r_bt": 25,
+   "com": 11,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 向けの Argon2"
+  },
+  {
+   "id": "argon2-cffi-bindings",
+   "label": "argon2-cffi-bindings",
+   "x": 0.1214,
+   "y": 0.37,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 8,
+   "btw": 0.0002,
+   "pr": 0.0043,
+   "eig": 0.0,
+   "r_in": 109,
+   "r_bt": 32,
+   "com": 11,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Argon2 の低レベル CFFI バインディング"
+  },
+  {
+   "id": "arrow",
+   "label": "arrow",
+   "x": 0.7751,
+   "y": 0.2959,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 14,
+   "btw": 0.0003,
+   "pr": 0.0043,
+   "eig": 0.0006,
+   "r_in": 110,
+   "r_bt": 27,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python の日付・時刻をより扱いやすくするライブラリ"
+  },
+  {
+   "id": "arviz",
+   "label": "arviz",
+   "x": 0.484,
+   "y": 0.3031,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 111,
+   "r_bt": 50,
+   "com": 9,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "ArviZverse 各パッケージの機能を arviz 名前空間でまとめて提供するパッケージ"
+  },
+  {
+   "id": "arviz-base",
+   "label": "arviz-base",
+   "x": 0.5104,
+   "y": 0.3225,
+   "indeg": 3,
+   "outdeg": 4,
+   "impact": 4,
+   "btw": 0.0002,
+   "pr": 0.0048,
+   "eig": 0.0,
+   "r_in": 37,
+   "r_bt": 31,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ArviZ の基本機能とコンバータ"
+  },
+  {
+   "id": "arviz-plots",
+   "label": "arviz-plots",
+   "x": 0.4535,
+   "y": 0.2747,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 112,
+   "r_bt": 104,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ベイズワークフロー向けのすぐ使える組み合わせ可能なプロット集"
+  },
+  {
+   "id": "arviz-stats",
+   "label": "arviz-stats",
+   "x": 0.5247,
+   "y": 0.2693,
+   "indeg": 2,
+   "outdeg": 5,
+   "impact": 3,
+   "btw": 0.0002,
+   "pr": 0.0041,
+   "eig": 0.0,
+   "r_in": 62,
+   "r_bt": 35,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ArviZ 向けの統計計算・診断機能"
+  },
+  {
+   "id": "asttokens",
+   "label": "asttokens",
+   "x": 0.9217,
+   "y": 0.317,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 113,
+   "r_bt": 105,
+   "com": 13,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "AST ツリーにソースコードの位置情報を付与するライブラリ"
+  },
+  {
+   "id": "async-lru",
+   "label": "async-lru",
+   "x": 0.4044,
+   "y": 0.4096,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 114,
+   "r_bt": 83,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "asyncio 向けのシンプルな LRU キャッシュ"
+  },
+  {
+   "id": "attrs",
+   "label": "attrs",
+   "x": 0.7573,
+   "y": 0.4846,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 15,
+   "btw": 0.0,
+   "pr": 0.0038,
+   "eig": 0.0251,
+   "r_in": 63,
+   "r_bt": 106,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ボイラープレートなしでクラスを定義できるライブラリ"
+  },
+  {
+   "id": "autograd",
+   "label": "autograd",
+   "x": 0.7038,
+   "y": 0.2322,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 115,
+   "r_bt": 107,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "NumPy コードの微分を効率的に計算するライブラリ"
+  },
+  {
+   "id": "autograd-gamma",
+   "label": "autograd-gamma",
+   "x": 0.7511,
+   "y": 0.1477,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 116,
+   "r_bt": 108,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "ガンマ関数族の Autograd 対応近似"
+  },
+  {
+   "id": "babel",
+   "label": "babel",
+   "x": 0.6264,
+   "y": 0.4676,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 117,
+   "r_bt": 109,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "国際化ユーティリティ"
+  },
+  {
+   "id": "beautifulsoup4",
+   "label": "beautifulsoup4",
+   "x": 0.3366,
+   "y": 0.3652,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 8,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 118,
+   "r_bt": 45,
+   "com": 2,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "スクリーンスクレイピング用ライブラリ"
+  },
+  {
+   "id": "bleach",
+   "label": "bleach",
+   "x": 0.1606,
+   "y": 0.2714,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 8,
+   "btw": 0.0002,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 119,
+   "r_bt": 33,
+   "com": 14,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "セーフリスト方式の手軽な HTML サニタイズツール"
+  },
+  {
+   "id": "blinker",
+   "label": "blinker",
+   "x": 0.2434,
+   "y": 0.4932,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 120,
+   "r_bt": 110,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "高速でシンプルなオブジェクト間・ブロードキャストのシグナル送信"
+  },
+  {
+   "id": "blis",
+   "label": "blis",
+   "x": 0.6571,
+   "y": 0.3864,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 121,
+   "r_bt": 111,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "BLAS 風線形代数ライブラリ Blis の自己完結型 C 拡張"
+  },
+  {
+   "id": "bokeh",
+   "label": "bokeh",
+   "x": 0.5202,
+   "y": 0.3093,
+   "indeg": 0,
+   "outdeg": 8,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 244,
+   "r_bt": 112,
+   "com": 4,
+   "art": 0,
+   "seed": 1,
+   "cat": "可視化",
+   "desc": "Python からブラウザ上の対話的なプロットやアプリを作成するライブラリ"
+  },
+  {
+   "id": "cachetools",
+   "label": "cachetools",
+   "x": 0.5031,
+   "y": 0.4507,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 38,
+   "r_bt": 113,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "拡張可能なメモ化コレクションとデコレータ"
+  },
+  {
+   "id": "catalogue",
+   "label": "catalogue",
+   "x": 0.673,
+   "y": 0.5134,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0056,
+   "eig": 0.0,
+   "r_in": 39,
+   "r_bt": 114,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "ライブラリ向けの超軽量な関数レジストリ"
+  },
+  {
+   "id": "catboost",
+   "label": "catboost",
+   "x": 0.6921,
+   "y": 0.2671,
+   "indeg": 0,
+   "outdeg": 7,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 245,
+   "r_bt": 115,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "CatBoost の Python パッケージ"
+  },
+  {
+   "id": "category-encoders",
+   "label": "category-encoders",
+   "x": 0.6434,
+   "y": 0.2609,
+   "indeg": 0,
+   "outdeg": 6,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 246,
+   "r_bt": 116,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "機械学習向けにカテゴリ変数をエンコードするパッケージ"
+  },
+  {
+   "id": "certifi",
+   "label": "certifi",
+   "x": 0.5356,
+   "y": 0.5909,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 17,
+   "btw": 0.0,
+   "pr": 0.0049,
+   "eig": 0.0,
+   "r_in": 40,
+   "r_bt": 117,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "Mozilla の CA 証明書バンドルを提供する Python パッケージ"
+  },
+  {
+   "id": "cffi",
+   "label": "cffi",
+   "x": 0.1657,
+   "y": 0.4225,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 15,
+   "btw": 0.0002,
+   "pr": 0.0074,
+   "eig": 0.0,
+   "r_in": 64,
+   "r_bt": 34,
+   "com": 11,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python から C コードを呼び出す外部関数インターフェース（FFI）"
+  },
+  {
+   "id": "charset-normalizer",
+   "label": "charset-normalizer",
+   "x": 0.5911,
+   "y": 0.6255,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 12,
+   "btw": 0.0,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 122,
+   "r_bt": 118,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "Chardet の代替となる文字コード検出ライブラリ"
+  },
+  {
+   "id": "click",
+   "label": "click",
+   "x": 0.4304,
+   "y": 0.4948,
+   "indeg": 6,
+   "outdeg": 0,
+   "impact": 12,
+   "btw": 0.0,
+   "pr": 0.0047,
+   "eig": 0.0,
+   "r_in": 13,
+   "r_bt": 119,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "組み合わせ可能なコマンドラインインターフェースツールキット"
+  },
+  {
+   "id": "cloudpathlib",
+   "label": "cloudpathlib",
+   "x": 0.5515,
+   "y": 0.5334,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 123,
+   "r_bt": 95,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "クラウドストレージ向けの pathlib 風クラス"
+  },
+  {
+   "id": "cloudpickle",
+   "label": "cloudpickle",
+   "x": 0.487,
+   "y": 0.384,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 41,
+   "r_bt": 120,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "標準の pickle.Pickler の機能を拡張する Pickler クラス"
+  },
+  {
+   "id": "cmdstanpy",
+   "label": "cmdstanpy",
+   "x": 0.5767,
+   "y": 0.2919,
+   "indeg": 1,
+   "outdeg": 4,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 124,
+   "r_bt": 84,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "CmdStan への Python インターフェース"
+  },
+  {
+   "id": "colorlog",
+   "label": "colorlog",
+   "x": 0.3847,
+   "y": 0.4715,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 125,
+   "r_bt": 121,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python の logging モジュールの出力に色を付けるライブラリ"
+  },
+  {
+   "id": "comm",
+   "label": "comm",
+   "x": 0.3882,
+   "y": 0.1289,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 65,
+   "r_bt": 122,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "ipykernel や xeus-python などで使う Jupyter Comm の Python 実装"
+  },
+  {
+   "id": "confection",
+   "label": "confection",
+   "x": 0.6103,
+   "y": 0.545,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 66,
+   "r_bt": 123,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "Python 向けの設定管理システム"
+  },
+  {
+   "id": "cons",
+   "label": "cons",
+   "x": 0.3065,
+   "y": 0.3654,
+   "indeg": 3,
+   "outdeg": 1,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0039,
+   "eig": 0.0,
+   "r_in": 42,
+   "r_bt": 74,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Lisp/Scheme 風の cons の Python 実装"
+  },
+  {
+   "id": "contourpy",
+   "label": "contourpy",
+   "x": 0.6941,
+   "y": 0.2431,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 126,
+   "r_bt": 124,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "2 次元四辺形グリッドの等高線を計算する Python ライブラリ"
+  },
+  {
+   "id": "cryptography",
+   "label": "cryptography",
+   "x": 0.3403,
+   "y": 0.4562,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 5,
+   "btw": 0.0002,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 67,
+   "r_bt": 39,
+   "com": 11,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 開発者向けに暗号のレシピとプリミティブを提供するパッケージ"
+  },
+  {
+   "id": "cycler",
+   "label": "cycler",
+   "x": 0.6784,
+   "y": 0.1338,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 127,
+   "r_bt": 125,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "組み合わせ可能なスタイルサイクル"
+  },
+  {
+   "id": "cymem",
+   "label": "cymem",
+   "x": 0.6645,
+   "y": 0.5211,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 43,
+   "r_bt": 126,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "Cython 経由で calloc/free の呼び出しを管理するライブラリ"
+  },
+  {
+   "id": "cython",
+   "label": "cython",
+   "x": 0.7374,
+   "y": 0.3386,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 128,
+   "r_bt": 127,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 言語で C 拡張を書くための Cython コンパイラ"
+  },
+  {
+   "id": "databricks-sdk",
+   "label": "databricks-sdk",
+   "x": 0.4126,
+   "y": 0.5503,
+   "indeg": 2,
+   "outdeg": 3,
+   "impact": 3,
+   "btw": 0.0003,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 68,
+   "r_bt": 28,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 向け Databricks SDK（ベータ版）"
+  },
+  {
+   "id": "debugpy",
+   "label": "debugpy",
+   "x": 0.3626,
+   "y": 0.1353,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 129,
+   "r_bt": 128,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Debug Adapter Protocol の Python 実装"
+  },
+  {
+   "id": "decorator",
+   "label": "decorator",
+   "x": 0.5673,
+   "y": 0.1073,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 130,
+   "r_bt": 129,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "人にやさしいデコレータライブラリ"
+  },
+  {
+   "id": "defusedxml",
+   "label": "defusedxml",
+   "x": 0.244,
+   "y": 0.2518,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 131,
+   "r_bt": 130,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 標準ライブラリ向けの XML 爆弾攻撃対策"
+  },
+  {
+   "id": "docker",
+   "label": "docker",
+   "x": 0.5615,
+   "y": 0.4741,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 132,
+   "r_bt": 66,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Docker Engine API 用の Python ライブラリ"
+  },
+  {
+   "id": "duckdb",
+   "label": "duckdb",
+   "x": 0.4123,
+   "y": 0.8781,
+   "indeg": 0,
+   "outdeg": 0,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 247,
+   "r_bt": 131,
+   "com": 20,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "インプロセスデータベース DuckDB"
+  },
+  {
+   "id": "etuples",
+   "label": "etuples",
+   "x": 0.2907,
+   "y": 0.373,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 69,
+   "r_bt": 90,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "タプル風オブジェクトによる S 式エミュレーション"
+  },
+  {
+   "id": "exceptiongroup",
+   "label": "exceptiongroup",
+   "x": 0.468,
+   "y": 0.5182,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 16,
+   "btw": 0.0,
+   "pr": 0.0034,
+   "eig": 0.0,
+   "r_in": 133,
+   "r_bt": 132,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "PEP 654（例外グループ）のバックポート"
+  },
+  {
+   "id": "executing",
+   "label": "executing",
+   "x": 0.9184,
+   "y": 0.3345,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 134,
+   "r_bt": 133,
+   "com": 13,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "実行中のフレームの AST ノードなどの情報を取得するライブラリ"
+  },
+  {
+   "id": "fastapi",
+   "label": "fastapi",
+   "x": 0.4834,
+   "y": 0.5426,
+   "indeg": 1,
+   "outdeg": 5,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 135,
+   "r_bt": 69,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "高性能で習得しやすい FastAPI フレームワーク"
+  },
+  {
+   "id": "fastjsonschema",
+   "label": "fastjsonschema",
+   "x": 0.3981,
+   "y": 0.2368,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 10,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 136,
+   "r_bt": 134,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "JSON Schema の高速な Python 実装"
+  },
+  {
+   "id": "filelock",
+   "label": "filelock",
+   "x": 0.3688,
+   "y": 0.4238,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 70,
+   "r_bt": 135,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "プラットフォーム非依存のファイルロック"
+  },
+  {
+   "id": "flask",
+   "label": "flask",
+   "x": 0.3627,
+   "y": 0.4454,
+   "indeg": 2,
+   "outdeg": 7,
+   "impact": 2,
+   "btw": 0.0002,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 71,
+   "r_bt": 38,
+   "com": 5,
+   "art": 1,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "複雑な Web アプリケーションを構築するためのシンプルなフレームワーク"
+  },
+  {
+   "id": "flask-cors",
+   "label": "flask-cors",
+   "x": 0.4001,
+   "y": 0.4361,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 137,
+   "r_bt": 91,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "CORS 対応を簡単にする Flask 拡張"
+  },
+  {
+   "id": "fonttools",
+   "label": "fonttools",
+   "x": 0.7083,
+   "y": 0.1567,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 138,
+   "r_bt": 136,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "フォントファイルを操作するためのツール"
+  },
+  {
+   "id": "formulaic",
+   "label": "formulaic",
+   "x": 0.6424,
+   "y": 0.34,
+   "indeg": 1,
+   "outdeg": 7,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 139,
+   "r_bt": 61,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "Wilkinson 式の実装"
+  },
+  {
+   "id": "fqdn",
+   "label": "fqdn",
+   "x": 0.8062,
+   "y": 0.492,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 140,
+   "r_bt": 137,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "完全修飾ドメイン名を RFC 1123 に基づいて検証するライブラリ"
+  },
+  {
+   "id": "fsspec",
+   "label": "fsspec",
+   "x": 0.3442,
+   "y": 0.5457,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 141,
+   "r_bt": 138,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "ファイルシステム仕様"
+  },
+  {
+   "id": "gensim",
+   "label": "gensim",
+   "x": 0.6658,
+   "y": 0.3443,
+   "indeg": 0,
+   "outdeg": 3,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 248,
+   "r_bt": 139,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "自然言語処理",
+   "desc": "高速なベクトル空間モデリングのための Python フレームワーク"
+  },
+  {
+   "id": "gitdb",
+   "label": "gitdb",
+   "x": 0.3325,
+   "y": 0.6948,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 142,
+   "r_bt": 67,
+   "com": 2,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Git オブジェクトデータベース"
+  },
+  {
+   "id": "gitpython",
+   "label": "gitpython",
+   "x": 0.4039,
+   "y": 0.5722,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 2,
+   "btw": 0.0001,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 143,
+   "r_bt": 62,
+   "com": 2,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Git リポジトリを操作するための Python ライブラリ"
+  },
+  {
+   "id": "google-auth",
+   "label": "google-auth",
+   "x": 0.277,
+   "y": 0.5705,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 4,
+   "btw": 0.0002,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 144,
+   "r_bt": 29,
+   "com": 11,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Google 認証ライブラリ"
+  },
+  {
+   "id": "graphene",
+   "label": "graphene",
+   "x": 0.6012,
+   "y": 0.4023,
+   "indeg": 1,
+   "outdeg": 4,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 145,
+   "r_bt": 70,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 向け GraphQL フレームワーク"
+  },
+  {
+   "id": "graphql-core",
+   "label": "graphql-core",
+   "x": 0.6047,
+   "y": 0.4598,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.005,
+   "eig": 0.0,
+   "r_in": 72,
+   "r_bt": 85,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "リファレンス実装 GraphQL.js を移植した Python 向け GraphQL 実装"
+  },
+  {
+   "id": "graphql-relay",
+   "label": "graphql-relay",
+   "x": 0.6806,
+   "y": 0.4693,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 146,
+   "r_bt": 140,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "graphql-core 向けの Relay ライブラリ"
+  },
+  {
+   "id": "graphviz",
+   "label": "graphviz",
+   "x": 0.8094,
+   "y": 0.2166,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 147,
+   "r_bt": 141,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "Graphviz のシンプルな Python インターフェース"
+  },
+  {
+   "id": "greenlet",
+   "label": "greenlet",
+   "x": 0.4382,
+   "y": 0.6007,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 148,
+   "r_bt": 142,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "軽量なインプロセス並行プログラミング"
+  },
+  {
+   "id": "gunicorn",
+   "label": "gunicorn",
+   "x": 0.5508,
+   "y": 0.4056,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 149,
+   "r_bt": 98,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "UNIX 向けの WSGI HTTP サーバー"
+  },
+  {
+   "id": "h11",
+   "label": "h11",
+   "x": 0.5007,
+   "y": 0.6644,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 11,
+   "btw": 0.0,
+   "pr": 0.004,
+   "eig": 0.0,
+   "r_in": 73,
+   "r_bt": 143,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "I/O 非依存の純 Python 製 HTTP/1.1 実装"
+  },
+  {
+   "id": "h5py",
+   "label": "h5py",
+   "x": 0.7105,
+   "y": 0.3076,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 150,
+   "r_bt": 144,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "Python から HDF5 ファイルを読み書きするライブラリ"
+  },
+  {
+   "id": "hdbscan",
+   "label": "hdbscan",
+   "x": 0.5953,
+   "y": 0.2524,
+   "indeg": 0,
+   "outdeg": 4,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 249,
+   "r_bt": 145,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "可変密度クラスタに対応した密度ベースのクラスタリング"
+  },
+  {
+   "id": "hf-xet",
+   "label": "hf-xet",
+   "x": 0.3588,
+   "y": 0.559,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 151,
+   "r_bt": 146,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Hugging Face Hub での大容量ファイルの高速転送"
+  },
+  {
+   "id": "holidays",
+   "label": "holidays",
+   "x": 0.6282,
+   "y": 0.2055,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 152,
+   "r_bt": 92,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "世界の祝日を扱うオープンなフレームワーク"
+  },
+  {
+   "id": "httpcore",
+   "label": "httpcore",
+   "x": 0.5184,
+   "y": 0.6199,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 7,
+   "btw": 0.0001,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 153,
+   "r_bt": 51,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "最小限の低レベル HTTP クライアント"
+  },
+  {
+   "id": "httpx",
+   "label": "httpx",
+   "x": 0.4945,
+   "y": 0.5036,
+   "indeg": 2,
+   "outdeg": 4,
+   "impact": 6,
+   "btw": 0.0004,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 74,
+   "r_bt": 17,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "次世代の HTTP クライアント"
+  },
+  {
+   "id": "huey",
+   "label": "huey",
+   "x": 0.574,
+   "y": 0.4412,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 154,
+   "r_bt": 147,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "小さなタスクキュー"
+  },
+  {
+   "id": "huggingface-hub",
+   "label": "huggingface-hub",
+   "x": 0.4414,
+   "y": 0.4654,
+   "indeg": 2,
+   "outdeg": 10,
+   "impact": 2,
+   "btw": 0.0005,
+   "pr": 0.0044,
+   "eig": 0.0,
+   "r_in": 75,
+   "r_bt": 14,
+   "com": 4,
+   "art": 1,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": "huggingface.co のモデルやデータセット等を取得・公開するクライアント"
+  },
+  {
+   "id": "idna",
+   "label": "idna",
+   "x": 0.5803,
+   "y": 0.4979,
+   "indeg": 4,
+   "outdeg": 0,
+   "impact": 28,
+   "btw": 0.0,
+   "pr": 0.0052,
+   "eig": 0.0,
+   "r_in": 25,
+   "r_bt": 148,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "アプリケーションにおける国際化ドメイン名（IDNA）"
+  },
+  {
+   "id": "imageio",
+   "label": "imageio",
+   "x": 0.5636,
+   "y": 0.1965,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 155,
+   "r_bt": 149,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "主要形式の画像・動画を読み書きするライブラリ。科学・立体データにも対応"
+  },
+  {
+   "id": "imbalanced-learn",
+   "label": "imbalanced-learn",
+   "x": 0.6152,
+   "y": 0.2534,
+   "indeg": 0,
+   "outdeg": 6,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 250,
+   "r_bt": 150,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "機械学習における不均衡データセット向けのツールボックス"
+  },
+  {
+   "id": "importlib-metadata",
+   "label": "importlib-metadata",
+   "x": 0.3966,
+   "y": 0.3833,
+   "indeg": 6,
+   "outdeg": 1,
+   "impact": 12,
+   "btw": 0.0002,
+   "pr": 0.0043,
+   "eig": 0.0,
+   "r_in": 14,
+   "r_bt": 40,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python パッケージのメタデータを読み取るライブラリ"
+  },
+  {
+   "id": "importlib-resources",
+   "label": "importlib-resources",
+   "x": 0.4109,
+   "y": 0.221,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 156,
+   "r_bt": 86,
+   "com": 17,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python パッケージのリソースを読み取るライブラリ"
+  },
+  {
+   "id": "interface-meta",
+   "label": "interface-meta",
+   "x": 0.7695,
+   "y": 0.3266,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 157,
+   "r_bt": 151,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "メソッドシグネチャの強制と一貫した文書化を備えた拡張可能な API を提供"
+  },
+  {
+   "id": "ipykernel",
+   "label": "ipykernel",
+   "x": 0.4317,
+   "y": 0.2268,
+   "indeg": 3,
+   "outdeg": 12,
+   "impact": 4,
+   "btw": 0.0007,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 44,
+   "r_bt": 9,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter 向けの IPython カーネル"
+  },
+  {
+   "id": "ipython",
+   "label": "ipython",
+   "x": 0.5413,
+   "y": 0.2192,
+   "indeg": 3,
+   "outdeg": 11,
+   "impact": 6,
+   "btw": 0.001,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 45,
+   "r_bt": 4,
+   "com": 0,
+   "art": 1,
+   "seed": 1,
+   "cat": "Jupyter・開発環境",
+   "desc": "生産的な対話型コンピューティング環境 IPython"
+  },
+  {
+   "id": "ipython-pygments-lexers",
+   "label": "ipython-pygments-lexers",
+   "x": 0.5005,
+   "y": 0.1843,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 158,
+   "r_bt": 152,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "IPython コードをハイライトする各種 Pygments レクサーの定義"
+  },
+  {
+   "id": "ipywidgets",
+   "label": "ipywidgets",
+   "x": 0.4267,
+   "y": 0.1477,
+   "indeg": 1,
+   "outdeg": 5,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 159,
+   "r_bt": 55,
+   "com": 0,
+   "art": 0,
+   "seed": 1,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter のインタラクティブウィジェット"
+  },
+  {
+   "id": "isoduration",
+   "label": "isoduration",
+   "x": 0.8029,
+   "y": 0.378,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 13,
+   "btw": 0.0004,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 160,
+   "r_bt": 18,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ISO 8601 の期間（duration）を操作するライブラリ"
+  },
+  {
+   "id": "itsdangerous",
+   "label": "itsdangerous",
+   "x": 0.2549,
+   "y": 0.51,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 161,
+   "r_bt": 153,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "信頼できない環境とのデータの安全な受け渡しを行うライブラリ"
+  },
+  {
+   "id": "jax",
+   "label": "jax",
+   "x": 0.7154,
+   "y": 0.2124,
+   "indeg": 0,
+   "outdeg": 5,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 251,
+   "r_bt": 154,
+   "com": 8,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "NumPy コードの微分・コンパイル・変換を行うライブラリ"
+  },
+  {
+   "id": "jaxlib",
+   "label": "jaxlib",
+   "x": 0.8,
+   "y": 0.1306,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 162,
+   "r_bt": 155,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": "JAX 用の XLA ライブラリ"
+  },
+  {
+   "id": "jedi",
+   "label": "jedi",
+   "x": 0.7136,
+   "y": 0.1473,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 163,
+   "r_bt": 52,
+   "com": 15,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "テキストエディタで使える Python の自動補完ツール"
+  },
+  {
+   "id": "jinja2",
+   "label": "jinja2",
+   "x": 0.4528,
+   "y": 0.3869,
+   "indeg": 8,
+   "outdeg": 1,
+   "impact": 14,
+   "btw": 0.0001,
+   "pr": 0.0042,
+   "eig": 0.0,
+   "r_in": 9,
+   "r_bt": 48,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "高速で表現力のあるテンプレートエンジン"
+  },
+  {
+   "id": "joblib",
+   "label": "joblib",
+   "x": 0.5553,
+   "y": 0.3096,
+   "indeg": 6,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0053,
+   "eig": 0.0,
+   "r_in": 15,
+   "r_bt": 156,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "Python 関数による軽量なパイプライン処理"
+  },
+  {
+   "id": "json5",
+   "label": "json5",
+   "x": 0.6269,
+   "y": 0.4413,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 164,
+   "r_bt": 157,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "JSON5 データ形式の Python 実装"
+  },
+  {
+   "id": "jsonpointer",
+   "label": "jsonpointer",
+   "x": 0.8124,
+   "y": 0.4756,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 165,
+   "r_bt": 158,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "JSON 文書内の特定ノードを指定するライブラリ（RFC 6901）"
+  },
+  {
+   "id": "jsonschema",
+   "label": "jsonschema",
+   "x": 0.6961,
+   "y": 0.4328,
+   "indeg": 4,
+   "outdeg": 13,
+   "impact": 12,
+   "btw": 0.0024,
+   "pr": 0.0038,
+   "eig": 0.0,
+   "r_in": 26,
+   "r_bt": 2,
+   "com": 7,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 向け JSON Schema バリデーションの実装"
+  },
+  {
+   "id": "jsonschema-specifications",
+   "label": "jsonschema-specifications",
+   "x": 0.7482,
+   "y": 0.4955,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 166,
+   "r_bt": 159,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "JSON Schema のメタスキーマと語彙をレジストリとして提供"
+  },
+  {
+   "id": "jupyter",
+   "label": "jupyter",
+   "x": 0.4013,
+   "y": 0.2516,
+   "indeg": 0,
+   "outdeg": 6,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 252,
+   "r_bt": 160,
+   "com": 0,
+   "art": 0,
+   "seed": 1,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter の全コンポーネントを一括インストールするメタパッケージ"
+  },
+  {
+   "id": "jupyter-client",
+   "label": "jupyter-client",
+   "x": 0.4618,
+   "y": 0.2958,
+   "indeg": 4,
+   "outdeg": 6,
+   "impact": 11,
+   "btw": 0.0004,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 27,
+   "r_bt": 20,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter プロトコルの実装とクライアントライブラリ"
+  },
+  {
+   "id": "jupyter-console",
+   "label": "jupyter-console",
+   "x": 0.4525,
+   "y": 0.2195,
+   "indeg": 1,
+   "outdeg": 8,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 167,
+   "r_bt": 44,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter のターミナルコンソール"
+  },
+  {
+   "id": "jupyter-core",
+   "label": "jupyter-core",
+   "x": 0.3956,
+   "y": 0.269,
+   "indeg": 8,
+   "outdeg": 2,
+   "impact": 13,
+   "btw": 0.0002,
+   "pr": 0.005,
+   "eig": 0.0,
+   "r_in": 10,
+   "r_bt": 36,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter 各プロジェクトが依存する基盤パッケージ"
+  },
+  {
+   "id": "jupyter-events",
+   "label": "jupyter-events",
+   "x": 0.5874,
+   "y": 0.3733,
+   "indeg": 1,
+   "outdeg": 8,
+   "impact": 7,
+   "btw": 0.0007,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 168,
+   "r_bt": 10,
+   "com": 7,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter のイベントシステムライブラリ"
+  },
+  {
+   "id": "jupyter-lsp",
+   "label": "jupyter-lsp",
+   "x": 0.3476,
+   "y": 0.3463,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 169,
+   "r_bt": 161,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter サーバー向け多言語サーバー WebSocket プロキシ"
+  },
+  {
+   "id": "jupyter-server",
+   "label": "jupyter-server",
+   "x": 0.3937,
+   "y": 0.3214,
+   "indeg": 5,
+   "outdeg": 18,
+   "impact": 6,
+   "btw": 0.0033,
+   "pr": 0.0065,
+   "eig": 0.0,
+   "r_in": 20,
+   "r_bt": 1,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter Web アプリのバックエンド（コアサービス・API・REST）"
+  },
+  {
+   "id": "jupyter-server-terminals",
+   "label": "jupyter-server-terminals",
+   "x": 0.305,
+   "y": 0.2449,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 170,
+   "r_bt": 162,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "ターミナル機能を提供する Jupyter Server 拡張"
+  },
+  {
+   "id": "jupyterlab",
+   "label": "jupyterlab",
+   "x": 0.4343,
+   "y": 0.3474,
+   "indeg": 2,
+   "outdeg": 15,
+   "impact": 2,
+   "btw": 0.0008,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 76,
+   "r_bt": 7,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "JupyterLab の計算環境"
+  },
+  {
+   "id": "jupyterlab-pygments",
+   "label": "jupyterlab-pygments",
+   "x": 0.2229,
+   "y": 0.2955,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 171,
+   "r_bt": 163,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "JupyterLab の CSS 変数を使った Pygments テーマ"
+  },
+  {
+   "id": "jupyterlab-server",
+   "label": "jupyterlab-server",
+   "x": 0.5185,
+   "y": 0.4045,
+   "indeg": 2,
+   "outdeg": 8,
+   "impact": 3,
+   "btw": 0.0008,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 77,
+   "r_bt": 8,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "JupyterLab 系アプリ向けのサーバーコンポーネント群"
+  },
+  {
+   "id": "jupyterlab-widgets",
+   "label": "jupyterlab-widgets",
+   "x": 0.401,
+   "y": 0.0434,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 172,
+   "r_bt": 164,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "JupyterLab 向けの Jupyter インタラクティブウィジェット"
+  },
+  {
+   "id": "keras",
+   "label": "keras",
+   "x": 0.6882,
+   "y": 0.3503,
+   "indeg": 0,
+   "outdeg": 8,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 253,
+   "r_bt": 165,
+   "com": 8,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "マルチバックエンド対応の Keras"
+  },
+  {
+   "id": "kiwisolver",
+   "label": "kiwisolver",
+   "x": 0.7366,
+   "y": 0.1727,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 173,
+   "r_bt": 166,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "制約ソルバー Cassowary の高速実装"
+  },
+  {
+   "id": "langcodes",
+   "label": "langcodes",
+   "x": 0.6459,
+   "y": 0.5732,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 174,
+   "r_bt": 167,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "IETF 言語タグで言語をラベル付けするツール"
+  },
+  {
+   "id": "lark",
+   "label": "lark",
+   "x": 0.9512,
+   "y": 0.5427,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 14,
+   "btw": 0.0,
+   "pr": 0.0043,
+   "eig": 0.0006,
+   "r_in": 175,
+   "r_bt": 168,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "モダンな構文解析ライブラリ"
+  },
+  {
+   "id": "lazy-loader",
+   "label": "lazy-loader",
+   "x": 0.4838,
+   "y": 0.2876,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0034,
+   "eig": 0.0,
+   "r_in": 78,
+   "r_bt": 82,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "サブパッケージや関数のオンデマンド読み込みを容易にするライブラリ"
+  },
+  {
+   "id": "lifelines",
+   "label": "lifelines",
+   "x": 0.6743,
+   "y": 0.2446,
+   "indeg": 0,
+   "outdeg": 7,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 254,
+   "r_bt": 169,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "Kaplan-Meier・Nelson-Aalen・回帰を含む生存分析ライブラリ"
+  },
+  {
+   "id": "lightgbm",
+   "label": "lightgbm",
+   "x": 0.6703,
+   "y": 0.2655,
+   "indeg": 0,
+   "outdeg": 2,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 255,
+   "r_bt": 170,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "LightGBM の Python パッケージ"
+  },
+  {
+   "id": "llvmlite",
+   "label": "llvmlite",
+   "x": 0.4948,
+   "y": 0.2145,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0042,
+   "eig": 0.0,
+   "r_in": 46,
+   "r_bt": 171,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "LLVM の基本機能の軽量ラッパー"
+  },
+  {
+   "id": "logical-unification",
+   "label": "logical-unification",
+   "x": 0.2816,
+   "y": 0.3866,
+   "indeg": 3,
+   "outdeg": 2,
+   "impact": 5,
+   "btw": 0.0001,
+   "pr": 0.0061,
+   "eig": 0.0,
+   "r_in": 47,
+   "r_bt": 58,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python における論理ユニフィケーション（単一化）"
+  },
+  {
+   "id": "mako",
+   "label": "mako",
+   "x": 0.3069,
+   "y": 0.4687,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 176,
+   "r_bt": 75,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "既存テンプレート言語の長所を取り入れた高速テンプレート言語"
+  },
+  {
+   "id": "markdown-it-py",
+   "label": "markdown-it-py",
+   "x": 0.7389,
+   "y": 0.5241,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 9,
+   "btw": 0.0001,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 177,
+   "r_bt": 43,
+   "com": 8,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "markdown-it の Python 移植版（Markdown 解析）"
+  },
+  {
+   "id": "markupsafe",
+   "label": "markupsafe",
+   "x": 0.3351,
+   "y": 0.4078,
+   "indeg": 5,
+   "outdeg": 0,
+   "impact": 19,
+   "btw": 0.0,
+   "pr": 0.0113,
+   "eig": 0.0,
+   "r_in": 21,
+   "r_bt": 172,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "信頼できない文字列を HTML/XML に安全に埋め込むライブラリ"
+  },
+  {
+   "id": "matplotlib",
+   "label": "matplotlib",
+   "x": 0.6312,
+   "y": 0.2422,
+   "indeg": 6,
+   "outdeg": 9,
+   "impact": 6,
+   "btw": 0.0006,
+   "pr": 0.004,
+   "eig": 0.0,
+   "r_in": 16,
+   "r_bt": 11,
+   "com": 6,
+   "art": 1,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "Python のグラフ描画パッケージ"
+  },
+  {
+   "id": "matplotlib-inline",
+   "label": "matplotlib-inline",
+   "x": 0.4553,
+   "y": 0.1871,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 79,
+   "r_bt": 173,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter 向けのインライン Matplotlib バックエンド"
+  },
+  {
+   "id": "mdurl",
+   "label": "mdurl",
+   "x": 0.8273,
+   "y": 0.5978,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 10,
+   "btw": 0.0,
+   "pr": 0.0052,
+   "eig": 0.0,
+   "r_in": 178,
+   "r_bt": 174,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Markdown の URL ユーティリティ"
+  },
+  {
+   "id": "minikanren",
+   "label": "minikanren",
+   "x": 0.3228,
+   "y": 0.4019,
+   "indeg": 1,
+   "outdeg": 6,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 179,
+   "r_bt": 72,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python における関係プログラミング"
+  },
+  {
+   "id": "mistune",
+   "label": "mistune",
+   "x": 0.3769,
+   "y": 0.3902,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 180,
+   "r_bt": 93,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "プラグインとレンダラーを備えた高速な Markdown パーサー"
+  },
+  {
+   "id": "ml-dtypes",
+   "label": "ml-dtypes",
+   "x": 0.7127,
+   "y": 0.2793,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 80,
+   "r_bt": 175,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "機械学習で使う NumPy dtype 拡張の単体実装"
+  },
+  {
+   "id": "mlflow",
+   "label": "mlflow",
+   "x": 0.5144,
+   "y": 0.3851,
+   "indeg": 0,
+   "outdeg": 19,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 256,
+   "r_bt": 176,
+   "com": 5,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+  },
+  {
+   "id": "mlflow-skinny",
+   "label": "mlflow-skinny",
+   "x": 0.4611,
+   "y": 0.4925,
+   "indeg": 1,
+   "outdeg": 20,
+   "impact": 1,
+   "btw": 0.0003,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 181,
+   "r_bt": 22,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": "機械学習ライフサイクル全体のためのオープンソースプラットフォーム"
+  },
+  {
+   "id": "mlflow-tracing",
+   "label": "mlflow-tracing",
+   "x": 0.4777,
+   "y": 0.4878,
+   "indeg": 1,
+   "outdeg": 8,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 182,
+   "r_bt": 49,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "最小限の依存で MLflow Tracing の計装機能を提供する軽量パッケージ"
+  },
+  {
+   "id": "mpmath",
+   "label": "mpmath",
+   "x": 0.0443,
+   "y": 0.9768,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0041,
+   "eig": 0.0,
+   "r_in": 183,
+   "r_bt": 177,
+   "com": 18,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "任意精度浮動小数点演算のための Python ライブラリ"
+  },
+  {
+   "id": "multipledispatch",
+   "label": "multipledispatch",
+   "x": 0.2265,
+   "y": 0.3974,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0063,
+   "eig": 0.0,
+   "r_in": 48,
+   "r_bt": 178,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "多重ディスパッチ"
+  },
+  {
+   "id": "murmurhash",
+   "label": "murmurhash",
+   "x": 0.6446,
+   "y": 0.5364,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 49,
+   "r_bt": 179,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "MurmurHash の Cython バインディング"
+  },
+  {
+   "id": "namex",
+   "label": "namex",
+   "x": 0.8178,
+   "y": 0.3382,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 184,
+   "r_bt": 180,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "パッケージの実装と公開 API を分離するシンプルなユーティリティ"
+  },
+  {
+   "id": "narwhals",
+   "label": "narwhals",
+   "x": 0.5961,
+   "y": 0.3334,
+   "indeg": 5,
+   "outdeg": 0,
+   "impact": 18,
+   "btw": 0.0,
+   "pr": 0.0054,
+   "eig": 0.0,
+   "r_in": 22,
+   "r_bt": 181,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "データフレームライブラリ間の超軽量互換レイヤー"
+  },
+  {
+   "id": "nbclient",
+   "label": "nbclient",
+   "x": 0.4005,
+   "y": 0.2861,
+   "indeg": 1,
+   "outdeg": 4,
+   "impact": 8,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 185,
+   "r_bt": 60,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "ノートブックを実行するためのクライアントライブラリ"
+  },
+  {
+   "id": "nbconvert",
+   "label": "nbconvert",
+   "x": 0.3552,
+   "y": 0.313,
+   "indeg": 2,
+   "outdeg": 15,
+   "impact": 7,
+   "btw": 0.0013,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 81,
+   "r_bt": 3,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter Notebook（.ipynb）を他形式へ変換するツール"
+  },
+  {
+   "id": "nbformat",
+   "label": "nbformat",
+   "x": 0.477,
+   "y": 0.3246,
+   "indeg": 3,
+   "outdeg": 4,
+   "impact": 9,
+   "btw": 0.0009,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 50,
+   "r_bt": 6,
+   "com": 0,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter Notebook のフォーマット"
+  },
+  {
+   "id": "nest-asyncio2",
+   "label": "nest-asyncio2",
+   "x": 0.3439,
+   "y": 0.1469,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 186,
+   "r_bt": 182,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "asyncio にネストしたイベントループを許可するパッチ"
+  },
+  {
+   "id": "networkx",
+   "label": "networkx",
+   "x": 0.4423,
+   "y": 0.1556,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 187,
+   "r_bt": 183,
+   "com": 9,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "グラフ・ネットワークの作成と操作のための Python パッケージ"
+  },
+  {
+   "id": "nltk",
+   "label": "nltk",
+   "x": 0.4636,
+   "y": 0.4072,
+   "indeg": 0,
+   "outdeg": 4,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 257,
+   "r_bt": 184,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "自然言語処理",
+   "desc": "自然言語処理ツールキット"
+  },
+  {
+   "id": "notebook",
+   "label": "notebook",
+   "x": 0.415,
+   "y": 0.3245,
+   "indeg": 1,
+   "outdeg": 5,
+   "impact": 1,
+   "btw": 0.0002,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 188,
+   "r_bt": 30,
+   "com": 0,
+   "art": 0,
+   "seed": 1,
+   "cat": "Jupyter・開発環境",
+   "desc": "対話的な計算のための Web ベースノートブック環境（Jupyter Notebook）"
+  },
+  {
+   "id": "notebook-shim",
+   "label": "notebook-shim",
+   "x": 0.349,
+   "y": 0.3238,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 82,
+   "r_bt": 185,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ノートブックの trait と設定のためのシム層"
+  },
+  {
+   "id": "numba",
+   "label": "numba",
+   "x": 0.5006,
+   "y": 0.2714,
+   "indeg": 4,
+   "outdeg": 2,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0033,
+   "eig": 0.0,
+   "r_in": 28,
+   "r_bt": 71,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "LLVM を用いた Python コードのコンパイル"
+  },
+  {
+   "id": "numpy",
+   "label": "numpy",
+   "x": 0.5975,
+   "y": 0.3001,
+   "indeg": 47,
+   "outdeg": 0,
+   "impact": 52,
+   "btw": 0.0,
+   "pr": 0.0501,
+   "eig": 0.0,
+   "r_in": 1,
+   "r_bt": 186,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "Python の配列計算のための基盤パッケージ"
+  },
+  {
+   "id": "nvidia-nccl-cu12",
+   "label": "nvidia-nccl-cu12",
+   "x": 0.6609,
+   "y": 0.0672,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0028,
+   "eig": 0.0,
+   "r_in": 189,
+   "r_bt": 187,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "NVIDIA 集合通信ライブラリ（NCCL）ランタイム"
+  },
+  {
+   "id": "opentelemetry-api",
+   "label": "opentelemetry-api",
+   "x": 0.428,
+   "y": 0.5144,
+   "indeg": 4,
+   "outdeg": 1,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0045,
+   "eig": 0.0,
+   "r_in": 29,
+   "r_bt": 96,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "OpenTelemetry の Python API"
+  },
+  {
+   "id": "opentelemetry-proto",
+   "label": "opentelemetry-proto",
+   "x": 0.4476,
+   "y": 0.5666,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 83,
+   "r_bt": 188,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "OpenTelemetry の Python 用 Proto"
+  },
+  {
+   "id": "opentelemetry-sdk",
+   "label": "opentelemetry-sdk",
+   "x": 0.4392,
+   "y": 0.5243,
+   "indeg": 2,
+   "outdeg": 3,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 84,
+   "r_bt": 65,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "OpenTelemetry の Python SDK"
+  },
+  {
+   "id": "opentelemetry-semantic-conventions",
+   "label": "opentelemetry-semantic-conventions",
+   "x": 0.4073,
+   "y": 0.5248,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 190,
+   "r_bt": 189,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "OpenTelemetry のセマンティック規約"
+  },
+  {
+   "id": "opt-einsum",
+   "label": "opt-einsum",
+   "x": 0.8173,
+   "y": 0.1481,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 191,
+   "r_bt": 190,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "einsum 関数の計算経路最適化"
+  },
+  {
+   "id": "optree",
+   "label": "optree",
+   "x": 0.6208,
+   "y": 0.4141,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 192,
+   "r_bt": 87,
+   "com": 8,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "最適化された PyTree ユーティリティ"
+  },
+  {
+   "id": "optuna",
+   "label": "optuna",
+   "x": 0.4832,
+   "y": 0.4039,
+   "indeg": 0,
+   "outdeg": 7,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 258,
+   "r_bt": 191,
+   "com": 4,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "ハイパーパラメータ最適化フレームワーク"
+  },
+  {
+   "id": "overrides",
+   "label": "overrides",
+   "x": 0.2846,
+   "y": 0.2814,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 193,
+   "r_bt": 192,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "メソッドオーバーライド時の不一致を自動検出するデコレータ"
+  },
+  {
+   "id": "packaging",
+   "label": "packaging",
+   "x": 0.5278,
+   "y": 0.3589,
+   "indeg": 27,
+   "outdeg": 0,
+   "impact": 47,
+   "btw": 0.0,
+   "pr": 0.0155,
+   "eig": 0.0,
+   "r_in": 3,
+   "r_bt": 193,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python パッケージのためのコアユーティリティ"
+  },
+  {
+   "id": "pandas",
+   "label": "pandas",
+   "x": 0.6199,
+   "y": 0.2741,
+   "indeg": 15,
+   "outdeg": 4,
+   "impact": 20,
+   "btw": 0.001,
+   "pr": 0.0088,
+   "eig": 0.0,
+   "r_in": 5,
+   "r_bt": 5,
+   "com": 1,
+   "art": 1,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "データ分析・時系列・統計のための強力なデータ構造"
+  },
+  {
+   "id": "pandas-flavor",
+   "label": "pandas-flavor",
+   "x": 0.6103,
+   "y": 0.196,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 194,
+   "r_bt": 88,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "独自の Pandas フレーバーを簡単に書くためのツール"
+  },
+  {
+   "id": "pandocfilters",
+   "label": "pandocfilters",
+   "x": 0.233,
+   "y": 0.268,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 195,
+   "r_bt": 194,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python で pandoc フィルタを書くためのユーティリティ"
+  },
+  {
+   "id": "parso",
+   "label": "parso",
+   "x": 0.8315,
+   "y": 0.1029,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0043,
+   "eig": 0.0,
+   "r_in": 196,
+   "r_bt": 195,
+   "com": 15,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Python パーサー"
+  },
+  {
+   "id": "patsy",
+   "label": "patsy",
+   "x": 0.6634,
+   "y": 0.2413,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.003,
+   "eig": 0.0,
+   "r_in": 85,
+   "r_bt": 196,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "統計モデルの記述と計画行列の構築のための Python パッケージ"
+  },
+  {
+   "id": "pexpect",
+   "label": "pexpect",
+   "x": 0.4474,
+   "y": 0.1194,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 197,
+   "r_bt": 59,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "対話型コンソールアプリを簡単に制御するライブラリ"
+  },
+  {
+   "id": "pillow",
+   "label": "pillow",
+   "x": 0.5583,
+   "y": 0.214,
+   "indeg": 4,
+   "outdeg": 0,
+   "impact": 10,
+   "btw": 0.0,
+   "pr": 0.0041,
+   "eig": 0.0,
+   "r_in": 30,
+   "r_bt": 197,
+   "com": 9,
+   "art": 0,
+   "seed": 1,
+   "cat": "可視化",
+   "desc": "Python Imaging Library のフォーク"
+  },
+  {
+   "id": "pingouin",
+   "label": "pingouin",
+   "x": 0.6289,
+   "y": 0.219,
+   "indeg": 0,
+   "outdeg": 9,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 259,
+   "r_bt": 198,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "Python 向け統計パッケージ"
+  },
+  {
+   "id": "platformdirs",
+   "label": "platformdirs",
+   "x": 0.2967,
+   "y": 0.1931,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 14,
+   "btw": 0.0,
+   "pr": 0.0043,
+   "eig": 0.0,
+   "r_in": 198,
+   "r_bt": 199,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "プラットフォーム固有のディレクトリを判定する小型パッケージ"
+  },
+  {
+   "id": "plotly",
+   "label": "plotly",
+   "x": 0.6382,
+   "y": 0.3212,
+   "indeg": 1,
+   "outdeg": 2,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 199,
+   "r_bt": 79,
+   "com": 4,
+   "art": 0,
+   "seed": 1,
+   "cat": "可視化",
+   "desc": "Python のオープンソース対話型データ可視化ライブラリ"
+  },
+  {
+   "id": "pmdarima",
+   "label": "pmdarima",
+   "x": 0.6122,
+   "y": 0.3398,
+   "indeg": 0,
+   "outdeg": 10,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 260,
+   "r_bt": 200,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "forecast::auto.arima に相当する Python パッケージ"
+  },
+  {
+   "id": "polars",
+   "label": "polars",
+   "x": 0.2283,
+   "y": 0.9768,
+   "indeg": 0,
+   "outdeg": 1,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 261,
+   "r_bt": 201,
+   "com": 16,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "高速な DataFrame ライブラリ"
+  },
+  {
+   "id": "polars-runtime-32",
+   "label": "polars-runtime-32",
+   "x": 0.3632,
+   "y": 0.8781,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0041,
+   "eig": 0.0,
+   "r_in": 200,
+   "r_bt": 202,
+   "com": 16,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "高速な DataFrame ライブラリ"
+  },
+  {
+   "id": "preshed",
+   "label": "preshed",
+   "x": 0.6591,
+   "y": 0.5319,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 86,
+   "r_bt": 203,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "キーが事前ハッシュ済みである前提の Cython ハッシュテーブル"
+  },
+  {
+   "id": "prettytable",
+   "label": "prettytable",
+   "x": 0.5379,
+   "y": 0.1292,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 201,
+   "r_bt": 76,
+   "com": 19,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "表データを ASCII テーブル形式で見やすく表示するライブラリ"
+  },
+  {
+   "id": "prometheus-client",
+   "label": "prometheus-client",
+   "x": 0.2865,
+   "y": 0.2645,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 202,
+   "r_bt": 204,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "監視システム Prometheus の Python クライアント"
+  },
+  {
+   "id": "prompt-toolkit",
+   "label": "prompt-toolkit",
+   "x": 0.4992,
+   "y": 0.126,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 7,
+   "btw": 0.0001,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 87,
+   "r_bt": 53,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "対話型コマンドラインを構築するためのライブラリ"
+  },
+  {
+   "id": "prophet",
+   "label": "prophet",
+   "x": 0.5488,
+   "y": 0.258,
+   "indeg": 0,
+   "outdeg": 7,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 262,
+   "r_bt": 205,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "自動予測プロシージャ"
+  },
+  {
+   "id": "protobuf",
+   "label": "protobuf",
+   "x": 0.4308,
+   "y": 0.5625,
+   "indeg": 4,
+   "outdeg": 0,
+   "impact": 5,
+   "btw": 0.0,
+   "pr": 0.0054,
+   "eig": 0.0,
+   "r_in": 31,
+   "r_bt": 206,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": ""
+  },
+  {
+   "id": "psutil",
+   "label": "psutil",
+   "x": 0.473,
+   "y": 0.1512,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 88,
+   "r_bt": 207,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "プロセスとシステム監視のためのクロスプラットフォームライブラリ"
+  },
+  {
+   "id": "ptyprocess",
+   "label": "ptyprocess",
+   "x": 0.3457,
+   "y": 0.1167,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 14,
+   "btw": 0.0,
+   "pr": 0.0062,
+   "eig": 0.0,
+   "r_in": 89,
+   "r_bt": 208,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "疑似端末でサブプロセスを実行するライブラリ"
+  },
+  {
+   "id": "pure-eval",
+   "label": "pure-eval",
+   "x": 0.9106,
+   "y": 0.349,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 203,
+   "r_bt": 209,
+   "com": 13,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "副作用なしで AST ノードを安全に評価するライブラリ"
+  },
+  {
+   "id": "pyarrow",
+   "label": "pyarrow",
+   "x": 0.5556,
+   "y": 0.4419,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 204,
+   "r_bt": 210,
+   "com": 5,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "Apache Arrow の Python ライブラリ"
+  },
+  {
+   "id": "pyasn1",
+   "label": "pyasn1",
+   "x": 0.0818,
+   "y": 0.7016,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0051,
+   "eig": 0.0,
+   "r_in": 205,
+   "r_bt": 211,
+   "com": 11,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ASN.1 型と DER/BER/CER コーデックの純 Python 実装"
+  },
+  {
+   "id": "pyasn1-modules",
+   "label": "pyasn1-modules",
+   "x": 0.1618,
+   "y": 0.6486,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 5,
+   "btw": 0.0001,
+   "pr": 0.0034,
+   "eig": 0.0,
+   "r_in": 206,
+   "r_bt": 57,
+   "com": 11,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "ASN.1 ベースのプロトコルモジュール集"
+  },
+  {
+   "id": "pycparser",
+   "label": "pycparser",
+   "x": 0.0551,
+   "y": 0.3972,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 16,
+   "btw": 0.0,
+   "pr": 0.0085,
+   "eig": 0.0,
+   "r_in": 207,
+   "r_bt": 212,
+   "com": 11,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 製の C 言語パーサー"
+  },
+  {
+   "id": "pydantic",
+   "label": "pydantic",
+   "x": 0.5409,
+   "y": 0.5279,
+   "indeg": 7,
+   "outdeg": 4,
+   "impact": 8,
+   "btw": 0.0003,
+   "pr": 0.0045,
+   "eig": 0.0,
+   "r_in": 11,
+   "r_bt": 21,
+   "com": 2,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python の型ヒントを用いたデータ検証ライブラリ"
+  },
+  {
+   "id": "pydantic-core",
+   "label": "pydantic-core",
+   "x": 0.5145,
+   "y": 0.5482,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 208,
+   "r_bt": 213,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Pydantic の検証・シリアライズの中核機能"
+  },
+  {
+   "id": "pygments",
+   "label": "pygments",
+   "x": 0.495,
+   "y": 0.2837,
+   "indeg": 5,
+   "outdeg": 0,
+   "impact": 22,
+   "btw": 0.0,
+   "pr": 0.0063,
+   "eig": 0.0,
+   "r_in": 23,
+   "r_bt": 214,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Python 製のシンタックスハイライトパッケージ"
+  },
+  {
+   "id": "pymc",
+   "label": "pymc",
+   "x": 0.5442,
+   "y": 0.3527,
+   "indeg": 0,
+   "outdeg": 10,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 263,
+   "r_bt": 215,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "PyTensor によるベイズモデリングと確率的機械学習のための確率的プログラミングライブラリ"
+  },
+  {
+   "id": "pynndescent",
+   "label": "pynndescent",
+   "x": 0.5409,
+   "y": 0.2458,
+   "indeg": 1,
+   "outdeg": 5,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 209,
+   "r_bt": 89,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "最近傍降下法（Nearest Neighbor Descent）"
+  },
+  {
+   "id": "pyparsing",
+   "label": "pyparsing",
+   "x": 0.6971,
+   "y": 0.1383,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 210,
+   "r_bt": 216,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "構文解析文法を定義・実行するためのクラスとメソッド"
+  },
+  {
+   "id": "pytensor",
+   "label": "pytensor",
+   "x": 0.4307,
+   "y": 0.3517,
+   "indeg": 1,
+   "outdeg": 9,
+   "impact": 1,
+   "btw": 0.0001,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 211,
+   "r_bt": 41,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "CPU・GPU 上で数式を評価する最適化コンパイラ"
+  },
+  {
+   "id": "python-dateutil",
+   "label": "python-dateutil",
+   "x": 0.6425,
+   "y": 0.2937,
+   "indeg": 6,
+   "outdeg": 1,
+   "impact": 42,
+   "btw": 0.0004,
+   "pr": 0.0093,
+   "eig": 0.0245,
+   "r_in": 17,
+   "r_bt": 15,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "Python 標準 datetime モジュールの拡張"
+  },
+  {
+   "id": "python-dotenv",
+   "label": "python-dotenv",
+   "x": 0.4119,
+   "y": 0.6026,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 212,
+   "r_bt": 217,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": ".env ファイルからキーと値を読み込み環境変数に設定するライブラリ"
+  },
+  {
+   "id": "python-json-logger",
+   "label": "python-json-logger",
+   "x": 0.7128,
+   "y": 0.403,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 213,
+   "r_bt": 218,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python logging 用の JSON ログフォーマッタ"
+  },
+  {
+   "id": "pytz",
+   "label": "pytz",
+   "x": 0.681,
+   "y": 0.176,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 21,
+   "btw": 0.0,
+   "pr": 0.0041,
+   "eig": 0.0,
+   "r_in": 214,
+   "r_bt": 219,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "現代および過去の世界タイムゾーン定義"
+  },
+  {
+   "id": "pyyaml",
+   "label": "pyyaml",
+   "x": 0.4986,
+   "y": 0.4127,
+   "indeg": 6,
+   "outdeg": 0,
+   "impact": 15,
+   "btw": 0.0,
+   "pr": 0.0036,
+   "eig": 0.0,
+   "r_in": 18,
+   "r_bt": 220,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 用の YAML パーサー・エミッター"
+  },
+  {
+   "id": "pyzmq",
+   "label": "pyzmq",
+   "x": 0.3886,
+   "y": 0.2453,
+   "indeg": 4,
+   "outdeg": 0,
+   "impact": 12,
+   "btw": 0.0,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 32,
+   "r_bt": 221,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "0MQ の Python バインディング"
+  },
+  {
+   "id": "referencing",
+   "label": "referencing",
+   "x": 0.6636,
+   "y": 0.4563,
+   "indeg": 3,
+   "outdeg": 3,
+   "impact": 14,
+   "btw": 0.0001,
+   "pr": 0.0048,
+   "eig": 0.0006,
+   "r_in": 51,
+   "r_bt": 42,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 向けの JSON Referencing"
+  },
+  {
+   "id": "regex",
+   "label": "regex",
+   "x": 0.4012,
+   "y": 0.4572,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 90,
+   "r_bt": 222,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "re を置き換える代替正規表現モジュール"
+  },
+  {
+   "id": "requests",
+   "label": "requests",
+   "x": 0.542,
+   "y": 0.5185,
+   "indeg": 6,
+   "outdeg": 4,
+   "impact": 11,
+   "btw": 0.0005,
+   "pr": 0.0046,
+   "eig": 0.0,
+   "r_in": 19,
+   "r_bt": 12,
+   "com": 10,
+   "art": 1,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "人にやさしい Python の HTTP ライブラリ"
+  },
+  {
+   "id": "rfc3339-validator",
+   "label": "rfc3339-validator",
+   "x": 0.7146,
+   "y": 0.3699,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 13,
+   "btw": 0.0001,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 91,
+   "r_bt": 47,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "純 Python 製の RFC3339 バリデータ"
+  },
+  {
+   "id": "rfc3986-validator",
+   "label": "rfc3986-validator",
+   "x": 0.6977,
+   "y": 0.4027,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 92,
+   "r_bt": 223,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "純 Python 製の RFC3986 バリデータ"
+  },
+  {
+   "id": "rfc3987-syntax",
+   "label": "rfc3987-syntax",
+   "x": 0.8499,
+   "y": 0.4991,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 13,
+   "btw": 0.0002,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 215,
+   "r_bt": 37,
+   "com": 7,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "RFC 3987 に従い文字列を構文検証するヘルパー関数群"
+  },
+  {
+   "id": "rich",
+   "label": "rich",
+   "x": 0.6068,
+   "y": 0.4144,
+   "indeg": 3,
+   "outdeg": 2,
+   "impact": 8,
+   "btw": 0.0003,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 52,
+   "r_bt": 23,
+   "com": 8,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "リッチテキスト・表・進捗バー・Markdown などをターミナルに描画するライブラリ"
+  },
+  {
+   "id": "rpds-py",
+   "label": "rpds-py",
+   "x": 0.7604,
+   "y": 0.471,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 15,
+   "btw": 0.0,
+   "pr": 0.0038,
+   "eig": 0.0251,
+   "r_in": 93,
+   "r_bt": 224,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Rust の永続データ構造（rpds）の Python バインディング"
+  },
+  {
+   "id": "safetensors",
+   "label": "safetensors",
+   "x": 0.3675,
+   "y": 0.4987,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 216,
+   "r_bt": 225,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": ""
+  },
+  {
+   "id": "scikit-image",
+   "label": "scikit-image",
+   "x": 0.5264,
+   "y": 0.2396,
+   "indeg": 0,
+   "outdeg": 8,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 264,
+   "r_bt": 226,
+   "com": 9,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "Python の画像処理ライブラリ"
+  },
+  {
+   "id": "scikit-learn",
+   "label": "scikit-learn",
+   "x": 0.5857,
+   "y": 0.2789,
+   "indeg": 11,
+   "outdeg": 5,
+   "impact": 11,
+   "btw": 0.0004,
+   "pr": 0.0072,
+   "eig": 0.0,
+   "r_in": 7,
+   "r_bt": 19,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "機械学習とデータマイニングのための Python モジュール群"
+  },
+  {
+   "id": "scipy",
+   "label": "scipy",
+   "x": 0.5935,
+   "y": 0.281,
+   "indeg": 24,
+   "outdeg": 1,
+   "impact": 27,
+   "btw": 0.0,
+   "pr": 0.0123,
+   "eig": 0.0,
+   "r_in": 4,
+   "r_bt": 97,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "Python の科学技術計算のための基礎アルゴリズム群"
+  },
+  {
+   "id": "seaborn",
+   "label": "seaborn",
+   "x": 0.6559,
+   "y": 0.2242,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 217,
+   "r_bt": 227,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "可視化",
+   "desc": "統計データの可視化ライブラリ"
+  },
+  {
+   "id": "send2trash",
+   "label": "send2trash",
+   "x": 0.2703,
+   "y": 0.3108,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 218,
+   "r_bt": 228,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Mac・Windows・Linux でファイルをネイティブにゴミ箱へ送るツール"
+  },
+  {
+   "id": "setuptools",
+   "label": "setuptools",
+   "x": 0.5345,
+   "y": 0.3946,
+   "indeg": 5,
+   "outdeg": 0,
+   "impact": 8,
+   "btw": 0.0,
+   "pr": 0.003,
+   "eig": 0.0,
+   "r_in": 24,
+   "r_bt": 229,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "C/C++ 拡張モジュールに対応した拡張性の高い Python ビルドバックエンド"
+  },
+  {
+   "id": "shap",
+   "label": "shap",
+   "x": 0.5293,
+   "y": 0.2864,
+   "indeg": 0,
+   "outdeg": 10,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 265,
+   "r_bt": 230,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "機械学習モデルの出力を説明する統一的手法"
+  },
+  {
+   "id": "shellingham",
+   "label": "shellingham",
+   "x": 0.5146,
+   "y": 0.6295,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 219,
+   "r_bt": 231,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "実行中のシェルを検出するツール"
+  },
+  {
+   "id": "six",
+   "label": "six",
+   "x": 0.7437,
+   "y": 0.3003,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 44,
+   "btw": 0.0,
+   "pr": 0.0127,
+   "eig": 0.9985,
+   "r_in": 53,
+   "r_bt": 232,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 2 と 3 の互換性ユーティリティ"
+  },
+  {
+   "id": "sklearn-compat",
+   "label": "sklearn-compat",
+   "x": 0.6432,
+   "y": 0.1928,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 220,
+   "r_bt": 233,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ"
+  },
+  {
+   "id": "skops",
+   "label": "skops",
+   "x": 0.5441,
+   "y": 0.269,
+   "indeg": 1,
+   "outdeg": 5,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 221,
+   "r_bt": 73,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "本番環境での機械学習に関するツール群"
+  },
+  {
+   "id": "slicer",
+   "label": "slicer",
+   "x": 0.4841,
+   "y": 0.1789,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 222,
+   "r_bt": 234,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": "大規模なスライス処理のための小さなパッケージ"
+  },
+  {
+   "id": "smart-open",
+   "label": "smart-open",
+   "x": 0.674,
+   "y": 0.434,
+   "indeg": 3,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 54,
+   "r_bt": 68,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "S3・HDFS・GCS などの大容量ファイルをストリーミングするユーティリティ"
+  },
+  {
+   "id": "smmap",
+   "label": "smmap",
+   "x": 0.2854,
+   "y": 0.7766,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0049,
+   "eig": 0.0,
+   "r_in": 223,
+   "r_bt": 235,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "スライディングウィンドウ式メモリマップ管理の純 Python 実装"
+  },
+  {
+   "id": "soupsieve",
+   "label": "soupsieve",
+   "x": 0.2361,
+   "y": 0.2969,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 224,
+   "r_bt": 236,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Beautiful Soup 向けのモダンな CSS セレクタ実装"
+  },
+  {
+   "id": "spacy",
+   "label": "spacy",
+   "x": 0.5915,
+   "y": 0.4652,
+   "indeg": 0,
+   "outdeg": 20,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 266,
+   "r_bt": 237,
+   "com": 3,
+   "art": 0,
+   "seed": 1,
+   "cat": "自然言語処理",
+   "desc": "産業利用に耐える Python の自然言語処理（NLP）ライブラリ"
+  },
+  {
+   "id": "spacy-legacy",
+   "label": "spacy-legacy",
+   "x": 0.5469,
+   "y": 0.4505,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 225,
+   "r_bt": 238,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "spaCy の後方互換性のためのレガシー登録関数群"
+  },
+  {
+   "id": "spacy-loggers",
+   "label": "spacy-loggers",
+   "x": 0.669,
+   "y": 0.5641,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 226,
+   "r_bt": 239,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "spaCy 用のロギングユーティリティ"
+  },
+  {
+   "id": "sqlalchemy",
+   "label": "sqlalchemy",
+   "x": 0.4653,
+   "y": 0.4826,
+   "indeg": 3,
+   "outdeg": 2,
+   "impact": 3,
+   "btw": 0.0001,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 55,
+   "r_bt": 63,
+   "com": 5,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "データベース抽象化ライブラリ"
+  },
+  {
+   "id": "sqlparse",
+   "label": "sqlparse",
+   "x": 0.3892,
+   "y": 0.5948,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 227,
+   "r_bt": 240,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "検証を行わない SQL パーサー"
+  },
+  {
+   "id": "srsly",
+   "label": "srsly",
+   "x": 0.6394,
+   "y": 0.5191,
+   "indeg": 4,
+   "outdeg": 1,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0038,
+   "eig": 0.0,
+   "r_in": 33,
+   "r_bt": 77,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "Python 向けの高性能なシリアライズユーティリティ"
+  },
+  {
+   "id": "stack-data",
+   "label": "stack-data",
+   "x": 0.7959,
+   "y": 0.2887,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 7,
+   "btw": 0.0003,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 228,
+   "r_bt": 26,
+   "com": 13,
+   "art": 1,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "スタックフレームとトレースバックから表示用データを抽出するライブラリ"
+  },
+  {
+   "id": "stanio",
+   "label": "stanio",
+   "x": 0.6152,
+   "y": 0.2299,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 229,
+   "r_bt": 241,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "統計・時系列",
+   "desc": "Stan の入力作成と出力処理のためのユーティリティ"
+  },
+  {
+   "id": "starlette",
+   "label": "starlette",
+   "x": 0.4542,
+   "y": 0.5152,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 3,
+   "btw": 0.0001,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 94,
+   "r_bt": 54,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "小さな ASGI ライブラリ"
+  },
+  {
+   "id": "statsmodels",
+   "label": "statsmodels",
+   "x": 0.62,
+   "y": 0.2862,
+   "indeg": 3,
+   "outdeg": 5,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 56,
+   "r_bt": 64,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "統計・時系列",
+   "desc": "Python のための統計計算・統計モデル"
+  },
+  {
+   "id": "sympy",
+   "label": "sympy",
+   "x": 0.1792,
+   "y": 0.8781,
+   "indeg": 0,
+   "outdeg": 1,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 267,
+   "r_bt": 242,
+   "com": 18,
+   "art": 0,
+   "seed": 1,
+   "cat": "データ処理・数値計算",
+   "desc": "Python 製の数式処理システム（CAS）"
+  },
+  {
+   "id": "tabulate",
+   "label": "tabulate",
+   "x": 0.6656,
+   "y": 0.1077,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 230,
+   "r_bt": 243,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "表形式データをきれいに表示するツール"
+  },
+  {
+   "id": "tensorflow",
+   "label": "tensorflow",
+   "x": 0.5963,
+   "y": 0.8781,
+   "indeg": 0,
+   "outdeg": 0,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 268,
+   "r_bt": 244,
+   "com": 21,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "オープンソースの機械学習フレームワーク"
+  },
+  {
+   "id": "terminado",
+   "label": "terminado",
+   "x": 0.3436,
+   "y": 0.2177,
+   "indeg": 2,
+   "outdeg": 2,
+   "impact": 8,
+   "btw": 0.0001,
+   "pr": 0.0046,
+   "eig": 0.0,
+   "r_in": 95,
+   "r_bt": 46,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Xterm.js 端末エミュレータ向けの Tornado WebSocket バックエンド"
+  },
+  {
+   "id": "thinc",
+   "label": "thinc",
+   "x": 0.6137,
+   "y": 0.4609,
+   "indeg": 1,
+   "outdeg": 12,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 231,
+   "r_bt": 80,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "主要ライブラリと互換な関数型スタイルの深層学習ライブラリ"
+  },
+  {
+   "id": "threadpoolctl",
+   "label": "threadpoolctl",
+   "x": 0.6207,
+   "y": 0.3037,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0039,
+   "eig": 0.0,
+   "r_in": 57,
+   "r_bt": 245,
+   "com": 1,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": "threadpoolctl"
+  },
+  {
+   "id": "tifffile",
+   "label": "tifffile",
+   "x": 0.5799,
+   "y": 0.196,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 232,
+   "r_bt": 246,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "TIFF ファイルの読み書きを行うライブラリ"
+  },
+  {
+   "id": "tinycss2",
+   "label": "tinycss2",
+   "x": 0.0488,
+   "y": 0.2562,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 233,
+   "r_bt": 247,
+   "com": 14,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "小さな CSS パーサー"
+  },
+  {
+   "id": "tokenizers",
+   "label": "tokenizers",
+   "x": 0.3937,
+   "y": 0.4956,
+   "indeg": 1,
+   "outdeg": 1,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 234,
+   "r_bt": 248,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "機械学習",
+   "desc": ""
+  },
+  {
+   "id": "tomli",
+   "label": "tomli",
+   "x": 0.354,
+   "y": 0.3978,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 96,
+   "r_bt": 249,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "小さな TOML パーサー"
+  },
+  {
+   "id": "toolz",
+   "label": "toolz",
+   "x": 0.2161,
+   "y": 0.418,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0051,
+   "eig": 0.0,
+   "r_in": 97,
+   "r_bt": 250,
+   "com": 12,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "リスト処理ツールと関数型ユーティリティ"
+  },
+  {
+   "id": "torch",
+   "label": "torch",
+   "x": 0.7803,
+   "y": 0.8781,
+   "indeg": 0,
+   "outdeg": 0,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 269,
+   "r_bt": 251,
+   "com": 22,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "GPU 加速対応のテンソルと動的ニューラルネットワークのライブラリ"
+  },
+  {
+   "id": "tornado",
+   "label": "tornado",
+   "x": 0.4142,
+   "y": 0.2795,
+   "indeg": 7,
+   "outdeg": 0,
+   "impact": 15,
+   "btw": 0.0,
+   "pr": 0.006,
+   "eig": 0.0,
+   "r_in": 12,
+   "r_bt": 252,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Python の Web フレームワーク兼非同期ネットワークライブラリ"
+  },
+  {
+   "id": "tqdm",
+   "label": "tqdm",
+   "x": 0.5222,
+   "y": 0.3725,
+   "indeg": 10,
+   "outdeg": 0,
+   "impact": 11,
+   "btw": 0.0,
+   "pr": 0.0068,
+   "eig": 0.0,
+   "r_in": 8,
+   "r_bt": 253,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "基盤・ユーティリティ",
+   "desc": "高速で拡張可能な進捗表示ライブラリ"
+  },
+  {
+   "id": "traitlets",
+   "label": "traitlets",
+   "x": 0.4532,
+   "y": 0.267,
+   "indeg": 13,
+   "outdeg": 0,
+   "impact": 18,
+   "btw": 0.0,
+   "pr": 0.0102,
+   "eig": 0.0,
+   "r_in": 6,
+   "r_bt": 254,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Python 向け設定システム Traitlets"
+  },
+  {
+   "id": "transformers",
+   "label": "transformers",
+   "x": 0.4741,
+   "y": 0.4266,
+   "indeg": 0,
+   "outdeg": 9,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 270,
+   "r_bt": 255,
+   "com": 4,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "テキスト・画像・音声・マルチモーダルの機械学習モデル定義フレームワーク"
+  },
+  {
+   "id": "typer",
+   "label": "typer",
+   "x": 0.5188,
+   "y": 0.5083,
+   "indeg": 4,
+   "outdeg": 5,
+   "impact": 5,
+   "btw": 0.0005,
+   "pr": 0.0031,
+   "eig": 0.0,
+   "r_in": 34,
+   "r_bt": 13,
+   "com": 2,
+   "art": 1,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python の型ヒントに基づく CLI 構築ライブラリ"
+  },
+  {
+   "id": "typing-extensions",
+   "label": "typing-extensions",
+   "x": 0.4868,
+   "y": 0.4399,
+   "indeg": 34,
+   "outdeg": 0,
+   "impact": 69,
+   "btw": 0.0,
+   "pr": 0.045,
+   "eig": 0.0251,
+   "r_in": 2,
+   "r_bt": 256,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python 3.9+ 向けのバックポート・実験的型ヒント"
+  },
+  {
+   "id": "typing-inspection",
+   "label": "typing-inspection",
+   "x": 0.499,
+   "y": 0.5468,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 9,
+   "btw": 0.0,
+   "pr": 0.0035,
+   "eig": 0.0,
+   "r_in": 98,
+   "r_bt": 257,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "実行時の型イントロスペクションツール"
+  },
+  {
+   "id": "tzdata",
+   "label": "tzdata",
+   "x": 0.7506,
+   "y": 0.246,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 36,
+   "btw": 0.0,
+   "pr": 0.0059,
+   "eig": 0.0245,
+   "r_in": 99,
+   "r_bt": 258,
+   "com": 6,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "IANA タイムゾーンデータの提供パッケージ"
+  },
+  {
+   "id": "umap-learn",
+   "label": "umap-learn",
+   "x": 0.5484,
+   "y": 0.2941,
+   "indeg": 0,
+   "outdeg": 6,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 271,
+   "r_bt": 259,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "Uniform Manifold Approximation and Projection（UMAP）"
+  },
+  {
+   "id": "uri-template",
+   "label": "uri-template",
+   "x": 0.8223,
+   "y": 0.4472,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 235,
+   "r_bt": 260,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "RFC 6570 URI テンプレートプロセッサ"
+  },
+  {
+   "id": "urllib3",
+   "label": "urllib3",
+   "x": 0.6068,
+   "y": 0.4456,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0043,
+   "eig": 0.0,
+   "r_in": 58,
+   "r_bt": 261,
+   "com": 10,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "スレッドセーフな接続プールなどを備えた HTTP ライブラリ"
+  },
+  {
+   "id": "uvicorn",
+   "label": "uvicorn",
+   "x": 0.4704,
+   "y": 0.5599,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 236,
+   "r_bt": 78,
+   "com": 2,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "高速な ASGI サーバー"
+  },
+  {
+   "id": "wasabi",
+   "label": "wasabi",
+   "x": 0.6251,
+   "y": 0.5255,
+   "indeg": 3,
+   "outdeg": 0,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0027,
+   "eig": 0.0,
+   "r_in": 59,
+   "r_bt": 262,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "軽量なコンソール出力・整形ツールキット"
+  },
+  {
+   "id": "wcwidth",
+   "label": "wcwidth",
+   "x": 0.5194,
+   "y": 0.0511,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 11,
+   "btw": 0.0,
+   "pr": 0.0067,
+   "eig": 0.0,
+   "r_in": 100,
+   "r_bt": 263,
+   "com": 19,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "ターミナルでの Unicode 文字列の表示幅を測定するライブラリ"
+  },
+  {
+   "id": "weasel",
+   "label": "weasel",
+   "x": 0.5864,
+   "y": 0.4877,
+   "indeg": 1,
+   "outdeg": 9,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0023,
+   "eig": 0.0,
+   "r_in": 237,
+   "r_bt": 81,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "自然言語処理",
+   "desc": "小さくて簡単なワークフローシステム"
+  },
+  {
+   "id": "webcolors",
+   "label": "webcolors",
+   "x": 0.8222,
+   "y": 0.4629,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 13,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 238,
+   "r_bt": 264,
+   "com": 7,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "HTML・CSS で定義された色形式を扱うライブラリ"
+  },
+  {
+   "id": "webencodings",
+   "label": "webencodings",
+   "x": 0.0538,
+   "y": 0.2396,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 10,
+   "btw": 0.0,
+   "pr": 0.0059,
+   "eig": 0.0,
+   "r_in": 101,
+   "r_bt": 265,
+   "com": 14,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "レガシー Web コンテンツ用の文字エンコーディング別名"
+  },
+  {
+   "id": "websocket-client",
+   "label": "websocket-client",
+   "x": 0.2728,
+   "y": 0.2919,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 7,
+   "btw": 0.0,
+   "pr": 0.0025,
+   "eig": 0.0,
+   "r_in": 239,
+   "r_bt": 266,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "低レベル API も備えた Python 用 WebSocket クライアント"
+  },
+  {
+   "id": "werkzeug",
+   "label": "werkzeug",
+   "x": 0.3001,
+   "y": 0.4543,
+   "indeg": 2,
+   "outdeg": 1,
+   "impact": 3,
+   "btw": 0.0,
+   "pr": 0.0032,
+   "eig": 0.0,
+   "r_in": 102,
+   "r_bt": 94,
+   "com": 5,
+   "art": 0,
+   "seed": 0,
+   "cat": "Web・通信",
+   "desc": "包括的な WSGI Web アプリケーションライブラリ"
+  },
+  {
+   "id": "widgetsnbextension",
+   "label": "widgetsnbextension",
+   "x": 0.3777,
+   "y": 0.0494,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 2,
+   "btw": 0.0,
+   "pr": 0.0026,
+   "eig": 0.0,
+   "r_in": 240,
+   "r_bt": 267,
+   "com": 0,
+   "art": 0,
+   "seed": 0,
+   "cat": "Jupyter・開発環境",
+   "desc": "Jupyter Notebook 用のインタラクティブウィジェット"
+  },
+  {
+   "id": "wrapt",
+   "label": "wrapt",
+   "x": 0.7389,
+   "y": 0.3923,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 6,
+   "btw": 0.0,
+   "pr": 0.0051,
+   "eig": 0.0,
+   "r_in": 103,
+   "r_bt": 268,
+   "com": 3,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "デコレータ・ラッパー・モンキーパッチのためのモジュール"
+  },
+  {
+   "id": "xarray",
+   "label": "xarray",
+   "x": 0.5665,
+   "y": 0.271,
+   "indeg": 4,
+   "outdeg": 3,
+   "impact": 8,
+   "btw": 0.0004,
+   "pr": 0.0057,
+   "eig": 0.0,
+   "r_in": 35,
+   "r_bt": 16,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "Python のラベル付き N 次元配列・データセット"
+  },
+  {
+   "id": "xarray-einstats",
+   "label": "xarray-einstats",
+   "x": 0.5726,
+   "y": 0.2385,
+   "indeg": 1,
+   "outdeg": 3,
+   "impact": 4,
+   "btw": 0.0,
+   "pr": 0.0029,
+   "eig": 0.0,
+   "r_in": 241,
+   "r_bt": 269,
+   "com": 9,
+   "art": 0,
+   "seed": 0,
+   "cat": "データ処理・数値計算",
+   "desc": "xarray 向けの統計・線形代数・einops 機能"
+  },
+  {
+   "id": "xgboost",
+   "label": "xgboost",
+   "x": 0.6264,
+   "y": 0.1767,
+   "indeg": 0,
+   "outdeg": 3,
+   "impact": 0,
+   "btw": 0.0,
+   "pr": 0.0022,
+   "eig": 0.0,
+   "r_in": 272,
+   "r_bt": 270,
+   "com": 1,
+   "art": 0,
+   "seed": 1,
+   "cat": "機械学習",
+   "desc": "XGBoost の Python パッケージ"
+  },
+  {
+   "id": "xyzservices",
+   "label": "xyzservices",
+   "x": 0.5736,
+   "y": 0.2218,
+   "indeg": 1,
+   "outdeg": 0,
+   "impact": 1,
+   "btw": 0.0,
+   "pr": 0.0024,
+   "eig": 0.0,
+   "r_in": 242,
+   "r_bt": 271,
+   "com": 4,
+   "art": 0,
+   "seed": 0,
+   "cat": "可視化",
+   "desc": "XYZ タイルプロバイダの情報源"
+  },
+  {
+   "id": "zipp",
+   "label": "zipp",
+   "x": 0.3414,
+   "y": 0.2863,
+   "indeg": 2,
+   "outdeg": 0,
+   "impact": 15,
+   "btw": 0.0,
+   "pr": 0.0079,
+   "eig": 0.0,
+   "r_in": 104,
+   "r_bt": 272,
+   "com": 17,
+   "art": 0,
+   "seed": 0,
+   "cat": "基盤・ユーティリティ",
+   "desc": "zip ファイル用 pathlib 互換ラッパーのバックポート"
+  }
+ ],
+ "edges": [
+  {
+   "s": "alembic",
+   "t": "mako"
+  },
+  {
+   "s": "alembic",
+   "t": "sqlalchemy"
+  },
+  {
+   "s": "alembic",
+   "t": "tomli"
+  },
+  {
+   "s": "alembic",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "altair",
+   "t": "jinja2"
+  },
+  {
+   "s": "altair",
+   "t": "jsonschema"
+  },
+  {
+   "s": "altair",
+   "t": "narwhals"
+  },
+  {
+   "s": "altair",
+   "t": "packaging"
+  },
+  {
+   "s": "altair",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "anyio",
+   "t": "exceptiongroup"
+  },
+  {
+   "s": "anyio",
+   "t": "idna"
+  },
+  {
+   "s": "anyio",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "argon2-cffi",
+   "t": "argon2-cffi-bindings"
+  },
+  {
+   "s": "argon2-cffi-bindings",
+   "t": "cffi"
+  },
+  {
+   "s": "arrow",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "arrow",
+   "t": "tzdata"
+  },
+  {
+   "s": "arviz",
+   "t": "arviz-base"
+  },
+  {
+   "s": "arviz",
+   "t": "arviz-plots"
+  },
+  {
+   "s": "arviz",
+   "t": "arviz-stats"
+  },
+  {
+   "s": "arviz-base",
+   "t": "lazy-loader"
+  },
+  {
+   "s": "arviz-base",
+   "t": "numpy"
+  },
+  {
+   "s": "arviz-base",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "arviz-base",
+   "t": "xarray"
+  },
+  {
+   "s": "arviz-plots",
+   "t": "arviz-base"
+  },
+  {
+   "s": "arviz-plots",
+   "t": "arviz-stats"
+  },
+  {
+   "s": "arviz-stats",
+   "t": "arviz-base"
+  },
+  {
+   "s": "arviz-stats",
+   "t": "numpy"
+  },
+  {
+   "s": "arviz-stats",
+   "t": "scipy"
+  },
+  {
+   "s": "arviz-stats",
+   "t": "xarray"
+  },
+  {
+   "s": "arviz-stats",
+   "t": "xarray-einstats"
+  },
+  {
+   "s": "async-lru",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "autograd",
+   "t": "numpy"
+  },
+  {
+   "s": "beautifulsoup4",
+   "t": "soupsieve"
+  },
+  {
+   "s": "beautifulsoup4",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "bleach",
+   "t": "tinycss2"
+  },
+  {
+   "s": "bleach",
+   "t": "webencodings"
+  },
+  {
+   "s": "blis",
+   "t": "numpy"
+  },
+  {
+   "s": "bokeh",
+   "t": "jinja2"
+  },
+  {
+   "s": "bokeh",
+   "t": "narwhals"
+  },
+  {
+   "s": "bokeh",
+   "t": "numpy"
+  },
+  {
+   "s": "bokeh",
+   "t": "packaging"
+  },
+  {
+   "s": "bokeh",
+   "t": "pillow"
+  },
+  {
+   "s": "bokeh",
+   "t": "pyyaml"
+  },
+  {
+   "s": "bokeh",
+   "t": "tornado"
+  },
+  {
+   "s": "bokeh",
+   "t": "xyzservices"
+  },
+  {
+   "s": "catboost",
+   "t": "graphviz"
+  },
+  {
+   "s": "catboost",
+   "t": "matplotlib"
+  },
+  {
+   "s": "catboost",
+   "t": "numpy"
+  },
+  {
+   "s": "catboost",
+   "t": "pandas"
+  },
+  {
+   "s": "catboost",
+   "t": "plotly"
+  },
+  {
+   "s": "catboost",
+   "t": "scipy"
+  },
+  {
+   "s": "catboost",
+   "t": "six"
+  },
+  {
+   "s": "category-encoders",
+   "t": "numpy"
+  },
+  {
+   "s": "category-encoders",
+   "t": "pandas"
+  },
+  {
+   "s": "category-encoders",
+   "t": "patsy"
+  },
+  {
+   "s": "category-encoders",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "category-encoders",
+   "t": "scipy"
+  },
+  {
+   "s": "category-encoders",
+   "t": "statsmodels"
+  },
+  {
+   "s": "cffi",
+   "t": "pycparser"
+  },
+  {
+   "s": "cloudpathlib",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "cmdstanpy",
+   "t": "numpy"
+  },
+  {
+   "s": "cmdstanpy",
+   "t": "pandas"
+  },
+  {
+   "s": "cmdstanpy",
+   "t": "stanio"
+  },
+  {
+   "s": "cmdstanpy",
+   "t": "tqdm"
+  },
+  {
+   "s": "confection",
+   "t": "pydantic"
+  },
+  {
+   "s": "confection",
+   "t": "srsly"
+  },
+  {
+   "s": "cons",
+   "t": "logical-unification"
+  },
+  {
+   "s": "contourpy",
+   "t": "numpy"
+  },
+  {
+   "s": "cryptography",
+   "t": "cffi"
+  },
+  {
+   "s": "cryptography",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "databricks-sdk",
+   "t": "google-auth"
+  },
+  {
+   "s": "databricks-sdk",
+   "t": "protobuf"
+  },
+  {
+   "s": "databricks-sdk",
+   "t": "requests"
+  },
+  {
+   "s": "docker",
+   "t": "requests"
+  },
+  {
+   "s": "docker",
+   "t": "urllib3"
+  },
+  {
+   "s": "etuples",
+   "t": "cons"
+  },
+  {
+   "s": "etuples",
+   "t": "multipledispatch"
+  },
+  {
+   "s": "exceptiongroup",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "fastapi",
+   "t": "annotated-doc"
+  },
+  {
+   "s": "fastapi",
+   "t": "pydantic"
+  },
+  {
+   "s": "fastapi",
+   "t": "starlette"
+  },
+  {
+   "s": "fastapi",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "fastapi",
+   "t": "typing-inspection"
+  },
+  {
+   "s": "flask",
+   "t": "blinker"
+  },
+  {
+   "s": "flask",
+   "t": "click"
+  },
+  {
+   "s": "flask",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "flask",
+   "t": "itsdangerous"
+  },
+  {
+   "s": "flask",
+   "t": "jinja2"
+  },
+  {
+   "s": "flask",
+   "t": "markupsafe"
+  },
+  {
+   "s": "flask",
+   "t": "werkzeug"
+  },
+  {
+   "s": "flask-cors",
+   "t": "flask"
+  },
+  {
+   "s": "flask-cors",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "flask-cors",
+   "t": "werkzeug"
+  },
+  {
+   "s": "formulaic",
+   "t": "interface-meta"
+  },
+  {
+   "s": "formulaic",
+   "t": "narwhals"
+  },
+  {
+   "s": "formulaic",
+   "t": "numpy"
+  },
+  {
+   "s": "formulaic",
+   "t": "pandas"
+  },
+  {
+   "s": "formulaic",
+   "t": "scipy"
+  },
+  {
+   "s": "formulaic",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "formulaic",
+   "t": "wrapt"
+  },
+  {
+   "s": "gensim",
+   "t": "numpy"
+  },
+  {
+   "s": "gensim",
+   "t": "scipy"
+  },
+  {
+   "s": "gensim",
+   "t": "smart-open"
+  },
+  {
+   "s": "gitdb",
+   "t": "smmap"
+  },
+  {
+   "s": "gitpython",
+   "t": "gitdb"
+  },
+  {
+   "s": "gitpython",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "google-auth",
+   "t": "cryptography"
+  },
+  {
+   "s": "google-auth",
+   "t": "pyasn1-modules"
+  },
+  {
+   "s": "graphene",
+   "t": "graphql-core"
+  },
+  {
+   "s": "graphene",
+   "t": "graphql-relay"
+  },
+  {
+   "s": "graphene",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "graphene",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "graphql-core",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "graphql-relay",
+   "t": "graphql-core"
+  },
+  {
+   "s": "gunicorn",
+   "t": "packaging"
+  },
+  {
+   "s": "h5py",
+   "t": "numpy"
+  },
+  {
+   "s": "hdbscan",
+   "t": "joblib"
+  },
+  {
+   "s": "hdbscan",
+   "t": "numpy"
+  },
+  {
+   "s": "hdbscan",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "hdbscan",
+   "t": "scipy"
+  },
+  {
+   "s": "holidays",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "httpcore",
+   "t": "certifi"
+  },
+  {
+   "s": "httpcore",
+   "t": "h11"
+  },
+  {
+   "s": "httpx",
+   "t": "anyio"
+  },
+  {
+   "s": "httpx",
+   "t": "certifi"
+  },
+  {
+   "s": "httpx",
+   "t": "httpcore"
+  },
+  {
+   "s": "httpx",
+   "t": "idna"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "click"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "filelock"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "fsspec"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "hf-xet"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "httpx"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "packaging"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "pyyaml"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "tqdm"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "typer"
+  },
+  {
+   "s": "huggingface-hub",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "imageio",
+   "t": "numpy"
+  },
+  {
+   "s": "imageio",
+   "t": "pillow"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "joblib"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "numpy"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "scipy"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "sklearn-compat"
+  },
+  {
+   "s": "imbalanced-learn",
+   "t": "threadpoolctl"
+  },
+  {
+   "s": "importlib-metadata",
+   "t": "zipp"
+  },
+  {
+   "s": "importlib-resources",
+   "t": "zipp"
+  },
+  {
+   "s": "ipykernel",
+   "t": "comm"
+  },
+  {
+   "s": "ipykernel",
+   "t": "debugpy"
+  },
+  {
+   "s": "ipykernel",
+   "t": "ipython"
+  },
+  {
+   "s": "ipykernel",
+   "t": "jupyter-client"
+  },
+  {
+   "s": "ipykernel",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "ipykernel",
+   "t": "matplotlib-inline"
+  },
+  {
+   "s": "ipykernel",
+   "t": "nest-asyncio2"
+  },
+  {
+   "s": "ipykernel",
+   "t": "packaging"
+  },
+  {
+   "s": "ipykernel",
+   "t": "psutil"
+  },
+  {
+   "s": "ipykernel",
+   "t": "pyzmq"
+  },
+  {
+   "s": "ipykernel",
+   "t": "tornado"
+  },
+  {
+   "s": "ipykernel",
+   "t": "traitlets"
+  },
+  {
+   "s": "ipython",
+   "t": "decorator"
+  },
+  {
+   "s": "ipython",
+   "t": "ipython-pygments-lexers"
+  },
+  {
+   "s": "ipython",
+   "t": "jedi"
+  },
+  {
+   "s": "ipython",
+   "t": "matplotlib-inline"
+  },
+  {
+   "s": "ipython",
+   "t": "pexpect"
+  },
+  {
+   "s": "ipython",
+   "t": "prompt-toolkit"
+  },
+  {
+   "s": "ipython",
+   "t": "psutil"
+  },
+  {
+   "s": "ipython",
+   "t": "pygments"
+  },
+  {
+   "s": "ipython",
+   "t": "stack-data"
+  },
+  {
+   "s": "ipython",
+   "t": "traitlets"
+  },
+  {
+   "s": "ipython",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "ipython-pygments-lexers",
+   "t": "pygments"
+  },
+  {
+   "s": "ipywidgets",
+   "t": "comm"
+  },
+  {
+   "s": "ipywidgets",
+   "t": "ipython"
+  },
+  {
+   "s": "ipywidgets",
+   "t": "jupyterlab-widgets"
+  },
+  {
+   "s": "ipywidgets",
+   "t": "traitlets"
+  },
+  {
+   "s": "ipywidgets",
+   "t": "widgetsnbextension"
+  },
+  {
+   "s": "isoduration",
+   "t": "arrow"
+  },
+  {
+   "s": "jax",
+   "t": "jaxlib"
+  },
+  {
+   "s": "jax",
+   "t": "ml-dtypes"
+  },
+  {
+   "s": "jax",
+   "t": "numpy"
+  },
+  {
+   "s": "jax",
+   "t": "opt-einsum"
+  },
+  {
+   "s": "jax",
+   "t": "scipy"
+  },
+  {
+   "s": "jedi",
+   "t": "parso"
+  },
+  {
+   "s": "jinja2",
+   "t": "markupsafe"
+  },
+  {
+   "s": "jsonschema",
+   "t": "attrs"
+  },
+  {
+   "s": "jsonschema",
+   "t": "fqdn"
+  },
+  {
+   "s": "jsonschema",
+   "t": "idna"
+  },
+  {
+   "s": "jsonschema",
+   "t": "isoduration"
+  },
+  {
+   "s": "jsonschema",
+   "t": "jsonpointer"
+  },
+  {
+   "s": "jsonschema",
+   "t": "jsonschema-specifications"
+  },
+  {
+   "s": "jsonschema",
+   "t": "referencing"
+  },
+  {
+   "s": "jsonschema",
+   "t": "rfc3339-validator"
+  },
+  {
+   "s": "jsonschema",
+   "t": "rfc3986-validator"
+  },
+  {
+   "s": "jsonschema",
+   "t": "rfc3987-syntax"
+  },
+  {
+   "s": "jsonschema",
+   "t": "rpds-py"
+  },
+  {
+   "s": "jsonschema",
+   "t": "uri-template"
+  },
+  {
+   "s": "jsonschema",
+   "t": "webcolors"
+  },
+  {
+   "s": "jsonschema-specifications",
+   "t": "referencing"
+  },
+  {
+   "s": "jupyter",
+   "t": "ipykernel"
+  },
+  {
+   "s": "jupyter",
+   "t": "ipywidgets"
+  },
+  {
+   "s": "jupyter",
+   "t": "jupyter-console"
+  },
+  {
+   "s": "jupyter",
+   "t": "jupyterlab"
+  },
+  {
+   "s": "jupyter",
+   "t": "nbconvert"
+  },
+  {
+   "s": "jupyter",
+   "t": "notebook"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "pyzmq"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "tornado"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyter-client",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "ipykernel"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "ipython"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "jupyter-client"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "prompt-toolkit"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "pygments"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "pyzmq"
+  },
+  {
+   "s": "jupyter-console",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyter-core",
+   "t": "platformdirs"
+  },
+  {
+   "s": "jupyter-core",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "jsonschema"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "packaging"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "python-json-logger"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "pyyaml"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "referencing"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "rfc3339-validator"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "rfc3986-validator"
+  },
+  {
+   "s": "jupyter-events",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyter-lsp",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "jupyter-lsp",
+   "t": "jupyter-server"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "anyio"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "argon2-cffi"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "jinja2"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "jupyter-client"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "jupyter-events"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "jupyter-server-terminals"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "nbconvert"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "nbformat"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "overrides"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "packaging"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "prometheus-client"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "pyzmq"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "send2trash"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "terminado"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "tornado"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyter-server",
+   "t": "websocket-client"
+  },
+  {
+   "s": "jupyter-server-terminals",
+   "t": "terminado"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "async-lru"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "httpx"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "ipykernel"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "jinja2"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "jupyter-lsp"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "jupyter-server"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "jupyterlab-server"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "notebook-shim"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "packaging"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "setuptools"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "tomli"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "tornado"
+  },
+  {
+   "s": "jupyterlab",
+   "t": "traitlets"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "babel"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "jinja2"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "json5"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "jsonschema"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "jupyter-server"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "packaging"
+  },
+  {
+   "s": "jupyterlab-server",
+   "t": "requests"
+  },
+  {
+   "s": "keras",
+   "t": "absl-py"
+  },
+  {
+   "s": "keras",
+   "t": "h5py"
+  },
+  {
+   "s": "keras",
+   "t": "ml-dtypes"
+  },
+  {
+   "s": "keras",
+   "t": "namex"
+  },
+  {
+   "s": "keras",
+   "t": "numpy"
+  },
+  {
+   "s": "keras",
+   "t": "optree"
+  },
+  {
+   "s": "keras",
+   "t": "packaging"
+  },
+  {
+   "s": "keras",
+   "t": "rich"
+  },
+  {
+   "s": "lazy-loader",
+   "t": "packaging"
+  },
+  {
+   "s": "lifelines",
+   "t": "autograd"
+  },
+  {
+   "s": "lifelines",
+   "t": "autograd-gamma"
+  },
+  {
+   "s": "lifelines",
+   "t": "formulaic"
+  },
+  {
+   "s": "lifelines",
+   "t": "matplotlib"
+  },
+  {
+   "s": "lifelines",
+   "t": "numpy"
+  },
+  {
+   "s": "lifelines",
+   "t": "pandas"
+  },
+  {
+   "s": "lifelines",
+   "t": "scipy"
+  },
+  {
+   "s": "lightgbm",
+   "t": "numpy"
+  },
+  {
+   "s": "lightgbm",
+   "t": "scipy"
+  },
+  {
+   "s": "logical-unification",
+   "t": "multipledispatch"
+  },
+  {
+   "s": "logical-unification",
+   "t": "toolz"
+  },
+  {
+   "s": "mako",
+   "t": "markupsafe"
+  },
+  {
+   "s": "markdown-it-py",
+   "t": "mdurl"
+  },
+  {
+   "s": "matplotlib",
+   "t": "contourpy"
+  },
+  {
+   "s": "matplotlib",
+   "t": "cycler"
+  },
+  {
+   "s": "matplotlib",
+   "t": "fonttools"
+  },
+  {
+   "s": "matplotlib",
+   "t": "kiwisolver"
+  },
+  {
+   "s": "matplotlib",
+   "t": "numpy"
+  },
+  {
+   "s": "matplotlib",
+   "t": "packaging"
+  },
+  {
+   "s": "matplotlib",
+   "t": "pillow"
+  },
+  {
+   "s": "matplotlib",
+   "t": "pyparsing"
+  },
+  {
+   "s": "matplotlib",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "matplotlib-inline",
+   "t": "traitlets"
+  },
+  {
+   "s": "minikanren",
+   "t": "cons"
+  },
+  {
+   "s": "minikanren",
+   "t": "etuples"
+  },
+  {
+   "s": "minikanren",
+   "t": "logical-unification"
+  },
+  {
+   "s": "minikanren",
+   "t": "multipledispatch"
+  },
+  {
+   "s": "minikanren",
+   "t": "toolz"
+  },
+  {
+   "s": "minikanren",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "mistune",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "ml-dtypes",
+   "t": "numpy"
+  },
+  {
+   "s": "mlflow",
+   "t": "aiohttp"
+  },
+  {
+   "s": "mlflow",
+   "t": "alembic"
+  },
+  {
+   "s": "mlflow",
+   "t": "cryptography"
+  },
+  {
+   "s": "mlflow",
+   "t": "docker"
+  },
+  {
+   "s": "mlflow",
+   "t": "flask"
+  },
+  {
+   "s": "mlflow",
+   "t": "flask-cors"
+  },
+  {
+   "s": "mlflow",
+   "t": "graphene"
+  },
+  {
+   "s": "mlflow",
+   "t": "gunicorn"
+  },
+  {
+   "s": "mlflow",
+   "t": "huey"
+  },
+  {
+   "s": "mlflow",
+   "t": "matplotlib"
+  },
+  {
+   "s": "mlflow",
+   "t": "mlflow-skinny"
+  },
+  {
+   "s": "mlflow",
+   "t": "mlflow-tracing"
+  },
+  {
+   "s": "mlflow",
+   "t": "numpy"
+  },
+  {
+   "s": "mlflow",
+   "t": "pandas"
+  },
+  {
+   "s": "mlflow",
+   "t": "pyarrow"
+  },
+  {
+   "s": "mlflow",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "mlflow",
+   "t": "scipy"
+  },
+  {
+   "s": "mlflow",
+   "t": "skops"
+  },
+  {
+   "s": "mlflow",
+   "t": "sqlalchemy"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "cachetools"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "click"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "cloudpickle"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "databricks-sdk"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "fastapi"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "gitpython"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "opentelemetry-api"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "opentelemetry-proto"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "opentelemetry-sdk"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "packaging"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "protobuf"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "pydantic"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "python-dotenv"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "pyyaml"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "requests"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "sqlparse"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "starlette"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "mlflow-skinny",
+   "t": "uvicorn"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "cachetools"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "databricks-sdk"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "opentelemetry-api"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "opentelemetry-proto"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "opentelemetry-sdk"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "packaging"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "protobuf"
+  },
+  {
+   "s": "mlflow-tracing",
+   "t": "pydantic"
+  },
+  {
+   "s": "nbclient",
+   "t": "jupyter-client"
+  },
+  {
+   "s": "nbclient",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "nbclient",
+   "t": "nbformat"
+  },
+  {
+   "s": "nbclient",
+   "t": "traitlets"
+  },
+  {
+   "s": "nbconvert",
+   "t": "beautifulsoup4"
+  },
+  {
+   "s": "nbconvert",
+   "t": "bleach"
+  },
+  {
+   "s": "nbconvert",
+   "t": "defusedxml"
+  },
+  {
+   "s": "nbconvert",
+   "t": "importlib-metadata"
+  },
+  {
+   "s": "nbconvert",
+   "t": "jinja2"
+  },
+  {
+   "s": "nbconvert",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "nbconvert",
+   "t": "jupyterlab-pygments"
+  },
+  {
+   "s": "nbconvert",
+   "t": "markupsafe"
+  },
+  {
+   "s": "nbconvert",
+   "t": "mistune"
+  },
+  {
+   "s": "nbconvert",
+   "t": "nbclient"
+  },
+  {
+   "s": "nbconvert",
+   "t": "nbformat"
+  },
+  {
+   "s": "nbconvert",
+   "t": "packaging"
+  },
+  {
+   "s": "nbconvert",
+   "t": "pandocfilters"
+  },
+  {
+   "s": "nbconvert",
+   "t": "pygments"
+  },
+  {
+   "s": "nbconvert",
+   "t": "traitlets"
+  },
+  {
+   "s": "nbformat",
+   "t": "fastjsonschema"
+  },
+  {
+   "s": "nbformat",
+   "t": "jsonschema"
+  },
+  {
+   "s": "nbformat",
+   "t": "jupyter-core"
+  },
+  {
+   "s": "nbformat",
+   "t": "traitlets"
+  },
+  {
+   "s": "nltk",
+   "t": "click"
+  },
+  {
+   "s": "nltk",
+   "t": "joblib"
+  },
+  {
+   "s": "nltk",
+   "t": "regex"
+  },
+  {
+   "s": "nltk",
+   "t": "tqdm"
+  },
+  {
+   "s": "notebook",
+   "t": "jupyter-server"
+  },
+  {
+   "s": "notebook",
+   "t": "jupyterlab"
+  },
+  {
+   "s": "notebook",
+   "t": "jupyterlab-server"
+  },
+  {
+   "s": "notebook",
+   "t": "notebook-shim"
+  },
+  {
+   "s": "notebook",
+   "t": "tornado"
+  },
+  {
+   "s": "notebook-shim",
+   "t": "jupyter-server"
+  },
+  {
+   "s": "numba",
+   "t": "llvmlite"
+  },
+  {
+   "s": "numba",
+   "t": "numpy"
+  },
+  {
+   "s": "opentelemetry-api",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "opentelemetry-proto",
+   "t": "protobuf"
+  },
+  {
+   "s": "opentelemetry-sdk",
+   "t": "opentelemetry-api"
+  },
+  {
+   "s": "opentelemetry-sdk",
+   "t": "opentelemetry-semantic-conventions"
+  },
+  {
+   "s": "opentelemetry-sdk",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "opentelemetry-semantic-conventions",
+   "t": "opentelemetry-api"
+  },
+  {
+   "s": "opentelemetry-semantic-conventions",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "optree",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "optuna",
+   "t": "alembic"
+  },
+  {
+   "s": "optuna",
+   "t": "colorlog"
+  },
+  {
+   "s": "optuna",
+   "t": "numpy"
+  },
+  {
+   "s": "optuna",
+   "t": "packaging"
+  },
+  {
+   "s": "optuna",
+   "t": "pyyaml"
+  },
+  {
+   "s": "optuna",
+   "t": "sqlalchemy"
+  },
+  {
+   "s": "optuna",
+   "t": "tqdm"
+  },
+  {
+   "s": "pandas",
+   "t": "numpy"
+  },
+  {
+   "s": "pandas",
+   "t": "python-dateutil"
+  },
+  {
+   "s": "pandas",
+   "t": "pytz"
+  },
+  {
+   "s": "pandas",
+   "t": "tzdata"
+  },
+  {
+   "s": "pandas-flavor",
+   "t": "pandas"
+  },
+  {
+   "s": "pandas-flavor",
+   "t": "xarray"
+  },
+  {
+   "s": "patsy",
+   "t": "numpy"
+  },
+  {
+   "s": "pexpect",
+   "t": "ptyprocess"
+  },
+  {
+   "s": "pingouin",
+   "t": "matplotlib"
+  },
+  {
+   "s": "pingouin",
+   "t": "numpy"
+  },
+  {
+   "s": "pingouin",
+   "t": "pandas"
+  },
+  {
+   "s": "pingouin",
+   "t": "pandas-flavor"
+  },
+  {
+   "s": "pingouin",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "pingouin",
+   "t": "scipy"
+  },
+  {
+   "s": "pingouin",
+   "t": "seaborn"
+  },
+  {
+   "s": "pingouin",
+   "t": "statsmodels"
+  },
+  {
+   "s": "pingouin",
+   "t": "tabulate"
+  },
+  {
+   "s": "plotly",
+   "t": "narwhals"
+  },
+  {
+   "s": "plotly",
+   "t": "packaging"
+  },
+  {
+   "s": "pmdarima",
+   "t": "cython"
+  },
+  {
+   "s": "pmdarima",
+   "t": "joblib"
+  },
+  {
+   "s": "pmdarima",
+   "t": "numpy"
+  },
+  {
+   "s": "pmdarima",
+   "t": "packaging"
+  },
+  {
+   "s": "pmdarima",
+   "t": "pandas"
+  },
+  {
+   "s": "pmdarima",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "pmdarima",
+   "t": "scipy"
+  },
+  {
+   "s": "pmdarima",
+   "t": "setuptools"
+  },
+  {
+   "s": "pmdarima",
+   "t": "statsmodels"
+  },
+  {
+   "s": "pmdarima",
+   "t": "urllib3"
+  },
+  {
+   "s": "polars",
+   "t": "polars-runtime-32"
+  },
+  {
+   "s": "preshed",
+   "t": "cymem"
+  },
+  {
+   "s": "preshed",
+   "t": "murmurhash"
+  },
+  {
+   "s": "prettytable",
+   "t": "wcwidth"
+  },
+  {
+   "s": "prompt-toolkit",
+   "t": "wcwidth"
+  },
+  {
+   "s": "prophet",
+   "t": "cmdstanpy"
+  },
+  {
+   "s": "prophet",
+   "t": "holidays"
+  },
+  {
+   "s": "prophet",
+   "t": "importlib-resources"
+  },
+  {
+   "s": "prophet",
+   "t": "matplotlib"
+  },
+  {
+   "s": "prophet",
+   "t": "numpy"
+  },
+  {
+   "s": "prophet",
+   "t": "pandas"
+  },
+  {
+   "s": "prophet",
+   "t": "tqdm"
+  },
+  {
+   "s": "pyasn1-modules",
+   "t": "pyasn1"
+  },
+  {
+   "s": "pydantic",
+   "t": "annotated-types"
+  },
+  {
+   "s": "pydantic",
+   "t": "pydantic-core"
+  },
+  {
+   "s": "pydantic",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "pydantic",
+   "t": "typing-inspection"
+  },
+  {
+   "s": "pydantic-core",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "pymc",
+   "t": "arviz"
+  },
+  {
+   "s": "pymc",
+   "t": "cachetools"
+  },
+  {
+   "s": "pymc",
+   "t": "cloudpickle"
+  },
+  {
+   "s": "pymc",
+   "t": "numpy"
+  },
+  {
+   "s": "pymc",
+   "t": "pandas"
+  },
+  {
+   "s": "pymc",
+   "t": "pytensor"
+  },
+  {
+   "s": "pymc",
+   "t": "rich"
+  },
+  {
+   "s": "pymc",
+   "t": "scipy"
+  },
+  {
+   "s": "pymc",
+   "t": "threadpoolctl"
+  },
+  {
+   "s": "pymc",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "pynndescent",
+   "t": "joblib"
+  },
+  {
+   "s": "pynndescent",
+   "t": "llvmlite"
+  },
+  {
+   "s": "pynndescent",
+   "t": "numba"
+  },
+  {
+   "s": "pynndescent",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "pynndescent",
+   "t": "scipy"
+  },
+  {
+   "s": "pytensor",
+   "t": "cons"
+  },
+  {
+   "s": "pytensor",
+   "t": "etuples"
+  },
+  {
+   "s": "pytensor",
+   "t": "filelock"
+  },
+  {
+   "s": "pytensor",
+   "t": "logical-unification"
+  },
+  {
+   "s": "pytensor",
+   "t": "minikanren"
+  },
+  {
+   "s": "pytensor",
+   "t": "numba"
+  },
+  {
+   "s": "pytensor",
+   "t": "numpy"
+  },
+  {
+   "s": "pytensor",
+   "t": "scipy"
+  },
+  {
+   "s": "pytensor",
+   "t": "setuptools"
+  },
+  {
+   "s": "python-dateutil",
+   "t": "six"
+  },
+  {
+   "s": "referencing",
+   "t": "attrs"
+  },
+  {
+   "s": "referencing",
+   "t": "rpds-py"
+  },
+  {
+   "s": "referencing",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "requests",
+   "t": "certifi"
+  },
+  {
+   "s": "requests",
+   "t": "charset-normalizer"
+  },
+  {
+   "s": "requests",
+   "t": "idna"
+  },
+  {
+   "s": "requests",
+   "t": "urllib3"
+  },
+  {
+   "s": "rfc3339-validator",
+   "t": "six"
+  },
+  {
+   "s": "rfc3987-syntax",
+   "t": "lark"
+  },
+  {
+   "s": "rich",
+   "t": "markdown-it-py"
+  },
+  {
+   "s": "rich",
+   "t": "pygments"
+  },
+  {
+   "s": "scikit-image",
+   "t": "imageio"
+  },
+  {
+   "s": "scikit-image",
+   "t": "lazy-loader"
+  },
+  {
+   "s": "scikit-image",
+   "t": "networkx"
+  },
+  {
+   "s": "scikit-image",
+   "t": "numpy"
+  },
+  {
+   "s": "scikit-image",
+   "t": "packaging"
+  },
+  {
+   "s": "scikit-image",
+   "t": "pillow"
+  },
+  {
+   "s": "scikit-image",
+   "t": "scipy"
+  },
+  {
+   "s": "scikit-image",
+   "t": "tifffile"
+  },
+  {
+   "s": "scikit-learn",
+   "t": "joblib"
+  },
+  {
+   "s": "scikit-learn",
+   "t": "narwhals"
+  },
+  {
+   "s": "scikit-learn",
+   "t": "numpy"
+  },
+  {
+   "s": "scikit-learn",
+   "t": "scipy"
+  },
+  {
+   "s": "scikit-learn",
+   "t": "threadpoolctl"
+  },
+  {
+   "s": "scipy",
+   "t": "numpy"
+  },
+  {
+   "s": "seaborn",
+   "t": "matplotlib"
+  },
+  {
+   "s": "seaborn",
+   "t": "numpy"
+  },
+  {
+   "s": "seaborn",
+   "t": "pandas"
+  },
+  {
+   "s": "shap",
+   "t": "cloudpickle"
+  },
+  {
+   "s": "shap",
+   "t": "llvmlite"
+  },
+  {
+   "s": "shap",
+   "t": "numba"
+  },
+  {
+   "s": "shap",
+   "t": "numpy"
+  },
+  {
+   "s": "shap",
+   "t": "packaging"
+  },
+  {
+   "s": "shap",
+   "t": "pandas"
+  },
+  {
+   "s": "shap",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "shap",
+   "t": "scipy"
+  },
+  {
+   "s": "shap",
+   "t": "slicer"
+  },
+  {
+   "s": "shap",
+   "t": "tqdm"
+  },
+  {
+   "s": "sklearn-compat",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "skops",
+   "t": "numpy"
+  },
+  {
+   "s": "skops",
+   "t": "packaging"
+  },
+  {
+   "s": "skops",
+   "t": "prettytable"
+  },
+  {
+   "s": "skops",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "skops",
+   "t": "scipy"
+  },
+  {
+   "s": "smart-open",
+   "t": "wrapt"
+  },
+  {
+   "s": "spacy",
+   "t": "catalogue"
+  },
+  {
+   "s": "spacy",
+   "t": "cymem"
+  },
+  {
+   "s": "spacy",
+   "t": "jinja2"
+  },
+  {
+   "s": "spacy",
+   "t": "langcodes"
+  },
+  {
+   "s": "spacy",
+   "t": "murmurhash"
+  },
+  {
+   "s": "spacy",
+   "t": "numpy"
+  },
+  {
+   "s": "spacy",
+   "t": "packaging"
+  },
+  {
+   "s": "spacy",
+   "t": "preshed"
+  },
+  {
+   "s": "spacy",
+   "t": "pydantic"
+  },
+  {
+   "s": "spacy",
+   "t": "requests"
+  },
+  {
+   "s": "spacy",
+   "t": "setuptools"
+  },
+  {
+   "s": "spacy",
+   "t": "smart-open"
+  },
+  {
+   "s": "spacy",
+   "t": "spacy-legacy"
+  },
+  {
+   "s": "spacy",
+   "t": "spacy-loggers"
+  },
+  {
+   "s": "spacy",
+   "t": "srsly"
+  },
+  {
+   "s": "spacy",
+   "t": "thinc"
+  },
+  {
+   "s": "spacy",
+   "t": "tqdm"
+  },
+  {
+   "s": "spacy",
+   "t": "typer"
+  },
+  {
+   "s": "spacy",
+   "t": "wasabi"
+  },
+  {
+   "s": "spacy",
+   "t": "weasel"
+  },
+  {
+   "s": "spacy-legacy",
+   "t": "tqdm"
+  },
+  {
+   "s": "sqlalchemy",
+   "t": "greenlet"
+  },
+  {
+   "s": "sqlalchemy",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "srsly",
+   "t": "catalogue"
+  },
+  {
+   "s": "stack-data",
+   "t": "asttokens"
+  },
+  {
+   "s": "stack-data",
+   "t": "executing"
+  },
+  {
+   "s": "stack-data",
+   "t": "pure-eval"
+  },
+  {
+   "s": "stanio",
+   "t": "numpy"
+  },
+  {
+   "s": "starlette",
+   "t": "anyio"
+  },
+  {
+   "s": "starlette",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "statsmodels",
+   "t": "numpy"
+  },
+  {
+   "s": "statsmodels",
+   "t": "packaging"
+  },
+  {
+   "s": "statsmodels",
+   "t": "pandas"
+  },
+  {
+   "s": "statsmodels",
+   "t": "patsy"
+  },
+  {
+   "s": "statsmodels",
+   "t": "scipy"
+  },
+  {
+   "s": "sympy",
+   "t": "mpmath"
+  },
+  {
+   "s": "terminado",
+   "t": "ptyprocess"
+  },
+  {
+   "s": "terminado",
+   "t": "tornado"
+  },
+  {
+   "s": "thinc",
+   "t": "blis"
+  },
+  {
+   "s": "thinc",
+   "t": "catalogue"
+  },
+  {
+   "s": "thinc",
+   "t": "confection"
+  },
+  {
+   "s": "thinc",
+   "t": "cymem"
+  },
+  {
+   "s": "thinc",
+   "t": "murmurhash"
+  },
+  {
+   "s": "thinc",
+   "t": "numpy"
+  },
+  {
+   "s": "thinc",
+   "t": "packaging"
+  },
+  {
+   "s": "thinc",
+   "t": "preshed"
+  },
+  {
+   "s": "thinc",
+   "t": "pydantic"
+  },
+  {
+   "s": "thinc",
+   "t": "setuptools"
+  },
+  {
+   "s": "thinc",
+   "t": "srsly"
+  },
+  {
+   "s": "thinc",
+   "t": "wasabi"
+  },
+  {
+   "s": "tifffile",
+   "t": "numpy"
+  },
+  {
+   "s": "tinycss2",
+   "t": "webencodings"
+  },
+  {
+   "s": "tokenizers",
+   "t": "huggingface-hub"
+  },
+  {
+   "s": "transformers",
+   "t": "huggingface-hub"
+  },
+  {
+   "s": "transformers",
+   "t": "numpy"
+  },
+  {
+   "s": "transformers",
+   "t": "packaging"
+  },
+  {
+   "s": "transformers",
+   "t": "pyyaml"
+  },
+  {
+   "s": "transformers",
+   "t": "regex"
+  },
+  {
+   "s": "transformers",
+   "t": "safetensors"
+  },
+  {
+   "s": "transformers",
+   "t": "tokenizers"
+  },
+  {
+   "s": "transformers",
+   "t": "tqdm"
+  },
+  {
+   "s": "transformers",
+   "t": "typer"
+  },
+  {
+   "s": "typer",
+   "t": "annotated-doc"
+  },
+  {
+   "s": "typer",
+   "t": "click"
+  },
+  {
+   "s": "typer",
+   "t": "rich"
+  },
+  {
+   "s": "typer",
+   "t": "shellingham"
+  },
+  {
+   "s": "typer",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "typing-inspection",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "umap-learn",
+   "t": "numba"
+  },
+  {
+   "s": "umap-learn",
+   "t": "numpy"
+  },
+  {
+   "s": "umap-learn",
+   "t": "pynndescent"
+  },
+  {
+   "s": "umap-learn",
+   "t": "scikit-learn"
+  },
+  {
+   "s": "umap-learn",
+   "t": "scipy"
+  },
+  {
+   "s": "umap-learn",
+   "t": "tqdm"
+  },
+  {
+   "s": "uvicorn",
+   "t": "click"
+  },
+  {
+   "s": "uvicorn",
+   "t": "h11"
+  },
+  {
+   "s": "uvicorn",
+   "t": "typing-extensions"
+  },
+  {
+   "s": "weasel",
+   "t": "cloudpathlib"
+  },
+  {
+   "s": "weasel",
+   "t": "confection"
+  },
+  {
+   "s": "weasel",
+   "t": "packaging"
+  },
+  {
+   "s": "weasel",
+   "t": "pydantic"
+  },
+  {
+   "s": "weasel",
+   "t": "requests"
+  },
+  {
+   "s": "weasel",
+   "t": "smart-open"
+  },
+  {
+   "s": "weasel",
+   "t": "srsly"
+  },
+  {
+   "s": "weasel",
+   "t": "typer"
+  },
+  {
+   "s": "weasel",
+   "t": "wasabi"
+  },
+  {
+   "s": "werkzeug",
+   "t": "markupsafe"
+  },
+  {
+   "s": "xarray",
+   "t": "numpy"
+  },
+  {
+   "s": "xarray",
+   "t": "packaging"
+  },
+  {
+   "s": "xarray",
+   "t": "pandas"
+  },
+  {
+   "s": "xarray-einstats",
+   "t": "numpy"
+  },
+  {
+   "s": "xarray-einstats",
+   "t": "scipy"
+  },
+  {
+   "s": "xarray-einstats",
+   "t": "xarray"
+  },
+  {
+   "s": "xgboost",
+   "t": "numpy"
+  },
+  {
+   "s": "xgboost",
+   "t": "nvidia-nccl-cu12"
+  },
+  {
+   "s": "xgboost",
+   "t": "scipy"
+  }
+ ],
+ "repro": {
+  "random_seed": 42,
+  "layout": "fruchterman_reingold(iters=60, per-component packing)",
+  "community": "louvain(deterministic)",
+  "betweenness": "brandes(normalized, directed)",
+  "durations_sec": {
+   "basic": 0.0,
+   "betweenness": 0.01,
+   "pagerank_eigen": 0.0,
+   "community_aps": 0.0,
+   "layout": 0.27,
+   "total": 0.28
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "package": "github.com/nats-io/nats-server/v2",
+ "system": "go",
+ "api": "https://api.deps.dev/v3",
+ "fetched_at": "2026-06-12T08:25:15Z",
+ "status": "ok",
+ "version": "v2.14.2",
+ "nodes": [
+  "github.com/klauspost/compress",
+  "github.com/nats-io/nats-server/v2",
+  "golang.org/x/crypto",
+  "golang.org/x/sys",
+  "golang.org/x/time"
+ ],
+ "edges": [
+  [
+   "github.com/nats-io/nats-server/v2",
+   "github.com/klauspost/compress"
+  ],
+  [
+   "github.com/nats-io/nats-server/v2",
+   "golang.org/x/crypto"
+  ],
+  [
+   "github.com/nats-io/nats-server/v2",
+   "golang.org/x/sys"
+  ],
+  [
+   "github.com/nats-io/nats-server/v2",
+   "golang.org/x/time"
+  ],
+  [
+   "golang.org/x/crypto",
+   "golang.org/x/sys"
+  ]
+ ]
+}
