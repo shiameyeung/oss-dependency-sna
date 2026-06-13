@@ -44,7 +44,7 @@
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
   .badge { display:inline-block; font-size:11px; font-weight:700; color:#fff; border-radius:4px;
-           padding:2px 8px; margin:0 4px 6px 0; }
+           padding:2px 8px; margin:0 4px 6px 0; cursor:help; }
   .diag-name { font-size:14px; font-weight:700; color:var(--txt); margin-bottom:4px; word-break:break-all; }
   .diag-table { width:100%; border-collapse:collapse; font-size:11.5px; margin:6px 0 8px; }
   .diag-table td { padding:2.5px 4px; border-bottom:1px solid var(--line); }
@@ -204,6 +204,7 @@ const STR = {
   rankTopSuffix:" — Top 10",
   topnAll:n=>`全 ${n} ノード`, topnTop:(k,n)=>`上位 ${k}/${n}`, catCount:n=>`${n} ノード表示中`,
   seedBadge:"シード", funcGroup:"機能群", systemSuffix:"系",
+  badgeTip:{cutpoint:"切断点: 取り除くと他のノードが主要ネットワークから孤立する急所",bridge:"橋渡し型: 被依存数は低いが媒介中心性が高い、経路上の要衝",foundation:"土台型: 多数が直接依存する基盤（被依存数が上位）",isolated:"孤立: 収集範囲内に依存関係が観測されないノード",normal:"標準: 構造上の特異性が検出されないノード",seed:"シード: 分析の起点として選んだパッケージ",cat:"機能分類: 名前・説明に基づく決定論的な分類"},
   tIndeg:"被依存数（単純統計）", tIndegVal:(v,N,r)=>`${v}（全 ${N} 中 ${r}位）`,
   tReach:"影響範囲（推移的）", tReachVal:v=>`${v} パッケージ`,
   tBtw:"媒介中心性", tBtwVal:(v,r)=>`${v}（${r}位）`, tPr:"PageRank", tCom:"コミュニティ",
@@ -250,6 +251,7 @@ const STR = {
   rankTopSuffix:" — Top 10",
   topnAll:n=>`all ${n} nodes`, topnTop:(k,n)=>`top ${k}/${n}`, catCount:n=>`${n} nodes shown`,
   seedBadge:"seed", funcGroup:"functional group", systemSuffix:"",
+  badgeTip:{cutpoint:"Cut point: a choke point whose removal isolates other nodes from the main network",bridge:"Bridge: low in-degree but high betweenness — a path bottleneck",foundation:"Foundation: a base that many packages depend on directly (high in-degree)",isolated:"Isolated: no dependency relation observed within the collected scope",normal:"Standard: no structural peculiarity detected",seed:"Seed: a package chosen as an analysis starting point",cat:"Functional category: deterministic classification by name / description"},
   tIndeg:"In-degree (simple stat)", tIndegVal:(v,N,r)=>`${v} (rank ${r} of ${N})`,
   tReach:"Reach (transitive)", tReachVal:v=>`${v} packages`,
   tBtw:"Betweenness", tBtwVal:(v,r)=>`${v} (rank ${r})`, tPr:"PageRank", tCom:"Community",
@@ -296,6 +298,7 @@ const STR = {
   rankTopSuffix:" — Top 10",
   topnAll:n=>`全部 ${n} 節點`, topnTop:(k,n)=>`前 ${k}/${n}`, catCount:n=>`顯示 ${n} 節點`,
   seedBadge:"種子", funcGroup:"功能群", systemSuffix:"",
+  badgeTip:{cutpoint:"切斷點: 移除後會使其他節點從主網路孤立的要害",bridge:"橋接型: 被依賴數低但中介中心性高，位於路徑要衝",foundation:"基礎型: 多數套件直接依賴的基礎（被依賴數居前）",isolated:"孤立: 收集範圍內未觀測到依賴關係的節點",normal:"標準: 未偵測到結構上特異性的節點",seed:"種子: 作為分析起點選定的套件",cat:"功能分類: 依名稱·說明的確定性分類"},
   tIndeg:"被依賴數（簡單統計）", tIndegVal:(v,N,r)=>`${v}（共 ${N} 中第 ${r} 位）`,
   tReach:"影響範圍（遞移）", tReachVal:v=>`${v} 個套件`,
   tBtw:"中介中心性", tBtwVal:(v,r)=>`${v}（第 ${r} 位）`, tPr:"PageRank", tCom:"社群",
@@ -342,6 +345,7 @@ const STR = {
   rankTopSuffix:" — Top 10",
   topnAll:n=>`全部 ${n} 节点`, topnTop:(k,n)=>`前 ${k}/${n}`, catCount:n=>`显示 ${n} 节点`,
   seedBadge:"种子", funcGroup:"功能群", systemSuffix:"",
+  badgeTip:{cutpoint:"切断点: 移除后会使其他节点从主网络孤立的要害",bridge:"桥接型: 被依赖数低但中介中心性高，位于路径要冲",foundation:"基础型: 多数软件包直接依赖的基础（被依赖数靠前）",isolated:"孤立: 收集范围内未观测到依赖关系的节点",normal:"标准: 未检测到结构上特异性的节点",seed:"种子: 作为分析起点选定的软件包",cat:"功能分类: 按名称·说明的确定性分类"},
   tIndeg:"被依赖数（简单统计）", tIndegVal:(v,N,r)=>`${v}（共 ${N} 中第 ${r} 位）`,
   tReach:"影响范围（传递）", tReachVal:v=>`${v} 个软件包`,
   tBtw:"中介中心性", tBtwVal:(v,r)=>`${v}（第 ${r} 位）`, tPr:"PageRank", tCom:"社群",
@@ -428,9 +432,9 @@ function diagnoseNode(n, g){
   const S = T(), N = g.nodes.length, CUT = g.cut_impact || {};
   const sep = lang==="ja" ? "、" : ", ";
   const types = nodeTypes(n);
-  let badges = types.map(t=>`<span class="badge" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
-  if (n.seed) badges += `<span class="badge" style="background:#5DA8E8">${S.seedBadge}</span>`;
-  if (n.cat) badges += `<span class="badge" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
+  let badges = types.map(t=>`<span class="badge" title="${esc(S.badgeTip[t]||"")}" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
+  if (n.seed) badges += `<span class="badge" title="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
+  if (n.cat) badges += `<span class="badge" title="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
   const d = descOf(n);
   const descHtml = d ? `<div class="diag-desc">${esc(d)}</div>` : "";
   const table = `<table class="diag-table">
@@ -471,7 +475,7 @@ function diagnoseCom(cid, g){
   const avgIn = member.length ? (member.reduce((a,n)=>a+n.indeg,0)/member.length).toFixed(1) : 0;
   const sep = lang==="ja" ? "、" : ", ";
   return `<div class="diag-name">${S.comTitle(cid)}</div>
-    <span class="badge" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
+    <span class="badge" title="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
     <table class="diag-table">
       <tr><td>${S.comNodes}</td><td>${st.n}</td></tr>
       <tr><td>${S.comInEdges}</td><td>${st.m_in}</td></tr>
