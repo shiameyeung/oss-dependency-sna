@@ -16,6 +16,10 @@
   #langbar button { padding:3px 9px; font-size:11.5px; border-radius:5px; }
   h1 { font-size:17px; margin:0 0 6px; font-weight:700; color:var(--acc); }
   .sub { color:var(--sub); font-size:12px; }
+  .hintbar { display:flex; flex-wrap:wrap; gap:4px 16px; padding:5px 0 1px; }
+  .hint-item { display:inline-flex; align-items:center; gap:5px; color:var(--sub);
+               font-size:11.5px; line-height:1.35; white-space:nowrap; }
+  .hint-item svg { flex:none; display:block; height:14px; width:auto; }  /* 全局 svg{height:660px} の上書き必須 */
   .bar { display:flex; gap:10px; flex-wrap:wrap; padding:12px 20px 10px; align-items:stretch; }
   .grp { display:flex; align-items:center; gap:5px; background:var(--panel);
          border:1px solid var(--line); border-radius:9px; padding:6px 12px; }
@@ -100,7 +104,7 @@
 <header>
   <div id="langbar"><span class="globe" aria-hidden="true">🌐</span><span id="langs"></span></div>
   <h1><span id="h1main"></span> <span class="sub" id="h1sub"></span></h1>
-  <div class="sub" id="headerHint"></div>
+  <div class="hintbar" id="hintbar"></div>
 </header>
 <div class="bar">
   <div class="grp"><span class="lbl" id="lblDomain"></span><span id="domains"></span></div>
@@ -154,6 +158,15 @@ let lang = "ja";   // 表示言語（ja / en）。データ・指標値は不変
 const COLORS = ["#5DA8E8","#F2C84B","#81c784","#ba68c8","#ff8a65","#4dd0e1","#f06292","#a1887f","#90a4ae","#dce775"];
 const LANGS = [["ja","日本語"],["en","English"],["zhHant","繁體"],["zhHans","简体"]];
 const HTMLLANG = {ja:"ja", en:"en", zhHant:"zh-Hant", zhHans:"zh-Hans"};
+// ヘッダの凡例（読み方・操作）— アイコンは言語非依存。文言は STR.headerHint[キー]。
+const HINT_ORDER = ["edge","size","cut","click","zoom"];
+const HINT_ICONS = {
+  edge:'<svg width="21" height="13" viewBox="0 0 21 13" aria-hidden="true"><circle cx="3" cy="6.5" r="2.6" fill="#5DA8E8"/><line x1="6.2" y1="6.5" x2="14" y2="6.5" stroke="#9DB2C6" stroke-width="1.4"/><path d="M13 4L16.5 6.5L13 9" fill="none" stroke="#9DB2C6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  size:'<svg width="23" height="13" viewBox="0 0 23 13" aria-hidden="true"><circle cx="4" cy="6.5" r="2.2" fill="#CFE6FF"/><circle cx="15" cy="6.5" r="5" fill="#5DA8E8"/></svg>',
+  cut:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="7" cy="6.5" r="4.4" fill="none" stroke="#E2A82E" stroke-width="2"/></svg>',
+  click:'<svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M2.5 1.5L2.5 10.5L4.8 8.3L6.6 12L8 11.3L6.2 7.7L9.3 7.7Z" fill="#5C6B7A"/></svg>',
+  zoom:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.5" fill="none" stroke="#5C6B7A" stroke-width="1.5"/><line x1="8.1" y1="8.1" x2="11.5" y2="11.5" stroke="#5C6B7A" stroke-width="1.5" stroke-linecap="round"/></svg>',
+};
 const MLAB = {
   indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)",
          zhHant:"被依賴數（直接依賴者數·簡單統計）", zhHans:"被依赖数（直接依赖者数·简单统计）"},
@@ -208,7 +221,7 @@ const STR = {
  ja: {
   h1main:"OSS 依存ネットワーク分析デモ",
   h1sub:"— 意思決定支援（DSS）型の分析支援システム",
-  headerHint:'エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。図はホイールで拡大・ドラッグで移動できる（⟲ で初期表示に戻す）。',
+  headerHint:{edge:"依存元 → 依存先", size:"大きさ・色 = 選択中の指標", cut:"切断点（除くと孤立が生じる）", click:"クリックで診断を表示", zoom:"ホイールで拡大・ドラッグで移動（⟲ で初期化）"},
   gDomain:"領域", gView:"ビュー", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
   comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色", zoomResetTitle:"表示をリセット",
   vNet:"ネットワーク図", vScatter:"散布図（被依存×媒介）",
@@ -255,7 +268,7 @@ const STR = {
  en: {
   h1main:"OSS Dependency Network Analysis Demo",
   h1sub:"— A decision-support (DSS) style analysis-support system",
-  headerHint:'Edge direction: dependent → dependency. Node size/color = selected metric. ⚠ = cut point (its removal isolates other nodes). Click a node for a diagnosis on the right. Scroll to zoom, drag to pan (⟲ resets the view).',
+  headerHint:{edge:"dependent → dependency", size:"size / color = selected metric", cut:"cut point (removal isolates others)", click:"click a node for a diagnosis", zoom:"scroll to zoom, drag to pan (⟲ resets)"},
   gDomain:"Domain", gView:"View", gMetric:"Metric", gSearch:"Search / category", gTopn:"Shown", gLang:"Language",
   comBtn:"Community color", comBtnTitle:"Color by community detected with the Louvain method", zoomResetTitle:"Reset view",
   vNet:"Network", vScatter:"Scatter (in-degree × betweenness)",
@@ -302,7 +315,7 @@ const STR = {
  zhHant: {
   h1main:"OSS 依賴網路分析展示",
   h1sub:"— 決策支援（DSS）型分析支援系統",
-  headerHint:'邊的方向：依賴方 → 被依賴方。節點大小·顏色 = 所選指標。⚠ = 切斷點（移除會導致其他節點孤立）。點擊節點即在右上顯示診斷。圖可用滾輪縮放、拖曳平移（⟲ 還原初始檢視）。',
+  headerHint:{edge:"依賴方 → 被依賴方", size:"大小・顏色 = 所選指標", cut:"切斷點（移除會造成孤立）", click:"點擊節點顯示診斷", zoom:"滾輪縮放・拖曳平移（⟲ 還原）"},
   gDomain:"領域", gView:"檢視", gMetric:"指標", gSearch:"搜尋·分類", gTopn:"顯示數", gLang:"語言",
   comBtn:"社群著色", comBtnTitle:"依 Louvain 法偵測的社群著色", zoomResetTitle:"重設檢視",
   vNet:"網路圖", vScatter:"散佈圖（被依賴×中介）",
@@ -349,7 +362,7 @@ const STR = {
  zhHans: {
   h1main:"OSS 依赖网络分析演示",
   h1sub:"— 决策支持（DSS）型分析支持系统",
-  headerHint:'边的方向：依赖方 → 被依赖方。节点大小·颜色 = 所选指标。⚠ = 切断点（移除会导致其他节点孤立）。点击节点即在右上显示诊断。图可用滚轮缩放、拖动平移（⟲ 还原初始视图）。',
+  headerHint:{edge:"依赖方 → 被依赖方", size:"大小・颜色 = 所选指标", cut:"切断点（移除会造成孤立）", click:"点击节点显示诊断", zoom:"滚轮缩放・拖动平移（⟲ 还原）"},
   gDomain:"领域", gView:"视图", gMetric:"指标", gSearch:"搜索·分类", gTopn:"显示数", gLang:"语言",
   comBtn:"社群着色", comBtnTitle:"按 Louvain 法检测的社群着色", zoomResetTitle:"重置视图",
   vNet:"网络图", vScatter:"散点图（被依赖×中介）",
@@ -657,7 +670,8 @@ function applyStaticText(){
   const S = T();
   $("#h1main").textContent = S.h1main;
   $("#h1sub").textContent = S.h1sub;
-  $("#headerHint").textContent = S.headerHint;
+  $("#hintbar").innerHTML = HINT_ORDER.map(k =>
+    `<span class="hint-item">${HINT_ICONS[k]}<span>${esc(S.headerHint[k])}</span></span>`).join("");
   $("#lblDomain").textContent = S.gDomain; $("#lblView").textContent = S.gView;
   $("#lblMetric").textContent = S.gMetric; $("#lblSearch").textContent = S.gSearch;
   $("#lblTopn").textContent = S.gTopn;
