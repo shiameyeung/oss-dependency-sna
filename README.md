@@ -1,14 +1,126 @@
+# OSS Dependency Network SNA — analysis-support prototype
+
+> **🔗 Live demo: https://shiameyeung.github.io/oss-dependency-sna/**
+
+**English** ｜ [日本語](#日本語)
+
+A research prototype (master's thesis) that builds **OSS dependency networks** from public data
+(deps.dev / PyPI), computes social-network-analysis (SNA) metrics, and provides a self-contained,
+reproducible **DSS-style diagnosis demo** with a **Japanese / English language switch** (top-right of
+the toolbar). It runs the four stages — **collect → build network → compute metrics → visualize** — in
+one command. The analysis pipeline is **deterministic (no LLM at runtime)**: the same input always
+yields the same output.
+
+## Files
+
+| File | Role |
+| --- | --- |
+| `run_all.py` | One-shot orchestrator. `--offline` recomputes from cache only |
+| `collect.py` | Collect resolved dependency graphs from the deps.dev API v3 (resumable, records success rate) |
+| `collect_desc.py` | Collect one-line descriptions per node (PyPI summary / Go → GitHub project) |
+| `seeds_pypi.json` | 50 data-science seeds (community-driven domain) |
+| `seeds_go.json` | 50 cloud-native seeds (foundation-governed domain) |
+| `sna_core.py` | SNA metrics in pure Python + numpy (no external deps, fully deterministic) |
+| `build_metrics.py` | cache → directed network → metrics → analysis JSON |
+| `make_demo.py` | Generates the self-contained HTML demo (works offline, no CDN) |
+
+## Usage
+
+```bash
+# Normal run (needs network access to the deps.dev API)
+python3 run_all.py
+
+# Recompute from cache only (to verify reproducibility of metrics / visualization)
+python3 run_all.py --offline
+```
+
+Requirements: Python 3.9+ / numpy / requests.
+
+## Design commitments
+
+- **Scope cutoff**: 50 seeds per domain merged with their resolved dependency graphs; no transitive full expansion.
+- **Reproducibility**: fetch timestamp, API, resolved versions, random seed (42), and metric timings are recorded
+  in every output. `sna_core.py` is deterministic (same input → same output). `run_all.py` also pins
+  `PYTHONHASHSEED=0` for child processes (set-iteration order would otherwise shift floating-point summation
+  order and move near-tied betweenness ranks by ±1). When running `build_metrics.py` standalone, use
+  `PYTHONHASHSEED=0 python3 build_metrics.py ...`.
+- **Metrics**: in-degree (simple stat) / reach / betweenness (Brandes) / PageRank / eigenvector /
+  density / weakly-connected components / articulation points (cut points) / Louvain communities & modularity.
+- **RQ3 support**: the output JSON includes the rank divergence between simple stats and SNA
+  (Spearman ρ, bridge nodes, foundation nodes).
+
+## Algorithm validation
+
+Every metric in `sna_core.py` was checked against a networkx implementation on identical input
+(2026-05-22 POC, real data embedded in `oss_sna_demo.html`); outputs matched exactly.
+
+## Diagnosis-card interpretation rules (DSS feature · RQ3 design element)
+
+The demo's diagnosis card generates text **deterministically** from a table that maps a node's
+structural type to decision contexts (adoption / support / concentration-risk). No LLM; same input →
+same output. The rule table itself is part of the DSS-artifact design.
+
+| Type | Condition | Decision implication (template gist) | Basis |
+| --- | --- | --- | --- |
+| Cut point | articulation point & in-degree>0 & reach>1 | shows the set isolated on removal (precomputed `cut_impact`); top priority to monitor for concentration risk | articulation point = vertex whose removal breaks connectivity (graph theory) |
+| Bridge | btw>0 & (in-degree rank − betweenness rank) ≥ 5 | a path bottleneck invisible to simple stats; check maintenance, an overlooked support candidate | the "path-control / brokerage" reading of betweenness (organized in Chen et al. 2022) |
+| Foundation | top-10 in-degree & btw≈0 & in-degree≥3 | a base visible even to simple stats; standard choice but a textbook concentration point | direct meaning of degree centrality + transitive impact in dependency networks (Decan et al. 2019) |
+| Isolated | in-degree=0 & out-degree=0 | no dependency relation within the collected scope | — (scope note) |
+| Standard | none of the above | no structural peculiarity; individual metrics suffice | — (absence of peculiarity) |
+
+**Positioning**: these rules are not a new theoretical claim but a **design element that maps established
+SNA-metric readings to OSS decision contexts** (part of DSR artifact design). The "quality of presented
+information" evaluation lens corresponds to the information-quality concept of DeLone & McLean (2003).
+Templates vary their wording by magnitude (isolated size, rank gap, propagation share) but generation is
+fully deterministic. **Replacing this with LLM natural-language generation is future work**; this study
+prioritizes reproducibility and explainability.
+
+## Demo interaction-design patterns (DSS interaction design · all deterministic)
+
+| Pattern | What | Rationale |
+| --- | --- | --- |
+| Diagnosis card | Aggregates description + metrics + meaning + recommendation + basis for the clicked target | Put decision-relevant information in one place (the DSS core) |
+| Node descriptions | One-line description per node (`collect_desc.py` collects registry originals in English; success rate PyPI 98.9% / Go 95.4%. The Japanese version is fixed data prepared from the originals) | Answer "what is this project" instantly; held as fixed data, not generated at runtime (keeps determinism) |
+| Language switch (JA/EN) | The toolbar "Language" control switches all UI, diagnosis templates, category names, and descriptions (descriptions: JA = fixed translation / EN = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Tamkang University). The switch is deterministic (no LLM at runtime) |
+| Category & search | Incremental name search + functional-category filter (8 per domain). Categories follow deterministic rules by name prefix / name set / description keywords (`CATEGORY_RULES` in `build_metrics.py`) | Explore along a "function" axis orthogonal to structural metrics |
+| Focus view | Keep only the selected node + its direct dependencies, fade the rest (ego network); for cut points, highlight the isolated set in yellow | **Fade (opacity 0.07), not hide**: removes irrelevant nodes visually while keeping the node's position in the overall map |
+| Static / interactive split | The operation-independent RQ3 panel (rank divergence) sits as a full-width band at the bottom | Separate interactive info (right) from static info (bottom) |
+| Scale adaptation | Top-N filter + deterministic layout recomputation per visible set (FR re-applied, seeded from precomputed coordinates, no randomness) + automatic node-radius adjustment | Keep readability regardless of node count |
+| Z-order & collision relaxation | Draw high-metric nodes on top; push the smaller-metric side away on overlap | Keep important nodes always clickable |
+
+## Methodological notes on metrics (RQ2 discussion)
+
+- **Eigenvector centrality is treated as reference-only on dependency graphs.** Dependency networks are
+  nearly acyclic (DAG); on a DAG the power iteration does not converge uniquely and values depend on the
+  iteration count (same in networkx 3.x). A compatible implementation is provided but not used for
+  interpretation. → For RQ2 this becomes a metric-selection finding: "in-degree / betweenness / PageRank
+  suit dependency-network diagnosis; eigenvector centrality suits networks with cyclic structure."
+- **Spearman ρ uses the standard tie-aware definition** (average ranks). Betweenness is 0 for most nodes,
+  producing many ties, so ρ changes greatly with tie handling (naive POC ≈0.75 → standard 0.293). The
+  standard value is used in talks and the paper.
+
+## Notes
+
+- Some environments restrict access to deps.dev (proxy / network limits). In that case run `collect.py`
+  where access is available, bring the `cache/` over, and continue with `--offline`.
+- Uppercase Go module paths (e.g. `github.com/VictoriaMetrics/...`) are accepted by deps.dev as-is.
+  Failed fetches are recorded with error details in the cache and aggregated into the success rate
+  (material for the technical evaluation).
+
+---
+
+<a name="日本語"></a>
+
 # OSS 依存ネットワーク分析 最小パイプライン（研究用プロトタイプ）
 
 > **🔗 オンラインデモ: https://shiameyeung.github.io/oss-dependency-sna/**
->
-> A research prototype (master's thesis) that builds **OSS dependency networks** from public data
-> (deps.dev / PyPI), computes social-network-analysis metrics, and provides a self-contained,
-> reproducible **DSS-style diagnosis demo** with a **Japanese / English language switch** (top-right
-> of the toolbar). The analysis pipeline is deterministic (no LLM at runtime). See the live demo above.
+
+[English](#oss-dependency-network-sna--analysis-support-prototype) ｜ **日本語**
 
 修士研究「社会ネットワーク分析を用いた OSS エコシステム分析支援システムの開発と評価」の
 最小パイプライン実装。**収集 → ネットワーク生成 → 指標計算 → 可視化** を一括実行する。
+解析パイプラインは**決定論的（実行時 LLM 不使用）**で、同一入力からは常に同一出力が得られる。
+デモはツールバー右上の「言語」で**日英切替**に対応する。
 
 ## 構成
 
@@ -16,6 +128,7 @@
 | --- | --- |
 | `run_all.py` | 一括実行（オーケストレーター）。`--offline` でキャッシュのみ実行 |
 | `collect.py` | deps.dev API v3 から解決済み依存グラフを収集（再開可能・成功率記録） |
+| `collect_desc.py` | ノードごとの 1 行説明を収集（PyPI summary／Go はモジュール→GitHub プロジェクト） |
 | `seeds_pypi.json` | データサイエンス系シード 50 件（コミュニティ主導の対照領域） |
 | `seeds_go.json` | クラウドネイティブ系シード 50 件（財団ガバナンスの対照領域） |
 | `sna_core.py` | SNA 指標の純 Python + numpy 実装（外部依存なし・全て決定論的） |
@@ -101,3 +214,7 @@ python3 run_all.py --offline
   その場合は接続可能な環境で `collect.py` のみ実行し、`cache/` を持ち込んで `--offline` で続行する。
 - Go モジュールパスの大文字（例: `github.com/VictoriaMetrics/...`）は deps.dev 側でそのまま受理される。
   取得失敗はエラー内容つきで cache に記録され、成功率として集計される（技術評価の素材）。
+
+---
+
+License: MIT (see `LICENSE`).
