@@ -53,6 +53,8 @@ Requirements: Python 3.9+ / numpy / requests.
 Every metric in `sna_core.py` was checked against a networkx implementation on identical input
 (2026-05-22 POC, real data embedded in `oss_sna_demo.html`); outputs matched exactly.
 
+<a name="rules-en"></a>
+
 ## Diagnosis-card interpretation rules (DSS feature · RQ3 design element)
 
 The demo's diagnosis card generates text **deterministically** from a table that maps a node's
@@ -162,6 +164,8 @@ python3 run_all.py --offline
 
 `sna_core.py` の各指標は、2026-05-22 POC（networkx 実装・`oss_sna_demo.html` に埋込の実データ）と
 同一入力での出力一致を確認済み（検証記録は `进程记录.md` 成果物ログを参照）。
+
+<a name="rules-ja"></a>
 
 ## 診断カードの解釈ルール（DSS 機能・RQ3 の設計要素）
 

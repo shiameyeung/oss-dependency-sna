@@ -64,7 +64,12 @@ TEMPLATE = r"""<!DOCTYPE html>
   .diag-desc { font-size:11px; color:var(--sub); font-style:italic; margin:1px 0 5px; line-height:1.45; }
   main { display:grid; grid-template-columns: 1fr 360px; gap:12px; padding:0 20px 8px; }
   .stage { background:var(--panel); border:1px solid var(--line); border-radius:10px; position:relative; }
-  svg { width:100%; height:660px; display:block; }
+  svg { width:100%; height:660px; display:block; cursor:grab; touch-action:none; }
+  svg:active { cursor:grabbing; }
+  #zoomReset { position:absolute; right:10px; bottom:10px; z-index:6; width:30px; height:30px;
+               padding:0; font-size:16px; line-height:1; border-radius:7px; background:#ffffffdd; }
+  .extlink { color:var(--acc); text-decoration:underline; cursor:pointer; }
+  .extlink:hover { color:var(--acc2); }
   svg text { pointer-events:none; }  /* ラベルがノードのクリックを遮らないように */
   svg circle[fill="none"] { pointer-events:none; }  /* 装飾リング（切断点/選択）がクリックを奪わないように */
   .side { display:flex; flex-direction:column; gap:12px; max-height:660px; overflow-y:auto; }
@@ -139,8 +144,11 @@ TEMPLATE = r"""<!DOCTYPE html>
 <main>
   <div class="stage">
     <svg id="svg" viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg">
-      <g id="edges"></g><g id="nodes"></g><g id="labels"></g>
+      <g id="viewport">
+        <g id="edges"></g><g id="nodes"></g><g id="labels"></g>
+      </g>
     </svg>
+    <button id="zoomReset" title="表示をリセット">⟲</button>
     <div id="tip"></div>
   </div>
   <div class="side">
@@ -459,6 +467,14 @@ function neighborsOf(g, id){
 function nodeLinks(ids, sep){
   return ids.map(id=>`<a class="nodelink" data-goto="${esc(id)}">${esc(id)}</a>`).join(sep);
 }
+// 推奨文を項目（各 <b>ラベル:</b>）ごとに改行する
+function splitReco(s){ let i=0; return s.replace(/<b>/g, () => (i++ === 0) ? "<b>" : "<br><b>"); }
+// README リンク: 日本語は日本語版の規則表、他言語は英語版の規則表アンカーへ
+const REPO = "https://github.com/shiameyeung/oss-dependency-sna";
+function readmeUrl(){ return REPO + (lang==="ja" ? "#rules-ja" : "#rules-en"); }
+function linkifyReadme(s){
+  return s.replace("README", `<a class="extlink" href="${readmeUrl()}" target="_blank" rel="noopener">README</a>`);
+}
 function nodeTypes(n){
   const t = [];
   if (n.art) t.push("cutpoint");
@@ -504,8 +520,8 @@ function diagnoseNode(n, g){
   }
   return `<div class="diag-name">${esc(n.label)}</div>${badges}${descHtml}${table}
     ${texts.map(t=>`<div class="diag-text">${t}</div>`).join("")}
-    ${recos.length?`<div class="diag-reco">${recos.join("<br>")}</div>`:""}
-    <div class="muted" style="margin-top:7px">${S.evidence}</div>`;
+    ${recos.length?`<div class="diag-reco">${recos.map(splitReco).join("<br>")}</div>`:""}
+    <div class="muted" style="margin-top:7px">${linkifyReadme(S.evidence)}</div>`;
 }
 function diagnoseCom(cid, g){
   const S = T();
@@ -524,8 +540,8 @@ function diagnoseCom(cid, g){
       <tr><td>${S.comAvgIn}</td><td>${avgIn}</td></tr></table>
     <div class="diag-text">${S.comTop}${nodeLinks(st.top, sep)}</div>
     <div class="diag-text">${S.comDesc}</div>
-    <div class="diag-reco">${S.comReco}</div>
-    <div class="muted" style="margin-top:7px">${S.comEvidence}</div>`;
+    <div class="diag-reco">${splitReco(S.comReco)}</div>
+    <div class="muted" style="margin-top:7px">${linkifyReadme(S.comEvidence)}</div>`;
 }
 
 /* ---------- 適応レイアウト（決定論的・乱数不使用） ----------
@@ -695,8 +711,8 @@ function drawButtons(){
   $("#comBtn").className = (comMode ? "on" : "") + dis;
   document.querySelectorAll("[data-d]").forEach(b => b.onclick = () => {
     curD=b.dataset.d; selected=null; selectedCom=null; topN=0; catFilter="";
-    initSlider(); initSearch(); render(); });
-  document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view=b.dataset.v; render(); });
+    resetZoom(); initSlider(); initSearch(); render(); });
+  document.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { view=b.dataset.v; resetZoom(); render(); });
   document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { curM=b.dataset.m; comMode=false; selectedCom=null; render(); });
   $("#comBtn").onclick = () => { comMode=!comMode; if(!comMode) selectedCom=null; render(); };
 }
@@ -963,6 +979,7 @@ function render(){
     };
     cc.onmouseleave = () => tip.style.display="none";
     cc.onclick = () => {
+      if (zMoved) return;   // ドラッグ（パン）直後のクリックは選択しない
       const id = cc.dataset.id;
       if (comMode && view==="net"){ selectedCom = (selectedCom===byId[id].com)?null:byId[id].com; selected=null; }
       else { selected = id===selected ? null : id; selectedCom = null; }
@@ -970,9 +987,34 @@ function render(){
     };
   });
 }
-// 空白クリックでフォーカス解除（ノード自身のクリックは各ノードのハンドラに任せる）。
-// #svg 要素は render で置換されないため一度だけ束縛すれば持続する。
+// 主ビューのズーム／パン（#viewport を transform。SVG は render で置換されないため一度だけ束縛）。
+let zk=1, ztx=0, zty=0, zPan=false, zMoved=false, zsx=0, zsy=0, ztx0=0, zty0=0;
+const svgEl = $("#svg"), vpEl = $("#viewport");
+function applyZoom(){ vpEl.setAttribute("transform", `translate(${ztx} ${zty}) scale(${zk})`); }
+function resetZoom(){ zk=1; ztx=0; zty=0; applyZoom(); }
+svgEl.addEventListener("wheel", e => {
+  e.preventDefault();
+  const r = svgEl.getBoundingClientRect();
+  const sx = (e.clientX-r.left)/r.width*1000, sy = (e.clientY-r.top)/r.height*660;  // カーソルの SVG 座標
+  const f = e.deltaY < 0 ? 1.18 : 1/1.18;
+  const nk = Math.min(8, Math.max(1, zk*f));
+  ztx = sx - (sx-ztx)*(nk/zk); zty = sy - (sy-zty)*(nk/zk); zk = nk;   // カーソル位置を固定して拡縮
+  if (zk === 1){ ztx = 0; zty = 0; }
+  applyZoom();
+}, {passive:false});
+svgEl.addEventListener("pointerdown", e => { zPan=true; zMoved=false; zsx=e.clientX; zsy=e.clientY; ztx0=ztx; zty0=zty; });
+window.addEventListener("pointermove", e => {
+  if (!zPan) return;
+  if (Math.abs(e.clientX-zsx)+Math.abs(e.clientY-zsy) > 4) zMoved=true;
+  const r = svgEl.getBoundingClientRect();
+  ztx = ztx0 + (e.clientX-zsx)/r.width*1000; zty = zty0 + (e.clientY-zsy)/r.height*660;
+  applyZoom();
+});
+window.addEventListener("pointerup", () => { zPan=false; });
+$("#zoomReset").onclick = resetZoom;
+// 空白クリックでフォーカス解除（ノード自身のクリック／ドラッグ直後は除く）。
 $("#svg").addEventListener("click", e => {
+  if (zMoved) return;
   const t = e.target;
   if (t && t.tagName === "circle" && t.getAttribute("data-id")) return;  // ノードクリックは無視
   if (selected !== null || selectedCom !== null){ selected = null; selectedCom = null; render(); }
