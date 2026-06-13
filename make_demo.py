@@ -29,7 +29,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>OSS 依存ネットワーク分析デモ v2 — DSS 型分析支援システム（研究用プロトタイプ）</title>
+<title>OSS 依存ネットワーク分析デモ v2 — DSS 型分析支援システム</title>
 <style>
   /* 配色: 2026-06-03 発表スライドのパレットに統一（クリーム地・青・キャンディイエロー） */
   :root { --bg:#FFFDF5; --panel:#ffffff; --panel2:#EAF4FF; --txt:#1F2D40; --sub:#5C6B7A;
@@ -233,7 +233,7 @@ function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.des
 const STR = {
  ja: {
   h1main:"OSS 依存ネットワーク分析デモ v2",
-  h1sub:"— DSS 型分析支援システム（研究用プロトタイプ）",
+  h1sub:"— DSS 型分析支援システム",
   headerHint:'エッジの向き: 依存元 → 依存先。ノードの大きさ・色 = 選択中の指標。⚠ = 切断点（除去すると孤立が生じるノード）。ノードをクリックすると右上に診断を表示。',
   gDomain:"領域", gView:"ビュー", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
   comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色",
@@ -280,7 +280,7 @@ const STR = {
  },
  en: {
   h1main:"OSS Dependency Network Analysis Demo v2",
-  h1sub:"— DSS-style analysis-support prototype (research use)",
+  h1sub:"— DSS-style analysis-support system",
   headerHint:'Edge direction: dependent → dependency. Node size/color = selected metric. ⚠ = cut point (its removal isolates other nodes). Click a node for a diagnosis on the right.',
   gDomain:"Domain", gView:"View", gMetric:"Metric", gSearch:"Search / category", gTopn:"Shown", gLang:"Language",
   comBtn:"Community color", comBtnTitle:"Color by community detected with the Louvain method",
@@ -327,7 +327,7 @@ const STR = {
  },
  zhHant: {
   h1main:"OSS 依賴網路分析展示 v2",
-  h1sub:"— DSS 型分析支援系統（研究用原型）",
+  h1sub:"— DSS 型分析支援系統",
   headerHint:'邊的方向：依賴方 → 被依賴方。節點大小·顏色 = 所選指標。⚠ = 切斷點（移除會導致其他節點孤立）。點擊節點即在右上顯示診斷。',
   gDomain:"領域", gView:"檢視", gMetric:"指標", gSearch:"搜尋·分類", gTopn:"顯示數", gLang:"語言",
   comBtn:"社群著色", comBtnTitle:"依 Louvain 法偵測的社群著色",
@@ -374,7 +374,7 @@ const STR = {
  },
  zhHans: {
   h1main:"OSS 依赖网络分析演示 v2",
-  h1sub:"— DSS 型分析支持系统（研究用原型）",
+  h1sub:"— DSS 型分析支持系统",
   headerHint:'边的方向：依赖方 → 被依赖方。节点大小·颜色 = 所选指标。⚠ = 切断点（移除会导致其他节点孤立）。点击节点即在右上显示诊断。',
   gDomain:"领域", gView:"视图", gMetric:"指标", gSearch:"搜索·分类", gTopn:"显示数", gLang:"语言",
   comBtn:"社群着色", comBtnTitle:"按 Louvain 法检测的社群着色",

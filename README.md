@@ -1,4 +1,4 @@
-# OSS Dependency Network SNA — analysis-support prototype
+# OSS Dependency Network SNA — analysis-support system
 
 > **🔗 Live demo: https://shiameyeung.github.io/oss-dependency-sna/**
 
@@ -112,14 +112,14 @@ prioritizes reproducibility and explainability.
 
 <a name="日本語"></a>
 
-# OSS 依存ネットワーク分析 最小パイプライン（研究用プロトタイプ）
+# OSS 依存ネットワーク分析 ― DSS 型分析支援システム
 
 > **🔗 オンラインデモ: https://shiameyeung.github.io/oss-dependency-sna/**
 
 [English](#oss-dependency-network-sna--analysis-support-prototype) ｜ **日本語**
 
 修士研究「社会ネットワーク分析を用いた OSS エコシステム分析支援システムの開発と評価」の
-最小パイプライン実装。**収集 → ネットワーク生成 → 指標計算 → 可視化** を一括実行する。
+DSS 型分析支援システムの実装。**収集 → ネットワーク生成 → 指標計算 → 可視化** を一括実行する。
 解析パイプラインは**決定論的（実行時 LLM 不使用）**で、同一入力からは常に同一出力が得られる。
 デモは右上の 🌐 で **4 言語（日本語・English・繁體中文・简体中文）**の切替に対応する。
 
