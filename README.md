@@ -6,8 +6,7 @@
 
 A research prototype (master's thesis) that builds **OSS dependency networks** from public data
 (deps.dev / PyPI), computes social-network-analysis (SNA) metrics, and provides a self-contained,
-reproducible **DSS-style diagnosis demo** with a **Japanese / English language switch** (top-right of
-the toolbar). It runs the four stages — **collect → build network → compute metrics → visualize** — in
+reproducible **DSS-style diagnosis demo** with a **4-language switch — Japanese / English / 繁體中文 / 简体中文** (🌐, top-right). It runs the four stages — **collect → build network → compute metrics → visualize** — in
 one command. The analysis pipeline is **deterministic (no LLM at runtime)**: the same input always
 yields the same output.
 
@@ -81,7 +80,7 @@ prioritizes reproducibility and explainability.
 | --- | --- | --- |
 | Diagnosis card | Aggregates description + metrics + meaning + recommendation + basis for the clicked target | Put decision-relevant information in one place (the DSS core) |
 | Node descriptions | One-line description per node (`collect_desc.py` collects registry originals in English; success rate PyPI 98.9% / Go 95.4%. The Japanese version is fixed data prepared from the originals) | Answer "what is this project" instantly; held as fixed data, not generated at runtime (keeps determinism) |
-| Language switch (JA/EN) | The toolbar "Language" control switches all UI, diagnosis templates, category names, and descriptions (descriptions: JA = fixed translation / EN = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Tamkang University). The switch is deterministic (no LLM at runtime) |
+| Language switch (4 languages) | The 🌐 control (top-right) switches all UI, diagnosis templates, category names, and descriptions across Japanese / English / Traditional Chinese / Simplified Chinese (descriptions: JA = fixed translation / others = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Tamkang University, Taiwan = Traditional Chinese). Deterministic (no LLM at runtime) |
 | Category & search | Incremental name search + functional-category filter (8 per domain). Categories follow deterministic rules by name prefix / name set / description keywords (`CATEGORY_RULES` in `build_metrics.py`) | Explore along a "function" axis orthogonal to structural metrics |
 | Focus view | Keep only the selected node + its direct dependencies, fade the rest (ego network); for cut points, highlight the isolated set in yellow | **Fade (opacity 0.07), not hide**: removes irrelevant nodes visually while keeping the node's position in the overall map |
 | Static / interactive split | The operation-independent RQ3 panel (rank divergence) sits as a full-width band at the bottom | Separate interactive info (right) from static info (bottom) |
@@ -120,7 +119,7 @@ prioritizes reproducibility and explainability.
 修士研究「社会ネットワーク分析を用いた OSS エコシステム分析支援システムの開発と評価」の
 最小パイプライン実装。**収集 → ネットワーク生成 → 指標計算 → 可視化** を一括実行する。
 解析パイプラインは**決定論的（実行時 LLM 不使用）**で、同一入力からは常に同一出力が得られる。
-デモはツールバー右上の「言語」で**日英切替**に対応する。
+デモは右上の 🌐 で **4 言語（日本語・English・繁體中文・简体中文）**の切替に対応する。
 
 ## 構成
 
@@ -190,7 +189,7 @@ python3 run_all.py --offline
 | --- | --- | --- |
 | 診断カード | クリック対象の「説明文＋指標データ＋意味＋推奨＋根拠」を右上に集約 | 意思決定に必要な情報を 1 箇所に（DSS の中核） |
 | ノード説明文 | 全ノードに 1 行説明を付与（`collect_desc.py` でレジストリ原文〔英語〕を収集、取得率 PyPI 98.9%・Go 95.4%。日本語版は原文を基に一括作成した固定データ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
-| 言語切替（日/英） | ツールバーの「言語」で全 UI・診断テンプレート・分類名・説明文を日英切替（説明文は日=固定翻訳／英=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（淡江大学等）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
+| 言語切替（4 言語） | 右上の 🌐 で全 UI・診断テンプレート・分類名・説明文を 日本語／English／繁體中文／简体中文 に切替（説明文: 日=固定翻訳／他言語=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（淡江大学＝繁体等）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
 | 機能分類と検索 | 名前のインクリメンタル検索＋機能分類フィルタ（各領域 8 分類）。分類は名前接頭辞・名称集合・説明文キーワードによる決定論的規則（`build_metrics.py` の `CATEGORY_RULES`） | 構造指標と直交する「機能」の軸で探索できるように |
 | フォーカス表示 | 選択ノード＋直接の依存関係のみ残し、他を淡化（エゴネットワーク）。切断点選択時は孤立範囲を黄色表示 | **完全非表示ではなく淡化（opacity 0.07）**: 全体地図内の位置という文脈を保ちつつ無関係なノードを視覚的に排除 |
 | 固定情報の分離 | 操作に依存しない RQ3 パネル（順位の乖離）は下部の全幅バンドに常設 | 対話的情報（右側）と静的情報（下部）の住み分け |

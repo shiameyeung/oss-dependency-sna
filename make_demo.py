@@ -37,7 +37,10 @@ TEMPLATE = r"""<!DOCTYPE html>
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--txt);
          font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; }
-  header { padding:14px 20px 10px; border-bottom:1px solid var(--line); }
+  header { padding:14px 20px 10px; border-bottom:1px solid var(--line); position:relative; }
+  #langbar { position:absolute; top:12px; right:18px; display:flex; align-items:center; gap:7px; }
+  #langbar .globe { font-size:15px; opacity:.65; }
+  #langbar button { padding:3px 9px; font-size:11.5px; border-radius:5px; }
   h1 { font-size:17px; margin:0 0 6px; font-weight:700; color:var(--acc); }
   .sub { color:var(--sub); font-size:12px; }
   .bar { display:flex; gap:10px; flex-wrap:wrap; padding:12px 20px 10px; align-items:stretch; }
@@ -107,6 +110,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 </head>
 <body>
 <header>
+  <div id="langbar"><span class="globe" aria-hidden="true">🌐</span><span id="langs"></span></div>
   <h1><span id="h1main"></span> <span class="sub" id="h1sub"></span></h1>
   <div class="sub" id="headerHint"></div>
 </header>
@@ -122,8 +126,6 @@ TEMPLATE = r"""<!DOCTYPE html>
   <div class="grp"><span class="lbl" id="lblTopn"></span>
     <span class="sliderbox"><input type="range" id="topn" min="10" max="300" step="10">
     <span class="val" id="topnVal"></span></span></div>
-  <div class="grp"><span class="lbl" id="lblLang"></span>
-    <button data-lang="ja">日本語</button><button data-lang="en">EN</button></div>
 </div>
 <main>
   <div class="stage">
@@ -159,34 +161,55 @@ TEMPLATE = r"""<!DOCTYPE html>
 const DATA = __DATA_JSON__;
 let lang = "ja";   // 表示言語（ja / en）。データ・指標値は不変、表示文字列のみ切替。
 const COLORS = ["#5DA8E8","#F2C84B","#81c784","#ba68c8","#ff8a65","#4dd0e1","#f06292","#a1887f","#90a4ae","#dce775"];
+const LANGS = [["ja","日本語"],["en","English"],["zhHant","繁體"],["zhHans","简体"]];
+const HTMLLANG = {ja:"ja", en:"en", zhHant:"zh-Hant", zhHans:"zh-Hans"};
 const MLAB = {
-  indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)"},
-  impact:{ja:"影響範囲（推移的に波及する依存元数）", en:"Reach (transitively affected dependents)"},
-  btw:{ja:"媒介中心性（橋渡し・経路上の要）", en:"Betweenness (bridge · path bottleneck)"},
-  pr:{ja:"PageRank（構造的重要度）", en:"PageRank (structural importance)"},
-  eig:{ja:"固有ベクトル中心性（重要ノードから依存される度合い）", en:"Eigenvector centrality (importance from important nodes)"},
+  indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)",
+         zhHant:"被依賴數（直接依賴者數·簡單統計）", zhHans:"被依赖数（直接依赖者数·简单统计）"},
+  impact:{ja:"影響範囲（推移的に波及する依存元数）", en:"Reach (transitively affected dependents)",
+          zhHant:"影響範圍（遞移波及的依賴者數）", zhHans:"影响范围（传递波及的依赖者数）"},
+  btw:{ja:"媒介中心性（橋渡し・経路上の要）", en:"Betweenness (bridge · path bottleneck)",
+       zhHant:"中介中心性（橋接·路徑要衝）", zhHans:"中介中心性（桥接·路径要冲）"},
+  pr:{ja:"PageRank（構造的重要度）", en:"PageRank (structural importance)",
+      zhHant:"PageRank（結構重要度）", zhHans:"PageRank（结构重要度）"},
+  eig:{ja:"固有ベクトル中心性（重要ノードから依存される度合い）", en:"Eigenvector centrality (importance from important nodes)",
+       zhHant:"特徵向量中心性（來自重要節點的被依賴度）", zhHans:"特征向量中心性（来自重要节点的被依赖度）"},
 };
 function mlab(m){ return MLAB[m][lang]; }
-function mshort(m){ return mlab(m).split(lang==="ja" ? "（" : " (")[0]; }
+function mshort(m){ return mlab(m).split(lang==="en" ? " (" : "（")[0]; }
 const TYPE_INFO = {
-  cutpoint:   {color:"#E2A82E", ja:"切断点",   en:"Cut point"},
-  bridge:     {color:"#A8761A", ja:"橋渡し型", en:"Bridge"},
-  foundation: {color:"#2C5F94", ja:"土台型",   en:"Foundation"},
-  isolated:   {color:"#5C6B7A", ja:"孤立",     en:"Isolated"},
-  normal:     {color:"#5C6B7A", ja:"標準",     en:"Standard"},
+  cutpoint:   {color:"#E2A82E", ja:"切断点",   en:"Cut point",  zhHant:"切斷點", zhHans:"切断点"},
+  bridge:     {color:"#A8761A", ja:"橋渡し型", en:"Bridge",     zhHant:"橋接型", zhHans:"桥接型"},
+  foundation: {color:"#2C5F94", ja:"土台型",   en:"Foundation", zhHant:"基礎型", zhHans:"基础型"},
+  isolated:   {color:"#5C6B7A", ja:"孤立",     en:"Isolated",   zhHant:"孤立",   zhHans:"孤立"},
+  normal:     {color:"#5C6B7A", ja:"標準",     en:"Standard",   zhHant:"標準",   zhHans:"标准"},
 };
-const DOMAIN_EN = { ds:"Data science (PyPI)", cn:"Cloud native (Go)" };
-function domLabel(g){ return lang==="ja" ? g.label : (DOMAIN_EN[g.domain] || g.label); }
-// 機能分類名の日→英対応（分類キーは日本語のまま・表示のみ翻訳）
+const DOMAIN_I18N = {
+  ds:{en:"Data science (PyPI)", zhHant:"資料科學類（PyPI）", zhHans:"数据科学系（PyPI）"},
+  cn:{en:"Cloud native (Go)",   zhHant:"雲原生類（Go）",     zhHans:"云原生系（Go）"},
+};
+function domLabel(g){ return lang==="ja" ? g.label : ((DOMAIN_I18N[g.domain]||{})[lang] || g.label); }
+// 機能分類名の多言語対応（分類キーは日本語のまま・表示のみ翻訳）
 const CAT_I18N = {
-  "Jupyter・開発環境":"Jupyter & dev tools","機械学習":"Machine learning","統計・時系列":"Statistics & time series",
-  "可視化":"Visualization","自然言語処理":"NLP","データ処理・数値計算":"Data & numerics","Web・通信":"Web & networking",
-  "基盤・ユーティリティ":"Core & utilities",
-  "Kubernetes 関連":"Kubernetes","可観測性・監視":"Observability","ネットワーク・メッシュ":"Networking & mesh",
-  "ストレージ・データベース":"Storage & database","コンテナ・デプロイ":"Container & deploy","クラウド SDK":"Cloud SDK",
-  "開発・テスト":"Dev & testing","基盤ライブラリ":"Core libraries",
+  "Jupyter・開発環境":{en:"Jupyter & dev tools", zhHant:"Jupyter·開發環境", zhHans:"Jupyter·开发环境"},
+  "機械学習":{en:"Machine learning", zhHant:"機器學習", zhHans:"机器学习"},
+  "統計・時系列":{en:"Statistics & time series", zhHant:"統計·時間序列", zhHans:"统计·时间序列"},
+  "可視化":{en:"Visualization", zhHant:"視覺化", zhHans:"可视化"},
+  "自然言語処理":{en:"NLP", zhHant:"自然語言處理", zhHans:"自然语言处理"},
+  "データ処理・数値計算":{en:"Data & numerics", zhHant:"資料處理·數值計算", zhHans:"数据处理·数值计算"},
+  "Web・通信":{en:"Web & networking", zhHant:"Web·通訊", zhHans:"Web·通信"},
+  "基盤・ユーティリティ":{en:"Core & utilities", zhHant:"基礎·工具", zhHans:"基础·工具"},
+  "Kubernetes 関連":{en:"Kubernetes", zhHant:"Kubernetes 相關", zhHans:"Kubernetes 相关"},
+  "可観測性・監視":{en:"Observability", zhHant:"可觀測性·監控", zhHans:"可观测性·监控"},
+  "ネットワーク・メッシュ":{en:"Networking & mesh", zhHant:"網路·服務網格", zhHans:"网络·服务网格"},
+  "ストレージ・データベース":{en:"Storage & database", zhHant:"儲存·資料庫", zhHans:"存储·数据库"},
+  "コンテナ・デプロイ":{en:"Container & deploy", zhHant:"容器·部署", zhHans:"容器·部署"},
+  "クラウド SDK":{en:"Cloud SDK", zhHant:"雲端 SDK", zhHans:"云 SDK"},
+  "開発・テスト":{en:"Dev & testing", zhHant:"開發·測試", zhHans:"开发·测试"},
+  "基盤ライブラリ":{en:"Core libraries", zhHant:"基礎函式庫", zhHans:"基础库"},
 };
-function catLabel(name){ return lang==="ja" ? name : (CAT_I18N[name] || name); }
+function catLabel(name){ return lang==="ja" ? name : ((CAT_I18N[name]||{})[lang] || name); }
+// 説明文: 日本語のみ固定翻訳（desc_ja）。他言語はレジストリ原文（英語 desc_en）を用いる。
 function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.desc_en || n.desc_ja || ""); }
 
 // UI 文字列・診断テンプレート（日/英）。データ準備段階で固定（実行時 LLM 不使用）。
@@ -282,6 +305,98 @@ const STR = {
   metaNode:"nodes", metaEdge:"edges", metaDensity:"density", metaComp:"weak components", metaMod:"modularity", metaCom:"communities",
   metaSeed:"random seed", metaSeedUse:"(layout & community detection)", metaTime:"metric time", metaBtw:"betweenness", metaTotal:"total", metaGen:"generated",
   metaDet:"Diagnoses are generated by deterministic rules (no LLM); layout is recomputed deterministically per visible set (seeded from precomputed coordinates, fixed iterations, no randomness)",
+ },
+ zhHant: {
+  h1main:"OSS 依賴網路分析展示 v2",
+  h1sub:"— DSS 型分析支援系統（研究用原型）",
+  headerHint:'邊的方向：依賴方 → 被依賴方。節點大小·顏色 = 所選指標。⚠ = 切斷點（移除會導致其他節點孤立）。點擊節點即在右上顯示診斷。',
+  gDomain:"領域", gView:"檢視", gMetric:"指標", gSearch:"搜尋·分類", gTopn:"顯示數", gLang:"語言",
+  comBtn:"社群著色", comBtnTitle:"依 Louvain 法偵測的社群著色",
+  vNet:"網路圖", vScatter:"散佈圖（被依賴×中介）",
+  qPlaceholder:"以名稱搜尋…", catAll:"分類：全部",
+  diagTitle:"診斷 — 這代表什麼",
+  diagHint:'點擊節點（或社群著色時的社群列），顯示指標數據與「在決策上代表什麼」的診斷。<br>診斷由節點類型 × 決策情境的對應表確定性生成（不使用 AI·可重現）。',
+  divTitle:'排名乖離 — 簡單統計看不見的「要衝」（RQ3）',
+  legNormal:"一般節點", legSeed:"種子（分析起點）", legCut:"切斷點 ⚠（點擊顯示其孤立範圍）", legIso:"移除時孤立的範圍",
+  rankComTitle:"社群（點擊聚焦）",
+  rankTopSuffix:" — Top 10",
+  topnAll:n=>`全部 ${n} 節點`, topnTop:(k,n)=>`前 ${k}/${n}`, catCount:n=>`顯示 ${n} 節點`,
+  seedBadge:"種子", funcGroup:"功能群", systemSuffix:"",
+  tIndeg:"被依賴數（簡單統計）", tIndegVal:(v,N,r)=>`${v}（共 ${N} 中第 ${r} 位）`,
+  tReach:"影響範圍（遞移）", tReachVal:v=>`${v} 個套件`,
+  tBtw:"中介中心性", tBtwVal:(v,r)=>`${v}（第 ${r} 位）`, tPr:"PageRank", tCom:"社群",
+  cutMain:cl=>{const p=cl>=10?`<b>${cl} 個</b>套件將一併從主網路中孤立，影響範圍尤其廣`:cl>=3?`<b>${cl} 個</b>套件將從主網路中孤立`:`孤立範圍僅 <b>${cl} 個</b>套件，屬局部影響，但仍是結構上的要害`;return `這是網路的<b>切斷點</b>。若此套件無法使用，${p}（圖中以黃色標示）。`;},
+  cutList:(head,more)=>`<div class="diag-cut"><b>孤立範圍：</b> ${head}${more?` 其他 ${more} 項`:""}</div>`,
+  cutReco:"<b>集中風險評估：</b> 建議優先監控。<b>採用·支援決策：</b> 建議事先確認是否有替代路徑。",
+  bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`兩指標的排名差達 ${gap}，排名乖離尤為顯著。`:gap>=30?`兩指標的排名差 ${gap} 較大。`:"";return `相較於被依賴數（第 ${rin} 位），其中介中心性明顯較高（<b>第 ${rbt} 位</b>）。${g}它位於依賴路徑的要衝（<b>橋接</b>），故障時可能切斷多個套件群之間的依賴路徑。此類型以簡單統計難以發現。`;},
+  bridgeReco:"<b>採用決策：</b> 建議確認維護狀況與更新頻率。<b>支援決策：</b> 容易被忽略的支援對象候選。",
+  foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`波及分析對象網路整體約 ${Math.round(sh*100)}%（${impact} 個套件）`:`遞移波及 ${impact} 個套件`;return `被依賴數 ${indeg}（整體第 ${rin} 位）的<b>基礎型</b>套件。若停止維護或出現漏洞，影響會${reach}。此類型以簡單統計也能發現。`;},
+  foundReco:"<b>採用決策：</b> 廣泛使用的標準選項。<b>集中風險評估：</b> 依賴集中於單點的典型案例，須留意維護的延續性。",
+  isoMain:"在此資料範圍內未觀測到與其他套件的依賴關係（其依賴在收集範圍外，或為獨立套件）。",
+  normMain:(rin,rbt)=>`未偵測到結構上的特異性（被依賴第 ${rin} 位·中介第 ${rbt} 位）。在依賴結構上處於標準位置，確認各項指標即可。`,
+  evidence:'解釋規則基於 SNA 指標的標準解讀（整理於 Chen et al. 2022 的綜述）與依賴網路研究的成果（Decan et al. 2019）（規則表見 README）。',
+  comTitle:cid=>`社群 ${cid}`, comNodes:"節點數", comInEdges:"內部邊數", comDensity:"內部密度", comAvgIn:"平均被依賴數",
+  comTop:"<b>代表節點（PageRank 前列）：</b> ",
+  comDesc:"社群對應依賴相對密集的<b>功能群</b>。",
+  comReco:"<b>採用決策：</b> 替代候選優先在同一社群內尋找。<b>集中風險評估：</b> 故障可能波及範圍的參考。",
+  comEvidence:"解釋規則的依據與規則表見 README。", comNone:"無社群資訊",
+  eigNote:'<b>※ 參考值</b>：依賴網路近乎無環（DAG），特徵向量中心性的迭代計算容易退化（值集中至依賴終端 sink），排名大幅斷裂即因此。診斷請使用被依賴數·中介·PageRank。<b>「此指標不適合依賴網路」本身就是 RQ2 的發現</b>。',
+  spearman:sp=>`Spearman ρ: 被依賴×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特徵向量=${sp.indeg_vs_eigenvector}（越遠離 1.0，SNA 獨有的資訊越多）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依賴第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(indeg=${indeg}, btw=${btw}) 橋接型</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依賴第 ${rin} 位·影響範圍 ${impact} <span class="muted">基礎型（簡單統計也可見）</span>`,
+  divNone:"此領域無顯著的乖離節點", comRowNote:top=>top?`(${top})`:"",
+  scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴少但中介高（簡單統計看不見的要衝·RQ3）",
+  tipClick:" — 點擊顯示診斷與聚焦", tipCat:"分類", tipCom:"社群", tipIndeg:"被依賴", tipOut:"依賴", tipReach:"影響範圍", tipBtw:"中介",
+  metaTitle:l=>`可重現資訊（${l}）`, metaFetch:"取得日", metaSrc:"資料來源", metaRate:"種子成功率", metaScale:"規模",
+  metaNode:"節點", metaEdge:"邊", metaDensity:"密度", metaComp:"弱連通分量", metaMod:"模組度", metaCom:"社群",
+  metaSeed:"隨機 seed", metaSeedUse:"（用於佈局·社群偵測）", metaTime:"指標處理時間", metaBtw:"中介", metaTotal:"總計", metaGen:"生成時間",
+  metaDet:"診斷由確定性規則生成（不使用 AI） / 顯示佈局依顯示集合確定性重算（初值＝預計算座標·迭代固定·無隨機）",
+ },
+ zhHans: {
+  h1main:"OSS 依赖网络分析演示 v2",
+  h1sub:"— DSS 型分析支持系统（研究用原型）",
+  headerHint:'边的方向：依赖方 → 被依赖方。节点大小·颜色 = 所选指标。⚠ = 切断点（移除会导致其他节点孤立）。点击节点即在右上显示诊断。',
+  gDomain:"领域", gView:"视图", gMetric:"指标", gSearch:"搜索·分类", gTopn:"显示数", gLang:"语言",
+  comBtn:"社群着色", comBtnTitle:"按 Louvain 法检测的社群着色",
+  vNet:"网络图", vScatter:"散点图（被依赖×中介）",
+  qPlaceholder:"按名称搜索…", catAll:"分类：全部",
+  diagTitle:"诊断 — 这意味着什么",
+  diagHint:'点击节点（或社群着色时的社群行），显示指标数据与「在决策上意味着什么」的诊断。<br>诊断由节点类型 × 决策场景的对应表确定性生成（不使用 AI·可复现）。',
+  divTitle:'排名乖离 — 简单统计看不见的「要冲」（RQ3）',
+  legNormal:"普通节点", legSeed:"种子（分析起点）", legCut:"切断点 ⚠（点击显示其孤立范围）", legIso:"移除时孤立的范围",
+  rankComTitle:"社群（点击聚焦）",
+  rankTopSuffix:" — Top 10",
+  topnAll:n=>`全部 ${n} 节点`, topnTop:(k,n)=>`前 ${k}/${n}`, catCount:n=>`显示 ${n} 节点`,
+  seedBadge:"种子", funcGroup:"功能群", systemSuffix:"",
+  tIndeg:"被依赖数（简单统计）", tIndegVal:(v,N,r)=>`${v}（共 ${N} 中第 ${r} 位）`,
+  tReach:"影响范围（传递）", tReachVal:v=>`${v} 个软件包`,
+  tBtw:"中介中心性", tBtwVal:(v,r)=>`${v}（第 ${r} 位）`, tPr:"PageRank", tCom:"社群",
+  cutMain:cl=>{const p=cl>=10?`<b>${cl} 个</b>软件包将一并从主网络中孤立，影响范围尤其广`:cl>=3?`<b>${cl} 个</b>软件包将从主网络中孤立`:`孤立范围仅 <b>${cl} 个</b>软件包，属局部影响，但仍是结构上的要害`;return `这是网络的<b>切断点</b>。若此软件包不可用，${p}（图中以黄色高亮）。`;},
+  cutList:(head,more)=>`<div class="diag-cut"><b>孤立范围：</b> ${head}${more?` 其他 ${more} 项`:""}</div>`,
+  cutReco:"<b>集中风险评估：</b> 建议优先监控。<b>采用·支持决策：</b> 建议事先确认是否有替代路径。",
+  bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`两指标的排名差达 ${gap}，排名乖离尤为显著。`:gap>=30?`两指标的排名差 ${gap} 较大。`:"";return `相比被依赖数（第 ${rin} 位），其中介中心性明显更高（<b>第 ${rbt} 位</b>）。${g}它位于依赖路径的要冲（<b>桥接</b>），故障时可能切断多个软件包群之间的依赖路径。此类型用简单统计难以发现。`;},
+  bridgeReco:"<b>采用决策：</b> 建议确认维护状况与更新频率。<b>支持决策：</b> 容易被忽略的支持对象候选。",
+  foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`波及分析对象网络整体约 ${Math.round(sh*100)}%（${impact} 个软件包）`:`传递波及 ${impact} 个软件包`;return `被依赖数 ${indeg}（整体第 ${rin} 位）的<b>基础型</b>软件包。若停止维护或出现漏洞，影响会${reach}。此类型用简单统计也能发现。`;},
+  foundReco:"<b>采用决策：</b> 广泛使用的标准选项。<b>集中风险评估：</b> 依赖集中于单点的典型案例，需留意维护的延续性。",
+  isoMain:"在此数据范围内未观测到与其他软件包的依赖关系（其依赖在收集范围外，或为独立软件包）。",
+  normMain:(rin,rbt)=>`未检测到结构上的特异性（被依赖第 ${rin} 位·中介第 ${rbt} 位）。在依赖结构上处于标准位置，确认各项指标即可。`,
+  evidence:'解释规则基于 SNA 指标的标准解读（整理于 Chen et al. 2022 的综述）与依赖网络研究的成果（Decan et al. 2019）（规则表见 README）。',
+  comTitle:cid=>`社群 ${cid}`, comNodes:"节点数", comInEdges:"内部边数", comDensity:"内部密度", comAvgIn:"平均被依赖数",
+  comTop:"<b>代表节点（PageRank 前列）：</b> ",
+  comDesc:"社群对应依赖相对密集的<b>功能群</b>。",
+  comReco:"<b>采用决策：</b> 替代候选优先在同一社群内寻找。<b>集中风险评估：</b> 故障可能波及范围的参考。",
+  comEvidence:"解释规则的依据与规则表见 README。", comNone:"无社群信息",
+  eigNote:'<b>※ 参考值</b>：依赖网络近乎无环（DAG），特征向量中心性的迭代计算容易退化（值集中到依赖终端 sink），排名大幅断裂即因此。诊断请使用被依赖数·中介·PageRank。<b>「该指标不适合依赖网络」本身就是 RQ2 的发现</b>。',
+  spearman:sp=>`Spearman ρ: 被依赖×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特征向量=${sp.indeg_vs_eigenvector}（越远离 1.0，SNA 独有的信息越多）`,
+  divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依赖第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(indeg=${indeg}, btw=${btw}) 桥接型</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依赖第 ${rin} 位·影响范围 ${impact} <span class="muted">基础型（简单统计也可见）</span>`,
+  divNone:"该领域无显著的乖离节点", comRowNote:top=>top?`(${top})`:"",
+  scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖少但中介高（简单统计看不见的要冲·RQ3）",
+  tipClick:" — 点击显示诊断与聚焦", tipCat:"分类", tipCom:"社群", tipIndeg:"被依赖", tipOut:"依赖", tipReach:"影响范围", tipBtw:"中介",
+  metaTitle:l=>`可复现信息（${l}）`, metaFetch:"取得日", metaSrc:"数据来源", metaRate:"种子成功率", metaScale:"规模",
+  metaNode:"节点", metaEdge:"边", metaDensity:"密度", metaComp:"弱连通分量", metaMod:"模块度", metaCom:"社群",
+  metaSeed:"随机 seed", metaSeedUse:"（用于布局·社群检测）", metaTime:"指标处理时间", metaBtw:"中介", metaTotal:"总计", metaGen:"生成时间",
+  metaDet:"诊断由确定性规则生成（不使用 AI） / 显示布局按显示集合确定性重算（初值＝预计算坐标·迭代固定·无随机）",
  },
 };
 function T(){ return STR[lang]; }
@@ -536,15 +651,18 @@ function applyStaticText(){
   $("#headerHint").textContent = S.headerHint;
   $("#lblDomain").textContent = S.gDomain; $("#lblView").textContent = S.gView;
   $("#lblMetric").textContent = S.gMetric; $("#lblSearch").textContent = S.gSearch;
-  $("#lblTopn").textContent = S.gTopn; $("#lblLang").textContent = S.gLang;
+  $("#lblTopn").textContent = S.gTopn;
   $("#comBtn").textContent = S.comBtn; $("#comBtn").title = S.comBtnTitle;
   $("#q").placeholder = S.qPlaceholder;
   $("#diagTitle").textContent = S.diagTitle;
   $("#divTitle").textContent = S.divTitle;
   $("#legNormal").textContent = S.legNormal; $("#legSeed").textContent = S.legSeed;
   $("#legCut").textContent = S.legCut; $("#legIso").textContent = S.legIso;
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-lang]").forEach(b => b.className = b.dataset.lang===lang ? "on" : "");
+  document.documentElement.lang = HTMLLANG[lang] || lang;
+  // 言語切替ボタン（地球アイコン横）を生成・現在の言語をハイライト・クリックを束縛
+  $("#langs").innerHTML = LANGS.map(([code,label]) =>
+    `<button data-lang="${code}" class="${code===lang?'on':''}">${label}</button>`).join("");
+  document.querySelectorAll("#langs [data-lang]").forEach(b => b.onclick = () => setLang(b.dataset.lang));
 }
 function drawButtons(){
   $("#domains").innerHTML = Object.entries(DATA).map(([k,g]) =>
@@ -802,7 +920,6 @@ function render(){
     };
   });
 }
-document.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => setLang(b.dataset.lang));
 applyStaticText();
 initSlider();
 initSearch();
