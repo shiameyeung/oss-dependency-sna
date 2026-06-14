@@ -48,7 +48,7 @@ Requirements: Python 3.9+ / numpy / requests.
   `PYTHONHASHSEED=0 python3 build_metrics.py ...`.
 - **Metrics**: in-degree (simple stat) / reach / betweenness (Brandes) / PageRank / eigenvector /
   density / weakly-connected components / articulation points (cut points) / Louvain communities & modularity.
-- **RQ3 support**: the output JSON includes the rank divergence between simple stats and SNA
+- **Decision-support output**: the output JSON includes the rank divergence between simple stats and SNA
   (Spearman ρ, bridge nodes, foundation nodes).
 
 ## Algorithm validation
@@ -58,7 +58,7 @@ Every metric in `sna_core.py` was checked against a networkx implementation on i
 
 <a name="rules-en"></a>
 
-## Diagnosis-card interpretation rules (DSS feature · RQ3 design element)
+## Diagnosis-card interpretation rules (DSS feature)
 
 The demo's diagnosis card generates text **deterministically** from a table that maps a node's
 structural type to decision contexts (adoption / support / concentration-risk). No LLM; same input →
@@ -85,23 +85,23 @@ prioritizes reproducibility and explainability.
 | --- | --- | --- |
 | Diagnosis card | Aggregates description + metrics + meaning + recommendation + basis for the clicked target | Put decision-relevant information in one place (the DSS core) |
 | Node descriptions | One-line description per node (`collect_desc.py` collects registry originals in English; success rate PyPI 99.6% / Go 94.1%. The Japanese version is fixed data prepared from the originals) | Answer "what is this project" instantly; held as fixed data, not generated at runtime (keeps determinism) |
-| Language switch (4 languages) | The 🌐 control (top-right) switches all UI, diagnosis templates, category names, and descriptions across Japanese / English / Traditional Chinese / Simplified Chinese (descriptions: JA = fixed translation / others = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Tamkang University, Taiwan = Traditional Chinese). Deterministic (no LLM at runtime) |
+| Language switch (4 languages) | The 🌐 control (top-right) switches all UI, diagnosis templates, category names, and descriptions across Japanese / English / Traditional Chinese / Simplified Chinese (descriptions: JA = fixed translation / others = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Traditional-Chinese-speaking audiences). Deterministic (no LLM at runtime) |
 | Category & search | Incremental name search + functional-category filter (8 per domain). Categories follow deterministic rules by name prefix / name set / description keywords (`CATEGORY_RULES` in `build_metrics.py`) | Explore along a "function" axis orthogonal to structural metrics |
 | Focus view | Keep only the selected node + its direct dependencies, fade the rest (ego network); for cut points, highlight the isolated set in yellow | **Fade (opacity 0.07), not hide**: removes irrelevant nodes visually while keeping the node's position in the overall map |
-| Static / interactive split | The operation-independent RQ3 panel (rank divergence) sits as a full-width band at the bottom | Separate interactive info (right) from static info (bottom) |
+| Static / interactive split | The operation-independent panel (rank divergence) sits as a full-width band at the bottom | Separate interactive info (right) from static info (bottom) |
 | Scale adaptation | Top-N filter + deterministic layout recomputation per visible set (FR re-applied, seeded from precomputed coordinates, no randomness) + automatic node-radius adjustment | Keep readability regardless of node count |
 | Z-order & collision relaxation | Draw high-metric nodes on top; push the smaller-metric side away on overlap | Keep important nodes always clickable |
 
-## Methodological notes on metrics (RQ2 discussion)
+## Methodological notes on metrics
 
 - **Eigenvector centrality is treated as reference-only on dependency graphs.** Dependency networks are
   nearly acyclic (DAG); on a DAG the power iteration does not converge uniquely and values depend on the
   iteration count (same in networkx 3.x). A compatible implementation is provided but not used for
-  interpretation. → For RQ2 this becomes a metric-selection finding: "in-degree / betweenness / PageRank
+  interpretation. → This becomes a metric-selection finding: "in-degree / betweenness / PageRank
   suit dependency-network diagnosis; eigenvector centrality suits networks with cyclic structure."
 - **Spearman ρ uses the standard tie-aware definition** (average ranks). Betweenness is 0 for most nodes,
   producing many ties, so ρ changes greatly with tie handling (naive POC ≈0.75 → standard definition ≈0.28–0.31 on the current data: PyPI 0.31, Go 0.28). The
-  standard value is used in talks and the paper.
+  standard value is the one reported throughout.
 
 ## Notes
 
@@ -109,7 +109,7 @@ prioritizes reproducibility and explainability.
   where access is available, bring the `cache/` over, and continue with `--offline`.
 - Uppercase Go module paths (e.g. `github.com/VictoriaMetrics/...`) are accepted by deps.dev as-is.
   Failed fetches are recorded with error details in the cache and aggregated into the success rate
-  (material for the technical evaluation).
+  (useful for assessing collection quality).
 
 ---
 
@@ -162,7 +162,7 @@ python3 run_all.py --offline
   `build_metrics.py` を単独実行する場合は `PYTHONHASHSEED=0 python3 build_metrics.py ...` とする）。
 - **指標**: 被依存数（単純統計）／影響範囲／媒介中心性（Brandes）／PageRank／固有ベクトル／
   密度／弱連結成分／関節点（切断点）／Louvain コミュニティ・モジュラリティ。
-- **RQ3 対応**: 出力 JSON に「単純統計 vs SNA の順位乖離」（Spearman ρ・橋渡し型ノード・土台型ノード）を含む。
+- **意思決定支援の出力**: 出力 JSON に「単純統計 vs SNA の順位乖離」（Spearman ρ・橋渡し型ノード・土台型ノード）を含む。
 
 ## 算法検証
 
@@ -171,11 +171,11 @@ python3 run_all.py --offline
 
 <a name="rules-ja"></a>
 
-## 診断カードの解釈ルール（DSS 機能・RQ3 の設計要素）
+## 診断カードの解釈ルール（DSS 機能）
 
 デモの診断カードは、ノードの構造型と意思決定場面（利用判断・支援判断・集中リスク把握）の
 対応表から**決定論的に**文を生成する（AI 不使用・同一入力 → 同一出力）。
-解釈ルール自体が DSS アーティファクト設計の一部であり、論文の設計章に記載する。
+解釈ルール自体が DSS アーティファクト設計の一部である。
 
 | 構造型 | 判定条件 | 意思決定上の含意（テンプレート要旨） | 解釈の根拠 |
 | --- | --- | --- | --- |
@@ -197,30 +197,30 @@ python3 run_all.py --offline
 | --- | --- | --- |
 | 診断カード | クリック対象の「説明文＋指標データ＋意味＋推奨＋根拠」を右上に集約 | 意思決定に必要な情報を 1 箇所に（DSS の中核） |
 | ノード説明文 | 全ノードに 1 行説明を付与（`collect_desc.py` でレジストリ原文〔英語〕を収集、取得率 PyPI 99.6%・Go 94.1%。日本語版は原文を基に一括作成した固定データ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
-| 言語切替（4 言語） | 右上の 🌐 で全 UI・診断テンプレート・分類名・説明文を 日本語／English／繁體中文／简体中文 に切替（説明文: 日=固定翻訳／他言語=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（淡江大学＝繁体等）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
+| 言語切替（4 言語） | 右上の 🌐 で全 UI・診断テンプレート・分類名・説明文を 日本語／English／繁體中文／简体中文 に切替（説明文: 日=固定翻訳／他言語=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（繁体字圏など）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
 | 機能分類と検索 | 名前のインクリメンタル検索＋機能分類フィルタ（各領域 8 分類）。分類は名前接頭辞・名称集合・説明文キーワードによる決定論的規則（`build_metrics.py` の `CATEGORY_RULES`） | 構造指標と直交する「機能」の軸で探索できるように |
 | フォーカス表示 | 選択ノード＋直接の依存関係のみ残し、他を淡化（エゴネットワーク）。切断点選択時は孤立範囲を黄色表示 | **完全非表示ではなく淡化（opacity 0.07）**: 全体地図内の位置という文脈を保ちつつ無関係なノードを視覚的に排除 |
-| 固定情報の分離 | 操作に依存しない RQ3 パネル（順位の乖離）は下部の全幅バンドに常設 | 対話的情報（右側）と静的情報（下部）の住み分け |
+| 固定情報の分離 | 操作に依存しない順位乖離パネルは下部の全幅バンドに常設 | 対話的情報（右側）と静的情報（下部）の住み分け |
 | 規模への適応 | Top-N フィルタ＋表示集合への決定論的レイアウト再計算（FR 再適用・初期値＝事前計算座標・乱数不使用）＋ノード径の自動調整 | 表示数によらず可読性を維持（規模対策） |
 | Z オーダーと衝突緩和 | 高指標ノードを最前面に描画し、重なりは指標の小さい側を押し離す | 重要なノードを常にクリック可能に |
 
-## 指標に関する方法論的注意（RQ2 の論点）
+## 指標に関する方法論的注意
 
 - **固有ベクトル中心性は依存グラフでは参考値扱いとする**。依存ネットワークはほぼ非巡回（DAG）であり、
   DAG 上では固有ベクトル中心性の power iteration が一意に収束せず、値が反復回数に依存する
   （networkx 3.x も同様）。本パイプラインでは互換実装を提供するが、解釈には用いない。
-  → RQ2 では「依存ネットワークの診断には次数・媒介・PageRank が適し、固有ベクトル中心性は
+  → これは「依存ネットワークの診断には次数・媒介・PageRank が適し、固有ベクトル中心性は
   循環構造を持つネットワーク向き」という指標選定の知見として整理できる。
 - **Spearman ρ は同値を平均順位で処理する標準的定義**で計算する。媒介中心性は大半のノードで 0 になり
   同値が大量発生するため、同値処理の有無で ρ が大きく変わる（POC の簡易式 ≈0.75 → 標準定義で現データは概ね 0.28〜0.31: PyPI 0.31・Go 0.28）。
-  以後の発表・論文では標準定義の値を用いる。
+  本パイプラインでは標準定義の値を用いる。
 
 ## 注意
 
 - 実行環境によっては deps.dev への接続にプロキシ・ネットワーク制限がある。
   その場合は接続可能な環境で `collect.py` のみ実行し、`cache/` を持ち込んで `--offline` で続行する。
 - Go モジュールパスの大文字（例: `github.com/VictoriaMetrics/...`）は deps.dev 側でそのまま受理される。
-  取得失敗はエラー内容つきで cache に記録され、成功率として集計される（技術評価の素材）。
+  取得失敗はエラー内容つきで cache に記録され、成功率として集計される（収集品質の確認に利用）。
 
 ---
 
@@ -273,7 +273,7 @@ python3 run_all.py --offline
   排名出現 ±1 的位移。單獨執行 `build_metrics.py` 時請用 `PYTHONHASHSEED=0 python3 build_metrics.py ...`）。
 - **指標**: 被依賴數（簡單統計）／影響範圍／中介中心性（Brandes）／PageRank／特徵向量／
   密度／弱連通分量／關節點（切斷點）／Louvain 社群・模組度。
-- **RQ3 對應**: 輸出 JSON 含「簡單統計 vs SNA 的排名乖離」（Spearman ρ・橋接型節點・基礎型節點）。
+- **決策支援的輸出**: 輸出 JSON 含「簡單統計 vs SNA 的排名乖離」（Spearman ρ・橋接型節點・基礎型節點）。
 
 ## 演算法驗證
 
@@ -282,11 +282,10 @@ python3 run_all.py --offline
 
 <a name="rules-zhHant"></a>
 
-## 診斷卡的解釋規則（DSS 功能・RQ3 的設計要素）
+## 診斷卡的解釋規則（DSS 功能）
 
 展示的診斷卡，依「節點結構型 × 決策情境（採用判斷・支援判斷・集中風險評估）」的對應表，
-**確定性地**生成文字（不使用 AI・相同輸入 → 相同輸出）。解釋規則本身即 DSR 人工物設計的一部分，
-將寫入論文的設計章節。
+**確定性地**生成文字（不使用 AI・相同輸入 → 相同輸出）。解釋規則本身即 DSR 人工物設計的一部分。
 
 | 結構型 | 判定條件 | 決策上的含意（範本要旨） | 解釋依據 |
 | --- | --- | --- | --- |
@@ -308,28 +307,28 @@ python3 run_all.py --offline
 | --- | --- | --- |
 | 診斷卡 | 將點選對象的「說明＋指標數據＋意義＋建議＋依據」集中於右上 | 把決策所需資訊集中於一處（DSS 的核心） |
 | 節點說明 | 為所有節點附上一行說明（`collect_desc.py` 收集登錄原文〔英文〕，取得率 PyPI 99.6%・Go 94.1%。日文版為依原文一次製作的固定資料） | 讓人立即得知「這個專案是什麼」；以固定資料保存而非執行時生成（維持確定性） |
-| 語言切換（4 語言） | 右上 🌐 將全部 UI・診斷範本・分類名・說明切換為 日本語／English／繁體中文／简体中文（說明文: 日＝固定翻譯／其他＝登錄原文）。資料・指標值不變，僅切換顯示文字 | 對應學會・國際會議（淡江大學＝繁體等）的展示。切換為確定性（執行時不使用 LLM） |
+| 語言切換（4 語言） | 右上 🌐 將全部 UI・診斷範本・分類名・說明切換為 日本語／English／繁體中文／简体中文（說明文: 日＝固定翻譯／其他＝登錄原文）。資料・指標值不變，僅切換顯示文字 | 對應學會・國際會議（繁體字地區等）的展示。切換為確定性（執行時不使用 LLM） |
 | 功能分類與搜尋 | 名稱的漸進式搜尋＋功能分類篩選（各領域 8 類）。分類依名稱前綴・名稱集合・說明關鍵字的確定性規則（`build_metrics.py` 的 `CATEGORY_RULES`） | 可沿著與結構指標正交的「功能」軸探索 |
 | 聚焦顯示 | 僅保留所選節點＋其直接依賴關係，其餘淡化（自我網路）。選到切斷點時以黃色顯示孤立範圍 | **非完全隱藏而是淡化（opacity 0.07）**: 在保留整體地圖中位置脈絡的同時，視覺上排除無關節點 |
-| 固定資訊的分離 | 與操作無關的 RQ3 面板（排名乖離）常設於下方的全寬橫條 | 互動式資訊（右側）與靜態資訊（下方）的分工 |
+| 固定資訊的分離 | 與操作無關的排名乖離面板常設於下方的全寬橫條 | 互動式資訊（右側）與靜態資訊（下方）的分工 |
 | 規模的適應 | Top-N 篩選＋對顯示集合的確定性版面重算（重新套用 FR・初值＝預計算座標・不使用亂數）＋節點半徑自動調整 | 不論顯示數量皆維持可讀性（規模對策） |
 | Z 序與重疊緩解 | 將高指標節點繪於最上層，重疊時推開指標較小的一側 | 讓重要節點始終可點選 |
 
-## 指標的方法論注意（RQ2 的論點）
+## 指標的方法論注意
 
 - **特徵向量中心性在依賴圖中視為參考值**。依賴網路近乎無環（DAG），在 DAG 上特徵向量中心性的
   power iteration 不會唯一收斂，數值依迭代次數而變（networkx 3.x 亦同）。本流程提供相容實作，
-  但不用於解釋。→ 就 RQ2 而言可整理為指標選擇的見解:「依賴網路的診斷適用次數・中介・PageRank，
+  但不用於解釋。→ 可整理為指標選擇的見解:「依賴網路的診斷適用次數・中介・PageRank，
   特徵向量中心性則適用具循環結構的網路」。
 - **Spearman ρ 採用以平均排名處理同名次的標準定義**計算。中介中心性在多數節點為 0、同名次大量發生，
-  故同名次處理的有無會使 ρ 大幅變動（POC 的簡易式 ≈0.75 → 標準定義下現有資料約 0.28〜0.31: PyPI 0.31・Go 0.28）。後續發表・論文採用標準定義之值。
+  故同名次處理的有無會使 ρ 大幅變動（POC 的簡易式 ≈0.75 → 標準定義下現有資料約 0.28〜0.31: PyPI 0.31・Go 0.28）。本流程採用標準定義之值。
 
 ## 注意
 
 - 部分執行環境對 deps.dev 的連線有代理・網路限制。此時請於可連線的環境僅執行 `collect.py`，
   將 `cache/` 帶入後以 `--offline` 續行。
 - Go 模組路徑的大寫（例: `github.com/VictoriaMetrics/...`）會被 deps.dev 直接接受。
-  取得失敗會連同錯誤內容記錄於 cache，並彙整為成功率（技術評估的素材）。
+  取得失敗會連同錯誤內容記錄於 cache，並彙整為成功率（用於確認收集品質）。
 
 ---
 
@@ -382,7 +381,7 @@ python3 run_all.py --offline
   排名出现 ±1 的位移。单独执行 `build_metrics.py` 时请用 `PYTHONHASHSEED=0 python3 build_metrics.py ...`）。
 - **指标**: 被依赖数（简单统计）／影响范围／中介中心性（Brandes）／PageRank／特征向量／
   密度／弱连通分量／关节点（切断点）／Louvain 社群・模块度。
-- **RQ3 对应**: 输出 JSON 含「简单统计 vs SNA 的排名乖离」（Spearman ρ・桥接型节点・基础型节点）。
+- **决策支持的输出**: 输出 JSON 含「简单统计 vs SNA 的排名乖离」（Spearman ρ・桥接型节点・基础型节点）。
 
 ## 算法验证
 
@@ -391,11 +390,10 @@ python3 run_all.py --offline
 
 <a name="rules-zhHans"></a>
 
-## 诊断卡的解释规则（DSS 功能・RQ3 的设计要素）
+## 诊断卡的解释规则（DSS 功能）
 
 演示的诊断卡，按「节点结构型 × 决策场景（采用判断・支持判断・集中风险评估）」的对应表，
-**确定性地**生成文字（不使用 AI・相同输入 → 相同输出）。解释规则本身即 DSR 人工物设计的一部分，
-将写入论文的设计章节。
+**确定性地**生成文字（不使用 AI・相同输入 → 相同输出）。解释规则本身即 DSR 人工物设计的一部分。
 
 | 结构型 | 判定条件 | 决策上的含义（模板要旨） | 解释依据 |
 | --- | --- | --- | --- |
@@ -417,28 +415,28 @@ python3 run_all.py --offline
 | --- | --- | --- |
 | 诊断卡 | 将点选对象的「说明＋指标数据＋意义＋建议＋依据」集中于右上 | 把决策所需信息集中于一处（DSS 的核心） |
 | 节点说明 | 为所有节点附上一行说明（`collect_desc.py` 收集登记原文〔英文〕，取得率 PyPI 99.6%・Go 94.1%。日文版为依原文一次制作的固定数据） | 让人立即得知「这个项目是什么」；以固定数据保存而非运行时生成（维持确定性） |
-| 语言切换（4 语言） | 右上 🌐 将全部 UI・诊断模板・分类名・说明切换为 日本語／English／繁體中文／简体中文（说明文: 日＝固定翻译／其他＝登记原文）。数据・指标值不变，仅切换显示文字 | 对应学会・国际会议（淡江大学＝繁体等）的展示。切换为确定性（运行时不使用 LLM） |
+| 语言切换（4 语言） | 右上 🌐 将全部 UI・诊断模板・分类名・说明切换为 日本語／English／繁體中文／简体中文（说明文: 日＝固定翻译／其他＝登记原文）。数据・指标值不变，仅切换显示文字 | 对应学会・国际会议（繁体字地区等）的展示。切换为确定性（运行时不使用 LLM） |
 | 功能分类与搜索 | 名称的增量搜索＋功能分类筛选（各领域 8 类）。分类按名称前缀・名称集合・说明关键字的确定性规则（`build_metrics.py` 的 `CATEGORY_RULES`） | 可沿着与结构指标正交的「功能」轴探索 |
 | 聚焦显示 | 仅保留所选节点＋其直接依赖关系，其余淡化（自我网络）。选到切断点时以黄色显示孤立范围 | **非完全隐藏而是淡化（opacity 0.07）**: 在保留整体地图中位置脉络的同时，视觉上排除无关节点 |
-| 固定信息的分离 | 与操作无关的 RQ3 面板（排名乖离）常设于下方的全宽横条 | 交互式信息（右侧）与静态信息（下方）的分工 |
+| 固定信息的分离 | 与操作无关的排名乖离面板常设于下方的全宽横条 | 交互式信息（右侧）与静态信息（下方）的分工 |
 | 规模的适应 | Top-N 筛选＋对显示集合的确定性布局重算（重新应用 FR・初值＝预计算坐标・不使用随机数）＋节点半径自动调整 | 不论显示数量皆维持可读性（规模对策） |
 | Z 序与重叠缓解 | 将高指标节点绘于最上层，重叠时推开指标较小的一侧 | 让重要节点始终可点选 |
 
-## 指标的方法论注意（RQ2 的论点）
+## 指标的方法论注意
 
 - **特征向量中心性在依赖图中视为参考值**。依赖网络近乎无环（DAG），在 DAG 上特征向量中心性的
   power iteration 不会唯一收敛，数值依迭代次数而变（networkx 3.x 亦同）。本流程提供兼容实现，
-  但不用于解释。→ 就 RQ2 而言可整理为指标选择的见解:「依赖网络的诊断适用度数・中介・PageRank，
+  但不用于解释。→ 可整理为指标选择的见解:「依赖网络的诊断适用度数・中介・PageRank，
   特征向量中心性则适用具循环结构的网络」。
 - **Spearman ρ 采用以平均排名处理同名次的标准定义**计算。中介中心性在多数节点为 0、同名次大量发生，
-  故同名次处理的有无会使 ρ 大幅变动（POC 的简易式 ≈0.75 → 标准定义下现有数据约 0.28〜0.31: PyPI 0.31・Go 0.28）。后续发表・论文采用标准定义之值。
+  故同名次处理的有无会使 ρ 大幅变动（POC 的简易式 ≈0.75 → 标准定义下现有数据约 0.28〜0.31: PyPI 0.31・Go 0.28）。本流程采用标准定义之值。
 
 ## 注意
 
 - 部分运行环境对 deps.dev 的连接有代理・网络限制。此时请在可连接的环境仅执行 `collect.py`，
   将 `cache/` 带入后以 `--offline` 续行。
 - Go 模块路径的大写（例: `github.com/VictoriaMetrics/...`）会被 deps.dev 直接接受。
-  取得失败会连同错误内容记录于 cache，并汇总为成功率（技术评估的素材）。
+  取得失败会连同错误内容记录于 cache，并汇总为成功率（用于确认收集质量）。
 
 ---
 
