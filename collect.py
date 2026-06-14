@@ -2,14 +2,14 @@
 """
 collect.py — deps.dev API からの依存データ収集（再開可能・再現性記録つき）
 
-設計方針（CLAUDE.md §3 と整合）:
+設計方針:
   - シードは各領域 50〜200 リポジトリ、依存グラフは「シードの解決済み依存グラフ」の
     合併で構成し、推移的な全展開はしない（規模の打ち切り）。
   - 取得結果はシード単位で cache/<system>/<pkg>.json に保存。再実行時は既存キャッシュを
     スキップする（--refresh で強制再取得）。中断・再開に強い。
   - 再現性のため、取得日時（UTC ISO8601）・API・解決バージョンを必ず記録する。
-  - 取得成功率は技術評価（データ取得成功率）の指標としてそのまま使うため、
-    失敗もエラー内容つきで cache に記録する。
+  - 取得成功率をデータ品質の指標として算出するため、失敗もエラー内容つきで
+    cache に記録する。
 
 使い方:
   python3 collect.py --system pypi --seeds seeds_pypi.json
@@ -30,7 +30,7 @@ API = "https://api.deps.dev/v3"
 HERE = pathlib.Path(__file__).resolve().parent
 
 # Go の共有依存の打ち切り閾値: この数以上のシードが直接依存するモジュールのみ
-# ネットワークに含める（CLAUDE.md §3「規模の打ち切り」。PyPI の解決済みグラフ規模
+# ネットワークに含める（「規模の打ち切り」。PyPI の解決済みグラフ規模
 # n≈272 と整合させるための値。再現性のため _collect_meta.json に記録する）。
 GO_SHARED_THRESHOLD = 3
 
@@ -84,7 +84,7 @@ def collect_go(seeds, cache_dir, refresh=False, sleep=0.15):
     """Go 依存ネットワーク収集（2 フェーズ・宣言依存ベース）。
 
     deps.dev は Go の解決済みグラフを提供しないため go.mod の宣言依存（:requirements）を用いる。
-    規模の打ち切り（CLAUDE.md §3）として、ノード集合 N = シード ∪ {GO_SHARED_THRESHOLD 個
+    規模の打ち切りとして、ノード集合 N = シード ∪ {GO_SHARED_THRESHOLD 個
     以上のシードが直接依存する共有モジュール} に限定する。各シードについて半径 1 の誘導部分
     グラフ（シード→依存、および依存同士の直接依存）を cache に保存し、build_metrics 側で合併
     する（DiGraph がエッジを集合で重複排除するため、ファイル間の重複エッジは問題ない）。
