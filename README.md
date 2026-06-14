@@ -8,9 +8,10 @@
 
 A research prototype (master's thesis) that builds **OSS dependency networks** from public data
 (deps.dev / PyPI), computes social-network-analysis (SNA) metrics, and provides a self-contained,
-reproducible **DSS-style diagnosis demo** with a **4-language switch — Japanese / English / 繁體中文 / 简体中文** (🌐, top-right). It runs the four stages — **collect → build network → compute metrics → visualize** — in
-one command. The analysis pipeline is **deterministic (no LLM at runtime)**: the same input always
-yields the same output.
+reproducible **DSS-style diagnosis demo**. A 🌐 control (top-right) switches the interface across
+**four languages — Japanese / English / 繁體中文 / 简体中文**. The demo runs the four stages —
+**collect → build network → compute metrics → visualize** — in one command, and the analysis
+pipeline is **deterministic (no LLM at runtime)**: the same input always yields the same output.
 
 ## Files
 
@@ -46,7 +47,7 @@ Requirements: Python 3.9+ / numpy / requests.
   `PYTHONHASHSEED=0` for child processes (set-iteration order would otherwise shift floating-point summation
   order and move near-tied betweenness ranks by ±1). When running `build_metrics.py` standalone, use
   `PYTHONHASHSEED=0 python3 build_metrics.py ...`.
-- **Metrics**: in-degree (simple stat) / reach / betweenness (Brandes) / PageRank / eigenvector /
+- **Metrics**: in-degree (simple stat) / reach (downstream reachable-set size) / betweenness (Brandes) / PageRank / eigenvector /
   density / weakly-connected components / articulation points (cut points) / Louvain communities & modularity.
 - **Decision-support output**: the output JSON includes the rank divergence between simple stats and SNA
   (Spearman ρ, bridge nodes, foundation nodes).
@@ -157,14 +158,14 @@ python3 run_all.py --offline
 - **規模の打ち切り**: シード各領域 約180〜200 件 + deps.dev の解決済み依存グラフ（シード＋1 ホップ）の合併。推移的全展開はしない。
 - **再現性**: 取得日時・API・解決バージョン・乱数 seed（42）・指標処理時間を全出力に記録。
   `sna_core.py` は乱数に依存しない決定論的実装（同一入力 → 同一出力）。
-  さらに `run_all.py` は子プロセスに `PYTHONHASHSEED=0` を固定する（set 走査順による
-  浮動小数点合算順序の揺れで、媒介中心性の近接同値ノードの順位が ±1 変動するのを防ぐ。
-  `build_metrics.py` を単独実行する場合は `PYTHONHASHSEED=0 python3 build_metrics.py ...` とする）。
+  さらに `run_all.py` は子プロセスに `PYTHONHASHSEED=0` を固定する（set の走査順が変わると
+  浮動小数点の合算順序が変わり、媒介中心性が近接同値のノードで順位が ±1 動くことがあるため。
+  `build_metrics.py` を単独実行する場合は `PYTHONHASHSEED=0 python3 build_metrics.py ...`）。
 - **指標**: 被依存数（単純統計）／影響範囲／媒介中心性（Brandes）／PageRank／固有ベクトル／
   密度／弱連結成分／関節点（切断点）／Louvain コミュニティ・モジュラリティ。
 - **意思決定支援の出力**: 出力 JSON に「単純統計 vs SNA の順位乖離」（Spearman ρ・橋渡し型ノード・土台型ノード）を含む。
 
-## 算法検証
+## アルゴリズム検証
 
 `sna_core.py` の各指標は、2026-05-22 POC（networkx 実装・`oss_sna_demo.html` に埋込の実データ）と
 同一入力での出力一致を確認済み。
@@ -373,14 +374,14 @@ python3 run_all.py --offline
 
 ## 设计上的约束
 
-- **数据集（最新构建・deps.dev API v3・取得 2026-06-12〜13）**: 数据科学系（PyPI）— **709 节点 / 2,150 边**（种子 172/183 解析・94.0%）、弱连通分量 14（最大 694）、社群 31、模块度 0.51、密度 0.0043。云原生系（Go）— **591 节点 / 5,922 边**（种子 161/201 解析・80.1%）、分量 1、社群 8、模块度 0.31、密度 0.017。
+- **数据集（最新构建・deps.dev API v3・取得 2026-06-12〜13）**: 数据科学系（PyPI）— **709 节点 / 2,150 边**（种子 172/183 解析・94.0%）、弱连通分量 14（最大 694）、社区 31、模块度 0.51、密度 0.0043。云原生系（Go）— **591 节点 / 5,922 边**（种子 161/201 解析・80.1%）、分量 1、社区 8、模块度 0.31、密度 0.017。
 - **规模的截断**: 各领域种子 约180〜200 件 + deps.dev 已解析依赖图（种子＋1 跳）的合并。不做传递式全展开。
 - **可复现性**: 取得时间・API・解析版本・随机 seed（42）・指标处理时间均记录于所有输出。
   `sna_core.py` 是不依赖随机数的确定性实现（相同输入 → 相同输出）。此外 `run_all.py` 对子进程
   固定 `PYTHONHASHSEED=0`（避免 set 遍历顺序导致浮点加总顺序变动、使中介中心性近乎同值的节点
   排名出现 ±1 的位移。单独执行 `build_metrics.py` 时请用 `PYTHONHASHSEED=0 python3 build_metrics.py ...`）。
 - **指标**: 被依赖数（简单统计）／影响范围／中介中心性（Brandes）／PageRank／特征向量／
-  密度／弱连通分量／关节点（切断点）／Louvain 社群・模块度。
+  密度／弱连通分量／关节点（切断点）／Louvain 社区・模块度。
 - **决策支持的输出**: 输出 JSON 含「简单统计 vs SNA 的排名乖离」（Spearman ρ・桥接型节点・基础型节点）。
 
 ## 算法验证
