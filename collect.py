@@ -67,7 +67,7 @@ def get_dependency_graph(session, system, pkg, version):
 def get_go_direct_requirements(session, pkg, version):
     """go.mod の直接要求依存（directDependencies）の名前リストを取得する。
 
-    deps.dev は Go 生態に対し解決済み依存グラフ（:dependencies）を提供しない
+    deps.dev は Go エコシステムに対し解決済み依存グラフ（:dependencies）を提供しない
     （v3 / v3alpha とも 404 "dependencies not found"）。そのため Go では宣言依存
     （:requirements）を用いて依存ネットワークを構築する。"""
     url = (f"{API}/systems/go/packages/{urllib.parse.quote(pkg, safe='')}"

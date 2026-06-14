@@ -19,7 +19,7 @@
   .hintbar { display:flex; flex-wrap:wrap; gap:4px 16px; padding:5px 0 1px; }
   .hint-item { display:inline-flex; align-items:center; gap:5px; color:var(--sub);
                font-size:11.5px; line-height:1.35; white-space:nowrap; }
-  .hint-item svg { flex:none; display:block; height:14px; width:auto; }  /* 全局 svg{height:660px} の上書き必須 */
+  .hint-item svg { flex:none; display:block; height:14px; width:auto; }  /* 全体の svg{height:660px} を上書き */
   .bar { display:flex; gap:10px; flex-wrap:wrap; padding:12px 20px 10px; align-items:stretch; }
   .grp { display:flex; align-items:center; gap:5px; background:var(--panel);
          border:1px solid var(--line); border-radius:9px; padding:6px 12px; }
@@ -811,7 +811,7 @@ function renderNet(g, byId){
 function renderScatter(g, byId){
   const vis = visibleIds(g);
   const shown = n => !vis || vis.has(n.id);
-  const W=1000,H=660,L=80,R=40,TM=40,B=70;   // TM = top margin（全局 T() と衝突しないよう改名）
+  const W=1000,H=660,L=80,R=40,TM=40,B=70;   // TM = top margin（グローバル関数 T() と名前が衝突しないよう改名）
   const pts = g.nodes.filter(shown);
   const xmax = Math.max(...pts.map(n=>n.indeg), 1);
   const ymax = Math.max(...pts.map(n=>n.btw), 1e-6);

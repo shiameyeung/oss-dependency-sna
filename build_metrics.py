@@ -95,7 +95,7 @@ def layout_by_components(g, comps, seed):
 
 # --- 機能分類の規則（決定論的・上から順に最初に一致した分類を採用） -------------
 # 述語は (名前小文字, 説明文小文字) を受け取る。最後の規則がフォールバック。
-# 分類規則自体が DSS アーティファクト設計の一部（README 参照）。
+# 分類規則そのものも本システムの設計対象の一部（規則表は README 参照）。
 CATEGORY_RULES = {
     "pypi": [
         ("Jupyter・開発環境", lambda n, d: n.startswith(("jupyter", "ipy", "nb")) or n in {

@@ -20,7 +20,7 @@ yields the same output.
 | `collect.py` | Collect resolved dependency graphs from the deps.dev API v3 (resumable, records success rate) |
 | `collect_desc.py` | Collect one-line descriptions per node (PyPI summary / Go → GitHub project) |
 | `seeds_pypi.json` | ≈183 data-science seeds (community-driven domain) |
-| `seeds_go.json` | ≈202 cloud-native seeds (foundation-governed domain) |
+| `seeds_go.json` | ≈201 cloud-native seeds (foundation-governed domain) |
 | `sna_core.py` | SNA metrics in pure Python + numpy (no external deps, fully deterministic) |
 | `build_metrics.py` | cache → directed network → metrics → analysis JSON |
 | `make_demo.py` | Generates the self-contained HTML demo (works offline, no CDN) |
@@ -67,13 +67,13 @@ same output. The rule table itself is part of the DSS-artifact design.
 | Type | Condition | Decision implication (template gist) | Basis |
 | --- | --- | --- | --- |
 | Cut point | articulation point & in-degree>0 & reach>1 | shows the set isolated on removal (precomputed `cut_impact`); top priority to monitor for concentration risk | articulation point = vertex whose removal breaks connectivity (graph theory) |
-| Bridge | btw>0 & (in-degree rank − betweenness rank) ≥ 5 | a path bottleneck invisible to simple stats; check maintenance, an overlooked support candidate | the "path-control / brokerage" reading of betweenness (organized in Chen et al. 2022) |
+| Bridge | btw>0 & (in-degree rank − betweenness rank) ≥ 5 | a path bottleneck invisible to simple stats; check maintenance, an overlooked support candidate | the "path-control / brokerage" reading of betweenness (as synthesized in Chen et al. 2022) |
 | Foundation | top-10 in-degree & btw≈0 & in-degree≥3 | a base visible even to simple stats; standard choice but a textbook concentration point | direct meaning of degree centrality + transitive impact in dependency networks (Decan et al. 2019) |
 | Isolated | in-degree=0 & out-degree=0 | no dependency relation within the collected scope | — (scope note) |
 | Standard | none of the above | no structural peculiarity; individual metrics suffice | — (absence of peculiarity) |
 
 **Positioning**: these rules are not a new theoretical claim but a **design element that maps established
-SNA-metric readings to OSS decision contexts** (part of DSR artifact design). The "quality of presented
+SNA-metric readings to OSS decision contexts** (part of design-science-research (DSR) artifact design; Hevner et al. 2004). The "quality of presented
 information" evaluation lens corresponds to the information-quality concept of DeLone & McLean (2003).
 Templates vary their wording by magnitude (isolated size, rank gap, propagation share) but generation is
 fully deterministic. **Replacing this with LLM natural-language generation is future work**; this study
@@ -100,7 +100,7 @@ prioritizes reproducibility and explainability.
   interpretation. → This becomes a metric-selection finding: "in-degree / betweenness / PageRank
   suit dependency-network diagnosis; eigenvector centrality suits networks with cyclic structure."
 - **Spearman ρ uses the standard tie-aware definition** (average ranks). Betweenness is 0 for most nodes,
-  producing many ties, so ρ changes greatly with tie handling (naive POC ≈0.75 → standard definition ≈0.28–0.31 on the current data: PyPI 0.31, Go 0.28). The
+  producing many ties, so ρ changes greatly with tie handling (a simplified, tie-unaware POC formula gave ≈0.75 → the standard definition gives ≈0.28–0.31 on the current data: PyPI 0.31, Go 0.28). The
   standard value is the one reported throughout.
 
 ## Notes
@@ -134,7 +134,7 @@ DSS 型分析支援システムの実装。**収集 → ネットワーク生成
 | `collect.py` | deps.dev API v3 から解決済み依存グラフを収集（再開可能・成功率記録） |
 | `collect_desc.py` | ノードごとの 1 行説明を収集（PyPI summary／Go はモジュール→GitHub プロジェクト） |
 | `seeds_pypi.json` | データサイエンス系シード 約183 件（コミュニティ主導の対照領域） |
-| `seeds_go.json` | クラウドネイティブ系シード 約202 件（財団ガバナンスの対照領域） |
+| `seeds_go.json` | クラウドネイティブ系シード 約201 件（財団ガバナンスの対照領域） |
 | `sna_core.py` | SNA 指標の純 Python + numpy 実装（外部依存なし・全て決定論的） |
 | `build_metrics.py` | キャッシュ → 有向ネットワーク → 指標計算 → 分析 JSON |
 | `make_demo.py` | 自己完結型 HTML デモ生成（オフライン動作・CDN 依存なし） |
@@ -186,7 +186,7 @@ python3 run_all.py --offline
 | 標準 | 上記いずれにも非該当 | 構造上の特異点なし。個別指標の確認で十分と考えられる | —（特異性の不検出を明示） |
 
 **位置づけ**: 本対応規則は新しい理論主張ではなく、**確立された SNA 指標解釈を OSS の意思決定場面
-（利用判断・支援判断・集中リスク把握）に対応づけた設計要素**である（DSR におけるアーティファクト設計の一部）。
+（利用判断・支援判断・集中リスク把握）に対応づけた設計要素**である（デザイン・サイエンス研究（DSR）におけるアーティファクト設計の一部・Hevner et al. 2004）。
 提示情報の質という評価観点は DeLone & McLean (2003) の情報品質概念に対応する。
 テンプレートは数値（孤立規模・順位差・波及割合）に応じて言い回しを段階化するが、生成は完全に決定論的である。
 **LLM による自然言語生成への置換（表現の柔軟化）は今後の課題**とし、本研究では再現性と説明可能性を優先する。
@@ -246,7 +246,7 @@ python3 run_all.py --offline
 | `collect.py` | 從 deps.dev API v3 收集已解析的依賴圖（可中斷續傳・記錄成功率） |
 | `collect_desc.py` | 收集每個節點的一行說明（PyPI summary／Go 為模組→GitHub 專案） |
 | `seeds_pypi.json` | 資料科學類種子 約183 件（社群主導的對照領域） |
-| `seeds_go.json` | 雲原生類種子 約202 件（基金會治理的對照領域） |
+| `seeds_go.json` | 雲原生類種子 約201 件（基金會治理的對照領域） |
 | `sna_core.py` | SNA 指標的純 Python + numpy 實作（無外部相依・全為確定性） |
 | `build_metrics.py` | 快取 → 有向網路 → 計算指標 → 分析 JSON |
 | `make_demo.py` | 產生自我完備的 HTML 展示（離線可用・不依賴 CDN） |
@@ -296,7 +296,7 @@ python3 run_all.py --offline
 | 標準 | 以上皆非 | 無結構上的特異點。確認個別指標即足夠 | —（明示未偵測到特異性） |
 
 **定位**: 本對應規則並非新的理論主張，而是**將既有的 SNA 指標解讀，對應到 OSS 決策情境
-（採用判斷・支援判斷・集中風險評估）的設計要素**（DSR 人工物設計的一部分）。
+（採用判斷・支援判斷・集中風險評估）的設計要素**（設計科學研究（DSR）人工物設計的一部分・Hevner et al. 2004）。
 「所提供資訊之品質」此評估觀點，對應 DeLone & McLean (2003) 的資訊品質概念。
 範本會依數值（孤立規模・排名差・波及比例）將措辭分級，但生成完全是確定性的。
 **置換為 LLM 自然語言生成（措辭的彈性化）列為未來課題**，本研究優先重現性與可解釋性。
@@ -354,7 +354,7 @@ python3 run_all.py --offline
 | `collect.py` | 从 deps.dev API v3 收集已解析的依赖图（可中断续传・记录成功率） |
 | `collect_desc.py` | 收集每个节点的一行说明（PyPI summary／Go 为模块→GitHub 项目） |
 | `seeds_pypi.json` | 数据科学系种子 约183 件（社区主导的对照领域） |
-| `seeds_go.json` | 云原生系种子 约202 件（基金会治理的对照领域） |
+| `seeds_go.json` | 云原生系种子 约201 件（基金会治理的对照领域） |
 | `sna_core.py` | SNA 指标的纯 Python + numpy 实现（无外部依赖・全为确定性） |
 | `build_metrics.py` | 缓存 → 有向网络 → 计算指标 → 分析 JSON |
 | `make_demo.py` | 生成自包含的 HTML 演示（离线可用・不依赖 CDN） |
@@ -404,7 +404,7 @@ python3 run_all.py --offline
 | 标准 | 以上皆非 | 无结构上的特异点。确认各项指标即足够 | —（明示未检测到特异性） |
 
 **定位**: 本对应规则并非新的理论主张，而是**将既有的 SNA 指标解读，对应到 OSS 决策场景
-（采用判断・支持判断・集中风险评估）的设计要素**（DSR 人工物设计的一部分）。
+（采用判断・支持判断・集中风险评估）的设计要素**（设计科学研究（DSR）人工物设计的一部分・Hevner et al. 2004）。
 「所提供信息的质量」这一评估观点，对应 DeLone & McLean (2003) 的信息质量概念。
 模板会按数值（孤立规模・排名差・波及比例）将措辞分级，但生成完全是确定性的。
 **置换为 LLM 自然语言生成（措辞的灵活化）列为未来课题**，本研究优先复现性与可解释性。
