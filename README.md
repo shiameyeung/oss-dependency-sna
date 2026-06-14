@@ -19,8 +19,8 @@ yields the same output.
 | `run_all.py` | One-shot orchestrator. `--offline` recomputes from cache only |
 | `collect.py` | Collect resolved dependency graphs from the deps.dev API v3 (resumable, records success rate) |
 | `collect_desc.py` | Collect one-line descriptions per node (PyPI summary / Go → GitHub project) |
-| `seeds_pypi.json` | 50 data-science seeds (community-driven domain) |
-| `seeds_go.json` | 50 cloud-native seeds (foundation-governed domain) |
+| `seeds_pypi.json` | ≈183 data-science seeds (community-driven domain) |
+| `seeds_go.json` | ≈202 cloud-native seeds (foundation-governed domain) |
 | `sna_core.py` | SNA metrics in pure Python + numpy (no external deps, fully deterministic) |
 | `build_metrics.py` | cache → directed network → metrics → analysis JSON |
 | `make_demo.py` | Generates the self-contained HTML demo (works offline, no CDN) |
@@ -39,7 +39,8 @@ Requirements: Python 3.9+ / numpy / requests.
 
 ## Design commitments
 
-- **Scope cutoff**: 50 seeds per domain merged with their resolved dependency graphs; no transitive full expansion.
+- **Dataset (latest build · deps.dev API v3 · fetched 2026-06-12–13)**: data-science (PyPI) — **709 nodes / 2,150 edges** from 172/183 seeds resolved (94.0%), 14 weakly-connected components (largest 694), 31 communities, modularity 0.51, density 0.0043; cloud-native (Go) — **591 nodes / 5,922 edges** from 161/201 seeds resolved (80.1%), 1 component, 8 communities, modularity 0.31, density 0.017.
+- **Scope cutoff**: ≈180–200 seeds per domain merged with their resolved dependency graphs (seeds + 1-hop resolved deps); no transitive full expansion.
 - **Reproducibility**: fetch timestamp, API, resolved versions, random seed (42), and metric timings are recorded
   in every output. `sna_core.py` is deterministic (same input → same output). `run_all.py` also pins
   `PYTHONHASHSEED=0` for child processes (set-iteration order would otherwise shift floating-point summation
@@ -83,7 +84,7 @@ prioritizes reproducibility and explainability.
 | Pattern | What | Rationale |
 | --- | --- | --- |
 | Diagnosis card | Aggregates description + metrics + meaning + recommendation + basis for the clicked target | Put decision-relevant information in one place (the DSS core) |
-| Node descriptions | One-line description per node (`collect_desc.py` collects registry originals in English; success rate PyPI 98.9% / Go 95.4%. The Japanese version is fixed data prepared from the originals) | Answer "what is this project" instantly; held as fixed data, not generated at runtime (keeps determinism) |
+| Node descriptions | One-line description per node (`collect_desc.py` collects registry originals in English; success rate PyPI 99.6% / Go 94.1%. The Japanese version is fixed data prepared from the originals) | Answer "what is this project" instantly; held as fixed data, not generated at runtime (keeps determinism) |
 | Language switch (4 languages) | The 🌐 control (top-right) switches all UI, diagnosis templates, category names, and descriptions across Japanese / English / Traditional Chinese / Simplified Chinese (descriptions: JA = fixed translation / others = registry original). Data and metric values are unchanged | For academic / international venues (e.g. Tamkang University, Taiwan = Traditional Chinese). Deterministic (no LLM at runtime) |
 | Category & search | Incremental name search + functional-category filter (8 per domain). Categories follow deterministic rules by name prefix / name set / description keywords (`CATEGORY_RULES` in `build_metrics.py`) | Explore along a "function" axis orthogonal to structural metrics |
 | Focus view | Keep only the selected node + its direct dependencies, fade the rest (ego network); for cut points, highlight the isolated set in yellow | **Fade (opacity 0.07), not hide**: removes irrelevant nodes visually while keeping the node's position in the overall map |
@@ -99,7 +100,7 @@ prioritizes reproducibility and explainability.
   interpretation. → For RQ2 this becomes a metric-selection finding: "in-degree / betweenness / PageRank
   suit dependency-network diagnosis; eigenvector centrality suits networks with cyclic structure."
 - **Spearman ρ uses the standard tie-aware definition** (average ranks). Betweenness is 0 for most nodes,
-  producing many ties, so ρ changes greatly with tie handling (naive POC ≈0.75 → standard 0.293). The
+  producing many ties, so ρ changes greatly with tie handling (naive POC ≈0.75 → standard definition ≈0.28–0.31 on the current data: PyPI 0.31, Go 0.28). The
   standard value is used in talks and the paper.
 
 ## Notes
@@ -132,8 +133,8 @@ DSS 型分析支援システムの実装。**収集 → ネットワーク生成
 | `run_all.py` | 一括実行（オーケストレーター）。`--offline` でキャッシュのみ実行 |
 | `collect.py` | deps.dev API v3 から解決済み依存グラフを収集（再開可能・成功率記録） |
 | `collect_desc.py` | ノードごとの 1 行説明を収集（PyPI summary／Go はモジュール→GitHub プロジェクト） |
-| `seeds_pypi.json` | データサイエンス系シード 50 件（コミュニティ主導の対照領域） |
-| `seeds_go.json` | クラウドネイティブ系シード 50 件（財団ガバナンスの対照領域） |
+| `seeds_pypi.json` | データサイエンス系シード 約183 件（コミュニティ主導の対照領域） |
+| `seeds_go.json` | クラウドネイティブ系シード 約202 件（財団ガバナンスの対照領域） |
 | `sna_core.py` | SNA 指標の純 Python + numpy 実装（外部依存なし・全て決定論的） |
 | `build_metrics.py` | キャッシュ → 有向ネットワーク → 指標計算 → 分析 JSON |
 | `make_demo.py` | 自己完結型 HTML デモ生成（オフライン動作・CDN 依存なし） |
@@ -152,7 +153,8 @@ python3 run_all.py --offline
 
 ## 設計上の約束（CLAUDE.md §3 と対応）
 
-- **規模の打ち切り**: シード各領域 50 件 + deps.dev の解決済み依存グラフの合併。推移的全展開はしない。
+- **データセット（最新ビルド・deps.dev API v3・取得 2026-06-12〜13）**: データサイエンス系（PyPI）— **709 ノード / 2,150 エッジ**（シード 172/183 解決・94.0%）、弱連結成分 14（最大 694）、コミュニティ 31、モジュラリティ 0.51、密度 0.0043。クラウドネイティブ系（Go）— **591 ノード / 5,922 エッジ**（シード 161/201 解決・80.1%）、成分 1、コミュニティ 8、モジュラリティ 0.31、密度 0.017。
+- **規模の打ち切り**: シード各領域 約180〜200 件 + deps.dev の解決済み依存グラフ（シード＋1 ホップ）の合併。推移的全展開はしない。
 - **再現性**: 取得日時・API・解決バージョン・乱数 seed（42）・指標処理時間を全出力に記録。
   `sna_core.py` は乱数に依存しない決定論的実装（同一入力 → 同一出力）。
   さらに `run_all.py` は子プロセスに `PYTHONHASHSEED=0` を固定する（set 走査順による
@@ -194,7 +196,7 @@ python3 run_all.py --offline
 | パターン | 内容 | 設計判断の理由 |
 | --- | --- | --- |
 | 診断カード | クリック対象の「説明文＋指標データ＋意味＋推奨＋根拠」を右上に集約 | 意思決定に必要な情報を 1 箇所に（DSS の中核） |
-| ノード説明文 | 全ノードに 1 行説明を付与（`collect_desc.py` でレジストリ原文〔英語〕を収集、取得率 PyPI 98.9%・Go 95.4%。日本語版は原文を基に一括作成した固定データ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
+| ノード説明文 | 全ノードに 1 行説明を付与（`collect_desc.py` でレジストリ原文〔英語〕を収集、取得率 PyPI 99.6%・Go 94.1%。日本語版は原文を基に一括作成した固定データ） | 「このプロジェクトは何か」を即答できるように。実行時の生成はせず固定データとして保持（決定論性の維持） |
 | 言語切替（4 言語） | 右上の 🌐 で全 UI・診断テンプレート・分類名・説明文を 日本語／English／繁體中文／简体中文 に切替（説明文: 日=固定翻訳／他言語=レジストリ原文）。データ・指標値は不変、表示文字列のみ切替 | 学会・国際会議（淡江大学＝繁体等）での提示に対応。切替は決定論的（実行時 LLM 不使用） |
 | 機能分類と検索 | 名前のインクリメンタル検索＋機能分類フィルタ（各領域 8 分類）。分類は名前接頭辞・名称集合・説明文キーワードによる決定論的規則（`build_metrics.py` の `CATEGORY_RULES`） | 構造指標と直交する「機能」の軸で探索できるように |
 | フォーカス表示 | 選択ノード＋直接の依存関係のみ残し、他を淡化（エゴネットワーク）。切断点選択時は孤立範囲を黄色表示 | **完全非表示ではなく淡化（opacity 0.07）**: 全体地図内の位置という文脈を保ちつつ無関係なノードを視覚的に排除 |
@@ -210,7 +212,7 @@ python3 run_all.py --offline
   → RQ2 では「依存ネットワークの診断には次数・媒介・PageRank が適し、固有ベクトル中心性は
   循環構造を持つネットワーク向き」という指標選定の知見として整理できる。
 - **Spearman ρ は同値を平均順位で処理する標準的定義**で計算する。媒介中心性は大半のノードで 0 になり
-  同値が大量発生するため、同値処理の有無で ρ が大きく変わる（POC の簡易式 ≈0.75 → 標準定義 0.293）。
+  同値が大量発生するため、同値処理の有無で ρ が大きく変わる（POC の簡易式 ≈0.75 → 標準定義で現データは概ね 0.28〜0.31: PyPI 0.31・Go 0.28）。
   以後の発表・論文では標準定義の値を用いる。
 
 ## 注意
@@ -243,8 +245,8 @@ python3 run_all.py --offline
 | `run_all.py` | 一次執行（協調器）。`--offline` 僅以快取重算 |
 | `collect.py` | 從 deps.dev API v3 收集已解析的依賴圖（可中斷續傳・記錄成功率） |
 | `collect_desc.py` | 收集每個節點的一行說明（PyPI summary／Go 為模組→GitHub 專案） |
-| `seeds_pypi.json` | 資料科學類種子 50 件（社群主導的對照領域） |
-| `seeds_go.json` | 雲原生類種子 50 件（基金會治理的對照領域） |
+| `seeds_pypi.json` | 資料科學類種子 約183 件（社群主導的對照領域） |
+| `seeds_go.json` | 雲原生類種子 約202 件（基金會治理的對照領域） |
 | `sna_core.py` | SNA 指標的純 Python + numpy 實作（無外部相依・全為確定性） |
 | `build_metrics.py` | 快取 → 有向網路 → 計算指標 → 分析 JSON |
 | `make_demo.py` | 產生自我完備的 HTML 展示（離線可用・不依賴 CDN） |
@@ -263,7 +265,8 @@ python3 run_all.py --offline
 
 ## 設計上的約束（對應 CLAUDE.md §3）
 
-- **規模的截斷**: 各領域種子 50 件 + deps.dev 已解析依賴圖的合併。不做遞移式全展開。
+- **資料集（最新建置・deps.dev API v3・取得 2026-06-12〜13）**: 資料科學類（PyPI）— **709 節點 / 2,150 邊**（種子 172/183 解析・94.0%）、弱連通分量 14（最大 694）、社群 31、模組度 0.51、密度 0.0043。雲原生類（Go）— **591 節點 / 5,922 邊**（種子 161/201 解析・80.1%）、分量 1、社群 8、模組度 0.31、密度 0.017。
+- **規模的截斷**: 各領域種子 約180〜200 件 + deps.dev 已解析依賴圖（種子＋1 跳）的合併。不做遞移式全展開。
 - **可重現性**: 取得時間・API・解析版本・亂數 seed（42）・指標處理時間皆記錄於所有輸出。
   `sna_core.py` 為不依賴亂數的確定性實作（相同輸入 → 相同輸出）。此外 `run_all.py` 對子行程
   固定 `PYTHONHASHSEED=0`（避免 set 走訪順序造成浮點加總順序變動、使中介中心性近乎同值的節點
@@ -304,7 +307,7 @@ python3 run_all.py --offline
 | 模式 | 內容 | 設計判斷的理由 |
 | --- | --- | --- |
 | 診斷卡 | 將點選對象的「說明＋指標數據＋意義＋建議＋依據」集中於右上 | 把決策所需資訊集中於一處（DSS 的核心） |
-| 節點說明 | 為所有節點附上一行說明（`collect_desc.py` 收集登錄原文〔英文〕，取得率 PyPI 98.9%・Go 95.4%。日文版為依原文一次製作的固定資料） | 讓人立即得知「這個專案是什麼」；以固定資料保存而非執行時生成（維持確定性） |
+| 節點說明 | 為所有節點附上一行說明（`collect_desc.py` 收集登錄原文〔英文〕，取得率 PyPI 99.6%・Go 94.1%。日文版為依原文一次製作的固定資料） | 讓人立即得知「這個專案是什麼」；以固定資料保存而非執行時生成（維持確定性） |
 | 語言切換（4 語言） | 右上 🌐 將全部 UI・診斷範本・分類名・說明切換為 日本語／English／繁體中文／简体中文（說明文: 日＝固定翻譯／其他＝登錄原文）。資料・指標值不變，僅切換顯示文字 | 對應學會・國際會議（淡江大學＝繁體等）的展示。切換為確定性（執行時不使用 LLM） |
 | 功能分類與搜尋 | 名稱的漸進式搜尋＋功能分類篩選（各領域 8 類）。分類依名稱前綴・名稱集合・說明關鍵字的確定性規則（`build_metrics.py` 的 `CATEGORY_RULES`） | 可沿著與結構指標正交的「功能」軸探索 |
 | 聚焦顯示 | 僅保留所選節點＋其直接依賴關係，其餘淡化（自我網路）。選到切斷點時以黃色顯示孤立範圍 | **非完全隱藏而是淡化（opacity 0.07）**: 在保留整體地圖中位置脈絡的同時，視覺上排除無關節點 |
@@ -319,7 +322,7 @@ python3 run_all.py --offline
   但不用於解釋。→ 就 RQ2 而言可整理為指標選擇的見解:「依賴網路的診斷適用次數・中介・PageRank，
   特徵向量中心性則適用具循環結構的網路」。
 - **Spearman ρ 採用以平均排名處理同名次的標準定義**計算。中介中心性在多數節點為 0、同名次大量發生，
-  故同名次處理的有無會使 ρ 大幅變動（POC 的簡易式 ≈0.75 → 標準定義 0.293）。後續發表・論文採用標準定義之值。
+  故同名次處理的有無會使 ρ 大幅變動（POC 的簡易式 ≈0.75 → 標準定義下現有資料約 0.28〜0.31: PyPI 0.31・Go 0.28）。後續發表・論文採用標準定義之值。
 
 ## 注意
 
@@ -351,8 +354,8 @@ python3 run_all.py --offline
 | `run_all.py` | 一次执行（编排器）。`--offline` 仅用缓存重算 |
 | `collect.py` | 从 deps.dev API v3 收集已解析的依赖图（可中断续传・记录成功率） |
 | `collect_desc.py` | 收集每个节点的一行说明（PyPI summary／Go 为模块→GitHub 项目） |
-| `seeds_pypi.json` | 数据科学系种子 50 件（社区主导的对照领域） |
-| `seeds_go.json` | 云原生系种子 50 件（基金会治理的对照领域） |
+| `seeds_pypi.json` | 数据科学系种子 约183 件（社区主导的对照领域） |
+| `seeds_go.json` | 云原生系种子 约202 件（基金会治理的对照领域） |
 | `sna_core.py` | SNA 指标的纯 Python + numpy 实现（无外部依赖・全为确定性） |
 | `build_metrics.py` | 缓存 → 有向网络 → 计算指标 → 分析 JSON |
 | `make_demo.py` | 生成自包含的 HTML 演示（离线可用・不依赖 CDN） |
@@ -371,7 +374,8 @@ python3 run_all.py --offline
 
 ## 设计上的约束（对应 CLAUDE.md §3）
 
-- **规模的截断**: 各领域种子 50 件 + deps.dev 已解析依赖图的合并。不做传递式全展开。
+- **数据集（最新构建・deps.dev API v3・取得 2026-06-12〜13）**: 数据科学系（PyPI）— **709 节点 / 2,150 边**（种子 172/183 解析・94.0%）、弱连通分量 14（最大 694）、社群 31、模块度 0.51、密度 0.0043。云原生系（Go）— **591 节点 / 5,922 边**（种子 161/201 解析・80.1%）、分量 1、社群 8、模块度 0.31、密度 0.017。
+- **规模的截断**: 各领域种子 约180〜200 件 + deps.dev 已解析依赖图（种子＋1 跳）的合并。不做传递式全展开。
 - **可复现性**: 取得时间・API・解析版本・随机 seed（42）・指标处理时间均记录于所有输出。
   `sna_core.py` 是不依赖随机数的确定性实现（相同输入 → 相同输出）。此外 `run_all.py` 对子进程
   固定 `PYTHONHASHSEED=0`（避免 set 遍历顺序导致浮点加总顺序变动、使中介中心性近乎同值的节点
@@ -412,7 +416,7 @@ python3 run_all.py --offline
 | 模式 | 内容 | 设计判断的理由 |
 | --- | --- | --- |
 | 诊断卡 | 将点选对象的「说明＋指标数据＋意义＋建议＋依据」集中于右上 | 把决策所需信息集中于一处（DSS 的核心） |
-| 节点说明 | 为所有节点附上一行说明（`collect_desc.py` 收集登记原文〔英文〕，取得率 PyPI 98.9%・Go 95.4%。日文版为依原文一次制作的固定数据） | 让人立即得知「这个项目是什么」；以固定数据保存而非运行时生成（维持确定性） |
+| 节点说明 | 为所有节点附上一行说明（`collect_desc.py` 收集登记原文〔英文〕，取得率 PyPI 99.6%・Go 94.1%。日文版为依原文一次制作的固定数据） | 让人立即得知「这个项目是什么」；以固定数据保存而非运行时生成（维持确定性） |
 | 语言切换（4 语言） | 右上 🌐 将全部 UI・诊断模板・分类名・说明切换为 日本語／English／繁體中文／简体中文（说明文: 日＝固定翻译／其他＝登记原文）。数据・指标值不变，仅切换显示文字 | 对应学会・国际会议（淡江大学＝繁体等）的展示。切换为确定性（运行时不使用 LLM） |
 | 功能分类与搜索 | 名称的增量搜索＋功能分类筛选（各领域 8 类）。分类按名称前缀・名称集合・说明关键字的确定性规则（`build_metrics.py` 的 `CATEGORY_RULES`） | 可沿着与结构指标正交的「功能」轴探索 |
 | 聚焦显示 | 仅保留所选节点＋其直接依赖关系，其余淡化（自我网络）。选到切断点时以黄色显示孤立范围 | **非完全隐藏而是淡化（opacity 0.07）**: 在保留整体地图中位置脉络的同时，视觉上排除无关节点 |
@@ -427,7 +431,7 @@ python3 run_all.py --offline
   但不用于解释。→ 就 RQ2 而言可整理为指标选择的见解:「依赖网络的诊断适用度数・中介・PageRank，
   特征向量中心性则适用具循环结构的网络」。
 - **Spearman ρ 采用以平均排名处理同名次的标准定义**计算。中介中心性在多数节点为 0、同名次大量发生，
-  故同名次处理的有无会使 ρ 大幅变动（POC 的简易式 ≈0.75 → 标准定义 0.293）。后续发表・论文采用标准定义之值。
+  故同名次处理的有无会使 ρ 大幅变动（POC 的简易式 ≈0.75 → 标准定义下现有数据约 0.28〜0.31: PyPI 0.31・Go 0.28）。后续发表・论文采用标准定义之值。
 
 ## 注意
 
