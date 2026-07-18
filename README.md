@@ -67,7 +67,7 @@ same output. The rule table itself is part of the DSS-artifact design.
 
 | Type | Condition | Decision implication (template gist) | Basis |
 | --- | --- | --- | --- |
-| Cut point | articulation point & in-degree>0 & reach>1 | shows the set isolated on removal (precomputed `cut_impact`); top priority to monitor for concentration risk | articulation point = vertex whose removal breaks connectivity (graph theory) |
+| Cut point | articulation point & in-degree>0 & reach>1 | shows the set isolated on removal (precomputed `cut_impact`); flagged as a candidate for closer monitoring / review under the concentration-risk lens | articulation point = vertex whose removal breaks connectivity (graph theory) |
 | Bridge | btw>0 & (in-degree rank − betweenness rank) ≥ 5 | a path bottleneck invisible to simple stats; check maintenance, an overlooked support candidate | the "path-control / brokerage" reading of betweenness (as synthesized in Chen et al. 2022) |
 | Foundation | top-10 in-degree & btw≈0 & in-degree≥3 | a base visible even to simple stats; standard choice but a textbook concentration point | direct meaning of degree centrality + transitive impact in dependency networks (Decan et al. 2019) |
 | Isolated | in-degree=0 & out-degree=0 | no dependency relation within the collected scope | — (scope note) |
@@ -103,6 +103,15 @@ prioritizes reproducibility and explainability.
 - **Spearman ρ uses the standard tie-aware definition** (average ranks). Betweenness is 0 for most nodes,
   producing many ties, so ρ changes greatly with tie handling (a simplified, tie-unaware POC formula gave ≈0.75 → the standard definition gives ≈0.28–0.31 on the current data: PyPI 0.31, Go 0.28). The
   standard value is the one reported throughout.
+- **Cross-domain structural comparison is confounded by edge semantics.** PyPI edges come from resolved
+  dependency graphs while Go edges are declared (go.mod) dependencies, so differences between the two
+  networks in density, connected components, modularity, or cut-point counts may partly stem from this
+  difference in dependency definition and extraction. Such differences are reported as observations and
+  are not attributed to governance or other domain characteristics.
+- **Diagnoses are candidate flags, not validated decision guidance.** Structural metrics identify
+  candidates worth reviewing (screening); whether a flagged package actually warrants monitoring,
+  scrutiny before adoption, or support requires separate verification of the project's circumstances.
+  This system does not claim empirically validated decision usefulness.
 
 ## Notes
 
@@ -180,7 +189,7 @@ python3 run_all.py --offline
 
 | 構造型 | 判定条件 | 意思決定上の含意（テンプレート要旨） | 解釈の根拠 |
 | --- | --- | --- | --- |
-| 切断点 | 関節点 かつ 被依存>0 かつ 影響範囲>1 | 喪失時に孤立する範囲（事前計算 `cut_impact`）を提示。集中リスク把握の観点で最優先での監視を推奨 | グラフ理論における関節点＝除去により連結が失われる頂点という標準的含意 |
+| 切断点 | 関節点 かつ 被依存>0 かつ 影響範囲>1 | 喪失時に孤立する範囲（事前計算 `cut_impact`）を提示。集中リスク把握の観点での監視・精査の候補として提示 | グラフ理論における関節点＝除去により連結が失われる頂点という標準的含意 |
 | 橋渡し型 | btw>0 かつ 被依存順位−媒介順位 ≥ 5 | 単純統計では見えない経路の要衝。保守体制確認・見落とされやすい支援先候補 | 媒介中心性の「経路制御・仲介」解釈（Chen et al. 2022 のレビューに整理されている） |
 | 土台型 | 被依存上位 10 位以内 かつ btw≈0 かつ indeg≥3 | 単純統計でも見える基盤。標準的選択だが一点集中リスクの典型例 | 次数中心性の直接的含意＋依存ネットワークの推移的影響（Decan et al. 2019） |
 | 孤立 | indeg=0 かつ outdeg=0 | 収集範囲内に依存関係なし | —（データ範囲の説明） |
@@ -215,6 +224,14 @@ python3 run_all.py --offline
 - **Spearman ρ は同値を平均順位で処理する標準的定義**で計算する。媒介中心性は大半のノードで 0 になり
   同値が大量発生するため、同値処理の有無で ρ が大きく変わる（POC の簡易式 ≈0.75 → 標準定義で現データは概ね 0.28〜0.31: PyPI 0.31・Go 0.28）。
   本パイプラインでは標準定義の値を用いる。
+- **2 領域間の構造比較にはエッジ定義の違いが交絡する**。PyPI のエッジは解決済み依存グラフ由来、
+  Go のエッジは go.mod の宣言ベースであり、密度・連結成分・モジュラリティ・切断点数などの
+  領域間の違いは、この依存定義・抽出方法の違いに起因する可能性がある。したがって領域間の差は
+  「観察された違い」として報告し、ガバナンスなど領域特性への帰属は行わない。
+- **診断は「確認候補の提示」であり、有効性が実証された判断指針ではない**。構造指標は精査に値する
+  候補を絞り込む（スクリーニング）ものであり、提示されたパッケージが実際に監視・導入前精査・支援を
+  要するかは、保守体制など対象の実情の別途確認が必要である。本システムは意思決定上の有用性の
+  実証までは主張しない。
 
 ## 注意
 
@@ -290,7 +307,7 @@ python3 run_all.py --offline
 
 | 結構型 | 判定條件 | 決策上的含意（範本要旨） | 解釋依據 |
 | --- | --- | --- | --- |
-| 切斷點 | 關節點 且 被依賴>0 且 影響範圍>1 | 提示移除時孤立的範圍（預計算 `cut_impact`）；就集中風險評估的觀點建議優先監控 | 圖論中關節點＝移除後連通性喪失的頂點，此標準含意 |
+| 切斷點 | 關節點 且 被依賴>0 且 影響範圍>1 | 提示移除時孤立的範圍（預計算 `cut_impact`）；就集中風險評估的觀點提示為監控・精查的候選 | 圖論中關節點＝移除後連通性喪失的頂點，此標準含意 |
 | 橋接型 | btw>0 且 被依賴排名−中介排名 ≥ 5 | 簡單統計看不見的路徑要衝。建議確認維護狀況・容易被忽略的支援對象 | 中介中心性的「路徑控制・仲介」解讀（整理於 Chen et al. 2022 的綜述） |
 | 基礎型 | 被依賴前 10 名 且 btw≈0 且 indeg≥3 | 簡單統計也看得見的基礎。標準選擇，但屬單點集中風險的典型 | 次數中心性的直接含意＋依賴網路的遞移影響（Decan et al. 2019） |
 | 孤立 | indeg=0 且 outdeg=0 | 收集範圍內無依賴關係 | —（資料範圍的說明） |
@@ -323,6 +340,12 @@ python3 run_all.py --offline
   特徵向量中心性則適用具循環結構的網路」。
 - **Spearman ρ 採用以平均排名處理同名次的標準定義**計算。中介中心性在多數節點為 0、同名次大量發生，
   故同名次處理的有無會使 ρ 大幅變動（POC 的簡易式 ≈0.75 → 標準定義下現有資料約 0.28〜0.31: PyPI 0.31・Go 0.28）。本流程採用標準定義之值。
+- **兩領域間的結構比較受邊定義差異干擾**。PyPI 的邊來自解析後的依賴圖，Go 的邊為 go.mod 宣告的依賴，
+  因此密度・連通分量・模組度・切斷點數等領域間差異，可能部分源自依賴定義與擷取方法的不同。
+  領域間的差異僅以「觀察到的差異」報告，不歸因於治理型態等領域特性。
+- **診斷為「確認候選的提示」，而非經實證的決策指引**。結構指標用於篩選值得精查的候選（screening）；
+  被提示的套件是否確實需要監控、導入前精查或支援，仍需另行確認維護體制等專案實情。
+  本系統不主張決策有用性已獲實證。
 
 ## 注意
 
@@ -398,7 +421,7 @@ python3 run_all.py --offline
 
 | 结构型 | 判定条件 | 决策上的含义（模板要旨） | 解释依据 |
 | --- | --- | --- | --- |
-| 切断点 | 关节点 且 被依赖>0 且 影响范围>1 | 提示移除时孤立的范围（预计算 `cut_impact`）；就集中风险评估的观点建议优先监控 | 图论中关节点＝移除后连通性丧失的顶点，此标准含义 |
+| 切断点 | 关节点 且 被依赖>0 且 影响范围>1 | 提示移除时孤立的范围（预计算 `cut_impact`）；就集中风险评估的观点提示为监控・精查的候选 | 图论中关节点＝移除后连通性丧失的顶点，此标准含义 |
 | 桥接型 | btw>0 且 被依赖排名−中介排名 ≥ 5 | 简单统计看不见的路径要冲。建议确认维护状况・容易被忽略的支持对象 | 中介中心性的「路径控制・中介」解读（整理于 Chen et al. 2022 的综述） |
 | 基础型 | 被依赖前 10 名 且 btw≈0 且 indeg≥3 | 简单统计也看得见的基础。标准选择，但属单点集中风险的典型 | 度中心性的直接含义＋依赖网络的传递影响（Decan et al. 2019） |
 | 孤立 | indeg=0 且 outdeg=0 | 收集范围内无依赖关系 | —（数据范围的说明） |
@@ -431,6 +454,12 @@ python3 run_all.py --offline
   特征向量中心性则适用具循环结构的网络」。
 - **Spearman ρ 采用以平均排名处理同名次的标准定义**计算。中介中心性在多数节点为 0、同名次大量发生，
   故同名次处理的有无会使 ρ 大幅变动（POC 的简易式 ≈0.75 → 标准定义下现有数据约 0.28〜0.31: PyPI 0.31・Go 0.28）。本流程采用标准定义之值。
+- **两领域间的结构比较受边定义差异干扰**。PyPI 的边来自解析后的依赖图，Go 的边为 go.mod 声明的依赖，
+  因此密度・连通分量・模块度・切断点数等领域间差异，可能部分源自依赖定义与提取方法的不同。
+  领域间的差异仅以「观察到的差异」报告，不归因于治理形态等领域特性。
+- **诊断为「确认候选的提示」，而非经实证的决策指引**。结构指标用于筛选值得精查的候选（screening）；
+  被提示的软件包是否确实需要监控、导入前精查或支持，仍需另行确认维护体制等项目实情。
+  本系统不主张决策有用性已获实证。
 
 ## 注意
 
