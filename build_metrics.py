@@ -301,11 +301,11 @@ def analyze(g, label, domain, collect_meta, system="pypi", descs=None):
                 "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）",
             })
 
-    # 意味のある切断点（関節点のうち、被依存>0 かつ影響範囲>1 のもの）
-    meaningful_aps = sorted(
-        v for v in aps if indeg[v] > 0 and imp[v] > 1
-    )
-    cut_impact = articulation_impact(g, meaningful_aps)
+    # 意味のある切断点（関節点のうち、被依存>0 かつ除去時に孤立するノードが 2 以上のもの）
+    cand_aps = sorted(v for v in aps if indeg[v] > 0)
+    cut_impact_all = articulation_impact(g, cand_aps)
+    meaningful_aps = sorted(v for v in cand_aps if len(cut_impact_all[v]) >= 2)
+    cut_impact = {v: cut_impact_all[v] for v in meaningful_aps}
     communities = community_stats(g, part, pr)
 
     node_rows = []

@@ -1,7 +1,7 @@
 {
  "domain": "cn",
  "label": "クラウドネイティブ系 (Go)",
- "generated_at": "2026-06-13T05:55:07Z",
+ "generated_at": "2026-07-20T09:12:59Z",
  "collect": {
   "seeds_ok": [
    "cloud.google.com/go",
@@ -2697,14 +2697,8 @@
    "note": "多数のパッケージが直接依存する土台（単純統計でも見える単一障害点）"
   }
  ],
- "articulation_points": [
-  "go.opentelemetry.io/otel/trace"
- ],
- "cut_impact": {
-  "go.opentelemetry.io/otel/trace": [
-   "github.com/elastic/go-elasticsearch/v8"
-  ]
- },
+ "articulation_points": [],
+ "cut_impact": {},
  "communities": [
   {
    "id": 0,
@@ -12824,7 +12818,7 @@
    "r_in": 20,
    "r_bt": 99,
    "com": 0,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "可観測性・監視",
    "desc_ja": "OpenTelemetry GoのAPIとSDK",
@@ -38351,8 +38345,8 @@
    "betweenness": 0.04,
    "pagerank_eigen": 0.0,
    "community_aps": 0.02,
-   "layout": 0.39,
-   "total": 0.46
+   "layout": 0.42,
+   "total": 0.49
   }
  }
 }

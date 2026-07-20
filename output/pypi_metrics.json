@@ -1,7 +1,7 @@
 {
  "domain": "ds",
  "label": "データサイエンス系 (PyPI)",
- "generated_at": "2026-06-13T05:55:06Z",
+ "generated_at": "2026-07-20T09:12:58Z",
  "collect": {
   "seeds_ok": [
    "aif360",
@@ -2577,92 +2577,54 @@
  ],
  "articulation_points": [
   "aiohttp",
+  "albucore",
   "alive-progress",
-  "apswutils",
-  "astropy",
-  "autogluon-core",
-  "autogluon-tabular",
-  "beautifulsoup4",
+  "autogluon-multimodal",
   "bleach",
   "celery",
-  "cffi",
   "dash",
   "distributed",
+  "dvc-data",
   "gevent",
-  "gitdb",
   "gitpython",
   "google-auth",
-  "gymnasium",
-  "huggingface-hub",
   "hyperopt",
+  "interpret-core",
   "ipykernel",
-  "ipyleaflet",
   "ipython",
-  "ipyvolume",
   "ipywidgets",
-  "jedi",
   "jsonschema",
-  "jupyter-events",
-  "jupyter-server",
   "jupyterlab-server",
-  "linkify-it-py",
   "llama-index-core",
-  "markdown-it-py",
   "matplotlib",
-  "model-index",
   "nbconvert",
-  "nbformat",
-  "nltk",
   "numpy",
-  "nvidia-ml-py",
   "openai",
   "opendatalab",
-  "openmim",
-  "optuna",
-  "pandas",
+  "orbax-checkpoint",
   "panel",
-  "plum-dispatch",
-  "pmdarima",
-  "psutil",
-  "py4j",
-  "pyasn1-modules",
-  "pydantic",
   "pymoo",
   "requests",
-  "rfc3987-syntax",
-  "shap",
   "spacy",
-  "stack-data",
-  "tensorboard",
-  "transformers",
-  "typer",
-  "typing-inspect",
-  "vaex-core",
-  "xgboost"
+  "stack-data"
  ],
  "cut_impact": {
   "aiohttp": [
    "aiohappyeyeballs",
    "async-timeout"
   ],
+  "albucore": [
+   "simsimd",
+   "stringzilla"
+  ],
   "alive-progress": [
    "about-time",
    "graphemeu"
   ],
-  "apswutils": [
-   "apsw"
-  ],
-  "astropy": [
-   "astropy-iers-data"
-  ],
-  "autogluon-core": [
-   "ray"
-  ],
-  "autogluon-tabular": [
-   "loguru"
-  ],
-  "beautifulsoup4": [
-   "soupsieve"
+  "autogluon-multimodal": [
+   "nvidia-ml-py3",
+   "seqeval",
+   "text-unidecode"
   ],
   "bleach": [
    "tinycss2",
@@ -2672,9 +2634,6 @@
    "billiard",
    "tzlocal"
   ],
-  "cffi": [
-   "pycparser"
-  ],
   "dash": [
    "janus",
    "retrying"
@@ -2683,12 +2642,13 @@
    "tblib",
    "zict"
   ],
+  "dvc-data": [
+   "dictdiffer",
+   "diskcache"
+  ],
   "gevent": [
    "zope-event",
    "zope-interface"
-  ],
-  "gitdb": [
-   "smmap"
   ],
   "gitpython": [
    "gitdb",
@@ -2698,22 +2658,17 @@
    "pyasn1",
    "pyasn1-modules"
   ],
-  "gymnasium": [
-   "farama-notifications"
-  ],
-  "huggingface-hub": [
-   "hf-xet"
-  ],
   "hyperopt": [
    "py4j",
    "pyspark"
   ],
+  "interpret-core": [
+   "dash-cytoscape",
+   "interpret"
+  ],
   "ipykernel": [
    "debugpy",
    "nest-asyncio2"
-  ],
-  "ipyleaflet": [
-   "jupyter-leaflet"
   ],
   "ipython": [
    "asttokens",
@@ -2723,15 +2678,9 @@
    "pure-eval",
    "stack-data"
   ],
-  "ipyvolume": [
-   "ipywebrtc"
-  ],
   "ipywidgets": [
    "jupyterlab-widgets",
    "widgetsnbextension"
-  ],
-  "jedi": [
-   "parso"
   ],
   "jsonschema": [
    "fqdn",
@@ -2741,33 +2690,18 @@
    "uri-template",
    "webcolors"
   ],
-  "jupyter-events": [
-   "python-json-logger"
-  ],
-  "jupyter-server": [
-   "send2trash"
-  ],
   "jupyterlab-server": [
    "babel",
    "json5"
-  ],
-  "linkify-it-py": [
-   "uc-micro-py"
   ],
   "llama-index-core": [
    "aiosqlite",
    "dirtyjson",
    "tinytag"
   ],
-  "markdown-it-py": [
-   "mdurl"
-  ],
   "matplotlib": [
    "fonttools",
    "kiwisolver"
-  ],
-  "model-index": [
-   "ordered-set"
   ],
   "nbconvert": [
    "bleach",
@@ -2776,20 +2710,11 @@
    "tinycss2",
    "webencodings"
   ],
-  "nbformat": [
-   "fastjsonschema"
-  ],
-  "nltk": [
-   "textblob"
-  ],
   "numpy": [
    "biopython",
    "emcee",
    "flaml",
    "opencv-python"
-  ],
-  "nvidia-ml-py": [
-   "pynvml"
   ],
   "openai": [
    "jiter",
@@ -2799,37 +2724,14 @@
    "openxlab",
    "pycryptodome"
   ],
-  "openmim": [
-   "pip"
-  ],
-  "optuna": [
-   "colorlog"
-  ],
-  "pandas": [
-   "pytz"
+  "orbax-checkpoint": [
+   "aiofiles",
+   "humanize"
   ],
   "panel": [
    "linkify-it-py",
    "nh3",
    "uc-micro-py"
-  ],
-  "plum-dispatch": [
-   "beartype"
-  ],
-  "pmdarima": [
-   "cython"
-  ],
-  "psutil": [
-   "memory-profiler"
-  ],
-  "py4j": [
-   "pyspark"
-  ],
-  "pyasn1-modules": [
-   "pyasn1"
-  ],
-  "pydantic": [
-   "annotated-types"
   ],
   "pymoo": [
    "about-time",
@@ -2840,12 +2742,6 @@
    "charset-normalizer",
    "pysocks"
   ],
-  "rfc3987-syntax": [
-   "lark"
-  ],
-  "shap": [
-   "slicer"
-  ],
   "spacy": [
    "langcodes",
    "spacy-loggers"
@@ -2854,24 +2750,6 @@
    "asttokens",
    "executing",
    "pure-eval"
-  ],
-  "tensorboard": [
-   "tensorboard-data-server"
-  ],
-  "transformers": [
-   "sentencepiece"
-  ],
-  "typer": [
-   "shellingham"
-  ],
-  "typing-inspect": [
-   "mypy-extensions"
-  ],
-  "vaex-core": [
-   "aplus"
-  ],
-  "xgboost": [
-   "nvidia-nccl-cu12"
   ]
  },
  "communities": [
@@ -3482,7 +3360,7 @@
    "r_in": 276,
    "r_bt": 214,
    "com": 2,
-   "art": 0,
+   "art": 1,
    "seed": 0,
    "cat": "機械学習",
    "desc_ja": "深層学習・コンピュータビジョン向けの高性能画像処理関数",
@@ -3782,7 +3660,7 @@
    "r_in": 285,
    "r_bt": 139,
    "com": 9,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "apsw 向けの sqlite-minutils のフォーク",
@@ -3962,7 +3840,7 @@
    "r_in": 292,
    "r_bt": 155,
    "com": 8,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "天文学・天体物理学のコアライブラリ",
@@ -4162,7 +4040,7 @@
    "r_in": 83,
    "r_bt": 31,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "高速かつ高精度な機械学習を 3 行で実現するライブラリ",
@@ -4202,7 +4080,7 @@
    "r_in": 299,
    "r_bt": 29,
    "com": 1,
-   "art": 0,
+   "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "高速かつ高精度な機械学習を 3 行で実現するライブラリ",
@@ -4222,7 +4100,7 @@
    "r_in": 161,
    "r_bt": 19,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "高速かつ高精度な機械学習を 3 行で実現するライブラリ",
@@ -4422,7 +4300,7 @@
    "r_in": 110,
    "r_bt": 85,
    "com": 9,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "スクリーンスクレイピング用ライブラリ",
@@ -4942,7 +4820,7 @@
    "r_in": 87,
    "r_bt": 69,
    "com": 11,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Python から C コードを呼び出す外部関数インターフェース（FFI）",
@@ -6302,7 +6180,7 @@
    "r_in": 347,
    "r_bt": 183,
    "com": 4,
-   "art": 0,
+   "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "DVCのデータ管理サブシステム",
@@ -7482,7 +7360,7 @@
    "r_in": 373,
    "r_bt": 141,
    "com": 2,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Git オブジェクトデータベース",
@@ -7942,7 +7820,7 @@
    "r_in": 198,
    "r_bt": 170,
    "com": 0,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "強化学習の標準APIと多様な参照環境（旧Gym）",
@@ -8222,7 +8100,7 @@
    "r_in": 28,
    "r_bt": 3,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "機械学習",
    "desc_ja": "huggingface.co のモデルやデータセット等を取得・公開するクライアント",
@@ -8482,7 +8360,7 @@
    "r_in": 401,
    "r_bt": 30,
    "com": 0,
-   "art": 0,
+   "art": 1,
    "seed": 0,
    "cat": "機械学習",
    "desc_ja": "解釈可能なモデルの学習とブラックボックス機械学習の説明を行うライブラリ",
@@ -8562,7 +8440,7 @@
    "r_in": 404,
    "r_bt": 123,
    "com": 8,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "動的なLeaflet地図を表示するJupyterウィジェット",
@@ -8642,7 +8520,7 @@
    "r_in": 407,
    "r_bt": 67,
    "com": 3,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "3Dボリュームを描画するIPythonウィジェット",
@@ -8862,7 +8740,7 @@
    "r_in": 412,
    "r_bt": 79,
    "com": 3,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "テキストエディタで使える Python の自動補完ツール",
@@ -9182,7 +9060,7 @@
    "r_in": 420,
    "r_bt": 41,
    "com": 14,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "Jupyter のイベントシステムライブラリ",
@@ -9242,7 +9120,7 @@
    "r_in": 73,
    "r_bt": 10,
    "com": 3,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "Jupyter Web アプリのバックエンド（コアサービス・API・REST）",
@@ -9802,7 +9680,7 @@
    "r_in": 435,
    "r_bt": 186,
    "com": 5,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "完全なUnicode対応のリンク認識ライブラリ",
@@ -10122,7 +10000,7 @@
    "r_in": 131,
    "r_bt": 40,
    "com": 5,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "markdown-it の Python 移植版（Markdown 解析）",
@@ -10542,7 +10420,7 @@
    "r_in": 454,
    "r_bt": 172,
    "com": 7,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "MLモデル結果を一元管理しPapers with Codeで閲覧するツール",
@@ -10942,7 +10820,7 @@
    "r_in": 75,
    "r_bt": 23,
    "com": 3,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "Jupyter・開発環境",
    "desc_ja": "Jupyter Notebook のフォーマット",
@@ -11142,7 +11020,7 @@
    "r_in": 76,
    "r_bt": 83,
    "com": 11,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "自然言語処理",
    "desc_ja": "自然言語処理ツールキット",
@@ -11302,7 +11180,7 @@
    "r_in": 222,
    "r_bt": 516,
    "com": 8,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "NVIDIA Management LibraryのPythonバインディング",
@@ -11522,7 +11400,7 @@
    "r_in": 471,
    "r_bt": 71,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "OpenMMLabパッケージをインストールするツールMIM",
@@ -11762,7 +11640,7 @@
    "r_in": 227,
    "r_bt": 62,
    "com": 10,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "機械学習",
    "desc_ja": "ハイパーパラメータ最適化フレームワーク",
@@ -11782,7 +11660,7 @@
    "r_in": 478,
    "r_bt": 80,
    "com": 6,
-   "art": 0,
+   "art": 1,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Orbaxのチェックポイント",
@@ -11882,7 +11760,7 @@
    "r_in": 4,
    "r_bt": 7,
    "com": 0,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "データ処理・数値計算",
    "desc_ja": "データ分析・時系列・統計のための強力なデータ構造",
@@ -12362,7 +12240,7 @@
    "r_in": 231,
    "r_bt": 96,
    "com": 9,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Pythonにおける多重ディスパッチ",
@@ -12382,7 +12260,7 @@
    "r_in": 232,
    "r_bt": 107,
    "com": 0,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "統計・時系列",
    "desc_ja": "forecast::auto.arima に相当する Python パッケージ",
@@ -12642,7 +12520,7 @@
    "r_in": 19,
    "r_bt": 558,
    "com": 4,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "プロセスとシステム監視のためのクロスプラットフォームライブラリ",
@@ -12722,7 +12600,7 @@
    "r_in": 237,
    "r_bt": 562,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Pythonから任意のJavaオブジェクトへ動的にアクセスするライブラリ",
@@ -12802,7 +12680,7 @@
    "r_in": 500,
    "r_bt": 173,
    "com": 2,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "ASN.1 ベースのプロトコルモジュール集",
@@ -12942,7 +12820,7 @@
    "r_in": 13,
    "r_bt": 20,
    "com": 2,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Python の型ヒントを用いたデータ検証ライブラリ",
@@ -14002,7 +13880,7 @@
    "r_in": 532,
    "r_bt": 86,
    "com": 14,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "RFC 3987 に従い文字列を構文検証するヘルパー関数群",
@@ -14562,7 +14440,7 @@
    "r_in": 250,
    "r_bt": 99,
    "com": 0,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "機械学習",
    "desc_ja": "機械学習モデルの出力を説明する統一的手法",
@@ -15442,7 +15320,7 @@
    "r_in": 141,
    "r_bt": 55,
    "com": 5,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Tensorの流れを観察できるTensorBoard",
@@ -16162,7 +16040,7 @@
    "r_in": 38,
    "r_bt": 11,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "機械学習",
    "desc_ja": "テキスト・画像・音声・マルチモーダルの機械学習モデル定義フレームワーク",
@@ -16262,7 +16140,7 @@
    "r_in": 64,
    "r_bt": 17,
    "com": 1,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "Python の型ヒントに基づく CLI 構築ライブラリ",
@@ -16302,7 +16180,7 @@
    "r_in": 107,
    "r_bt": 130,
    "com": 2,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "typing モジュールの実行時検査ユーティリティ",
@@ -16622,7 +16500,7 @@
    "r_in": 51,
    "r_bt": 9,
    "com": 8,
-   "art": 1,
+   "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
    "desc_ja": "vaex の中核部分",
@@ -17182,7 +17060,7 @@
    "r_in": 151,
    "r_bt": 153,
    "com": 8,
-   "art": 1,
+   "art": 0,
    "seed": 1,
    "cat": "機械学習",
    "desc_ja": "XGBoost の Python パッケージ",
@@ -26018,11 +25896,11 @@
   "betweenness": "brandes(normalized, directed)",
   "durations_sec": {
    "basic": 0.0,
-   "betweenness": 0.04,
+   "betweenness": 0.05,
    "pagerank_eigen": 0.0,
    "community_aps": 0.01,
-   "layout": 0.53,
-   "total": 0.58
+   "layout": 0.78,
+   "total": 0.84
   }
  }
 }

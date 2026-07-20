@@ -67,7 +67,7 @@ same output. The rule table itself is part of the DSS-artifact design.
 
 | Type | Condition | Decision implication (template gist) | Basis |
 | --- | --- | --- | --- |
-| Cut point | articulation point & in-degree>0 & reach>1 | shows the set isolated on removal (precomputed `cut_impact`); flagged as a candidate for closer monitoring / review under the concentration-risk lens | articulation point = vertex whose removal breaks connectivity (graph theory) |
+| Cut point | articulation point & in-degree>0 & ≥2 nodes isolated on removal | shows the set isolated on removal (precomputed `cut_impact`); flagged as a candidate for closer monitoring / review under the concentration-risk lens | articulation point = vertex whose removal breaks connectivity (graph theory) |
 | Bridge | btw>0 & (in-degree rank − betweenness rank) ≥ 5 | a path bottleneck invisible to simple stats; check maintenance, an overlooked support candidate | the "path-control / brokerage" reading of betweenness (as synthesized in Chen et al. 2022) |
 | Foundation | top-10 in-degree & btw≈0 & in-degree≥3 | a base visible even to simple stats; standard choice but a textbook concentration point | direct meaning of degree centrality + transitive impact in dependency networks (Decan et al. 2019) |
 | Isolated | in-degree=0 & out-degree=0 | no dependency relation within the collected scope | — (scope note) |
@@ -189,7 +189,7 @@ python3 run_all.py --offline
 
 | 構造型 | 判定条件 | 意思決定上の含意（テンプレート要旨） | 解釈の根拠 |
 | --- | --- | --- | --- |
-| 切断点 | 関節点 かつ 被依存>0 かつ 影響範囲>1 | 喪失時に孤立する範囲（事前計算 `cut_impact`）を提示。集中リスク把握の観点での監視・精査の候補として提示 | グラフ理論における関節点＝除去により連結が失われる頂点という標準的含意 |
+| 切断点 | 関節点 かつ 被依存>0 かつ 除去時に孤立するノードが 2 以上 | 喪失時に孤立する範囲（事前計算 `cut_impact`）を提示。集中リスク把握の観点での監視・精査の候補として提示 | グラフ理論における関節点＝除去により連結が失われる頂点という標準的含意 |
 | 橋渡し型 | btw>0 かつ 被依存順位−媒介順位 ≥ 5 | 単純統計では見えない経路の要衝。保守体制確認・見落とされやすい支援先候補 | 媒介中心性の「経路制御・仲介」解釈（Chen et al. 2022 のレビューに整理されている） |
 | 土台型 | 被依存上位 10 位以内 かつ btw≈0 かつ indeg≥3 | 単純統計でも見える基盤。標準的選択だが一点集中リスクの典型例 | 次数中心性の直接的含意＋依存ネットワークの推移的影響（Decan et al. 2019） |
 | 孤立 | indeg=0 かつ outdeg=0 | 収集範囲内に依存関係なし | —（データ範囲の説明） |
@@ -230,7 +230,7 @@ python3 run_all.py --offline
   「観察された違い」として報告し、ガバナンスなど領域特性への帰属は行わない。
 - **診断は「確認候補の提示」であり、有効性が実証された判断指針ではない**。構造指標は精査に値する
   候補を絞り込む（スクリーニング）ものであり、提示されたパッケージが実際に監視・導入前精査・支援を
-  要するかは、保守体制など対象の実情の別途確認が必要である。本システムは意思決定上の有用性の
+  要するかは、保守体制など対象の実情を別途確認する必要がある。本システムは意思決定上の有用性の
   実証までは主張しない。
 
 ## 注意
@@ -307,7 +307,7 @@ python3 run_all.py --offline
 
 | 結構型 | 判定條件 | 決策上的含意（範本要旨） | 解釋依據 |
 | --- | --- | --- | --- |
-| 切斷點 | 關節點 且 被依賴>0 且 影響範圍>1 | 提示移除時孤立的範圍（預計算 `cut_impact`）；就集中風險評估的觀點提示為監控・精查的候選 | 圖論中關節點＝移除後連通性喪失的頂點，此標準含意 |
+| 切斷點 | 關節點 且 被依賴>0 且 移除時孤立節點 ≥2 | 提示移除時孤立的範圍（預計算 `cut_impact`）；就集中風險評估的觀點提示為監控・精查的候選 | 圖論中關節點＝移除後連通性喪失的頂點，此標準含意 |
 | 橋接型 | btw>0 且 被依賴排名−中介排名 ≥ 5 | 簡單統計看不見的路徑要衝。建議確認維護狀況・容易被忽略的支援對象 | 中介中心性的「路徑控制・仲介」解讀（整理於 Chen et al. 2022 的綜述） |
 | 基礎型 | 被依賴前 10 名 且 btw≈0 且 indeg≥3 | 簡單統計也看得見的基礎。標準選擇，但屬單點集中風險的典型 | 次數中心性的直接含意＋依賴網路的遞移影響（Decan et al. 2019） |
 | 孤立 | indeg=0 且 outdeg=0 | 收集範圍內無依賴關係 | —（資料範圍的說明） |
@@ -421,7 +421,7 @@ python3 run_all.py --offline
 
 | 结构型 | 判定条件 | 决策上的含义（模板要旨） | 解释依据 |
 | --- | --- | --- | --- |
-| 切断点 | 关节点 且 被依赖>0 且 影响范围>1 | 提示移除时孤立的范围（预计算 `cut_impact`）；就集中风险评估的观点提示为监控・精查的候选 | 图论中关节点＝移除后连通性丧失的顶点，此标准含义 |
+| 切断点 | 关节点 且 被依赖>0 且 移除时孤立节点 ≥2 | 提示移除时孤立的范围（预计算 `cut_impact`）；就集中风险评估的观点提示为监控・精查的候选 | 图论中关节点＝移除后连通性丧失的顶点，此标准含义 |
 | 桥接型 | btw>0 且 被依赖排名−中介排名 ≥ 5 | 简单统计看不见的路径要冲。建议确认维护状况・容易被忽略的支持对象 | 中介中心性的「路径控制・中介」解读（整理于 Chen et al. 2022 的综述） |
 | 基础型 | 被依赖前 10 名 且 btw≈0 且 indeg≥3 | 简单统计也看得见的基础。标准选择，但属单点集中风险的典型 | 度中心性的直接含义＋依赖网络的传递影响（Decan et al. 2019） |
 | 孤立 | indeg=0 且 outdeg=0 | 收集范围内无依赖关系 | —（数据范围的说明） |
