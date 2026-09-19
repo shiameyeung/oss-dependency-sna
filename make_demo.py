@@ -29,7 +29,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>OSS 依存ネットワーク分析デモ — 意思決定支援（DSS）型の分析支援システム</title>
+<title>OSS 依存ネットワーク分析</title>
 <style>
   /* 配色: クリーム地・青・キャンディイエロー */
   :root { --bg:#FFFDF5; --panel:#ffffff; --panel2:#EAF4FF; --txt:#1F2D40; --sub:#5C6B7A;
@@ -125,6 +125,71 @@ TEMPLATE = r"""<!DOCTYPE html>
             padding:6px 20px 2px; }
   .legend span { display:inline-flex; align-items:center; gap:5px; }
   .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+  /* 発表時にも読める配置。操作・図・選択結果を同じ画面に収める。 */
+  :root { --bg:#F5F7FA; --line:#DFE6EE; --sub:#586A7E; }
+  header { background:#fff; padding:18px 24px 12px; }
+  h1 { font-size:21px; letter-spacing:.01em; padding-right:270px; }
+  #h1sub { display:block; margin-top:5px; font-size:13px; font-weight:400; }
+  #langbar { top:20px; right:24px; }
+  .hintbar { margin-top:10px; gap:8px 18px; }
+  .hint-item { font-size:12px; }
+  .bar { padding:14px 24px; gap:10px; display:grid; grid-template-columns:1.2fr 1fr 1fr; }
+  .grp { border:0; padding:0; background:none; min-width:0; flex-wrap:wrap; gap:6px; }
+  .grp:nth-child(1) { grid-column:1; grid-row:1; }
+  .grp:nth-child(2) { grid-column:2; grid-row:1; }
+  .grp:nth-child(5) { grid-column:3; grid-row:1; justify-content:flex-end; }
+  .grp:nth-child(3) { grid-column:1 / 3; grid-row:2; }
+  .grp:nth-child(4) { grid-column:3; grid-row:2; justify-content:flex-end; }
+  .grp .lbl { font-size:11px; letter-spacing:0; margin-right:3px; }
+  #domains, #views, #metrics { display:inline-flex; gap:3px; flex-wrap:wrap; }
+  button { font-family:inherit; background:#fff; border-color:var(--line); padding:7px 10px; font-size:12px; min-height:34px; }
+  button.on { border-color:var(--acc); box-shadow:0 2px 5px #2C5F9414; }
+  button:focus-visible, input:focus-visible, select:focus-visible, [role=button]:focus-visible, summary:focus-visible { outline:3px solid #5DA8E8; outline-offset:3px; }
+  #q { width:132px; font-size:12px; min-height:34px; background:#fff; }
+  #catSel { max-width:150px; min-height:34px; background:#fff; }
+  .sliderbox input { width:100px; }
+  main { padding:0 24px; grid-template-columns:minmax(0,1fr) 350px; gap:16px; }
+  .stage { overflow:hidden; border-radius:12px; }
+  #svg { height:clamp(400px,calc(100vh - 265px),620px); }
+  .side { scrollbar-gutter:stable; max-height:clamp(400px,calc(100vh - 265px),620px); gap:12px; scrollbar-width:thin; }
+  .card { border-radius:12px; padding:16px; }
+  .card h2 { font-size:14px; margin-bottom:12px; }
+  .diag-name { font-size:19px; margin:0 0 8px; overflow-wrap:anywhere; }
+  .diag-desc { font-size:12px; font-style:normal; line-height:1.6; }
+  .diag-table { font-size:12px; margin:10px 0; }
+  .diag-table td { padding:5px 0; }
+  .diag-table td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+  .diag-text, .diag-reco { font-size:12px; line-height:1.7; }
+  .diag-cut { padding:9px; }
+  .hint { font-size:13px; line-height:1.9; }
+  .rank-row { padding:6px 2px; }
+  .rank-row .nm { flex:1; min-width:0; }
+  .bar-bg { display:block; }
+  .bar-fg { display:block; }
+  .rank-row .bar-bg { flex:0 0 52px; }
+  #zoomReset { width:auto; height:34px; padding:0 10px; font-size:12px; border-color:var(--line); }
+  .divband { margin:16px 24px 0; padding:16px; border-radius:12px; }
+  .divband h2 { font-size:15px; }
+  .div-row { line-height:1.7; padding:10px; overflow-wrap:anywhere; }
+  .div-row:hover { outline:1px solid var(--warn); }
+  .legend { padding:12px 24px 0; }
+  footer { padding:12px 24px 20px; }
+  .method-detail { border-top:1px solid var(--line); padding-top:9px; margin-top:10px; font-size:11px; line-height:1.6; color:var(--sub); }
+  .method-detail summary { cursor:pointer; color:var(--acc); font-size:12px; }
+  @media(max-width:1100px) {
+    .bar { grid-template-columns:1fr 1fr; }
+    .grp:nth-child(5) { grid-column:2; grid-row:3; }
+    .grp:nth-child(3) { grid-column:1 / 3; grid-row:2; }
+    .grp:nth-child(4) { grid-column:1; grid-row:3; justify-content:flex-start; }
+    h1 { font-size:18px; }
+  }
+  @media(max-width:760px) {
+    header { padding:16px; } h1 { padding-right:0; } #langbar { position:static; justify-content:flex-end; margin-bottom:10px; }
+    .bar { display:flex; padding:12px 16px; } .grp { width:100%; justify-content:flex-start!important; }
+    main { grid-template-columns:1fr; padding:0 16px; } .side { max-height:none; }
+    #svg { height:400px; } .divband { margin:16px; } #divList { grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
@@ -246,16 +311,16 @@ function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.des
 // UI 文字列・診断テンプレート（日/英）。データ準備段階で固定（実行時 LLM 不使用）。
 const STR = {
  ja: {
-  h1main:"OSS 依存ネットワーク分析デモ",
-  h1sub:"— 意思決定支援（DSS）型の分析支援システム",
-  headerHint:{edge:"依存元 → 依存先", size:"大きさ・色 = 選択中の指標", cut:"切断点（除くと孤立が生じる）", click:"クリックで診断を表示", zoom:"ホイールで拡大・ドラッグで移動（⟲ で初期化）"},
-  gDomain:"領域", gView:"ビュー", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
-  comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色", zoomResetTitle:"表示をリセット",
-  vNet:"ネットワーク図", vScatter:"散布図（被依存×媒介）",
+  h1main:"OSS 依存ネットワーク分析",
+  h1sub:"依存関係を可視化し、詳しく確認するパッケージを探す",
+  headerHint:{edge:"依存元 → 依存先", size:"大きさ・色 = 選択中の指標", cut:"金色の輪 = 切断点", click:"点を選ぶと詳細を表示", zoom:"ホイールで拡大・ドラッグで移動"},
+  gDomain:"領域", gView:"表示", gMetric:"指標", gSearch:"検索・分類", gTopn:"表示数", gLang:"言語",
+  comBtn:"コミュニティ着色", comBtnTitle:"Louvain 法で検出したコミュニティごとに着色", zoomResetTitle:"図の位置を戻す",
+  vNet:"ネットワーク図", vScatter:"散布図",
   qPlaceholder:"名前で検索…", catAll:"分類: すべて",
-  diagTitle:"診断 — これは何を意味するか",
-  diagHint:'ノード（またはコミュニティ着色時のコミュニティ行）をクリックすると、指標データと「意思決定上何を意味するか」の診断を表示します。<br>診断はノード型 × 意思決定場面の対応表に基づく決定論的なルール＋テンプレートで生成（AI 不使用・再現可能）。',
-  divTitle:'順位の乖離 — 単純統計では見えない「要衝」',
+  diagTitle:"選択したパッケージ",
+  diagHint:'図の点やランキングの名前を選ぶと、依存関係と指標を確認できます。<br><br>名前がわかる場合は検索欄に入力し、Enter キーで選択できます。<br><br>図の余白をクリックすると全体表示に戻ります。',
+  divTitle:'指標による順位の違い — 名前を選んで確認',
   legNormal:"通常ノード", legSeed:"シード（分析起点）", legCut:"切断点 ⚠（クリックで孤立する範囲を表示）", legIso:"切断時に孤立する範囲",
   rankComTitle:"コミュニティ（クリックでフォーカス）",
   rankTopSuffix:" — Top 10",
@@ -265,23 +330,23 @@ const STR = {
   tIndeg:"被依存数（単純統計）", tIndegVal:(v,N,r)=>`${v}（全 ${N} 中 ${r}位）`,
   tReach:"影響範囲（推移的）", tReachVal:v=>`${v} パッケージ`,
   tBtw:"媒介中心性", tBtwVal:(v,r)=>`${v}（${r}位）`, tPr:"PageRank", tCom:"コミュニティ",
-  cutMain:cl=>{const p=cl>=10?`<b>${cl} 個</b>のパッケージが一斉に主要ネットワークから孤立し、影響が特に広範に及ぶ`:cl>=3?`<b>${cl} 個</b>のパッケージが主要ネットワークから孤立する`:`孤立する範囲は <b>${cl} パッケージ</b>と局所的にとどまるが、構造上の急所であることに変わりはない`;return `ネットワークの<b>切断点</b>にあたる。仮にこのパッケージが利用不能になると、${p}（図中に黄色でハイライト表示）。`;},
+  cutMain:cl=>`この点をグラフから除くと、<b>${cl} パッケージ</b>が主要なつながりから分かれます。該当する範囲を図中に黄色で表示しています。`,
   cutList:(head,more)=>`<div class="diag-cut"><b>孤立する範囲:</b> ${head}${more?` 他 ${more} 件`:""}</div>`,
-  cutReco:"<b>集中リスク把握:</b> 構造上の急所であり、監視・精査の候補。<b>利用・支援判断:</b> 代替経路の有無の事前確認を推奨。",
-  bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`両指標の順位差は ${gap} に達し、順位の乖離が際立って大きい。`:gap>=30?`両指標の順位差は ${gap} と大きい。`:"";return `被依存数（${rin}位）に比べ、媒介中心性は <b>${rbt}位</b>と明確に高い。${g}依存経路の要衝（<b>橋渡し</b>）に位置し、障害時には複数のパッケージ群の間の依存経路が分断されるおそれがある。単純統計では検出しにくい型。`;},
-  bridgeReco:"<b>利用判断:</b> 保守体制・更新頻度の確認を推奨。<b>支援判断:</b> 見落とされやすい支援先候補。",
-  foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`分析対象ネットワーク全体の約 ${Math.round(sh*100)}%（${impact} パッケージ）へ波及する`:`推移的に ${impact} パッケージへ波及する`;return `被依存数 ${indeg}（全体 ${rin}位）の<b>基盤（土台型）</b>パッケージ。停止・脆弱性の影響は${reach}。単純統計でも検出できる型。`;},
-  foundReco:"<b>利用判断:</b> 広く利用されている標準的な選択肢。<b>集中リスク把握:</b> 依存が一点に集中する典型例。保守の継続性に注意。",
+  cutReco:"<b>確認の手がかり:</b> この点を介してつながる範囲を表示しています。実際の障害や影響の大きさを示すものではありません。",
+  bridgeMain:(rin,rbt,gap)=>`被依存数は <b>${rin}位</b>、媒介中心性は <b>${rbt}位</b>です。直接依存される数に比べ、依存経路を橋渡しする位置が目立ちます。`,
+  bridgeReco:"<b>確認の手がかり:</b> 被依存数だけでは上位に現れにくい候補です。利用・支援の判断には保守状況などの確認が必要です。",
+  foundMain:(indeg,rin,impact,N)=>`被依存数は <b>${indeg} 件（${rin}位）</b>です。依存関係をたどると、${impact} パッケージから到達できます。`,
+  foundReco:"<b>確認の手がかり:</b> 収集した範囲で多くのパッケージが依存しています。採用の適否や安全性は別途確認が必要です。",
   isoMain:"このデータ範囲では他のパッケージとの依存関係が観測されない（依存先が収集範囲外、または独立したパッケージ）。",
-  normMain:(rin,rbt)=>`構造上の特異性は検出されない（被依存 ${rin}位・媒介 ${rbt}位）。依存構造上は標準的な位置にあり、個別指標の確認で十分と考えられる。`,
-  evidence:'各指標の解釈は SNA の標準的な読み方（Chen et al. 2022 のレビュー）と依存ネットワーク研究の知見（Decan et al. 2019）を踏まえている。型分類の規則自体は本システムの設計（規則表は README を参照）。本診断は構造指標に基づく<b>確認候補の提示</b>であり、実際の利用・支援・監視の判断には、対象の実情（保守体制・代替可能性など）を別途確認する必要がある。',
+  normMain:(rin,rbt)=>`被依存数は ${rin}位、媒介中心性は ${rbt}位です。本システムの分類条件には該当していません。`,
+  evidence:'指標とルールに基づく確認候補の提示です。判断への有用性を実証したものではありません。対象範囲・取得時点に依存します。分類規則は README を参照。',
   comTitle:cid=>`コミュニティ ${cid}`, comNodes:"ノード数", comInEdges:"内部エッジ数", comDensity:"内部密度", comAvgIn:"平均被依存数",
   comTop:"<b>代表ノード（PageRank 上位）:</b> ",
-  comDesc:"コミュニティは依存が相対的に密な<b>機能群</b>に対応する。",
-  comReco:"<b>利用判断:</b> 代替候補はまず同一コミュニティ内から探索するのが有効。<b>集中リスク把握:</b> 障害が伝播しうる範囲の目安。",
+  comDesc:"コミュニティは、依存関係が相対的に密な<b>ノードのまとまり</b>です。",
+  comReco:"<b>確認の手がかり:</b> まとまりの中の依存関係を確認できます。同じ機能や代替可能性を意味するものではありません。",
   comEvidence:"解釈規則の根拠と規則表は README を参照。", comNone:"コミュニティ情報なし",
   eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（ループのない一方向の構造・DAG）であり、固有ベクトル中心性の反復計算は依存の終端（外向きの依存を持たない「行き止まり」のノード）に値が集中し、うまく順位が付かなくなりやすい（順位が大きく断絶するのはこのため）。診断には被依存数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体も、本分析で得られた知見の一つである</b>。',
-  spearman:sp=>`順位の一致度（Spearman 順位相関 ρ）— 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1.0 から離れるほど SNA 独自の情報が多い）`,
+  spearman:sp=>`順位の一致度（Spearman 順位相関 ρ）— 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1 に近いほど順位が一致）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(被依存 ${indeg}・媒介 ${btw}) 橋渡し型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
   divNone:"この領域では顕著な乖離ノードなし", comRowNote:top=>top?`(${top}系)`:"",
@@ -533,9 +598,9 @@ function diagnoseNode(n, g){
     }
   }
   return `<div class="diag-name">${esc(n.label)}</div>${badges}${descHtml}${table}
-    ${texts.map(t=>`<div class="diag-text">${t}</div>`).join("")}
-    ${recos.length?`<div class="diag-reco">${recos.map(splitReco).join("<br>")}</div>`:""}
-    <div class="muted" style="margin-top:7px">${linkifyReadme(S.evidence)}</div>`;
+    ${texts.slice(0, types.includes("cutpoint") ? 2 : 1).map(t=>`<div class="diag-text">${t}</div>`).join("")}
+    ${recos.length?`<div class="diag-reco">${recos.slice(0,1).map(splitReco).join("<br>")}</div>`:""}
+    <details class="method-detail"><summary>${({ja:"説明の根拠・注意点",en:"Method and limitations",zhHant:"說明依據與限制",zhHans:"说明依据与限制"})[lang]}</summary>${texts.slice(types.includes("cutpoint") ? 2 : 1).join("<br>")}${recos.slice(1).map(splitReco).join("<br>")}${linkifyReadme(S.evidence)}</details>`;
 }
 function diagnoseCom(cid, g){
   const S = T();
@@ -704,6 +769,10 @@ function applyStaticText(){
   $("#lblTopn").textContent = S.gTopn;
   $("#comBtn").textContent = S.comBtn; $("#comBtn").title = S.comBtnTitle;
   $("#zoomReset").title = S.zoomResetTitle;
+  $("#zoomReset").textContent = "⟲ " + S.zoomResetTitle;
+  $("#q").setAttribute("aria-label", S.qPlaceholder);
+  $("#catSel").setAttribute("aria-label", S.gSearch);
+  $("#topn").setAttribute("aria-label", S.gTopn);
   $("#q").placeholder = S.qPlaceholder;
   $("#diagTitle").textContent = S.diagTitle;
   $("#divTitle").textContent = S.divTitle;
@@ -761,6 +830,9 @@ $("#catSel").addEventListener("change", () => {
   catFilter = $("#catSel").value;
   if (catFilter){ comMode=false; selectedCom=null; }
   render();
+});
+$("#q").addEventListener("keydown", e => {
+  if(e.key==="Enter"){ e.preventDefault(); $("#q").dispatchEvent(new Event("change")); }
 });
 $("#q").addEventListener("change", () => {
   const v = $("#q").value.trim().toLowerCase();
@@ -899,6 +971,12 @@ function renderScatter(g, byId){
   $("#labels").innerHTML += `<text x="${40}" y="650" font-size="11" fill="#5C6B7A">${note}</text>`;
 }
 
+// リストから選択した対象がフィルタの外にある場合も、図上で確認できるようにする。
+function focusNode(id){
+  const vis=visibleIds(DATA[curD]);
+  if(vis && !vis.has(id)){ catFilter=""; topN=0; initSlider(); initSearch(); }
+  selected=id; comMode=false; selectedCom=null; render();
+}
 function renderSide(g, byId){
   const S = T();
   const comActive = comMode && view==="net";   // 散布図ではコミュニティフォーカスを適用しない
@@ -931,7 +1009,7 @@ function renderSide(g, byId){
       const cid = +r.dataset.com;
       selectedCom = (selectedCom===cid) ? null : cid; selected=null; render(); });
   } else {
-    $("#rankTitle").textContent = mlab(curM) + S.rankTopSuffix;
+    $("#rankTitle").textContent = mshort(curM) + S.rankTopSuffix;
     const mx2 = Math.max(...g.nodes.map(n=>n[curM])) || 1;
     const rows = [...g.nodes].sort((a,b)=>b[curM]-a[curM]).slice(0,10);
     const eigNote = curM==="eig"
@@ -939,10 +1017,10 @@ function renderSide(g, byId){
       : "";
     $("#rankList").innerHTML = eigNote + rows.map(n =>
       `<div class="rank-row${n.id===selected?' sel':''}" data-id="${n.id}">
-        <span class="nm">${n.art?"⚠ ":""}${esc(n.label)}</span>
+        <span class="nm" title="${esc(n.id)}">${n.art?"⚠ ":""}${esc(n.label)}</span>
         <span class="bar-bg"><span class="bar-fg" style="width:${100*n[curM]/mx2}%"></span></span>
         <span class="val">${(+n[curM]).toLocaleString(undefined,{maximumFractionDigits:4})}</span></div>`).join("");
-    document.querySelectorAll(".rank-row[data-id]").forEach(r => r.onclick = () => { selected=r.dataset.id; render(); });
+    document.querySelectorAll(".rank-row[data-id]").forEach(r => r.onclick = () => focusNode(r.dataset.id));
   }
   // 乖離パネル
   const dv = (g.divergence||[]).slice(0,6);
@@ -953,7 +1031,7 @@ function renderSide(g, byId){
       `<div class="muted">${S.divNone}</div>`) +
     fd.map(d =>
       `<div class="div-row" data-id="${d.id}" style="border-left-color:#2C5F94; background:#EAF4FF">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
-  document.querySelectorAll(".div-row[data-id]").forEach(r => r.onclick = () => { selected=r.dataset.id; comMode=false; selectedCom=null; render(); });
+  document.querySelectorAll(".div-row[data-id]").forEach(r => r.onclick = () => focusNode(r.dataset.id));
   $("#spearman").textContent = S.spearman(g.spearman||{});
 }
 
@@ -963,6 +1041,15 @@ function render(){
   sliderLabel(g);
   if (view === "scatter") renderScatter(g, byId); else renderNet(g, byId);
   renderSide(g, byId);
+  // 既存の選択操作をキーボードでも利用できるようにする。
+  document.querySelectorAll(".rank-row, .div-row, #diag .nodelink").forEach(el => {
+    el.setAttribute("role", "button"); el.tabIndex=0;
+    el.onkeydown=e=>{ if(e.key==="Enter" || e.key===" "){ e.preventDefault(); el.click(); } };
+  });
+  document.querySelectorAll("button[data-d], button[data-v], button[data-m], #comBtn, button[data-lang]").forEach(el=>{
+    el.setAttribute("aria-pressed", String(el.classList.contains("on")));
+    el.disabled=el.classList.contains("dis");
+  });
   // メタ情報
   const S = T(), c=g.collect||{}, rp=g.repro||{}, sl=lang==="ja"?" ／ ":" / ";
   $("#meta").innerHTML =
@@ -1011,7 +1098,8 @@ function resetZoom(){ zk=1; ztx=0; zty=0; applyZoom(); }
 svgEl.addEventListener("wheel", e => {
   e.preventDefault();
   const r = svgEl.getBoundingClientRect();
-  const sx = (e.clientX-r.left)/r.width*1000, sy = (e.clientY-r.top)/r.height*660;  // カーソルの SVG 座標
+  const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(svgEl.getScreenCTM().inverse());
+  const sx = pt.x, sy = pt.y;  // 余白を含む可変サイズの SVG 座標
   const f = e.deltaY < 0 ? 1.18 : 1/1.18;
   const nk = Math.min(8, Math.max(1, zk*f));
   ztx = sx - (sx-ztx)*(nk/zk); zty = sy - (sy-zty)*(nk/zk); zk = nk;   // カーソル位置を固定して拡縮
@@ -1023,7 +1111,8 @@ window.addEventListener("pointermove", e => {
   if (!zPan) return;
   if (Math.abs(e.clientX-zsx)+Math.abs(e.clientY-zsy) > 4) zMoved=true;
   const r = svgEl.getBoundingClientRect();
-  ztx = ztx0 + (e.clientX-zsx)/r.width*1000; zty = zty0 + (e.clientY-zsy)/r.height*660;
+  const matrix = svgEl.getScreenCTM();
+  ztx = ztx0 + (e.clientX-zsx)/matrix.a; zty = zty0 + (e.clientY-zsy)/matrix.d;
   applyZoom();
 });
 window.addEventListener("pointerup", () => { zPan=false; });
