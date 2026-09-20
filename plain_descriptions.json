@@ -64,13 +64,6 @@
       "zhHant": "讓 Python 程式向網站或資料服務取得資訊的元件。",
       "zhHans": "让 Python 程序向网站或数据服务获取信息的组件。"
     },
-    "pytest": {
-      "source": "https://docs.pytest.org/en/stable/",
-      "ja": "Python のプログラムが想定どおりに動くかを、自動で繰り返し確認するための道具。",
-      "en": "A tool for automatically running repeatable checks that Python code behaves as expected.",
-      "zhHant": "自動、反覆檢查 Python 程式是否如預期運作的工具。",
-      "zhHans": "自动、反复检查 Python 程序是否按预期运行的工具。"
-    },
     "networkx": {
       "source": "https://networkx.org/documentation/stable/",
       "ja": "人やソフトウェアなどの関係を点と線で表し、つながり方を計算・分析するための部品。",
