@@ -156,7 +156,9 @@ TEMPLATE = r"""<!DOCTYPE html>
   .card { border-radius:12px; padding:16px; }
   .card h2 { font-size:14px; margin-bottom:12px; }
   .diag-name { font-size:19px; margin:0 0 8px; overflow-wrap:anywhere; }
-  .diag-desc { font-size:12px; font-style:normal; line-height:1.6; }
+  .diag-purpose { margin:10px 0 12px; padding:12px; background:#EDF4FB; border-left:3px solid var(--acc); border-radius:4px; }
+  .diag-purpose h3 { margin:0 0 6px; font-size:14px; color:var(--acc); }
+  .diag-desc { margin:0; color:var(--txt); font-size:15px; font-style:normal; line-height:1.65; overflow-wrap:anywhere; }
   .diag-table { font-size:12px; margin:10px 0; }
   .diag-table td { padding:5px 0; }
   .diag-table td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
@@ -305,8 +307,10 @@ const CAT_I18N = {
   "基盤ライブラリ":{en:"Core libraries", zhHant:"基礎函式庫", zhHans:"基础库"},
 };
 function catLabel(name){ return lang==="ja" ? name : ((CAT_I18N[name]||{})[lang] || name); }
-// 説明文: 日本語のみ固定翻訳（desc_ja）。他言語はレジストリ原文（英語 desc_en）を用いる。
-function descOf(n){ return lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.desc_en || n.desc_ja || ""); }
+// 用途の平易な説明を優先する。未整備の項目は保存済みの説明文に戻す。
+function descOf(n){ return n.purpose?.[lang] || (lang==="ja" ? (n.desc_ja || n.desc_en || "") : (n.desc_en || n.desc_ja || "")); }
+const PURPOSE_LABEL={ja:"何に使うもの？",en:"What is it used for?",zhHant:"這個軟體用來做什麼？",zhHans:"这个软件用来做什么？"};
+const PURPOSE_MISSING={ja:"用途の説明はまだ確認できていません。",en:"A description of its purpose is not available yet.",zhHant:"尚未確認這個軟體的用途說明。",zhHans:"尚未确认这个软件的用途说明。"};
 
 // UI 文字列・診断テンプレート（日/英）。データ準備段階で固定（実行時 LLM 不使用）。
 const STR = {
@@ -571,7 +575,7 @@ function diagnoseNode(n, g){
   if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
   if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
   const d = descOf(n);
-  const descHtml = d ? `<div class="diag-desc">${esc(d)}</div>` : "";
+  const descHtml = `<section class="diag-purpose"><h3>${PURPOSE_LABEL[lang]}</h3><p class="diag-desc">${esc(d || PURPOSE_MISSING[lang])}</p></section>`;
   const table = `<table class="diag-table">
     <tr><td>${S.tIndeg}</td><td>${S.tIndegVal(n.indeg, N, n.r_in)}</td></tr>
     <tr><td>${S.tReach}</td><td>${S.tReachVal(n.impact)}</td></tr>
@@ -597,7 +601,7 @@ function diagnoseNode(n, g){
       texts.push(S.normMain(n.r_in, n.r_bt));
     }
   }
-  return `<div class="diag-name">${esc(n.label)}</div>${badges}${descHtml}${table}
+  return `<div class="diag-name">${esc(n.label)}</div>${descHtml}${badges}${table}
     ${texts.slice(0, types.includes("cutpoint") ? 2 : 1).map(t=>`<div class="diag-text">${t}</div>`).join("")}
     ${recos.length?`<div class="diag-reco">${recos.slice(0,1).map(splitReco).join("<br>")}</div>`:""}
     <details class="method-detail"><summary>${({ja:"説明の根拠・注意点",en:"Method and limitations",zhHant:"說明依據與限制",zhHans:"说明依据与限制"})[lang]}</summary>${texts.slice(types.includes("cutpoint") ? 2 : 1).join("<br>")}${recos.slice(1).map(splitReco).join("<br>")}${linkifyReadme(S.evidence)}</details>`;
@@ -979,6 +983,11 @@ function focusNode(id){
 }
 function renderSide(g, byId){
   const S = T();
+  // 対象を切り替えたら、用途の説明から読める位置に戻す。
+  const side = document.querySelector(".side");
+  const focusKey = `${curD}:${selected || ""}:${selectedCom ?? ""}`;
+  if (side.dataset.focusKey !== focusKey) side.scrollTop = 0;
+  side.dataset.focusKey = focusKey;
   const comActive = comMode && view==="net";   // 散布図ではコミュニティフォーカスを適用しない
   // 診断カード
   if (comActive && selectedCom!=null){
@@ -1140,9 +1149,14 @@ def main():
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
+    # 用途説明は表示用の注釈。保存済みのネットワーク・指標は変更しない。
+    purposes = json.loads(pathlib.Path(__file__).with_name("plain_descriptions.json").read_text(encoding="utf-8"))["entries"]
     data = {}
     for p in args.inputs:
         d = json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
+        for node in d["nodes"]:
+            if node["id"] in purposes:
+                node["purpose"] = purposes[node["id"]]
         data[d["domain"]] = d
     html = TEMPLATE.replace("__DATA_JSON__", json.dumps(data, ensure_ascii=False))
     out = pathlib.Path(args.out)

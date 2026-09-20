@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-09-20",
+  "entries": {
+    "github.com/karmada-io/karmada": {
+      "source": "https://karmada.io/docs/",
+      "ja": "複数の場所にあるサーバーへ、アプリをまとめて配置・管理するソフトウェア。たとえば、通販サイトを複数の拠点で動かす際の管理に使う。",
+      "en": "Manages where applications run across groups of servers in different locations. For example, it can help an operator run an online shop across several sites.",
+      "zhHant": "統一管理應用程式在不同地點的伺服器上運行。例如，協助管理分布在多個機房的網路商店。",
+      "zhHans": "统一管理应用程序在不同地点的服务器上运行。例如，协助管理分布在多个机房的网店。"
+    },
+    "k8s.io/client-go": {
+      "source": "https://github.com/kubernetes/client-go",
+      "ja": "サーバー上のアプリを管理する仕組み（Kubernetes）に、別のプログラムから指示を送ったり、状態を確認したりするための部品。",
+      "en": "A reusable component that lets other programs send instructions to Kubernetes, the system that manages applications on servers, and check their status.",
+      "zhHant": "供其他程式重複使用的元件，用來向管理伺服器應用程式的 Kubernetes 發送指令、查詢狀態。",
+      "zhHans": "供其他程序重复使用的组件，用来向管理服务器应用程序的 Kubernetes 发送指令、查询状态。"
+    },
+    "github.com/kubeedge/kubeedge": {
+      "source": "https://kubeedge.io/",
+      "ja": "工場や店舗など、離れた場所の機器で動くアプリを、クラウド側からまとめて管理するためのソフトウェア。",
+      "en": "Software for managing applications on remote devices, such as equipment in factories or shops, from the cloud.",
+      "zhHant": "從雲端統一管理遠端設備上應用程式的軟體，例如工廠或商店的設備。",
+      "zhHans": "从云端统一管理远程设备上应用程序的软件，例如工厂或商店的设备。"
+    },
+    "ipython": {
+      "source": "https://ipython.org/",
+      "ja": "Python の命令を少しずつ実行し、その場で結果を確かめる作業環境。データ分析やプログラムの試行錯誤に使う。",
+      "en": "A workspace for running Python commands step by step and seeing the results immediately. Used for data analysis and trying out code.",
+      "zhHant": "逐步執行 Python 指令並立即查看結果的工作環境，用於資料分析和嘗試程式碼。",
+      "zhHans": "逐步执行 Python 指令并立即查看结果的工作环境，用于数据分析和尝试代码。"
+    },
+    "numpy": {
+      "source": "https://numpy.org/",
+      "ja": "大量の数値をまとめて計算するための部品。表の数値や画像のデータなどを計算するときに使う。",
+      "en": "A component for performing calculations on large collections of numbers, such as values in tables or image data.",
+      "zhHant": "用來批次計算大量數值的元件，例如表格中的數字或影像資料。",
+      "zhHans": "用来批量计算大量数值的组件，例如表格中的数字或图像数据。"
+    },
+    "pandas": {
+      "source": "https://pandas.pydata.org/",
+      "ja": "売上表や調査結果などの表形式データを読み込み、整理・集計するための部品。",
+      "en": "A component for reading, organizing and summarizing tables of data, such as sales records or survey results.",
+      "zhHant": "用來讀取、整理及彙整表格資料的元件，例如銷售紀錄或調查結果。",
+      "zhHans": "用来读取、整理及汇总表格数据的组件，例如销售记录或调查结果。"
+    },
+    "matplotlib": {
+      "source": "https://matplotlib.org/",
+      "ja": "数値データから折れ線グラフや棒グラフなどを作るための部品。分析結果を図で伝えるときに使う。",
+      "en": "A component for turning numerical data into charts, such as line and bar charts, to show analysis results.",
+      "zhHant": "將數值資料製成折線圖、長條圖等圖表的元件，用來呈現分析結果。",
+      "zhHans": "将数值数据制成折线图、柱状图等图表的组件，用来呈现分析结果。"
+    },
+    "scikit-learn": {
+      "source": "https://scikit-learn.org/stable/",
+      "ja": "データから特徴や傾向を学び、分類や数値の予測を行うための部品。また、似た傾向のデータをグループに分けることもできる。",
+      "en": "A component for learning patterns in data to classify items or predict values. It can also group data with similar characteristics.",
+      "zhHant": "從資料中學習規律，進行分類或數值預測的元件，也能將特徵相近的資料分組。",
+      "zhHans": "从数据中学习规律，进行分类或数值预测的组件，也能将特征相近的数据分组。"
+    },
+    "requests": {
+      "source": "https://docs.python-requests.org/en/latest/",
+      "ja": "Python のプログラムから、ウェブサイトや公開データサービスに情報を取りに行くための部品。",
+      "en": "A component that lets Python programs request information from websites and data services.",
+      "zhHant": "讓 Python 程式向網站或資料服務取得資訊的元件。",
+      "zhHans": "让 Python 程序向网站或数据服务获取信息的组件。"
+    },
+    "pytest": {
+      "source": "https://docs.pytest.org/en/stable/",
+      "ja": "Python のプログラムが想定どおりに動くかを、自動で繰り返し確認するための道具。",
+      "en": "A tool for automatically running repeatable checks that Python code behaves as expected.",
+      "zhHant": "自動、反覆檢查 Python 程式是否如預期運作的工具。",
+      "zhHans": "自动、反复检查 Python 程序是否按预期运行的工具。"
+    },
+    "networkx": {
+      "source": "https://networkx.org/documentation/stable/",
+      "ja": "人やソフトウェアなどの関係を点と線で表し、つながり方を計算・分析するための部品。",
+      "en": "A component for representing relationships as nodes and links and analyzing their structure.",
+      "zhHant": "將人或軟體等對象之間的關係表示為節點與連線，並分析連結結構的元件。",
+      "zhHans": "将人或软件等对象之间的关系表示为节点与连线，并分析连接结构的组件。"
+    }
+  }
+}
