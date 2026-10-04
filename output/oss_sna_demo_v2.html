@@ -166,6 +166,15 @@
     #svg { height:400px; } .divband { margin:16px; } #divList { grid-template-columns:1fr; }
   }
 
+  .example-guide { margin-top:14px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--panel2); }
+  .example-guide h2 { margin:0 0 9px; color:var(--acc); font-size:14px; }
+  .example-steps { display:grid; grid-template-columns:1fr 1fr; gap:12px 24px; }
+  .example-step { display:flex; align-items:center; justify-content:space-between; gap:12px; min-width:0; }
+  .example-step p { margin:0; font-size:12px; line-height:1.7; }
+  .example-step button { flex:none; max-width:100%; white-space:normal; }
+  @media(max-width:1100px) { .example-step { align-items:flex-start; flex-direction:column; gap:6px; } }
+  @media(max-width:760px) { .example-steps { grid-template-columns:1fr; gap:12px; } }
+
   /* Portfolio navigation is separate from the research controls. */
   .portfolio-header { position:sticky;top:0;z-index:80;background:#fbf9f6ed;backdrop-filter:blur(18px);border-bottom:1px solid #e7e0d9;color:#23201f; }
   .portfolio-nav-inner { max-width:1120px;min-height:64px;padding:0 24px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px; }
@@ -185,6 +194,13 @@
   <div id="langbar"><span class="globe" aria-hidden="true">🌐</span><span id="langs"></span></div>
   <h1><span id="h1main"></span> <span class="sub" id="h1sub"></span></h1>
   <div class="hintbar" id="hintbar"></div>
+  <section class="example-guide" aria-labelledby="exampleTitle">
+    <h2 id="exampleTitle"></h2>
+    <div class="example-steps">
+      <div class="example-step"><p id="exampleText1"></p><button id="exampleStep1" aria-controls="svg diag rankList"></button></div>
+      <div class="example-step"><p id="exampleText2"></p><button id="exampleStep2" aria-controls="svg diag rankList"></button></div>
+    </div>
+  </section>
 </header>
 <div class="bar">
   <div class="grp"><span class="lbl" id="lblDomain"></span><span id="domains"></span></div>
@@ -490,12 +506,51 @@ const STR = {
   metaDet:"诊断由确定性规则生成（不使用 AI） / 显示布局按显示集合确定性重算（初值＝预计算坐标·迭代固定·无随机）",
  },
 };
+const EXAMPLE_GUIDE = {
+  "ja": {
+    "title": "2ステップでグラフを読み解く",
+    "step1": "1. stack-dataを選び、被依存数と順位を確認します。",
+    "step2": "2. 媒介中心性に切り替え、異なる依存経路をつなぐ位置を確認します。ノードの説明で2つの順位を比較できます。",
+    "action1": "被依存数を見る",
+    "action2": "媒介中心性を見る"
+  },
+  "en": {
+    "title": "Explore the graph in two steps",
+    "step1": "1. Select stack-data and check its number of dependents and ranking.",
+    "step2": "2. Switch to betweenness centrality to view its position between dependency paths. Compare the two rankings in the node details.",
+    "action1": "View number of dependents",
+    "action2": "View betweenness"
+  },
+  "zhHans": {
+    "title": "两步看懂这张图",
+    "step1": "1. 选择 stack-data，查看被依赖数及排名。",
+    "step2": "2. 切到中介中心性，比较它连接不同依赖路径的位置。节点说明中可以对照两种排名。",
+    "action1": "查看被依赖数",
+    "action2": "查看中介中心性"
+  },
+  "zhHant": {
+    "title": "兩步看懂這張圖",
+    "step1": "1. 選擇 stack-data，查看被依賴數及排名。",
+    "step2": "2. 切到中介中心性，比較它連接不同依賴路徑的位置。節點說明中可以對照兩種排名。",
+    "action1": "查看被依賴數",
+    "action2": "查看中介中心性"
+  }
+};
 function T(){ return STR[lang]; }
 
 let curD = Object.keys(DATA)[0], curM = "indeg", view = "net",
     comMode = false, selected = null, selectedCom = null, topN = 0, catFilter = "";
 
 const $ = s => document.querySelector(s);
+// 収録済みの例を、領域・指標・選択ノードの実際の状態に反映する。
+function runExample(metric){
+  curD="ds"; curM=metric; view="net";
+  topN=0; catFilter=""; selectedCom=null;
+  resetZoom(); initSlider(); initSearch();
+  $("#q").value="stack-data";
+  focusNode("stack-data");
+  document.querySelector(".side").scrollTop=0;
+}
 function colorOf(t){ // 指標値 t∈[0,1] を青系グラデーションに（CFE6FF→5DA8E8→1F4E79）
   const s=[[207,230,255],[93,168,232],[31,78,121]];
   const [a,b,k]= t<.5 ? [s[0],s[1],t*2] : [s[1],s[2],(t-.5)*2];
@@ -753,6 +808,14 @@ function applyStaticText(){
   const S = T();
   $("#h1main").textContent = S.h1main;
   $("#h1sub").textContent = S.h1sub;
+  const guide=EXAMPLE_GUIDE[lang];
+  $("#exampleTitle").textContent=guide.title;
+  $("#exampleText1").textContent=guide.step1;
+  $("#exampleText2").textContent=guide.step2;
+  $("#exampleStep1").textContent=guide.action1;
+  $("#exampleStep2").textContent=guide.action2;
+  $("#exampleStep1").onclick=()=>runExample("indeg");
+  $("#exampleStep2").onclick=()=>runExample("btw");
   $("#hintbar").innerHTML = HINT_ORDER.map(k =>
     `<span class="hint-item">${HINT_ICONS[k]}<span>${esc(S.headerHint[k])}</span></span>`).join("");
   $("#lblDomain").textContent = S.gDomain; $("#lblView").textContent = S.gView;
@@ -1039,6 +1102,11 @@ function renderSide(g, byId){
 function render(){
   const g = DATA[curD], byId = Object.fromEntries(g.nodes.map(n=>[n.id,n]));
   drawButtons();
+  for (const [id,metric] of [["exampleStep1","indeg"],["exampleStep2","btw"]]){
+    const active=curD==="ds" && curM===metric && view==="net" && !comMode && selected==="stack-data";
+    $("#"+id).classList.toggle("on", active);
+    $("#"+id).setAttribute("aria-pressed", String(active));
+  }
   sliderLabel(g);
   if (view === "scatter") renderScatter(g, byId); else renderNet(g, byId);
   renderSide(g, byId);
