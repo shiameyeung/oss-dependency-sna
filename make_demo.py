@@ -534,8 +534,8 @@ let curD = Object.keys(DATA)[0], curM = "indeg", view = "net",
     comMode = false, selected = null, selectedCom = null, topN = 0, catFilter = "";
 
 const $ = s => document.querySelector(s);
-function colorOf(t){ // 指標値 t∈[0,1] を青系グラデーションに（CFE6FF→5DA8E8→1F4E79）
-  const s=[[207,230,255],[93,168,232],[31,78,121]];
+function colorOf(t){ // 指標値を明暗の連続階調で表示する。
+  const s=[[232,232,237],[134,134,139],[29,29,31]];
   const [a,b,k]= t<.5 ? [s[0],s[1],t*2] : [s[1],s[2],(t-.5)*2];
   return `rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*k)).join(",")})`;
 }
