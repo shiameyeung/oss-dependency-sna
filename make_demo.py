@@ -208,7 +208,7 @@ body,button,input,select,textarea{font-family:var(--apple-font);font-optical-siz
 code,pre,kbd{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace}
 button,input,select,textarea{font:inherit}
 
-:root{--bg:#f5f5f7;--panel:#fff;--panel2:#e8e8ed;--txt:#1d1d1f;--sub:#6e6e73;--acc:#1d1d1f;--acc2:#6e6e73;--warn:#424245;--warnbg:#f5f5f7;--line:#d2d2d7}
+:root{--bg:#f5f5f7;--panel:#fff;--panel2:#e8e8ed;--txt:#1d1d1f;--sub:#6e6e73;--acc:#1d1d1f;--acc2:#6e6e73;--warn:#E2A82E;--warnbg:#f5f5f7;--line:#d2d2d7}
 button.on{background:#1d1d1f;color:#fff}
 .badge{background:#e8e8ed!important;color:#1d1d1f!important;border:1px solid #d2d2d7}
 .legend .dot,.com-row .dot{border:1px solid #424245}
@@ -928,7 +928,7 @@ function renderNet(g, byId){
       if (n.id===selected) fill="#aeaeb2";
       else if (cutSet.has(n.id)) fill="#d2d2d7";
     }
-    const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#aeaeb2" stroke-width="2.2" opacity="${op}"/>` : "";
+    const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#E2A82E" stroke-width="2.2" opacity="${op}"/>` : "";
     const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
     const seedStroke = n.seed ? `stroke="#1d1d1f" stroke-width="1.6"` : `stroke="#ffffff" stroke-width="0.8"`;
     return `${ring}${sel}<circle data-id="${n.id}" cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r}" fill="${fill}" opacity="${op}" ${seedStroke} style="cursor:pointer"/>`;
