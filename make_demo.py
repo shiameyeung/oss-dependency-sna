@@ -280,11 +280,11 @@ const HTMLLANG = {ja:"ja", en:"en", zhHant:"zh-Hant", zhHans:"zh-Hans"};
 // ヘッダの凡例（読み方・操作）— アイコンは言語非依存。文言は STR.headerHint[キー]。
 const HINT_ORDER = ["edge","size","cut","click","zoom"];
 const HINT_ICONS = {
-  edge:'<svg width="21" height="13" viewBox="0 0 21 13" aria-hidden="true"><circle cx="3" cy="6.5" r="2.6" fill="#aeaeb2"/><line x1="6.2" y1="6.5" x2="14" y2="6.5" stroke="#aeaeb2" stroke-width="1.4"/><path d="M13 4L16.5 6.5L13 9" fill="none" stroke="#aeaeb2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  size:'<svg width="23" height="13" viewBox="0 0 23 13" aria-hidden="true"><circle cx="4" cy="6.5" r="2.2" fill="#e8e8ed"/><circle cx="15" cy="6.5" r="5" fill="#aeaeb2"/></svg>',
-  cut:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="7" cy="6.5" r="4.4" fill="none" stroke="#aeaeb2" stroke-width="2"/></svg>',
-  click:'<svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M2.5 1.5L2.5 10.5L4.8 8.3L6.6 12L8 11.3L6.2 7.7L9.3 7.7Z" fill="#6e6e73"/></svg>',
-  zoom:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.5" fill="none" stroke="#6e6e73" stroke-width="1.5"/><line x1="8.1" y1="8.1" x2="11.5" y2="11.5" stroke="#6e6e73" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  edge:'<svg width="21" height="13" viewBox="0 0 21 13" aria-hidden="true"><circle cx="3" cy="6.5" r="2.6" fill="#5DA8E8"/><line x1="6.2" y1="6.5" x2="14" y2="6.5" stroke="#9DB2C6" stroke-width="1.4"/><path d="M13 4L16.5 6.5L13 9" fill="none" stroke="#9DB2C6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  size:'<svg width="23" height="13" viewBox="0 0 23 13" aria-hidden="true"><circle cx="4" cy="6.5" r="2.2" fill="#CFE6FF"/><circle cx="15" cy="6.5" r="5" fill="#5DA8E8"/></svg>',
+  cut:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="7" cy="6.5" r="4.4" fill="none" stroke="#E2A82E" stroke-width="2"/></svg>',
+  click:'<svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M2.5 1.5L2.5 10.5L4.8 8.3L6.6 12L8 11.3L6.2 7.7L9.3 7.7Z" fill="#5C6B7A"/></svg>',
+  zoom:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.5" fill="none" stroke="#5C6B7A" stroke-width="1.5"/><line x1="8.1" y1="8.1" x2="11.5" y2="11.5" stroke="#5C6B7A" stroke-width="1.5" stroke-linecap="round"/></svg>',
 };
 const MLAB = {
   indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)",
