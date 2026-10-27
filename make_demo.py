@@ -32,8 +32,8 @@ TEMPLATE = r"""<!DOCTYPE html>
 <title>OSS 依存ネットワーク分析</title>
 <style>
   /* 配色: クリーム地・青・キャンディイエロー */
-  :root { --bg:#FFFDF5; --panel:#ffffff; --panel2:#EAF4FF; --txt:#1F2D40; --sub:#5C6B7A;
-          --acc:#2C5F94; --acc2:#5DA8E8; --warn:#E2A82E; --warnbg:#FFF8D6; --line:#DCE6F2; }
+  :root { --bg:#ffffff; --panel:#ffffff; --panel2:#f5f5f7; --txt:#1d1d1f; --sub:#6e6e73;
+          --acc:#424245; --acc2:#aeaeb2; --warn:#aeaeb2; --warnbg:#f5f5f7; --line:#e8e8ed; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--txt);
          font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; }
@@ -52,7 +52,7 @@ TEMPLATE = r"""<!DOCTYPE html>
          border:1px solid var(--line); border-radius:9px; padding:6px 12px; }
   .grp .lbl { color:var(--sub); font-size:10.5px; font-weight:700; letter-spacing:.06em;
               margin-right:5px; white-space:nowrap; }
-  button { background:#F2F6FA; color:var(--txt); border:1px solid transparent;
+  button { background:#f5f5f7; color:var(--txt); border:1px solid transparent;
            border-radius:6px; padding:6px 12px; font-size:12.5px; cursor:pointer; }
   button:hover { border-color:var(--acc2); }
   button.on { background:var(--acc); color:#ffffff; font-weight:700; }
@@ -61,10 +61,10 @@ TEMPLATE = r"""<!DOCTYPE html>
   .sliderbox input { width:130px; accent-color:var(--acc); }
   .sliderbox .val { font-size:12px; color:var(--sub); min-width:86px; }
   #q { border:1px solid var(--line); border-radius:6px; padding:6px 9px; font-size:12px;
-       width:150px; background:#F2F6FA; color:var(--txt); font-family:inherit; }
-  #q:focus { outline:none; border-color:var(--acc2); background:#fff; }
+       width:150px; background:#f5f5f7; color:var(--txt); font-family:inherit; }
+  #q:focus { outline:none; border-color:var(--acc2); background:#ffffff; }
   #catSel { border:1px solid var(--line); border-radius:6px; padding:5px 6px; font-size:12px;
-            background:#F2F6FA; color:var(--txt); font-family:inherit; max-width:170px; }
+            background:#f5f5f7; color:var(--txt); font-family:inherit; max-width:170px; }
   .diag-desc { font-size:11px; color:var(--sub); font-style:italic; margin:1px 0 5px; line-height:1.45; }
   main { display:grid; grid-template-columns: 1fr 360px; gap:12px; padding:0 20px 8px; }
   .stage { background:var(--panel); border:1px solid var(--line); border-radius:10px; position:relative; }
@@ -79,15 +79,15 @@ TEMPLATE = r"""<!DOCTYPE html>
   .side { display:flex; flex-direction:column; gap:12px; max-height:660px; overflow-y:auto; }
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
   .card h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
-  .badge { display:inline-block; font-size:11px; font-weight:700; color:#fff; border-radius:4px;
+  .badge { display:inline-block; font-size:11px; font-weight:700; color:#ffffff; border-radius:4px;
            padding:2px 8px; margin:0 4px 6px 0; cursor:help; position:relative; }
   /* 即時表示のツールチップ（ネイティブ title の遅延を避ける） */
   button[data-tip] { position:relative; }
   [data-tip]:hover::after {
     content: attr(data-tip); position:absolute; left:0; top:calc(100% + 4px);
-    background:#1F2D40; color:#fff; font-size:11px; font-weight:400; line-height:1.45;
+    background:#1d1d1f; color:#ffffff; font-size:11px; font-weight:400; line-height:1.45;
     padding:6px 9px; border-radius:6px; width:max-content; max-width:230px; white-space:normal;
-    z-index:30; box-shadow:0 3px 12px rgba(31,45,64,.25); pointer-events:none; }
+    z-index:30; box-shadow:0 3px 12px rgba(29,29,31,.25); pointer-events:none; }
   .nodelink { color:var(--acc); cursor:pointer; border-bottom:1px dotted var(--acc2); word-break:break-all; }
   .nodelink:hover { color:var(--acc2); background:var(--panel2); }
   .diag-name { font-size:14px; font-weight:700; color:var(--txt); margin-bottom:4px; word-break:break-all; }
@@ -95,7 +95,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   .diag-table td { padding:2.5px 4px; border-bottom:1px solid var(--line); }
   .diag-table td:first-child { color:var(--sub); width:46%; }
   .diag-text { font-size:12px; line-height:1.55; margin:0 0 6px; }
-  .diag-reco { font-size:11.5px; line-height:1.5; background:var(--warnbg); border-left:3px solid #F2C84B;
+  .diag-reco { font-size:11.5px; line-height:1.5; background:var(--warnbg); border-left:3px solid #d2d2d7;
                border-radius:4px; padding:6px 8px; margin-top:6px; }
   .diag-cut { font-size:11px; line-height:1.5; background:var(--panel2); border-radius:4px;
               padding:6px 8px; margin-top:6px; word-break:break-all; }
@@ -112,14 +112,14 @@ TEMPLATE = r"""<!DOCTYPE html>
              border-radius:10px; padding:12px 14px; }
   .divband h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
   #divList { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:6px; }
-  .div-row { font-size:12px; padding:5px 6px; border-left:3px solid #F2C84B;
+  .div-row { font-size:12px; padding:5px 6px; border-left:3px solid #d2d2d7;
              background:var(--warnbg); border-radius:4px; cursor:pointer; }
-  .div-row b { color:#A8761A; }
+  .div-row b { color:#6e6e73; }
   .muted { color:var(--sub); font-size:11.5px; }
   footer { padding:8px 20px 16px; color:var(--sub); font-size:11.5px; line-height:1.7; }
   #tip { position:absolute; pointer-events:none; background:#ffffffee; border:1px solid var(--line);
          border-radius:8px; padding:8px 10px; font-size:12px; display:none; max-width:280px; z-index:5;
-         color:var(--txt); box-shadow:0 2px 10px rgba(31,45,64,.12); }
+         color:var(--txt); box-shadow:0 2px 10px rgba(29,29,31,.12); }
   #tip b { color:var(--acc); }
   .legend { display:flex; gap:14px; flex-wrap:wrap; font-size:11.5px; color:var(--sub);
             padding:6px 20px 2px; }
@@ -127,8 +127,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
 
   /* 発表時にも読める配置。操作・図・選択結果を同じ画面に収める。 */
-  :root { --bg:#F5F7FA; --line:#DFE6EE; --sub:#586A7E; }
-  header { background:#fff; padding:18px 24px 12px; }
+  :root { --bg:#f5f5f7; --line:#e8e8ed; --sub:#6e6e73; }
+  header { background:#ffffff; padding:18px 24px 12px; }
   h1 { font-size:21px; letter-spacing:.01em; padding-right:270px; }
   #h1sub { display:block; margin-top:5px; font-size:13px; font-weight:400; }
   #langbar { top:20px; right:24px; }
@@ -143,11 +143,11 @@ TEMPLATE = r"""<!DOCTYPE html>
   .grp:nth-child(4) { grid-column:3; grid-row:2; justify-content:flex-end; }
   .grp .lbl { font-size:11px; letter-spacing:0; margin-right:3px; }
   #domains, #views, #metrics { display:inline-flex; gap:3px; flex-wrap:wrap; }
-  button { font-family:inherit; background:#fff; border-color:var(--line); padding:7px 10px; font-size:12px; min-height:34px; }
-  button.on { border-color:var(--acc); box-shadow:0 2px 5px #2C5F9414; }
-  button:focus-visible, input:focus-visible, select:focus-visible, [role=button]:focus-visible, summary:focus-visible { outline:3px solid #5DA8E8; outline-offset:3px; }
-  #q { width:132px; font-size:12px; min-height:34px; background:#fff; }
-  #catSel { max-width:150px; min-height:34px; background:#fff; }
+  button { font-family:inherit; background:#ffffff; border-color:var(--line); padding:7px 10px; font-size:12px; min-height:34px; }
+  button.on { border-color:var(--acc); box-shadow:0 2px 5px #42424514; }
+  button:focus-visible, input:focus-visible, select:focus-visible, [role=button]:focus-visible, summary:focus-visible { outline:3px solid #aeaeb2; outline-offset:3px; }
+  #q { width:132px; font-size:12px; min-height:34px; background:#ffffff; }
+  #catSel { max-width:150px; min-height:34px; background:#ffffff; }
   .sliderbox input { width:100px; }
   main { padding:0 24px; grid-template-columns:minmax(0,1fr) 350px; gap:16px; }
   .stage { overflow:hidden; border-radius:12px; }
@@ -156,7 +156,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   .card { border-radius:12px; padding:16px; }
   .card h2 { font-size:14px; margin-bottom:12px; }
   .diag-name { font-size:19px; margin:0 0 8px; overflow-wrap:anywhere; }
-  .diag-purpose { margin:10px 0 12px; padding:12px; background:#EDF4FB; border-left:3px solid var(--acc); border-radius:4px; }
+  .diag-purpose { margin:10px 0 12px; padding:12px; background:#f5f5f7; border-left:3px solid var(--acc); border-radius:4px; }
   .diag-purpose h3 { margin:0 0 6px; font-size:14px; color:var(--acc); }
   .diag-desc { margin:0; color:var(--txt); font-size:15px; font-style:normal; line-height:1.65; overflow-wrap:anywhere; }
   .diag-table { font-size:12px; margin:10px 0; }
@@ -197,8 +197,22 @@ TEMPLATE = r"""<!DOCTYPE html>
   .title-row h1 { min-width:0; padding-right:0; margin:0; }
   .brand-home { display:inline-flex; align-items:center; justify-content:center; flex:none; border-radius:8px; }
   .brand-home img { display:block; width:44px; height:44px; object-fit:contain; }
-  .brand-home:focus-visible { outline:3px solid #5DA8E8; outline-offset:3px; }
+  .brand-home:focus-visible { outline:3px solid #aeaeb2; outline-offset:3px; }
   @media(max-width:760px) { .title-row { padding-right:0; } }
+
+/* Apple system typography, using installed fonts. */
+:root{--apple-font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+html:lang(zh){--apple-font:-apple-system,BlinkMacSystemFont,"PingFang SC","PingFang TC","Helvetica Neue",Arial,sans-serif}
+html:lang(ja){--apple-font:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Helvetica Neue",Arial,sans-serif}
+body,button,input,select,textarea{font-family:var(--apple-font);font-optical-sizing:auto}
+code,pre,kbd{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace}
+button,input,select,textarea{font:inherit}
+
+:root{--bg:#f5f5f7;--panel:#fff;--panel2:#e8e8ed;--txt:#1d1d1f;--sub:#6e6e73;--acc:#1d1d1f;--acc2:#6e6e73;--warn:#424245;--warnbg:#f5f5f7;--line:#d2d2d7}
+button.on{background:#1d1d1f;color:#fff}
+.badge{background:#e8e8ed!important;color:#1d1d1f!important;border:1px solid #d2d2d7}
+.legend .dot,.com-row .dot{border:1px solid #424245}
+:focus-visible{outline:2px solid #1d1d1f;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -250,27 +264,27 @@ TEMPLATE = r"""<!DOCTYPE html>
   <div class="muted" id="spearman" style="margin-top:8px"></div>
 </div>
 <div class="legend">
-  <span><span class="dot" style="background:#5DA8E8"></span><span id="legNormal"></span></span>
-  <span><span class="dot" style="background:#5DA8E8; outline:2px solid #1F2D40"></span><span id="legSeed"></span></span>
+  <span><span class="dot" style="background:#aeaeb2"></span><span id="legNormal"></span></span>
+  <span><span class="dot" style="background:#aeaeb2; outline:2px solid #1d1d1f"></span><span id="legSeed"></span></span>
   <span><span class="dot" style="background:transparent; border:2.5px solid var(--warn)"></span><span id="legCut"></span></span>
-  <span><span class="dot" style="background:#F2C84B"></span><span id="legIso"></span></span>
+  <span><span class="dot" style="background:#d2d2d7"></span><span id="legIso"></span></span>
 </div>
 <footer id="meta"></footer>
 <script>
 const DATA = __DATA_JSON__;
 const requestedLanguage = new URLSearchParams(location.search).get("lang");
 let lang = ({zh:"zhHans", "zh-Hans":"zhHans", "zh-Hant":"zhHant"})[requestedLanguage] || (["ja","en","zhHant","zhHans"].includes(requestedLanguage) ? requestedLanguage : "ja");   // 表示言語（ja / en）。データ・指標値は不変、表示文字列のみ切替。
-const COLORS = ["#5DA8E8","#F2C84B","#81c784","#ba68c8","#ff8a65","#4dd0e1","#f06292","#a1887f","#90a4ae","#dce775"];
+const COLORS = ["#1d1d1f","#424245","#6e6e73","#86868b","#aeaeb2","#d2d2d7","#e8e8ed","#2b2b2e","#555558","#b8b8bd"];
 const LANGS = [["ja","日本語"],["en","English"],["zhHant","繁體"],["zhHans","简体"]];
 const HTMLLANG = {ja:"ja", en:"en", zhHant:"zh-Hant", zhHans:"zh-Hans"};
 // ヘッダの凡例（読み方・操作）— アイコンは言語非依存。文言は STR.headerHint[キー]。
 const HINT_ORDER = ["edge","size","cut","click","zoom"];
 const HINT_ICONS = {
-  edge:'<svg width="21" height="13" viewBox="0 0 21 13" aria-hidden="true"><circle cx="3" cy="6.5" r="2.6" fill="#5DA8E8"/><line x1="6.2" y1="6.5" x2="14" y2="6.5" stroke="#9DB2C6" stroke-width="1.4"/><path d="M13 4L16.5 6.5L13 9" fill="none" stroke="#9DB2C6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  size:'<svg width="23" height="13" viewBox="0 0 23 13" aria-hidden="true"><circle cx="4" cy="6.5" r="2.2" fill="#CFE6FF"/><circle cx="15" cy="6.5" r="5" fill="#5DA8E8"/></svg>',
-  cut:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="7" cy="6.5" r="4.4" fill="none" stroke="#E2A82E" stroke-width="2"/></svg>',
-  click:'<svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M2.5 1.5L2.5 10.5L4.8 8.3L6.6 12L8 11.3L6.2 7.7L9.3 7.7Z" fill="#5C6B7A"/></svg>',
-  zoom:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.5" fill="none" stroke="#5C6B7A" stroke-width="1.5"/><line x1="8.1" y1="8.1" x2="11.5" y2="11.5" stroke="#5C6B7A" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  edge:'<svg width="21" height="13" viewBox="0 0 21 13" aria-hidden="true"><circle cx="3" cy="6.5" r="2.6" fill="#aeaeb2"/><line x1="6.2" y1="6.5" x2="14" y2="6.5" stroke="#aeaeb2" stroke-width="1.4"/><path d="M13 4L16.5 6.5L13 9" fill="none" stroke="#aeaeb2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  size:'<svg width="23" height="13" viewBox="0 0 23 13" aria-hidden="true"><circle cx="4" cy="6.5" r="2.2" fill="#e8e8ed"/><circle cx="15" cy="6.5" r="5" fill="#aeaeb2"/></svg>',
+  cut:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="7" cy="6.5" r="4.4" fill="none" stroke="#aeaeb2" stroke-width="2"/></svg>',
+  click:'<svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M2.5 1.5L2.5 10.5L4.8 8.3L6.6 12L8 11.3L6.2 7.7L9.3 7.7Z" fill="#6e6e73"/></svg>',
+  zoom:'<svg width="14" height="13" viewBox="0 0 14 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.5" fill="none" stroke="#6e6e73" stroke-width="1.5"/><line x1="8.1" y1="8.1" x2="11.5" y2="11.5" stroke="#6e6e73" stroke-width="1.5" stroke-linecap="round"/></svg>',
 };
 const MLAB = {
   indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)",
@@ -287,11 +301,11 @@ const MLAB = {
 function mlab(m){ return MLAB[m][lang]; }
 function mshort(m){ return mlab(m).split(lang==="en" ? " (" : "（")[0]; }
 const TYPE_INFO = {
-  cutpoint:   {color:"#E2A82E", ja:"切断点",   en:"Cut point",  zhHant:"切斷點", zhHans:"切断点"},
-  bridge:     {color:"#A8761A", ja:"橋渡し型", en:"Bridge",     zhHant:"橋接型", zhHans:"桥接型"},
-  foundation: {color:"#2C5F94", ja:"土台型",   en:"Foundation", zhHant:"基礎型", zhHans:"基础型"},
-  isolated:   {color:"#5C6B7A", ja:"孤立",     en:"Isolated",   zhHant:"孤立",   zhHans:"孤立"},
-  normal:     {color:"#5C6B7A", ja:"標準",     en:"Standard",   zhHant:"標準",   zhHans:"标准"},
+  cutpoint:   {color:"#aeaeb2", ja:"切断点",   en:"Cut point",  zhHant:"切斷點", zhHans:"切断点"},
+  bridge:     {color:"#6e6e73", ja:"橋渡し型", en:"Bridge",     zhHant:"橋接型", zhHans:"桥接型"},
+  foundation: {color:"#424245", ja:"土台型",   en:"Foundation", zhHant:"基礎型", zhHans:"基础型"},
+  isolated:   {color:"#6e6e73", ja:"孤立",     en:"Isolated",   zhHant:"孤立",   zhHans:"孤立"},
+  normal:     {color:"#6e6e73", ja:"標準",     en:"Standard",   zhHant:"標準",   zhHans:"标准"},
 };
 const DOMAIN_I18N = {
   ds:{en:"Data science (PyPI)", zhHant:"資料科學類（PyPI）", zhHans:"数据科学系（PyPI）"},
@@ -363,7 +377,7 @@ const STR = {
   eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（ループのない一方向の構造・DAG）であり、固有ベクトル中心性の反復計算は依存の終端（外向きの依存を持たない「行き止まり」のノード）に値が集中し、うまく順位が付かなくなりやすい（順位が大きく断絶するのはこのため）。診断には被依存数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体も、本分析で得られた知見の一つである</b>。',
   spearman:sp=>`順位の一致度（Spearman 順位相関 ρ）— 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1 に近いほど順位が一致）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(被依存 ${indeg}・媒介 ${btw}) 橋渡し型</span>`,
-  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
   divNone:"この領域では顕著な乖離ノードなし", comRowNote:top=>top?`(${top}系)`:"",
   scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝）",
   tipClick:" — クリックで診断とフォーカス表示", tipCat:"分類", tipCom:"コミュニティ", tipIndeg:"被依存", tipOut:"依存先", tipReach:"影響範囲", tipBtw:"媒介",
@@ -410,7 +424,7 @@ const STR = {
   eigNote:'<b>※ Reference only</b>: dependency networks are nearly acyclic (DAG — one-directional, no loops), so eigenvector centrality’s power iteration tends to break down by concentrating its value at dependency sinks (nodes with no outgoing dependency) — hence the large rank gap. Use in-degree, betweenness, and PageRank for diagnosis. <b>That this metric does not suit dependency networks is itself one of the findings of this analysis.</b>',
   spearman:sp=>`Rank agreement (Spearman ρ) — in-degree×betweenness=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×eigenvector=${sp.indeg_vs_eigenvector} (the farther from 1.0, the more SNA-specific information)`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — in-deg ${rin} → betw <b>${rbt}</b> <span class="muted">(in-deg ${indeg}, betw ${btw}) bridge</span>`,
-  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — in-deg ${rin} · reach ${impact} <span class="muted">foundation (visible to simple stats)</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — in-deg ${rin} · reach ${impact} <span class="muted">foundation (visible to simple stats)</span>`,
   divNone:"No prominent divergence nodes in this domain", comRowNote:top=>top?`(${top})`:"",
   scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← top-left = low in-degree but high betweenness (bottlenecks invisible to simple stats)",
   tipClick:" — click for diagnosis & focus", tipCat:"Category", tipCom:"Community", tipIndeg:"In-deg", tipOut:"Out-deg", tipReach:"Reach", tipBtw:"Betw",
@@ -457,7 +471,7 @@ const STR = {
   eigNote:'<b>※ 參考值</b>：依賴網路近乎無環（沒有迴圈的單向結構・DAG），特徵向量中心性的迭代計算容易失準（數值集中到「沒有對外依賴的終端」節點），排名大幅斷裂即因此。診斷請使用被依賴數·中介·PageRank。<b>「此指標不適合依賴網路」本身也是本分析所得的發現之一</b>。',
   spearman:sp=>`順位一致度（Spearman 等級相關 ρ）— 被依賴×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特徵向量=${sp.indeg_vs_eigenvector}（越遠離 1.0，SNA 獨有的資訊越多）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依賴第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依賴 ${indeg}・中介 ${btw}) 橋接型</span>`,
-  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依賴第 ${rin} 位·影響範圍 ${impact} <span class="muted">基礎型（簡單統計也可見）</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依賴第 ${rin} 位·影響範圍 ${impact} <span class="muted">基礎型（簡單統計也可見）</span>`,
   divNone:"此領域無顯著的乖離節點", comRowNote:top=>top?`(${top})`:"",
   scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴少但中介高（簡單統計看不見的要衝）",
   tipClick:" — 點擊顯示診斷與聚焦", tipCat:"分類", tipCom:"社群", tipIndeg:"被依賴", tipOut:"依賴", tipReach:"影響範圍", tipBtw:"中介",
@@ -504,7 +518,7 @@ const STR = {
   eigNote:'<b>※ 参考值</b>：依赖网络近乎无环（没有回环的单向结构・DAG），特征向量中心性的迭代计算容易失准（数值集中到「没有对外依赖的终端」节点），排名大幅断裂即因此。诊断请使用被依赖数·中介·PageRank。<b>「该指标不适合依赖网络」本身也是本分析得到的发现之一</b>。',
   spearman:sp=>`顺位一致度（Spearman 等级相关 ρ）— 被依赖×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特征向量=${sp.indeg_vs_eigenvector}（越远离 1.0，SNA 独有的信息越多）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依赖第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依赖 ${indeg}・中介 ${btw}) 桥接型</span>`,
-  divFound:(id,rin,impact)=>`<b style="color:#2C5F94">${id}</b> — 被依赖第 ${rin} 位·影响范围 ${impact} <span class="muted">基础型（简单统计也可见）</span>`,
+  divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依赖第 ${rin} 位·影响范围 ${impact} <span class="muted">基础型（简单统计也可见）</span>`,
   divNone:"该领域无显著的乖离节点", comRowNote:top=>top?`(${top})`:"",
   scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖少但中介高（简单统计看不见的要冲）",
   tipClick:" — 点击显示诊断与聚焦", tipCat:"分类", tipCom:"社群", tipIndeg:"被依赖", tipOut:"依赖", tipReach:"影响范围", tipBtw:"中介",
@@ -583,8 +597,8 @@ function diagnoseNode(n, g){
   const sep = lang==="ja" ? "、" : ", ";
   const types = nodeTypes(n);
   let badges = types.map(t=>`<span class="badge" data-tip="${esc(S.badgeTip[t]||"")}" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
-  if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
-  if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
+  if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#aeaeb2">${S.seedBadge}</span>`;
+  if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#aeaeb2">${esc(catLabel(n.cat))}</span>`;
   const d = descOf(n);
   const descHtml = `<section class="diag-purpose"><h3>${PURPOSE_LABEL[lang]}</h3><p class="diag-desc">${esc(d || PURPOSE_MISSING[lang])}</p></section>`;
   const table = `<table class="diag-table">
@@ -625,8 +639,8 @@ function diagnoseCom(cid, g){
   const avgIn = member.length ? (member.reduce((a,n)=>a+n.indeg,0)/member.length).toFixed(1) : 0;
   const sep = lang==="ja" ? "、" : ", ";
   const rep = esc((st.top[0]||"?").split("/").pop()), sfx = S.systemSuffix;
-  return `<div class="diag-name">${rep}${sfx} <span style="font-weight:400;color:#5C6B7A;font-size:12px">${S.comTitle(cid)}</span></div>
-    <span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1F2D40">${S.funcGroup}</span>
+  return `<div class="diag-name">${rep}${sfx} <span style="font-weight:400;color:#6e6e73;font-size:12px">${S.comTitle(cid)}</span></div>
+    <span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:${COLORS[cid%COLORS.length]}; color:#1d1d1f">${S.funcGroup}</span>
     <table class="diag-table">
       <tr><td>${S.comNodes}</td><td>${st.n}</td></tr>
       <tr><td>${S.comInEdges}</td><td>${st.m_in}</td></tr>
@@ -889,11 +903,11 @@ function renderNet(g, byId){
     const hot = selShown && !cutSet && (e.s===selected || e.t===selected);  // 通常エゴの中心辺（切断点では金線を出さない）
     const inCom = focusCom!=null && a.com===focusCom && b.com===focusCom;
     const inEgo = ego && ego.has(e.s) && ego.has(e.t);
-    let stroke="#C9D8E8", w=0.7, op=0.55;
-    if (inCut){ stroke="#E2A82E"; w=1.4; op=0.9; }
-    else if (hot){ stroke="#E2A82E"; w=1.6; op=0.95; }
-    else if (inCom){ stroke="#2C5F94"; w=1.1; op=0.85; }
-    else if (ego){ op = inEgo ? 0.5 : 0.05; if (inEgo) stroke="#9DBBD6"; }  // 残存側を含むエゴ辺＝青
+    let stroke="#d2d2d7", w=0.7, op=0.55;
+    if (inCut){ stroke="#aeaeb2"; w=1.4; op=0.9; }
+    else if (hot){ stroke="#aeaeb2"; w=1.6; op=0.95; }
+    else if (inCom){ stroke="#424245"; w=1.1; op=0.85; }
+    else if (ego){ op = inEgo ? 0.5 : 0.05; if (inEgo) stroke="#aeaeb2"; }  // 残存側を含むエゴ辺＝青
     else if (focusCom!=null){ op=0.18; }
     return `<line x1="${lx(e.s)}" y1="${ly(e.s)}" x2="${lx(e.t)}" y2="${ly(e.t)}"
       stroke="${stroke}" stroke-width="${w}" opacity="${op}"/>`;
@@ -911,17 +925,17 @@ function renderNet(g, byId){
     let fill = comMode ? COLORS[n.com % COLORS.length] : colorOf(t);
     const op = opOf(n);
     if (cutSet){
-      if (n.id===selected) fill="#E2A82E";
-      else if (cutSet.has(n.id)) fill="#F2C84B";
+      if (n.id===selected) fill="#aeaeb2";
+      else if (cutSet.has(n.id)) fill="#d2d2d7";
     }
-    const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#E2A82E" stroke-width="2.2" opacity="${op}"/>` : "";
-    const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
-    const seedStroke = n.seed ? `stroke="#1F2D40" stroke-width="1.6"` : `stroke="#ffffff" stroke-width="0.8"`;
+    const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#aeaeb2" stroke-width="2.2" opacity="${op}"/>` : "";
+    const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
+    const seedStroke = n.seed ? `stroke="#1d1d1f" stroke-width="1.6"` : `stroke="#ffffff" stroke-width="0.8"`;
     return `${ring}${sel}<circle data-id="${n.id}" cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r}" fill="${fill}" opacity="${op}" ${seedStroke} style="cursor:pointer"/>`;
   }).join("");
   const tops = g.nodes.filter(shown).sort((a,b)=>b[curM]-a[curM]).slice(0,12);
   $("#labels").innerHTML = tops.map(n =>
-    `<text x="${lx(n.id)+8}" y="${ly(n.id)-7}" font-size="10.5" fill="#1F2D40" opacity="${opOf(n)}" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
+    `<text x="${lx(n.id)+8}" y="${ly(n.id)-7}" font-size="10.5" fill="#1d1d1f" opacity="${opOf(n)}" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
 }
 
 function renderScatter(g, byId){
@@ -936,19 +950,19 @@ function renderScatter(g, byId){
   const divIds = new Set((g.divergence||[]).map(d=>d.id));
   const fndIds = new Set((g.foundation||[]).map(d=>d.id));
   // 軸とグリッド（sqrt 標度。値は i/4 の二乗で決定的）
-  let ax = `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#9FB2C6" stroke-width="1"/>
-            <line x1="${L}" y1="${TM}" x2="${L}" y2="${H-B}" stroke="#9FB2C6" stroke-width="1"/>`;
+  let ax = `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#aeaeb2" stroke-width="1"/>
+            <line x1="${L}" y1="${TM}" x2="${L}" y2="${H-B}" stroke="#aeaeb2" stroke-width="1"/>`;
   for (let i=1;i<=4;i++){
     const fx = xmax*(i/4)**2, fy = ymax*(i/4)**2;
-    ax += `<line x1="${xs(fx)}" y1="${TM}" x2="${xs(fx)}" y2="${H-B}" stroke="#E4ECF4" stroke-width="1"/>
-           <text x="${xs(fx)}" y="${H-B+18}" font-size="10" fill="#5C6B7A" text-anchor="middle">${Math.round(fx)}</text>
-           <line x1="${L}" y1="${ys(fy)}" x2="${W-R}" y2="${ys(fy)}" stroke="#E4ECF4" stroke-width="1"/>
-           <text x="${L-8}" y="${ys(fy)+3}" font-size="10" fill="#5C6B7A" text-anchor="end">${fy.toFixed(4)}</text>`;
+    ax += `<line x1="${xs(fx)}" y1="${TM}" x2="${xs(fx)}" y2="${H-B}" stroke="#e8e8ed" stroke-width="1"/>
+           <text x="${xs(fx)}" y="${H-B+18}" font-size="10" fill="#6e6e73" text-anchor="middle">${Math.round(fx)}</text>
+           <line x1="${L}" y1="${ys(fy)}" x2="${W-R}" y2="${ys(fy)}" stroke="#e8e8ed" stroke-width="1"/>
+           <text x="${L-8}" y="${ys(fy)+3}" font-size="10" fill="#6e6e73" text-anchor="end">${fy.toFixed(4)}</text>`;
   }
   const S = T();
-  ax += `<text x="${(L+W-R)/2}" y="${H-B+40}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold">${esc(S.scX)}</text>
-         <text x="22" y="${(TM+H-B)/2}" font-size="12" fill="#1F2D40" text-anchor="middle" font-weight="bold" transform="rotate(-90 22 ${(TM+H-B)/2})">${esc(S.scY)}</text>
-         <text x="${L+14}" y="${TM+18}" font-size="11.5" fill="#A8761A" font-weight="bold">${esc(S.scHint)}</text>`;
+  ax += `<text x="${(L+W-R)/2}" y="${H-B+40}" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="bold">${esc(S.scX)}</text>
+         <text x="22" y="${(TM+H-B)/2}" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="bold" transform="rotate(-90 22 ${(TM+H-B)/2})">${esc(S.scY)}</text>
+         <text x="${L+14}" y="${TM+18}" font-size="11.5" fill="#6e6e73" font-weight="bold">${esc(S.scHint)}</text>`;
   $("#edges").innerHTML = ax;
   // 重なり回避の決定論的ジッタ: 同一座標（btw≈0 のノードが大半）に重なる点を黄金角スパイラルで
   // 散らし、全ノードを可視化する。中心は真の (indeg, btw) 位置のまま＝構造（左上＝乖離）は保つ。
@@ -970,22 +984,22 @@ function renderScatter(g, byId){
   }
   const drawOrder = [...pts].sort((a,b)=> a.btw-b.btw || (a.id<b.id?-1:1));   // 高媒介が最前面
   $("#nodes").innerHTML = drawOrder.map(n => {
-    let fill="#A9C9E8", stroke="#ffffff", sw=0.6, r=3.6, op=0.62;   // 通常点は小さめ半透明＝密度が見える
-    if (divIds.has(n.id)){ fill="#F2C84B"; stroke="#A8761A"; sw=1.4; r=6; op=1; }
-    else if (fndIds.has(n.id)){ fill="#2C5F94"; r=6; op=1; }
-    const sel = n.id===selected ? `<circle cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r+6}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
+    let fill="#d2d2d7", stroke="#ffffff", sw=0.6, r=3.6, op=0.62;   // 通常点は小さめ半透明＝密度が見える
+    if (divIds.has(n.id)){ fill="#d2d2d7"; stroke="#6e6e73"; sw=1.4; r=6; op=1; }
+    else if (fndIds.has(n.id)){ fill="#424245"; r=6; op=1; }
+    const sel = n.id===selected ? `<circle cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r+6}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
     return `${sel}<circle data-id="${n.id}" cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r}" fill="${fill}" fill-opacity="${op}" stroke="${stroke}" stroke-width="${sw}" style="cursor:pointer"/>`;
   }).join("");
   const lab = pts.filter(n=>divIds.has(n.id)).sort((a,b)=>a.r_bt-b.r_bt).slice(0,6)
     .concat(pts.sort((a,b)=>b.indeg-a.indeg).slice(0,3));
   $("#labels").innerHTML = lab.map(n =>
-    `<text x="${JX(n.id)+8}" y="${JY(n.id)-7}" font-size="10.5" fill="#1F2D40" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
+    `<text x="${JX(n.id)+8}" y="${JY(n.id)-7}" font-size="10.5" fill="#1d1d1f" paint-order="stroke" stroke="#ffffff" stroke-width="3">${esc(n.label)}</text>`).join("");
   // 全ノード数の注記（底辺集中の説明）
   const note = lang==="ja" ? `全 ${pts.length} ノードを描画（媒介中心性は大半が 0 のため底辺付近に密集。重なりは微小に分散）`
     : lang==="en" ? `${pts.length} nodes shown (most have betweenness ≈ 0, so they cluster near the bottom; overlaps are slightly spread)`
     : lang==="zhHant" ? `共繪製 ${pts.length} 個節點（多數中介中心性≈0，集中於底部；重疊處微幅分散）`
     : `共绘制 ${pts.length} 个节点（多数中介中心性≈0，集中于底部；重叠处微幅分散）`;
-  $("#labels").innerHTML += `<text x="${40}" y="650" font-size="11" fill="#5C6B7A">${note}</text>`;
+  $("#labels").innerHTML += `<text x="${40}" y="650" font-size="11" fill="#6e6e73">${note}</text>`;
 }
 
 // リストから選択した対象がフィルタの外にある場合も、図上で確認できるようにする。
@@ -1035,7 +1049,7 @@ function renderSide(g, byId){
     const mx2 = Math.max(...g.nodes.map(n=>n[curM])) || 1;
     const rows = [...g.nodes].sort((a,b)=>b[curM]-a[curM]).slice(0,10);
     const eigNote = curM==="eig"
-      ? `<div class="diag-cut" style="background:var(--warnbg);border-left:3px solid #F2C84B;margin:0 0 8px">${S.eigNote}</div>`
+      ? `<div class="diag-cut" style="background:var(--warnbg);border-left:3px solid #d2d2d7;margin:0 0 8px">${S.eigNote}</div>`
       : "";
     $("#rankList").innerHTML = eigNote + rows.map(n =>
       `<div class="rank-row${n.id===selected?' sel':''}" data-id="${n.id}">
@@ -1052,7 +1066,7 @@ function renderSide(g, byId){
       `<div class="div-row" data-id="${d.id}">${S.divBridge(esc(d.id), d.rank_indeg, d.rank_btw, d.indeg, d.btw)}</div>`).join("") :
       `<div class="muted">${S.divNone}</div>`) +
     fd.map(d =>
-      `<div class="div-row" data-id="${d.id}" style="border-left-color:#2C5F94; background:#EAF4FF">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
+      `<div class="div-row" data-id="${d.id}" style="border-left-color:#424245; background:#f5f5f7">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
   document.querySelectorAll(".div-row[data-id]").forEach(r => r.onclick = () => focusNode(r.dataset.id));
   $("#spearman").textContent = S.spearman(g.spearman||{});
 }
@@ -1088,7 +1102,7 @@ function render(){
     cc.onmousemove = ev => {
       const n = byId[cc.dataset.id], d = descOf(n), sl=lang==="ja"?" ／ ":" / ";
       tip.innerHTML = `<b>${esc(n.label)}</b>${n.seed?" 🌱"+S.seedBadge:""}${n.art?" ⚠"+TYPE_INFO.cutpoint[lang]:""}<br>` +
-        (d?`<span style="color:#5C6B7A;font-style:italic">${esc(d.slice(0,70))}${d.length>70?"…":""}</span><br>`:"") +
+        (d?`<span style="color:#6e6e73;font-style:italic">${esc(d.slice(0,70))}${d.length>70?"…":""}</span><br>`:"") +
         `${S.tipCat}: ${esc(catLabel(n.cat)||"—")}${sl}${S.tipCom} ${n.com}<br>` +
         `${S.tipIndeg} ${n.indeg}（${n.r_in}）${sl}${S.tipOut} ${n.outdeg}${sl}${S.tipReach} ${n.impact}<br>` +
         `${S.tipBtw} ${n.btw}（${n.r_bt}）${S.tipClick}`;
