@@ -904,8 +904,8 @@ function renderNet(g, byId){
     const inCom = focusCom!=null && a.com===focusCom && b.com===focusCom;
     const inEgo = ego && ego.has(e.s) && ego.has(e.t);
     let stroke="#d2d2d7", w=0.7, op=0.55;
-    if (inCut){ stroke="#aeaeb2"; w=1.4; op=0.9; }
-    else if (hot){ stroke="#aeaeb2"; w=1.6; op=0.95; }
+    if (inCut){ stroke="#E2A82E"; w=1.4; op=0.9; }
+    else if (hot){ stroke="#E2A82E"; w=1.6; op=0.95; }
     else if (inCom){ stroke="#424245"; w=1.1; op=0.85; }
     else if (ego){ op = inEgo ? 0.5 : 0.05; if (inEgo) stroke="#aeaeb2"; }  // 残存側を含むエゴ辺＝青
     else if (focusCom!=null){ op=0.18; }
@@ -925,8 +925,8 @@ function renderNet(g, byId){
     let fill = comMode ? COLORS[n.com % COLORS.length] : colorOf(t);
     const op = opOf(n);
     if (cutSet){
-      if (n.id===selected) fill="#aeaeb2";
-      else if (cutSet.has(n.id)) fill="#d2d2d7";
+      if (n.id===selected) fill="#E2A82E";
+      else if (cutSet.has(n.id)) fill="#F2C84B";
     }
     const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#E2A82E" stroke-width="2.2" opacity="${op}"/>` : "";
     const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
