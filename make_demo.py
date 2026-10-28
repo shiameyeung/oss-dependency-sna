@@ -113,7 +113,7 @@ TEMPLATE = r"""<!DOCTYPE html>
              border-radius:10px; padding:12px 14px; }
   .divband h2 { font-size:13px; margin:0 0 8px; color:var(--acc); font-weight:700; }
   #divList { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:6px; }
-  .div-row { font-size:12px; padding:5px 6px; border-left:3px solid #d2d2d7;
+  .div-row { font-size:12px; padding:5px 6px; border-left:3px solid #F2C84B;
              background:var(--warnbg); border-radius:4px; cursor:pointer; }
   .div-row b { color:#6e6e73; }
   .muted { color:var(--sub); font-size:11.5px; }
@@ -211,7 +211,7 @@ button,input,select,textarea{font:inherit}
 
 :root{--bg:#f5f5f7;--panel:#fff;--panel2:#e8e8ed;--txt:#1d1d1f;--sub:#6e6e73;--acc:#1d1d1f;--acc2:#6e6e73;--warn:#E2A82E;--warnbg:#f5f5f7;--line:#d2d2d7}
 button.on{background:#1d1d1f;color:#fff}
-.badge{background:#e8e8ed!important;color:#1d1d1f!important;border:1px solid #d2d2d7}
+.badge{border:1px solid #d2d2d7}
 .legend .dot,.com-row .dot{border:1px solid #424245}
 :focus-visible{outline:2px solid #1d1d1f;outline-offset:3px}
 </style>
@@ -265,17 +265,17 @@ button.on{background:#1d1d1f;color:#fff}
   <div class="muted" id="spearman" style="margin-top:8px"></div>
 </div>
 <div class="legend">
-  <span><span class="dot" style="background:#aeaeb2"></span><span id="legNormal"></span></span>
-  <span><span class="dot" style="background:#aeaeb2; outline:2px solid #1d1d1f"></span><span id="legSeed"></span></span>
+  <span><span class="dot" style="background:#5DA8E8"></span><span id="legNormal"></span></span>
+  <span><span class="dot" style="background:#5DA8E8; outline:2px solid #1F2D40"></span><span id="legSeed"></span></span>
   <span><span class="dot" style="background:transparent; border:2.5px solid var(--warn)"></span><span id="legCut"></span></span>
-  <span><span class="dot" style="background:#d2d2d7"></span><span id="legIso"></span></span>
+  <span><span class="dot" style="background:#F2C84B"></span><span id="legIso"></span></span>
 </div>
 <footer id="meta"></footer>
 <script>
 const DATA = __DATA_JSON__;
 const requestedLanguage = new URLSearchParams(location.search).get("lang");
 let lang = ({zh:"zhHans", "zh-Hans":"zhHans", "zh-Hant":"zhHant"})[requestedLanguage] || (["ja","en","zhHant","zhHans"].includes(requestedLanguage) ? requestedLanguage : "ja");   // 表示言語（ja / en）。データ・指標値は不変、表示文字列のみ切替。
-const COLORS = ["#1d1d1f","#424245","#6e6e73","#86868b","#aeaeb2","#d2d2d7","#e8e8ed","#2b2b2e","#555558","#b8b8bd"];
+const COLORS = ["#5DA8E8","#F2C84B","#81c784","#ba68c8","#ff8a65","#4dd0e1","#f06292","#a1887f","#90a4ae","#dce775"];
 const LANGS = [["ja","日本語"],["en","English"],["zhHant","繁體"],["zhHans","简体"]];
 const HTMLLANG = {ja:"ja", en:"en", zhHant:"zh-Hant", zhHans:"zh-Hans"};
 // ヘッダの凡例（読み方・操作）— アイコンは言語非依存。文言は STR.headerHint[キー]。
@@ -290,8 +290,8 @@ const HINT_ICONS = {
 const MLAB = {
   indeg:{ja:"被依存数（直接依存元の数・単純統計）", en:"In-degree (direct dependents · simple stat)",
          zhHant:"被依賴數（直接依賴者數·簡單統計）", zhHans:"被依赖数（直接依赖者数·简单统计）"},
-  impact:{ja:"影響範囲（推移的に波及する依存元数）", en:"Reach (transitively affected dependents)",
-          zhHant:"影響範圍（遞移波及的依賴者數）", zhHans:"影响范围（传递波及的依赖者数）"},
+  impact:{ja:"影響範囲（依存経路を通じてこのノードに到達する依存元数）", en:"Reach (number of dependents with a dependency path to this node)",
+          zhHant:"影響範圍（可沿依賴路徑到達此節點的依賴者數）", zhHans:"影响范围（可沿依赖路径到达此节点的依赖者数）"},
   btw:{ja:"媒介中心性（橋渡し・経路上の要）", en:"Betweenness (bridge · path bottleneck)",
        zhHant:"中介中心性（橋接·路徑要衝）", zhHans:"中介中心性（桥接·路径要冲）"},
   pr:{ja:"PageRank（構造的重要度）", en:"PageRank (structural importance)",
@@ -302,11 +302,11 @@ const MLAB = {
 function mlab(m){ return MLAB[m][lang]; }
 function mshort(m){ return mlab(m).split(lang==="en" ? " (" : "（")[0]; }
 const TYPE_INFO = {
-  cutpoint:   {color:"#aeaeb2", ja:"切断点",   en:"Cut point",  zhHant:"切斷點", zhHans:"切断点"},
-  bridge:     {color:"#6e6e73", ja:"橋渡し型", en:"Bridge",     zhHant:"橋接型", zhHans:"桥接型"},
-  foundation: {color:"#424245", ja:"土台型",   en:"Foundation", zhHant:"基礎型", zhHans:"基础型"},
-  isolated:   {color:"#6e6e73", ja:"孤立",     en:"Isolated",   zhHant:"孤立",   zhHans:"孤立"},
-  normal:     {color:"#6e6e73", ja:"標準",     en:"Standard",   zhHant:"標準",   zhHans:"标准"},
+  cutpoint:   {color:"#E2A82E", ja:"切断点",   en:"Cut point",  zhHant:"切斷點", zhHans:"切断点"},
+  bridge:     {color:"#A8761A", ja:"橋渡し型", en:"Bridge",     zhHant:"橋接型", zhHans:"桥接型"},
+  foundation: {color:"#2C5F94", ja:"土台型",   en:"Foundation", zhHant:"基礎型", zhHans:"基础型"},
+  isolated:   {color:"#5C6B7A", ja:"孤立",     en:"Isolated",   zhHant:"孤立",   zhHans:"孤立"},
+  normal:     {color:"#5C6B7A", ja:"標準",     en:"Standard",   zhHant:"標準",   zhHans:"标准"},
 };
 const DOMAIN_I18N = {
   ds:{en:"Data science (PyPI)", zhHant:"資料科學類（PyPI）", zhHans:"数据科学系（PyPI）"},
@@ -373,14 +373,14 @@ const STR = {
   comTitle:cid=>`コミュニティ ${cid}`, comNodes:"ノード数", comInEdges:"内部エッジ数", comDensity:"内部密度", comAvgIn:"平均被依存数",
   comTop:"<b>代表ノード（PageRank 上位）:</b> ",
   comDesc:"コミュニティは、依存関係が相対的に密な<b>ノードのまとまり</b>です。",
-  comReco:"<b>確認の手がかり:</b> まとまりの中の依存関係を確認できます。同じ機能や代替可能性を意味するものではありません。",
+  comReco:"<b>確認の手がかり:</b> まとまりの中の依存関係を確認できます。各パッケージの機能や、代替候補として適しているかを確認してください。",
   comEvidence:"解釈規則の根拠と規則表は README を参照。", comNone:"コミュニティ情報なし",
-  eigNote:'<b>※ 参考値</b>: 依存ネットワークはほぼ非巡回（ループのない一方向の構造・DAG）であり、固有ベクトル中心性の反復計算は依存の終端（外向きの依存を持たない「行き止まり」のノード）に値が集中し、うまく順位が付かなくなりやすい（順位が大きく断絶するのはこのため）。診断には被依存数・媒介・PageRank を用いる。<b>「この指標は依存ネットワーク向きではない」こと自体も、本分析で得られた知見の一つである</b>。',
+  eigNote:'<b>※ 参考値</b>: 今回の依存ネットワークは、閉路のない有向グラフ（DAG）に近い構造です。固有ベクトル中心性の反復計算では、外向きの依存を持たない終端ノードに値が集中し、順位に大きな開きが生じています。この計算特性を分析結果として記録し、診断には被依存数・媒介中心性・PageRank を用います。',
   spearman:sp=>`順位の一致度（Spearman 順位相関 ρ）— 被依存×媒介=${sp.indeg_vs_btw} ／ ×PageRank=${sp.indeg_vs_pagerank} ／ ×固有ベクトル=${sp.indeg_vs_eigenvector}（1 に近いほど順位が一致）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依存 ${rin}位 → 媒介 <b>${rbt}位</b> <span class="muted">(被依存 ${indeg}・媒介 ${btw}) 橋渡し型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依存 ${rin}位・影響範囲 ${impact} <span class="muted">土台型（単純統計でも見える）</span>`,
   divNone:"この領域では顕著な乖離ノードなし", comRowNote:top=>top?`(${top}系)`:"",
-  scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存は少ないが媒介が高い（単純統計では見えない要衝）",
+  scX:"被依存数（単純統計）→", scY:"媒介中心性（SNA）→", scHint:"← 左上 = 被依存数が少なく、媒介中心性が高いノード（依存経路の橋渡し）",
   tipClick:" — クリックで診断とフォーカス表示", tipCat:"分類", tipCom:"コミュニティ", tipIndeg:"被依存", tipOut:"依存先", tipReach:"影響範囲", tipBtw:"媒介",
   metaTitle:l=>`再現性情報（${l}）`, metaFetch:"取得日", metaSrc:"データソース", metaRate:"シード成功率", metaScale:"規模",
   metaNode:"ノード", metaEdge:"エッジ", metaDensity:"密度", metaComp:"弱連結成分", metaMod:"モジュラリティ", metaCom:"コミュニティ",
@@ -397,7 +397,7 @@ const STR = {
   qPlaceholder:"search by name…", catAll:"Category: all",
   diagTitle:"Diagnosis — what this means",
   diagHint:'Click a node (or a community row in community-color mode) to see its metrics and what they mean for decision-making.<br>Diagnoses are generated by a deterministic rule + template table (node type × decision context). No LLM at runtime; fully reproducible.',
-  divTitle:'Rank divergence — bottlenecks invisible to simple stats',
+  divTitle:'Rank differences by metric — select a package to explore',
   legNormal:"node", legSeed:"seed (analysis root)", legCut:"cut point ⚠ (click to show what it isolates)", legIso:"isolated if removed",
   rankComTitle:"Communities (click to focus)",
   rankTopSuffix:" — Top 10",
@@ -411,23 +411,23 @@ const STR = {
   cutList:(head,more)=>`<div class="diag-cut"><b>Isolated set:</b> ${head}${more?` +${more} more`:""}</div>`,
   cutReco:"<b>Concentration risk:</b> a structural chokepoint — a candidate for closer monitoring and review. <b>Adoption / support:</b> check for alternative paths in advance.",
   bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`The rank gap reaches ${gap} — an exceptionally large divergence. `:gap>=30?`The rank gap of ${gap} is large. `:"";return `Compared with its in-degree (rank ${rin}), its betweenness is clearly higher (<b>rank ${rbt}</b>). ${g}It sits at a path bottleneck (<b>bridge</b>); a failure could sever dependency paths between groups of packages. This type is hard to detect with simple stats.`;},
-  bridgeReco:"<b>Adoption:</b> check maintenance and update cadence. <b>Support:</b> an easily overlooked candidate for support work.",
+  bridgeReco:"<b>Adoption / support:</b> Check maintenance status and update cadence when reviewing this candidate.",
   foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`about ${Math.round(sh*100)}% of the analyzed network (${impact} packages)`:`${impact} packages transitively`;return `A <b>foundation</b> package with in-degree ${indeg} (rank ${rin} overall). An outage or vulnerability would propagate to ${reach}. This type is visible even with simple stats.`;},
-  foundReco:"<b>Adoption:</b> a widely-used, standard choice. <b>Concentration risk:</b> a textbook single point of failure for the ecosystem — watch maintenance continuity.",
+  foundReco:"<b>Adoption / dependency concentration:</b> Review the packages that depend on this node and check for ongoing maintenance.",
   isoMain:"No dependency relations are observed within this data range (its dependencies are outside the collected scope, or it is an independent package).",
   normMain:(rin,rbt)=>`No structural peculiarity detected (in-degree rank ${rin}, betweenness rank ${rbt}). It sits in a standard structural position, so reviewing individual metrics should be sufficient.`,
   evidence:'The metric interpretations draw on standard readings of SNA metrics (as synthesized in Chen et al. 2022) and findings on dependency networks (Decan et al. 2019); the type-classification rules are the design of this system. See the README for the full rule table. Diagnoses are <b>candidate flags</b> derived from structural metrics; actual adoption, support, or monitoring decisions require separate verification of each project\'s circumstances (maintenance, substitutability).',
   comTitle:cid=>`Community ${cid}`, comNodes:"Nodes", comInEdges:"Internal edges", comDensity:"Internal density", comAvgIn:"Mean in-degree",
   comTop:"<b>Representative nodes (top PageRank):</b> ",
   comDesc:"A community corresponds to a relatively dense <b>functional group</b>.",
-  comReco:"<b>Adoption:</b> look for alternatives within the same community first. <b>Concentration risk:</b> a rough scope of how failures could propagate.",
+  comReco:"<b>Review:</b> Explore the dependency links within this community. When considering adoption or reviewing dependency concentration, check each package’s function and suitability as an alternative.",
   comEvidence:"See the README for the basis of the interpretation rules and the rule table.", comNone:"No community data",
-  eigNote:'<b>※ Reference only</b>: dependency networks are nearly acyclic (DAG — one-directional, no loops), so eigenvector centrality’s power iteration tends to break down by concentrating its value at dependency sinks (nodes with no outgoing dependency) — hence the large rank gap. Use in-degree, betweenness, and PageRank for diagnosis. <b>That this metric does not suit dependency networks is itself one of the findings of this analysis.</b>',
+  eigNote:'<b>Reference value</b>: This dependency network is close to a directed acyclic graph (DAG), a directed graph with no directed cycles. With power iteration, eigenvector centrality values concentrate at dependency sinks—nodes with no outgoing dependencies—producing large rank gaps. The analysis records this behavior and uses in-degree, betweenness centrality, and PageRank for diagnosis.',
   spearman:sp=>`Rank agreement (Spearman ρ) — in-degree×betweenness=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×eigenvector=${sp.indeg_vs_eigenvector} (the farther from 1.0, the more SNA-specific information)`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — in-deg ${rin} → betw <b>${rbt}</b> <span class="muted">(in-deg ${indeg}, betw ${btw}) bridge</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — in-deg ${rin} · reach ${impact} <span class="muted">foundation (visible to simple stats)</span>`,
   divNone:"No prominent divergence nodes in this domain", comRowNote:top=>top?`(${top})`:"",
-  scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← top-left = low in-degree but high betweenness (bottlenecks invisible to simple stats)",
+  scX:"In-degree (simple stat) →", scY:"Betweenness (SNA) →", scHint:"← Top-left = low in-degree and high betweenness (bridging dependency paths)",
   tipClick:" — click for diagnosis & focus", tipCat:"Category", tipCom:"Community", tipIndeg:"In-deg", tipOut:"Out-deg", tipReach:"Reach", tipBtw:"Betw",
   metaTitle:l=>`Reproducibility (${l})`, metaFetch:"Fetched", metaSrc:"Source", metaRate:"Seed success", metaScale:"Scale",
   metaNode:"nodes", metaEdge:"edges", metaDensity:"density", metaComp:"weak components", metaMod:"modularity", metaCom:"communities",
@@ -444,7 +444,7 @@ const STR = {
   qPlaceholder:"以名稱搜尋…", catAll:"分類：全部",
   diagTitle:"診斷 — 這代表什麼",
   diagHint:'點擊節點（或社群著色時的社群列），顯示指標數據與「在決策上代表什麼」的診斷。<br>診斷由節點類型 × 決策情境的對應表確定性生成（不使用 AI·可重現）。',
-  divTitle:'排名乖離 — 簡單統計看不見的「要衝」',
+  divTitle:'各指標的排名差異 — 選取套件名稱查看',
   legNormal:"一般節點", legSeed:"種子（分析起點）", legCut:"切斷點 ⚠（點擊顯示其孤立範圍）", legIso:"移除時孤立的範圍",
   rankComTitle:"社群（點擊聚焦）",
   rankTopSuffix:" — Top 10",
@@ -458,23 +458,23 @@ const STR = {
   cutList:(head,more)=>`<div class="diag-cut"><b>孤立範圍：</b> ${head}${more?` 其他 ${more} 項`:""}</div>`,
   cutReco:"<b>集中風險評估：</b> 結構上的要害，監控・精查的候選。<b>採用·支援決策：</b> 建議事先確認是否有替代路徑。",
   bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`兩指標的排名差達 ${gap}，排名乖離尤為顯著。`:gap>=30?`兩指標的排名差 ${gap} 較大。`:"";return `相較於被依賴數（第 ${rin} 位），其中介中心性明顯較高（<b>第 ${rbt} 位</b>）。${g}它位於依賴路徑的要衝（<b>橋接</b>），故障時可能切斷多個套件群之間的依賴路徑。此類型以簡單統計難以發現。`;},
-  bridgeReco:"<b>採用決策：</b> 建議確認維護狀況與更新頻率。<b>支援決策：</b> 容易被忽略的支援對象候選。",
+  bridgeReco:"<b>採用・支援決策：</b> 評估此候選時，核對維護狀況與更新頻率。",
   foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`波及分析對象網路整體約 ${Math.round(sh*100)}%（${impact} 個套件）`:`遞移波及 ${impact} 個套件`;return `被依賴數 ${indeg}（整體第 ${rin} 位）的<b>基礎型</b>套件。若停止維護或出現漏洞，影響會${reach}。此類型以簡單統計也能發現。`;},
-  foundReco:"<b>採用決策：</b> 廣泛使用的標準選項。<b>集中風險評估：</b> 依賴集中於單點的典型案例，須留意維護的延續性。",
+  foundReco:"<b>採用・依賴集中評估：</b> 查看依賴此節點的套件，並核對維護的延續性。",
   isoMain:"在此資料範圍內未觀測到與其他套件的依賴關係（其依賴在收集範圍外，或為獨立套件）。",
   normMain:(rin,rbt)=>`未偵測到結構上的特異性（被依賴第 ${rin} 位·中介第 ${rbt} 位）。在依賴結構上處於標準位置，確認各項指標即可。`,
   evidence:'各指標的解讀參考 SNA 的標準讀法（整理於 Chen et al. 2022 的綜述）與依賴網路研究的成果（Decan et al. 2019）；型分類規則本身為本系統的設計（規則表見 README）。本診斷為基於結構指標的<b>確認候選提示</b>；實際的採用、支援或監控決策，仍需另行確認專案實情（維護體制・可替代性等）。',
   comTitle:cid=>`社群 ${cid}`, comNodes:"節點數", comInEdges:"內部邊數", comDensity:"內部密度", comAvgIn:"平均被依賴數",
   comTop:"<b>代表節點（PageRank 前列）：</b> ",
   comDesc:"社群對應依賴相對密集的<b>功能群</b>。",
-  comReco:"<b>採用決策：</b> 替代候選優先在同一社群內尋找。<b>集中風險評估：</b> 故障可能波及範圍的參考。",
+  comReco:"<b>確認線索：</b> 查看社群內部的依賴關係。評估採用或依賴集中情形時，逐一核對套件功能及替代方案的適用性。",
   comEvidence:"解釋規則的依據與規則表見 README。", comNone:"無社群資訊",
-  eigNote:'<b>※ 參考值</b>：依賴網路近乎無環（沒有迴圈的單向結構・DAG），特徵向量中心性的迭代計算容易失準（數值集中到「沒有對外依賴的終端」節點），排名大幅斷裂即因此。診斷請使用被依賴數·中介·PageRank。<b>「此指標不適合依賴網路」本身也是本分析所得的發現之一</b>。',
+  eigNote:'<b>※ 參考值</b>：本次依賴網路近乎無環（沒有迴圈的單向結構・DAG）。特徵向量中心性的迭代計算會使數值集中於沒有對外依賴的終端節點，形成較大的排名差距。本分析記錄這項計算特性，診斷使用被依賴數、中介中心性與 PageRank。',
   spearman:sp=>`順位一致度（Spearman 等級相關 ρ）— 被依賴×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特徵向量=${sp.indeg_vs_eigenvector}（越遠離 1.0，SNA 獨有的資訊越多）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依賴第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依賴 ${indeg}・中介 ${btw}) 橋接型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依賴第 ${rin} 位·影響範圍 ${impact} <span class="muted">基礎型（簡單統計也可見）</span>`,
   divNone:"此領域無顯著的乖離節點", comRowNote:top=>top?`(${top})`:"",
-  scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴少但中介高（簡單統計看不見的要衝）",
+  scX:"被依賴數（簡單統計）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依賴數低、中介中心性高的節點（橋接依賴路徑）",
   tipClick:" — 點擊顯示診斷與聚焦", tipCat:"分類", tipCom:"社群", tipIndeg:"被依賴", tipOut:"依賴", tipReach:"影響範圍", tipBtw:"中介",
   metaTitle:l=>`可重現資訊（${l}）`, metaFetch:"取得日", metaSrc:"資料來源", metaRate:"種子成功率", metaScale:"規模",
   metaNode:"節點", metaEdge:"邊", metaDensity:"密度", metaComp:"弱連通分量", metaMod:"模組度", metaCom:"社群",
@@ -491,7 +491,7 @@ const STR = {
   qPlaceholder:"按名称搜索…", catAll:"分类：全部",
   diagTitle:"诊断 — 这意味着什么",
   diagHint:'点击节点（或社群着色时的社群行），显示指标数据与「在决策上意味着什么」的诊断。<br>诊断由节点类型 × 决策场景的对应表确定性生成（不使用 AI·可复现）。',
-  divTitle:'排名乖离 — 简单统计看不见的「要冲」',
+  divTitle:'各指标的排名差异 — 选择软件包名称查看',
   legNormal:"普通节点", legSeed:"种子（分析起点）", legCut:"切断点 ⚠（点击显示其孤立范围）", legIso:"移除时孤立的范围",
   rankComTitle:"社群（点击聚焦）",
   rankTopSuffix:" — Top 10",
@@ -505,23 +505,23 @@ const STR = {
   cutList:(head,more)=>`<div class="diag-cut"><b>孤立范围：</b> ${head}${more?` 其他 ${more} 项`:""}</div>`,
   cutReco:"<b>集中风险评估：</b> 结构上的要害，监控・精查的候选。<b>采用·支持决策：</b> 建议事先确认是否有替代路径。",
   bridgeMain:(rin,rbt,gap)=>{const g=gap>=100?`两指标的排名差达 ${gap}，排名乖离尤为显著。`:gap>=30?`两指标的排名差 ${gap} 较大。`:"";return `相比被依赖数（第 ${rin} 位），其中介中心性明显更高（<b>第 ${rbt} 位</b>）。${g}它位于依赖路径的要冲（<b>桥接</b>），故障时可能切断多个软件包群之间的依赖路径。此类型用简单统计难以发现。`;},
-  bridgeReco:"<b>采用决策：</b> 建议确认维护状况与更新频率。<b>支持决策：</b> 容易被忽略的支持对象候选。",
+  bridgeReco:"<b>采用・支持决策：</b> 评估此候选时，核对维护状况与更新频率。",
   foundMain:(indeg,rin,impact,N)=>{const sh=impact/N;const reach=sh>=0.25?`波及分析对象网络整体约 ${Math.round(sh*100)}%（${impact} 个软件包）`:`传递波及 ${impact} 个软件包`;return `被依赖数 ${indeg}（整体第 ${rin} 位）的<b>基础型</b>软件包。若停止维护或出现漏洞，影响会${reach}。此类型用简单统计也能发现。`;},
-  foundReco:"<b>采用决策：</b> 广泛使用的标准选项。<b>集中风险评估：</b> 依赖集中于单点的典型案例，需留意维护的延续性。",
+  foundReco:"<b>采用・依赖集中评估：</b> 查看依赖此节点的软件包，并核对维护的延续性。",
   isoMain:"在此数据范围内未观测到与其他软件包的依赖关系（其依赖在收集范围外，或为独立软件包）。",
   normMain:(rin,rbt)=>`未检测到结构上的特异性（被依赖第 ${rin} 位·中介第 ${rbt} 位）。在依赖结构上处于标准位置，确认各项指标即可。`,
   evidence:'各指标的解读参考 SNA 的标准读法（整理于 Chen et al. 2022 的综述）与依赖网络研究的成果（Decan et al. 2019）；型分类规则本身为本系统的设计（规则表见 README）。本诊断为基于结构指标的<b>确认候选提示</b>；实际的采用、支持或监控决策，仍需另行确认项目实情（维护体制・可替代性等）。',
   comTitle:cid=>`社群 ${cid}`, comNodes:"节点数", comInEdges:"内部边数", comDensity:"内部密度", comAvgIn:"平均被依赖数",
   comTop:"<b>代表节点（PageRank 前列）：</b> ",
   comDesc:"社群对应依赖相对密集的<b>功能群</b>。",
-  comReco:"<b>采用决策：</b> 替代候选优先在同一社群内寻找。<b>集中风险评估：</b> 故障可能波及范围的参考。",
+  comReco:"<b>确认线索：</b> 查看社群内部的依赖关系。评估采用或依赖集中情况时，逐一核对软件包功能及替代方案的适用性。",
   comEvidence:"解释规则的依据与规则表见 README。", comNone:"无社群信息",
-  eigNote:'<b>※ 参考值</b>：依赖网络近乎无环（没有回环的单向结构・DAG），特征向量中心性的迭代计算容易失准（数值集中到「没有对外依赖的终端」节点），排名大幅断裂即因此。诊断请使用被依赖数·中介·PageRank。<b>「该指标不适合依赖网络」本身也是本分析得到的发现之一</b>。',
+  eigNote:'<b>※ 参考值</b>：本次依赖网络近乎无环（没有回环的单向结构・DAG）。特征向量中心性的迭代计算会使数值集中于没有对外依赖的终端节点，形成较大的排名差距。本分析记录这项计算特性，诊断使用被依赖数、中介中心性与 PageRank。',
   spearman:sp=>`顺位一致度（Spearman 等级相关 ρ）— 被依赖×中介=${sp.indeg_vs_btw} / ×PageRank=${sp.indeg_vs_pagerank} / ×特征向量=${sp.indeg_vs_eigenvector}（越远离 1.0，SNA 独有的信息越多）`,
   divBridge:(id,rin,rbt,indeg,btw)=>`<b>${id}</b> — 被依赖第 ${rin} 位 → 中介第 <b>${rbt}</b> 位 <span class="muted">(被依赖 ${indeg}・中介 ${btw}) 桥接型</span>`,
   divFound:(id,rin,impact)=>`<b style="color:#424245">${id}</b> — 被依赖第 ${rin} 位·影响范围 ${impact} <span class="muted">基础型（简单统计也可见）</span>`,
   divNone:"该领域无显著的乖离节点", comRowNote:top=>top?`(${top})`:"",
-  scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖少但中介高（简单统计看不见的要冲）",
+  scX:"被依赖数（简单统计）→", scY:"中介中心性（SNA）→", scHint:"← 左上 = 被依赖数低、中介中心性高的节点（桥接依赖路径）",
   tipClick:" — 点击显示诊断与聚焦", tipCat:"分类", tipCom:"社群", tipIndeg:"被依赖", tipOut:"依赖", tipReach:"影响范围", tipBtw:"中介",
   metaTitle:l=>`可复现信息（${l}）`, metaFetch:"取得日", metaSrc:"数据来源", metaRate:"种子成功率", metaScale:"规模",
   metaNode:"节点", metaEdge:"边", metaDensity:"密度", metaComp:"弱连通分量", metaMod:"模块度", metaCom:"社群",
@@ -535,8 +535,8 @@ let curD = Object.keys(DATA)[0], curM = "indeg", view = "net",
     comMode = false, selected = null, selectedCom = null, topN = 0, catFilter = "";
 
 const $ = s => document.querySelector(s);
-function colorOf(t){ // 指標値を明暗の連続階調で表示する。
-  const s=[[232,232,237],[134,134,139],[29,29,31]];
+function colorOf(t){ // 指標値 t∈[0,1] を青系グラデーションに（CFE6FF→5DA8E8→1F4E79）
+  const s=[[207,230,255],[93,168,232],[31,78,121]];
   const [a,b,k]= t<.5 ? [s[0],s[1],t*2] : [s[1],s[2],(t-.5)*2];
   return `rgb(${a.map((v,i)=>Math.round(v+(b[i]-v)*k)).join(",")})`;
 }
@@ -598,8 +598,8 @@ function diagnoseNode(n, g){
   const sep = lang==="ja" ? "、" : ", ";
   const types = nodeTypes(n);
   let badges = types.map(t=>`<span class="badge" data-tip="${esc(S.badgeTip[t]||"")}" style="background:${TYPE_INFO[t].color}">${TYPE_INFO[t][lang]}</span>`).join("");
-  if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#aeaeb2">${S.seedBadge}</span>`;
-  if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#aeaeb2">${esc(catLabel(n.cat))}</span>`;
+  if (n.seed) badges += `<span class="badge" data-tip="${esc(S.badgeTip.seed)}" style="background:#5DA8E8">${S.seedBadge}</span>`;
+  if (n.cat) badges += `<span class="badge" data-tip="${esc(S.badgeTip.cat)}" style="background:#8FA8C0">${esc(catLabel(n.cat))}</span>`;
   const d = descOf(n);
   const descHtml = `<section class="diag-purpose"><h3>${PURPOSE_LABEL[lang]}</h3><p class="diag-desc">${esc(d || PURPOSE_MISSING[lang])}</p></section>`;
   const table = `<table class="diag-table">
@@ -904,11 +904,11 @@ function renderNet(g, byId){
     const hot = selShown && !cutSet && (e.s===selected || e.t===selected);  // 通常エゴの中心辺（切断点では金線を出さない）
     const inCom = focusCom!=null && a.com===focusCom && b.com===focusCom;
     const inEgo = ego && ego.has(e.s) && ego.has(e.t);
-    let stroke="#d2d2d7", w=0.7, op=0.55;
+    let stroke="#C9D8E8", w=0.7, op=0.55;
     if (inCut){ stroke="#E2A82E"; w=1.4; op=0.9; }
     else if (hot){ stroke="#E2A82E"; w=1.6; op=0.95; }
-    else if (inCom){ stroke="#424245"; w=1.1; op=0.85; }
-    else if (ego){ op = inEgo ? 0.5 : 0.05; if (inEgo) stroke="#aeaeb2"; }  // 残存側を含むエゴ辺＝青
+    else if (inCom){ stroke="#2C5F94"; w=1.1; op=0.85; }
+    else if (ego){ op = inEgo ? 0.5 : 0.05; if (inEgo) stroke="#9DBBD6"; }  // 残存側を含むエゴ辺＝青
     else if (focusCom!=null){ op=0.18; }
     return `<line x1="${lx(e.s)}" y1="${ly(e.s)}" x2="${lx(e.t)}" y2="${ly(e.t)}"
       stroke="${stroke}" stroke-width="${w}" opacity="${op}"/>`;
@@ -930,8 +930,8 @@ function renderNet(g, byId){
       else if (cutSet.has(n.id)) fill="#F2C84B";
     }
     const ring = n.art ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+3.5}" fill="none" stroke="#E2A82E" stroke-width="2.2" opacity="${op}"/>` : "";
-    const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
-    const seedStroke = n.seed ? `stroke="#1d1d1f" stroke-width="1.6"` : `stroke="#ffffff" stroke-width="0.8"`;
+    const sel = n.id===selected ? `<circle cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r+7}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
+    const seedStroke = n.seed ? `stroke="#1F2D40" stroke-width="1.6"` : `stroke="#ffffff" stroke-width="0.8"`;
     return `${ring}${sel}<circle data-id="${n.id}" cx="${lx(n.id)}" cy="${ly(n.id)}" r="${r}" fill="${fill}" opacity="${op}" ${seedStroke} style="cursor:pointer"/>`;
   }).join("");
   const tops = g.nodes.filter(shown).sort((a,b)=>b[curM]-a[curM]).slice(0,12);
@@ -985,10 +985,10 @@ function renderScatter(g, byId){
   }
   const drawOrder = [...pts].sort((a,b)=> a.btw-b.btw || (a.id<b.id?-1:1));   // 高媒介が最前面
   $("#nodes").innerHTML = drawOrder.map(n => {
-    let fill="#d2d2d7", stroke="#ffffff", sw=0.6, r=3.6, op=0.62;   // 通常点は小さめ半透明＝密度が見える
-    if (divIds.has(n.id)){ fill="#d2d2d7"; stroke="#6e6e73"; sw=1.4; r=6; op=1; }
-    else if (fndIds.has(n.id)){ fill="#424245"; r=6; op=1; }
-    const sel = n.id===selected ? `<circle cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r+6}" fill="none" stroke="#1d1d1f" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
+    let fill="#A9C9E8", stroke="#ffffff", sw=0.6, r=3.6, op=0.62;   // 通常点は小さめ半透明＝密度が見える
+    if (divIds.has(n.id)){ fill="#F2C84B"; stroke="#A8761A"; sw=1.4; r=6; op=1; }
+    else if (fndIds.has(n.id)){ fill="#2C5F94"; r=6; op=1; }
+    const sel = n.id===selected ? `<circle cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r+6}" fill="none" stroke="#1F2D40" stroke-dasharray="3 3" stroke-width="1.5"/>` : "";
     return `${sel}<circle data-id="${n.id}" cx="${JX(n.id)}" cy="${JY(n.id)}" r="${r}" fill="${fill}" fill-opacity="${op}" stroke="${stroke}" stroke-width="${sw}" style="cursor:pointer"/>`;
   }).join("");
   const lab = pts.filter(n=>divIds.has(n.id)).sort((a,b)=>a.r_bt-b.r_bt).slice(0,6)
@@ -1067,7 +1067,7 @@ function renderSide(g, byId){
       `<div class="div-row" data-id="${d.id}">${S.divBridge(esc(d.id), d.rank_indeg, d.rank_btw, d.indeg, d.btw)}</div>`).join("") :
       `<div class="muted">${S.divNone}</div>`) +
     fd.map(d =>
-      `<div class="div-row" data-id="${d.id}" style="border-left-color:#424245; background:#f5f5f7">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
+      `<div class="div-row" data-id="${d.id}" style="border-left-color:#2C5F94; background:#EAF4FF">${S.divFound(esc(d.id), d.rank_indeg, d.impact)}</div>`).join("");
   document.querySelectorAll(".div-row[data-id]").forEach(r => r.onclick = () => focusNode(r.dataset.id));
   $("#spearman").textContent = S.spearman(g.spearman||{});
 }

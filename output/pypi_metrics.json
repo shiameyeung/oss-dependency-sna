@@ -5503,7 +5503,7 @@
    "art": 0,
    "seed": 0,
    "cat": "可視化",
-   "desc_ja": "Cytoscape.js を包んだ Dash 向けのネットワーク可視化コンポーネント",
+   "desc_ja": "Cytoscape.js を組み込んだ Dash 向けのネットワーク可視化コンポーネント",
    "desc_en": "A Component Library for Dash aimed at facilitating network visualization in Python, wrapped around Cytoscape.js"
   },
   {
@@ -7003,7 +7003,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "POSIXとWindows向けの、タイムアウト付きNFS安全なファイルロック",
+   "desc_ja": "POSIX と Windows 向けの、NFS 上でも安全に使えるタイムアウト付きファイルロック",
    "desc_en": "NFS-safe file locking with timeouts for POSIX and Windows"
   },
   {
@@ -7243,7 +7243,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "Python 3と2を単一ソースで対応するライブラリ",
+   "desc_ja": "単一のソースコードで Python 3 と 2 の両方に対応するライブラリ",
    "desc_en": "Clean single-source support for Python 3 and 2"
   },
   {
@@ -7903,7 +7903,7 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc_ja": "可変密度クラスタに対応した密度ベースのクラスタリング",
+   "desc_ja": "密度が異なるクラスタを扱える密度ベースのクラスタリング",
    "desc_en": "Clustering based on density with variable density clusters"
   },
   {
@@ -8803,7 +8803,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "高速なイテレート可能JSONパーサー",
+   "desc_ja": "反復処理に対応した高速な JSON パーサー",
    "desc_en": "Fast iterable JSON parser."
   },
   {
@@ -9623,7 +9623,7 @@
    "art": 0,
    "seed": 1,
    "cat": "機械学習",
-   "desc_ja": "機械学習分類器の予測を説明する局所解釈手法（LIME）",
+   "desc_ja": "機械学習分類器の予測を局所的に説明する手法（LIME）",
    "desc_en": "Local Interpretable Model-Agnostic Explanations for machine learning classifiers"
   },
   {
@@ -10483,7 +10483,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "itertoolsを超える、イテラブル操作の追加ルーチン",
+   "desc_ja": "itertools を補うイテラブル操作用の追加ルーチン",
    "desc_en": "More routines for operating on iterables, beyond itertools"
   },
   {
@@ -12803,7 +12803,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "ユーザー向けの共通タスク用Pythonパッケージ（例・データ取得）",
+   "desc_ja": "サンプルのコピーやデータ取得など、ユーザー向けの共通作業を支援する Python パッケージ",
    "desc_en": "Python package common tasks for users (e.g. copy examples, fetch data, ...)"
   },
   {
@@ -13703,7 +13703,7 @@
    "art": 0,
    "seed": 1,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "NumPyと併用する高速で直接的なラスタ入出力ライブラリ",
+   "desc_ja": "NumPy と併用し、ラスタデータを高速に直接読み書きするライブラリ",
    "desc_en": "Fast and direct raster I/O for use with NumPy"
   },
   {
@@ -14623,7 +14623,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ",
+   "desc_ja": "scikit-learn 推定器を複数バージョンに対応させやすくするライブラリ",
    "desc_en": "Ease support for compatible scikit-learn estimators across versions"
   },
   {
@@ -16923,7 +16923,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤・ユーティリティ",
-   "desc_ja": "rolling や expanding などの窓操作の実装",
+   "desc_ja": "rolling や expanding などのウィンドウ操作の実装",
    "desc_en": "Implementations of window operations such as rolling and expanding."
   },
   {

@@ -4741,7 +4741,7 @@
    "art": 0,
    "seed": 0,
    "cat": "コンテナ・デプロイ",
-   "desc_ja": "マーシャル済み型をprotobuf.Anyに管理するGoパッケージ",
+   "desc_ja": "マーシャル済みの型を protobuf.Any で管理する Go パッケージ",
    "desc_en": "Go package for managing marshaled types to protobuf.Any"
   },
   {
@@ -4781,7 +4781,7 @@
    "art": 0,
    "seed": 0,
    "cat": "ネットワーク・メッシュ",
-   "desc_ja": "CNIチームが保守するネットワークプラグインの参照・例",
+   "desc_ja": "CNI チームが保守するネットワークプラグインの参照実装とサンプル",
    "desc_en": "Some reference and example networking plugins, maintained by the CNI team."
   },
   {
@@ -5061,7 +5061,7 @@
    "art": 0,
    "seed": 0,
    "cat": "開発・テスト",
-   "desc_ja": "デバッグ用に Go のデータ構造を深く整形表示するライブラリ",
+   "desc_ja": "Go のデータ構造を入れ子の要素まで見やすく整形表示するデバッグ用ライブラリ",
    "desc_en": "Implements a deep pretty printer for Go data structures to aid in debugging"
   },
   {
@@ -5181,7 +5181,7 @@
    "art": 0,
    "seed": 0,
    "cat": "コンテナ・デプロイ",
-   "desc_ja": "コンテナコンテンツの梱包・配送・保存・配信を行うツールキット",
+   "desc_ja": "コンテナのコンテンツをパッケージ化し、転送・保存・配信するツールキット",
    "desc_en": "The toolkit to pack, ship, store, and deliver container content"
   },
   {
@@ -11101,7 +11101,7 @@
    "art": 0,
    "seed": 0,
    "cat": "基盤ライブラリ",
-   "desc_ja": "標準ハッシュ算法を高効率に再実装したGoパッケージ",
+   "desc_ja": "標準ハッシュアルゴリズムを高効率に再実装した Go パッケージ",
    "desc_en": "Go package porting the standard hashing algorithms to a more efficient implementation."
   },
   {
@@ -14621,7 +14621,7 @@
    "art": 0,
    "seed": 0,
    "cat": "Kubernetes 関連",
-   "desc_ja": "GoでYAMLをマーシャル・アンマーシャルするより良い方法",
+   "desc_ja": "Go で YAML を読み書きするライブラリ",
    "desc_en": "A better way to marshal and unmarshal YAML in Golang"
   },
   {

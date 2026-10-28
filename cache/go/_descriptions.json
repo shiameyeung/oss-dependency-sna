@@ -188,7 +188,7 @@
   "github.com/davecgh/go-spew": {
    "desc": "Implements a deep pretty printer for Go data structures to aid in debugging",
    "fetched_at": "2026-06-12T18:04:44Z",
-   "ja": "デバッグ用に Go のデータ構造を深く整形表示するライブラリ"
+   "ja": "Go のデータ構造を入れ子の要素まで見やすく整形表示するデバッグ用ライブラリ"
   },
   "github.com/distribution/reference": {
    "desc": "Go module implementing general types to represent any way of referencing images within distribution",
@@ -1293,7 +1293,7 @@
   "sigs.k8s.io/yaml": {
    "desc": "A better way to marshal and unmarshal YAML in Golang",
    "fetched_at": "2026-06-12T18:05:26Z",
-   "ja": "GoでYAMLをマーシャル・アンマーシャルするより良い方法"
+   "ja": "Go で YAML を読み書きするライブラリ"
   },
   "vitess.io/vitess": {
    "desc": "Vitess is a database clustering system for horizontal scaling of MySQL.",
@@ -1630,12 +1630,12 @@
   "github.com/containerd/typeurl/v2": {
    "desc": "Go package for managing marshaled types to protobuf.Any",
    "fetched_at": "2026-06-13T05:36:26Z",
-   "ja": "マーシャル済み型をprotobuf.Anyに管理するGoパッケージ"
+   "ja": "マーシャル済みの型を protobuf.Any で管理する Go パッケージ"
   },
   "github.com/containernetworking/plugins": {
    "desc": "Some reference and example networking plugins, maintained by the CNI team.",
    "fetched_at": "2026-06-13T05:36:27Z",
-   "ja": "CNIチームが保守するネットワークプラグインの参照・例"
+   "ja": "CNI チームが保守するネットワークプラグインの参照実装とサンプル"
   },
   "github.com/coreos/go-iptables": {
    "desc": "Go wrapper around iptables utility",
@@ -1695,7 +1695,7 @@
   "github.com/distribution/distribution/v3": {
    "desc": "The toolkit to pack, ship, store, and deliver container content",
    "fetched_at": "2026-06-13T05:36:29Z",
-   "ja": "コンテナコンテンツの梱包・配送・保存・配信を行うツールキット"
+   "ja": "コンテナのコンテンツをパッケージ化し、転送・保存・配信するツールキット"
   },
   "github.com/docker/cli": {
    "desc": "The Docker CLI",
@@ -2561,7 +2561,7 @@
   "github.com/segmentio/fasthash": {
    "desc": "Go package porting the standard hashing algorithms to a more efficient implementation.",
    "fetched_at": "2026-06-13T05:37:03Z",
-   "ja": "標準ハッシュ算法を高効率に再実装したGoパッケージ"
+   "ja": "標準ハッシュアルゴリズムを高効率に再実装した Go パッケージ"
   },
   "github.com/segmentio/kafka-go": {
    "desc": "Kafka library in Go",

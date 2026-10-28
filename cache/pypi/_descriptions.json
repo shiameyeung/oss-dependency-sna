@@ -378,7 +378,7 @@
   "hdbscan": {
    "desc": "Clustering based on density with variable density clusters",
    "fetched_at": "2026-06-12T18:03:35Z",
-   "ja": "可変密度クラスタに対応した密度ベースのクラスタリング"
+   "ja": "密度が異なるクラスタを扱える密度ベースのクラスタリング"
   },
   "hf-xet": {
    "desc": "Fast transfer of large files with the Hugging Face Hub.",
@@ -1093,7 +1093,7 @@
   "sklearn-compat": {
    "desc": "Ease support for compatible scikit-learn estimators across versions",
    "fetched_at": "2026-06-12T18:04:13Z",
-   "ja": "バージョン間で互換な scikit-learn 推定器の対応を容易にするライブラリ"
+   "ja": "scikit-learn 推定器を複数バージョンに対応させやすくするライブラリ"
   },
   "skops": {
    "desc": "A set of tools, related to machine learning in production.",
@@ -1733,7 +1733,7 @@
   "dash-cytoscape": {
    "desc": "A Component Library for Dash aimed at facilitating network visualization in Python, wrapped around Cytoscape.js",
    "fetched_at": "2026-06-13T05:34:38Z",
-   "ja": "Cytoscape.js を包んだ Dash 向けのネットワーク可視化コンポーネント"
+   "ja": "Cytoscape.js を組み込んだ Dash 向けのネットワーク可視化コンポーネント"
   },
   "dask": {
    "desc": "Parallel PyData with Task Scheduling",
@@ -2038,7 +2038,7 @@
   "flufl-lock": {
    "desc": "NFS-safe file locking with timeouts for POSIX and Windows",
    "fetched_at": "2026-06-13T05:34:53Z",
-   "ja": "POSIXとWindows向けの、タイムアウト付きNFS安全なファイルロック"
+   "ja": "POSIX と Windows 向けの、NFS 上でも安全に使えるタイムアウト付きファイルロック"
   },
   "folium": {
    "desc": "Make beautiful maps with Leaflet.js & Python",
@@ -2078,7 +2078,7 @@
   "future": {
    "desc": "Clean single-source support for Python 3 and 2",
    "fetched_at": "2026-06-13T05:34:55Z",
-   "ja": "Python 3と2を単一ソースで対応するライブラリ"
+   "ja": "単一のソースコードで Python 3 と 2 の両方に対応するライブラリ"
   },
   "gast": {
    "desc": "Python AST that abstracts the underlying Python version",
@@ -2293,7 +2293,7 @@
   "jiter": {
    "desc": "Fast iterable JSON parser.",
    "fetched_at": "2026-06-13T05:35:07Z",
-   "ja": "高速なイテレート可能JSONパーサー"
+   "ja": "反復処理に対応した高速な JSON パーサー"
   },
   "jmespath": {
    "desc": "JSON Matching Expressions",
@@ -2378,7 +2378,7 @@
   "lime": {
    "desc": "Local Interpretable Model-Agnostic Explanations for machine learning classifiers",
    "fetched_at": "2026-06-13T05:35:11Z",
-   "ja": "機械学習分類器の予測を説明する局所解釈手法（LIME）"
+   "ja": "機械学習分類器の予測を局所的に説明する手法（LIME）"
   },
   "line-profiler": {
    "desc": "Line-by-line profiler",
@@ -2523,7 +2523,7 @@
   "more-itertools": {
    "desc": "More routines for operating on iterables, beyond itertools",
    "fetched_at": "2026-06-13T05:35:18Z",
-   "ja": "itertoolsを超える、イテラブル操作の追加ルーチン"
+   "ja": "itertools を補うイテラブル操作用の追加ルーチン"
   },
   "mpi4py": {
    "desc": "Python bindings for MPI",
@@ -2848,7 +2848,7 @@
   "pyct": {
    "desc": "Python package common tasks for users (e.g. copy examples, fetch data, ...)",
    "fetched_at": "2026-06-13T05:35:36Z",
-   "ja": "ユーザー向けの共通タスク用Pythonパッケージ（例・データ取得）"
+   "ja": "サンプルのコピーやデータ取得など、ユーザー向けの共通作業を支援する Python パッケージ"
   },
   "pydantic-settings": {
    "desc": "Settings management using Pydantic",
@@ -3008,7 +3008,7 @@
   "rasterio": {
    "desc": "Fast and direct raster I/O for use with NumPy",
    "fetched_at": "2026-06-13T05:35:45Z",
-   "ja": "NumPyと併用する高速で直接的なラスタ入出力ライブラリ"
+   "ja": "NumPy と併用し、ラスタデータを高速に直接読み書きするライブラリ"
   },
   "ray": {
    "desc": "Ray provides a simple, universal API for building distributed applications.",
@@ -3483,7 +3483,7 @@
   "window-ops": {
    "desc": "Implementations of window operations such as rolling and expanding.",
    "fetched_at": "2026-06-13T05:36:10Z",
-   "ja": "rolling や expanding などの窓操作の実装"
+   "ja": "rolling や expanding などのウィンドウ操作の実装"
   },
   "woodwork": {
    "desc": "a data typing library for machine learning",
